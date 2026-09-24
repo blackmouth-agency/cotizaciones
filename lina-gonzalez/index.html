@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Propuesta de BLACKMOUTH para Lina González: diagnóstico de Instagram, manual de marca y gestión mensual de contenido.">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Propuesta para Lina González · BLACKMOUTH">
+<meta property="og:description" content="Lo que vimos en tu cuenta y cómo lo trabajaríamos contigo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/lina-gonzalez/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/lina-gonzalez/media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>Propuesta para Lina González · BLACKMOUTH</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<link rel="stylesheet" href="https://use.typekit.net/dfu3yuy.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Libre+Franklin:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{
+  /* Paleta tomada de su propio feed: nude, moca, verde salvia y el negro del uniforme */
+  --ground:#F5EFE8;--surface:#FBF8F4;--ink:#2A211C;--ink-2:#5A4A40;--muted:#8C7B6F;
+  --rule:#E3D8CD;--rule-soft:#ECE3D9;
+  --nude:#D9C3AE;--nude-soft:#EFE3D6;--mocha:#8A6650;--sage:#8A9178;--sage-d:#5C634E;--sage-soft:#E4E6DA;
+  --dark:#2A211C;--dark-ink:#F1E9E1;--dark-muted:#BCAB9D;--dark-rule:#443830;
+  --bm:#F39200;
+  --shell:min(720px,100% - 2.5rem);
+  --f-body:"franklin-gothic-atf","Libre Franklin","Franklin Gothic Medium",Arial,sans-serif;
+  --f-lina:"Cormorant Garamond","Cormorant",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--f-body);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+.wrap{display:grid;grid-template-columns:1fr var(--shell) 1fr}
+.wrap > *{grid-column:2}
+.bleed{grid-column:1 / -1;display:grid;grid-template-columns:1fr var(--shell) 1fr}
+.bleed > *{grid-column:2}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+a{color:inherit}
+em.l{font-family:var(--f-lina);font-style:italic;font-weight:500;letter-spacing:-.005em}
+.section{padding:clamp(3.2rem,9vw,5rem) 0;display:flex;flex-direction:column;gap:1.35rem;scroll-margin-top:62px}
+.section + .section{border-top:1px solid var(--rule)}
+.small{font-size:.85rem;color:var(--muted);line-height:1.55}
+
+.eyebrow{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-d)}
+.head{display:flex;flex-direction:column;gap:.7rem;margin-bottom:.3rem}
+.sec-title{font-size:clamp(2.1rem,7.4vw,3.1rem);font-weight:900;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.sec-title em.l{font-weight:500;letter-spacing:-.01em;font-size:1.12em;color:var(--mocha)}
+.sub-h{font-size:clamp(1.05rem,3.3vw,1.3rem);font-weight:500;color:var(--ink-2);letter-spacing:-.012em;
+  line-height:1.4;max-width:36ch;text-wrap:pretty}
+
+/* Encabezado */
+.masthead{background:var(--surface);border-bottom:1px solid var(--rule)}
+.masthead .inner{padding:1.4rem 0}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brandbar img{height:32px;width:auto;display:block}
+.vig{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--rule);border-radius:999px;padding:.42rem .8rem;white-space:nowrap}
+
+.hero{background:linear-gradient(180deg,var(--surface) 0%,var(--nude-soft) 100%)}
+.hero .inner{padding:clamp(3.6rem,11vw,6.2rem) 0 clamp(3.2rem,9vw,5rem);display:flex;flex-direction:column;gap:1.25rem}
+.hero .for{font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--mocha)}
+.hero h1{font-family:var(--f-lina);font-weight:500;font-style:italic;font-size:clamp(3.2rem,13vw,6rem);
+  line-height:.92;letter-spacing:-.02em;color:var(--ink)}
+.hero .tagline{font-size:.7rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-2)}
+.hero .intro{font-size:clamp(1.08rem,3.4vw,1.28rem);color:var(--ink-2);max-width:38ch;line-height:1.5;
+  padding-top:1.1rem;border-top:1px solid var(--nude)}
+.hero .intro strong{color:var(--ink);font-weight:600}
+
+/* Navegación */
+.nav{position:sticky;top:0;z-index:30;background:rgba(245,239,232,.94);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav .inner{display:flex;gap:.3rem;overflow-x:auto;padding:.55rem 0;scrollbar-width:none}
+.nav .inner::-webkit-scrollbar{display:none}
+.nav a{font-size:.76rem;font-weight:600;text-decoration:none;color:var(--muted);white-space:nowrap;
+  padding:.35rem .75rem;border-radius:999px;transition:background .15s,color .15s}
+.nav a:hover{color:var(--ink);background:var(--rule-soft)}
+.nav a.on{background:var(--ink);color:var(--ground)}
+
+/* Bandas oscuras */
+.band{background:var(--dark);color:var(--dark-ink);scroll-margin-top:62px}
+.band .inner{padding:clamp(3.4rem,9.5vw,5.2rem) 0;display:flex;flex-direction:column;gap:1.35rem}
+.band p{color:var(--dark-muted);font-size:1.03rem}
+.band strong{color:#fff;font-weight:600}
+.band .sec-title{color:#fff}
+.band .sec-title em.l{color:var(--nude)}
+.band .sub-h{color:var(--dark-ink)}
+.band .eyebrow{color:var(--sage)}
+
+/* Cifras */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 1.6rem;margin:0}
+.stat{display:flex;flex-direction:column;gap:.15rem;border-top:2px solid var(--ink);padding-top:.7rem}
+.stat dd{margin:0;font-size:clamp(1.9rem,6vw,2.4rem);font-weight:900;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.stat dt{font-size:.8rem;color:var(--ink-2);line-height:1.4;order:2}
+@media (min-width:720px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Lo que funciona */
+.works{display:grid;grid-template-columns:1fr;gap:1.4rem;align-items:center;background:var(--surface);
+  border:1px solid var(--rule);border-radius:14px;padding:1.2rem}
+.works-img{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.works-img figure{margin:0;position:relative}
+.works-img img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:8px}
+.works-img .tag{position:absolute;left:.5rem;bottom:.5rem;background:rgba(42,33,28,.86);color:#fff;
+  font-size:.68rem;font-weight:700;letter-spacing:.02em;border-radius:999px;padding:.28rem .6rem}
+.works-txt{display:flex;flex-direction:column;gap:.8rem}
+.works-txt h3{font-size:1.35rem;font-weight:900;letter-spacing:-.03em}
+.works-txt p{font-size:.95rem;color:var(--ink-2)}
+.works-txt .quote{font-family:var(--f-lina);font-style:italic;font-size:1.45rem;line-height:1.25;color:var(--mocha);
+  border-left:2px solid var(--sage);padding-left:1rem}
+@media (min-width:720px){.works{grid-template-columns:1.05fr 1fr;padding:1.5rem;align-items:start}}
+
+/* Oportunidades */
+.opps{display:flex;flex-direction:column}
+.opp{display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem 1rem;padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.opp:first-child{border-top:1px solid var(--rule)}
+.opp-n{font-family:var(--f-lina);font-style:italic;font-size:2rem;line-height:1;color:var(--sage)}
+.opp-b{display:flex;flex-direction:column;gap:.55rem}
+.opp h3{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+.opp p{font-size:.95rem;color:var(--ink-2)}
+.opp .do{font-size:.88rem;color:var(--ink);background:var(--sage-soft);border-radius:8px;padding:.6rem .8rem}
+.opp .do b{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-d);display:block;margin-bottom:.1rem}
+.names{display:flex;flex-wrap:wrap;gap:.4rem}
+.names span{font-family:var(--f-lina);font-size:1.02rem;font-style:italic;background:var(--surface);
+  border:1px solid var(--rule);border-radius:999px;padding:.2rem .75rem;color:var(--ink)}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.45rem}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:6px}
+.bubbles{display:flex;flex-wrap:wrap;gap:.45rem}
+.bubbles span{font-size:.85rem;background:var(--surface);border:1px solid var(--rule);border-radius:14px 14px 14px 4px;
+  padding:.35rem .75rem;color:var(--ink)}
+
+/* Esta semana */
+.quick{display:grid;grid-template-columns:1fr;gap:.8rem}
+.qi{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:1.05rem 1.1rem;
+  display:flex;gap:.8rem;align-items:flex-start}
+.qi i{flex:none;width:1.35rem;height:1.35rem;border-radius:50%;border:1.5px solid var(--sage);margin-top:.1rem;position:relative}
+.qi i::after{content:"";position:absolute;left:.36rem;top:.2rem;width:.3rem;height:.55rem;border-right:1.5px solid var(--sage-d);
+  border-bottom:1.5px solid var(--sage-d);transform:rotate(40deg)}
+.qi h3{font-size:.98rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.15rem}
+.qi p{font-size:.86rem;color:var(--ink-2)}
+@media (min-width:720px){.quick{grid-template-columns:1fr 1fr}}
+
+/* Propuesta */
+.steps{display:grid;grid-template-columns:1fr;gap:1rem}
+.step{border:1px solid var(--dark-rule);border-radius:12px;padding:1.35rem;display:flex;flex-direction:column;gap:.7rem}
+.step .k{font-size:.64rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--sage)}
+.step h3{font-size:1.3rem;font-weight:900;letter-spacing:-.03em;color:#fff}
+.step p{font-size:.93rem}
+@media (min-width:720px){.steps{grid-template-columns:1fr 1fr}}
+.pillars{display:flex;flex-direction:column;counter-reset:p}
+.pillar{display:grid;grid-template-columns:2.2rem 1fr;gap:.9rem;padding:.9rem 0;border-top:1px solid var(--dark-rule)}
+.pillar::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-size:.78rem;font-weight:700;color:var(--sage);padding-top:.2rem}
+.pillar h4{margin:0;font-size:1rem;font-weight:700;color:#fff}
+.pillar p{font-size:.88rem}
+
+/* Listas */
+.checks{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.6rem;font-size:.92rem;color:var(--ink-2)}
+.checks li{padding-left:1.5rem;position:relative;line-height:1.45}
+.checks li::before{content:"";position:absolute;left:2px;top:.35em;width:.7rem;height:.36rem;
+  border-left:2px solid var(--sage-d);border-bottom:2px solid var(--sage-d);transform:rotate(-45deg)}
+.cols{display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media (min-width:720px){.cols{grid-template-columns:1fr 1fr}}
+
+/* Trabajo previo */
+.subsec{display:flex;flex-direction:column;gap:1.1rem}
+.subsec-hd{display:flex;align-items:baseline;justify-content:space-between;gap:.4rem 1.5rem;flex-wrap:wrap;
+  padding-top:1.1rem;border-top:1px solid var(--rule)}
+.subsec-hd h3{font-size:clamp(1.2rem,4vw,1.45rem);font-weight:900;letter-spacing:-.03em}
+.subsec-hd .note{font-size:.82rem;color:var(--muted);line-height:1.4}
+.marcas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.mcard{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:.55rem;background:var(--surface);
+  border:1px solid var(--rule);border-radius:10px;padding:.6rem;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.mcard:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 16px 30px -22px rgba(42,33,28,.5)}
+.mcard img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border-radius:6px;background:var(--rule-soft)}
+.mcard-t{display:flex;flex-direction:column;gap:.05rem;padding:0 .25rem .3rem}
+.mcard-t h4{margin:0;font-size:.95rem;font-weight:700}
+.mcard-t span{font-size:.74rem;color:var(--muted)}
+figure{margin:0;display:flex;flex-direction:column;gap:.5rem}
+.reels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.reels video{width:100%;aspect-ratio:9/16;display:block;border-radius:10px;background:var(--dark);border:1px solid var(--rule);object-fit:cover}
+.reels figcaption{font-size:.75rem;color:var(--muted);line-height:1.45}
+@media (min-width:720px){.marcas,.reels{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.btn{align-self:flex-start;display:inline-flex;align-items:center;gap:.5rem;font-size:.88rem;font-weight:700;text-decoration:none;
+  background:var(--ink);color:var(--ground);border-radius:999px;padding:.68rem 1.25rem;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.35)}
+.pull{border-left:2px solid var(--sage);padding-left:1.05rem;font-size:.96rem;color:var(--ink-2)}
+
+/* Inversión */
+.block-t{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mocha);
+  padding-top:.4rem}
+.manual{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:1.4rem;display:grid;
+  grid-template-columns:1fr;gap:1.2rem}
+.manual h3{font-size:1.4rem;font-weight:900;letter-spacing:-.03em}
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:0}
+.pp{display:flex;flex-direction:column;gap:.15rem;border-top:2px solid var(--ink);padding-top:.65rem}
+.pp.hi{border-top-color:var(--sage-d)}
+.pp dt{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);line-height:1.35}
+.pp dd{margin:0;font-size:clamp(1.3rem,4.6vw,1.6rem);font-weight:900;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.pp dd.note{font-size:.78rem;font-weight:500;letter-spacing:0;color:var(--muted)}
+.pp.hi dd:not(.note){color:var(--sage-d)}
+.pp s{color:var(--muted);font-weight:600;font-size:.8em;margin-right:.3rem}
+@media (min-width:720px){.manual{grid-template-columns:1.1fr 1fr;align-items:end}}
+
+.plans{display:grid;grid-template-columns:1fr;gap:1rem}
+.plan{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:1.4rem;display:flex;flex-direction:column;gap:.9rem}
+.plan.pick{border:2px solid var(--sage-d);box-shadow:0 14px 30px -20px rgba(92,99,78,.6)}
+.plan-tag{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.plan-name{font-size:.73rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+.badge{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--sage-d);color:#fff;border-radius:999px;padding:.24rem .6rem}
+.badge.alt{background:var(--nude);color:var(--ink)}
+.price{font-size:1.75rem;font-weight:900;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1.05}
+.price small{font-size:.76rem;font-weight:600;color:var(--muted);letter-spacing:0}
+.plan-for{font-size:.88rem;color:var(--ink-2)}
+.plan ul{margin:0;padding:.85rem 0 0;list-style:none;display:flex;flex-direction:column;gap:.48rem;font-size:.88rem;color:var(--ink-2);border-top:1px solid var(--rule-soft)}
+.plan li{padding-left:1.05rem;position:relative;line-height:1.45}
+.plan li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--nude)}
+.plan.pick li::before{background:var(--sage-d)}
+.plan .excl{font-size:.78rem;color:var(--muted);border-top:1px solid var(--rule-soft);padding-top:.65rem}
+@media (min-width:720px){.plans{grid-template-columns:repeat(3,1fr)}.plan-tag{flex-direction:column;align-items:flex-start;gap:.45rem;min-height:3.3rem}.plan{padding:1.3rem 1.15rem}.price{font-size:1.5rem}}
+
+.combo{background:var(--sage-soft);border-radius:14px;padding:1.3rem 1.4rem;display:flex;flex-direction:column;gap:.8rem}
+.combo h3{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+.combo-rows{display:flex;flex-direction:column;font-size:.92rem;font-variant-numeric:tabular-nums}
+.combo-rows div{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0;border-bottom:1px solid rgba(92,99,78,.22)}
+.combo-rows div:last-child{border-bottom:0;font-weight:900;font-size:1.1rem;padding-top:.7rem}
+.combo-rows span:last-child{white-space:nowrap}
+
+/* Incluido, garantía, condiciones */
+.bonus{display:flex;flex-direction:column}
+.bonus-item{display:flex;flex-direction:column;gap:.25rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.bonus-item:first-child{border-top:1px solid var(--rule)}
+.bonus-item h3{font-size:1rem;font-weight:700;letter-spacing:-.01em}
+.bonus-item p{font-size:.9rem;color:var(--ink-2)}
+.gift-tag{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-d)}
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem 2rem;margin:0}
+.term{display:flex;flex-direction:column;gap:.1rem;border-top:1px solid var(--rule);padding-top:.62rem}
+.term dt{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.term dd{margin:0;font-size:.9rem;font-weight:600;line-height:1.45}
+
+/* Cierre */
+.close .inner{padding:clamp(3.6rem,10vw,5.6rem) 0 clamp(4.2rem,11vw,5.6rem)}
+.close .big{font-family:var(--f-lina);font-style:italic;font-weight:500;font-size:clamp(2.3rem,8.6vw,3.7rem);line-height:1.02;color:#fff;max-width:16ch}
+.close .big span{color:var(--nude)}
+.ask{font-size:1.08rem!important;color:var(--dark-ink)!important;border-left:2px solid var(--sage);padding-left:1rem;max-width:40ch}
+.cta{align-self:flex-start;display:inline-flex;align-items:center;gap:.6rem;background:var(--nude);color:var(--ink);
+  font-weight:800;font-size:1rem;text-decoration:none;border-radius:999px;padding:.95rem 1.7rem;transition:transform .15s,filter .15s}
+.cta:hover{filter:brightness(1.06);transform:translateY(-2px)}
+.sign{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1.5rem;margin-top:.6rem;border-top:1px solid var(--dark-rule)}
+.sign img{height:30px;width:auto;display:block}
+.sign span{font-size:.79rem;color:var(--dark-muted)}
+
+.dock{position:sticky;bottom:0;z-index:25;background:rgba(245,239,232,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-top:1px solid var(--rule);padding:.65rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.dock span{font-size:.79rem;font-weight:600;color:var(--ink-2)}
+.dock a{background:var(--ink);color:var(--ground);font-size:.83rem;font-weight:800;text-decoration:none;border-radius:999px;padding:.6rem 1.05rem;white-space:nowrap}
+@media (min-width:760px){.dock{display:none}}
+
+body.anim .rv{opacity:.001;transform:translateY(14px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.75,.3,1)}
+body.anim .rv.in{opacity:1;transform:none}
+a:focus-visible{outline:2.5px solid var(--sage-d);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{.nav,.dock{display:none}body.anim .rv{opacity:1;transform:none}.plan,.manual,.works,.qi{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="bleed masthead">
+    <div class="inner">
+      <div class="brandbar">
+        <img src="media/logo_negro.png" alt="BLACKMOUTH — Agencia de publicidad">
+        <div class="vig">Vigente hasta el 2 de octubre de 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bleed hero">
+    <div class="inner">
+      <p class="for">Propuesta preparada para</p>
+      <h1>Lina González</h1>
+      <p class="tagline">Cosmiatría · Cali</p>
+      <p class="intro">Antes de ponerle precio a nada, nos sentamos a mirar tu Instagram con calma: las 34 publicaciones, los comentarios y lo que tu gente responde. <strong>Esto es lo que encontramos y cómo lo trabajaríamos contigo.</strong></p>
+    </div>
+  </section>
+</div>
+
+<nav class="wrap nav bleed" aria-label="Secciones de la propuesta">
+  <div class="inner">
+    <a href="#vimos">Diagnóstico</a>
+    <a href="#oportunidades">Oportunidades</a>
+    <a href="#propuesta">Propuesta</a>
+    <a href="#trabajo">Portafolio</a>
+    <a href="#inversion">Inversión</a>
+    <a href="#condiciones">Condiciones</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="section" id="vimos">
+    <div class="head rv">
+      <p class="eyebrow">01 · Diagnóstico</p>
+      <h2 class="sec-title">Lo que <em class="l">vimos</em></h2>
+      <p class="sub-h">Cuatro meses y medio de cuenta, leídos con números y con ojo de marca.</p>
+    </div>
+    <dl class="stats rv">
+      <div class="stat"><dt>seguidores</dt><dd>1.851</dd></div>
+      <div class="stat"><dt>publicaciones desde mayo</dt><dd>34</dd></div>
+      <div class="stat"><dt>me gusta en promedio por publicación</dt><dd>18</dd></div>
+      <div class="stat"><dt>lo que rinden los reels frente a los carruseles</dt><dd>2×</dd></div>
+    </dl>
+    <p class="small rv">Tomado de lo que se ve públicamente en el perfil al 16 de septiembre. El alcance, los guardados y los mensajes solo los ves tú: con esos datos el diagnóstico queda completo.</p>
+
+    <div class="works rv">
+      <div class="works-img">
+        <figure><img src="media/ig4.jpg" alt="Reel de Lina hablando a cámara en su consultorio, promoción de 15 % de descuento"><span class="tag">97 me gusta</span></figure>
+        <figure><img src="media/ig8.jpg" alt="Reel de Lina sentada en el consultorio explicando un tratamiento"></figure>
+      </div>
+      <div class="works-txt">
+        <p class="eyebrow">Lo que ya funciona</p>
+        <h3>Cuando apareces tú, la cuenta responde.</h3>
+        <p>Tu reel del 5 de septiembre, hablando a cámara desde el consultorio, llegó a 97 me gusta: más de cinco veces tu promedio. Los reels de procedimientos reales y de tu espacio le siguen de lejos. No hay que inventar una fórmula: ya está en tu feed.</p>
+        <p class="quote">Cuidar la piel, no transformarla.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="oportunidades">
+    <div class="head rv">
+      <p class="eyebrow">02 · Oportunidades</p>
+      <h2 class="sec-title">Dónde se está <em class="l">quedando</em></h2>
+      <p class="sub-h">Tu trabajo en cabina es bueno. Lo que falta es que la cuenta lo cuente con la misma precisión.</p>
+    </div>
+
+    <div class="opps rv">
+      <article class="opp">
+        <div class="opp-n">1</div>
+        <div class="opp-b">
+          <h3>La marca todavía no tiene un solo nombre</h3>
+          <p>En cuatro meses tu marca se ha presentado de varias formas. Quien te ve dos veces puede pensar que son dos lugares distintos.</p>
+          <div class="names"><span>Lina González Skin</span><span>Lina González Cosmética</span><span>Lina González Cosmetología &amp; Estética</span><span>Lina Gonzalez Cosmiatra</span></div>
+          <p class="do"><b>Lo que haríamos</b>Definir un nombre, un descriptor y un monograma, y usarlos igual en Instagram, Facebook, WhatsApp y el consultorio.</p>
+        </div>
+      </article>
+
+      <article class="opp">
+        <div class="opp-n">2</div>
+        <div class="opp-b">
+          <h3>Cada publicación habla un lenguaje visual distinto</h3>
+          <p>Serif elegante sobre beige, texto blanco en negrita, mockups de celular, guantes azules muy saturados. Cada pieza por separado está bien; juntas, el feed no se reconoce como una sola marca.</p>
+          <div class="strip">
+            <img loading="lazy" src="media/ig0.jpg" alt="Publicación con tipografía serif sobre fondo beige">
+            <img loading="lazy" src="media/ig1.jpg" alt="Publicación con mockup de celular y productos EltaMD">
+            <img loading="lazy" src="media/ig2.jpg" alt="Reel con texto blanco en negrita sobre un procedimiento">
+            <img loading="lazy" src="media/ig11.jpg" alt="Publicación con guante azul y texto sobre verde">
+          </div>
+          <p class="do"><b>Lo que haríamos</b>Elegir entre tu beige y tu verde salvia, fijar tipografías y dejar plantillas para reels, carruseles, historias y portadas.</p>
+        </div>
+      </article>
+
+      <article class="opp">
+        <div class="opp-n">3</div>
+        <div class="opp-b">
+          <h3>Hay clientas pidiendo información en los comentarios</h3>
+          <p>La mayoría de publicaciones tiene uno o ningún comentario, pero los que llegan traen intención de compra. Algunos quedaron sin respuesta.</p>
+          <div class="bubbles"><span>Hola me interesa</span><span>Precio?</span><span>Lo necesito</span><span>Amo estos productos</span></div>
+          <p class="do"><b>Lo que haríamos</b>Cerrar cada pieza con una invitación clara a escribir, y dejarte respuestas modelo para llevar esas conversaciones a WhatsApp.</p>
+        </div>
+      </article>
+
+      <article class="opp">
+        <div class="opp-n">4</div>
+        <div class="opp-b">
+          <h3>Se publica a ráfagas</h3>
+          <p>Julio tuvo 15 publicaciones; junio y agosto, 3 cada uno, con pausas de más de tres semanas. Instagram premia la constancia más que el volumen.</p>
+          <p class="do"><b>Lo que haríamos</b>Un calendario mensual con pilares fijos y una jornada de grabación al mes, para que nunca falte material.</p>
+        </div>
+      </article>
+
+      <article class="opp">
+        <div class="opp-n">5</div>
+        <div class="opp-b">
+          <h3>Lo que no se siente real rinde menos</h3>
+          <p>Los textos largos sobre fondo de producto y las imágenes generadas con IA se quedan entre 1 y 7 me gusta. En estética la gente quiere ver pieles reales y a la profesional que las trata.</p>
+          <p class="do"><b>Lo que haríamos</b>Contenido grabado en tu consultorio: tú, tus manos, tus pacientes (con su permiso) y tus resultados.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</div>
+
+<div class="wrap band bleed" id="propuesta">
+  <div class="inner">
+    <div class="head rv">
+      <p class="eyebrow">03 · Propuesta</p>
+      <h2 class="sec-title">Cómo lo <em class="l">trabajaríamos</em></h2>
+      <p class="sub-h">Primero ordenar la marca. Después sostenerla todos los meses.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step">
+        <span class="k">Paso 1 · Proyecto puntual</span>
+        <h3>Manual de marca</h3>
+        <p>Un nombre, una identidad y unas reglas claras. Es la base para que todo lo que publiques se reconozca como tuyo, lo haga quien lo haga.</p>
+      </div>
+      <div class="step">
+        <span class="k">Paso 2 · Servicio mensual</span>
+        <h3>Gestión de contenido</h3>
+        <p>Estrategia, concepto, grabación, edición, copy y programación en Instagram y Facebook, con los <strong>reels como formato principal</strong>.</p>
+      </div>
+    </div>
+    <p class="rv">El contenido mensual se organiza en cinco pilares que salen directamente de lo que ya te funciona:</p>
+    <div class="pillars rv">
+      <div class="pillar"><div><h4>Lina educa a cámara</h4><p>Tu formato más fuerte. Dudas reales de pacientes, respondidas por ti en menos de un minuto.</p></div></div>
+      <div class="pillar"><div><h4>Procedimiento real y antes/después</h4><p>El proceso completo, no solo el resultado. Ahí se ve el criterio clínico.</p></div></div>
+      <div class="pillar"><div><h4>Testimonios de clientas</h4><p>En video y con su voz. La confianza que tú no puedes decir de ti misma.</p></div></div>
+      <div class="pillar"><div><h4>Producto como rutina</h4><p>ÁNIMUS LAB y EltaMD dentro de una rutina ligada a cada tratamiento, no como catálogo.</p></div></div>
+      <div class="pillar"><div><h4>Agenda y promociones</h4><p>Cupos, fechas y ofertas planeadas con tiempo, con una invitación clara a escribir.</p></div></div>
+    </div>
+    <p class="rv"><strong>Una jornada de grabación al mes en tu consultorio</strong> nos da el banco de material para publicar sin vacíos y sin quitarte tiempo de cabina.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section" id="trabajo">
+    <div class="head rv">
+      <p class="eyebrow">04 · Trabajo previo</p>
+      <h2 class="sec-title">Lo que ya <em class="l">hicimos</em></h2>
+    </div>
+
+    <div class="subsec rv">
+      <div class="subsec-hd">
+        <h3>Manuales de marca</h3>
+        <span class="note">Cuatro identidades completas</span>
+      </div>
+      <div class="marcas">
+        <a class="mcard" href="https://blackmouthagency-dev.github.io/manuales-blackmouth/#semply" rel="noopener"><img loading="lazy" src="media/semply.jpg" alt="Portada del manual de marca de Semply"><div class="mcard-t"><h4>Semply</h4><span>Academia de marketing · 29 páginas</span></div></a>
+        <a class="mcard" href="https://blackmouthagency-dev.github.io/manuales-blackmouth/#stimura" rel="noopener"><img loading="lazy" src="media/stimura.jpg" alt="Portada del manual de marca de Stimura"><div class="mcard-t"><h4>Stimura</h4><span>Aromaterapia · 25 páginas</span></div></a>
+        <a class="mcard" href="https://blackmouthagency-dev.github.io/manuales-blackmouth/#oca" rel="noopener"><img loading="lazy" src="media/oca.jpg" alt="Portada del manual de marca de OCA"><div class="mcard-t"><h4>OCA</h4><span>Observatorio cultural · 36 páginas</span></div></a>
+        <a class="mcard" href="https://blackmouthagency-dev.github.io/manuales-blackmouth/#rafiki" rel="noopener"><img loading="lazy" src="media/rafiki.jpg" alt="Portada del manual de marca de Rafiki"><div class="mcard-t"><h4>Rafiki</h4><span>Marca de consumo · 25 páginas</span></div></a>
+      </div>
+      <a class="btn" href="https://blackmouthagency-dev.github.io/manuales-blackmouth/" rel="noopener">Ver los manuales completos →</a>
+    </div>
+
+    <div class="subsec rv">
+      <div class="subsec-hd">
+        <h3>Reels con presentadora a cámara</h3>
+        <span class="note">El formato que mejor te funciona</span>
+      </div>
+      <div class="reels">
+        <figure><video src="media/v1.mp4" poster="media/v1.jpg" controls playsinline preload="none"></video><figcaption>Semply · presentadora, motion graphics y cierre con animación de logo</figcaption></figure>
+        <figure><video src="media/v2.mp4" poster="media/v2.jpg" controls playsinline preload="none"></video><figcaption>Semply · contenido educativo con presentadora y subtítulos</figcaption></figure>
+        <figure><video src="media/v3.mp4" poster="media/v3.jpg" controls playsinline preload="none"></video><figcaption>Servicios legales · presentadora, gráficos y llamada a la acción</figcaption></figure>
+        <figure><video src="media/v4.mp4" poster="media/v4.jpg" controls playsinline preload="none"></video><figcaption>Pieza de marca grabada en locación</figcaption></figure>
+      </div>
+    </div>
+
+    <p class="pull rv">Ninguna de estas marcas se parece a otra, y la tuya tampoco se va a parecer a ellas. Construimos el sistema a partir de tu negocio, no de un estilo nuestro.</p>
+  </section>
+
+  <section class="section" id="inversion">
+    <div class="head rv">
+      <p class="eyebrow">05 · Inversión</p>
+      <h2 class="sec-title"><em class="l">Inversión</em></h2>
+      <p class="sub-h">Valores en pesos colombianos, sin IVA.</p>
+    </div>
+
+    <p class="block-t rv">Paso 1 · Manual de marca</p>
+    <div class="manual rv">
+      <div>
+        <h3>Manual de marca</h3>
+        <p class="small" style="margin-top:.4rem">Pago único. Se puede contratar solo, pero rinde más cuando el contenido mensual lo aplica desde el primer día.</p>
+      </div>
+      <dl class="pricing">
+        <div class="pp"><dt>Solo el manual</dt><dd>$1.200.000</dd><dd class="note">Pago único</dd></div>
+        <div class="pp hi"><dt>Con un plan mensual</dt><dd>$1.020.000</dd><dd class="note">15 % menos</dd></div>
+      </dl>
+    </div>
+
+    <p class="block-t rv">Paso 2 · Gestión mensual de contenido</p>
+    <div class="plans rv">
+      <div class="plan">
+        <div class="plan-tag"><div class="plan-name">Base</div></div>
+        <div class="price">$1.200.000 <small>/ mes</small></div>
+        <p class="plan-for">Lo esencial para publicar con orden y constancia.</p>
+        <ul>
+          <li>4 reels · 4 carruseles · 12 historias al mes</li>
+          <li>Planeación, concepto y calendario mensual</li>
+          <li>Jornada de grabación en tu consultorio</li>
+          <li>Copies y programación</li>
+        </ul>
+      </div>
+      <div class="plan pick">
+        <div class="plan-tag"><div class="plan-name">Esencial</div><div class="badge">Recomendado</div></div>
+        <div class="price">$1.600.000 <small>/ mes</small></div>
+        <p class="plan-for">Presencia constante en Instagram y Facebook, con estrategia detrás.</p>
+        <ul>
+          <li>Hasta 2 redes sociales</li>
+          <li>8 reels · 6 carruseles · 16 historias al mes</li>
+          <li>Planeación, concepto y calendario mensual</li>
+          <li>Pilares de contenido de tu marca</li>
+          <li>Jornada de grabación en tu consultorio</li>
+          <li>Copies y programación</li>
+          <li>Optimización de perfiles y enlaces</li>
+        </ul>
+        <p class="excl">Dos reels por semana, sin vacíos. El plan que recomendamos para tu consultorio.</p>
+      </div>
+      <div class="plan">
+        <div class="plan-tag"><div class="plan-name">Crecimiento</div><div class="badge alt">Para escalar</div></div>
+        <div class="price">$2.400.000 <small>/ mes</small></div>
+        <p class="plan-for">Cuando la agenda pida más y quieras sumar canales.</p>
+        <ul>
+          <li>Todo lo del plan Esencial, más:</li>
+          <li>Hasta 4 redes sociales</li>
+          <li>12 reels · 8 carruseles · 24 historias al mes</li>
+          <li>Informe mensual con recomendaciones</li>
+        </ul>
+        <p class="excl">Se puede pasar de Esencial a Crecimiento en cualquier mes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="incluido">
+    <div class="head rv">
+      <p class="eyebrow">06 · Incluido</p>
+      <h2 class="sec-title">Sin costo <em class="l">adicional</em></h2>
+    </div>
+    <div class="bonus rv">
+      <div class="bonus-item"><div class="gift-tag">Incluido</div><h3>Auditoría digital completa</h3><p>Este diagnóstico, ampliado con tus métricas internas de alcance, guardados y mensajes.</p></div>
+      <div class="bonus-item"><div class="gift-tag">Incluido</div><h3>Ajuste de bio y destacadas</h3><p>Reescribimos tu bio y ordenamos tus historias destacadas desde la primera semana.</p></div>
+      <div class="bonus-item"><div class="gift-tag">Incluido</div><h3>Sesión estratégica trimestral</h3><p>Resultados, oportunidades y ajustes para el siguiente trimestre.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="garantia">
+    <div class="head rv">
+      <p class="eyebrow">07 · Garantía</p>
+      <h2 class="sec-title">Hasta que se sienta <em class="l">tuya</em></h2>
+    </div>
+    <p class="rv">Hasta tres rondas de ajustes sobre la estrategia mensual y una sobre cada pieza. Si al cerrar el primer mes el contenido no representa tu marca, replanteamos la línea creativa sin costo.</p>
+  </section>
+
+  <section class="section" id="condiciones">
+    <div class="head rv">
+      <p class="eyebrow">08 · Condiciones</p>
+      <h2 class="sec-title">Los <em class="l">términos</em></h2>
+    </div>
+    <dl class="terms rv">
+      <div class="term"><dt>Permanencia mínima</dt><dd>3 meses en el plan mensual</dd></div>
+      <div class="term"><dt>Forma de pago</dt><dd>50 % al iniciar y 50 % al cierre, tanto del mes como del manual</dd></div>
+      <div class="term"><dt>Vigencia</dt><dd>15 días: hasta el 2 de octubre de 2026</dd></div>
+      <div class="term"><dt>Producción</dt><dd>Grabación y fotografía en tu consultorio en Cali</dd></div>
+      <div class="term"><dt>No incluye</dt><dd>Inversión en pauta, respuesta de comentarios y mensajes directos, e informe de métricas en los planes Base y Esencial</dd></div>
+      <div class="term"><dt>Se acuerda aparte</dt><dd>Talento, licencias y fotografía especial, y queda en el contrato</dd></div>
+    </dl>
+    <p class="small rv">Todo servicio adicional se acuerda antes de ejecutarse. Valores en pesos colombianos, sin IVA.</p>
+  </section>
+</div>
+
+<div class="wrap band close bleed" id="cierre">
+  <div class="inner">
+    <p class="big rv">Tu piel no necesita filtros. <span>Tu marca tampoco.</span></p>
+    <p class="rv">La frase es tuya, de una de tus publicaciones. Nosotros solo queremos que tu cuenta se vea tan clara como tu trabajo en cabina.</p>
+    <p class="ask rv">Antes de elegir plan: ¿qué tendría que pasar en tu consultorio en seis meses para que esto haya valido la pena?</p>
+    <a class="cta rv" href="https://wa.me/message/RZ4RFIU4PD4FJ1" rel="noopener">Hablemos por WhatsApp →</a>
+    <div class="sign">
+      <img loading="lazy" src="media/logo_blanco.png" alt="BLACKMOUTH">
+      <span>Agencia de publicidad y branding · Cali, Colombia · +57 313 732 9265</span>
+    </div>
+  </div>
+</div>
+
+<div class="dock">
+  <span>Vigente hasta el 2 de octubre</span>
+  <a href="https://wa.me/message/RZ4RFIU4PD4FJ1" rel="noopener">Hablemos</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
+  var secciones = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  function marcar(){
+    var activo = -1;
+    secciones.forEach(function(s, i){ if (s && s.getBoundingClientRect().top <= 150) activo = i; });
+    links.forEach(function(a, i){ a.classList.toggle("on", i === activo); });
+  }
+  if (links.length) {
+    marcar();
+    var esperando = false;
+    window.addEventListener("scroll", function(){
+      if (esperando) return;
+      esperando = true;
+      window.requestAnimationFrame(function(){ marcar(); esperando = false; });
+    }, {passive:true});
+  }
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  document.body.classList.add("anim");
+  var objetivos = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+  setTimeout(function(){ objetivos.forEach(function(el){ el.classList.add("in"); }); }, 8000);
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); } });
+  }, {rootMargin:"0px 0px -6% 0px", threshold:0.05});
+  objetivos.forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.95) { el.classList.add("in"); } else { obs.observe(el); }
+  });
+})();
+</script>
+</body>
+</html>
