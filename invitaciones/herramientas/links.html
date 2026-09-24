@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Links por invitado</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://use.typekit.net/dfu3yuy.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --black:#000; --white:#fff; --orange:#F39200;
+  --g1:#F4F4F4; --g2:#E2E2E2; --g3:#6B6B6B;
+  --f:"franklin-gothic-atf","Libre Franklin","Franklin Gothic Medium",Arial,sans-serif;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--white); color:var(--black); font-family:var(--f); font-size:15px; line-height:1.5; }
+header{ background:var(--black); color:var(--white); padding:28px 20px; }
+header h1{ margin:0; font-weight:900; font-size:clamp(26px,6vw,40px); line-height:1; letter-spacing:-.01em; }
+header p{ margin:8px 0 0; color:#CFCFCF; max-width:640px; }
+main{ max-width:980px; margin:0 auto; padding:24px 16px 60px; display:grid; gap:22px; }
+label{ display:block; font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px; }
+.hint{ color:var(--g3); font-size:13px; margin:6px 0 0; }
+input, textarea{ width:100%; font:inherit; border:1px solid var(--g2); border-radius:8px; padding:12px; background:var(--g1); }
+input:focus, textarea:focus{ outline:2px solid var(--orange); outline-offset:1px; background:var(--white); }
+textarea{ min-height:150px; resize:vertical; }
+.row{ display:grid; gap:18px; grid-template-columns:1fr; }
+@media (min-width:760px){ .row{ grid-template-columns:1fr 1fr; } }
+.btns{ display:flex; gap:10px; flex-wrap:wrap; }
+button, .btn{
+  font:inherit; font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+  border:0; border-radius:100px; padding:12px 18px; cursor:pointer; background:var(--black); color:var(--white); text-decoration:none;
+}
+button.alt{ background:var(--white); color:var(--black); box-shadow:inset 0 0 0 1px var(--black); }
+button:focus-visible, .btn:focus-visible{ outline:3px solid var(--orange); outline-offset:2px; }
+table{ width:100%; border-collapse:collapse; font-size:14px; }
+th{ text-align:left; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--g3); padding:8px 6px; border-bottom:2px solid var(--black); }
+td{ padding:10px 6px; border-bottom:1px solid var(--g2); vertical-align:top; }
+td.url{ word-break:break-all; color:var(--g3); font-size:12.5px; }
+td .mini{ padding:8px 12px; font-size:11px; margin:0 6px 6px 0; }
+.count{ font-weight:900; font-size:22px; }
+.count b{ color:var(--orange); }
+.empty{ color:var(--g3); padding:18px 0; }
+.toast{ position:fixed; left:50%; bottom:20px; transform:translateX(-50%); background:var(--black); color:var(--white); padding:10px 16px; border-radius:100px; opacity:0; transition:opacity .3s; pointer-events:none; }
+.toast.show{ opacity:1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Links por invitado</h1>
+  <p>Pega la lista de invitados y sale un link para cada uno, con su nombre y sus cupos. Nada de esto se guarda: todo pasa en este navegador.</p>
+</header>
+<main>
+  <div class="row">
+    <div>
+      <label for="base">Link de la invitación</label>
+      <input id="base" type="url" placeholder="https://…/demos/xv/" value="">
+      <p class="hint">El link general, sin nada después de la barra final.</p>
+    </div>
+    <div>
+      <label for="msg">Mensaje para WhatsApp</label>
+      <textarea id="msg" style="min-height:96px">Hola {nombre} 💜 Esta es su invitación. Ábranla aquí: {link}</textarea>
+      <p class="hint">{nombre} y {link} se reemplazan solos.</p>
+    </div>
+  </div>
+  <div>
+    <label for="lista">Invitados · uno por línea: nombre, cupos</label>
+    <textarea id="lista" placeholder="Familia Gómez, 4&#10;Tía Carmen, 2&#10;Juan Pablo Rivas, 1"></textarea>
+    <p class="hint">Si no pones cupos, queda el número que trae la invitación.</p>
+  </div>
+  <div class="btns">
+    <button type="button" id="go">Generar links</button>
+    <button type="button" class="alt" id="csv">Descargar CSV</button>
+    <button type="button" class="alt" id="all">Copiar todos los mensajes</button>
+  </div>
+  <p class="count" id="count"></p>
+  <div id="out"><p class="empty">Todavía no hay links.</p></div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  let rows = [];
+  const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1800); };
+  const copy = async txt => { try { await navigator.clipboard.writeText(txt); toast('Copiado'); } catch (e) { prompt('Copia esto:', txt); } };
+
+  function build(){
+    let base = $('#base').value.trim();
+    if (!base) { toast('Falta el link de la invitación'); $('#base').focus(); return; }
+    base = base.split('?')[0];
+    rows = $('#lista').value.split('\n').map(l => l.trim()).filter(Boolean).map(l => {
+      const m = l.match(/^(.*?)(?:[,;\t]\s*(\d{1,2}))?$/);
+      const nombre = m[1].trim();
+      const cupos = m[2] ? parseInt(m[2], 10) : null;
+      const q = new URLSearchParams({ invitado: nombre });
+      if (cupos) q.set('cupos', cupos);
+      const link = base + '?' + q.toString();
+      const texto = $('#msg').value.split('{nombre}').join(nombre).split('{link}').join(link);
+      return { nombre, cupos, link, texto };
+    });
+    render();
+  }
+  function render(){
+    const out = $('#out');
+    out.replaceChildren();
+    if (!rows.length) { out.innerHTML = '<p class="empty">Todavía no hay links.</p>'; $('#count').textContent = ''; return; }
+    const total = rows.reduce((t, r) => t + (r.cupos || 0), 0);
+    $('#count').innerHTML = '';
+    $('#count').append(rows.length + ' invitaciones');
+    if (total) { const b = document.createElement('b'); b.textContent = ' · ' + total + ' cupos'; $('#count').append(b); }
+    const table = document.createElement('table');
+    table.innerHTML = '<thead><tr><th>Invitado</th><th>Cupos</th><th>Link</th><th></th></tr></thead>';
+    const tb = document.createElement('tbody');
+    rows.forEach(r => {
+      const tr = document.createElement('tr');
+      const td = t => { const c = document.createElement('td'); c.textContent = t; return c; };
+      const u = td(r.link); u.className = 'url';
+      const act = document.createElement('td');
+      const b1 = document.createElement('button'); b1.className = 'alt mini'; b1.type = 'button'; b1.textContent = 'Copiar link'; b1.onclick = () => copy(r.link);
+      const b2 = document.createElement('a'); b2.className = 'btn mini'; b2.textContent = 'WhatsApp';
+      b2.href = 'https://wa.me/?text=' + encodeURIComponent(r.texto);  b2.rel = 'noopener';
+      act.append(b1, b2);
+      tr.append(td(r.nombre), td(r.cupos || '—'), u, act);
+      tb.append(tr);
+    });
+    table.append(tb);
+    out.append(table);
+  }
+  $('#go').onclick = build;
+  $('#all').onclick = () => rows.length ? copy(rows.map(r => r.texto).join('\n\n')) : toast('Primero genera los links');
+  $('#csv').onclick = () => {
+    if (!rows.length) return toast('Primero genera los links');
+    const esc = s => '"' + String(s).replace(/"/g, '""') + '"';
+    const csv = '﻿Invitado,Cupos,Link,Mensaje\n' + rows.map(r => [r.nombre, r.cupos || '', r.link, r.texto].map(esc).join(',')).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    a.download = 'links-invitados.csv'; a.click();
+  };
+})();
+</script>
+</body>
+</html>

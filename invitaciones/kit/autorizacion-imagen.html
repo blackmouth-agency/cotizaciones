@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autorización de uso de imagen</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;900&display=swap">
+<style>
+:root{ --ink:#111; --g:#666; --line:#BBB; --f:"Libre Franklin", Arial, sans-serif; }
+*{ box-sizing:border-box; }
+body{ margin:0; background:#EEE; color:var(--ink); font-family:var(--f); font-size:14px; line-height:1.55; }
+.bar{ max-width:800px; margin:20px auto 0; padding:0 16px; display:flex; gap:10px; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+.bar p{ margin:0; color:var(--g); font-size:13px; max-width:520px; }
+.bar button{ font:inherit; font-weight:700; border:0; border-radius:100px; padding:11px 18px; background:#000; color:#fff; cursor:pointer; }
+.page{ max-width:800px; margin:16px auto 40px; background:#fff; padding:48px clamp(20px,6vw,60px); box-shadow:0 2px 14px rgba(0,0,0,.08); }
+h1{ font-size:22px; font-weight:900; margin:0 0 4px; letter-spacing:-.01em; }
+.sub{ color:var(--g); margin:0 0 26px; font-size:12.5px; }
+p{ margin:0 0 12px; }
+.f{ display:inline-block; min-width:220px; border-bottom:1px solid var(--line); height:1.2em; vertical-align:bottom; }
+.f.s{ min-width:110px; }
+ol{ padding-left:20px; margin:6px 0 16px; }
+li{ margin-bottom:8px; }
+.check{ display:grid; grid-template-columns:22px 1fr; gap:8px; margin:0 0 10px; }
+.box{ width:15px; height:15px; border:1.5px solid var(--ink); margin-top:3px; }
+.firmas{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:44px; }
+.firma{ border-top:1px solid var(--ink); padding-top:8px; font-size:12.5px; }
+.nota{ margin-top:34px; font-size:11.5px; color:var(--g); border-top:1px dashed var(--line); padding-top:12px; }
+@media print{
+  body{ background:#fff; }
+  .bar{ display:none; }
+  .page{ box-shadow:none; margin:0; max-width:none; padding:18mm 16mm; }
+}
+@media (max-width:560px){ .firmas{ grid-template-columns:1fr; } .f{ min-width:150px; } }
+</style>
+</head>
+<body>
+<div class="bar">
+  <p>Se imprime o se guarda como PDF y la firman los papás antes de publicar cualquier foto de un menor. Es una base: conviene que la revise un abogado antes de usarla con clientes.</p>
+  <button type="button" onclick="window.print()">Imprimir o guardar PDF</button>
+</div>
+<article class="page">
+  <h1>Autorización para el uso de la imagen de un menor de edad en una invitación web</h1>
+  <p class="sub">Ley 1098 de 2006 (Código de la Infancia y la Adolescencia) · Ley 1581 de 2012 y Decreto 1377 de 2013 (protección de datos personales)</p>
+
+  <p>Yo, <span class="f"></span>, identificado(a) con C.C. <span class="f s"></span> de <span class="f s"></span>, y yo, <span class="f"></span>, identificado(a) con C.C. <span class="f s"></span> de <span class="f s"></span>, en calidad de padre, madre o representante legal de <span class="f"></span>, de <span class="f s"></span> años de edad, autorizamos a <span class="f"></span> (en adelante, <b>el prestador</b>) para usar fotografías y videos de nuestro(a) hijo(a) únicamente en la invitación web de su evento de <span class="f"></span>, programado para el <span class="f s"></span>.</p>
+
+  <p>Esta autorización se da bajo las siguientes condiciones:</p>
+  <ol>
+    <li><b>Uso único.</b> Las imágenes se usan solo en la invitación de este evento. No se usan en publicidad, portafolio ni redes sociales del prestador sin una autorización aparte y por escrito.</li>
+    <li><b>Acceso restringido.</b> La invitación se publica en un enlace que solo reciben los invitados y se configura para que no aparezca en buscadores como Google.</li>
+    <li><b>Retiro.</b> Las fotos y la invitación se retiran del servidor a más tardar <span class="f s"></span> días después del evento. La hoja de confirmaciones se borra en el mismo plazo.</li>
+    <li><b>Revisión previa.</b> Los padres aprueban la invitación completa antes de que se envíe a los invitados.</li>
+    <li><b>Revocación.</b> Podemos retirar esta autorización en cualquier momento escribiendo a <span class="f"></span>. El prestador retira las imágenes en un máximo de 3 días hábiles.</li>
+    <li><b>Sin costo.</b> Esta autorización no genera pago a favor de ninguna de las partes.</li>
+  </ol>
+
+  <p>Marcar lo que aplica:</p>
+  <div class="check"><span class="box"></span><span>Autorizamos mostrar fotos de la sesión en la galería de la invitación.</span></div>
+  <div class="check"><span class="box"></span><span>Autorizamos mostrar el nombre completo del menor. Si no se marca, solo aparece el primer nombre.</span></div>
+  <div class="check"><span class="box"></span><span>Autorizamos activar un álbum compartido para que los invitados suban fotos del evento.</span></div>
+
+  <p style="margin-top:16px">Ciudad y fecha: <span class="f"></span></p>
+
+  <div class="firmas">
+    <div class="firma">Firma madre o representante legal<br>C.C.</div>
+    <div class="firma">Firma padre o representante legal<br>C.C.</div>
+  </div>
+  <div class="firmas" style="margin-top:36px">
+    <div class="firma">Firma del prestador<br>NIT o C.C.</div>
+    <div class="firma" style="border-top-style:dashed">Huella (opcional)</div>
+  </div>
+
+  <p class="nota">Documento base preparado para el servicio de invitaciones web. No reemplaza la asesoría de un abogado.</p>
+</article>
+</body>
+</html>
