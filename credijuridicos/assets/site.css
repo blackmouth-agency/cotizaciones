@@ -273,6 +273,7 @@ html:not(.listo) .hero__pluma { opacity: 0; }
 }
 .hero__bajar { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
 .hero__bajar svg { width: 18px; height: 18px; transform: rotate(90deg); animation: bajar 1.8s var(--ease) infinite; }
+@keyframes flotar { 50% { translate: 0 -8px; } }
 @keyframes bajar { 50% { transform: rotate(90deg) translateX(6px); } }
 
 /* ---------- Marquesina ---------- */
@@ -553,8 +554,16 @@ html[data-modo="e"] .pie { border-top: 1px solid var(--linea); }
 @media (max-width: 900px) {
   .calc__caja, .reloj, .chequeo, .cierre__cuerpo { grid-template-columns: 1fr; }
   .calc__res { position: static; }
-  .hero__pluma { width: 46vw; right: -6vw; top: 96px; opacity: .95; }
-  .hero { grid-template-rows: 1fr auto auto; }
+  /* En pantallas angostas la pluma sale de detrás del texto y va arriba, en su propio espacio */
+  .hero { grid-template-rows: 1fr auto auto auto; }
+  .hero__pluma {
+    position: relative; inset: auto; grid-row: 1; align-self: end; justify-self: end;
+    width: clamp(84px, 22vw, 150px); margin-bottom: -8px;
+    transform: rotate(calc(var(--hp, 0) * -10deg)); transform-origin: 50% 100%;
+    animation: flotar 5s ease-in-out infinite;
+  }
+  .hero__svg { filter: drop-shadow(0 16px 24px rgba(238, 29, 69, .25)); }
+  .hero__tinta { display: none; }
   .proceso { height: auto; }
   .proceso__fijo { position: static; height: auto; padding: var(--sec) 0; display: grid; gap: 40px; }
   .proceso__pista { transform: none !important; width: auto; }
@@ -569,7 +578,7 @@ html[data-modo="e"] .pie { border-top: 1px solid var(--linea); }
   .cab__logo { width: 140px; }
   .cab__der .interruptor--mini, .cab__cta { display: none; }
   .hero { padding-top: 96px; gap: 28px; }
-  .hero__pluma { width: 52vw; right: -12vw; top: 84px; }
+  .hero__pluma { width: clamp(84px, 30vw, 124px); }
   .hero__pie { flex-direction: column; align-items: stretch; }
   .interruptor--grande { width: 100%; }
   .interruptor--grande button { padding: 14px 10px; font-size: 16px; }
