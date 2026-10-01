@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b1a3f">
+<title>Carnet estudiantil · Liceo Campestre San Miguel</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#24214f; --navy-2:#1b1a3f; --navy-3:#2f2c66; --ink:#17163a;
+  --red:#b5001b; --red-2:#d4142f;
+  --paper:#ffffff; --paper-2:#f4f4f8; --line:#e3e3ec; --mute:#6b6a86;
+  --ok:#1fb86a;
+  --serif:"Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --esc:url(media/7634bb29db.png);
+  --cw:min(340px, 84vw, calc((100svh - 250px) / 1.585));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--sans); color:var(--paper); background:var(--navy-2);
+  min-height:100svh; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  display:flex; flex-direction:column; align-items:center;
+}
+/* Fondo: degradado + el gesto de la franja del uniforme */
+.bg{position:fixed; inset:0; z-index:-1; overflow:hidden;
+  background:
+    radial-gradient(120% 70% at 50% 0%, #3a3780 0%, transparent 60%),
+    radial-gradient(90% 60% at 50% 110%, #2a0f2f 0%, transparent 70%),
+    var(--navy-2);}
+.bg .stripe{position:absolute; top:-20%; left:58%; width:110px; height:150%;
+  transform:rotate(14deg); display:flex; gap:10px; opacity:.16; filter:blur(.3px);
+  animation:drift 18s ease-in-out infinite alternate}
+.bg .stripe i{display:block; width:46px; height:100%; background:var(--red)}
+.bg .stripe i+i{width:30px; background:#fff}
+.bg .grain{position:absolute; inset:0; opacity:.05;
+  background-image:repeating-linear-gradient(0deg, #fff 0 1px, transparent 1px 3px)}
+@keyframes drift{to{transform:rotate(9deg) translateX(-40px)}}
+
+header.top{width:100%; max-width:520px; padding:max(14px, env(safe-area-inset-top)) 16px 0;
+  display:flex; align-items:center; justify-content:space-between; gap:12px}
+.brand{display:flex; align-items:center; gap:10px; min-width:0}
+.brand .seal{width:30px; height:34px; background:#fff; border-radius:7px; display:grid; place-items:center; flex:none}
+.brand .seal img{height:24px}
+.brand b{display:block; font-family:var(--serif); font-size:15px; font-weight:700; letter-spacing:.01em; white-space:nowrap}
+.brand span{display:block; font-size:11px; color:#b9b8d8; letter-spacing:.08em; text-transform:uppercase}
+.now{font-family:var(--mono); font-size:12px; color:#cfcfe8; text-align:right; line-height:1.3; white-space:nowrap}
+.now em{font-style:normal; color:#fff}
+
+/* ---------- Colgante: cinta + carnet ---------- */
+.stage{flex:1; width:100%; display:flex; flex-direction:column; align-items:center; perspective:1400px; padding-bottom:8px}
+.hanger{display:flex; flex-direction:column; align-items:center; transform-origin:50% -60px;
+  animation:drop 1.25s cubic-bezier(.2,1.2,.3,1) both, swing 6s ease-in-out 1.4s infinite}
+.ribbon{width:28px; height:clamp(36px, 9svh, 84px); position:relative;
+  background:linear-gradient(90deg, var(--navy) 0 22%, var(--red) 22% 50%, #fff 50% 72%, var(--navy) 72%);
+  box-shadow:inset 0 -8px 10px -6px rgba(0,0,0,.45)}
+.ribbon::after{content:""; position:absolute; inset:0; background:repeating-linear-gradient(0deg, rgba(0,0,0,.07) 0 2px, transparent 2px 4px)}
+.clip{width:44px; height:30px; margin-top:-4px; position:relative; z-index:2;
+  border-radius:8px 8px 12px 12px;
+  background:linear-gradient(180deg,#f3f3f7,#a9a9b9 45%,#e5e5ee 55%,#8a8a9c);
+  box-shadow:0 4px 8px rgba(0,0,0,.35), inset 0 1px 0 #fff}
+.clip::after{content:""; position:absolute; left:50%; bottom:-10px; width:10px; height:16px; translate:-50% 0;
+  border:3px solid #b8b8c6; border-top:0; border-radius:0 0 8px 8px}
+@keyframes drop{from{transform:translateY(-120svh) rotate(-8deg)} to{transform:none}}
+@keyframes swing{0%,100%{rotate:-1.2deg} 50%{rotate:1.2deg}}
+
+.tilt{width:var(--cw); margin-top:-2px; transform-style:preserve-3d; transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.tilt.live{transition:transform .08s linear}
+.card{position:relative; width:100%; aspect-ratio:54/85.6; transform-style:preserve-3d; cursor:pointer;
+  transition:transform .9s cubic-bezier(.3,1.35,.4,1); border-radius:4.5cqw; outline:none}
+.tilt{container-type:inline-size}
+.card.flipped{transform:rotateY(180deg)}
+.card:focus-visible{box-shadow:0 0 0 3px #fff, 0 0 0 6px var(--red)}
+.face{position:absolute; inset:0; border-radius:4.5cqw; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  background:var(--paper); color:var(--ink);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.65), 0 10px 20px -10px rgba(0,0,0,.45), inset 0 0 0 1px rgba(0,0,0,.04)}
+.back{transform:rotateY(180deg)}
+/* ranura de la cinta */
+.slot{position:absolute; top:2.6cqw; left:50%; width:15cqw; height:2.8cqw; translate:-50% 0; border-radius:2cqw;
+  background:var(--navy-2); box-shadow:inset 0 1px 2px rgba(0,0,0,.6); z-index:5}
+
+/* Guilloché de seguridad */
+.guilloche{position:absolute; inset:0; opacity:.55; pointer-events:none}
+.guilloche path{fill:none; stroke:#e7e6f1; stroke-width:.6}
+
+/* Holograma que sigue al dedo/cursor */
+.holo{position:absolute; inset:0; pointer-events:none; z-index:8; mix-blend-mode:color-dodge; opacity:var(--ho,.18);
+  background:
+    radial-gradient(60cqw 60cqw at var(--mx,50%) var(--my,30%), rgba(255,255,255,.55), transparent 60%),
+    linear-gradient(115deg, transparent 20%, rgba(255,0,120,.25) 32%, rgba(0,200,255,.28) 42%, rgba(255,240,0,.22) 52%, rgba(120,80,255,.25) 62%, transparent 78%);
+  background-size:100% 100%, 220% 220%; background-position:center, var(--hx,50%) var(--hy,50%);
+  transition:opacity .4s}
+.shine{position:absolute; inset:0; z-index:9; pointer-events:none; overflow:hidden; border-radius:inherit}
+.shine::before{content:""; position:absolute; top:-50%; left:-60%; width:40%; height:200%; rotate:20deg;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+  animation:sweep 1.1s ease-out 1.3s both}
+@keyframes sweep{from{translate:0 0} to{translate:420% 0}}
+
+/* ---------- FRENTE ---------- */
+.f-logo{position:absolute; top:8.6cqw; left:50%; translate:-50% 0; height:10.5cqw; z-index:3}
+.photo{position:absolute; top:25cqw; left:6cqw; right:6cqw; height:72cqw; z-index:2;
+  clip-path:inset(-14cqw 0 0 0 round 0 0 4cqw 4cqw)}
+.photo .panel{position:absolute; inset:0; border-radius:4cqw; overflow:hidden;
+  background:radial-gradient(70% 60% at 50% 30%, #3d3a86 0%, var(--navy) 70%)}
+.photo .panel .band{position:absolute; top:-10%; left:-14%; height:130%; width:26cqw; rotate:16deg; display:flex}
+.photo .panel .band i{flex:1.5; background:var(--red)}
+.photo .panel .band i+i{flex:1; background:#fff}
+.photo .panel .rings{position:absolute; inset:0; opacity:.22;
+  background:repeating-radial-gradient(circle at 80% 18%, transparent 0 7px, rgba(255,255,255,.5) 7px 8px)}
+.photo img.kid{position:absolute; left:50%; bottom:0; height:calc(100% + 11cqw); translate:-50% 0;
+  filter:drop-shadow(0 6px 12px rgba(0,0,0,.35)); animation:rise 1s cubic-bezier(.2,.9,.2,1) .9s both}
+@keyframes rise{from{opacity:0; translate:-50% 8cqw}}
+.photo .seal{position:absolute; right:3cqw; bottom:3cqw; width:12cqw; height:13.5cqw; z-index:3;
+  -webkit-mask:var(--esc) center/contain no-repeat; mask:var(--esc) center/contain no-repeat;
+  background:conic-gradient(from var(--a,0deg), #ff5ea8, #ffe066, #5ef0ff, #8a7dff, #ff5ea8);
+  animation:spin 4s linear infinite; opacity:.9}
+@property --a{syntax:"<angle>"; inherits:false; initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
+.photo .grade{position:absolute; left:3cqw; top:3cqw; z-index:3; background:#fff; color:var(--navy);
+  border-radius:2.4cqw; padding:1.6cqw 2.4cqw; text-align:center; line-height:1;
+  box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.photo .grade small{display:block; font-size:2.3cqw; letter-spacing:.14em; font-weight:800; color:var(--red)}
+.photo .grade b{display:block; font-family:var(--serif); font-size:7cqw; margin-top:.8cqw}
+
+.who{position:absolute; top:101cqw; left:6cqw; right:6cqw; z-index:3}
+.role{display:inline-flex; align-items:center; gap:1.4cqw; font-size:2.6cqw; font-weight:800; letter-spacing:.18em;
+  color:var(--red); text-transform:uppercase}
+.role::before{content:""; width:5cqw; height:.6cqw; background:var(--red); border-radius:1cqw}
+.name{font-family:var(--serif); font-weight:700; color:var(--navy); font-size:9.6cqw; line-height:1; margin-top:1.8cqw; letter-spacing:-.01em}
+.surname{font-family:var(--serif); color:var(--navy); font-size:6cqw; line-height:1.1; margin-top:.6cqw}
+.reveal span{display:inline-block; animation:up .7s cubic-bezier(.2,.9,.2,1) both}
+@keyframes up{from{opacity:0; transform:translateY(60%)}}
+
+.facts{position:absolute; top:127cqw; left:6cqw; right:6cqw; display:grid; grid-template-columns:1fr 1.5fr .8fr; z-index:3;
+  border-top:1px solid var(--line); padding-top:2.4cqw}
+.facts div+div{border-left:1px solid var(--line); padding-left:3cqw}
+.lbl{display:block; font-size:2.3cqw; letter-spacing:.14em; text-transform:uppercase; color:var(--mute); font-weight:700}
+.val{display:block; font-family:var(--mono); font-weight:700; font-size:4.1cqw; color:var(--navy); margin-top:.8cqw}
+.val.red{color:var(--red)}
+
+.status{position:absolute; left:0; right:0; bottom:0; height:13.5cqw; z-index:4; display:flex; align-items:center; justify-content:space-between;
+  padding:0 6cqw; background:var(--navy); color:#fff}
+.status::before{content:""; position:absolute; left:0; right:0; top:0; height:.9cqw;
+  background:linear-gradient(90deg, var(--red) 0 60%, #fff 60% 80%, var(--red) 80%)}
+.status .ok{display:flex; align-items:center; gap:2cqw; font-weight:800; font-size:3.3cqw; letter-spacing:.12em}
+.status .dot{width:2.6cqw; height:2.6cqw; border-radius:50%; background:var(--ok); position:relative}
+.status .dot::after{content:""; position:absolute; inset:0; border-radius:50%; background:var(--ok); animation:ping 1.6s cubic-bezier(0,0,.2,1) infinite}
+.status.expired .dot,.status.expired .dot::after{background:var(--red-2)}
+@keyframes ping{75%,100%{transform:scale(2.6); opacity:0}}
+.status .clock{font-family:var(--mono); font-size:3.4cqw; font-weight:700; letter-spacing:.04em}
+.status .until{font-size:2.4cqw; color:#c7c6e4; text-align:right; line-height:1.25}
+.status .until b{display:block; color:#fff; font-family:var(--mono); font-size:3.1cqw}
+
+/* ---------- REVERSO ---------- */
+.b-head{position:absolute; top:0; left:0; right:0; height:27cqw; background:var(--navy); color:#fff; padding:8cqw 6cqw 0; display:flex; gap:3.4cqw; align-items:center; overflow:hidden}
+.b-head::after{content:""; position:absolute; right:-8cqw; top:-6cqw; width:40cqw; height:40cqw; border-radius:50%;
+  background:repeating-radial-gradient(circle, transparent 0 5px, rgba(255,255,255,.08) 5px 6px)}
+.b-head .badge{width:11cqw; height:12.5cqw; background:#fff; border-radius:2.4cqw; display:grid; place-items:center; flex:none}
+.b-head .badge img{height:9cqw}
+.b-head b{display:block; font-family:var(--serif); font-size:4.6cqw; line-height:1.1}
+.b-head span{display:block; font-size:2.4cqw; letter-spacing:.16em; text-transform:uppercase; color:#c7c6e4; margin-top:1cqw}
+.b-head .bar{position:absolute; left:0; right:0; bottom:0; height:.9cqw; background:linear-gradient(90deg, var(--red) 0 60%, #fff 60% 80%, var(--red) 80%)}
+
+.grid{position:absolute; top:31cqw; left:6cqw; right:6cqw; display:grid; grid-template-columns:1fr 1fr; column-gap:4cqw; row-gap:3cqw; z-index:2}
+.grid .full{grid-column:1/-1}
+.grid .val{font-family:var(--sans); font-size:3.5cqw; font-weight:700; line-height:1.2; margin-top:.6cqw}
+.grid .val.mono{font-family:var(--mono); font-size:3.4cqw}
+.grid a.val{color:var(--red); text-decoration:none}
+.grid .val small{font-weight:600; color:var(--mute); font-size:2.8cqw}
+.pill{display:inline-block; padding:.4cqw 1.8cqw; border-radius:5cqw; background:#fde7ea; color:var(--red); font-family:var(--mono); font-weight:700}
+
+.verify{position:absolute; top:93cqw; left:6cqw; right:6cqw; display:flex; gap:4cqw; align-items:stretch; z-index:2}
+.qr{width:29cqw; height:29cqw; flex:none; padding:1.6cqw; border:1px solid var(--line); border-radius:2.6cqw; background:#fff; position:relative}
+.qr svg{width:100%; height:100%; display:block}
+.qr::after{content:""; position:absolute; left:1.6cqw; right:1.6cqw; height:.7cqw; top:1.6cqw; background:linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity:.8; animation:scan 2.4s ease-in-out infinite; border-radius:1cqw}
+@keyframes scan{50%{top:calc(100% - 2.3cqw)}}
+.sign{flex:1; display:flex; flex-direction:column; justify-content:flex-end; min-width:0}
+.sign svg{width:100%; height:12cqw}
+.sign svg path{fill:none; stroke:var(--navy); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:var(--len); stroke-dashoffset:var(--len)}
+.card.flipped .sign svg path{animation:draw 1.6s ease .55s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sign hr{border:0; border-top:1px solid var(--navy); opacity:.5; margin:.6cqw 0 1.2cqw}
+.sign b{font-size:3cqw; color:var(--navy)}
+.sign span{font-size:2.4cqw; color:var(--mute); letter-spacing:.06em}
+
+.barcode{position:absolute; top:126cqw; left:6cqw; right:6cqw; z-index:2; text-align:center}
+.barcode svg{width:100%; height:9cqw; display:block; fill:var(--ink)}
+.barcode span{font-family:var(--mono); font-size:2.6cqw; letter-spacing:.4em; color:var(--ink)}
+.found{position:absolute; left:0; right:0; bottom:0; padding:2.4cqw 6cqw 3cqw; background:var(--paper-2); font-size:2.4cqw; color:var(--mute); line-height:1.4; text-align:center; z-index:2}
+.found b{color:var(--navy)}
+
+/* ---------- Acciones ---------- */
+.hint{margin-top:14px; font-size:12px; color:#a9a8cc; letter-spacing:.04em; display:flex; align-items:center; gap:8px; animation:fade .6s 1.8s both}
+.hint svg{width:16px; height:16px; animation:turn 2.4s ease-in-out infinite}
+@keyframes turn{50%{transform:rotateY(180deg)}}
+@keyframes fade{from{opacity:0}}
+.actions{position:sticky; bottom:0; width:100%; display:flex; justify-content:center; padding:10px 16px max(14px, env(safe-area-inset-bottom))}
+.dock{display:flex; gap:6px; padding:6px; border-radius:20px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); animation:dockin .7s cubic-bezier(.2,1.2,.3,1) 1.5s both; max-width:100%}
+@keyframes dockin{from{opacity:0; transform:translateY(30px) scale(.95)}}
+.dock button{appearance:none; border:0; background:transparent; color:#fff; font:700 12px/1 var(--sans); letter-spacing:.02em;
+  display:flex; flex-direction:column; align-items:center; gap:6px; padding:9px 12px; border-radius:14px; cursor:pointer; min-width:70px;
+  transition:background .2s, transform .15s}
+.dock button:hover{background:rgba(255,255,255,.1)}
+.dock button:active{transform:scale(.94)}
+.dock button:focus-visible{outline:2px solid #fff; outline-offset:2px}
+.dock svg{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.dock .sos{background:var(--red)}
+.dock .sos:hover{background:var(--red-2)}
+
+/* ---------- Hojas modales ---------- */
+.sheet{position:fixed; inset:0; z-index:50; display:grid; align-items:end; justify-items:center; pointer-events:none}
+.sheet .scrim{position:absolute; inset:0; background:rgba(10,10,30,.6); opacity:0; transition:opacity .3s; backdrop-filter:blur(4px)}
+.sheet .panel{position:relative; width:min(520px, 100%); background:#fff; color:var(--ink); border-radius:26px 26px 0 0;
+  padding:12px 20px max(22px, env(safe-area-inset-bottom)); transform:translateY(105%); transition:transform .45s cubic-bezier(.2,1,.3,1);
+  max-height:92svh; overflow:auto}
+.sheet.open{pointer-events:auto}
+.sheet.open .scrim{opacity:1}
+.sheet.open .panel{transform:none}
+.grab{width:42px; height:5px; border-radius:5px; background:#d7d7e3; margin:0 auto 14px}
+.sheet h2{font-family:var(--serif); font-size:22px; color:var(--navy); line-height:1.15}
+.sheet p.sub{color:var(--mute); font-size:13px; margin-top:4px}
+.close{position:absolute; right:14px; top:14px; width:34px; height:34px; border-radius:50%; border:0; background:var(--paper-2); color:var(--navy); font-size:18px; cursor:pointer}
+
+.bigqr{margin:18px auto 10px; width:min(300px, 74vw); aspect-ratio:1; padding:16px; border-radius:20px; border:2px solid var(--navy); position:relative}
+.bigqr svg{width:100%; height:100%; display:block}
+.bigqr .live{position:absolute; left:50%; top:50%; translate:-50% -50%; width:22%; aspect-ratio:1; background:#fff; border-radius:14px; display:grid; place-items:center; box-shadow:0 0 0 4px #fff}
+.bigqr .live img{width:70%}
+.qrmeta{text-align:center; font-family:var(--mono); font-size:13px; color:var(--navy)}
+.qrmeta .tick{display:inline-flex; align-items:center; gap:8px; margin-top:8px; padding:6px 12px; border-radius:30px; background:#e7f8ef; color:#0d7a43; font-weight:700}
+.qrmeta .tick i{width:8px; height:8px; border-radius:50%; background:var(--ok); animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+
+.sos-top{display:flex; gap:12px; align-items:center; margin-top:14px; padding:14px; border-radius:16px; background:#fff3f4; border:1px solid #f6cdd3}
+.sos-top img{width:56px; height:70px; object-fit:cover; object-position:50% 10%; border-radius:12px; background:var(--navy)}
+.sos-top b{display:block; font-family:var(--serif); font-size:17px; color:var(--navy)}
+.sos-top span{font-size:12px; color:var(--mute)}
+.med{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px}
+.med div{background:var(--paper-2); border-radius:14px; padding:10px 12px}
+.med .lbl{font-size:10px}
+.med .val{font-size:15px; font-family:var(--sans)}
+.calls{display:grid; gap:10px; margin-top:14px}
+.call{display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:16px; text-decoration:none; color:#fff; background:var(--navy); font-weight:700}
+.call.primary{background:var(--red)}
+.call svg{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; flex:none}
+.call small{display:block; font-weight:600; opacity:.8; font-size:12px; margin-top:2px; font-family:var(--mono)}
+.call .go{margin-left:auto; opacity:.7}
+
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important}
+  .hanger{animation:none}
+}
+@media (min-height:900px){ :root{--cw:min(360px, 84vw, calc((100svh - 260px) / 1.585))} }
+</style>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Carnet estudiantil · Liceo Campestre San Miguel">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/carnet-digital/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/carnet-digital/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<img id="escSrc" src="media/7634bb29db.png" alt="" hidden>
+<div class="bg" aria-hidden="true"><div class="stripe"><i></i><i></i></div><div class="grain"></div></div>
+
+<header class="top">
+  <div class="brand">
+    <div class="seal"><img data-esc alt=""></div>
+    <div><b>Carnet digital</b><span>Año lectivo 2026 – 2027</span></div>
+  </div>
+  <div class="now" aria-live="off"><em id="hdrTime">--:--:--</em><br><span id="hdrDate">—</span></div>
+</header>
+
+<main class="stage">
+  <div class="hanger" id="hanger">
+    <div class="ribbon" aria-hidden="true"></div>
+    <div class="clip" aria-hidden="true"></div>
+    <div class="tilt" id="tilt">
+      <div class="card" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Carnet estudiantil de Valentina Ospina Rincón. Toca para ver el reverso.">
+
+        <!-- FRENTE -->
+        <section class="face front" aria-label="Frente del carnet">
+          <svg class="guilloche" viewBox="0 0 100 158" preserveAspectRatio="none" aria-hidden="true" id="guiF"></svg>
+          <div class="slot"></div>
+          <img class="f-logo" src="media/1c02c6b2f5.png" alt="Liceo Campestre San Miguel">
+          <div class="photo">
+            <div class="panel"><div class="band"><i></i><i></i></div><div class="rings"></div></div>
+            <img class="kid" src="media/ba91f930e5.webp" alt="Foto de Valentina Ospina Rincón">
+            <div class="grade"><small>Curso</small><b>1°A</b></div>
+            <div class="seal" title="Sello holográfico"></div>
+          </div>
+          <div class="who">
+            <div class="role">Estudiante</div>
+            <div class="name reveal" data-text="Valentina"></div>
+            <div class="surname reveal" data-text="Ospina Rincón" data-delay="300"></div>
+          </div>
+          <div class="facts">
+            <div><span class="lbl">Grado</span><span class="val">Primero</span></div>
+            <div><span class="lbl">Código</span><span class="val">2026-0147</span></div>
+            <div><span class="lbl">RH</span><span class="val red">O+</span></div>
+          </div>
+          <div class="status" id="status">
+            <div>
+              <div class="ok"><span class="dot"></span><span id="stTxt">VIGENTE</span></div>
+            </div>
+            <div class="clock" id="clock" title="Hora en vivo: una captura de pantalla no se mueve">--:--:--</div>
+            <div class="until">Hasta<b>30·06·27</b></div>
+          </div>
+          <div class="holo"></div>
+          <div class="shine"></div>
+        </section>
+
+        <!-- REVERSO -->
+        <section class="face back" aria-label="Reverso del carnet">
+          <svg class="guilloche" viewBox="0 0 100 158" preserveAspectRatio="none" aria-hidden="true" id="guiB"></svg>
+          <div class="slot"></div>
+          <div class="b-head">
+            <div class="badge"><img data-esc alt=""></div>
+            <div><b>Liceo Campestre<br>San Miguel</b><span>Información del estudiante</span></div>
+            <div class="bar"></div>
+          </div>
+          <div class="grid">
+            <div><span class="lbl">Documento</span><span class="val mono">T.I. 1.114.836.502</span></div>
+            <div><span class="lbl">Nacimiento</span><span class="val">14 mar 2020 <small id="age"></small></span></div>
+            <div><span class="lbl">Jornada</span><span class="val">Única <small>7:00 – 2:30</small></span></div>
+            <div><span class="lbl">Directora de grupo</span><span class="val">Prof. Andrea Muñoz</span></div>
+            <div><span class="lbl">Acudiente</span><span class="val">Carolina Rincón <small>Madre</small></span></div>
+            <div><span class="lbl">Teléfono</span><a class="val mono" href="tel:+573154829061" data-stop>315 482 9061</a></div>
+            <div><span class="lbl">EPS</span><span class="val">Nueva EPS</span></div>
+            <div><span class="lbl">Alergias</span><span class="val">Ninguna conocida</span></div>
+            <div class="full"><span class="lbl">Ruta escolar</span><span class="val">Ruta 3 <small>· Paradero Parque Principal · 6:25 a.m.</small></span></div>
+          </div>
+          <div class="verify">
+            <div class="qr" aria-label="Código QR de verificación"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="#1f1f4f" d="M0 0.5h7m3 0h2m3 0h1m1 0h1m5 0h4m1 0h1m1 0h7m-37 1h1m5 0h1m2 0h5m1 0h1m2 0h1m2 0h1m2 0h2m4 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m2 0h2m5 0h3m1 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h1m1 0h4m1 0h2m2 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m2 0h1m2 0h4m2 0h2m2 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-28 1h1m2 0h2m1 0h4m1 0h3m1 0h1m3 0h1m-28 1h1m2 0h1m1 0h1m1 0h1m1 0h4m6 0h1m1 0h2m2 0h1m1 0h2m1 0h2m1 0h1m-31 1h1m2 0h1m1 0h2m2 0h2m1 0h1m2 0h1m5 0h1m1 0h1m1 0h1m1 0h4m1 0h1m-35 1h1m3 0h1m3 0h2m1 0h1m4 0h1m2 0h3m2 0h3m1 0h5m-32 1h3m1 0h3m5 0h2m2 0h3m1 0h1m3 0h2m2 0h1m2 0h1m1 0h1m-37 1h2m2 0h4m1 0h4m2 0h3m1 0h1m1 0h2m6 0h2m1 0h2m2 0h1m-35 1h3m2 0h1m1 0h1m1 0h5m1 0h1m2 0h5m3 0h2m2 0h4m-35 1h1m3 0h3m2 0h1m2 0h1m1 0h1m5 0h1m1 0h1m3 0h2m1 0h1m2 0h3m-34 1h3m6 0h9m1 0h1m1 0h1m2 0h2m1 0h1m4 0h2m-33 1h2m1 0h2m1 0h1m2 0h3m1 0h3m1 0h2m3 0h1m1 0h4m5 0h1m-32 1h1m4 0h2m2 0h4m2 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-37 1h2m1 0h1m2 0h3m5 0h2m1 0h1m1 0h2m2 0h1m1 0h3m3 0h2m1 0h1m-35 1h3m1 0h1m2 0h1m1 0h1m1 0h1m3 0h3m3 0h3m4 0h4m1 0h3m-36 1h1m1 0h2m1 0h2m2 0h1m3 0h1m3 0h1m1 0h1m1 0h1m2 0h2m2 0h8m-34 1h1m1 0h2m1 0h2m3 0h1m2 0h3m1 0h1m1 0h1m3 0h1m2 0h1m1 0h1m1 0h4m-36 1h2m2 0h3m2 0h1m1 0h2m3 0h4m1 0h7m1 0h4m-29 1h1m5 0h2m2 0h3m4 0h1m1 0h1m2 0h2m1 0h2m3 0h1m-32 1h6m3 0h2m2 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m3 0h1m-37 1h1m1 0h3m2 0h2m1 0h1m7 0h2m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m2 0h1m-35 1h3m1 0h3m1 0h4m3 0h3m1 0h1m1 0h2m1 0h3m1 0h2m1 0h1m-32 1h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m3 0h1m1 0h4m4 0h2m2 0h1m1 0h3m-37 1h2m3 0h3m3 0h1m3 0h3m1 0h1m1 0h1m4 0h1m1 0h5m2 0h1m-28 1h2m1 0h1m2 0h2m4 0h1m1 0h3m3 0h1m3 0h1m2 0h1m-36 1h7m4 0h2m1 0h1m1 0h2m4 0h2m1 0h4m1 0h1m1 0h1m2 0h1m-36 1h1m5 0h1m3 0h4m2 0h1m2 0h3m6 0h1m3 0h1m1 0h1m-35 1h1m1 0h3m1 0h1m1 0h5m2 0h2m2 0h3m3 0h1m2 0h6m1 0h1m-36 1h1m1 0h3m1 0h1m3 0h2m2 0h3m2 0h2m1 0h6m1 0h3m1 0h1m1 0h1m-36 1h1m1 0h3m1 0h1m2 0h1m2 0h3m3 0h1m2 0h4m1 0h4m3 0h3m-36 1h1m5 0h1m1 0h5m1 0h3m1 0h1m2 0h1m1 0h2m3 0h1m1 0h1m1 0h4m-36 1h7m3 0h1m1 0h1m2 0h2m2 0h2m1 0h4m1 0h1m1 0h1m3 0h4"/></svg></div>
+            <div class="sign">
+              <svg viewBox="0 0 120 40" aria-hidden="true"><path id="sig" d="M6 30c6-10 10-22 14-20s-6 22-2 22 8-16 12-16-2 12 2 12 6-10 10-10 0 8 4 8 4-6 8-7c3 0 2 6 6 6 5 0 6-12 11-12 3 0-1 12 3 12s6-6 10-6 2 4 6 3c5-1 9-8 14-9"/></svg>
+              <hr>
+              <b>Mg. Claudia P. Vélez</b>
+              <span>Rectora</span>
+            </div>
+          </div>
+          <div class="barcode"><svg viewBox="0 0 134 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="2" height="40"/><rect x="3" y="0" width="1" height="40"/><rect x="6" y="0" width="1" height="40"/><rect x="11" y="0" width="1" height="40"/><rect x="15" y="0" width="2" height="40"/><rect x="18" y="0" width="3" height="40"/><rect x="22" y="0" width="1" height="40"/><rect x="26" y="0" width="1" height="40"/><rect x="30" y="0" width="2" height="40"/><rect x="33" y="0" width="2" height="40"/><rect x="36" y="0" width="3" height="40"/><rect x="40" y="0" width="1" height="40"/><rect x="44" y="0" width="1" height="40"/><rect x="46" y="0" width="3" height="40"/><rect x="50" y="0" width="2" height="40"/><rect x="55" y="0" width="1" height="40"/><rect x="57" y="0" width="3" height="40"/><rect x="61" y="0" width="4" height="40"/><rect x="66" y="0" width="2" height="40"/><rect x="70" y="0" width="1" height="40"/><rect x="73" y="0" width="3" height="40"/><rect x="77" y="0" width="3" height="40"/><rect x="82" y="0" width="1" height="40"/><rect x="85" y="0" width="2" height="40"/><rect x="88" y="0" width="2" height="40"/><rect x="92" y="0" width="2" height="40"/><rect x="95" y="0" width="2" height="40"/><rect x="99" y="0" width="1" height="40"/><rect x="103" y="0" width="3" height="40"/><rect x="107" y="0" width="2" height="40"/><rect x="110" y="0" width="3" height="40"/><rect x="115" y="0" width="2" height="40"/><rect x="118" y="0" width="1" height="40"/><rect x="121" y="0" width="2" height="40"/><rect x="126" y="0" width="3" height="40"/><rect x="130" y="0" width="1" height="40"/><rect x="132" y="0" width="2" height="40"/></svg><span>LCSM20260147</span></div>
+          <div class="found">Expedido el <b>31 ago 2026</b> · <span id="left"></span><br>
+            Si encuentras este carnet, comunícate con el colegio: <b>(602) 228 4410</b></div>
+          <div class="holo"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <p class="hint" id="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/></svg>Toca el carnet para voltearlo</p>
+</main>
+
+<nav class="actions" aria-label="Acciones del carnet">
+  <div class="dock">
+    <button id="bFlip" type="button"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>Voltear</button>
+    <button id="bQr" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>Verificar</button>
+    <button id="bSos" type="button" class="sos"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.01"/></svg>Emergencia</button>
+  </div>
+</nav>
+
+<!-- Hoja: QR de verificación -->
+<div class="sheet" id="sheetQr" role="dialog" aria-modal="true" aria-labelledby="tQr">
+  <div class="scrim" data-close></div>
+  <div class="panel">
+    <div class="grab"></div>
+    <button class="close" data-close aria-label="Cerrar">✕</button>
+    <h2 id="tQr">Verificación en portería</h2>
+    <p class="sub">Muestra esta pantalla. El reloj en vivo demuestra que no es una captura.</p>
+    <div class="bigqr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="#1f1f4f" d="M0 0.5h7m3 0h2m3 0h1m1 0h1m5 0h4m1 0h1m1 0h7m-37 1h1m5 0h1m2 0h5m1 0h1m2 0h1m2 0h1m2 0h2m4 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m2 0h2m5 0h3m1 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h1m1 0h4m1 0h2m2 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m2 0h1m2 0h4m2 0h2m2 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-28 1h1m2 0h2m1 0h4m1 0h3m1 0h1m3 0h1m-28 1h1m2 0h1m1 0h1m1 0h1m1 0h4m6 0h1m1 0h2m2 0h1m1 0h2m1 0h2m1 0h1m-31 1h1m2 0h1m1 0h2m2 0h2m1 0h1m2 0h1m5 0h1m1 0h1m1 0h1m1 0h4m1 0h1m-35 1h1m3 0h1m3 0h2m1 0h1m4 0h1m2 0h3m2 0h3m1 0h5m-32 1h3m1 0h3m5 0h2m2 0h3m1 0h1m3 0h2m2 0h1m2 0h1m1 0h1m-37 1h2m2 0h4m1 0h4m2 0h3m1 0h1m1 0h2m6 0h2m1 0h2m2 0h1m-35 1h3m2 0h1m1 0h1m1 0h5m1 0h1m2 0h5m3 0h2m2 0h4m-35 1h1m3 0h3m2 0h1m2 0h1m1 0h1m5 0h1m1 0h1m3 0h2m1 0h1m2 0h3m-34 1h3m6 0h9m1 0h1m1 0h1m2 0h2m1 0h1m4 0h2m-33 1h2m1 0h2m1 0h1m2 0h3m1 0h3m1 0h2m3 0h1m1 0h4m5 0h1m-32 1h1m4 0h2m2 0h4m2 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-37 1h2m1 0h1m2 0h3m5 0h2m1 0h1m1 0h2m2 0h1m1 0h3m3 0h2m1 0h1m-35 1h3m1 0h1m2 0h1m1 0h1m1 0h1m3 0h3m3 0h3m4 0h4m1 0h3m-36 1h1m1 0h2m1 0h2m2 0h1m3 0h1m3 0h1m1 0h1m1 0h1m2 0h2m2 0h8m-34 1h1m1 0h2m1 0h2m3 0h1m2 0h3m1 0h1m1 0h1m3 0h1m2 0h1m1 0h1m1 0h4m-36 1h2m2 0h3m2 0h1m1 0h2m3 0h4m1 0h7m1 0h4m-29 1h1m5 0h2m2 0h3m4 0h1m1 0h1m2 0h2m1 0h2m3 0h1m-32 1h6m3 0h2m2 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m3 0h1m-37 1h1m1 0h3m2 0h2m1 0h1m7 0h2m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m2 0h1m-35 1h3m1 0h3m1 0h4m3 0h3m1 0h1m1 0h2m1 0h3m1 0h2m1 0h1m-32 1h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m3 0h1m1 0h4m4 0h2m2 0h1m1 0h3m-37 1h2m3 0h3m3 0h1m3 0h3m1 0h1m1 0h1m4 0h1m1 0h5m2 0h1m-28 1h2m1 0h1m2 0h2m4 0h1m1 0h3m3 0h1m3 0h1m2 0h1m-36 1h7m4 0h2m1 0h1m1 0h2m4 0h2m1 0h4m1 0h1m1 0h1m2 0h1m-36 1h1m5 0h1m3 0h4m2 0h1m2 0h3m6 0h1m3 0h1m1 0h1m-35 1h1m1 0h3m1 0h1m1 0h5m2 0h2m2 0h3m3 0h1m2 0h6m1 0h1m-36 1h1m1 0h3m1 0h1m3 0h2m2 0h3m2 0h2m1 0h6m1 0h3m1 0h1m1 0h1m-36 1h1m1 0h3m1 0h1m2 0h1m2 0h3m3 0h1m2 0h4m1 0h4m3 0h3m-36 1h1m5 0h1m1 0h5m1 0h3m1 0h1m2 0h1m1 0h2m3 0h1m1 0h1m1 0h4m-36 1h7m3 0h1m1 0h1m2 0h2m2 0h2m1 0h4m1 0h1m1 0h1m3 0h4"/></svg><div class="live"><img data-esc alt=""></div></div>
+    <div class="qrmeta">VALENTINA OSPINA RINCÓN · 1°A · 2026-0147<br><span class="tick"><i></i><span id="qrTime">--:--:--</span> · <span id="qrState">Vigente</span></span></div>
+  </div>
+</div>
+
+<!-- Hoja: emergencia -->
+<div class="sheet" id="sheetSos" role="dialog" aria-modal="true" aria-labelledby="tSos">
+  <div class="scrim" data-close></div>
+  <div class="panel">
+    <div class="grab"></div>
+    <button class="close" data-close aria-label="Cerrar">✕</button>
+    <h2 id="tSos">Información de emergencia</h2>
+    <p class="sub">Para docentes, portería y primeros respondientes.</p>
+    <div class="sos-top"><img src="media/ba91f930e5.webp" alt=""><div><b>Valentina Ospina Rincón</b><span><span id="age2"></span> · Grado 1°A · Ruta 3</span></div></div>
+    <div class="med">
+      <div><span class="lbl">RH</span><span class="val red">O+</span></div>
+      <div><span class="lbl">EPS</span><span class="val">Nueva EPS</span></div>
+      <div><span class="lbl">Alergias</span><span class="val">Ninguna</span></div>
+    </div>
+    <div class="calls">
+      <a class="call primary" href="tel:+573154829061"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Llamar a Carolina Rincón (madre)<small>315 482 9061</small></span><span class="go">→</span></a>
+      <a class="call" href="tel:+576022284410"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-5h4v5"/></svg><span>Llamar al colegio<small>(602) 228 4410</small></span><span class="go">→</span></a>
+      <a class="call" href="tel:123"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Línea de emergencias<small>123</small></span><span class="go">→</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  document.querySelectorAll('[data-esc]').forEach(i => i.src = document.getElementById('escSrc').src);
+  const card = $('#card'), tilt = $('#tilt');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const EXPIRES = new Date('2027-06-30T23:59:59-05:00');
+  const BORN = new Date('2020-03-14T00:00:00-05:00');
+
+  /* Nombre que entra letra por letra */
+  document.querySelectorAll('.reveal').forEach(el => {
+    const base = 1150 + (+el.dataset.delay || 0);
+    [...el.dataset.text].forEach((ch, i) => {
+      const s = document.createElement('span');
+      s.textContent = ch === ' ' ? ' ' : ch;
+      s.style.animationDelay = (base + i * 40) + 'ms';
+      el.appendChild(s);
+    });
+    el.setAttribute('aria-label', el.dataset.text);
+  });
+
+  /* Guilloché: ondas finas de seguridad */
+  const guill = id => {
+    let d = '';
+    for (let k = 0; k < 26; k++) {
+      d += 'M0 ' + (k * 6.2);
+      for (let x = 0; x <= 100; x += 2)
+        d += ' L' + x + ' ' + (k * 6.2 + Math.sin(x / 7 + k * .6) * 2.2 + Math.sin(x / 3.1 + k) * .6).toFixed(2);
+    }
+    document.getElementById(id).innerHTML = '<path d="' + d + '"/>';
+  };
+  guill('guiF'); guill('guiB');
+
+  /* Firma: longitud para el trazo animado */
+  const sig = $('#sig'); sig.style.setProperty('--len', Math.ceil(sig.getTotalLength()));
+
+  /* Reloj en vivo, vigencia y edad */
+  const pad = n => String(n).padStart(2, '0');
+  const fmtDate = new Intl.DateTimeFormat('es-CO', {weekday:'short', day:'numeric', month:'short', year:'numeric'});
+  const tick = () => {
+    const now = new Date();
+    const t = pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds());
+    $('#clock').textContent = t; $('#hdrTime').textContent = t; $('#qrTime').textContent = t;
+    $('#hdrDate').textContent = fmtDate.format(now);
+    const ok = now <= EXPIRES;
+    $('#status').classList.toggle('expired', !ok);
+    $('#stTxt').textContent = ok ? 'VIGENTE' : 'VENCIDO';
+    $('#qrState').textContent = ok ? 'Vigente' : 'Vencido';
+    const days = Math.ceil((EXPIRES - now) / 864e5);
+    $('#left').textContent = ok ? 'vence en ' + days + ' días' : 'carnet vencido';
+  };
+  tick(); setInterval(tick, 1000);
+  const n = new Date(); let age = n.getFullYear() - BORN.getFullYear();
+  if (n < new Date(n.getFullYear(), BORN.getMonth(), BORN.getDate())) age--;
+  $('#age').textContent = '· ' + age + ' años'; $('#age2').textContent = age + ' años';
+
+  /* Voltear */
+  const flip = () => {
+    const f = card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed', f);
+    card.setAttribute('aria-label', f ? 'Reverso del carnet. Toca para ver el frente.' : 'Carnet estudiantil de Valentina Ospina Rincón. Toca para ver el reverso.');
+    $('#hint').style.visibility = 'hidden';
+  };
+  card.addEventListener('click', e => { if (!e.target.closest('[data-stop]') && !moved) flip(); });
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+  $('#bFlip').addEventListener('click', flip);
+
+  /* Inclinación + holograma que sigue al cursor o al dedo */
+  let moved = false, sx = 0, sy = 0;
+  const setTilt = (cx, cy) => {
+    const r = tilt.getBoundingClientRect();
+    const px = Math.min(Math.max((cx - r.left) / r.width, 0), 1);
+    const py = Math.min(Math.max((cy - r.top) / r.height, 0), 1);
+    tilt.style.setProperty('--ry', ((px - .5) * 22).toFixed(2) + 'deg');
+    tilt.style.setProperty('--rx', ((.5 - py) * 18).toFixed(2) + 'deg');
+    card.style.setProperty('--mx', (card.classList.contains('flipped') ? 100 - px * 100 : px * 100) + '%');
+    card.style.setProperty('--my', py * 100 + '%');
+    card.style.setProperty('--hx', px * 100 + '%');
+    card.style.setProperty('--hy', py * 100 + '%');
+    card.style.setProperty('--ho', .55);
+  };
+  const resetTilt = () => {
+    tilt.classList.remove('live');
+    tilt.style.setProperty('--rx', '0deg'); tilt.style.setProperty('--ry', '0deg');
+    card.style.setProperty('--ho', .18);
+  };
+  if (!reduce) {
+    tilt.addEventListener('pointermove', e => { tilt.classList.add('live'); setTilt(e.clientX, e.clientY);
+      if (e.pointerType !== 'mouse' && Math.hypot(e.clientX - sx, e.clientY - sy) > 8) moved = true; });
+    tilt.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; moved = false; });
+    tilt.addEventListener('pointerleave', resetTilt);
+    tilt.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') setTimeout(resetTilt, 250); });
+    /* giroscopio, donde no pide permiso (Android) */
+    addEventListener('deviceorientation', e => {
+      if (e.gamma == null || tilt.classList.contains('live')) return;
+      const g = Math.max(-25, Math.min(25, e.gamma)), b = Math.max(-25, Math.min(25, (e.beta || 45) - 45));
+      tilt.style.setProperty('--ry', (g * .5).toFixed(2) + 'deg');
+      tilt.style.setProperty('--rx', (-b * .4).toFixed(2) + 'deg');
+      card.style.setProperty('--hx', 50 + g * 2 + '%'); card.style.setProperty('--hy', 50 + b * 2 + '%');
+    });
+  }
+
+  /* Hojas */
+  let last = null;
+  const open = id => { last = document.activeElement; const s = $(id); s.classList.add('open'); s.querySelector('.close').focus(); };
+  const closeAll = () => { document.querySelectorAll('.sheet.open').forEach(s => s.classList.remove('open')); last && last.focus(); };
+  $('#bQr').addEventListener('click', () => open('#sheetQr'));
+  $('#bSos').addEventListener('click', () => open('#sheetSos'));
+  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', closeAll));
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+})();
+</script>
+</body>
+</html>
