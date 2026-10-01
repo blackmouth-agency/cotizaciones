@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es-CO" data-modo="t">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CREDIJURÍDICOS · Derecho laboral para trabajadores y empresas</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Firma de abogados en derecho laboral. Defendemos a trabajadores en despidos, liquidaciones, acoso y pensiones, y asesoramos a empresas para que cada decisión laboral quede bien hecha.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EE1D45">
+<meta property="og:title" content="CREDIJURÍDICOS · Derecho laboral">
+<meta property="og:description" content="Soluciones jurídicas para trabajadores y empresas.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+  /* Modo antes de pintar: ?para=empresa | ?para=trabajador | último elegido */
+  (function(){try{var q=new URLSearchParams(location.search).get('para');var m=q==='empresa'?'e':q==='trabajador'?'t':localStorage.getItem('cj-modo');if(m==='e'||m==='t')document.documentElement.dataset.modo=m;}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"CREDIJURÍDICOS","description":"Derecho laboral para trabajadores y empresas.","areaServed":"CO","knowsAbout":["Derecho laboral","Seguridad social","Pensiones","Acoso laboral","Reforma laboral"]}
+</script>
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/credijuridicos/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/credijuridicos/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <mask id="pluma-mask" maskUnits="userSpaceOnUse" x="180" y="14" width="720" height="1046">
+      <rect x="180" y="14" width="720" height="1046" fill="#fff"/>
+      <circle cx="540" cy="518" r="34" fill="#000"/>
+      <rect x="535.5" y="518" width="9" height="505" fill="#000"/>
+      <circle cx="540" cy="1036" r="20" fill="#000"/>
+    </mask>
+    <symbol id="pluma" viewBox="180 14 720 1046">
+      <path d="M539 22 892 310 547 1024H533L187 310Z" fill="currentColor" mask="url(#pluma-mask)"/>
+      <circle cx="540" cy="1036" r="13" fill="currentColor"/>
+    </symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.6-.5-1-1.1-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 2 1.1 2.8 1.2 1.7 2.7 3.1 4.6 3.9.5.2 1 .4 1.5.5.5.2 1 .2 1.6.1.6-.1 1.3-.6 1.6-1.2.1-.4.1-.7.1-1.1-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- Precarga: la pluma firma y se abre el telón -->
+<div class="precarga" aria-hidden="true">
+  <svg class="precarga__pluma"><use href="#pluma"/></svg>
+  <svg class="precarga__firma" viewBox="0 0 400 80"><path d="M10 55c30-30 55-42 70-30s-10 40 10 32 30-45 52-40-6 38 16 36 24-30 44-28 4 26 22 24 40-22 66-20 50 8 90 2"/></svg>
+</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor__txt">Ver</span></div>
+<div class="progreso" aria-hidden="true"></div>
+
+<header class="cab">
+  <a class="cab__logo" href="#inicio" aria-label="CREDIJURÍDICOS, ir al inicio">
+    <img class="logo-claro" src="assets/logo.png" alt="" width="1592" height="424">
+    <img class="logo-oscuro" src="assets/logo-blanco.png" alt="" width="1592" height="424">
+  </a>
+  <nav class="cab__nav" aria-label="Principal">
+    <a href="#casos"><span data-solo="t">Tu caso</span><span data-solo="e">Servicios</span></a>
+    <a href="#calculadora">Calculadora</a>
+    <a href="#proceso">Cómo trabajamos</a>
+    <a href="#preguntas">Preguntas</a>
+  </nav>
+  <div class="cab__der">
+    <div class="interruptor interruptor--mini" role="group" aria-label="Ver el sitio como">
+      <button type="button" data-ir="t">Trabajador</button>
+      <button type="button" data-ir="e">Empresa</button>
+    </div>
+    <a class="boton boton--rojo boton--chico cab__cta" href="#contacto">Escríbenos</a>
+    <button class="cab__menu" type="button" aria-expanded="false" aria-controls="menu-movil"><span></span><span></span><span class="sr">Menú</span></button>
+  </div>
+</header>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <nav aria-label="Menú móvil">
+    <a href="#casos"><span data-solo="t">Tu caso</span><span data-solo="e">Servicios</span></a>
+    <a href="#calculadora">Calculadora</a>
+    <a href="#proceso">Cómo trabajamos</a>
+    <a href="#preguntas">Preguntas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="interruptor" role="group" aria-label="Ver el sitio como">
+    <button type="button" data-ir="t">Soy trabajador</button>
+    <button type="button" data-ir="e">Soy empresa</button>
+  </div>
+</div>
+
+<main id="contenido">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__pluma" aria-hidden="true">
+    <div class="hero__tinta"></div>
+    <svg class="hero__svg"><use href="#pluma"/></svg>
+  </div>
+
+  <div class="hero__txt">
+    <p class="hero__pre" data-solo="t">Cada relación laboral merece</p>
+    <p class="hero__pre" data-solo="e">La confianza se construye con</p>
+    <h1 class="hero__h1">
+      <span data-solo="t"><span class="linea"><span>Seguridad</span></span><span class="linea"><em>jurídica.</em></span></span>
+      <span data-solo="e"><span class="linea"><span>Respaldo</span></span><span class="linea"><em>legal.</em></span></span>
+    </h1>
+    <svg class="hero__trazo" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 28C120 10 260 6 380 14s170 14 214 4"/></svg>
+  </div>
+
+  <div class="hero__pie">
+    <p class="hero__sub" data-solo="t">Si te despidieron, no te pagaron lo que te deben o te están haciendo la vida imposible en el trabajo, te decimos qué dice la ley y lo hacemos valer.</p>
+    <p class="hero__sub" data-solo="e">Contratos, reglamento, procesos disciplinarios y defensa en demandas. Que cada decisión laboral de tu empresa quede bien hecha antes de que se vuelva un pleito.</p>
+
+    <div class="hero__quien">
+      <span class="etiqueta">¿Quién eres?</span>
+      <div class="interruptor interruptor--grande" role="group" aria-label="Ver el sitio como">
+        <button type="button" data-ir="t">Trabajador</button>
+        <button type="button" data-ir="e">Empresa</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__base">
+    <span class="mono">Derecho laboral · Colombia</span>
+    <a class="hero__bajar" href="#casos"><span class="mono" data-solo="t">Mira qué te corresponde</span><span class="mono" data-solo="e">Mira cómo te acompañamos</span><svg><use href="#flecha"/></svg></a>
+  </div>
+</section>
+
+<!-- ============ MARQUESINA ============ -->
+<section class="marquesina" aria-label="Temas que atendemos">
+  <div class="marquesina__fila" data-dir="1">
+    <div class="marquesina__pista" data-solo="t">
+      <span>Despido sin justa causa</span><i></i><span class="hueco">Liquidación</span><i></i><span>Acoso laboral</span><i></i><span class="hueco">Pensiones</span><i></i>
+    </div>
+    <div class="marquesina__pista" data-solo="e">
+      <span>Contratos</span><i></i><span class="hueco">Reglamento interno</span><i></i><span>Procesos disciplinarios</span><i></i><span class="hueco">UGPP</span><i></i>
+    </div>
+  </div>
+  <div class="marquesina__fila" data-dir="-1">
+    <div class="marquesina__pista" data-solo="t">
+      <span class="hueco">Estabilidad reforzada</span><i></i><span>Accidente de trabajo</span><i></i><span class="hueco">Contrato realidad</span><i></i><span>Horas extra</span><i></i>
+    </div>
+    <div class="marquesina__pista" data-solo="e">
+      <span class="hueco">Reforma laboral</span><i></i><span>Seguridad social</span><i></i><span class="hueco">Auditoría laboral</span><i></i><span>Defensa judicial</span><i></i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASOS / SERVICIOS ============ -->
+<section class="casos" id="casos">
+  <div class="sec-cab">
+    <p class="mono sec-cab__eti" data-solo="t">Tu caso</p>
+    <p class="mono sec-cab__eti" data-solo="e">Servicios para empresas</p>
+    <h2 class="titulo" data-solo="t">¿Qué te está <em>pasando?</em></h2>
+    <h2 class="titulo" data-solo="e">¿En qué te <em>acompañamos?</em></h2>
+    <p class="sec-cab__sub" data-solo="t">Elige lo que más se parece a tu situación. Te decimos cómo se llama, qué te corresponde y qué hacemos.</p>
+    <p class="sec-cab__sub" data-solo="e">Asesoría para que las decisiones laborales de tu empresa se tomen bien desde el principio, y defensa cuando ya hay un conflicto.</p>
+  </div>
+
+  <ul class="lista" data-solo="t">
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Me despidieron sin explicación</span><span class="fila__ley mono">Art. 64 CST</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Eso se llama</span> Despido sin justa causa</p><p>Te corresponde una indemnización que depende del tipo de contrato y del tiempo trabajado, además de tu liquidación completa. Calculamos lo que te deben, lo reclamamos y, si no pagan, demandamos.</p><a class="enlace" href="#calculadora">Calcula tu indemnización <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">No me pagaron la liquidación</span><span class="fila__ley mono">Art. 65 CST</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Eso se llama</span> Prestaciones sociales sin pagar</p><p>Cesantías, intereses, prima y vacaciones. Si al terminar el contrato el empleador no paga, puede deberte además una indemnización por cada día de retraso. Revisamos tus cuentas y hacemos el cobro.</p><a class="enlace" data-wa="Hola, terminé mi contrato y no me han pagado la liquidación." href="#contacto">Cuéntanos tu caso <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Me acosan en el trabajo</span><span class="fila__ley mono">Ley 1010 de 2006</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Eso se llama</span> Acoso laboral</p><p>Maltrato, persecución, humillaciones, discriminación o que te pongan trabas para hacer tu trabajo. Te ayudamos a documentarlo, a activar el comité de convivencia y a tomar las acciones legales que correspondan.</p><a class="enlace" data-wa="Hola, creo que estoy viviendo acoso laboral y necesito orientación." href="#contacto">Cuéntanos tu caso <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Me despidieron estando incapacitado, embarazada o por pensionarme</span><span class="fila__ley mono">Ley 361 de 1997</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Eso se llama</span> Estabilidad laboral reforzada</p><p>Hay personas a las que no se puede despedir sin una autorización o una causa justificada. Si te pasó, el despido puede quedar sin efecto, con reintegro y pago de los salarios que dejaste de recibir.</p><a class="enlace" data-wa="Hola, me despidieron estando en una situación de protección (incapacidad, embarazo o prepensión)." href="#contacto">Cuéntanos tu caso <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Me negaron la pensión</span><span class="fila__ley mono">Ley 100 de 1993</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Eso se llama</span> Reclamación pensional</p><p>Vejez, invalidez o sobrevivientes. Revisamos tu historia laboral, las semanas cotizadas y la respuesta del fondo para saber si la negativa se sostiene o se puede reclamar.</p><a class="enlace" data-wa="Hola, me negaron la pensión y quiero saber si puedo reclamar." href="#contacto">Cuéntanos tu caso <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Tuve un accidente o enfermedad por el trabajo</span><span class="fila__ley mono">Art. 216 CST</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Eso se llama</span> Accidente de trabajo o enfermedad laboral</p><p>Tienes derecho a las prestaciones de la ARL y a que califiquen tu pérdida de capacidad. Si el accidente pasó por culpa del empleador, también puedes reclamar la indemnización de todos los perjuicios.</p><a class="enlace" data-wa="Hola, tuve un accidente (o enfermedad) por el trabajo y necesito orientación." href="#contacto">Cuéntanos tu caso <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Soy contratista pero cumplo horario y órdenes</span><span class="fila__ley mono">Art. 53 Constitución</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Eso se llama</span> Contrato realidad</p><p>Si te dan órdenes, te ponen horario y te pagan cada mes, lo que tienes es un contrato de trabajo aunque el papel diga otra cosa. Eso puede darte derecho a prestaciones y aportes que no te pagaron.</p><a class="enlace" data-wa="Hola, trabajo por prestación de servicios pero cumplo horario y órdenes." href="#contacto">Cuéntanos tu caso <svg><use href="#flecha"/></svg></a></div></div></li>
+  </ul>
+
+  <ul class="lista" data-solo="e">
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Contratar sin riesgos</span><span class="fila__ley mono">Contratos</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Incluye</span> Contratos laborales y de prestación de servicios</p><p>Redactamos y revisamos contratos, otrosíes y acuerdos de confidencialidad, y elegimos con ustedes la modalidad que corresponde a cada cargo.</p><a class="enlace" data-wa="Hola, somos una empresa y queremos revisar nuestros contratos laborales." href="#contacto">Hablemos de tu empresa <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Disciplinar o despedir con justa causa</span><span class="fila__ley mono">Debido proceso</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Incluye</span> Procesos disciplinarios y terminaciones</p><p>Te acompañamos en la citación a descargos, las actas y la decisión, para que la sanción o el despido se sostenga si llega a un juez.</p><a class="enlace" data-wa="Hola, necesitamos acompañamiento en un proceso disciplinario." href="#contacto">Hablemos de tu empresa <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Ajustarse a la reforma laboral</span><span class="fila__ley mono">Ley 2466 de 2025</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Incluye</span> Revisión de jornada, recargos y contratación</p><p>Revisamos qué cambia para tu empresa con la reforma: jornada nocturna, recargos dominicales, tipos de contrato y reglamento. Te entregamos lo que hay que ajustar y en qué orden.</p><a class="enlace" data-wa="Hola, queremos ajustar la empresa a la reforma laboral." href="#contacto">Hablemos de tu empresa <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Reglamento interno y políticas</span><span class="fila__ley mono">Art. 104 CST</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Incluye</span> Reglamento, comité de convivencia y protocolos</p><p>Elaboramos o actualizamos el reglamento interno de trabajo, el comité de convivencia laboral y el protocolo contra el acoso.</p><a class="enlace" data-wa="Hola, necesitamos actualizar el reglamento interno de trabajo." href="#contacto">Hablemos de tu empresa <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Responder a la UGPP o al Ministerio del Trabajo</span><span class="fila__ley mono">Fiscalización</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Incluye</span> Requerimientos e investigaciones administrativas</p><p>Respondemos requerimientos, liquidaciones oficiales e investigaciones, y buscamos reducir o evitar la sanción.</p><a class="enlace" data-wa="Hola, nos llegó un requerimiento de la UGPP o del Ministerio del Trabajo." href="#contacto">Hablemos de tu empresa <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Defenderse en una demanda laboral</span><span class="fila__ley mono">Defensa judicial</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Incluye</span> Conciliación y procesos ante jueces laborales</p><p>Representamos a tu empresa desde la conciliación hasta la sentencia. Si ya te notificaron una demanda, el plazo para contestarla es corto: escríbenos hoy.</p><a class="enlace" data-wa="Hola, nos notificaron una demanda laboral." href="#contacto">Hablemos de tu empresa <svg><use href="#flecha"/></svg></a></div></div></li>
+    <li class="fila"><button class="fila__btn" type="button" aria-expanded="false" data-cursor="Abrir"><span class="fila__t">Auditar nómina y contratación</span><span class="fila__ley mono">Prevención</span><span class="fila__mas" aria-hidden="true"></span></button>
+      <div class="fila__det" hidden><div><p class="fila__nom"><span class="mono">Incluye</span> Auditoría laboral preventiva</p><p>Encontramos los riesgos en contratos, pagos y afiliaciones antes de que lleguen como demanda o sanción.</p><a class="enlace" href="#chequeo">Haz el chequeo rápido <svg><use href="#flecha"/></svg></a></div></div></li>
+  </ul>
+</section>
+
+<!-- ============ MANIFIESTO ============ -->
+<section class="manifiesto" aria-label="Lo que creemos">
+  <p class="manifiesto__txt" data-palabras>Derecho laboral con visión y experiencia. Defender tus derechos es construir tu <em>tranquilidad.</em></p>
+</section>
+
+<!-- ============ CALCULADORA ============ -->
+<section class="calc" id="calculadora">
+  <div class="sec-cab">
+    <p class="mono sec-cab__eti">Calculadora</p>
+    <h2 class="titulo" data-solo="t">¿Cuánto te <em>deben?</em></h2>
+    <h2 class="titulo" data-solo="e">¿Cuánto cuesta terminar <em>un contrato?</em></h2>
+    <p class="sec-cab__sub">Una estimación rápida con las reglas del Código Sustantivo del Trabajo. Sirve para orientarte; el valor exacto lo confirma un abogado con tus documentos.</p>
+  </div>
+
+  <div class="calc__caja">
+    <form class="calc__form" id="calc-form" novalidate>
+      <label class="campo campo--ancho">
+        <span class="campo__eti" data-solo="t">Tu salario mensual</span>
+        <span class="campo__eti" data-solo="e">Salario mensual del trabajador</span>
+        <span class="campo__pesos"><span aria-hidden="true">$</span><input name="salario" inputmode="numeric" autocomplete="off" value="2.500.000" aria-describedby="calc-aviso"></span>
+      </label>
+      <label class="campo"><span class="campo__eti">Fecha de ingreso</span><input type="date" name="ingreso" value="2023-03-01"></label>
+      <label class="campo"><span class="campo__eti">Fecha de salida</span><input type="date" name="salida"></label>
+
+      <fieldset class="campo campo--ancho">
+        <legend class="campo__eti">Tipo de contrato</legend>
+        <div class="opciones">
+          <label><input type="radio" name="tipo" value="indefinido" checked><span>Término indefinido</span></label>
+          <label><input type="radio" name="tipo" value="fijo"><span>Término fijo</span></label>
+        </div>
+      </fieldset>
+      <label class="campo campo--ancho" data-si-fijo hidden><span class="campo__eti">¿Hasta cuándo iba el contrato?</span><input type="date" name="fin"></label>
+
+      <fieldset class="campo campo--ancho">
+        <legend class="campo__eti">¿Cómo terminó?</legend>
+        <div class="opciones">
+          <label><input type="radio" name="motivo" value="sin" checked><span>Despido sin justa causa</span></label>
+          <label><input type="radio" name="motivo" value="renuncia"><span>Renuncia</span></label>
+          <label><input type="radio" name="motivo" value="con"><span>Despido con justa causa</span></label>
+        </div>
+      </fieldset>
+      <p class="calc__aviso" id="calc-aviso" role="status"></p>
+    </form>
+
+    <div class="calc__res" aria-live="polite">
+      <p class="mono calc__res-eti" data-solo="t">Estimado a tu favor</p>
+      <p class="mono calc__res-eti" data-solo="e">Costo estimado para la empresa</p>
+      <p class="calc__total" id="calc-total">$0</p>
+      <dl class="calc__desglose">
+        <div><dt>Cesantías <span class="mono">año en curso</span></dt><dd data-k="ces">$0</dd></div>
+        <div><dt>Intereses sobre cesantías <span class="mono">12% anual</span></dt><dd data-k="int">$0</dd></div>
+        <div><dt>Prima de servicios <span class="mono">semestre en curso</span></dt><dd data-k="prima">$0</dd></div>
+        <div><dt>Vacaciones <span class="mono">proporcionales</span></dt><dd data-k="vac">$0</dd></div>
+        <div class="calc__indem"><dt>Indemnización <span class="mono">art. 64 CST</span></dt><dd data-k="ind">$0</dd></div>
+      </dl>
+      <p class="calc__nota">Supone que las cesantías de años anteriores ya se consignaron al fondo y que las vacaciones de años completos ya se tomaron. Si ganas hasta dos salarios mínimos, el auxilio de transporte entra en cesantías y prima.</p>
+      <a class="boton boton--rojo" id="calc-wa" href="#contacto"><svg><use href="#wa"/></svg><span data-solo="t">Revisar mi caso con un abogado</span><span data-solo="e">Revisar este caso con un abogado</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA LEY EN NÚMEROS ============ -->
+<section class="cifras" aria-labelledby="cifras-h">
+  <div class="sec-cab sec-cab--fila">
+    <h2 class="titulo" id="cifras-h" data-solo="t">Lo que la ley ya decidió <em>a tu favor</em></h2>
+    <h2 class="titulo" id="cifras-h-e" data-solo="e">Fechas y cifras que tu empresa <em>no puede olvidar</em></h2>
+  </div>
+  <div class="cifras__grid" data-solo="t">
+    <article class="cifra"><p class="cifra__n"><span data-contar="3">3</span><small>años</small></p><p>para reclamar tus derechos laborales, contados desde que debieron pagártelos.</p><p class="mono">Art. 488 CST</p></article>
+    <article class="cifra"><p class="cifra__n"><span data-contar="30">30</span><small>días</small></p><p>de salario de indemnización por el primer año si te despiden sin justa causa.</p><p class="mono">Art. 64 CST</p></article>
+    <article class="cifra"><p class="cifra__n"><span data-contar="12">12</span><small>%</small></p><p>anual de intereses sobre tus cesantías, que te deben pagar a más tardar el 31 de enero.</p><p class="mono">Ley 52 de 1975</p></article>
+    <article class="cifra"><p class="cifra__n"><span data-contar="15">15</span><small>días hábiles</small></p><p>de vacaciones pagadas por cada año trabajado.</p><p class="mono">Art. 186 CST</p></article>
+  </div>
+  <div class="cifras__grid" data-solo="e">
+    <article class="cifra"><p class="cifra__n"><span data-contar="14">14</span><small>de febrero</small></p><p>es el último día para consignar las cesantías en el fondo de cada trabajador.</p><p class="mono">Art. 99 Ley 50 de 1990</p></article>
+    <article class="cifra"><p class="cifra__n"><span data-contar="1">1</span><small>día de salario</small></p><p>por cada día de retraso en el pago de la liquidación al terminar un contrato.</p><p class="mono">Art. 65 CST</p></article>
+    <article class="cifra"><p class="cifra__n"><span data-contar="3">3</span><small>años</small></p><p>tiene un extrabajador para reclamar. Un error de hoy puede llegar como demanda mucho después.</p><p class="mono">Art. 488 CST</p></article>
+    <article class="cifra"><p class="cifra__n"><span data-contar="10">10</span><small>días hábiles</small></p><p>para contestar una demanda laboral desde que te la notifican.</p><p class="mono">Art. 74 CPTSS</p></article>
+  </div>
+</section>
+
+<!-- ============ HERRAMIENTA SEGÚN MODO ============ -->
+<section class="herr" id="chequeo">
+  <!-- Trabajador: reloj de prescripción -->
+  <div class="reloj" data-solo="t">
+    <div class="reloj__txt">
+      <p class="mono sec-cab__eti">Reloj de prescripción</p>
+      <h2 class="titulo">¿Todavía estás <em>a tiempo?</em></h2>
+      <p>Por regla general tienes tres años para reclamar. Pon la fecha en que terminó tu contrato o en que debieron pagarte.</p>
+      <label class="campo"><span class="campo__eti">Fecha</span><input type="date" id="reloj-fecha" value="2025-01-15"></label>
+      <p class="calc__nota">Un reclamo escrito al empleador interrumpe ese plazo una sola vez (art. 489 CST). El derecho a la pensión no prescribe, aunque las mesadas sí.</p>
+    </div>
+    <div class="reloj__vis" aria-live="polite">
+      <svg class="reloj__aro" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="88" class="reloj__fondo"/>
+        <circle cx="100" cy="100" r="88" class="reloj__resto" pathLength="1000"/>
+      </svg>
+      <div class="reloj__centro">
+        <p class="reloj__n" id="reloj-n">0</p>
+        <p class="reloj__u" id="reloj-u">días para reclamar</p>
+      </div>
+      <p class="reloj__msg" id="reloj-msg"></p>
+    </div>
+  </div>
+
+  <!-- Empresa: chequeo de cumplimiento -->
+  <div class="chequeo" data-solo="e">
+    <div class="chequeo__txt">
+      <p class="mono sec-cab__eti">Chequeo de cumplimiento</p>
+      <h2 class="titulo">¿Tu empresa resiste <em>una revisión?</em></h2>
+      <p>Marca lo que hoy se cumple. Tarda menos de un minuto.</p>
+      <ul class="chequeo__lista">
+        <li><button type="button" aria-pressed="false">Todos los contratos están por escrito y firmados.</button></li>
+        <li><button type="button" aria-pressed="false">Tenemos reglamento interno de trabajo actualizado.</button></li>
+        <li><button type="button" aria-pressed="false">Afiliamos a salud, pensión, ARL y caja desde el primer día.</button></li>
+        <li><button type="button" aria-pressed="false">Consignamos las cesantías antes del 14 de febrero.</button></li>
+        <li><button type="button" aria-pressed="false">El comité de convivencia laboral está activo.</button></li>
+        <li><button type="button" aria-pressed="false">Cada proceso disciplinario tiene descargos y acta.</button></li>
+        <li><button type="button" aria-pressed="false">Ya ajustamos jornada y recargos a la reforma de 2025.</button></li>
+        <li><button type="button" aria-pressed="false">Los contratistas no cumplen horario ni reciben órdenes.</button></li>
+      </ul>
+    </div>
+    <div class="chequeo__vis" aria-live="polite">
+      <svg class="medidor" viewBox="0 0 220 130" aria-hidden="true">
+        <path class="medidor__fondo" d="M20 115a90 90 0 0 1 180 0"/>
+        <path class="medidor__val" d="M20 115a90 90 0 0 1 180 0" pathLength="100"/>
+      </svg>
+      <p class="chequeo__n"><span id="chequeo-n">0</span><small>/8</small></p>
+      <p class="chequeo__nivel" id="chequeo-nivel">Riesgo alto</p>
+      <p class="chequeo__msg" id="chequeo-msg">Hay frentes abiertos que pueden terminar en sanción o demanda. Revisémoslos juntos.</p>
+      <a class="boton boton--rojo" id="chequeo-wa" href="#contacto"><svg><use href="#wa"/></svg>Pedir auditoría laboral</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="proceso" id="proceso">
+  <div class="proceso__fijo">
+    <div class="proceso__cab">
+      <p class="mono sec-cab__eti">Cómo trabajamos</p>
+      <h2 class="titulo">Cuatro pasos, <em>sin tecnicismos.</em></h2>
+    </div>
+    <div class="proceso__pista">
+      <svg class="proceso__linea" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="5" x2="1000" y2="5" pathLength="1"/></svg>
+      <ol class="proceso__pasos">
+        <li class="paso"><span class="paso__n">1</span><h3>Nos cuentas el caso</h3><p data-solo="t">Por WhatsApp, por llamada o en persona. Nos dices qué pasó con tus palabras.</p><p data-solo="e">Una reunión con quien maneja el personal para entender la situación y la urgencia.</p></li>
+        <li class="paso"><span class="paso__n">2</span><h3>Revisamos los papeles</h3><p data-solo="t">Contrato, desprendibles de pago, cartas, chats y correos. Ahí está la prueba.</p><p data-solo="e">Contratos, nómina, afiliaciones, actas y comunicaciones. Ahí aparecen los riesgos.</p></li>
+        <li class="paso"><span class="paso__n">3</span><h3>Te decimos qué hacer</h3><p>Opciones claras, tiempos y costos antes de empezar. Tú decides.</p></li>
+        <li class="paso"><span class="paso__n">4</span><h3>Actuamos</h3><p data-solo="t">Reclamación, conciliación, tutela o demanda. Te contamos cada avance.</p><p data-solo="e">Ajustes, documentos, acompañamiento o defensa. Con informes en cada etapa.</p></li>
+      </ol>
+      <svg class="proceso__pluma" aria-hidden="true"><use href="#pluma"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREGUNTAS ============ -->
+<section class="faq" id="preguntas">
+  <div class="sec-cab">
+    <p class="mono sec-cab__eti">Preguntas frecuentes</p>
+    <h2 class="titulo">Lo que más <em>nos preguntan</em></h2>
+  </div>
+  <div class="faq__lista" data-solo="t">
+    <details><summary>¿Puedo reclamar si ya firmé la liquidación?</summary><p>En muchos casos sí. Los derechos laborales mínimos son irrenunciables, así que firmar un paz y salvo no borra salarios o prestaciones que te quedaron debiendo (art. 14 CST). Revisamos qué firmaste y qué se puede reclamar.</p></details>
+    <details><summary>¿Me pueden despedir estando incapacitado?</summary><p>Si tu condición de salud te impide trabajar con normalidad, el empleador necesita autorización del Ministerio del Trabajo para despedirte. Sin ella, el despido puede quedar sin efecto y dar lugar a reintegro e indemnización (art. 26 Ley 361 de 1997).</p></details>
+    <details><summary>¿Qué documentos debo tener a mano?</summary><p>Contrato, desprendibles de pago, carta de despido o renuncia, historia laboral de pensiones y cualquier chat o correo que muestre lo que pasó. Si no tienes alguno, igual escríbenos.</p></details>
+    <details><summary>¿Cuánto se demora un proceso?</summary><p>Depende del camino. Una reclamación directa o una conciliación pueden resolverse en semanas; una demanda toma más. Al revisar tu caso te damos un estimado realista.</p></details>
+    <details><summary>¿Cuánto cuesta la primera consulta?</summary><p>En la primera conversación entendemos tu caso y te decimos si vale la pena actuar. Antes de iniciar cualquier trámite sabrás exactamente cuánto cuesta.</p></details>
+  </div>
+  <div class="faq__lista" data-solo="e">
+    <details><summary>¿Qué cambió con la reforma laboral?</summary><p>La Ley 2466 de 2025 modificó, entre otras cosas, el inicio de la jornada nocturna, el recargo por trabajo en domingos y festivos y las reglas de contratación. Revisamos qué aplica a tu empresa y desde cuándo.</p></details>
+    <details><summary>¿Cómo despido con justa causa sin exponerme a una demanda?</summary><p>Con debido proceso: comunicar por escrito los hechos, escuchar los descargos del trabajador, decidir con pruebas y notificar la decisión. Te acompañamos en cada paso para que quede bien documentado.</p></details>
+    <details><summary>Nos notificaron una demanda, ¿qué hacemos?</summary><p>Escríbenos de inmediato. El plazo para contestar es de diez días hábiles y lo que se diga en esa contestación define buena parte de la defensa.</p></details>
+    <details><summary>¿Qué pasa si un contratista demuestra que era empleado?</summary><p>Se reconoce un contrato de trabajo y la empresa puede tener que pagar prestaciones, aportes a seguridad social y sanciones. Por eso conviene revisar cómo se trabaja con cada contratista.</p></details>
+    <details><summary>¿Trabajan por caso o con asesoría permanente?</summary><p>Las dos formas: acompañamiento continuo para el día a día de recursos humanos, o servicios puntuales para un proceso o una necesidad específica.</p></details>
+  </div>
+</section>
+
+<!-- ============ CIERRE / CONTACTO ============ -->
+<section class="cierre" id="contacto">
+  <div class="cierre__grande">
+    <h2 class="cierre__h"><span>Hablemos</span><span class="cierre__punto">.</span></h2>
+    <a class="sello" href="#" data-wa-cierre data-cursor="WhatsApp" aria-label="Escríbenos por WhatsApp">
+      <svg class="sello__giro" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="circulo" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+        <text><textPath href="#circulo">DERECHO LABORAL · TRABAJADORES · EMPRESAS · </textPath></text>
+      </svg>
+      <svg class="sello__pluma" aria-hidden="true"><use href="#pluma"/></svg>
+    </a>
+  </div>
+
+  <div class="cierre__cuerpo">
+    <div class="cierre__intro">
+      <p class="cierre__lead" data-solo="t">Cuéntanos qué pasó. Te respondemos con lo que dice la ley de tu caso y lo que podemos hacer.</p>
+      <p class="cierre__lead" data-solo="e">Cuéntanos qué necesita tu empresa. Te proponemos cómo acompañarte y cuánto cuesta.</p>
+      <a class="boton boton--rojo boton--grande" href="#" data-wa-cierre><svg><use href="#wa"/></svg>Escríbenos por WhatsApp</a>
+    </div>
+
+    <form class="form" id="form-contacto" novalidate>
+      <label class="campo"><span class="campo__eti">Nombre</span><input name="nombre" autocomplete="name" required></label>
+      <label class="campo" data-solo="e"><span class="campo__eti">Empresa</span><input name="empresa" autocomplete="organization"></label>
+      <label class="campo"><span class="campo__eti">Teléfono</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" required></label>
+      <label class="campo campo--ancho"><span class="campo__eti">¿Qué pasó?</span><textarea name="caso" rows="4" required></textarea></label>
+      <p class="form__error" id="form-error" role="alert"></p>
+      <button class="boton boton--negro" type="submit">Enviar por WhatsApp <svg><use href="#flecha"/></svg></button>
+      <p class="form__nota">Al enviar se abre WhatsApp con tu mensaje listo. Nada se guarda en este sitio.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie__arriba">
+    <nav aria-label="Pie">
+      <a href="#casos">Casos y servicios</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <p class="pie__legal">La información de este sitio es orientativa y no reemplaza la asesoría de un abogado sobre tu caso concreto.</p>
+  </div>
+  <img class="pie__logo" src="assets/logo-blanco.png" alt="CREDIJURÍDICOS" width="1592" height="424" loading="lazy">
+  <div class="pie__abajo"><span>© 2026 CREDIJURÍDICOS</span><span>Derecho laboral para trabajadores y empresas</span></div>
+</footer>
+
+<a class="wa-flotante" href="#" data-wa-cierre aria-label="Escríbenos por WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
