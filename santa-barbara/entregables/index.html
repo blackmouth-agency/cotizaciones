@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Santa Bárbara · Entregables</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Vitrina de un solo mundo: el verde noche de la marca con retícula, Playfair en titulares con remate en cursiva hoja, y las piezas reales como protagonistas. */
+:root{
+  --noche:#012E19; --noche-2:#03391F; --verde:#006837; --hoja:#89C444; --hoja-cl:#D6EDBD;
+  --tinta:#F3F5EE; --suave:rgba(243,245,238,.72); --tenue:rgba(243,245,238,.5); --linea:rgba(137,196,68,.22);
+  --display:'Playfair Display',Georgia,'Times New Roman',serif; --texto:'Montserrat','Segoe UI',Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--noche);color:var(--tinta);font-family:var(--texto);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(137,196,68,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(137,196,68,.07) 1px,transparent 1px),linear-gradient(rgba(137,196,68,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(137,196,68,.035) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+img{max-width:100%;display:block}
+a{color:var(--hoja)}
+:focus-visible{outline:2px solid var(--hoja);outline-offset:3px}
+.wrap{position:relative;z-index:1;width:min(1240px,100%);margin-inline:auto;padding-inline:24px}
+.leaf{display:inline-block;width:14px;height:14px;border-radius:0 12px 0 12px;background:var(--hoja);flex:none}
+.eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--hoja)}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;line-height:1.02;text-wrap:balance;letter-spacing:-.01em}
+.it{font-style:italic;font-weight:600;color:var(--hoja)}
+h2{font-size:clamp(38px,5.2vw,68px)}
+.lead{font-size:clamp(16px,1.4vw,19px);color:var(--suave);max-width:60ch;margin:22px 0 0}
+
+/* navegación */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(1,46,25,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+.nav .wrap{display:flex;align-items:center;gap:24px;padding-block:12px}
+.nav img{height:40px;width:auto}
+.nav nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;min-width:0}
+.nav nav::-webkit-scrollbar{display:none}
+.nav nav a{color:var(--suave);text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap;transition:background .25s,color .25s}
+.nav nav a:hover{background:rgba(137,196,68,.15);color:var(--tinta)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--linea)}
+.hero .bg{position:absolute;inset:0;background:url("assets/hero.jpg") 72% 50%/cover no-repeat}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,46,25,.96) 0%,rgba(1,46,25,.82) 38%,rgba(1,46,25,.1) 72%),linear-gradient(180deg,transparent 70%,var(--noche))}
+.hero .wrap{padding-block:clamp(70px,10vw,140px) clamp(60px,8vw,110px)}
+.hero h1{font-size:clamp(52px,8.4vw,124px);max-width:9.5ch;animation:sube 1.1s cubic-bezier(.2,.75,.2,1) both}
+.hero h1 .it{display:block;animation:sube 1.1s .18s cubic-bezier(.2,.75,.2,1) both}
+.hero .lead{animation:sube 1s .35s cubic-bezier(.2,.75,.2,1) both}
+@keyframes sube{from{transform:translateY(26px);opacity:.001}to{transform:none;opacity:1}}
+.cliente{display:flex;align-items:center;gap:18px;margin-top:40px;flex-wrap:wrap}
+.cliente img{height:64px;width:auto}
+.cliente p{margin:0;font-size:13px;color:var(--tenue);letter-spacing:.06em}
+.inventario{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:22px;overflow:hidden;margin-top:56px;max-width:860px}
+.inventario a{background:rgba(1,46,25,.88);padding:20px 22px;text-decoration:none;color:var(--tinta);transition:background .25s}
+.inventario a:hover{background:rgba(3,57,31,.95)}
+.inventario b{display:block;font-family:var(--display);font-size:40px;line-height:1;color:var(--hoja);font-variant-numeric:lining-nums}
+.inventario span{display:block;margin-top:6px;font-size:13px;color:var(--suave)}
+@media (max-width:720px){.inventario{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* secciones */
+section{position:relative;z-index:1;padding-block:clamp(70px,9vw,120px);border-bottom:1px solid var(--linea)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:end;margin-bottom:44px}
+.sec-head .lead{margin:0}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}}
+
+/* reel */
+.reel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(32px,6vw,90px);align-items:center}
+@media (max-width:860px){.reel{grid-template-columns:1fr;justify-items:center}}
+.telefono{position:relative;width:min(340px,82vw);aspect-ratio:9/19.5;border-radius:48px;padding:12px;background:#0a120e;box-shadow:0 0 0 2px rgba(137,196,68,.35),0 60px 120px rgba(0,0,0,.55),0 0 120px rgba(137,196,68,.18)}
+.telefono video{width:100%;height:100%;object-fit:cover;border-radius:38px;background:var(--noche);display:block}
+.sonido{position:absolute;right:26px;bottom:26px;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:0;background:var(--hoja);color:var(--noche);font:700 13px var(--texto);cursor:pointer}
+.datos{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);font-size:13px;font-weight:600;color:var(--suave)}
+
+/* concepto */
+.concepto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,70px);align-items:center}
+@media (max-width:860px){.concepto{grid-template-columns:1fr}}
+.concepto figure{margin:0;border-radius:28px;overflow:hidden;border:2px solid rgba(137,196,68,.45);aspect-ratio:4/5}
+.concepto figure img{width:100%;height:100%;object-fit:cover}
+.niveles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:34px}
+.niveles div{padding:22px 22px 24px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid var(--linea)}
+.niveles h3{font-size:24px}
+.niveles p{margin:8px 0 0;font-size:14px;color:var(--suave)}
+@media (max-width:520px){.niveles{grid-template-columns:1fr}}
+blockquote{margin:30px 0 0;padding-left:20px;border-left:2px solid var(--hoja);font-family:var(--display);font-style:italic;font-size:22px;line-height:1.4;color:var(--hoja-cl)}
+
+/* carriles horizontales */
+.carril{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 24px 22px;margin-inline:-24px;scrollbar-width:thin;scrollbar-color:var(--verde) transparent}
+.carril::-webkit-scrollbar{height:6px}.carril::-webkit-scrollbar-thumb{background:var(--verde);border-radius:6px}
+.carril button{flex:none;scroll-snap-align:start;border:0;padding:0;background:none;cursor:zoom-in;border-radius:18px;overflow:hidden;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s}
+.carril button:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(0,0,0,.45)}
+.carril img{height:100%;width:auto}
+.c-manual button{height:min(340px,52vw);aspect-ratio:16/9}
+.c-car button{height:min(330px,78vw);aspect-ratio:4/5}
+.c-hist button{height:min(480px,120vw);aspect-ratio:9/16;border-radius:24px}
+.carrusel{margin-top:42px}
+.carrusel header{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.carrusel h3{font-size:clamp(24px,2.6vw,32px)}
+.carrusel header p{margin:0;font-size:13px;color:var(--tenue)}
+.num{font-family:var(--display);font-style:italic;color:var(--hoja);font-size:28px;font-weight:600}
+
+/* aplicaciones */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(0,auto);gap:16px}
+.bento button{position:relative;border:0;padding:0;border-radius:24px;overflow:hidden;background:var(--noche-2);cursor:zoom-in}
+.bento img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.75,.2,1)}
+.bento button:hover img{transform:scale(1.04)}
+.bento figcaption{position:absolute;left:14px;bottom:14px;padding:8px 14px;border-radius:999px;background:rgba(1,46,25,.82);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.b1{grid-column:span 4;aspect-ratio:16/9}.b2{grid-column:span 2}.b3{grid-column:span 2;aspect-ratio:16/9}.b4{grid-column:span 2;aspect-ratio:16/9}.b5{grid-column:span 2;aspect-ratio:16/9}
+.b2 img{height:100%}
+@media (max-width:860px){.bento{grid-template-columns:1fr}.b1,.b2,.b3,.b4,.b5{grid-column:auto;aspect-ratio:16/9}}
+.nota{margin:16px 0 0;font-size:12px;color:var(--tenue)}
+
+/* papelería */
+.membretes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.membretes button{border:0;padding:0;background:#fff;border-radius:10px;overflow:hidden;cursor:zoom-in;box-shadow:0 30px 70px rgba(0,0,0,.4);transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.membretes button:hover{transform:translateY(-6px) rotate(-.4deg)}
+.membretes p{margin:14px 0 0;font-size:14px;font-weight:600}
+.membretes p span{display:block;font-weight:400;font-size:13px;color:var(--tenue)}
+@media (max-width:860px){.membretes{grid-template-columns:1fr;max-width:420px}}
+
+/* web */
+.navegador{border-radius:20px;overflow:hidden;border:1px solid var(--linea);box-shadow:0 40px 90px rgba(0,0,0,.45);background:#0b1510}
+.navegador .barra{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0f1d15;border-bottom:1px solid var(--linea)}
+.navegador .barra i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.2)}
+.navegador .barra span{margin-left:12px;padding:5px 14px;border-radius:999px;background:rgba(255,255,255,.06);font-size:12px;color:var(--tenue);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+
+/* cierre */
+.cierre{text-align:center;border-bottom:0}
+.cierre .wrap{display:flex;flex-direction:column;align-items:center}
+.cierre h2{font-size:clamp(42px,6vw,84px)}
+.cierre .firma{display:flex;align-items:center;gap:18px;margin-top:46px;color:var(--tenue);font-size:13px;letter-spacing:.06em}
+.cierre .firma img{height:44px;width:auto}
+
+/* visor */
+.visor{position:fixed;inset:0;z-index:50;background:rgba(1,20,11,.94);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);backdrop-filter:blur(6px)}
+.visor[hidden]{display:none}
+.visor img{max-height:100%;max-width:100%;width:auto;height:auto;border-radius:12px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.visor button{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;border:0;border-radius:999px;padding:10px 18px;background:var(--hoja);color:var(--noche);font:700 14px var(--texto);cursor:pointer}
+</style>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Santa Bárbara · Entregables">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/santa-barbara/entregables/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/santa-barbara/entregables/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <img src="assets/logo-sb.svg" alt="Urbanización Santa Bárbara">
+    <nav aria-label="Secciones">
+      <a href="#reel">Reel</a><a href="#concepto">Concepto</a><a href="#manual">Manual</a><a href="#carruseles">Carruseles</a>
+      <a href="#historias">Historias</a><a href="#aplicaciones">Aplicaciones</a><a href="#papeleria">Papelería</a><a href="#web">Web</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="bg" role="img" aria-label="Casa sobre una isla de tierra con hojas en el techo"></div>
+  <div class="wrap">
+    <p class="eyebrow"><span class="leaf"></span>Entregables de marca · Guacarí, Valle del Cauca</p>
+    <h1>Tu lote, en regla. <span class="it">Tu casa, también.</span></h1>
+    <p class="lead">Estrategia, identidad y contenido para la Urbanización Santa Bárbara. Una sola línea gráfica que se reconoce en el reel, en Instagram, en la valla de la entrada y en una carta.</p>
+    <div class="cliente"><img src="assets/logo-sb.svg" alt="Logo Urbanización Santa Bárbara"><p>CLIENTE · URBANIZACIÓN SANTA BÁRBARA<br>OCTUBRE 2026</p></div>
+    <div class="inventario">
+      <a href="#manual"><b>24</b><span>páginas de manual de línea gráfica</span></a>
+      <a href="#carruseles"><b>25</b><span>diapositivas en 5 carruseles</span></a>
+      <a href="#historias"><b>12</b><span>historias de Instagram</span></a>
+      <a href="#aplicaciones"><b>5</b><span>aplicaciones, de la valla al uniforme</span></a>
+    </div>
+  </div>
+</div>
+
+<section id="reel">
+  <div class="wrap reel">
+    <div>
+      <p class="eyebrow"><span class="leaf"></span>Reel en motion graphics</p>
+      <h2>Cuatro preguntas <span class="it">antes de separar.</span></h2>
+      <p class="lead">Treinta segundos que explican lo que todo comprador debería preguntar: documentación, financiación, qué puede construir y cuándo se escritura. La marca en movimiento, con la misma tipografía, el mismo verde y la misma retícula de todo lo demás.</p>
+      <div class="datos"><span class="chip"><span class="leaf"></span>9:16 · 1080 × 1920</span><span class="chip"><span class="leaf"></span>30 segundos</span><span class="chip"><span class="leaf"></span>Listo para Reels y TikTok</span></div>
+    </div>
+    <div class="telefono">
+      <video id="reelVideo" src="assets/reel.mp4" poster="assets/reel-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="sonido" id="sonido" type="button" aria-pressed="false">Activar sonido</button>
+    </div>
+  </div>
+</section>
+
+<section id="concepto">
+  <div class="wrap concepto">
+    <div>
+      <p class="eyebrow"><span class="leaf"></span>El concepto</p>
+      <h2>En regla.</h2>
+      <p class="lead">En el pueblo todos conocen a alguien que compró un lote y después descubrió que los papeles no le servían. El comprador no le teme al precio: le teme a quedarse con algo que no puede escriturar, financiar ni vender. La marca responde a ese miedo.</p>
+      <div class="niveles">
+        <div><h3>El lote, <span class="it">en regla.</span></h3><p>Escritura, licencia de urbanismo, obra que se ve y condiciones claras en todas las piezas.</p></div>
+        <div><h3>La casa, <span class="it">también.</span></h3><p>El plano de regalo cumple la norma, para que esa casa se pueda financiar y vender mañana.</p></div>
+      </div>
+      <blockquote>Obra real, no render. Lo que se ve en las fotos es lo que se compra.</blockquote>
+    </div>
+    <figure><img src="assets/iglesia.jpg" alt="Guacarí desde el dron: la iglesia y, al fondo, la urbanización" loading="lazy"></figure>
+  </div>
+</section>
+
+<section id="manual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span class="leaf"></span>Manual de línea gráfica</p><h2>Una sola línea, <span class="it">en todo.</span></h2></div>
+      <p class="lead">Veinticuatro páginas con la esencia, la voz, el logo en vector y sus usos, la paleta con su contraste, la tipografía, la retícula, la hoja, la fotografía y las aplicaciones. Toca cualquier página para verla en grande.</p>
+    </div>
+    <div class="carril c-manual" data-set="manual"></div>
+  </div>
+</section>
+
+<section id="carruseles">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span class="leaf"></span>Carruseles de Instagram</p><h2>Cinco historias <span class="it">que venden confianza.</span></h2></div>
+      <p class="lead">Tres con ilustración 3D sobre verde noche y dos con fotos reales del dron. Cada uno ataca una duda distinta del comprador.</p>
+    </div>
+    <div id="carruseles-lista"></div>
+  </div>
+</section>
+
+<section id="historias">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span class="leaf"></span>Historias de Instagram</p><h2>Doce historias, <span class="it">dos días.</span></h2></div>
+      <p class="lead">Del miedo a la visita y del plano a la plata. Dejan libre la zona que tapa Instagram y el espacio para encuestas, preguntas, ubicación y enlaces, que son los que generan conversación.</p>
+    </div>
+    <div class="carril c-hist" data-set="hist"></div>
+  </div>
+</section>
+
+<section id="aplicaciones">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span class="leaf"></span>Aplicaciones</p><h2>Afuera se ve <span class="it">igual que en la pantalla.</span></h2></div>
+      <p class="lead">La valla de la entrada al pueblo, el volante que se entrega en la obra, la lona del cerramiento, el carrusel en el celular y el polo del equipo de ventas.</p>
+    </div>
+    <div class="bento">
+      <button class="b1" type="button" data-full="assets/mk/mk_valla.jpg"><img src="assets/mk/mk_valla.jpg" alt="Valla en la vía de entrada a Guacarí" loading="lazy"><figcaption>Valla</figcaption></button>
+      <button class="b2" type="button" data-full="assets/mk/mk_celular.jpg"><img src="assets/mk/mk_celular.jpg" alt="Carrusel en un celular" loading="lazy" style="object-position:30% 50%"><figcaption>Redes</figcaption></button>
+      <button class="b3" type="button" data-full="assets/mk/mk_volante.jpg"><img src="assets/mk/mk_volante.jpg" alt="Volante en la mano frente a la obra" loading="lazy"><figcaption>Volante A5</figcaption></button>
+      <button class="b4" type="button" data-full="assets/mk/mk_lona.jpg"><img src="assets/mk/mk_lona.jpg" alt="Lona en el cerramiento de la obra" loading="lazy"><figcaption>Lona de obra</figcaption></button>
+      <button class="b5" type="button" data-full="assets/mk/mk_polo.jpg"><img src="assets/mk/mk_polo.jpg" alt="Polo verde con el logo bordado" loading="lazy"><figcaption>Uniforme</figcaption></button>
+    </div>
+    <p class="nota">Mockups ilustrativos generados con IA a partir de los diseños reales.</p>
+  </div>
+</section>
+
+<section id="papeleria">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span class="leaf"></span>Papelería</p><h2>Tres membretes, <span class="it">en PDF y en Word.</span></h2></div>
+      <p class="lead">Tamaño carta, con el texto editable y los contactos listos para completar. La marca está hasta en la carta que confirma una separación.</p>
+    </div>
+    <div class="membretes">
+      <div><button type="button" data-full="assets/memb/m1.jpg"><img src="assets/memb/m1.jpg" alt="Membrete opción 1, Esencial" loading="lazy"></button><p>Esencial<span>Sobria, con la franja de retícula.</span></p></div>
+      <div><button type="button" data-full="assets/memb/m2.jpg"><img src="assets/memb/m2.jpg" alt="Membrete opción 2, Franja noche" loading="lazy"></button><p>Franja noche<span>La más cercana a la landing.</span></p></div>
+      <div><button type="button" data-full="assets/memb/m3.jpg"><img src="assets/memb/m3.jpg" alt="Membrete opción 3, Línea" loading="lazy"></button><p>Línea<span>Con el dibujo del lote de 6 × 12 m.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="web">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow"><span class="leaf"></span>Landing y CRM</p><h2>Cada clic, <span class="it">medido.</span></h2></div>
+      <p class="lead">La landing nace de la misma línea y cada interesado llega por WhatsApp con un código que dice de qué pieza vino. Detrás, un CRM en Google Sheets pensado para registrar cada contacto y medir qué pieza vende de verdad.</p>
+    </div>
+    <div class="navegador"><div class="barra"><i></i><i></i><i></i><span>cotizaciones.blackmouth.agency/santa-barbara</span></div><img src="assets/landing.jpg" alt="Landing de la Urbanización Santa Bárbara" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="wrap">
+    <p class="eyebrow"><span class="leaf"></span>De la estrategia al último volante</p>
+    <h2>Una marca <span class="it">en regla.</span></h2>
+    <p class="lead">Concepto, manual, reel, carruseles, historias, impresos, papelería, landing y CRM. Todo bajo el mismo sistema.</p>
+    <div class="firma"><img src="assets/logo-bm.png" alt="BLACKMOUTH"><span>AGENCIA DE PUBLICIDAD</span></div>
+  </div>
+</section>
+</main>
+
+<div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-label="Vista ampliada">
+  <img id="visorImg" alt="">
+  <button type="button" id="cerrar">Cerrar</button>
+</div>
+
+<script>
+const manual = Array.from({length:24},(_,i)=>`assets/manual/${String(i+1).padStart(2,'0')}.jpg`);
+const hist = Array.from({length:12},(_,i)=>`assets/hist/${String(i+1).padStart(2,'0')}.jpg`);
+const carruseles = [
+  ['No compres un lote solo por el precio','Los tres papeles que debes pedir. Ilustración 3D.'],
+  ['Una casa bonita que nadie puede comprar','Por qué el plano debe cumplir la norma. Ilustración 3D.'],
+  ['Hagamos la cuenta','El 30 %, el saldo a 12 meses y el Lote 27. Ilustración 3D.'],
+  ['Tu lote en el centro de Guacarí','La ubicación, con fotos reales del dron.'],
+  ['Esta calle era tierra','Obra real, no render. Fotos del rodaje.']
+];
+const boton = (ruta, alt) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.full = ruta;
+  const i = document.createElement('img'); i.setAttribute('src', ruta); i.alt = alt; i.loading = 'lazy'; b.appendChild(i); return b; };
+const llenar = (el, botones) => botones.forEach(b => el.appendChild(b));
+llenar(document.querySelector('[data-set="manual"]'), manual.map((r,i)=>boton(r,'Manual, página '+(i+1))));
+llenar(document.querySelector('[data-set="hist"]'), hist.map((r,i)=>boton(r,'Historia '+(i+1))));
+const lista = document.getElementById('carruseles-lista');
+carruseles.forEach(([t,d],c)=>{
+  const box = document.createElement('div'); box.className = 'carrusel';
+  box.innerHTML = '<header><span class="num">'+(c+1)+'</span><h3></h3><p></p></header><div class="carril c-car"></div>';
+  box.querySelector('h3').textContent = t; box.querySelector('p').textContent = d;
+  llenar(box.querySelector('.carril'), [1,2,3,4,5].map(k=>boton('assets/car/c'+(c+1)+'-0'+k+'.jpg', t+', diapositiva '+k)));
+  lista.appendChild(box);
+});
+
+const visor = document.getElementById('visor'), visorImg = document.getElementById('visorImg');
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-full]'); if (!b) return;
+  visorImg.src = b.dataset.full; visorImg.alt = b.querySelector('img')?.alt || ''; visor.hidden = false; document.getElementById('cerrar').focus();
+});
+const cerrar = () => { visor.hidden = true; visorImg.src = ''; };
+document.getElementById('cerrar').addEventListener('click', cerrar);
+visor.addEventListener('click', e => { if (e.target === visor) cerrar(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !visor.hidden) cerrar(); });
+
+const v = document.getElementById('reelVideo'), s = document.getElementById('sonido');
+s.addEventListener('click', () => { v.muted = !v.muted; if (!v.muted) v.play().catch(()=>{}); s.textContent = v.muted ? 'Activar sonido' : 'Silenciar'; s.setAttribute('aria-pressed', String(!v.muted)); });
+</script>
+</body>
+</html>
