@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Urbanización Santa Bárbara · Lotes en el centro de Guacarí</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Lotes a una calle del parque principal de Guacarí. Separa con el 30 %, financiación directa hasta 12 meses y el plano de tu casa de regalo.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#012E19">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tu lote, en regla. Tu casa, también. · Santa Bárbara, Guacarí">
+<meta property="og:description" content="Separa con el 30 %, financiación directa hasta 12 meses y el plano de tu casa de regalo.">
+<meta property="og:image" content="https://blackmouthagency-dev.github.io/santa-barbara-lotes/og.jpg">
+<meta property="og:url" content="https://blackmouthagency-dev.github.io/santa-barbara-lotes/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap">
+
+<script>
+/* ============================================================
+   CONFIGURACIÓN — lo único que hay que tocar para publicar
+   ============================================================ */
+window.CONFIG = {
+  borrador: false,                 // true: muestra los espacios de foto/video vacíos y un aviso arriba. Poner false al publicar.
+  whatsapp: "",                   // WhatsApp dedicado, solo números con 57. Ej: "573001234567"
+  crmUrl: "",                     // URL /exec del Apps Script del CRM (ver CRM/COMO-MONTARLO.md)
+  metaPixelId: "",                // Opcional: ID del píxel de Meta
+  politicaUrl: "",                // Enlace a la política de tratamiento de datos
+  codigoPorDefecto: "SB-WEB",     // Código si alguien llega sin ?c=
+  valorM2: 1200000,               // Valor de referencia publicado por m²
+  separacion: 0.30,
+  plazos: [6, 12],                // Meses de financiación directa
+  minutosAlParque: null,          // Lo que se cronometró en el rodaje, ej. 1.5. Si es null se muestra "1 calle".
+  mapsUrl: "",                    // Enlace de Google Maps a la sala de ventas
+  salaDeVentas: "Sala de ventas en Guacarí · dirección por confirmar",
+  horario: "Horario por confirmar",
+  documentos: [                   // Lo que el comprador puede pedir en la visita (confirmar con el proyecto antes de publicar)
+    ["Escritura", "Escrituración inmediata del lote a tu nombre."],
+    ["Certificado de tradición", "El historial legal del predio, al día."],
+    ["Licencia de urbanismo", "El permiso del municipio para el proyecto."]
+  ],
+  media: {                        // Archivos en /media. Deja "" lo que aún no exista.
+    heroVideo: "media/hero.mp4",                // ej. "media/hero.mp4" (dron de las vías pavimentadas, 10–15 s, sin audio)
+    heroPoster: "media/hero.jpg",               // ej. "media/hero.jpg"
+    antes: "media/antes.jpg",                    // ej. "media/antes.jpg" (vía en tierra)
+    despues: "media/despues.jpg",                  // ej. "media/despues.jpg" (misma toma, pavimentada)
+    plano: "media/plano.jpg",                    // ej. "media/plano.jpg" (manos con el plano sobre el lote)
+    galeria: [["media/g1.jpg","La iglesia y la urbanización desde el aire"],["media/g2.jpg","Los lotes y las vías, desde arriba"],["media/g3.jpg","Corte de juntas en la vía nueva"],["media/g4.jpg","Curado del concreto"],["media/g5.jpg","Formaleta de los andenes"],["media/g6.jpg","El parque principal de Guacarí"]]                   // ej. [["media/g1.jpg","Timelapse de la pavimentación"], ...]
+  }
+};
+</script>
+
+<style>
+:root{
+  --verde:#006837;
+  --verde-osc:#00532C;
+  --noche:#012E19;
+  --noche-2:#013D22;
+  --hoja:#89C444;
+  --hoja-clara:#D6EDBD;
+  --fondo:#F4F6F1;
+  --blanco:#FFFFFF;
+  --tinta:#0F2419;
+  --texto2:#4B5C51;
+  --linea:#D5DDD2;
+  --titulo:"Playfair Display",Georgia,serif;
+  --texto:"Montserrat",Arial,sans-serif;
+  --gutter:clamp(18px,4.5vw,56px);
+  --curva:cubic-bezier(.2,.75,.2,1);
+  --resorte:cubic-bezier(.34,1.56,.64,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.55;overflow-x:hidden;font-variant-numeric:lining-nums}
+svg text{font-variant-numeric:lining-nums}
+img,video{max-width:100%;display:block}
+[hidden]{display:none!important}
+button,input,select{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--hoja);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;font-family:var(--titulo);font-weight:700;line-height:1.04;text-wrap:balance;font-variant-numeric:lining-nums}
+p,ul,ol{margin:0;padding:0}
+.num{font-variant-numeric:lining-nums tabular-nums}
+.in{max-width:1180px;margin:0 auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:14px;height:14px;border-radius:0 12px 0 12px;background:var(--hoja)}
+.oscuro .eyebrow,.hero .eyebrow,.form-sec .eyebrow{color:var(--hoja)}
+.sec{padding-block:clamp(72px,11vw,140px);position:relative}
+.sec h2{font-size:clamp(36px,6vw,76px);letter-spacing:-.01em}
+.lead{font-size:clamp(17px,1.9vw,20px);color:var(--texto2);max-width:56ch}
+.sec .in > .eyebrow + h2,.form-lado .eyebrow + h2{margin-top:14px}
+.sec .in > h2 + .lead{margin-top:18px}
+.oscuro{background:var(--noche);color:var(--blanco)}
+.oscuro .lead{color:#BFD8B6}
+
+/* ---------- Botones ---------- */
+.btn{--bg:var(--hoja);--fg:var(--noche);position:relative;display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;border:0;background:var(--bg);color:var(--fg);font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;transition:transform .35s var(--resorte),box-shadow .35s var(--curva),background .25s;will-change:transform;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:0;background:radial-gradient(120px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.45),transparent 60%);opacity:0;transition:opacity .3s;z-index:-1}
+.btn:hover::after{opacity:1}
+.btn:hover{box-shadow:0 14px 34px -14px rgba(137,196,68,.8)}
+.btn .flecha{transition:transform .35s var(--resorte)}
+.btn:hover .flecha{transform:translateX(5px)}
+.btn.fantasma{--bg:transparent;--fg:var(--blanco);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
+.btn.fantasma:hover{box-shadow:inset 0 0 0 1.5px var(--hoja),0 14px 34px -18px rgba(137,196,68,.6)}
+.btn.verde{--bg:var(--verde);--fg:var(--blanco)}
+.btn.wa{--bg:#25D366;--fg:#062B14}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- Borrador ---------- */
+.aviso-borrador{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:90;background:#1b1b1b;color:#fff;font-size:13px;padding:8px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.3);white-space:nowrap}
+@media (min-width:900px){.aviso-borrador{bottom:20px}}
+.hueco{border:1.5px dashed currentColor;border-radius:inherit;display:grid;place-items:center;text-align:center;padding:18px;font-size:14px;font-weight:600;opacity:.75;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(137,196,68,.08) 12px 13px)}
+.hueco small{display:block;font-weight:500;opacity:.8;margin-top:4px}
+
+/* ---------- Barra ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:80;padding-top:env(safe-area-inset-top,0px);transition:background .4s,box-shadow .4s,transform .45s var(--curva)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.nav .logo{height:48px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.25));transition:height .35s var(--curva)}
+.nav .logo-verde{display:none}
+.nav.solida{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--linea)}
+.nav.solida .logo{height:40px;filter:none}
+.nav.solida .logo-blanco{display:none}
+.nav.solida .logo-verde{display:block}
+.nav.oculta{transform:translateY(-100%)}
+.nav-links{display:none;gap:4px;align-items:center}
+@media (min-width:980px){.nav-links{display:flex}}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:600;color:var(--blanco);padding:8px 12px;border-radius:999px;transition:background .25s,color .25s}
+.nav.solida .nav-links a{color:var(--tinta)}
+.nav-links a:hover{background:rgba(137,196,68,.2)}
+.nav .btn{padding:11px 18px;font-size:14px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:min(100svh,940px);display:grid;align-items:end;overflow:hidden;color:var(--blanco);background:var(--noche);isolation:isolate}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.8s var(--curva)}
+.hero.lista .hero-media video,.hero.lista .hero-media img{transform:scale(1)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(1,46,25,.55) 0%,rgba(1,46,25,.25) 35%,rgba(1,46,25,.92) 100%),
+  radial-gradient(80% 60% at 80% 20%,rgba(137,196,68,.18),transparent 60%)}
+.plano-fondo{position:absolute;inset:0;z-index:-1;opacity:.9;pointer-events:none;
+  background-image:linear-gradient(rgba(137,196,68,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(137,196,68,.09) 1px,transparent 1px),linear-gradient(rgba(137,196,68,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(137,196,68,.05) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;
+  -webkit-mask-image:radial-gradient(90% 80% at 70% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(90% 80% at 70% 40%,#000 30%,transparent 80%)}
+.hero.con-video .plano-fondo{opacity:.35}
+.dibujo{position:absolute;right:max(-60px,-4vw);top:12%;width:min(760px,62vw);z-index:-1;pointer-events:none;transition:transform .6s var(--curva)}
+.hero.con-video .dibujo{opacity:.35}
+.dibujo .trazo{fill:none;stroke:var(--hoja);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dibujo .fino{stroke-width:1;stroke:rgba(214,237,189,.7)}
+.dibujo .cota{font:600 13px var(--texto);fill:var(--hoja-clara);letter-spacing:.06em}
+.dibujo [data-d]{stroke-dasharray:var(--l);stroke-dashoffset:var(--l)}
+.hero.lista .dibujo [data-d]{animation:dibujar 1.6s var(--curva) forwards;animation-delay:var(--t,0s)}
+.dibujo .cota,.dibujo .punto{opacity:0}
+.hero.lista .dibujo .cota,.hero.lista .dibujo .punto{animation:aparecer .6s var(--curva) forwards;animation-delay:var(--t,0s)}
+@keyframes dibujar{to{stroke-dashoffset:0}}
+@keyframes aparecer{to{opacity:1}}
+@media (max-width:760px){.dibujo{width:120vw;right:-30vw;top:9%;opacity:.45}}
+
+.hero-in{padding-block:130px clamp(40px,7vw,80px);display:grid;gap:clamp(22px,3vw,34px);width:100%}
+.hero h1{font-size:clamp(52px,10.5vw,148px);font-weight:800;line-height:.92;letter-spacing:-.02em}
+.hero h1 .linea{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .linea span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--curva);transition-delay:var(--t,0s)}
+.hero.lista h1 .linea span{transform:none}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--hoja)}
+.hero .bajada{font-size:clamp(17px,1.8vw,21px);max-width:44ch;color:#E3F0DA;opacity:0;transform:translateY(16px);transition:opacity .9s .55s var(--curva),transform .9s .55s var(--curva)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;opacity:0;transform:translateY(16px);transition:opacity .9s .7s var(--curva),transform .9s .7s var(--curva)}
+.hero.lista .bajada,.hero.lista .ctas{opacity:1;transform:none}
+.hero-pie{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:end;justify-content:space-between}
+.ticket{background:rgba(255,255,255,.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:18px 20px;display:grid;gap:4px;min-width:250px;opacity:0;transform:translateY(24px) rotate(-2deg);transition:opacity 1s .9s var(--curva),transform 1s .9s var(--resorte)}
+.hero.lista .ticket{opacity:1;transform:none}
+.ticket small{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--hoja)}
+.ticket b{font-family:var(--titulo);font-size:30px;line-height:1.1}
+.ticket span{font-size:14px;color:#D2E6C8}
+.bajar{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#CFE3C6;text-decoration:none}
+.bajar i{width:22px;height:36px;border:1.5px solid currentColor;border-radius:12px;position:relative}
+.bajar i::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;margin-left:-2px;border-radius:2px;background:var(--hoja);animation:rueda 1.8s infinite}
+@keyframes rueda{0%{opacity:0;transform:translateY(-3px)}40%{opacity:1}100%{opacity:0;transform:translateY(10px)}}
+
+/* ---------- Cinta ---------- */
+.cinta{background:var(--hoja);color:var(--noche);overflow:hidden;padding-block:16px;position:relative;z-index:2}
+.cinta-pista{display:flex;width:max-content;animation:cinta 32s linear infinite}
+.cinta:hover .cinta-pista{animation-play-state:paused}
+.cinta span{font-family:var(--titulo);font-weight:700;font-size:clamp(18px,2.2vw,24px);padding-inline:26px;display:inline-flex;align-items:center;gap:26px;white-space:nowrap}
+.cinta span::after{content:"";width:12px;height:12px;border-radius:0 10px 0 10px;background:var(--noche)}
+@keyframes cinta{to{transform:translateX(-50%)}}
+
+/* ---------- Razones (scroll con pin) ---------- */
+.razones{background:var(--blanco)}
+.razones-cab{display:grid;gap:16px;margin-bottom:clamp(36px,5vw,60px)}
+.historia{display:grid;gap:22px}
+.escena{border-radius:24px;background:var(--fondo);padding:clamp(22px,3vw,34px);display:grid;gap:12px}
+.escena .grande{font-family:var(--titulo);font-weight:800;font-size:clamp(64px,10vw,120px);line-height:.9;color:var(--verde)}
+.escena h3{font-size:clamp(26px,3vw,36px)}
+.escena p{color:var(--texto2);max-width:46ch}
+.escena .chip{justify-self:start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verde);background:var(--hoja-clara);padding:5px 10px;border-radius:999px}
+@media (min-width:980px){
+  .historia{grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
+  .visor{position:sticky;top:110px;height:min(72vh,620px);border-radius:28px;background:var(--noche);color:var(--blanco);overflow:hidden;display:grid;place-items:center;isolation:isolate}
+  .visor::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(137,196,68,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(137,196,68,.1) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000,transparent 75%);mask-image:radial-gradient(circle at 50% 50%,#000,transparent 75%)}
+  .visor .estado{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:14px;text-align:center;padding:40px;opacity:0;transform:scale(.92) translateY(20px);transition:opacity .6s var(--curva),transform .8s var(--curva)}
+  .visor .estado.activo{opacity:1;transform:none}
+  .visor .grande{font-family:var(--titulo);font-weight:800;font-size:clamp(110px,13vw,200px);line-height:.85;color:var(--hoja)}
+  .visor .sub{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#CFE3C6}
+  .visor .barra{position:absolute;left:28px;right:28px;bottom:26px;height:3px;background:rgba(255,255,255,.14);border-radius:3px;overflow:hidden}
+  .visor .barra i{display:block;height:100%;width:0;background:var(--hoja);transition:width .2s linear}
+  .pasos-historia{display:grid;gap:clamp(220px,36vh,380px);padding-block:clamp(60px,10vh,110px) clamp(200px,30vh,320px)}
+  .escena{background:transparent;padding:0;opacity:.28;transition:opacity .5s var(--curva)}
+  .escena.activo{opacity:1}
+  .escena .grande{display:none}
+}
+@media (max-width:979px){.visor{display:none}.pasos-historia{display:grid;gap:14px}}
+.anillo-svg{width:min(300px,60%)}
+.anillo-svg .arco{transition:stroke-dasharray 1.2s var(--curva)}
+.meses{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;width:min(360px,80%)}
+.meses i{aspect-ratio:1;border-radius:8px;border:1.5px solid rgba(137,196,68,.5);transform:scale(.6);opacity:.2;transition:transform .5s var(--resorte),opacity .4s,background .4s}
+.estado.activo .meses i{transform:none;opacity:1;background:rgba(137,196,68,.18);transition-delay:calc(var(--i) * 60ms)}
+.plano-svg{width:min(360px,80%)}
+.plano-svg path,.plano-svg rect,.plano-svg line{fill:none;stroke:var(--hoja);stroke-width:2;stroke-dasharray:var(--l);stroke-dashoffset:var(--l);transition:stroke-dashoffset 1.6s var(--curva)}
+.estado.activo .plano-svg *{stroke-dashoffset:0}
+.plano-svg text{fill:#CFE3C6;font:600 11px var(--texto);letter-spacing:.06em;stroke:none}
+
+/* ---------- Simulador ---------- */
+.sim{display:grid;gap:clamp(20px,3vw,32px);margin-top:clamp(28px,4vw,44px)}
+@media (min-width:920px){.sim{grid-template-columns:1.1fr 1fr;align-items:stretch}}
+.sim-controles{background:var(--blanco);border-radius:26px;padding:clamp(22px,3vw,36px);display:grid;gap:22px;align-content:start;border:1px solid var(--linea)}
+.sim label,.sim .rotulo{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2)}
+.area{display:flex;align-items:baseline;gap:10px}
+.area output{font-family:var(--titulo);font-size:clamp(48px,6vw,72px);font-weight:800;color:var(--verde);line-height:1}
+.area span{font-size:20px;font-weight:600;color:var(--verde)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:10px;background:linear-gradient(90deg,var(--verde) var(--p,20%),var(--linea) var(--p,20%));cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--blanco);border:5px solid var(--verde);box-shadow:0 4px 14px rgba(0,104,55,.35);transition:transform .25s var(--resorte)}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.2)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--blanco);border:5px solid var(--verde)}
+.lote-mini{height:120px;display:flex;align-items:end;justify-content:center;gap:0}
+.lote-mini div{background:rgba(0,104,55,.1);border:2px solid var(--verde);border-radius:4px;transition:width .3s var(--curva),height .3s var(--curva);position:relative}
+.lote-mini div::after{content:attr(data-medida);position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);font-size:12px;font-weight:600;color:var(--texto2);white-space:nowrap}
+.segmento{display:inline-flex;gap:6px;background:var(--fondo);padding:5px;border-radius:999px;flex-wrap:wrap}
+.segmento button{border:0;background:none;padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px;cursor:pointer;color:var(--texto2);transition:background .3s,color .3s}
+.segmento button[aria-pressed=true]{background:var(--verde);color:var(--blanco)}
+.sim-resultado{background:var(--noche);color:var(--blanco);border-radius:26px;padding:clamp(22px,3vw,36px);display:grid;gap:18px;align-content:start;position:relative;overflow:hidden}
+.sim-resultado::after{content:"";position:absolute;width:320px;height:320px;right:-120px;top:-120px;border-radius:0 260px 0 260px;background:rgba(137,196,68,.12);transform:rotate(12deg)}
+.fila-res{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.12)}
+.fila-res span{font-size:14px;color:#BFD8B6}
+.fila-res b{font-family:var(--titulo);font-size:clamp(24px,3vw,34px);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.fila-res.destacada b{color:var(--hoja);font-size:clamp(30px,3.8vw,44px)}
+.sim-resultado .nota{font-size:13px;color:#A9C6A0}
+
+/* ---------- Antes / después ---------- */
+.comparar{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:16/9;background:#1f2a22;user-select:none;touch-action:pan-y;cursor:ew-resize;margin-top:clamp(28px,4vw,44px)}
+@media (max-width:700px){.comparar{aspect-ratio:4/5}}
+.comparar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.comparar .capa{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.comparar .manija{position:absolute;top:0;bottom:0;left:var(--x,50%);width:3px;background:var(--blanco);transform:translateX(-50%);box-shadow:0 0 20px rgba(0,0,0,.35)}
+.comparar .manija::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--blanco);color:var(--verde);display:grid;place-items:center;font-weight:800;font-size:20px;letter-spacing:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.comparar .et{position:absolute;top:18px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.55);color:#fff}
+.comparar .et.a{left:18px}.comparar .et.d{right:18px;background:var(--hoja);color:var(--noche)}
+.comparar.vacio{cursor:default;display:grid;grid-template-columns:1fr 1fr;color:#CFE3C6}
+.comparar.vacio .hueco{border-radius:0}
+
+/* ---------- Ubicación ---------- */
+.ubi{display:grid;gap:clamp(28px,4vw,56px);align-items:center}
+@media (min-width:980px){.ubi{grid-template-columns:1fr 1.15fr}}
+.mapa{background:var(--noche);border-radius:28px;padding:clamp(12px,2vw,20px);position:relative;overflow:hidden}
+.mapa svg{width:100%;height:auto;display:block}
+.mapa .manzana{fill:#02402A;stroke:rgba(137,196,68,.18)}
+.mapa .calle{stroke:rgba(214,237,189,.12);stroke-width:1}
+.mapa .parque{fill:#0B5A33}
+.mapa .arbol{fill:var(--hoja);opacity:.85}
+.mapa .lote{fill:var(--hoja);animation:latido 2.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes latido{50%{transform:scale(1.08);opacity:.85}}
+.mapa .ruta{fill:none;stroke:var(--hoja);stroke-width:4;stroke-linecap:round;stroke-dasharray:6 10}
+.mapa .ruta-viva{fill:none;stroke:var(--blanco);stroke-width:4;stroke-linecap:round;stroke-dasharray:var(--l);stroke-dashoffset:var(--l)}
+.mapa.andando .ruta-viva{transition:stroke-dashoffset 2.6s var(--curva);stroke-dashoffset:0}
+.mapa .etq{font:700 13px var(--texto);fill:var(--blanco)}
+.mapa .etq2{font:600 11px var(--texto);fill:#BFD8B6;letter-spacing:.05em}
+.mapa .punto{cursor:pointer}
+.mapa .punto circle{fill:var(--noche);stroke:var(--hoja);stroke-width:2;transition:r .3s var(--resorte),fill .3s}
+.mapa .punto:hover circle,.mapa .punto.activo circle{fill:var(--hoja)}
+.mapa .aviso{position:absolute;left:20px;bottom:16px;font-size:11px;color:#8FB385;letter-spacing:.05em}
+.crono{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.crono b{font-family:var(--titulo);font-size:clamp(64px,9vw,112px);font-weight:800;color:var(--verde);line-height:.9;font-variant-numeric:lining-nums tabular-nums}
+.crono span{font-size:18px;font-weight:600;color:var(--texto2)}
+.cerca{list-style:none;display:grid;gap:10px;margin-top:8px}
+.cerca li{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--blanco);border-radius:16px;border:1px solid var(--linea);cursor:default;transition:transform .3s var(--curva),border-color .3s}
+.cerca li:hover,.cerca li.activo{transform:translateX(6px);border-color:var(--hoja)}
+.cerca li i{width:38px;height:38px;border-radius:12px;background:var(--hoja-clara);display:grid;place-items:center;flex:none;font-style:normal;font-size:18px}
+.cerca b{display:block;font-size:15px}
+.cerca small{color:var(--texto2);font-size:13px}
+
+/* ---------- En regla ---------- */
+.regla-grid{display:grid;gap:clamp(18px,3vw,28px);margin-top:clamp(28px,4vw,44px)}
+@media (min-width:980px){.regla-grid{grid-template-columns:1.1fr 1fr}}
+.comparador{background:var(--blanco);border-radius:26px;padding:clamp(22px,3vw,34px);display:grid;gap:18px;border:1px solid var(--linea)}
+.comparador h3{font-size:clamp(24px,2.6vw,30px)}
+.filas{list-style:none;display:grid;gap:10px}
+.filas li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:center;background:var(--fondo);border-radius:14px;padding:14px 16px;transition:background .35s}
+.filas i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;color:#fff;background:var(--verde);transition:background .35s}
+.comparador[data-modo=sin] .filas li{background:#F7EDE8}
+.comparador[data-modo=sin] .filas i{background:#A04A2C}
+.filas li.cambia i{animation:giro .5s var(--resorte)}
+@keyframes giro{from{transform:scale(.3) rotate(-120deg)}}
+.docs{display:grid;gap:12px;perspective:1200px}
+.doc{position:relative;min-height:128px;cursor:pointer;border:0;padding:0;background:none;text-align:left}
+.doc .cara{position:absolute;inset:0;border-radius:20px;padding:20px 22px;display:grid;align-content:space-between;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .7s var(--curva)}
+.doc .frente{background:var(--noche);color:#fff}
+.doc .frente b{font-family:var(--titulo);font-size:24px}
+.doc .frente small{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hoja)}
+.doc .dorso{background:var(--hoja);color:var(--noche);transform:rotateY(180deg);font-weight:600}
+.doc.volteada .frente{transform:rotateY(-180deg)}
+.doc.volteada .dorso{transform:rotateY(0)}
+@media (hover:hover){.doc:hover .frente{transform:rotateY(-180deg)}.doc:hover .dorso{transform:rotateY(0)}}
+.foto-plano{border-radius:26px;overflow:hidden;min-height:260px;color:var(--texto2);position:relative}
+.foto-plano img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- Galería ---------- */
+.galeria{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px var(--gutter) 22px;margin-top:clamp(28px,4vw,44px);scrollbar-width:none;cursor:grab}
+.galeria::-webkit-scrollbar{display:none}
+.galeria.arrastrando{cursor:grabbing;scroll-snap-type:none}
+.galeria figure{margin:0;flex:0 0 min(78vw,420px);aspect-ratio:4/5;border-radius:24px;overflow:hidden;scroll-snap-align:center;position:relative;background:var(--noche-2);color:#CFE3C6;transition:transform .5s var(--curva)}
+.galeria figure:hover{transform:translateY(-6px)}
+.galeria img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.galeria figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(1,46,25,.75);backdrop-filter:blur(8px);color:#fff;font-size:14px;font-weight:600;padding:10px 14px;border-radius:12px}
+
+/* ---------- Formulario ---------- */
+.form-sec{background:var(--noche);color:var(--blanco);overflow:hidden}
+.form-grid{display:grid;gap:clamp(28px,4vw,60px)}
+@media (min-width:980px){.form-grid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.form-lado{display:grid;gap:18px;position:relative}
+@media (min-width:980px){.form-lado{position:sticky;top:120px}}
+.form-lado h2{color:var(--blanco);font-size:clamp(34px,4.4vw,56px)}
+.form-sec .lead{color:#BFD8B6}
+.comparador .segmento{display:grid;grid-template-columns:1fr 1fr;border-radius:18px}
+.comparador .segmento button{border-radius:14px;padding:12px 10px;font-size:14px}
+.foto-plano .hueco{min-height:260px;height:100%;border-radius:26px}
+.paso legend{display:grid;gap:6px;margin-bottom:4px}
+.garantias{list-style:none;display:grid;gap:10px}
+.garantias li{display:flex;gap:12px;align-items:center;color:#D2E6C8}
+.garantias li::before{content:"";width:12px;height:12px;border-radius:0 10px 0 10px;background:var(--hoja);flex:none}
+.tarjeta-form{background:var(--blanco);color:var(--tinta);border-radius:28px;padding:clamp(22px,3.4vw,40px);position:relative;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.progreso-form{display:flex;gap:6px;margin-bottom:24px}
+.progreso-form i{flex:1;height:5px;border-radius:5px;background:var(--linea);overflow:hidden;position:relative}
+.progreso-form i::after{content:"";position:absolute;inset:0;background:var(--verde);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--curva)}
+.progreso-form i.hecho::after{transform:scaleX(1)}
+.paso{display:none;gap:18px}
+.paso.activo{display:grid;animation:entraPaso .55s var(--curva)}
+.paso.atras{animation-name:entraPasoAtras}
+@keyframes entraPaso{from{opacity:0;transform:translateX(30px)}}
+@keyframes entraPasoAtras{from{opacity:0;transform:translateX(-30px)}}
+.paso h3{font-size:clamp(24px,2.8vw,32px)}
+.paso .cuenta-paso{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--texto2)}
+.opciones{display:grid;gap:10px}
+@media (min-width:560px){.opciones.dos{grid-template-columns:1fr 1fr}}
+.opcion{position:relative;border:1.5px solid var(--linea);border-radius:16px;padding:16px 18px;cursor:pointer;display:flex;gap:14px;align-items:center;transition:border-color .25s,background .25s,transform .3s var(--resorte);background:var(--blanco)}
+.opcion:hover{border-color:var(--hoja);transform:translateY(-2px)}
+.opcion input{position:absolute;opacity:0;pointer-events:none}
+.opcion .ico{width:40px;height:40px;border-radius:12px;background:var(--fondo);display:grid;place-items:center;font-size:19px;flex:none;transition:background .25s}
+.opcion b{display:block;font-size:16px}
+.opcion small{color:var(--texto2);font-size:13px}
+.opcion:has(input:checked){border-color:var(--verde);background:#F0F7EA}
+.opcion:has(input:checked) .ico{background:var(--verde);color:#fff}
+.opcion:has(input:focus-visible){outline:3px solid var(--hoja);outline-offset:2px}
+.campo{display:grid;gap:6px}
+.campo label{font-size:13px;font-weight:700;color:var(--texto2)}
+.campo input,.campo select{width:100%;border:1.5px solid var(--linea);border-radius:14px;padding:14px 16px;background:var(--blanco);font-size:16px;transition:border-color .25s,box-shadow .25s}
+.campo input:focus,.campo select:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 4px rgba(137,196,68,.25)}
+.tel{display:grid;grid-template-columns:118px 1fr;gap:8px}
+.check-legal{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:13.5px;color:var(--texto2);align-items:start;cursor:pointer}
+.check-legal input{width:22px;height:22px;accent-color:var(--verde);margin:0}
+.nav-form{display:flex;justify-content:space-between;gap:12px;margin-top:6px;align-items:center}
+.volver-paso{border:0;background:none;font-weight:600;color:var(--texto2);cursor:pointer;padding:10px 4px}
+.error{color:#B3261E;font-size:13.5px;font-weight:600;min-height:1.2em}
+.miel{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.exito{display:none;text-align:center;gap:16px;justify-items:center;padding-block:10px}
+.exito.activo{display:grid;animation:entraPaso .6s var(--curva)}
+.exito .sello{width:96px;height:96px}
+.exito .sello circle{fill:none;stroke:var(--hoja);stroke-width:5;stroke-dasharray:290;stroke-dashoffset:290;animation:dibujar 1s var(--curva) forwards}
+.exito .sello path{fill:none;stroke:var(--verde);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:80;stroke-dashoffset:80;animation:dibujar .6s .6s var(--curva) forwards}
+.exito .ref{font-size:13px;color:var(--texto2)}
+#hojas{position:fixed;inset:0;pointer-events:none;z-index:95}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;gap:10px;margin-top:clamp(24px,4vw,40px);max-width:860px}
+.faq details{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;overflow:hidden;transition:border-color .3s}
+.faq details[open]{border-color:var(--hoja)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;font-weight:400;color:var(--verde);transition:transform .35s var(--resorte);flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .resp{padding:0 22px 20px;color:var(--texto2)}
+
+/* ---------- Pie y barra móvil ---------- */
+.pie{background:#011F11;color:#A9C6A0;padding-block:56px calc(110px + env(safe-area-inset-bottom,0px));font-size:14px}
+@media (min-width:900px){.pie{padding-bottom:56px}}
+.pie-in{display:grid;gap:26px}
+@media (min-width:800px){.pie-in{grid-template-columns:1.2fr 1fr 1fr;align-items:start}}
+.pie img{height:58px;width:auto}
+.pie b{color:#fff;display:block;margin-bottom:6px}
+.pie a{color:#DDEFD2}
+.pie .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+.barra-movil{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:85;display:flex;gap:10px;padding:8px;background:rgba(1,46,25,.92);backdrop-filter:blur(12px);border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.3);transform:translateY(140%);transition:transform .5s var(--resorte)}
+.barra-movil.visible{transform:none}
+.barra-movil .btn{flex:1;justify-content:center;padding:13px 14px;font-size:15px}
+@media (min-width:900px){.barra-movil{display:none}}
+.wa-flota{position:fixed;right:22px;bottom:22px;z-index:85;width:62px;height:62px;border-radius:50%;background:#25D366;display:none;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.25);transform:scale(0);transition:transform .5s var(--resorte)}
+.wa-flota.visible{transform:scale(1)}
+.wa-flota svg{width:30px;height:30px}
+.wa-flota::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;animation:onda 2.4s infinite;z-index:-1}
+@keyframes onda{to{transform:scale(1.7);opacity:0}}
+@media (min-width:900px){.wa-flota{display:grid}}
+
+/* ---------- Revelado ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--curva),transform .9s var(--curva);transition-delay:var(--d,0s)}
+  .rv.visto{opacity:1;transform:none}
+  .rv-l{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s var(--curva)}
+  .rv-l.visto{clip-path:inset(0 0 0 0)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .hero h1 .linea span,.hero .bajada,.hero .ctas,.ticket{transform:none!important;opacity:1!important}
+}
+</style>
+</head>
+<body>
+
+<canvas id="hojas" aria-hidden="true"></canvas>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="in nav-in">
+    <a href="#inicio" aria-label="Urbanización Santa Bárbara, inicio">
+      <img class="logo logo-blanco" src="media/logo-santa-barbara-blanco.png" alt="Urbanización Santa Bárbara">
+      <img class="logo logo-verde" src="media/logo-santa-barbara.png" alt="" aria-hidden="true">
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#razones">Por qué aquí</a>
+      <a href="#simulador">Haz la cuenta</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#en-regla">En regla</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn" href="#formulario" data-magnetico>Quiero información</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-media" id="heroMedia"></div>
+  <div class="plano-fondo" aria-hidden="true"></div>
+  <svg class="dibujo" id="dibujo" viewBox="0 0 700 560" aria-hidden="true">
+    <!-- Planta del lote 6 × 12 m y fachada: se dibuja al cargar -->
+    <rect class="trazo" data-d x="360" y="60" width="150" height="300" rx="2" style="--t:.2s"/>
+    <line class="trazo fino" data-d x1="360" y1="150" x2="510" y2="150" style="--t:.8s"/>
+    <line class="trazo fino" data-d x1="440" y1="150" x2="440" y2="260" style="--t:1s"/>
+    <line class="trazo fino" data-d x1="360" y1="260" x2="510" y2="260" style="--t:1.1s"/>
+    <path class="trazo fino" data-d d="M360 330 H405 M465 330 H510" style="--t:1.2s"/>
+    <line class="trazo fino" data-d x1="360" y1="36" x2="510" y2="36" style="--t:1.4s"/>
+    <line class="trazo fino" data-d x1="536" y1="60" x2="536" y2="360" style="--t:1.5s"/>
+    <text class="cota" x="435" y="28" text-anchor="middle" style="--t:1.9s">6,00 M</text>
+    <text class="cota" x="552" y="215" style="--t:2s">12,00 M</text>
+    <path class="trazo" data-d d="M90 470 V330 L200 250 L310 330 V470 Z" style="--t:.5s"/>
+    <path class="trazo fino" data-d d="M165 470 V395 H235 V470 M112 350 H150 V385 H112 Z M250 350 H288 V385 H250 Z" style="--t:1.3s"/>
+    <line class="trazo" data-d x1="40" y1="470" x2="640" y2="470" style="--t:.1s"/>
+    <circle class="punto" cx="435" cy="205" r="6" fill="#89C444" style="--t:2.2s"/>
+  </svg>
+
+  <div class="in hero-in">
+    <p class="eyebrow">Lotes en el centro de Guacarí</p>
+    <h1>
+      <span class="linea"><span style="--t:.15s">Tu lote, en regla.</span></span>
+      <span class="linea"><span style="--t:.3s"><em>Tu casa, también.</em></span></span>
+    </h1>
+    <p class="bajada">A una calle del parque principal. Separas con el 30 %, la constructora te financia hasta 12 meses y el plano de tu casa va de regalo.</p>
+    <div class="hero-pie">
+      <div class="ctas">
+        <a class="btn" href="#formulario" data-magnetico>Quiero separar mi lote <span class="flecha" aria-hidden="true">→</span></a>
+        <a class="btn fantasma" href="#simulador" data-magnetico>Hacer la cuenta</a>
+      </div>
+      <div class="ticket" id="ticket">
+        <small>Lote 27 · 6 × 12 m</small>
+        <b class="num">$87.480.000</b>
+        <span>Separas con <strong class="num">$26.244.000</strong></span>
+      </div>
+    </div>
+    <a class="bajar" href="#razones"><i aria-hidden="true"></i>Descubre por qué</a>
+  </div>
+</section>
+
+<div class="cinta" aria-hidden="true">
+  <div class="cinta-pista" id="cinta"></div>
+</div>
+
+<!-- ============ RAZONES ============ -->
+<section class="sec razones" id="razones">
+  <div class="in">
+    <div class="razones-cab">
+      <p class="eyebrow rv">Por qué Santa Bárbara</p>
+      <h2 class="rv" style="--d:.08s">Tres razones que hacen la diferencia</h2>
+    </div>
+    <div class="historia">
+      <div class="visor" id="visor" aria-hidden="true">
+        <div class="estado activo" data-estado="0">
+          <svg class="anillo-svg" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="22"/>
+            <circle class="arco" id="arcoVisor" cx="100" cy="100" r="80" fill="none" stroke="#89C444" stroke-width="22" stroke-linecap="round" stroke-dasharray="0 502.65" transform="rotate(-90 100 100)"/>
+            <text x="100" y="116" text-anchor="middle" fill="#fff" font-family="Playfair Display, Georgia, serif" font-weight="800" font-size="48">30 %</text>
+          </svg>
+          <p class="sub">para separar</p>
+        </div>
+        <div class="estado" data-estado="1">
+          <p class="grande num">12</p>
+          <div class="meses" id="meses"></div>
+          <p class="sub">meses con la constructora</p>
+        </div>
+        <div class="estado" data-estado="2">
+          <svg class="plano-svg" viewBox="0 0 240 300">
+            <rect x="30" y="20" width="180" height="260" style="--l:880"/>
+            <line x1="30" y1="110" x2="210" y2="110" style="--l:180"/>
+            <line x1="120" y1="110" x2="120" y2="200" style="--l:90"/>
+            <line x1="30" y1="200" x2="210" y2="200" style="--l:180"/>
+            <path d="M30 250 H90 M150 250 H210" style="--l:120"/>
+            <text x="120" y="70" text-anchor="middle">SALA · COMEDOR</text>
+            <text x="75" y="160" text-anchor="middle">HAB.</text>
+            <text x="165" y="160" text-anchor="middle">HAB.</text>
+            <text x="120" y="232" text-anchor="middle">COCINA · PATIO</text>
+          </svg>
+          <p class="sub">plano de regalo · ilustrativo</p>
+        </div>
+        <div class="barra"><i id="barraVisor"></i></div>
+      </div>
+
+      <div class="pasos-historia">
+        <article class="escena activo" data-escena="0">
+          <p class="grande num">30 %</p>
+          <span class="chip">Razón 1</span>
+          <h3>Separas con el 30 %</h3>
+          <p>No necesitas tener todo el dinero hoy. Con el 30 % apartas tu lote y el resto lo pagas mientras avanza la obra.</p>
+        </article>
+        <article class="escena" data-escena="1">
+          <p class="grande num">12</p>
+          <span class="chip">Razón 2</span>
+          <h3>Te financia la constructora</h3>
+          <p>Financiación directa hasta 12 meses: el trato es con el proyecto, no con un banco. Te explicamos requisitos y condiciones por WhatsApp.</p>
+        </article>
+        <article class="escena" data-escena="2">
+          <p class="grande">✓</p>
+          <span class="chip">Razón 3</span>
+          <h3>El plano de tu casa, de regalo</h3>
+          <p>Una casa construida con un plano que no cumple la norma puede quedarse sin crédito bancario y, por eso, sin compradores. La tuya arranca en regla.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIMULADOR ============ -->
+<section class="sec" id="simulador">
+  <div class="in">
+    <p class="eyebrow rv">Haz la cuenta</p>
+    <h2 class="rv" style="--d:.08s">¿Cuánto necesitas para separar?</h2>
+    <p class="lead rv" style="--d:.14s">Mueve el área y elige el plazo. Así se vería tu plan de pagos.</p>
+    <div class="sim">
+      <div class="sim-controles rv">
+        <div>
+          <label for="area">Área del lote</label>
+          <div class="area"><output id="areaOut" class="num">72,9</output><span>m²</span></div>
+        </div>
+        <input type="range" id="area" min="60" max="120" step="0.1" value="72.9" aria-describedby="notaSim">
+        <div class="lote-mini" aria-hidden="true"><div id="loteMini" data-medida="6 × 12 m"></div></div>
+        <div>
+          <span class="rotulo" id="rotPlazo">Financiación directa</span>
+          <div class="segmento" role="group" aria-labelledby="rotPlazo" id="plazos"></div>
+        </div>
+      </div>
+      <div class="sim-resultado rv" style="--d:.1s" aria-live="polite">
+        <div class="fila-res"><span>Valor del lote</span><b id="rValor">$87.480.000</b></div>
+        <div class="fila-res destacada"><span>Separas hoy (30 %)</span><b id="rSep">$26.244.000</b></div>
+        <div class="fila-res"><span>Cuota mensual del saldo</span><b id="rCuota">$5.103.000</b></div>
+        <p class="nota" id="notaSim">Ejemplo con el valor de referencia de $1.200.000 por m², en cuotas iguales. Áreas, precios, plazos e intereses se confirman con un asesor según el lote.</p>
+        <a class="btn" href="#formulario" id="quieroCuenta" data-magnetico>Quiero esta cuenta <span class="flecha" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANTES / DESPUÉS ============ -->
+<section class="sec oscuro" id="obra">
+  <div class="in">
+    <p class="eyebrow rv">Avance de obra</p>
+    <h2 class="rv" style="--d:.08s">De tierra a concreto</h2>
+    <p class="lead rv" style="--d:.14s">Las vías ya están pavimentadas. Arrastra para ver el cambio.</p>
+    <div class="comparar rv" id="comparar" style="--d:.1s" role="slider" aria-label="Comparar antes y después de la pavimentación" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"></div>
+  </div>
+  <div class="galeria" id="galeria" aria-label="Galería de la obra"></div>
+</section>
+
+<!-- ============ UBICACIÓN ============ -->
+<section class="sec" id="ubicacion">
+  <div class="in ubi">
+    <div style="display:grid;gap:18px">
+      <p class="eyebrow rv">Ubicación</p>
+      <h2 class="rv" style="--d:.08s">Todo queda a pie</h2>
+      <div class="crono rv" style="--d:.14s"><b id="crono" class="num">1</b><span id="cronoTxt">calle del parque principal</span></div>
+      <p class="lead rv" style="--d:.18s">Vives en el centro de Guacarí, no a las afueras. Colegios, iglesia, comercio y el parque, sin sacar el carro.</p>
+      <ul class="cerca" id="cerca">
+        <li data-p="parque" class="rv"><i aria-hidden="true">🌳</i><div><b>Parque principal</b><small>Tierra del Samán</small></div></li>
+        <li data-p="iglesia" class="rv" style="--d:.06s"><i aria-hidden="true">⛪</i><div><b>Iglesia</b><small>Frente al parque</small></div></li>
+        <li data-p="colegio" class="rv" style="--d:.12s"><i aria-hidden="true">🎒</i><div><b>Colegios</b><small>A pocas cuadras</small></div></li>
+        <li data-p="coliseo" class="rv" style="--d:.18s"><i aria-hidden="true">🏀</i><div><b>Coliseo</b><small>Deporte en familia</small></div></li>
+      </ul>
+      <a class="btn verde rv" id="btnMapa" href="#" rel="noopener" hidden>Cómo llegar a la sala de ventas <span class="flecha" aria-hidden="true">→</span></a>
+    </div>
+    <div class="mapa rv" id="mapa" style="--d:.1s">
+      <svg viewBox="0 0 600 520" role="img" aria-label="Esquema del recorrido a pie desde el lote hasta el parque principal">
+        <g id="manzanas"></g>
+        <rect class="parque" x="330" y="150" width="150" height="130" rx="10"/>
+        <g id="arboles"></g>
+        <path class="ruta" d="M121 302 V285 H320 V215 H336"/>
+        <path class="ruta-viva" id="rutaViva" d="M121 302 V285 H320 V215 H336"/>
+        <rect class="lote" x="104" y="304" width="34" height="38" rx="4"/>
+        <text class="etq" x="40" y="370">Santa Bárbara</text>
+        <text class="etq" x="352" y="140">Parque principal</text>
+        <g class="punto" data-p="parque"><circle cx="405" cy="215" r="9"/></g>
+        <g class="punto" data-p="iglesia"><circle cx="405" cy="112" r="9"/><text class="etq2" x="420" y="116">Iglesia</text></g>
+        <g class="punto" data-p="colegio"><circle cx="520" cy="360" r="9"/><text class="etq2" x="470" y="392">Colegio</text></g>
+        <g class="punto" data-p="coliseo"><circle cx="110" cy="190" r="9"/><text class="etq2" x="80" y="172">Coliseo</text></g>
+        <circle id="caminante" r="8" fill="#fff" cx="121" cy="302"/>
+      </svg>
+      <p class="aviso">Esquema ilustrativo, no a escala</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EN REGLA ============ -->
+<section class="sec" id="en-regla" style="background:var(--blanco)">
+  <div class="in">
+    <p class="eyebrow rv">En regla</p>
+    <h2 class="rv" style="--d:.08s">Compra con papeles, construye con plano</h2>
+    <div class="regla-grid">
+      <div class="comparador rv" id="comparador" data-modo="con">
+        <h3>¿Por qué importa un plano que cumple la norma?</h3>
+        <div class="segmento" role="group" aria-label="Comparar">
+          <button type="button" data-modo="sin" aria-pressed="false">Casa sin plano a la norma</button>
+          <button type="button" data-modo="con" aria-pressed="true">Casa con plano a la norma</button>
+        </div>
+        <ul class="filas" aria-live="polite">
+          <li><i aria-hidden="true">✓</i><span data-con="Cumple uno de los requisitos para que un comprador acceda a crédito." data-sin="Los bancos pueden negarle el crédito a quien quiera comprarla.">Cumple uno de los requisitos para que un comprador acceda a crédito.</span></li>
+          <li><i aria-hidden="true">✓</i><span data-con="Más compradores posibles el día que decidas vender." data-sin="Solo te sirve un comprador con todo el dinero de contado.">Más compradores posibles el día que decidas vender.</span></li>
+          <li><i aria-hidden="true">✓</i><span data-con="Construyes desde el principio con una base legal." data-sin="Ponerla en regla después cuesta tiempo y dinero.">Construyes desde el principio con una base legal.</span></li>
+        </ul>
+        <div class="foto-plano" id="fotoPlano"></div>
+      </div>
+      <div style="display:grid;gap:16px;align-content:start">
+        <p class="lead rv">Pide estos documentos en tu visita. Toca cada uno para ver qué es.</p>
+        <div class="docs" id="docs"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMULARIO ============ -->
+<section class="sec form-sec" id="formulario">
+  <div class="in form-grid">
+    <div class="form-lado">
+      <p class="eyebrow">Separa tu lote</p>
+      <h2>Cuéntanos qué buscas y te escribimos hoy</h2>
+      <p class="lead">Tres preguntas rápidas. Con eso un asesor te contacta por WhatsApp con disponibilidad, precios y tu plan de pagos.</p>
+      <ul class="garantias">
+        <li>Te respondemos por WhatsApp, sin llamadas en frío</li>
+        <li>Puedes visitar el lote o verlo por videollamada</li>
+        <li>Tus datos solo se usan para contactarte sobre el proyecto</li>
+      </ul>
+    </div>
+
+    <div class="tarjeta-form">
+      <form id="form" novalidate>
+        <div class="progreso-form" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <input class="miel" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <fieldset class="paso activo" data-paso="0" style="border:0;padding:0;margin:0">
+          <legend><span class="cuenta-paso">Paso 1 de 4</span><h3>¿Para qué quieres el lote?</h3></legend>
+          <div class="opciones dos">
+            <label class="opcion"><input type="radio" name="proposito" value="Construir para vivir"><span class="ico">🏡</span><span><b>Construir para vivir</b><small>Mi casa propia</small></span></label>
+            <label class="opcion"><input type="radio" name="proposito" value="Invertir"><span class="ico">📈</span><span><b>Invertir</b><small>Patrimonio y valorización</small></span></label>
+            <label class="opcion"><input type="radio" name="proposito" value="Construir para arrendar"><span class="ico">🔑</span><span><b>Construir para arrendar</b><small>Renta mensual</small></span></label>
+            <label class="opcion"><input type="radio" name="proposito" value="Comprar desde el exterior"><span class="ico">✈️</span><span><b>Vivo fuera de Colombia</b><small>Quiero invertir en mi tierra</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso" data-paso="1" style="border:0;padding:0;margin:0">
+          <legend><span class="cuenta-paso">Paso 2 de 4</span><h3>¿Cómo pagarías?</h3></legend>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="pago" value="30 % + financiación directa"><span class="ico">🤝</span><span><b>30 % y el resto con la constructora</b><small>Financiación directa</small></span></label>
+            <label class="opcion"><input type="radio" name="pago" value="De contado"><span class="ico">💰</span><span><b>De contado</b><small>Pago total</small></span></label>
+            <label class="opcion"><input type="radio" name="pago" value="Crédito o cesantías"><span class="ico">🏦</span><span><b>Crédito o cesantías</b><small>Quiero saber si aplica</small></span></label>
+            <label class="opcion"><input type="radio" name="pago" value="Aún no sé"><span class="ico">🤔</span><span><b>Aún no sé</b><small>Quiero que me asesoren</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso" data-paso="2" style="border:0;padding:0;margin:0">
+          <legend><span class="cuenta-paso">Paso 3 de 4</span><h3>¿Cuándo te gustaría separar?</h3></legend>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="cuando" value="Este mes"><span class="ico">⚡</span><span><b>Este mes</b><small>Estoy listo</small></span></label>
+            <label class="opcion"><input type="radio" name="cuando" value="En 1 a 3 meses"><span class="ico">🗓️</span><span><b>En 1 a 3 meses</b><small>Estoy organizando el dinero</small></span></label>
+            <label class="opcion"><input type="radio" name="cuando" value="Más adelante"><span class="ico">🌱</span><span><b>Más adelante</b><small>Solo estoy mirando</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso" data-paso="3" style="border:0;padding:0;margin:0">
+          <legend><span class="cuenta-paso">Paso 4 de 4</span><h3>¿A dónde te escribimos?</h3></legend>
+          <div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" required></div>
+          <div class="campo"><label for="telefono">WhatsApp</label>
+            <div class="tel">
+              <select id="pais" name="pais" aria-label="Indicativo del país">
+                <option value="57" data-pais="Colombia">🇨🇴 +57</option>
+                <option value="1" data-pais="Estados Unidos">🇺🇸 +1</option>
+                <option value="34" data-pais="España">🇪🇸 +34</option>
+                <option value="1" data-pais="Canadá">🇨🇦 +1</option>
+                <option value="56" data-pais="Chile">🇨🇱 +56</option>
+                <option value="49" data-pais="Alemania">🇩🇪 +49</option>
+                <option value="" data-pais="Otro">Otro</option>
+              </select>
+              <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="300 123 4567" required>
+            </div>
+          </div>
+          <div class="campo"><label for="ciudad">Ciudad donde vives</label><input id="ciudad" name="ciudad" autocomplete="address-level2" placeholder="Guacarí, Buga, Cali, Nueva York…"></div>
+          <label class="check-legal"><input type="checkbox" id="autoriza" name="autoriza" required><span>Autorizo a la Urbanización Santa Bárbara a usar mis datos para contactarme sobre el proyecto, según la Ley 1581 de 2012 y la <a id="linkPolitica" href="#" rel="noopener">política de tratamiento de datos</a>. Puedo pedir que los corrijan o los borren cuando quiera.</span></label>
+        </fieldset>
+
+        <p class="error" id="error" role="alert"></p>
+        <div class="nav-form">
+          <button type="button" class="volver-paso" id="atras" hidden>← Atrás</button>
+          <span></span>
+          <button type="button" class="btn verde" id="siguiente" data-magnetico>Siguiente <span class="flecha" aria-hidden="true">→</span></button>
+          <button type="submit" class="btn" id="enviar" hidden data-magnetico>Enviar y abrir WhatsApp <span class="flecha" aria-hidden="true">→</span></button>
+        </div>
+      </form>
+
+      <div class="exito" id="exito" aria-live="polite">
+        <svg class="sello" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="45"/><path d="M30 52 L44 65 L71 37"/></svg>
+        <h3 id="exitoTitulo">¡Listo!</h3>
+        <p>Te abrimos WhatsApp con tu mensaje listo. Solo dale enviar.</p>
+        <a class="btn wa" id="btnWaExito" href="#" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Abrir WhatsApp</a>
+        <p class="ref" id="refTxt"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="in">
+    <p class="eyebrow rv">Preguntas frecuentes</p>
+    <h2 class="rv" style="--d:.08s">Lo que casi todos preguntan</h2>
+    <div class="faq">
+      <details class="rv"><summary>¿Cuánto necesito para separar un lote?</summary><p class="resp">El 30 % del valor del lote. Por ejemplo, en el Lote 27 ($87.480.000) son $26.244.000. Usa el simulador de arriba para hacer la cuenta con otra área.</p></details>
+      <details class="rv"><summary>¿Cómo funciona la financiación directa?</summary><p class="resp">Después de separar, el saldo lo pagas directamente a la constructora hasta en 12 meses, sin pasar por un banco. Un asesor te explica los requisitos y las condiciones según tu caso.</p></details>
+      <details class="rv"><summary>¿Qué incluye el plano de regalo?</summary><p class="resp">El diseño de tu casa, pensado para el lote y hecho para cumplir la norma. En tu visita te mostramos el alcance y cómo usarlo para construir.</p></details>
+      <details class="rv"><summary>¿Puedo comprar si vivo fuera de Colombia?</summary><p class="resp">Sí. Escríbenos: te mostramos el lote por videollamada y te contamos cómo hacer el proceso desde donde estés.</p></details>
+      <details class="rv"><summary>¿Puedo visitar el lote?</summary><p class="resp">Claro. Agenda tu visita por WhatsApp y te acompañamos desde la sala de ventas hasta el lote.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="in pie-in">
+    <div style="display:grid;gap:14px">
+      <img src="media/logo-santa-barbara-blanco.png" alt="Urbanización Santa Bárbara">
+      <p>Lotes en el centro de Guacarí, Valle del Cauca.</p>
+    </div>
+    <div><b>Sala de ventas</b><p id="pieSala"></p><p id="pieHorario"></p></div>
+    <div><b>Escríbenos</b><p><a href="#" id="pieWa" rel="noopener">WhatsApp</a></p><p><a href="https://www.instagram.com/urbsantabarbara1/" rel="noopener">Instagram</a></p></div>
+    <div class="legal">
+      <span>Precios y condiciones sujetos a disponibilidad; se confirman con un asesor. Imágenes y esquemas de referencia.</span>
+      <span><a href="#" id="piePolitica" rel="noopener">Política de datos</a> · Sitio por BLACKMOUTH</span>
+    </div>
+  </div>
+</footer>
+
+<div class="barra-movil" id="barraMovil">
+  <a class="btn" href="#formulario">Separar mi lote</a>
+  <a class="btn wa" href="#" data-wa rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>WhatsApp</a>
+</div>
+<a class="wa-flota" id="waFlota" href="#" data-wa rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#062B14" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+<div class="aviso-borrador" id="avisoBorrador" hidden>Borrador · faltan fotos, WhatsApp y CRM</div>
+
+<script>
+(function(){
+  var C = window.CONFIG;
+  var estadoForm = {};
+  var M = C.media || {};
+  var sinMov = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var pesos = function(n){ return '$' + Math.round(n).toLocaleString('es-CO').replace(/,/g, '.'); };
+  function hueco(txt, sub){ return '<div class="hueco">' + txt + (sub ? '<small>' + sub + '</small>' : '') + '</div>'; }
+
+  /* ---------------- Origen del visitante (atribución) ---------------- */
+  var q = new URLSearchParams(location.search);
+  var origen = null;
+  try { origen = JSON.parse(localStorage.getItem('sb-origen') || 'null'); } catch(e){}
+  var vencido = origen && (Date.now() - origen.t > 90 * 864e5);
+  var llegaCodigo = q.get('c') || q.get('utm_content');
+  if (!origen || vencido || (llegaCodigo && !origen.c)) {
+    origen = {
+      c: (q.get('c') || '').toUpperCase(),
+      utm_source: q.get('utm_source') || '', utm_medium: q.get('utm_medium') || '',
+      utm_campaign: q.get('utm_campaign') || '', utm_content: q.get('utm_content') || '',
+      fbclid: q.get('fbclid') || '', t: Date.now()
+    };
+    try { localStorage.setItem('sb-origen', JSON.stringify(origen)); } catch(e){}
+  }
+  var codigo = (origen.c || C.codigoPorDefecto || 'SB-WEB').replace(/[^A-Z0-9-]/gi, '').toUpperCase();
+
+  function waUrl(texto){
+    var base = C.whatsapp ? 'https://wa.me/' + C.whatsapp : 'https://wa.me/';
+    return base + '?text=' + encodeURIComponent(texto);
+  }
+  var waGeneral = waUrl('Hola, quiero información de Santa Bárbara [' + codigo + ']');
+  $$('[data-wa]').forEach(function(a){ a.href = waGeneral; });
+  $('#pieWa').href = waGeneral;
+
+  /* ---------------- Píxel de Meta (opcional) ---------------- */
+  if (C.metaPixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.metaPixelId); fbq('track', 'PageView');
+  }
+  function evento(nombre, datos){ try { if (window.fbq) fbq('trackCustom', nombre, datos || {}); } catch(e){} }
+
+  /* ---------------- Textos de configuración ---------------- */
+  $('#pieSala').textContent = C.salaDeVentas;
+  $('#pieHorario').textContent = C.horario;
+  if (C.politicaUrl) { $('#linkPolitica').href = C.politicaUrl; $('#piePolitica').href = C.politicaUrl; }
+  if (C.mapsUrl) { var bm = $('#btnMapa'); bm.href = C.mapsUrl; bm.hidden = false; }
+  if (C.borrador) $('#avisoBorrador').hidden = false;
+
+  /* ---------------- Hero ---------------- */
+  var hero = $('#hero');
+  if (M.heroVideo) {
+    hero.classList.add('con-video');
+    $('#heroMedia').innerHTML = '<video autoplay muted loop playsinline preload="metadata"' + (M.heroPoster ? ' poster="' + M.heroPoster + '"' : '') + '><source src="' + M.heroVideo + '" type="video/mp4"></video>';
+  } else if (M.heroPoster) {
+    hero.classList.add('con-video');
+    $('#heroMedia').innerHTML = '<img src="' + M.heroPoster + '" alt="">';
+  }
+  $$('#dibujo [data-d]').forEach(function(el){
+    var l = el.getTotalLength ? Math.ceil(el.getTotalLength()) : 1000;
+    el.style.setProperty('--l', l);
+  });
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('lista'); }); });
+
+  // Parallax del dibujo con el mouse
+  if (!sinMov && matchMedia('(pointer:fine)').matches) {
+    hero.addEventListener('pointermove', function(e){
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      $('#dibujo').style.transform = 'translate(' + (x * -24) + 'px,' + (y * -18) + 'px)';
+    });
+  }
+
+  /* ---------------- Cinta ---------------- */
+  var frases = ['Separa con el 30 %', 'Financiación directa hasta 12 meses', 'Plano de tu casa de regalo', 'A una calle del parque', 'Escrituración inmediata', 'Vías pavimentadas'];
+  var html = frases.map(function(f){ return '<span>' + f + '</span>'; }).join('');
+  $('#cinta').innerHTML = html + html;
+
+  /* ---------------- Botones magnéticos ---------------- */
+  if (!sinMov && matchMedia('(pointer:fine)').matches) {
+    $$('[data-magnetico]').forEach(function(b){
+      b.addEventListener('pointermove', function(e){
+        var r = b.getBoundingClientRect();
+        var x = e.clientX - r.left, y = e.clientY - r.top;
+        b.style.setProperty('--mx', x + 'px'); b.style.setProperty('--my', y + 'px');
+        b.style.transform = 'translate(' + ((x - r.width / 2) * .18) + 'px,' + ((y - r.height / 2) * .28) + 'px)';
+      });
+      b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
+    });
+  }
+
+  /* ---------------- Revelado al hacer scroll ---------------- */
+  var pendientes = $$('.rv, .rv-l');
+  function revisarRevelados(){
+    var lim = innerHeight * .9;
+    pendientes = pendientes.filter(function(el){
+      if (el.getBoundingClientRect().top < lim) { el.classList.add('visto'); return false; }
+      return true;
+    });
+  }
+
+  /* ---------------- Razones: visor con scroll ---------------- */
+  var escenas = $$('.escena'), estados = $$('.visor .estado');
+  var meses = $('#meses');
+  for (var i = 0; i < 12; i++) { var m = document.createElement('i'); m.style.setProperty('--i', i); meses.appendChild(m); }
+  var arco = $('#arcoVisor'), escenaActual = -1;
+  function activarEscena(n){
+    if (n === escenaActual) return;
+    escenaActual = n;
+    escenas.forEach(function(e, j){ e.classList.toggle('activo', j === n); });
+    estados.forEach(function(e, j){ e.classList.toggle('activo', j === n); });
+    arco.style.strokeDasharray = n === 0 ? '150.8 502.65' : '0 502.65';
+  }
+  function revisarEscenas(){
+    if (innerWidth < 980) return;
+    var mitad = innerHeight * .55, n = 0;
+    escenas.forEach(function(e, j){ if (e.getBoundingClientRect().top < mitad) n = j; });
+    activarEscena(n);
+    var h = $('.pasos-historia').getBoundingClientRect();
+    var p = Math.min(1, Math.max(0, (innerHeight * .5 - h.top) / (h.height - innerHeight * .4)));
+    $('#barraVisor').style.width = (p * 100) + '%';
+  }
+  setTimeout(function(){ arco.style.strokeDasharray = '150.8 502.65'; }, 400);
+
+  /* ---------------- Simulador ---------------- */
+  var area = $('#area'), plazo = C.plazos[C.plazos.length - 1];
+  var cajaPlazos = $('#plazos');
+  C.plazos.forEach(function(p){
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = p + ' meses';
+    b.setAttribute('aria-pressed', p === plazo ? 'true' : 'false');
+    b.addEventListener('click', function(){
+      plazo = p;
+      $$('button', cajaPlazos).forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      calcular(true);
+    });
+    cajaPlazos.appendChild(b);
+  });
+  var anim = {};
+  function animarNumero(el, fin){
+    var ini = anim[el.id] != null ? anim[el.id] : fin;
+    anim[el.id] = fin;
+    if (sinMov || ini === fin || document.hidden) { el.textContent = pesos(fin); return; }
+    var t0 = null;
+    (function paso(t){
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / 450), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = pesos(ini + (fin - ini) * e);
+      if (k < 1) requestAnimationFrame(paso);
+    })(performance.now());
+  }
+  function calcular(){
+    var a = parseFloat(area.value);
+    var valor = a * C.valorM2, sep = valor * C.separacion, cuota = (valor - sep) / plazo;
+    $('#areaOut').textContent = a.toLocaleString('es-CO', { maximumFractionDigits: 1 });
+    area.style.setProperty('--p', ((a - area.min) / (area.max - area.min) * 100) + '%');
+    animarNumero($('#rValor'), valor); animarNumero($('#rSep'), sep); animarNumero($('#rCuota'), cuota);
+    var frente = 6, fondo = a / frente;
+    var lm = $('#loteMini');
+    lm.style.width = (frente * 9) + 'px'; lm.style.height = Math.min(118, fondo * 8) + 'px';
+    lm.setAttribute('data-medida', 'frente 6 m · fondo ≈ ' + Math.round(fondo) + ' m');
+  }
+  area.addEventListener('input', function(){ calcular(); });
+  calcular();
+  $('#quieroCuenta').addEventListener('click', function(){
+    estadoForm.interes = parseFloat(area.value).toLocaleString('es-CO', { maximumFractionDigits: 1 }) + ' m² · ' + plazo + ' meses';
+    evento('Simulacion', { area: area.value, plazo: plazo });
+  });
+
+  /* ---------------- Antes / después ---------------- */
+  var comp = $('#comparar');
+  if (M.antes && M.despues) {
+    comp.innerHTML = '<img src="' + M.despues + '" alt="Vía pavimentada"><div class="capa"><img src="' + M.antes + '" alt="Vía en tierra antes de pavimentar"></div><div class="manija"></div><span class="et a">Antes</span><span class="et d">Hoy</span>';
+    var mover = function(clientX){
+      var r = comp.getBoundingClientRect();
+      var x = Math.min(100, Math.max(0, (clientX - r.left) / r.width * 100));
+      comp.style.setProperty('--x', x + '%'); comp.setAttribute('aria-valuenow', Math.round(x));
+    };
+    var arrastrando = false;
+    comp.addEventListener('pointerdown', function(e){ arrastrando = true; comp.setPointerCapture(e.pointerId); mover(e.clientX); });
+    comp.addEventListener('pointermove', function(e){ if (arrastrando) mover(e.clientX); });
+    comp.addEventListener('pointerup', function(){ arrastrando = false; });
+    comp.addEventListener('keydown', function(e){
+      var v = parseFloat(comp.getAttribute('aria-valuenow'));
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault(); v = Math.min(100, Math.max(0, v + (e.key === 'ArrowRight' ? 5 : -5)));
+        comp.style.setProperty('--x', v + '%'); comp.setAttribute('aria-valuenow', v);
+      }
+    });
+  } else if (C.borrador) {
+    comp.classList.add('vacio');
+    comp.removeAttribute('role'); comp.removeAttribute('tabindex');
+    comp.innerHTML = hueco('ANTES', 'media/antes.jpg · vía en tierra') + hueco('HOY', 'media/despues.jpg · misma toma, pavimentada');
+  } else {
+    comp.hidden = true;
+  }
+
+  /* ---------------- Galería ---------------- */
+  var gal = $('#galeria');
+  var fotos = (M.galeria || []).slice();
+  if (!fotos.length && C.borrador) {
+    fotos = [['', 'Dron cenital · vías pavimentadas'], ['', 'Timelapse de la pavimentación'], ['', 'Detalle: asfalto y maquinaria'], ['', 'Recorrido del lote al parque'], ['', 'El equipo en obra']];
+  }
+  if (!fotos.length) gal.hidden = true;
+  fotos.forEach(function(f){
+    var fig = document.createElement('figure');
+    fig.innerHTML = f[0] ? '<img src="' + f[0] + '" alt="' + f[1] + '" loading="lazy"><figcaption>' + f[1] + '</figcaption>' : hueco(f[1], 'media/…jpg');
+    if (!f[0]) fig.firstChild.style.height = '100%';
+    gal.appendChild(fig);
+  });
+  // Arrastrar con el mouse
+  var gx = null, gs = 0;
+  gal.addEventListener('pointerdown', function(e){ if (e.pointerType !== 'mouse') return; gx = e.clientX; gs = gal.scrollLeft; gal.classList.add('arrastrando'); });
+  window.addEventListener('pointermove', function(e){ if (gx !== null) gal.scrollLeft = gs - (e.clientX - gx); });
+  window.addEventListener('pointerup', function(){ gx = null; gal.classList.remove('arrastrando'); });
+
+  /* ---------------- Ubicación ---------------- */
+  var manz = $('#manzanas'), arb = $('#arboles');
+  var calles = [60, 150, 290, 440]; var cols = [30, 190, 310, 500];
+  var svgNS = 'http://www.w3.org/2000/svg';
+  [[30,40,130,90],[190,40,120,90],[330,40,150,90],[500,40,80,90],[30,160,130,110],[190,160,100,110],[500,160,80,110],[30,300,110,120],[190,300,100,120],[330,300,150,120],[500,300,80,120],[30,440,130,60],[190,440,120,60],[330,440,250,60]].forEach(function(b){
+    var r = document.createElementNS(svgNS, 'rect');
+    r.setAttribute('class', 'manzana'); r.setAttribute('x', b[0]); r.setAttribute('y', b[1]); r.setAttribute('width', b[2]); r.setAttribute('height', b[3]); r.setAttribute('rx', 6);
+    manz.appendChild(r);
+  });
+  for (var k = 0; k < 14; k++) {
+    var c = document.createElementNS(svgNS, 'circle');
+    c.setAttribute('class', 'arbol'); c.setAttribute('r', 7 + (k % 3) * 2);
+    c.setAttribute('cx', 350 + (k * 37) % 115); c.setAttribute('cy', 168 + (k * 23) % 95);
+    arb.appendChild(c);
+  }
+  var mapa = $('#mapa'), ruta = $('#rutaViva'), caminante = $('#caminante');
+  var largo = Math.ceil(ruta.getTotalLength()); ruta.style.setProperty('--l', largo);
+  var mapaAnimado = false;
+  function animarMapa(){
+    if (mapaAnimado) return; mapaAnimado = true;
+    mapa.classList.add('andando');
+    var fin = C.minutosAlParque;
+    if (fin) { $('#cronoTxt').textContent = 'minutos a pie hasta el parque'; }
+    var t0 = null, dur = sinMov ? 1 : 2600;
+    (function paso(t){
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      var p = ruta.getPointAtLength(largo * e);
+      caminante.setAttribute('cx', p.x); caminante.setAttribute('cy', p.y);
+      if (fin) $('#crono').textContent = (fin * e).toLocaleString('es-CO', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      if (k < 1) requestAnimationFrame(paso);
+    })(performance.now());
+  }
+  function marcar(p, on){
+    $$('[data-p="' + p + '"]').forEach(function(el){ el.classList.toggle('activo', on); });
+  }
+  $$('#cerca li, .mapa .punto').forEach(function(el){
+    var p = el.getAttribute('data-p');
+    el.addEventListener('pointerenter', function(){ marcar(p, true); });
+    el.addEventListener('pointerleave', function(){ marcar(p, false); });
+  });
+
+  /* ---------------- En regla ---------------- */
+  var cmp = $('#comparador');
+  $$('button[data-modo]', cmp).forEach(function(b){
+    b.addEventListener('click', function(){
+      var modo = b.getAttribute('data-modo');
+      cmp.setAttribute('data-modo', modo);
+      $$('button[data-modo]', cmp).forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      $$('.filas li', cmp).forEach(function(li){
+        var s = $('[data-con]', li);
+        s.textContent = s.getAttribute('data-' + modo);
+        $('i', li).textContent = modo === 'con' ? '✓' : '✕';
+        li.classList.remove('cambia'); void li.offsetWidth; li.classList.add('cambia');
+      });
+    });
+  });
+  var fp = $('#fotoPlano');
+  if (M.plano) fp.innerHTML = '<img src="' + M.plano + '" alt="El plano de la casa sobre el lote" loading="lazy">';
+  else if (C.borrador) fp.innerHTML = hueco('Manos con el plano sobre el lote', 'media/plano.jpg');
+  else fp.hidden = true;
+  var docs = $('#docs');
+  C.documentos.forEach(function(d, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'doc rv'; b.style.setProperty('--d', (i * .08) + 's');
+    b.setAttribute('aria-label', d[0] + ': ' + d[1]);
+    b.innerHTML = '<span class="cara frente"><small>Documento ' + (i + 1) + '</small><b>' + d[0] + '</b></span><span class="cara dorso">' + d[1] + '</span>';
+    b.addEventListener('click', function(){ b.classList.toggle('volteada'); });
+    docs.appendChild(b);
+    pendientes.push(b);
+  });
+
+  /* ---------------- Formulario por pasos ---------------- */
+  var form = $('#form'), pasos = $$('.paso', form), barras = $$('.progreso-form i', form);
+  var btnSig = $('#siguiente'), btnEnv = $('#enviar'), btnAtras = $('#atras'), err = $('#error');
+  var actual = 0; estadoForm = {};
+  function mostrarPaso(n, atras){
+    actual = n;
+    pasos.forEach(function(p, j){ p.classList.toggle('activo', j === n); p.classList.toggle('atras', !!atras); });
+    barras.forEach(function(b, j){ b.classList.toggle('hecho', j < n + 1); });
+    btnAtras.hidden = n === 0;
+    btnSig.hidden = n === pasos.length - 1;
+    btnEnv.hidden = n !== pasos.length - 1;
+    err.textContent = '';
+    var foco = $('input', pasos[n]); if (foco && n > 0) setTimeout(function(){ foco.focus({ preventScroll: true }); }, 60);
+  }
+  function validar(n){
+    var p = pasos[n];
+    if (n < 3) {
+      if (!$('input:checked', p)) { err.textContent = 'Elige una opción para seguir.'; return false; }
+      return true;
+    }
+    var nombre = $('#nombre').value.trim(), tel = $('#telefono').value.replace(/\D/g, '');
+    if (nombre.length < 2) { err.textContent = 'Escribe tu nombre.'; $('#nombre').focus(); return false; }
+    if (tel.length < 7) { err.textContent = 'Revisa tu número de WhatsApp.'; $('#telefono').focus(); return false; }
+    if (!$('#autoriza').checked) { err.textContent = 'Necesitamos tu autorización para escribirte.'; return false; }
+    return true;
+  }
+  $$('.opcion input', form).forEach(function(inp){
+    inp.addEventListener('change', function(){
+      err.textContent = '';
+      var n = pasos.indexOf(inp.closest('.paso'));
+      if (n < 2) setTimeout(function(){ mostrarPaso(n + 1); evento('PasoFormulario', { paso: n + 2 }); }, 280);
+      else if (n === 2) setTimeout(function(){ mostrarPaso(3); }, 280);
+    });
+  });
+  btnSig.addEventListener('click', function(){ if (validar(actual)) mostrarPaso(actual + 1); });
+  mostrarPaso(0);
+  btnAtras.addEventListener('click', function(){ mostrarPaso(actual - 1, true); });
+
+  function refCorta(){ return 'SB-' + (Date.now().toString(36).slice(-3) + Math.random().toString(36).slice(2, 4)).toUpperCase(); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validar(3)) return;
+    var sel = $('#pais'), ind = sel.value, nac = sel.selectedOptions[0].getAttribute('data-pais');
+    var tel = $('#telefono').value.replace(/\D/g, '');
+    if (ind && tel.indexOf(ind) !== 0) tel = ind + tel;
+    var ref = refCorta();
+    var datos = {
+      ref: ref, nombre: $('#nombre').value.trim(), telefono: tel, pais: nac, ciudad: $('#ciudad').value.trim(),
+      proposito: ($('input[name=proposito]:checked') || {}).value || '',
+      pago: ($('input[name=pago]:checked') || {}).value || '',
+      cuando: ($('input[name=cuando]:checked') || {}).value || '',
+      interes: estadoForm.interes || '',
+      codigo: codigo, utm_source: origen.utm_source, utm_medium: origen.utm_medium,
+      utm_campaign: origen.utm_campaign, utm_content: origen.utm_content, fbclid: origen.fbclid,
+      pagina: location.href.split('#')[0], autoriza: true, web: form.web.value
+    };
+    if (C.crmUrl) {
+      var cuerpo = JSON.stringify(datos);
+      var ok = navigator.sendBeacon && navigator.sendBeacon(C.crmUrl, new Blob([cuerpo], { type: 'text/plain;charset=utf-8' }));
+      if (!ok) fetch(C.crmUrl, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: cuerpo, keepalive: true }).catch(function(){});
+    }
+    try { if (window.fbq) fbq('track', 'Lead', { content_name: 'Santa Bárbara', status: datos.cuando }); } catch(x){}
+
+    var msg = 'Hola, soy ' + datos.nombre + '. Quiero información de Santa Bárbara.\n' +
+      '• Para: ' + datos.proposito + '\n• Pago: ' + datos.pago + '\n• Cuándo: ' + datos.cuando +
+      (datos.interes ? '\n• Simulé: ' + datos.interes : '') + '\n[' + codigo + ' · ' + ref + ']';
+    var url = waUrl(msg);
+    form.hidden = true;
+    var ex = $('#exito'); ex.classList.add('activo');
+    $('#exitoTitulo').textContent = '¡Listo, ' + datos.nombre.split(' ')[0] + '!';
+    $('#btnWaExito').href = url;
+    $('#refTxt').textContent = 'Tu referencia: ' + ref + (C.crmUrl ? '' : ' · (borrador: el CRM aún no está conectado)');
+    lluviaHojas();
+    if (C.whatsapp) setTimeout(function(){ location.href = url; }, 1800);
+  });
+
+  /* ---------------- Hojas de celebración ---------------- */
+  function lluviaHojas(){
+    if (sinMov) return;
+    var cv = $('#hojas'), ctx = cv.getContext('2d'), dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.scale(dpr, dpr);
+    var hojas = [];
+    for (var i = 0; i < 46; i++) hojas.push({ x: Math.random() * innerWidth, y: -20 - Math.random() * innerHeight * .6, s: 8 + Math.random() * 12, vy: 1.4 + Math.random() * 2.2, vx: -1 + Math.random() * 2, r: Math.random() * 6.28, vr: -.05 + Math.random() * .1, c: Math.random() < .6 ? '#89C444' : '#006837' });
+    var t0 = performance.now();
+    (function cuadro(t){
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      hojas.forEach(function(h){
+        h.y += h.vy; h.x += h.vx + Math.sin((t + h.y) / 300) * .6; h.r += h.vr;
+        ctx.save(); ctx.translate(h.x, h.y); ctx.rotate(h.r); ctx.fillStyle = h.c;
+        ctx.beginPath(); ctx.moveTo(0, -h.s); ctx.quadraticCurveTo(h.s * .8, 0, 0, h.s); ctx.quadraticCurveTo(-h.s * .8, 0, 0, -h.s); ctx.fill();
+        ctx.restore();
+      });
+      if (t - t0 < 4200) requestAnimationFrame(cuadro); else ctx.clearRect(0, 0, innerWidth, innerHeight);
+    })(t0);
+  }
+
+  /* ---------------- Scroll general ---------------- */
+  var nav = $('#nav'), ultimoY = 0, barraMovil = $('#barraMovil'), waFlota = $('#waFlota');
+  var formSec = $('#formulario');
+  function alScroll(){
+    var y = scrollY;
+    nav.classList.toggle('solida', y > innerHeight * .7);
+    nav.classList.toggle('oculta', y > ultimoY && y > innerHeight * 1.2);
+    ultimoY = y;
+    var fr = formSec.getBoundingClientRect();
+    var enForm = fr.top < innerHeight * .8 && fr.bottom > innerHeight * .2;
+    barraMovil.classList.toggle('visible', y > innerHeight * .6 && !enForm);
+    waFlota.classList.toggle('visible', y > innerHeight * .6);
+    revisarRevelados();
+    revisarEscenas();
+    if (!mapaAnimado && mapa.getBoundingClientRect().top < innerHeight * .7) animarMapa();
+  }
+  addEventListener('scroll', alScroll, { passive: true });
+  addEventListener('resize', alScroll);
+  alScroll();
+  addEventListener('beforeprint', function(){ $$('.rv,.rv-l').forEach(function(e){ e.classList.add('visto'); }); });
+})();
+</script>
+</body>
+</html>
