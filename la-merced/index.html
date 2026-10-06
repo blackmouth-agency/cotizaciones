@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La Merced · Propuesta 360</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Propuesta 360 de BLACKMOUTH para la Urbanización La Merced, Etapa 2: estrategia, identidad, contenido, material POP, landing y planes.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<style>
+/* Propuesta vestida con la marca de La Merced: crema y verde, lima de acento, Fraunces + Plus Jakarta Sans. Un solo tema. */
+:root{--verde:#006B3A;--verde-2:#005A31;--noche:#0B2E1E;--lima:#B7E842;--amarillo:#FFD600;--azul:#1E78C8;--crema:#FFFEEC;--arena:#F2F0DE;--tinta:#0B2E1E;
+  --suave:rgba(11,46,30,.72);--tenue:rgba(11,46,30,.5);--linea:rgba(0,107,58,.14);
+  --display:'Fraunces',Georgia,'Times New Roman',serif;--texto:'Plus Jakarta Sans','Segoe UI',Helvetica,Arial,sans-serif;--curva:cubic-bezier(.2,.75,.2,1);color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--crema);color:var(--tinta);font-family:var(--texto);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+[hidden]{display:none!important}
+img,video{max-width:100%;display:block}
+a{color:var(--verde)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--lima);outline-offset:3px}
+.wrap{position:relative;z-index:1;width:min(1240px,100%);margin-inline:auto;padding-inline:22px}
+h1,h2,h3{font-family:var(--display);font-weight:620;font-variation-settings:'SOFT' 100;letter-spacing:-.022em;line-height:1.02;margin:0;text-wrap:balance}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:480;color:var(--verde)}
+.v h1 em,.v h2 em,.v h3 em{color:var(--lima)}
+h2{font-size:clamp(36px,5vw,64px)}
+.k{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:12px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--verde)}
+.v .k{color:var(--lima)}
+.k svg{width:18px;height:18px;fill:currentColor}
+.lead{font-size:clamp(16.5px,1.35vw,18.5px);color:var(--suave);max-width:60ch;margin:18px 0 0}
+.v .lead{color:rgba(255,254,236,.82)}
+section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
+.v{background:var(--verde);color:var(--crema)}
+.a{background:var(--arena)}
+.cab{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:30px;align-items:end;margin-bottom:44px}
+.cab .lead{margin:0}
+@media (max-width:880px){.cab{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;border:0;background:var(--lima);color:var(--noche);font-weight:800;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .3s var(--curva),box-shadow .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(11,46,30,.4)}
+.btn.f{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.ctrl{width:46px;height:46px;border-radius:50%;border:0;background:var(--crema);color:var(--noche);display:inline-grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px -6px rgba(0,0,0,.35);transition:background .2s}
+.ctrl:hover{background:var(--lima)}
+.ctrl svg{width:20px;height:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 15px;border-radius:999px;border:1.5px solid var(--linea);background:#fff;font-weight:700;font-size:13.5px;color:var(--suave);cursor:pointer;transition:all .2s}
+.v .chip{background:rgba(255,254,236,.06);border-color:rgba(183,232,66,.3);color:rgba(255,254,236,.8)}
+.chip:hover{border-color:var(--verde)}
+.chip[aria-pressed=true],.chip[aria-selected=true]{background:var(--verde);border-color:var(--verde);color:var(--crema)}
+.v .chip[aria-pressed=true],.v .chip[aria-selected=true]{background:var(--lima);border-color:var(--lima);color:var(--noche)}
+.rayos{position:absolute;pointer-events:none;z-index:0}
+.rayos img{width:100%;height:100%}
+.nota{font-size:13px;color:var(--tenue);margin:14px 0 0}
+.v .nota{color:rgba(255,254,236,.6)}
+
+/* barra */
+.barra{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(255,254,236,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.barra .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.barra .lm{height:40px;width:auto}
+.barra nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.barra nav::-webkit-scrollbar{display:none}
+.barra nav a{text-decoration:none;font-weight:700;font-size:13.5px;padding:8px 11px;border-radius:999px;color:var(--suave);white-space:nowrap}
+.barra nav a:hover,.barra nav a.on{background:rgba(0,107,58,.1);color:var(--tinta)}
+.prog{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--lima)}
+
+/* portada */
+.portada{min-height:min(94vh,900px);display:flex;align-items:flex-end;color:var(--crema);padding:0}
+.portada>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.portada::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,60,32,.35) 0%,rgba(0,60,32,0) 26%,rgba(0,74,40,.7) 62%,rgba(0,74,40,.97) 100%)}
+.portada .wrap{padding-block:140px 70px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:end}
+@media (max-width:900px){.portada .wrap{grid-template-columns:1fr}}
+.portada h1{font-size:clamp(48px,7.4vw,110px)}
+.portada h1 em{color:var(--lima)}
+.portada .lead{color:rgba(255,254,236,.88)}
+.portada .firma{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-weight:800;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--lima)}
+.portada .firma img{height:34px;width:auto}
+.indice{background:rgba(255,254,236,.96);color:var(--tinta);border-radius:28px;padding:24px 26px;box-shadow:0 30px 70px -20px rgba(0,0,0,.45)}
+.indice p{margin:0 0 10px;font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--verde)}
+.indice ol{margin:0;padding:0;list-style:none;counter-reset:i;display:grid;gap:2px}
+.indice li{counter-increment:i}
+.indice a{display:flex;gap:12px;text-decoration:none;color:var(--tinta);font-weight:700;font-size:15px;padding:7px 0;border-top:1px solid var(--linea)}
+.indice a::before{content:counter(i,decimal-leading-zero);font-family:var(--display);font-style:italic;color:var(--verde);min-width:24px}
+.aviso{display:flex;gap:12px;align-items:flex-start;background:var(--amarillo);color:var(--noche);border-radius:18px;padding:14px 18px;font-size:14px;font-weight:600;margin-top:26px;max-width:640px}
+
+/* diagnóstico */
+.dx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.dx{grid-template-columns:1fr}}
+.dx div{background:#fff;border-radius:26px;padding:28px;border:1px solid var(--linea)}
+.dx b{display:block;font-family:var(--display);font-weight:660;font-size:58px;line-height:.9;color:var(--verde);letter-spacing:-.03em}
+.dx h3{font-size:24px;margin-top:14px}
+.dx p{margin:8px 0 0;color:var(--suave);font-size:15px;line-height:1.5}
+
+/* compradores */
+.pers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:1000px){.pers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pers{grid-template-columns:1fr}}
+.per{background:#fff;border-radius:28px;overflow:hidden;border:1px solid var(--linea);display:flex;flex-direction:column}
+.per img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.per div{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.per h3{font-size:24px}
+.per small{font-weight:700;color:var(--tenue);font-size:13px}
+.per p{margin:0;font-size:14.5px;color:var(--suave);line-height:1.5}
+.per .dolor{margin-top:auto;padding-top:12px;border-top:1px solid var(--linea)}
+.per .dolor b{display:block;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--verde)}
+.per .msj{background:var(--verde);color:var(--crema);border-radius:14px;padding:10px 14px;font-family:var(--display);font-size:18px;font-style:italic}
+.dolores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+@media (max-width:800px){.dolores{grid-template-columns:1fr}}
+.dolores div{display:flex;gap:14px;align-items:center;background:var(--arena);border-radius:18px;padding:14px 18px;font-weight:700;font-size:15px}
+.dolores img{width:34px;height:34px;flex:none}
+
+/* concepto */
+.conc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:900px){.conc{grid-template-columns:1fr}}
+.conc>div{border-radius:32px;padding:34px;position:relative;overflow:hidden;min-height:360px;display:flex;flex-direction:column;justify-content:flex-end}
+.conc .c1{background:var(--noche);color:var(--crema)}
+.conc .c1 img.fondo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.conc .c1>*{position:relative}
+.conc .c2{background:var(--lima);color:var(--noche)}
+.conc h3{font-size:clamp(36px,4vw,58px)}
+.conc .c1 h3 em{color:var(--lima)}
+.conc p{margin:14px 0 0;font-size:15.5px;line-height:1.55;opacity:.9}
+.conc .tag{position:absolute;top:24px;left:28px;font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+
+/* identidad */
+.id{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:900px){.id{grid-template-columns:1fr}}
+.logo-g{background:#fff;border-radius:32px;display:grid;place-items:center;padding:50px;border:1px solid var(--linea);min-height:420px}
+.logo-g img{width:min(420px,90%)}
+.vers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vers div{border-radius:24px;display:grid;place-items:center;padding:26px;min-height:200px}
+.vers img{width:78%}
+.pal{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:20px}
+@media (max-width:700px){.pal{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pal div{border-radius:18px;padding:70px 12px 12px;font-size:12px;font-weight:700;border:1px solid rgba(0,0,0,.05)}
+.pal b{display:block;font-family:var(--display);font-size:16px}
+.icos{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px;margin-top:20px}
+.icos div{background:#fff;border-radius:18px;padding:16px 8px 10px;text-align:center;border:1px solid var(--linea);font-size:12px;font-weight:700;color:var(--suave)}
+.icos img{width:44px;height:44px;margin:0 auto 6px}
+
+/* visor (manual y presentación) */
+.visor{display:grid;gap:16px}
+.esc{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:16/9;background:var(--noche);box-shadow:0 40px 90px -30px rgba(0,0,0,.5)}
+.esc img{width:100%;height:100%;object-fit:contain;cursor:zoom-in;transition:opacity .3s}
+.esc .ctrl{position:absolute;top:50%;transform:translateY(-50%)}
+.esc .ant{left:14px}.esc .sig{right:14px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.cont{font-family:var(--display);font-size:24px;font-variant-numeric:tabular-nums lining-nums;margin:0}
+.cont span{opacity:.5;font-size:17px}
+.minis{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.minis button{flex:none;width:128px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:2px solid transparent;padding:0;background:none;cursor:pointer;opacity:.55;transition:opacity .2s,border-color .2s}
+.minis button[aria-current=true]{opacity:1;border-color:var(--lima)}
+.minis img{width:100%;height:100%;object-fit:cover}
+
+/* contenidos */
+.lineas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:46px}
+@media (max-width:900px){.lineas{grid-template-columns:1fr}}
+.lineas div{border-radius:28px;padding:28px;background:rgba(255,254,236,.07);border:1px solid rgba(183,232,66,.3)}
+.lineas h3{font-size:30px}
+.lineas p{margin:10px 0 0;opacity:.82;font-size:15px}
+.lineas ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.lineas li{padding:6px 12px;border-radius:999px;background:rgba(183,232,66,.14);color:var(--lima);font-weight:700;font-size:13px}
+.post-zona{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,60px);align-items:center}
+@media (max-width:900px){.post-zona{grid-template-columns:1fr}}
+.lista{display:grid;gap:8px}
+.lista button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;text-align:left;padding:10px 12px;border-radius:18px;border:1.5px solid rgba(183,232,66,.25);background:rgba(255,254,236,.04);color:var(--crema);cursor:pointer;transition:all .2s}
+.lista button:hover{border-color:var(--lima)}
+.lista button[aria-pressed=true]{background:rgba(183,232,66,.16);border-color:var(--lima)}
+.lista img{width:50px;height:62px;object-fit:cover;border-radius:8px}
+.lista b{display:block;font-family:var(--display);font-size:18px;line-height:1.2}
+.lista span{display:block;font-size:12.5px;opacity:.65}
+.post{width:min(460px,100%);margin-inline:auto;border-radius:22px;overflow:hidden;background:#fff;color:var(--tinta);box-shadow:0 40px 90px -30px rgba(0,0,0,.6)}
+.post header{display:flex;align-items:center;gap:10px;padding:11px 14px}
+.post header i{width:34px;height:34px;border-radius:50%;background:var(--verde) url("assets/logo/icono-blanco.svg") center/64% no-repeat;flex:none}
+.post header b{font-size:13.5px}.post header span{display:block;font-size:11.5px;color:var(--tenue)}
+.marco{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--arena);touch-action:pan-y}
+.pista{display:flex;height:100%;transition:transform .45s var(--curva)}
+.pista img{flex:none;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.marco .ctrl{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px}
+.marco .ant{left:10px}.marco .sig{right:10px}
+.marco .ctrl[disabled]{opacity:0;pointer-events:none}
+.marco .n{position:absolute;right:12px;top:12px;padding:3px 10px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;font-weight:700}
+.puntos{display:flex;justify-content:center;gap:5px;padding:12px 0 2px}
+.puntos i{width:6px;height:6px;border-radius:50%;background:rgba(11,46,30,.22)}
+.puntos i.on{background:var(--verde)}
+.post .txt{padding:6px 16px 18px;font-size:13.5px;line-height:1.55;color:var(--suave);white-space:pre-line}
+.post .txt b{color:var(--tinta)}
+.grid-posts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.grid-posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.grid-posts button{position:relative;padding:0;border:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:none;aspect-ratio:4/5}
+.grid-posts img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--curva)}
+.grid-posts button:hover img{transform:scale(1.04)}
+.grid-posts span{position:absolute;left:10px;bottom:10px;padding:5px 11px;border-radius:999px;background:rgba(255,254,236,.95);color:var(--noche);font-weight:800;font-size:11.5px;letter-spacing:.06em}
+.grid-posts span.d{background:var(--lima)}
+.hist{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.hist{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.hist button{padding:0;border:0;border-radius:16px;overflow:hidden;aspect-ratio:9/16;cursor:zoom-in;background:none}
+.hist img{width:100%;height:100%;object-fit:cover}
+
+/* POP */
+.bento{columns:3;column-gap:14px}
+@media (max-width:900px){.bento{columns:2}}
+@media (max-width:520px){.bento{columns:1}}
+.bento button{position:relative;display:block;width:100%;margin:0 0 14px;break-inside:avoid;border:0;padding:0;border-radius:24px;overflow:hidden;background:var(--arena);cursor:zoom-in}
+.bento img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--curva)}
+.bento button:hover img{transform:scale(1.03)}
+.bento span{position:absolute;left:12px;bottom:12px;padding:6px 13px;border-radius:999px;background:rgba(255,254,236,.95);color:var(--noche);font-weight:800;font-size:12px}
+.bento img{height:auto}
+.planos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}
+@media (max-width:800px){.planos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.planos button{padding:0;border:1px solid var(--linea);border-radius:14px;overflow:hidden;background:#fff;cursor:zoom-in;aspect-ratio:4/3}
+.planos img{width:100%;height:100%;object-fit:contain;background:var(--arena)}
+
+/* landing */
+.lcab{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.escena{display:flex;justify-content:center}
+.nav-web{width:100%;border-radius:18px;overflow:hidden;border:1px solid var(--linea);background:#eae7d2;box-shadow:0 40px 90px -30px rgba(0,0,0,.4);transition:width .5s var(--curva)}
+.nav-web .b{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#e3e0c8}
+.nav-web .b i{width:11px;height:11px;border-radius:50%;background:rgba(11,46,30,.2)}
+.nav-web .b span{margin-left:8px;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.6);font-size:12px;color:var(--suave);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.nav-web iframe{display:block;width:100%;height:min(78vh,800px);border:0;background:var(--crema)}
+.escena.movil .nav-web{width:min(400px,100%);border-radius:40px;padding:10px;background:#0b1510}
+.escena.movil .nav-web .b{display:none}
+.escena.movil iframe{border-radius:30px;height:min(78vh,760px)}
+
+/* plan */
+.fases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.fases{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.fases{grid-template-columns:1fr}}
+.fases div{background:#fff;border-radius:26px;padding:24px;border:1px solid var(--linea)}
+.fases small{font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--verde)}
+.fases h3{font-size:26px;margin-top:10px}
+.fases p{margin:8px 0 0;font-size:14.5px;color:var(--suave);line-height:1.5}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:20px}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpis div{background:var(--verde);color:var(--crema);border-radius:20px;padding:18px}
+.kpis b{display:block;font-family:var(--display);font-size:22px}
+.kpis span{font-size:13px;opacity:.8}
+.cal{width:100%;border-collapse:separate;border-spacing:6px;min-width:720px}
+.cal th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);text-align:left;padding:4px 8px}
+.cal td{background:#fff;border-radius:12px;padding:10px 12px;font-size:13.5px;font-weight:600;vertical-align:top;border:1px solid var(--linea)}
+.cal td small{display:block;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-bottom:2px}
+.cal td.d{background:var(--lima);border-color:var(--lima)}
+.cal td.a{background:var(--verde);color:var(--crema);border-color:var(--verde)}
+.cal td.a small{color:var(--lima)}
+.tabla{overflow-x:auto}
+
+/* planes */
+.planes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+@media (max-width:1100px){.planes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.planes{grid-template-columns:1fr}}
+.plan{background:rgba(255,254,236,.06);border:1.5px solid rgba(183,232,66,.28);border-radius:30px;padding:28px 24px;display:flex;flex-direction:column;position:relative}
+.plan.rec{background:var(--crema);color:var(--tinta);border-color:var(--lima);box-shadow:0 30px 70px -20px rgba(0,0,0,.5)}
+.plan .tag{position:absolute;top:-14px;left:24px;background:var(--lima);color:var(--noche);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.plan h3{font-size:32px}
+.plan .para{margin:6px 0 0;font-size:14px;opacity:.75;min-height:42px}
+.plan .precio{font-family:var(--display);font-weight:660;font-size:38px;letter-spacing:-.02em;margin-top:18px;font-variant-numeric:lining-nums}
+.plan .precio small{display:block;font-family:var(--texto);font-size:14px;font-weight:600;opacity:.7;margin-top:4px}
+.plan .usd{font-size:12.5px;opacity:.6;margin-top:2px}
+.plan ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:9px;font-size:14px}
+.plan li{display:flex;gap:10px;line-height:1.4}
+.plan li::before{content:"";flex:none;width:16px;height:16px;margin-top:2px;border-radius:0 9px 0 9px;background:var(--lima)}
+.plan.rec li::before{background:var(--verde)}
+.plan li.mas{font-weight:800}
+.extra{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+@media (max-width:900px){.extra{grid-template-columns:1fr}}
+.extra div{border-radius:22px;padding:20px 22px;background:rgba(255,254,236,.07);border:1px solid rgba(183,232,66,.25);font-size:14.5px}
+.extra b{display:block;font-family:var(--display);font-size:22px;color:var(--lima);margin-bottom:4px}
+
+/* cierre */
+.cierre{text-align:center}
+.cierre .wrap{display:flex;flex-direction:column;align-items:center}
+.cierre h2{font-size:clamp(42px,6vw,86px)}
+.bm{display:flex;align-items:center;gap:14px;margin-top:40px;color:var(--tenue);font-size:12.5px;letter-spacing:.08em}
+.bm img{height:40px;width:auto}
+
+/* caja */
+.caja{position:fixed;inset:0;z-index:70;background:rgba(6,26,15,.94);display:flex;align-items:center;justify-content:center;padding:clamp(56px,6vw,72px) clamp(12px,4vw,80px)}
+.caja img{max-height:100%;max-width:100%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.caja .cerrar{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px}
+.caja .ant{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
+.caja .sig{position:absolute;right:12px;top:50%;transform:translateY(-50%)}
+.caja .pie{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));text-align:center;font-size:13px;color:rgba(255,254,236,.8)}
+</style>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="La Merced · Propuesta 360">
+<meta property="og:description" content="Propuesta 360 de BLACKMOUTH para la Urbanización La Merced, Etapa 2: estrategia, identidad, contenido, material POP, landing y planes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/la-merced/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/la-merced/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<header class="barra">
+  <div class="wrap">
+    <img class="lm" src="assets/logo/logo-verde.svg" alt="Urbanización La Merced">
+    <nav aria-label="Secciones">
+      <a href="#diagnostico">Diagnóstico</a><a href="#comprador">Comprador</a><a href="#concepto">Concepto</a><a href="#identidad">Identidad</a><a href="#manual">Manual</a>
+      <a href="#contenido">Contenido</a><a href="#pop">POP</a><a href="#web">Landing</a><a href="#lanzamiento">Lanzamiento</a><a href="#planes">Planes</a>
+    </nav>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main>
+<section class="portada">
+  <img src="assets/padre_hija_sol.jpg" alt="Padre e hija mirando el atardecer sobre un lote">
+  <div class="wrap">
+    <div>
+      <p class="firma"><img src="assets/logo-bm.png" alt="BLACKMOUTH">Propuesta 360 · Octubre 2026</p>
+      <h1>400 lotes merecen <em>una marca a su altura.</em></h1>
+      <p class="lead">Propuesta de comunicación completa para la Etapa 2 de la Urbanización La Merced, en El Cerrito: estrategia, identidad, contenido, material POP, landing y plan de lanzamiento.</p>
+      <p class="aviso"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6M12 17h.01"/></svg>
+        Precios, medidas, financiación y datos de contacto son de ejemplo para mostrar las piezas. Los ajustamos con la información real del proyecto.</p>
+    </div>
+    <nav class="indice" aria-label="Contenido de la propuesta">
+      <p>Contenido</p>
+      <ol><li><a href="#diagnostico">Diagnóstico</a></li><li><a href="#comprador">El comprador</a></li><li><a href="#concepto">Concepto creativo</a></li><li><a href="#identidad">Identidad visual</a></li>
+        <li><a href="#contenido">Contenido para redes</a></li><li><a href="#pop">Material POP</a></li><li><a href="#web">Landing y CRM</a></li><li><a href="#lanzamiento">Plan de lanzamiento</a></li><li><a href="#planes">Planes e inversión</a></li></ol>
+    </nav>
+  </div>
+</section>
+
+<section id="diagnostico">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">01 · Diagnóstico</p><h2>La Etapa 1 se vendió sola. <em>La Etapa 2 necesita marca.</em></h2></div>
+      <p class="lead">Con 140 lotes, el voz a voz alcanzó. Con 400, hace falta un sistema: una marca que se reconozca en una valla, un post o una carta, y una forma de medir qué pieza trae a cada comprador.</p></div>
+    <div class="dx">
+      <div><b>×3</b><h3>Más lotes que vender</h3><p>De unos 140 a 400 lotes. El mismo ritmo de la Etapa 1 no alcanza: hay que llegar a públicos nuevos, fuera del círculo de conocidos.</p></div>
+      <div><b>0</b><h3>Sistema de marca</h3><p>El logo actual no funciona en tamaños pequeños, no tiene versiones ni paleta, y cada pieza sale distinta. Proponemos partir de la propuesta 1 y llevarla a un sistema completo.</p></div>
+      <div><b>140</b><h3>Familias que ya confían</h3><p>El mejor activo del proyecto. Ninguna urbanización nueva de la zona puede decir «ya cumplimos». Toda la comunicación se apoya en eso.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="comprador" class="a">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">02 · El comprador</p><h2>Cuatro personas, <em>un mismo deseo: lo propio.</em></h2></div>
+      <p class="lead">El comprador de La Merced se parece al de Santa Bárbara, pero con dos públicos que aquí pesan más: los vallecaucanos que viven fuera del país y quienes salen de Palmira y Cali.</p></div>
+    <div class="pers">
+      <article class="per"><img src="assets/pareja_anden.jpg" alt="" loading="lazy"><div><small>30 a 42 años · El Cerrito y alrededores</small><h3>La familia que arrienda</h3>
+        <p>Dos hijos, ingresos de 2 a 3 salarios mínimos, muchas veces informales. Pagan entre $700.000 y $1.000.000 de arriendo.</p>
+        <p class="dolor"><b>Dolor</b>El arriendo se va cada mes y el banco no les presta.</p><p class="msj">«Tu cuota, lo mismo que un arriendo.»</p></div></article>
+      <article class="per"><img src="assets/exterior.jpg" alt="" loading="lazy"><div><small>35 a 55 años · España y Estados Unidos</small><h3>La que está lejos</h3>
+        <p>Manda remesas y quiere volver a algo suyo. Decide por WhatsApp y videollamada, muchas veces con un familiar aquí.</p>
+        <p class="dolor"><b>Dolor</b>Miedo a que la estafen a distancia.</p><p class="msj">«Compra desde donde estés, en regla.»</p></div></article>
+      <article class="per"><img src="assets/familia_lote.jpg" alt="" loading="lazy"><div><small>25 a 38 años · Palmira y Cali</small><h3>Los que salen de la ciudad</h3>
+        <p>Trabajan en la ciudad y buscan precio, tranquilidad y un patio para los niños, a 13 km de Palmira.</p>
+        <p class="dolor"><b>Dolor</b>La ciudad es cara, ruidosa e insegura.</p><p class="msj">«Cerca de todo, lejos del ruido.»</p></div></article>
+      <article class="per"><img src="assets/paisaje_hacienda.jpg" alt="" loading="lazy"><div><small>50 a 65 años · Comerciante o pensionado</small><h3>El que invierte</h3>
+        <p>Compra uno o dos lotes para valorizar o para dejarles algo a los hijos. Quiere papeles y cifras.</p>
+        <p class="dolor"><b>Dolor</b>No saber dónde poner el ahorro sin riesgo.</p><p class="msj">«La Etapa 1 ya se vendió.»</p></div></article>
+    </div>
+    <div class="dolores">
+      <div><img src="assets/iconos/llave.svg" alt="">Pagar arriendo toda la vida</div>
+      <div><img src="assets/iconos/cuota.svg" alt="">«El banco me dijo que no»</div>
+      <div><img src="assets/iconos/escritura.svg" alt="">Miedo a un lote sin papeles</div>
+      <div><img src="assets/iconos/via.svg" alt="">Proyectos que nunca terminan la obra</div>
+      <div><img src="assets/iconos/separacion.svg" alt="">No tener la cuota inicial completa</div>
+      <div><img src="assets/iconos/ubicacion.svg" alt="">Comprar estando lejos</div>
+    </div>
+  </div>
+</section>
+
+<section id="concepto">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">03 · Concepto creativo</p><h2>Un nombre que ya <em>traía la idea.</em></h2></div>
+      <p class="lead">«Vivir a merced de algo» es depender de otro: del arrendador, del banco, de un proyecto que no cumple. La Merced es lo contrario: un lugar propio, con luz. De ahí salen dos líneas que trabajan juntas.</p></div>
+    <div class="conc">
+      <div class="c1"><img class="fondo" src="assets/padre_hija_sol.jpg" alt=""><span class="tag" style="color:var(--lima)">Marca · Aspiracional</span>
+        <h3>Tu lugar <em>bajo el sol.</em></h3><p>El lema de la marca. Nace del sol del logo y del escudo de El Cerrito. Va en la valla, la lona, el manual y el cierre de cada pieza.</p></div>
+      <div class="c2"><span class="tag">Venta · Directo</span>
+        <h3>Deja de vivir a merced del arriendo.</h3><p>El golpe al dolor principal. Va en pauta, volantes, carruseles de cifras y en todo lo que pide una acción: escribir, visitar, separar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="identidad" class="a">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">04 · Identidad visual</p><h2>La propuesta 1, <em>llevada a sistema.</em></h2></div>
+      <p class="lead">Redibujamos el logo en vector con geometría exacta: separaciones más abiertas para que aguante tamaños pequeños y 7 rayos por lado, como el sol del escudo municipal. Alrededor, un sistema que mezcla foto real y vector limpio.</p></div>
+    <div class="id">
+      <div class="logo-g"><img src="assets/logo/logo-verde.svg" alt="Logo de la Urbanización La Merced"></div>
+      <div class="vers">
+        <div style="background:var(--verde)"><img src="assets/logo/logo-crema.svg" alt="Versión negativa"></div>
+        <div style="background:var(--noche)"><img src="assets/logo/logo-lima.svg" alt="Versión lima"></div>
+        <div style="background:var(--amarillo)"><img src="assets/logo/logo-verde.svg" alt="Versión sobre amarillo"></div>
+        <div style="background:#fff;border:1px solid var(--linea)"><img src="assets/logo/icono-verde.svg" alt="Sello solo" style="width:46%"></div>
+      </div>
+    </div>
+    <div class="pal">
+      <div style="background:#006B3A;color:#FFFEEC"><b>Verde Merced</b>#006B3A</div><div style="background:#FFFEEC"><b>Crema</b>#FFFEEC</div>
+      <div style="background:#B7E842"><b>Lima</b>#B7E842</div><div style="background:#FFD600"><b>Amarillo sol</b>#FFD600</div>
+      <div style="background:#1E78C8;color:#FFFEEC"><b>Azul río</b>#1E78C8</div><div style="background:#0B2E1E;color:#FFFEEC"><b>Noche</b>#0B2E1E</div>
+    </div>
+    <h3 style="font-size:30px;margin-top:50px">Biblioteca de <em>25 íconos propios</em></h3>
+    <p class="lead" style="margin-top:8px">Mismo lenguaje del logo: piezas sólidas, esquinas suaves y separaciones. Listos en SVG para redes, impresos y la landing.</p>
+    <div class="icos" id="icos"></div>
+  </div>
+</section>
+
+<section id="manual" class="v">
+  <div class="rayos" style="width:1000px;height:1000px;right:-360px;top:-380px;opacity:.08"><img src="assets/logo/icono-blanco.svg" alt=""></div>
+  <div class="wrap">
+    <div class="cab"><div><p class="k">05 · Manual de marca</p><h2>Doce páginas <em>para no perder la línea.</em></h2></div>
+      <p class="lead">Esencia, logo, versiones, color, tipografía, íconos, elementos gráficos, fotografía, voz y aplicaciones. Pasa las páginas con las flechas o el teclado.</p></div>
+    <div class="visor" data-visor="manual" data-total="12" data-ruta="assets/manual/" data-pad="2" tabindex="0" aria-label="Visor del manual"></div>
+  </div>
+</section>
+
+<section id="contenido" class="v" style="background:var(--noche)">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">06 · Contenido para redes</p><h2>Carruseles que venden <em>y otros que enamoran.</em></h2></div>
+      <p class="lead">Los carruseles y los reels son lo que más resultados da hoy. Aquí van 8 carruseles, 12 posts y 6 historias listos para publicar. Los reels se producen dentro de cada plan.</p></div>
+    <div class="lineas">
+      <div><h3>Directo · venta</h3><p>Breve y claro: qué se ofrece, cuánto cuesta y qué hacer. Atacan un dolor y cierran con una acción.</p>
+        <ul><li>Haz la cuenta</li><li>Separa con $1M</li><li>Así separas</li><li>Mitos</li><li>Lanzamiento</li></ul></div>
+      <div><h3>Aspiracional · retórica</h3><p>Cada pieza se apoya en una figura: metáfora, ironía, antítesis, sinécdoque, doble sentido. Mezclan foto real y vector.</p>
+        <ul><li>La llave que germina</li><li>El recibo hecho casa</li><li>Hoy plano, mañana casa</li><li>Mismo lugar, otra vida</li></ul></div>
+    </div>
+    <div class="post-zona">
+      <div class="lista" id="listaCar"></div>
+      <article class="post" aria-label="Vista previa del carrusel">
+        <header><i></i><div><b>urbanizacionlamerced</b><span>El Cerrito, Valle del Cauca</span></div></header>
+        <div class="marco" id="marco"><div class="pista" id="pista"></div><span class="n" id="nP">1/5</span>
+          <button class="ctrl ant" type="button" data-p="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="ctrl sig" type="button" data-p="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+        <div class="puntos" id="puntos"></div><p class="txt" id="txt"></p>
+      </article>
+    </div>
+    <h3 style="font-size:32px;margin:70px 0 20px">Posts <em>individuales</em></h3>
+    <div class="grid-posts" id="posts" data-grupo="posts"></div>
+    <h3 style="font-size:32px;margin:60px 0 20px">Historias</h3>
+    <div class="hist" id="hist" data-grupo="hist"></div>
+  </div>
+</section>
+
+<section id="pop">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">07 · Material POP e impresos</p><h2>Afuera se ve <em>igual que en el celular.</em></h2></div>
+      <p class="lead">Valla, lona de obra, pendón, volante, señalética de la sala de ventas, papelería, uniforme y vehículo. Toca cualquier pieza para verla en grande.</p></div>
+    <div class="bento" data-grupo="pop" id="bento"></div>
+    <p class="nota">Mockups ilustrativos hechos con IA a partir de los artes reales. Abajo, los artes planos listos para imprenta.</p>
+    <div class="planos" data-grupo="planos" id="planos"></div>
+  </div>
+</section>
+
+<section id="web" class="a">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">08 · Landing y CRM</p><h2>Navégala <em>aquí mismo.</em></h2></div>
+      <p class="lead">Simulador de cuotas contra el arriendo, plano para elegir lote, prueba social de la Etapa 1 y un formulario que lleva a WhatsApp con el código de la pieza que trajo al cliente. Detrás, un CRM para saber qué vende.</p></div>
+    <div class="lcab">
+      <div class="chips" role="tablist" aria-label="Dispositivo"><button class="chip" type="button" data-d="escritorio" aria-selected="true">Escritorio</button><button class="chip" type="button" data-d="movil" aria-selected="false">Celular</button></div>
+      <a class="btn f" href="landing/">Abrir la landing completa</a>
+    </div>
+    <div class="escena" id="escena"><div class="nav-web"><div class="b"><i></i><i></i><i></i><span>Urbanización La Merced · Lotes en El Cerrito</span></div>
+      <iframe id="ifr" title="Landing de la Urbanización La Merced" loading="lazy" data-src="landing/"></iframe></div></div>
+    <p class="nota">Prototipo navegable con fotos ilustrativas. El WhatsApp y el CRM se conectan al arrancar.</p>
+    <h3 style="font-size:32px;margin:70px 0 20px">Plantilla de <em>presentaciones</em></h3>
+    <div class="visor" data-visor="pres" data-total="6" data-ruta="assets/pres/" data-pad="1" tabindex="0" aria-label="Visor de la plantilla de presentaciones"></div>
+  </div>
+</section>
+
+<section id="lanzamiento">
+  <div class="wrap">
+    <div class="cab"><div><p class="k">09 · Plan de lanzamiento</p><h2>Noventa días <em>para la Etapa 2.</em></h2></div>
+      <p class="lead">Primero creamos expectativa con quienes ya confían, después lanzamos con fuerza en El Cerrito y Palmira, y sostenemos la preventa con cifras, prueba social y avance de obra.</p></div>
+    <div class="fases">
+      <div><small>Semanas 1 y 2</small><h3>Expectativa</h3><p>«Se viene la Etapa 2». Cuenta regresiva, lista de espera en la landing y referidos con las 140 familias de la Etapa 1.</p></div>
+      <div><small>Semanas 3 y 4</small><h3>Lanzamiento</h3><p>Evento «Ven a pisar tu lote», valla y lona, volanteo en El Cerrito y Palmira, y pauta fuerte en Meta.</p></div>
+      <div><small>Meses 2 y 3</small><h3>Preventa</h3><p>Carruseles de cifras, mitos y proceso; remarketing; testimonios; pauta para colombianos en España y Estados Unidos.</p></div>
+      <div><small>Siempre</small><h3>Avance y medición</h3><p>Dron y video de obra cada mes. Informe de leads por pieza gracias a los códigos de origen.</p></div>
+    </div>
+    <h3 style="font-size:28px;margin:54px 0 16px">Una semana tipo <em>en redes</em></h3>
+    <div class="tabla"><table class="cal">
+      <tr><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th><th>Domingo</th></tr>
+      <tr><td class="d"><small>Carrusel directo</small>Haz la cuenta</td><td><small>Reel</small>Avance de obra con dron</td><td class="a"><small>Post aspiracional</small>La llave que germina</td>
+        <td class="d"><small>Carrusel directo</small>Tres mitos</td><td><small>Reel</small>Testimonio Etapa 1</td><td class="a"><small>Carrusel aspiracional</small>Construye por etapas</td><td><small>Historias</small>Encuesta y visita guiada</td></tr>
+    </table></div>
+    <div class="kpis"><div><b>Costo por lead</b><span>Cuánto cuesta cada contacto</span></div><div><b>Leads calificados</b><span>Con presupuesto y lote de interés</span></div>
+      <div><b>Visitas a obra</b><span>Agendadas y cumplidas</span></div><div><b>Separaciones</b><span>Por semana y por asesor</span></div><div><b>Origen</b><span>Qué pieza trajo cada venta</span></div></div>
+  </div>
+</section>
+
+<section id="planes" class="v">
+  <div class="rayos" style="width:1100px;height:1100px;left:-420px;top:-420px;opacity:.07"><img src="assets/logo/icono-blanco.svg" alt=""></div>
+  <div class="wrap">
+    <div class="cab"><div><p class="k">10 · Planes e inversión</p><h2>Cuatro planes, <em>de cimiento a 360.</em></h2></div>
+      <p class="lead">Valores mensuales en pesos colombianos, sin IVA. La pauta y la impresión van aparte. Recomendamos el plan Casa para lanzar 400 lotes.</p></div>
+    <div class="planes">
+      <article class="plan"><h3>Cimiento</h3><p class="para">Para tener presencia constante y ordenada.</p>
+        <p class="precio">$3.300.000 <small>/ mes</small></p><p class="usd">≈ USD 1.000 al cambio de octubre de 2026</p>
+        <ul><li>Instagram y Facebook</li><li>8 carruseles y 4 reels al mes</li><li>16 historias</li><li>Parrilla mensual y copies</li><li>1 jornada de grabación</li><li>Respuesta a mensajes en horario laboral</li><li>Informe mensual</li></ul></article>
+      <article class="plan"><h3>Obra</h3><p class="para">Para generar contactos con pauta y landing.</p>
+        <p class="precio">$5.400.000 <small>/ mes</small></p><p class="usd">≈ USD 1.630</p>
+        <ul><li class="mas">Todo lo de Cimiento, y además:</li><li>TikTok</li><li>10 carruseles y 8 reels</li><li>30 historias</li><li>Gestión de pauta en Meta</li><li>Landing con simulador y CRM</li><li>2 jornadas de grabación, con dron</li><li>Informe quincenal</li></ul></article>
+      <article class="plan rec"><span class="tag">Recomendado</span><h3>Casa</h3><p class="para">Para lanzar la Etapa 2 y vender con ritmo.</p>
+        <p class="precio">$7.900.000 <small>/ mes</small></p><p class="usd">≈ USD 2.390</p>
+        <ul><li class="mas">Todo lo de Obra, y además:</li><li>12 carruseles y 12 reels</li><li>Google Ads</li><li>4 piezas POP diseñadas al mes</li><li>Cubrimiento de 1 evento o visita guiada</li><li>Difusión por WhatsApp a la base de datos</li><li>Reunión mensual de resultados</li></ul></article>
+      <article class="plan"><h3>Bajo el sol · 360</h3><p class="para">Marketing y acompañamiento comercial completo.</p>
+        <p class="precio">$11.900.000 <small>/ mes</small></p><p class="usd">≈ USD 3.600</p>
+        <ul><li class="mas">Todo lo de Casa, y además:</li><li>16 carruseles y 16 reels</li><li>Video testimonial de la Etapa 1 cada mes</li><li>Avance de obra con dron cada 15 días</li><li>Guiones y capacitación al equipo de ventas</li><li>Creadores de contenido del Valle</li><li>Acompañamiento comercial semanal</li></ul></article>
+    </div>
+    <div class="extra">
+      <div><b>Identidad y kit de lanzamiento</b>Logo en vector, manual, papelería, plantillas y artes POP base: $2.800.000, pago único. Sin costo si contratan Bajo el sol por 6 meses.</div>
+      <div><b>Pauta recomendada</b>Desde $2.500.000 al mes durante el lanzamiento, pagada directamente a Meta y Google.</div>
+      <div><b>Condiciones</b>Permanencia mínima de 3 meses, pago mes anticipado. Propuesta vigente por 15 días.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="wrap">
+    <p class="k">Hecho por BLACKMOUTH</p>
+    <h2>Tu lugar <em>bajo el sol.</em></h2>
+    <p class="lead" style="text-align:center">Todo lo que viste aquí se hizo para La Merced en una noche. Imaginen lo que hacemos en noventa días.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px"><a class="btn" href="#planes">Ver los planes</a><a class="btn f" href="https://cotizaciones.blackmouth.agency/santa-barbara/entregables-v2/">Ver el caso Santa Bárbara</a></div>
+    <div class="bm"><img src="assets/logo-bm.png" alt="BLACKMOUTH"></div>
+  </div>
+</section>
+</main>
+
+<div class="caja" id="caja" hidden role="dialog" aria-modal="true" aria-label="Vista ampliada">
+  <img id="cImg" alt="">
+  <button class="ctrl cerrar" type="button" id="cX" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="ctrl ant" type="button" id="cA" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button class="ctrl sig" type="button" id="cS" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  <p class="pie" id="cP"></p>
+</div>
+
+<script>
+(function(){
+const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
+const el = (t, p = {}, k = []) => { const e = document.createElement(t); for (const [a, v] of Object.entries(p)) { if (a === 'dataset') Object.assign(e.dataset, v); else if (a in e) e[a] = v; else e.setAttribute(a, v); } k.forEach(x => e.appendChild(x)); return e; };
+const imgEl = (src, alt, lazy = true) => { const i = el('img', { alt }); i.setAttribute('src', src); if (lazy) i.loading = 'lazy'; return i; };
+const FL = d => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('fill', 'none'); s.setAttribute('stroke', 'currentColor'); s.setAttribute('stroke-width', '2.4'); s.setAttribute('stroke-linecap', 'round'); s.setAttribute('stroke-linejoin', 'round'); const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', d); s.appendChild(p); return s; };
+
+/* progreso y sección activa */
+const links = $$('.barra nav a'), secs = links.map(a => document.querySelector(a.getAttribute('href')));
+addEventListener('scroll', () => { const h = document.documentElement; $('#prog').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  let on = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 120) on = i; }); links.forEach((a, i) => a.classList.toggle('on', i === on)); }, { passive: true });
+
+/* íconos */
+const ICOS = [['lote','Lote'],['casa','Casa'],['sol','Sol'],['llave','Llave'],['escritura','Escritura'],['agua','Agua'],['energia','Energía'],['gas','Gas'],['alcantarillado','Alcantarillado'],['via','Vías'],['parque','Parque'],['familia','Familia'],['cuota','Cuota'],['separacion','Separación'],['ubicacion','Ubicación'],['rio','Ríos'],['colinas','Cordillera'],['cana','Caña'],['en_regla','En regla'],['plano','Plano'],['chat','Asesor'],['etapas','Por etapas'],['tiempo','Cerca'],['comercio','Comercio'],['etapa2','Etapa 2']];
+ICOS.forEach(([f, n]) => $('#icos').appendChild(el('div', {}, [imgEl('assets/iconos/' + f + '.svg', ''), document.createTextNode(n)])));
+
+/* caja */
+const caja = $('#caja'); let lista = [], idx = 0, previo = null;
+const ver = () => { const it = lista[idx]; $('#cImg').setAttribute('src', it.src); $('#cImg').alt = it.cap; $('#cP').textContent = it.cap + '  ·  ' + (idx + 1) + ' / ' + lista.length; $('#cA').hidden = $('#cS').hidden = lista.length < 2; };
+function abrir(l, i){ lista = l; idx = i; previo = document.activeElement; ver(); caja.hidden = false; $('#cX').focus(); }
+const cerrar = () => { caja.hidden = true; $('#cImg').removeAttribute('src'); if (previo) previo.focus(); };
+$('#cX').addEventListener('click', cerrar);
+$('#cA').addEventListener('click', () => { idx = (idx - 1 + lista.length) % lista.length; ver(); });
+$('#cS').addEventListener('click', () => { idx = (idx + 1) % lista.length; ver(); });
+caja.addEventListener('click', e => { if (e.target === caja) cerrar(); });
+document.addEventListener('keydown', e => { if (caja.hidden) return; if (e.key === 'Escape') cerrar(); if (e.key === 'ArrowRight') $('#cS').click(); if (e.key === 'ArrowLeft') $('#cA').click(); });
+const boton = (src, cap, cls, etiqueta, etiCls) => { const b = el('button', { type: 'button', className: cls || '', dataset: { full: src, cap } }, [imgEl(src, cap)]); if (etiqueta) b.appendChild(el('span', { className: etiCls || '', textContent: etiqueta })); return b; };
+document.addEventListener('click', e => { const b = e.target.closest('[data-full]'); if (!b) return; const g = $$('[data-grupo="' + b.closest('[data-grupo]').dataset.grupo + '"] [data-full]'); abrir(g.map(x => ({ src: x.dataset.full, cap: x.dataset.cap })), g.indexOf(b)); });
+
+/* visores (manual y presentación) */
+$$('[data-visor]').forEach(v => {
+  const total = +v.dataset.total, ruta = v.dataset.ruta, pad = +v.dataset.pad, src = i => ruta + String(i).padStart(pad, '0') + '.jpg';
+  let p = 1;
+  const im = imgEl(src(1), 'Página 1', false);
+  const ant = el('button', { type: 'button', className: 'ctrl ant', 'aria-label': 'Anterior' }, [FL('M15 6l-6 6 6 6')]);
+  const sig = el('button', { type: 'button', className: 'ctrl sig', 'aria-label': 'Siguiente' }, [FL('M9 6l6 6-6 6')]);
+  const cont = el('p', { className: 'cont', 'aria-live': 'polite' });
+  const minis = el('div', { className: 'minis' });
+  for (let i = 1; i <= total; i++) minis.appendChild(el('button', { type: 'button', dataset: { i }, 'aria-label': 'Página ' + i }, [imgEl(src(i), '')]));
+  v.appendChild(el('div', { className: 'esc' }, [im, ant, sig])); v.appendChild(el('div', { className: 'bar' }, [cont])); v.appendChild(minis);
+  const ir = n => { p = Math.min(total, Math.max(1, n)); im.style.opacity = .4; const t = new Image(); t.onload = () => { im.setAttribute('src', t.src); im.alt = 'Página ' + p; im.style.opacity = 1; }; t.src = src(p);
+    cont.textContent = String(p).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    minis.querySelectorAll('button').forEach(b => b.setAttribute('aria-current', String(+b.dataset.i === p)));
+    const m = minis.querySelector('[data-i="' + p + '"]'); minis.scrollTo({ left: m.offsetLeft - minis.clientWidth / 2 + m.clientWidth / 2, behavior: 'smooth' }); };
+  ant.addEventListener('click', () => ir(p - 1)); sig.addEventListener('click', () => ir(p + 1));
+  minis.addEventListener('click', e => { const b = e.target.closest('button'); if (b) ir(+b.dataset.i); });
+  v.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { ir(p + 1); e.preventDefault(); } if (e.key === 'ArrowLeft') { ir(p - 1); e.preventDefault(); } });
+  im.addEventListener('click', () => abrir(Array.from({ length: total }, (_, i) => ({ src: src(i + 1), cap: 'Página ' + (i + 1) })), p - 1));
+  let x0 = null; const esc = v.querySelector('.esc');
+  esc.addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+  esc.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) ir(p + (dx < 0 ? 1 : -1)); x0 = null; });
+  ir(1);
+});
+
+/* carruseles */
+const CAR = [
+  ['Haz la cuenta', 'Directo · venta', 'Tu cuota puede costar lo mismo que un arriendo. Lotes de 84 m² desde $69.900.000, separas con $1.000.000 y el saldo lo financias directo con la constructora, hasta 60 meses.\n\nEscríbenos y te armamos tu plan de pagos. 🌞\n#ElCerrito #LotesEnElCerrito #ValleDelCauca #CasaPropia'],
+  ['La cuenta del arriendo', 'Dolor · arriendo', '$850.000 al mes por 7 años son $71,4 millones. Más de lo que vale un lote en La Merced, con una diferencia: el lote sí queda a tu nombre.\n\nDeja de vivir a merced del arriendo.\n#ElCerrito #Arriendo #CasaPropia'],
+  ['Etapa 1: cumplido', 'Confianza · prueba social', '140 familias ya eligieron La Merced. Primero hicimos las vías y las redes; después vendimos. Así lo hicimos en la Etapa 1 y así lo hacemos en la Etapa 2: 400 lotes nuevos.\n#ElCerrito #Etapa2'],
+  ['Construye por etapas', 'Aspiracional · proceso', 'Tu casa no tiene que estar lista mañana. Hoy el lote, luego la obra, después tu casa y siempre tu familia.\n\nTu lugar bajo el sol. ☀️\n#ElCerrito #ConstruyeATuRitmo'],
+  ['Vivir en El Cerrito', 'Aspiracional · territorio', 'La tierra de María, ahora también la tuya. Entre la cordillera, los cañaduzales y los ríos Amaime y Sabaletas, a 13 km de Palmira.\n#ElCerrito #ValleDelCauca'],
+  ['Desde donde estés', 'Colombianos en el exterior', '¿Vives fuera de Colombia? Tu lote te espera aquí. Recórrelo por videollamada, sepáralo por transferencia y firma con poder. Te mostramos el avance de obra cada mes.\n#ColombianosEnElExterior #ElCerrito'],
+  ['Tres mitos', 'Objeciones', 'Tres mitos que te alejan de tu lote propio: que sin banco no se puede, que necesitas toda la inicial ya y que comprar lote siempre es un riesgo. Desliza y mira la realidad.\n#ElCerrito #CasaPropia'],
+  ['Así separas tu lote', 'Directo · proceso', 'Separar tu lote toma menos de una hora: escríbenos, visita la obra, elige tu lote en el plano, sepáralo con $1.000.000 y firma tu promesa.\n#ElCerrito #LotesEnElCerrito']
+];
+let car = 0, sl = 0; const pista = $('#pista');
+CAR.forEach(([t, d], i) => $('#listaCar').appendChild(el('button', { type: 'button', dataset: { car: i } }, [imgEl('assets/car/c' + (i + 1) + '-1.jpg', ''), el('div', {}, [el('b', { textContent: t }), el('span', { textContent: d })])])));
+const verSl = s => { sl = Math.min(4, Math.max(0, s)); pista.style.transform = 'translateX(-' + sl * 100 + '%)'; $('#nP').textContent = (sl + 1) + '/5';
+  $$('#puntos i').forEach((x, i) => x.classList.toggle('on', i === sl)); $('[data-p="-1"]').disabled = sl === 0; $('[data-p="1"]').disabled = sl === 4; };
+const verCar = c => { car = c; pista.replaceChildren(...[1, 2, 3, 4, 5].map(k => imgEl('assets/car/c' + (c + 1) + '-' + k + '.jpg', CAR[c][0] + ', diapositiva ' + k, k > 1)));
+  $('#puntos').replaceChildren(...[0, 1, 2, 3, 4].map(() => el('i'))); $('#txt').replaceChildren(el('b', { textContent: 'urbanizacionlamerced ' }), document.createTextNode(CAR[c][2]));
+  $$('#listaCar button').forEach((b, i) => b.setAttribute('aria-pressed', String(i === c))); verSl(0); };
+document.addEventListener('click', e => { const b = e.target.closest('[data-car]'); if (b) verCar(+b.dataset.car); const p = e.target.closest('[data-p]'); if (p) verSl(sl + +p.dataset.p); });
+let px = null; $('#marco').addEventListener('touchstart', e => px = e.touches[0].clientX, { passive: true });
+$('#marco').addEventListener('touchend', e => { if (px === null) return; const dx = e.changedTouches[0].clientX - px; if (Math.abs(dx) > 40) verSl(sl + (dx < 0 ? 1 : -1)); px = null; });
+pista.addEventListener('click', () => abrir([1, 2, 3, 4, 5].map(k => ({ src: 'assets/car/c' + (car + 1) + '-' + k + '.jpg', cap: CAR[car][0] + ' · ' + k + '/5' })), sl));
+verCar(0);
+
+/* posts, historias, POP */
+const POSTS = [['a1','Metáfora'],['a2','Ironía'],['a3','Antítesis'],['a4','Sinécdoque'],['a5','Doble sentido'],['a6','Metonimia'],['a7','Lema'],['a8','Antes y después'],['d1','Directo · lanzamiento'],['d2','Directo · precio'],['d3','Directo · separación'],['d4','Directo · evento']];
+POSTS.forEach(([f, t]) => $('#posts').appendChild(boton('assets/posts/' + f + '.jpg', t, '', t, f[0] === 'd' ? 'd' : '')));
+['Encuesta','Cuenta regresiva','Precio','Testimonio (ejemplo)','Visita guiada','Cierre'].forEach((t, i) => $('#hist').appendChild(boton('assets/hist/h' + (i + 1) + '.jpg', 'Historia · ' + t)));
+const MK = [['mk_valla','Valla en la vía'],['mk_pendon','Pendón de sala'],['mk_laptop','Landing'],['mk_volante','Volante A5'],['mk_lona','Lona de obra'],['mk_celular','Post en el feed'],
+  ['mk_tv','Presentación comercial'],['mk_polo','Uniforme'],['mk_papeleria','Papelería'],['mk_asesor','Equipo de ventas'],['mk_camioneta','Vehículo'],['mk_senal','Sala de ventas']];
+MK.forEach(([f, t]) => $('#bento').appendChild(boton('assets/mk/' + f + '.jpg', t, '', t)));
+[['valla','Valla 3:1'],['lona','Lona de obra 6:1'],['pendon','Pendón 80 × 200'],['volante-frente','Volante · frente'],['volante-reverso','Volante · reverso'],['carpeta','Carpeta'],['tarjeta-frente','Tarjeta · frente'],['tarjeta-reverso','Tarjeta · reverso'],['membrete','Membrete'],['senal','Señal de sala']]
+  .forEach(([f, t]) => $('#planos').appendChild(boton('assets/pop/' + f + '.jpg', 'Arte plano · ' + t)));
+
+/* landing */
+const ifr = $('#ifr');
+new IntersectionObserver((es, ob) => es.forEach(e => { if (e.isIntersecting && !ifr.getAttribute('src')) { ifr.setAttribute('src', ifr.dataset.src); ob.disconnect(); } }), { rootMargin: '500px' }).observe(ifr);
+document.addEventListener('click', e => { const b = e.target.closest('[data-d]'); if (!b) return; $('#escena').classList.toggle('movil', b.dataset.d === 'movil'); $$('[data-d]').forEach(x => x.setAttribute('aria-selected', String(x === b))); });
+})();
+</script>
+</body>
+</html>
