@@ -163,7 +163,7 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
 .lineas li{padding:6px 12px;border-radius:999px;background:rgba(183,232,66,.14);color:var(--lima);font-weight:700;font-size:13px}
 .post-zona{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,60px);align-items:center}
 @media (max-width:900px){.post-zona{grid-template-columns:1fr}}
-.lista{display:grid;gap:8px}
+.lista{display:grid;gap:8px;max-height:min(760px,80vh);overflow-y:auto;padding-right:6px;scrollbar-width:thin}
 .lista button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;text-align:left;padding:10px 12px;border-radius:18px;border:1.5px solid rgba(183,232,66,.25);background:rgba(255,254,236,.04);color:var(--crema);cursor:pointer;transition:all .2s}
 .lista button:hover{border-color:var(--lima)}
 .lista button[aria-pressed=true]{background:rgba(183,232,66,.16);border-color:var(--lima)}
@@ -193,12 +193,12 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
 .grid-posts button:hover img{transform:scale(1.04)}
 .grid-posts span{position:absolute;left:10px;bottom:10px;padding:5px 11px;border-radius:999px;background:rgba(255,254,236,.95);color:var(--noche);font-weight:800;font-size:11.5px;letter-spacing:.06em}
 .grid-posts span.d{background:var(--lima)}
-.anims{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,.75fr);grid-template-rows:auto auto;gap:16px}
+.anims{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.282fr) minmax(0,.282fr);gap:16px;align-items:end}
 .anims figure{margin:0;border-radius:22px;overflow:hidden;background:var(--noche);position:relative}
 .anims video{width:100%;height:100%;object-fit:cover;display:block}
-.anims .a1{aspect-ratio:16/9}.anims .a2{aspect-ratio:9/16;grid-row:span 2}.anims .a3{aspect-ratio:1;max-width:300px}
-.anims figcaption{position:absolute;left:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(255,254,236,.95);color:var(--noche);font-weight:800;font-size:12px}
-@media (max-width:800px){.anims{grid-template-columns:1fr}.anims .a2{max-width:320px}}
+.anims .a1{aspect-ratio:16/9}.anims .a2{aspect-ratio:9/16}.anims .a3{aspect-ratio:9/16;background:#FFFEEC}.anims .a3 video{object-fit:contain}
+.anims figcaption{position:absolute;left:10px;bottom:10px;right:10px;width:max-content;max-width:calc(100% - 20px);padding:6px 12px;border-radius:999px;background:rgba(255,254,236,.95);color:var(--noche);font-weight:800;font-size:12px}
+@media (max-width:800px){.anims{grid-template-columns:1fr 1fr}.anims .a1{grid-column:1 / -1}}
 .hist{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 @media (max-width:900px){.hist{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .hist button{padding:0;border:0;border-radius:16px;overflow:hidden;aspect-ratio:9/16;cursor:zoom-in;background:none}
@@ -418,7 +418,7 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
 <section id="contenido" class="v" style="background:var(--noche)">
   <div class="wrap">
     <div class="cab"><div><p class="k">06 · Contenido para redes</p><h2>Carruseles que venden <em>y otros que enamoran.</em></h2></div>
-      <p class="lead">Los carruseles y los reels son lo que más resultados da hoy. Aquí van 9 carruseles, 20 posts y 6 historias listos para publicar, cada uno con su propio recurso de foto + vector. Los reels se producen dentro de cada plan.</p></div>
+      <p class="lead">Los carruseles y los reels son lo que más resultados da hoy. Aquí van 14 carruseles, 20 posts y 6 historias listos para publicar, cada uno con su propio recurso de foto + vector. Los reels se producen dentro de cada plan.</p></div>
     <div class="lineas">
       <div><h3>Directo · venta</h3><p>Breve y claro: qué se ofrece, cuánto cuesta y qué hacer. Atacan un dolor y cierran con una acción.</p>
         <ul><li>Haz la cuenta</li><li>Separa con $1M</li><li>Así separas</li><li>Mitos</li><li>Lanzamiento</li></ul></div>
@@ -447,9 +447,9 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
     <div class="cab"><div><p class="k">07 · Animaciones</p><h2>La sala de ventas <em>también se mueve.</em></h2></div>
       <p class="lead">Un bucle de 25 segundos para la pantalla de la sala y las ferias, su versión vertical para tótems, y la intro del logo para abrir cada reel. Hechos en código: se actualizan precios y textos en minutos.</p></div>
     <div class="anims">
-      <figure class="a1"><video src="assets/video/sala-horizontal.mp4" poster="assets/video/sala-horizontal.jpg" muted loop playsinline preload="none"></video><figcaption>Pantalla de sala · 16:9 · bucle de 25 s</figcaption></figure>
-      <figure class="a2"><video src="assets/video/sala-vertical.mp4" muted loop playsinline preload="none"></video><figcaption>Tótem · 9:16</figcaption></figure>
-      <figure class="a3"><video src="assets/video/logo-intro.mp4" muted loop playsinline preload="none"></video><figcaption>Intro del logo · 1:1</figcaption></figure>
+      <figure class="a1"><video src="assets/video/sala-horizontal.mp4" poster="assets/video/sala-horizontal.jpg" autoplay muted loop playsinline preload="auto"></video><figcaption>Pantalla de sala · 16:9 · bucle de 25 s</figcaption></figure>
+      <figure class="a2"><video src="assets/video/sala-vertical.mp4" autoplay muted loop playsinline preload="auto"></video><figcaption>Tótem · 9:16</figcaption></figure>
+      <figure class="a3"><video src="assets/video/logo-intro.mp4" autoplay muted loop playsinline preload="auto"></video><figcaption>Intro del logo · 1:1</figcaption></figure>
     </div>
   </div>
 </section>
@@ -604,62 +604,101 @@ $$('[data-visor]').forEach(v => {
 /* carruseles */
 const CAR = [
  [
+  "c1",
   "Haz la cuenta",
   "Directo · persona que sale del marco",
   "Tu cuota puede costar lo mismo que un arriendo. Lotes de 84 m² desde $69.900.000, separas con $1.000.000 y el saldo lo financias directo con la constructora, hasta 60 meses.\n\nTu paraíso, bajo el sol. ☀️\n#ElCerrito #LotesEnElCerrito #CasaPropia"
  ],
  [
+  "c2",
   "La cuenta del arriendo",
   "Dolor · texto detrás y 84 recibos",
   "$850.000 al mes por 7 años son 84 recibos y $71,4 millones. Más de lo que vale un lote en La Merced, con una diferencia: el lote sí queda a tu nombre.\n\nDeja de vivir a merced del arriendo.\n#ElCerrito #Arriendo"
  ],
  [
+  "c3",
   "Etapa 1: cumplido",
   "Confianza · pin con luz y llamadas",
   "140 familias ya eligieron La Merced. Primero hicimos las vías y las redes; después vendimos. Ahora viene la Etapa 2: 400 lotes nuevos.\n#ElCerrito #Etapa2"
  ],
  [
+  "c4",
   "Construye por etapas",
   "Proceso · casa dibujada en el lote",
   "Tu casa no tiene que estar lista mañana. Hoy el lote, luego la obra, después tu casa y el domingo, sancocho en tu patio.\n\nTu paraíso, bajo el sol. ☀️\n#ConstruyeATuRitmo"
  ],
  [
+  "c5",
   "Vivir en El Cerrito",
   "Territorio · íconos en órbita",
   "La tierra de María, ahora tu paraíso. Entre la cordillera, los cañaduzales y los ríos Amaime y Sabaletas, a 13 km de Palmira.\n#ElCerrito #ValleDelCauca"
  ],
  [
+  "c6",
   "Desde donde estés",
   "Exterior · sale del celular",
   "¿Vives fuera de Colombia? Tu paraíso te espera aquí. Recorre el lote por videollamada, sepáralo por transferencia y firma con poder.\n#ColombianosEnElExterior"
  ],
  [
+  "c7",
   "Tres mitos",
   "Objeciones · sellos de mito",
   "Tres mitos que te alejan de tu paraíso: que sin banco no se puede, que necesitas toda la inicial ya y que comprar lote siempre es un riesgo.\n#CasaPropia"
  ],
  [
+  "c8",
   "Así separas tu lote",
   "Proceso · camino continuo",
   "Separar tu lote toma menos de una hora: escríbenos, visita la obra, elige tu lote, sepáralo con $1.000.000 y firma tu promesa.\n#LotesEnElCerrito"
  ],
  [
+  "c9",
   "Un día en tu paraíso",
   "Bajo el sol · el sol avanza",
   "Café al amanecer, el jardín, la siesta en la hamaca, la guerra de agua y la tarde en la mecedora. Nada de esto se paga en un arriendo.\n\nTu paraíso, bajo el sol. ☀️\n#TuParaíso"
+ ],
+ [
+  "o1",
+  "Haz la cuenta · clásico",
+  "Directo · cifras y cotas",
+  "Tu cuota puede costar lo mismo que un arriendo. Lotes de 84 m² desde $69.900.000 y el saldo directo con la constructora, hasta 60 meses.\n#ElCerrito #CasaPropia"
+ ],
+ [
+  "o2",
+  "El arriendo, mes a mes · clásico",
+  "Dolor · la cuenta en grande",
+  "En 7 años de arriendo pagaste un lote. Pero no es tuyo. $71,4 millones que se fueron.\n\nDeja de vivir a merced del arriendo.\n#Arriendo"
+ ],
+ [
+  "o3",
+  "Etapa 1 · clásico",
+  "Confianza · obra y escrituras",
+  "140 familias ya eligieron La Merced. Prometido y construido: vías, servicios y escrituras individuales. Ahora, la Etapa 2.\n#ElCerrito"
+ ],
+ [
+  "o5",
+  "Vivir en El Cerrito · clásico",
+  "Territorio · mapa y vida de pueblo",
+  "La tierra de María, ahora también la tuya. Cerca de todo, lejos del ruido.\n\nTu paraíso, bajo el sol.\n#ValleDelCauca"
+ ],
+ [
+  "o8",
+  "Así separas · clásico",
+  "Proceso · plano de loteo",
+  "Separar tu lote toma menos de una hora: escríbenos, visita la obra, elige en el plano, separa y firma.\n#LotesEnElCerrito"
  ]
 ];
 let car = 0, sl = 0; const pista = $('#pista');
-CAR.forEach(([t, d], i) => $('#listaCar').appendChild(el('button', { type: 'button', dataset: { car: i } }, [imgEl('assets/car/c' + (i + 1) + '-1.jpg', ''), el('div', {}, [el('b', { textContent: t }), el('span', { textContent: d })])])));
+CAR.forEach(([k, t, d], i) => $('#listaCar').appendChild(el('button', { type: 'button', dataset: { car: i } }, [imgEl('assets/car/' + k + '-1.jpg', ''), el('div', {}, [el('b', { textContent: t }), el('span', { textContent: d })])])));
 const verSl = s => { sl = Math.min(4, Math.max(0, s)); pista.style.transform = 'translateX(-' + sl * 100 + '%)'; $('#nP').textContent = (sl + 1) + '/5';
   $$('#puntos i').forEach((x, i) => x.classList.toggle('on', i === sl)); $('[data-p="-1"]').disabled = sl === 0; $('[data-p="1"]').disabled = sl === 4; };
-const verCar = c => { car = c; pista.replaceChildren(...[1, 2, 3, 4, 5].map(k => imgEl('assets/car/c' + (c + 1) + '-' + k + '.jpg', CAR[c][0] + ', diapositiva ' + k, k > 1)));
-  $('#puntos').replaceChildren(...[0, 1, 2, 3, 4].map(() => el('i'))); $('#txt').replaceChildren(el('b', { textContent: 'urbanizacionlamerced ' }), document.createTextNode(CAR[c][2]));
+const verCar = c => { car = c; pista.replaceChildren(...[1, 2, 3, 4, 5].map(k => imgEl('assets/car/' + CAR[c][0] + '-' + k + '.jpg', CAR[c][1] + ', diapositiva ' + k, k > 1)));
+  $('#puntos').replaceChildren(...[0, 1, 2, 3, 4].map(() => el('i'))); $('#txt').replaceChildren(el('b', { textContent: 'urbanizacionlamerced ' }), document.createTextNode(CAR[c][3]));
   $$('#listaCar button').forEach((b, i) => b.setAttribute('aria-pressed', String(i === c))); verSl(0); };
 document.addEventListener('click', e => { const b = e.target.closest('[data-car]'); if (b) verCar(+b.dataset.car); const p = e.target.closest('[data-p]'); if (p) verSl(sl + +p.dataset.p); });
 let px = null; $('#marco').addEventListener('touchstart', e => px = e.touches[0].clientX, { passive: true });
 $('#marco').addEventListener('touchend', e => { if (px === null) return; const dx = e.changedTouches[0].clientX - px; if (Math.abs(dx) > 40) verSl(sl + (dx < 0 ? 1 : -1)); px = null; });
-pista.addEventListener('click', () => abrir([1, 2, 3, 4, 5].map(k => ({ src: 'assets/car/c' + (car + 1) + '-' + k + '.jpg', cap: CAR[car][0] + ' · ' + k + '/5' })), sl));
+pista.addEventListener('click', () => abrir([1, 2, 3, 4, 5].map(k => ({ src: 'assets/car/' + CAR[car][0] + '-' + k + '.jpg', cap: CAR[car][1] + ' · ' + k + '/5' })), sl));
 verCar(0);
 
 /* posts, historias, POP */
