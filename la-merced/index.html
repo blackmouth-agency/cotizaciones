@@ -308,17 +308,17 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
 .cobrand img{height:38px;width:auto}.cobrand img+span+img{height:52px}
 .cobrand span{font-size:22px;opacity:.5}
 .portada .k{color:var(--lima);animation:sube .9s .2s both}
-.portada h1{font-size:clamp(46px,6.6vw,104px);line-height:.96}
+.portada h1{font-size:clamp(44px,6vw,92px);line-height:.96}
 .portada h1 .w{display:inline-block;animation:palabra .9s cubic-bezier(.2,.75,.2,1) both;animation-delay:calc(.3s + var(--i) * .08s)}
 .portada h1 em{color:var(--lima)}
 @keyframes palabra{from{transform:translateY(60%) rotate(4deg);opacity:0;filter:blur(6px)}}
 @keyframes sube{from{transform:translateY(24px);opacity:0}}
 .portada .lead{color:rgba(255,254,236,.85);animation:sube .9s 1s both}
 .portada .acc{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;animation:sube .9s 1.15s both}
-.cifras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:40px;background:rgba(183,232,66,.25);border-radius:20px;overflow:hidden;animation:sube .9s 1.3s both;max-width:600px}
-.cifras div{background:rgba(11,46,30,.85);padding:14px 16px;backdrop-filter:blur(6px)}
-.cifras b{display:block;font-family:var(--display);font-size:38px;line-height:1;color:var(--lima);font-variant-numeric:tabular-nums lining-nums}
-.cifras span{font-size:12.5px;font-weight:700;opacity:.8}
+.cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:32px;background:rgba(183,232,66,.25);border-radius:20px;overflow:hidden;animation:sube .9s 1.3s both;max-width:600px}
+.cifras div{background:rgba(11,46,30,.85);padding:11px 14px;backdrop-filter:blur(6px)}
+.cifras b{display:block;font-family:var(--display);font-size:20px;line-height:1.1;color:var(--lima)}
+.cifras span{font-size:12px;font-weight:600;opacity:.78}
 .cinta-ent{position:absolute;z-index:3;left:0;right:0;bottom:0;background:var(--lima);color:var(--noche);overflow:hidden;white-space:nowrap;padding:12px 0;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
 .cinta-ent div{display:inline-block;animation:cinta 60s linear infinite}
 .cinta-ent span{margin:0 16px}.cinta-ent i{font-style:normal;opacity:.5}
@@ -331,6 +331,7 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
   .portada::after{background:linear-gradient(180deg,rgba(11,46,30,.55),#0B2E1E 70%)}
   .muro{width:120%;right:-30%;top:-10%;opacity:.55}
   .cifras{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cifras b{font-size:20px}
   .bajar{display:none}
 }
 /* ===== aparición al hacer scroll ===== */
@@ -362,6 +363,19 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
 .grid-posts button[hidden],.bento button[hidden]{display:none}
 .periodo{margin-bottom:26px}
 .plan .precio{transition:opacity .2s}
+
+/* franja final con el logo de BLACKMOUTH y WhatsApp */
+.franja{background:#06190F;color:var(--crema);padding:44px 0 calc(28px + env(safe-area-inset-bottom,0px));border-top:4px solid var(--lima)}
+.franja .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.franja .wrap p{flex:1;text-align:center}
+.franja img{height:54px;width:auto}
+.franja p{margin:0;font-family:var(--display);font-size:clamp(24px,2.6vw,34px);font-weight:620}
+.franja p span{font-style:italic;font-weight:480;color:var(--lima)}
+.btn.wa{background:#25D366;color:#06190F;font-size:16px;padding:16px 26px}
+.btn.wa svg{width:22px;height:22px}
+.franja .pie-bm{margin:30px 0 0;text-align:center;font-family:var(--texto);font-weight:600;font-size:12.5px;letter-spacing:.06em;color:rgba(255,254,236,.55)}
+.pie-bm a{color:var(--lima)}
+@media (max-width:900px){.franja .wrap{flex-direction:column;align-items:flex-start}.franja .wrap p{text-align:left}.franja .btn.wa{width:100%;justify-content:center}}
 </style>
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="La Merced · Propuesta 360">
@@ -395,9 +409,9 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
       <h1><span class="w" style="--i:0">400</span> <span class="w" style="--i:1">lotes</span> <span class="w" style="--i:2">merecen</span> <span class="w" style="--i:3"><em>una</em></span> <span class="w" style="--i:4"><em>marca</em></span> <span class="w" style="--i:5"><em>a</em></span> <span class="w" style="--i:6"><em>su</em></span> <span class="w" style="--i:7"><em>altura.</em></span> </h1>
       <p class="lead">Estrategia, identidad, contenido, animaciones, material físico, landing y plan de lanzamiento para vender los 400 lotes de la Etapa 2 en El Cerrito.</p>
       <div class="acc"><a class="btn" href="#diagnostico">Ver la propuesta</a><a class="btn f" href="#planes">Ir a los planes</a></div>
-      <div class="cifras">
-        <div><b data-count="14">14</b><span>carruseles</span></div><div><b data-count="20">20</b><span>posts</span></div>
-        <div><b data-count="50">50</b><span>íconos propios</span></div><div><b data-count="21">21</b><span>piezas físicas</span></div>
+      <div class="cifras servicios">
+        <div><b>Estrategia</b><span>Comprador y concepto</span></div><div><b>Branding</b><span>Logo, manual e íconos</span></div><div><b>Social media</b><span>Carruseles, posts e historias</span></div>
+        <div><b>Animación</b><span>Pantallas y reels</span></div><div><b>Material POP</b><span>Ferias, vallas y merch</span></div><div><b>Landing y CRM</b><span>Ventas que se miden</span></div>
       </div>
     </div>
   </div>
@@ -618,10 +632,18 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
     <h2>Tu paraíso, <em>bajo el sol.</em></h2>
     <p class="lead" style="text-align:center">Todo lo que viste aquí se hizo para La Merced en una noche. Imaginen lo que hacemos en noventa días.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px"><a class="btn" href="#planes">Ver los planes</a><a class="btn f" href="https://cotizaciones.blackmouth.agency/santa-barbara/entregables-v2/">Ver el caso Santa Bárbara</a></div>
-    <div class="bm"><img src="assets/logo-bm.png" alt="BLACKMOUTH"></div>
   </div>
 </section>
 </main>
+<footer class="franja">
+  <div class="wrap">
+    <img src="assets/logo-bm.png" alt="BLACKMOUTH, agencia de publicidad">
+    <p>¿Arrancamos con la Etapa 2? <span>Hablemos hoy mismo.</span></p>
+    <a class="btn wa" href="https://wa.me/message/RZ4RFIU4PD4FJ1"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbenos por WhatsApp</a>
+  </div>
+  <p class="pie-bm">BLACKMOUTH · Agencia de publicidad · <a href="https://www.blackmouth.agency">www.blackmouth.agency</a></p>
+</footer>
+
 
 <div class="caja" id="caja" hidden role="dialog" aria-modal="true" aria-label="Vista ampliada">
   <img id="cImg" alt="">
