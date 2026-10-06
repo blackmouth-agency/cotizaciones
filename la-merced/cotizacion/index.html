@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La Merced · Cotización 360</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Cotización de BLACKMOUTH para la comunicación 360 de la Urbanización La Merced, Etapa 2: alcance, muestra del trabajo, planes e inversión.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,0..100;1,9..144,400..800,0..100&family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+<style>
+/* Cotización: documento claro con la marca de La Merced. Muestra el enfoque, no el trabajo terminado. Un solo tema. */
+:root{--verde:#006B3A;--noche:#0B2E1E;--oscuro:#06190F;--lima:#B7E842;--amarillo:#FFD600;--crema:#FFFEEC;--arena:#F2F0DE;--papel:#FFFFFF;--tinta:#0B2E1E;
+  --suave:rgba(11,46,30,.72);--tenue:rgba(11,46,30,.52);--linea:rgba(0,107,58,.15);
+  --display:'Fraunces',Georgia,'Times New Roman',serif;--texto:'Plus Jakarta Sans','Segoe UI',Helvetica,Arial,sans-serif;--curva:cubic-bezier(.2,.75,.2,1);color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--crema);color:var(--tinta);font-family:var(--texto);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+[hidden]{display:none!important}
+img,video{max-width:100%;display:block}
+a{color:var(--verde)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--lima);outline-offset:3px}
+.wrap{width:min(1120px,100%);margin-inline:auto;padding-inline:22px}
+h1,h2,h3{font-family:var(--display);font-weight:640;font-variation-settings:'SOFT' 100;letter-spacing:-.02em;line-height:1.04;margin:0;text-wrap:balance}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:480;color:var(--verde)}
+h2{font-size:clamp(32px,4.2vw,52px)}
+.k{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--verde)}
+.k b{display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 8px;border-radius:999px;background:var(--verde);color:var(--lima);font-size:12px;letter-spacing:.06em}
+.lead{font-size:clamp(16px,1.3vw,18px);color:var(--suave);max-width:62ch;margin:16px 0 0}
+section{padding-block:clamp(56px,7vw,92px);border-top:1px solid var(--linea)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;border:0;background:var(--lima);color:var(--noche);font-weight:800;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .3s var(--curva),box-shadow .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(11,46,30,.45)}
+.btn.f{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.ctrl{width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--noche);display:inline-grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px -6px rgba(0,0,0,.35)}
+.ctrl:hover{background:var(--lima)}.ctrl svg{width:18px;height:18px}
+.nota{font-size:13px;color:var(--tenue);margin:12px 0 0}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--curva),transform .7s var(--curva);transition-delay:calc(var(--d,0) * 60ms)}
+.js .rv.in{opacity:1;transform:none}
+
+/* barra */
+.barra{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(255,254,236,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.barra .wrap{display:flex;align-items:center;gap:16px;height:62px}
+.barra .lm{height:36px;width:auto}
+.barra nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.barra nav::-webkit-scrollbar{display:none}
+.barra nav a{text-decoration:none;font-weight:700;font-size:13.5px;padding:8px 11px;border-radius:999px;color:var(--suave);white-space:nowrap}
+.barra nav a:hover,.barra nav a.on{background:rgba(0,107,58,.1);color:var(--tinta)}
+
+/* portada de cotización */
+.portada{position:relative;overflow:hidden;background:var(--noche);color:var(--crema);padding:clamp(60px,8vw,104px) 0 clamp(48px,6vw,72px);border:0}
+.portada>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;object-position:50% 60%}
+.portada::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 80% at 85% 110%,rgba(255,214,0,.25),transparent 60%),linear-gradient(90deg,var(--noche) 25%,rgba(11,46,30,.5))}
+.portada .wrap{position:relative;z-index:1}
+.cobrand{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+.cobrand img{height:34px;width:auto}.cobrand img:last-child{height:48px}
+.cobrand span{opacity:.5;font-size:20px}
+.portada .k{color:var(--lima)}
+.portada h1{font-size:clamp(40px,5.6vw,76px);max-width:16ch;animation:sube .9s var(--curva) both}
+.portada h1 em{color:var(--lima)}
+.portada .lead{color:rgba(255,254,236,.85);animation:sube .9s .15s var(--curva) both}
+@keyframes sube{from{opacity:0;transform:translateY(22px)}}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:40px;background:rgba(183,232,66,.25);border-radius:18px;overflow:hidden;animation:sube .9s .3s var(--curva) both}
+.meta div{background:rgba(11,46,30,.9);padding:14px 18px}
+.meta small{display:block;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--lima)}
+.meta b{display:block;margin-top:4px;font-size:15px}
+@media (max-width:760px){.meta{grid-template-columns:1fr 1fr}}
+.servicios{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;animation:sube .9s .45s var(--curva) both}
+.servicios span{padding:8px 14px;border-radius:999px;border:1.5px solid rgba(183,232,66,.45);font-weight:700;font-size:13.5px}
+
+/* bloques */
+.cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:end;margin-bottom:34px}
+.cab .lead{margin:0}
+@media (max-width:860px){.cab{grid-template-columns:1fr}}
+.tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.tres{grid-template-columns:1fr}}
+.caja{background:var(--papel);border:1px solid var(--linea);border-radius:22px;padding:24px;transition:transform .3s var(--curva),box-shadow .3s}
+.caja:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(11,46,30,.45)}
+.caja h3{font-size:22px}
+.caja p{margin:8px 0 0;color:var(--suave);font-size:15px;line-height:1.55}
+.caja .num{font-family:var(--display);font-size:46px;line-height:1;color:var(--verde);margin-bottom:10px}
+.pers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:980px){.pers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.pers{grid-template-columns:1fr}}
+.per{background:var(--papel);border:1px solid var(--linea);border-radius:22px;overflow:hidden}
+.per img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.per div{padding:18px}
+.per h3{font-size:20px}
+.per small{display:block;font-weight:700;color:var(--tenue);font-size:12.5px;margin-bottom:6px}
+.per p{margin:8px 0 0;font-size:14px;color:var(--suave);line-height:1.5}
+.per i{display:block;margin-top:12px;padding:9px 12px;border-radius:12px;background:var(--verde);color:var(--crema);font-family:var(--display);font-size:16px}
+.conc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){.conc{grid-template-columns:1fr}}
+.conc>div{border-radius:26px;padding:30px;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.conc .c1{background:var(--noche);color:var(--crema)}
+.conc .c1 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6;transition:transform 1.2s var(--curva)}
+.conc .c1:hover img{transform:scale(1.05)}
+.conc .c1::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,46,30,0) 30%,rgba(11,46,30,.9))}
+.conc .c1>*:not(img){position:relative;z-index:1}
+.conc .c2{background:var(--lima)}
+.conc h3{font-size:clamp(30px,3.4vw,46px)}
+.conc .c1 h3 em{color:var(--lima)}
+.conc p{margin:12px 0 0;font-size:15px;opacity:.9}
+.conc small{position:absolute;top:22px;left:26px;z-index:1;font-weight:800;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase}
+
+/* muestra */
+.muestra-aviso{display:flex;gap:12px;align-items:flex-start;background:var(--arena);border-radius:16px;padding:14px 18px;font-size:14.5px;font-weight:600;color:var(--suave);margin-bottom:30px}
+.muestra-aviso svg{flex:none;width:20px;color:var(--verde);margin-top:2px}
+.sub{font-size:24px;margin:44px 0 16px}
+.logos{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:14px}
+.logos div{border-radius:22px;display:grid;place-items:center;padding:30px;min-height:230px;border:1px solid var(--linea)}
+.logos img{width:min(320px,86%)}
+@media (max-width:760px){.logos{grid-template-columns:1fr}}
+.car-zona{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(20px,4vw,48px);align-items:center}
+@media (max-width:860px){.car-zona{grid-template-columns:1fr}}
+.lista{display:grid;gap:8px}
+.lista button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;text-align:left;padding:10px 12px;border-radius:16px;border:1.5px solid var(--linea);background:#fff;cursor:pointer;transition:all .2s}
+.lista button:hover{border-color:var(--verde)}
+.lista button[aria-pressed=true]{border-color:var(--verde);background:#F1F8E4}
+.lista img{width:48px;height:60px;object-fit:cover;border-radius:8px}
+.lista b{display:block;font-family:var(--display);font-size:17px}
+.lista span{font-size:12.5px;color:var(--tenue)}
+.post{width:min(430px,100%);margin-inline:auto;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 30px 70px -30px rgba(11,46,30,.5);border:1px solid var(--linea)}
+.post header{display:flex;align-items:center;gap:10px;padding:10px 14px}
+.post header i{width:32px;height:32px;border-radius:50%;background:var(--verde) url("assets/logo/icono-blanco.svg") center/64% no-repeat}
+.post header b{font-size:13px}
+.marco{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--arena);touch-action:pan-y}
+.pista{display:flex;height:100%;transition:transform .45s var(--curva)}
+.pista img{flex:none;width:100%;height:100%;object-fit:cover}
+.marco .ctrl{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px}
+.marco .ant{left:10px}.marco .sig{right:10px}
+.marco .ctrl[disabled]{opacity:0;pointer-events:none}
+.puntos{display:flex;justify-content:center;gap:5px;padding:10px 0 12px}
+.puntos i{width:6px;height:6px;border-radius:50%;background:rgba(11,46,30,.22)}.puntos i.on{background:var(--verde)}
+.posts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.posts button{padding:0;border:0;border-radius:16px;overflow:hidden;aspect-ratio:4/5;cursor:zoom-in;background:none}
+.posts img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--curva)}
+.posts button:hover img{transform:scale(1.04)}
+.dos{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:860px){.dos{grid-template-columns:1fr}}
+.dos figure{margin:0;border-radius:20px;overflow:hidden;background:var(--noche);position:relative;border:1px solid var(--linea)}
+.dos figcaption{position:absolute;left:10px;bottom:10px;padding:6px 12px;border-radius:999px;background:rgba(255,254,236,.95);font-weight:800;font-size:12px;color:var(--noche)}
+.ejemplos{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,.8fr);gap:16px;align-items:start}
+.ejemplos button{padding:0;border:1px solid var(--linea);border-radius:18px;overflow:hidden;background:#fff;cursor:zoom-in;position:relative}
+.ejemplos span{position:absolute;left:10px;bottom:10px;padding:6px 12px;border-radius:999px;background:rgba(11,46,30,.9);color:var(--crema);font-weight:800;font-size:12px}
+@media (max-width:760px){.ejemplos{grid-template-columns:1fr}}
+
+/* alcance */
+.alcance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.alcance{grid-template-columns:1fr}}
+.alcance .caja h3{display:flex;align-items:center;gap:10px}
+.alcance .caja h3::before{content:"";width:14px;height:14px;border-radius:0 8px 0 8px;background:var(--lima);box-shadow:inset 0 0 0 2px var(--verde)}
+.alcance ul{margin:10px 0 0;padding-left:18px;color:var(--suave);font-size:14.5px;line-height:1.6}
+.fases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.fases{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.fases{grid-template-columns:1fr}}
+.fases small{font-weight:800;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--verde)}
+
+/* inversión */
+.inv{background:var(--noche);color:var(--crema);border:0}
+.inv h2 em,.inv .k{color:var(--lima)}
+.inv .lead{color:rgba(255,254,236,.8)}
+.periodo{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,254,236,.08);margin-bottom:22px}
+.periodo button{border:0;background:none;padding:9px 16px;border-radius:999px;font-weight:800;font-size:13.5px;color:rgba(255,254,236,.75);cursor:pointer}
+.periodo button[aria-selected=true]{background:var(--lima);color:var(--noche)}
+.planes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+@media (max-width:1000px){.planes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.planes{grid-template-columns:1fr}}
+.plan{background:rgba(255,254,236,.05);border:1.5px solid rgba(183,232,66,.25);border-radius:24px;padding:24px 20px;display:flex;flex-direction:column;position:relative;transition:transform .3s var(--curva)}
+.plan:hover{transform:translateY(-6px)}
+.plan.rec{background:var(--crema);color:var(--tinta);border-color:var(--lima)}
+.plan .tag{position:absolute;top:-12px;left:20px;background:var(--lima);color:var(--noche);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+.plan h3{font-size:28px}
+.plan .para{margin:4px 0 0;font-size:13.5px;opacity:.75;min-height:40px}
+.precio{font-family:var(--display);font-weight:680;font-size:34px;letter-spacing:-.02em;margin-top:16px;font-variant-numeric:lining-nums;transition:opacity .2s}
+.precio small{display:block;font-family:var(--texto);font-size:13px;font-weight:600;opacity:.7;margin-top:2px}
+.usd{font-size:12.5px;opacity:.6;margin:2px 0 0}
+.plan ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:13.8px}
+.plan li{display:flex;gap:9px;line-height:1.4}
+.plan li::before{content:"";flex:none;width:14px;height:14px;margin-top:3px;border-radius:0 8px 0 8px;background:var(--lima)}
+.plan.rec li::before{background:var(--verde)}
+.plan li.mas{font-weight:800}
+.tabla-extra{width:100%;border-collapse:collapse;margin-top:26px;font-size:14.5px}
+.tabla-extra td{padding:14px 16px;border-top:1px solid rgba(183,232,66,.22);vertical-align:top}
+.tabla-extra td:first-child{font-weight:800;width:32%}
+.tabla-extra td:last-child{text-align:right;font-family:var(--display);font-size:20px;white-space:nowrap}
+@media (max-width:640px){
+  .tabla-extra,.tabla-extra tbody,.tabla-extra tr,.tabla-extra td{display:block;width:100%}
+  .tabla-extra tr{border-top:1px solid rgba(183,232,66,.22);padding:12px 0}
+  .tabla-extra td{border:0;padding:3px 0}
+  .tabla-extra td:first-child{width:100%}
+  .tabla-extra td:last-child{text-align:left;font-size:18px;white-space:normal}
+}
+.pasos{counter-reset:p;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+@media (max-width:860px){.pasos{grid-template-columns:1fr}}
+.pasos li{counter-increment:p}
+.pasos li .caja{height:100%}
+.pasos li .caja::before{content:counter(p);display:block;font-family:var(--display);font-style:italic;font-size:40px;line-height:1;color:var(--verde);margin-bottom:8px}
+
+/* franja final */
+.franja{background:var(--oscuro);color:var(--crema);padding:40px 0 calc(26px + env(safe-area-inset-bottom,0px));border-top:4px solid var(--lima)}
+.franja .wrap{display:flex;align-items:center;justify-content:space-between;gap:26px}
+.franja img{height:52px;width:auto}
+.franja .wrap p{flex:1;text-align:center;margin:0;font-family:var(--display);font-size:clamp(22px,2.4vw,30px);font-weight:620}
+.franja .wrap p span{font-style:italic;font-weight:480;color:var(--lima)}
+.btn.wa{background:#25D366;color:var(--oscuro);font-size:15.5px;padding:15px 24px}
+.btn.wa svg{width:21px;height:21px}
+.franja .pie{margin:26px 0 0;text-align:center;font-size:12.5px;letter-spacing:.05em;color:rgba(255,254,236,.55)}
+.franja .pie a{color:var(--lima)}
+@media (max-width:860px){.franja .wrap{flex-direction:column;align-items:flex-start}.franja .wrap p{text-align:left}.franja .btn.wa{width:100%;justify-content:center}}
+
+/* visor */
+.visor{position:fixed;inset:0;z-index:70;background:rgba(6,25,15,.94);display:flex;align-items:center;justify-content:center;padding:clamp(56px,6vw,72px) clamp(12px,4vw,80px)}
+.visor img{max-height:100%;max-width:100%;border-radius:10px}
+.visor .cerrar{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px}
+.visor .ant{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
+.visor .sig{position:absolute;right:12px;top:50%;transform:translateY(-50%)}
+.visor p{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));text-align:center;font-size:13px;color:rgba(255,254,236,.8);margin:0}
+</style>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="La Merced · Cotización 360">
+<meta property="og:description" content="Cotización de BLACKMOUTH para la comunicación 360 de la Urbanización La Merced, Etapa 2: alcance, muestra del trabajo, planes e inversión.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/la-merced/cotizacion/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/la-merced/cotizacion/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<header class="barra">
+  <div class="wrap">
+    <img class="lm" src="assets/logo/logo-verde.svg" alt="Urbanización La Merced">
+    <nav aria-label="Secciones"><a href="#diagnostico">Diagnóstico</a><a href="#concepto">Concepto</a><a href="#muestra">Muestra</a><a href="#alcance">Alcance</a><a href="#inversion">Inversión</a><a href="#pasos">Próximos pasos</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="portada">
+  <img src="assets/sol_amanecer.jpg" alt="">
+  <div class="wrap">
+    <div class="cobrand"><img src="assets/logo-bm.png" alt="BLACKMOUTH"><span>×</span><img src="assets/logo/logo-crema.svg" alt="Urbanización La Merced"></div>
+    <p class="k">Cotización · Comunicación 360</p>
+    <h1>Una marca para vender <em>la Etapa 2.</em></h1>
+    <p class="lead">Estrategia, branding, contenido, material POP y medición para la Urbanización La Merced en El Cerrito, Valle del Cauca.</p>
+    <div class="meta">
+      <div><small>Para</small><b>Urbanización La Merced</b></div>
+      <div><small>De</small><b>BLACKMOUTH</b></div>
+      <div><small>Fecha</small><b>6 de octubre de 2026</b></div>
+      <div><small>Vigencia</small><b>Hasta el 21 de octubre</b></div>
+    </div>
+    <div class="servicios"><span>Estrategia</span><span>Branding</span><span>Social media</span><span>Animación</span><span>Material POP</span><span>Landing y CRM</span></div>
+  </div>
+</section>
+
+<section id="diagnostico">
+  <div class="wrap">
+    <div class="cab"><div><p class="k"><b>01</b>Diagnóstico</p><h2>400 lotes no se venden de boca en boca. <em>Se venden con marca.</em></h2></div>
+      <p class="lead">La Etapa 2 juega en otra escala: más lotes, compradores que no conocen el proyecto y competencia que también promete casa propia.</p></div>
+    <div class="tres">
+      <div class="caja"><p class="num">400</p><h3>Compradores por encontrar</h3><p>Familias que arriendan en El Cerrito, gente de Palmira y Cali, y vallecaucanos en el exterior.</p></div>
+      <div class="caja"><p class="num">0</p><h3>Sistema de marca hoy</h3><p>Un lote se compra por confianza, y la marca tiene que transmitirla en cada pieza.</p></div>
+      <div class="caja"><p class="num">¿?</p><h3>Qué pieza trae cada venta</h3><p>Sin códigos de origen ni CRM, la pauta se decide a ojo. Proponemos medir hasta la separación.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="comprador" style="background:var(--arena)">
+  <div class="wrap">
+    <div class="cab"><div><p class="k"><b>02</b>El comprador</p><h2>Cuatro personas, <em>un mismo deseo: lo propio.</em></h2></div></div>
+    <div class="pers">
+      <article class="per"><img src="assets/pareja_anden.jpg" alt="" loading="lazy"><div><small>30 a 42 años · El Cerrito</small><h3>La familia que arrienda</h3><p>El arriendo se va cada mes y el banco no les presta.</p><i>«Tu cuota, lo mismo que un arriendo.»</i></div></article>
+      <article class="per"><img src="assets/exterior.jpg" alt="" loading="lazy"><div><small>35 a 55 años · Exterior</small><h3>La que está lejos</h3><p>Quiere volver a algo suyo, pero teme que la estafen a distancia.</p><i>«Compra desde donde estés.»</i></div></article>
+      <article class="per"><img src="assets/familia_lote.jpg" alt="" loading="lazy"><div><small>25 a 38 años · Palmira y Cali</small><h3>Los que salen de la ciudad</h3><p>Buscan precio, tranquilidad y un patio para los niños.</p><i>«Cerca de todo, lejos del ruido.»</i></div></article>
+      <article class="per"><img src="assets/paisaje_hacienda.jpg" alt="" loading="lazy"><div><small>50 a 65 años · Inversionista</small><h3>El que invierte</h3><p>Busca dónde poner el ahorro sin riesgo, con papeles claros.</p><i>«La Etapa 2 apenas empieza.»</i></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="concepto">
+  <div class="wrap">
+    <div class="cab"><div><p class="k"><b>03</b>Concepto</p><h2>Un nombre que ya <em>traía la idea.</em></h2></div>
+      <p class="lead">«Vivir a merced de algo» es depender del arrendador o del banco. La Merced es lo contrario: un paraíso propio, en la tierra de la Hacienda El Paraíso.</p></div>
+    <div class="conc">
+      <div class="c1"><img src="assets/sol_amanecer_cafe.jpg" alt=""><small style="color:var(--lima)">Marca</small><h3>Tu paraíso, <em>bajo el sol.</em></h3><p>Cambia de escena según el momento: el amanecer, la siesta, el sancocho del domingo. Siempre sobre el deseo de lo propio.</p></div>
+      <div class="c2"><small>Venta</small><h3>Deja de vivir a merced del arriendo.</h3><p>El golpe directo al dolor principal, para pauta, volantes y todo lo que pide una acción.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="muestra" style="background:var(--arena)">
+  <div class="wrap">
+    <div class="cab"><div><p class="k"><b>04</b>Muestra</p><h2>Así se vería <em>la línea gráfica.</em></h2></div>
+      <p class="lead">Un adelanto para que vean el enfoque. Al aprobar la propuesta desarrollamos el sistema completo con ustedes.</p></div>
+    <p class="muestra-aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5h.01"/></svg>Las piezas son ejemplos: los precios, medidas y datos del proyecto que aparecen se ajustan con la información real.</p>
+
+    <h3 class="sub">Propuesta de logo</h3>
+    <div class="logos">
+      <div style="background:#fff"><img src="assets/logo/logo-verde.svg" alt="Logo de La Merced"></div>
+      <div style="background:var(--verde)"><img src="assets/logo/logo-crema.svg" alt="Versión negativa"></div>
+      <div style="background:var(--noche)"><img src="assets/logo/logo-lima.svg" alt="Versión lima"></div>
+    </div>
+
+    <h3 class="sub">Carruseles</h3>
+    <div class="car-zona">
+      <div class="lista" id="listaCar"></div>
+      <article class="post" aria-label="Vista previa del carrusel">
+        <header><i></i><b>urbanizacionlamerced</b></header>
+        <div class="marco" id="marco"><div class="pista" id="pista"></div>
+          <button class="ctrl ant" type="button" data-p="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="ctrl sig" type="button" data-p="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+        <div class="puntos" id="puntos"></div>
+      </article>
+    </div>
+
+    <h3 class="sub">Posts</h3>
+    <div class="posts" id="posts" data-grupo="posts"></div>
+
+    <h3 class="sub">Animación y landing</h3>
+    <div class="dos">
+      <figure><video src="assets/video/sala-horizontal.mp4" poster="assets/video/sala-horizontal.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>Ejemplo · pantalla de sala de ventas</figcaption></figure>
+      <div class="ejemplos" data-grupo="landing" style="grid-template-columns:1fr">
+        <button type="button" data-full="assets/landing/escritorio.jpg" data-cap="Ejemplo de landing · escritorio"><img src="assets/landing/escritorio.jpg" alt="Ejemplo de landing en escritorio" loading="lazy"><span>Ejemplo de landing</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="alcance">
+  <div class="wrap">
+    <div class="cab"><div><p class="k"><b>05</b>Alcance</p><h2>Lo que hacemos <em>en cada frente.</em></h2></div>
+      <p class="lead">Según el plan, cada mes combinamos estos servicios para mover la venta de la Etapa 2.</p></div>
+    <div class="alcance">
+      <div class="caja"><h3>Estrategia</h3><ul><li>Comprador, dolores y mensajes</li><li>Plan de lanzamiento de 90 días</li><li>Calendario mensual de contenidos</li></ul></div>
+      <div class="caja"><h3>Branding</h3><ul><li>Logo en vector y versiones</li><li>Manual de marca</li><li>Íconos, papelería y plantillas</li></ul></div>
+      <div class="caja"><h3>Social media</h3><ul><li>Carruseles, reels y posts</li><li>Historias y comunidad</li><li>Pauta en Meta y Google</li></ul></div>
+      <div class="caja"><h3>Animación</h3><ul><li>Pantalla de la sala de ventas</li><li>Intro y gráficos para reels</li><li>Versiones para ferias</li></ul></div>
+      <div class="caja"><h3>Material POP</h3><ul><li>Valla, lona de obra y pendón</li><li>Volantes y brochure</li><li>Stand para ferias y merch</li></ul></div>
+      <div class="caja"><h3>Landing y CRM</h3><ul><li>Landing con simulador de cuotas</li><li>Códigos de origen por pieza</li><li>Informe de leads y ventas</li></ul></div>
+    </div>
+    <h3 class="sub">Plan de lanzamiento</h3>
+    <div class="fases">
+      <div class="caja"><small>Semanas 1 y 2</small><h3>Expectativa</h3><p>Cuenta regresiva, lista de espera y referidos.</p></div>
+      <div class="caja"><small>Semanas 3 y 4</small><h3>Lanzamiento</h3><p>Evento en obra, feria, valla y pauta fuerte.</p></div>
+      <div class="caja"><small>Meses 2 y 3</small><h3>Preventa</h3><p>Cifras, testimonios, remarketing y exterior.</p></div>
+      <div class="caja"><small>Siempre</small><h3>Medición</h3><p>Avance de obra mensual y leads por pieza.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="inversion" class="inv">
+  <div class="wrap">
+    <div class="cab"><div><p class="k"><b>06</b>Inversión</p><h2>Cuatro planes, <em>de cimiento a 360.</em></h2></div>
+      <p class="lead">Valores mensuales en pesos colombianos, sin IVA. La pauta y la impresión van aparte.</p></div>
+    <div class="periodo" role="tablist" aria-label="Periodo"><button type="button" data-per="1" aria-selected="true">Por mes</button><button type="button" data-per="3" aria-selected="false">Primer trimestre</button></div>
+    <div class="planes">
+      <article class="plan"><h3>Cimiento</h3><p class="para">Presencia constante y ordenada.</p>
+        <p class="precio" data-mes="2600000">$2.600.000 <small>/ mes</small></p><p class="usd">≈ USD 785</p>
+        <ul><li>Instagram y Facebook</li><li>8 carruseles y 4 reels al mes</li><li>16 historias</li><li>Parrilla mensual y copies</li><li>1 jornada de grabación</li><li>Informe mensual</li></ul></article>
+      <article class="plan"><h3>Obra</h3><p class="para">Contactos con pauta y landing.</p>
+        <p class="precio" data-mes="4630000">$4.630.000 <small>/ mes</small></p><p class="usd">≈ USD 1.400</p>
+        <ul><li class="mas">Todo lo de Cimiento, y además:</li><li>TikTok</li><li>10 carruseles y 8 reels</li><li>Gestión de pauta en Meta</li><li>Landing con simulador y CRM</li><li>2 jornadas de grabación, con dron</li></ul></article>
+      <article class="plan rec"><span class="tag">Recomendado</span><h3>Casa</h3><p class="para">Lanzar la Etapa 2 y vender con ritmo.</p>
+        <p class="precio" data-mes="7900000">$7.900.000 <small>/ mes</small></p><p class="usd">≈ USD 2.390</p>
+        <ul><li class="mas">Todo lo de Obra, y además:</li><li>12 carruseles y 12 reels</li><li>Google Ads</li><li>4 piezas POP al mes</li><li>Animaciones para la sala</li><li>Reunión mensual de resultados</li></ul></article>
+      <article class="plan"><h3>Bajo el sol · 360</h3><p class="para">Marketing y acompañamiento comercial.</p>
+        <p class="precio" data-mes="11900000">$11.900.000 <small>/ mes</small></p><p class="usd">≈ USD 3.600</p>
+        <ul><li class="mas">Todo lo de Casa, y además:</li><li>16 carruseles y 16 reels</li><li>Testimonios y avance con dron</li><li>Capacitación al equipo de ventas</li><li>Stand y material para ferias</li><li>Acompañamiento comercial semanal</li></ul></article>
+    </div>
+    <table class="tabla-extra">
+      <tr><td>Identidad y kit de lanzamiento</td><td>Logo en vector, manual, íconos, papelería y plantillas. Pago único; sin costo con Bajo el sol por 6 meses.</td><td>$2.800.000</td></tr>
+      <tr><td>Pauta recomendada</td><td>Durante el lanzamiento, pagada directamente a Meta y Google.</td><td>Desde $2.500.000/mes</td></tr>
+      <tr><td>Condiciones</td><td>Permanencia mínima de 3 meses, pago mes anticipado. Valores sin IVA. Cotización vigente por 15 días.</td><td>—</td></tr>
+    </table>
+    <p class="nota" style="color:rgba(255,254,236,.55)">Equivalencias en dólares a una tasa de referencia de $3.310 por dólar (octubre de 2026).</p>
+  </div>
+</section>
+
+<section id="pasos">
+  <div class="wrap">
+    <div class="cab"><div><p class="k"><b>07</b>Próximos pasos</p><h2>Arrancamos <em>en una semana.</em></h2></div></div>
+    <ol class="pasos">
+      <li><div class="caja"><h3>Elegir el plan</h3><p>Lo ajustamos juntos a la meta de ventas de la Etapa 2.</p></div></li>
+      <li><div class="caja"><h3>Reunión de arranque</h3><p>Datos del proyecto, precios reales, accesos y fotos de obra.</p></div></li>
+      <li><div class="caja"><h3>Primer mes</h3><p>Identidad, plan de lanzamiento y primeras piezas al aire.</p></div></li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer class="franja">
+  <div class="wrap">
+    <img src="assets/logo-bm.png" alt="BLACKMOUTH, agencia de publicidad">
+    <p>¿Arrancamos con la Etapa 2? <span>Hablemos hoy mismo.</span></p>
+    <a class="btn wa" href="https://wa.me/message/RZ4RFIU4PD4FJ1"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbenos por WhatsApp</a>
+  </div>
+  <p class="pie">BLACKMOUTH · Agencia de publicidad · <a href="https://www.blackmouth.agency">www.blackmouth.agency</a></p>
+</footer>
+
+<div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-label="Vista ampliada">
+  <img id="vImg" alt="">
+  <button class="ctrl cerrar" type="button" id="vX" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="ctrl ant" type="button" id="vA" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button class="ctrl sig" type="button" id="vS" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  <p id="vP"></p>
+</div>
+
+<script>
+(function(){
+const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
+const el = (t, p = {}, k = []) => { const e = document.createElement(t); for (const [a, v] of Object.entries(p)) { if (a === 'dataset') Object.assign(e.dataset, v); else if (a in e) e[a] = v; else e.setAttribute(a, v); } k.forEach(x => e.appendChild(x)); return e; };
+const imgEl = (src, alt, lazy = true) => { const i = el('img', { alt }); i.setAttribute('src', src); if (lazy) i.loading = 'lazy'; return i; };
+const estatico = new URLSearchParams(location.search).has('estatico');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* sección activa */
+const links = $$('.barra nav a'), secs = links.map(a => document.querySelector(a.getAttribute('href')));
+addEventListener('scroll', () => { let on = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 120) on = i; }); links.forEach((a, i) => a.classList.toggle('on', i === on)); }, { passive: true });
+
+/* visor */
+const vis = $('#visor'); let lista = [], idx = 0, previo = null;
+const ver = () => { $('#vImg').setAttribute('src', lista[idx].src); $('#vImg').alt = lista[idx].cap; $('#vP').textContent = lista[idx].cap + '  ·  ' + (idx + 1) + ' / ' + lista.length; $('#vA').hidden = $('#vS').hidden = lista.length < 2; };
+function abrir(l, i){ lista = l; idx = i; previo = document.activeElement; ver(); vis.hidden = false; $('#vX').focus(); }
+const cerrar = () => { vis.hidden = true; $('#vImg').removeAttribute('src'); if (previo) previo.focus(); };
+$('#vX').addEventListener('click', cerrar);
+$('#vA').addEventListener('click', () => { idx = (idx - 1 + lista.length) % lista.length; ver(); });
+$('#vS').addEventListener('click', () => { idx = (idx + 1) % lista.length; ver(); });
+vis.addEventListener('click', e => { if (e.target === vis) cerrar(); });
+document.addEventListener('keydown', e => { if (vis.hidden) return; if (e.key === 'Escape') cerrar(); if (e.key === 'ArrowRight') $('#vS').click(); if (e.key === 'ArrowLeft') $('#vA').click(); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-full]'); if (!b) return; const g = $$('[data-grupo="' + b.closest('[data-grupo]').dataset.grupo + '"] [data-full]'); abrir(g.map(x => ({ src: x.dataset.full, cap: x.dataset.cap })), g.indexOf(b)); });
+
+/* carruseles (4) */
+const CAR = [['c1', 'Haz la cuenta', 'Directo · venta'], ['c2', 'La cuenta del arriendo', 'Dolor · arriendo'], ['c3', 'Etapa 1: cumplido', 'Confianza'], ['c9', 'Un día en tu paraíso', 'Bajo el sol']];
+let car = 0, sl = 0; const pista = $('#pista');
+CAR.forEach(([k, t, d], i) => $('#listaCar').appendChild(el('button', { type: 'button', dataset: { car: i } }, [imgEl('assets/car/' + k + '-1.jpg', ''), el('div', {}, [el('b', { textContent: t }), el('span', { textContent: d })])])));
+const verSl = s => { sl = Math.min(4, Math.max(0, s)); pista.style.transform = 'translateX(-' + sl * 100 + '%)'; $$('#puntos i').forEach((x, i) => x.classList.toggle('on', i === sl)); $('[data-p="-1"]').disabled = sl === 0; $('[data-p="1"]').disabled = sl === 4; };
+const verCar = c => { car = c; pista.replaceChildren(...[1, 2, 3, 4, 5].map(k => imgEl('assets/car/' + CAR[c][0] + '-' + k + '.jpg', CAR[c][1] + ', diapositiva ' + k, k > 1)));
+  $('#puntos').replaceChildren(...[0, 1, 2, 3, 4].map(() => el('i'))); $$('#listaCar button').forEach((b, i) => b.setAttribute('aria-pressed', String(i === c))); verSl(0); };
+document.addEventListener('click', e => { const b = e.target.closest('[data-car]'); if (b) verCar(+b.dataset.car); const p = e.target.closest('[data-p]'); if (p) verSl(sl + +p.dataset.p); });
+let px = null; $('#marco').addEventListener('touchstart', e => px = e.touches[0].clientX, { passive: true });
+$('#marco').addEventListener('touchend', e => { if (px === null) return; const dx = e.changedTouches[0].clientX - px; if (Math.abs(dx) > 40) verSl(sl + (dx < 0 ? 1 : -1)); px = null; });
+verCar(0);
+
+/* posts (8) */
+[['b1', 'Amanecer'], ['b8', 'Palabra gigante'], ['b5', 'Recorte y sol'], ['a1', 'Metáfora'], ['a2', 'Ironía'], ['a8', 'Antes y después'], ['d1', 'Lanzamiento'], ['d3', 'Separación']]
+  .forEach(([f, t]) => $('#posts').appendChild(el('button', { type: 'button', dataset: { full: 'assets/posts/' + f + '.jpg', cap: t } }, [imgEl('assets/posts/' + f + '.jpg', t)])));
+
+/* planes por mes o trimestre */
+$$('[data-per]').forEach(b => b.addEventListener('click', () => { const k = +b.dataset.per; $$('[data-per]').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+  $$('.precio[data-mes]').forEach(pr => { pr.style.opacity = 0; setTimeout(() => { pr.replaceChildren(document.createTextNode('$' + (+pr.dataset.mes * k).toLocaleString('es-CO') + ' '), el('small', { textContent: k === 1 ? '/ mes' : '/ primeros 3 meses' })); pr.style.opacity = 1; }, 150); }); }));
+
+/* aparición al hacer scroll */
+if (!estatico && !reduce) {
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  $$('.cab, .caja, .per, .conc>div, .logos>div, .car-zona, .posts>button, .dos>*, .plan, .tabla-extra').forEach(n => { n.classList.add('rv'); n.style.setProperty('--d', Math.min([...n.parentElement.children].indexOf(n), 6)); io.observe(n); });
+}
+})();
+</script>
+</body>
+</html>
