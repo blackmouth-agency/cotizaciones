@@ -799,5 +799,47 @@ new IntersectionObserver((es, ob) => es.forEach(e => { if (e.isIntersecting && !
 document.addEventListener('click', e => { const b = e.target.closest('[data-d]'); if (!b) return; $('#escena').classList.toggle('movil', b.dataset.d === 'movil'); $$('[data-d]').forEach(x => x.setAttribute('aria-selected', String(x === b))); });
 })();
 </script>
+<!-- proteccion-blackmouth: capa disuasiva contra capturas y descargas (no puede bloquear el 100 %: el sistema operativo siempre puede capturar) -->
+<style>
+html.pi body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+html.pi img,html.pi video{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none}
+html.pi input,html.pi textarea{-webkit-user-select:text;user-select:text}
+#pi-marca{position:fixed;inset:0;z-index:2147483000;pointer-events:none;opacity:.075;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='300'%3E%3Cg transform='rotate(-24 260 150)' font-family='Arial,Helvetica,sans-serif' font-weight='800' text-anchor='middle'%3E%3Ctext x='260' y='140' font-size='22' fill='%23000'%3EBLACKMOUTH · CONFIDENCIAL%3C/text%3E%3Ctext x='260' y='172' font-size='15' fill='%23000'%3EPropuesta exclusiva para La Merced%3C/text%3E%3Ctext x='261' y='141' font-size='22' fill='%23fff'%3EBLACKMOUTH · CONFIDENCIAL%3C/text%3E%3Ctext x='261' y='173' font-size='15' fill='%23fff'%3EPropuesta exclusiva para La Merced%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-size:520px 300px}
+#pi-escudo{position:fixed;inset:0;z-index:2147483600;display:none;align-items:center;justify-content:center;text-align:center;padding:24px;
+  background:rgba(6,25,15,.82);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);color:#FFFEEC;font-family:'Plus Jakarta Sans',Arial,sans-serif}
+html.pi-oculto #pi-escudo{display:flex}
+html.pi-oculto body>*:not(#pi-escudo):not(#pi-marca){filter:blur(24px)}
+#pi-escudo b{display:block;font-family:Fraunces,Georgia,serif;font-size:clamp(26px,4vw,40px);font-weight:640;margin-bottom:8px}
+#pi-escudo span{font-size:15px;opacity:.8}
+@media print{body>*{display:none!important}body::before{content:"Contenido protegido · BLACKMOUTH. Esta propuesta no se puede imprimir.";display:block;padding:40px;font:700 18px Arial,sans-serif}}
+</style>
+<div id="pi-marca" aria-hidden="true"></div>
+<div id="pi-escudo" role="alert"><div><b>Contenido protegido</b><span>Propuesta confidencial de BLACKMOUTH. Vuelve a esta ventana para seguir viéndola.</span></div></div>
+<script>
+(function(){
+  var d=document, h=d.documentElement; h.classList.add('pi');
+  var no=function(e){e.preventDefault();e.stopPropagation();return false;};
+  d.addEventListener('contextmenu',no,true); d.addEventListener('dragstart',no,true); d.addEventListener('copy',no,true); d.addEventListener('cut',no,true);
+  d.addEventListener('selectstart',function(e){var t=e.target; if(!(t&&t.closest&&t.closest('input,textarea')))e.preventDefault();},true);
+  var tapa=null, ocultar=function(ms){h.classList.add('pi-oculto'); clearTimeout(tapa); if(ms)tapa=setTimeout(function(){h.classList.remove('pi-oculto');},ms);};
+  var mostrar=function(){clearTimeout(tapa); h.classList.remove('pi-oculto');};
+  d.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase(), m=e.ctrlKey||e.metaKey;
+    if(k==='printscreen'||k==='f12'||(m&&['s','p','u'].indexOf(k)>-1)||(m&&e.shiftKey&&['i','j','c','s','3','4','5'].indexOf(k)>-1)||(e.metaKey&&e.shiftKey)){no(e); ocultar(1800);}
+  },true);
+  d.addEventListener('keyup',function(e){ if((e.key||'').toLowerCase()==='printscreen'){ ocultar(1800); try{navigator.clipboard.writeText('Contenido protegido · BLACKMOUTH');}catch(_){} } },true);
+  // al perder el foco (recortes de pantalla, cambio de app) se tapa el contenido; el iframe de la landing no cuenta
+  addEventListener('blur',function(){ setTimeout(function(){ var a=d.activeElement; if(!(a&&a.tagName==='IFRAME')) ocultar(0); },0); });
+  addEventListener('focus',mostrar);
+  d.addEventListener('visibilitychange',function(){ if(d.hidden) ocultar(0); else mostrar(); });
+  addEventListener('beforeprint',function(){ocultar(0);}); addEventListener('afterprint',mostrar);
+  // videos sin descarga ni imagen flotante
+  var vids=function(){ [].forEach.call(d.querySelectorAll('video'),function(v){ v.setAttribute('controlsList','nodownload noplaybackrate'); v.setAttribute('disablePictureInPicture',''); v.disablePictureInPicture=true; }); };
+  vids(); addEventListener('load',vids);
+})();
+</script>
+<!-- /proteccion-blackmouth -->
 </body>
 </html>
