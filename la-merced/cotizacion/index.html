@@ -490,7 +490,7 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
     <div class="cab"><div><p class="k">04 · Logo</p><h2>La propuesta 1, <em>en vector.</em></h2></div>
       <p class="lead">Redibujamos el logo con geometría exacta: separaciones más abiertas para que aguante tamaños pequeños y 7 rayos por lado, como el sol del escudo de El Cerrito. El sistema completo de marca se desarrolla al arrancar.</p></div>
     <div class="id">
-      <div class="logo-g" id="logoG"><img id="logoImg" src="assets/logo/logo-verde.svg" alt="Logo de la Urbanización La Merced"></div>
+      <div class="logo-g" id="logoG"><img id="logoImg" src="assets/logo/logo-verde.svg" alt="Logo de la Urbanización La Merced"><span class="pista">Toca un color de la paleta para probar el logo</span></div>
       <div class="vers">
         <div style="background:var(--verde)"><img src="assets/logo/logo-crema.svg" alt="Versión negativa"></div>
         <div style="background:var(--noche)"><img src="assets/logo/logo-lima.svg" alt="Versión lima"></div>
@@ -498,13 +498,21 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
         <div style="background:#fff;border:1px solid var(--linea)"><img src="assets/logo/icono-verde.svg" alt="Sello solo" style="width:46%"></div>
       </div>
     </div>
+    <div class="pal" role="group" aria-label="Probar el logo sobre cada color">
+      <button type="button" data-bg="#006B3A" data-logo="crema" style="background:#006B3A;color:#FFFEEC"><b>Verde Merced</b>#006B3A</button>
+      <button type="button" data-bg="#FFFEEC" data-logo="verde" style="background:#FFFEEC"><b>Crema</b>#FFFEEC</button>
+      <button type="button" data-bg="#B7E842" data-logo="verde" style="background:#B7E842"><b>Lima</b>#B7E842</button>
+      <button type="button" data-bg="#FFD600" data-logo="verde" style="background:#FFD600"><b>Amarillo sol</b>#FFD600</button>
+      <button type="button" data-bg="#1E78C8" data-logo="crema" style="background:#1E78C8;color:#FFFEEC"><b>Azul río</b>#1E78C8</button>
+      <button type="button" data-bg="#0B2E1E" data-logo="lima" style="background:#0B2E1E;color:#FFFEEC"><b>Noche</b>#0B2E1E</button>
+    </div>
   </div>
 </section>
 
 <section id="contenido" class="v" style="background:var(--noche)">
   <div class="wrap">
     <div class="cab"><div><p class="k">05 · Contenido para redes</p><h2>Carruseles que venden <em>y otros que enamoran.</em></h2></div>
-      <p class="lead">Los carruseles y los reels son lo que más resultados da hoy. Aquí va una muestra: 4 carruseles y 8 posts. Al arrancar producimos el calendario completo de cada mes, con reels incluidos.</p></div>
+      <p class="lead">Los carruseles y los reels son lo que más resultados da hoy. Aquí va una muestra: 7 carruseles, 12 posts y 6 historias. Al arrancar producimos el calendario completo de cada mes, con reels incluidos.</p></div>
     <div class="lineas">
       <div><h3>Directo · venta</h3><p>Breve y claro: qué se ofrece, cuánto cuesta y qué hacer. Atacan un dolor y cierran con una acción.</p>
         <ul><li>Haz la cuenta</li><li>Separa con $1M</li><li>Así separas</li><li>Mitos</li><li>Lanzamiento</li></ul></div>
@@ -523,6 +531,8 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
     </div>
     <h3 style="font-size:32px;margin:70px 0 20px">Posts <em>individuales</em></h3>
     <div class="grid-posts" id="posts" data-grupo="posts"></div>
+    <h3 style="font-size:32px;margin:60px 0 20px">Historias</h3>
+    <div class="hist" id="hist" data-grupo="hist"></div>
   </div>
 </section>
 
@@ -706,6 +716,24 @@ const CAR = [
   "140 familias ya eligieron La Merced. Primero hicimos las vías y las redes; después vendimos. Ahora viene la Etapa 2: 400 lotes nuevos.\n#ElCerrito #Etapa2"
  ],
  [
+  "c4",
+  "Construye por etapas",
+  "Proceso · casa dibujada en el lote",
+  "Tu casa no tiene que estar lista mañana. Hoy el lote, luego la obra, después tu casa y el domingo, sancocho en tu patio.\n\nTu paraíso, bajo el sol. ☀️\n#ConstruyeATuRitmo"
+ ],
+ [
+  "c6",
+  "Desde donde estés",
+  "Exterior · sale del celular",
+  "¿Vives fuera de Colombia? Tu paraíso te espera aquí. Recorre el lote por videollamada, sepáralo por transferencia y firma con poder.\n#ColombianosEnElExterior"
+ ],
+ [
+  "c7",
+  "Tres mitos",
+  "Objeciones · sellos de mito",
+  "Tres mitos que te alejan de tu paraíso: que sin banco no se puede, que necesitas toda la inicial ya y que comprar lote siempre es un riesgo.\n#CasaPropia"
+ ],
+ [
   "c9",
   "Un día en tu paraíso",
   "Bajo el sol · el sol avanza",
@@ -726,8 +754,9 @@ pista.addEventListener('click', () => abrir([1, 2, 3, 4, 5].map(k => ({ src: 'as
 verCar(0);
 
 /* posts, historias, POP */
-const POSTS = [["b1", "Amanecer"], ["b8", "Palabra gigante"], ["b5", "Recorte + sol"], ["a1", "Metáfora"], ["a2", "Ironía"], ["a8", "Antes y después"], ["d1", "Directo · lanzamiento"], ["d3", "Directo · separación"]];
+const POSTS = [["b1", "Amanecer"], ["b8", "Palabra gigante"], ["b5", "Recorte + sol"], ["b2", "Piscina en el patio"], ["b6", "Herencia"], ["a1", "Metáfora"], ["a2", "Ironía"], ["a3", "Antítesis"], ["a8", "Antes y después"], ["d1", "Directo · lanzamiento"], ["d2", "Directo · precio"], ["d3", "Directo · separación"]];
 POSTS.forEach(([f, t]) => { const b = boton('assets/posts/' + f + '.jpg', t, '', t, f[0] === 'd' ? 'd' : ''); b.dataset.cat = { b: 'sol', a: 'ret', d: 'dir' }[f[0]]; $('#posts').appendChild(b); });
+['Encuesta','Cuenta regresiva','Precio','Testimonio (ejemplo)','Visita guiada','Cierre'].forEach((t, i) => $('#hist').appendChild(boton('assets/hist/h' + (i + 1) + '.jpg', 'Historia · ' + t)));
 /* ===== v4: interacción ===== */
 const estatico = new URLSearchParams(location.search).has('estatico');
 document.documentElement.classList.add(estatico ? 'estatico' : 'js');
