@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cursos y programas · Semply</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Catálogo de Semply: programas de 100 horas y cursos cortos de marketing digital e inteligencia artificial.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F10E3B">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=5">
+<link rel="stylesheet" href="assets/css/paginas.css?v=5">
+</head>
+<body>
+<header id="hdr"></header>
+<main>
+  <section class="cat-cab">
+    <div class="wrap">
+      <span class="ceja">Catálogo</span>
+      <h1 class="t-l">Explora lo que puedes <span class="marca">aprender.</span></h1>
+      <div class="busca js-busca">
+        <label class="busca-in"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr">Buscar en el catálogo</span><input type="search" class="js-q" placeholder="Busca por tema, herramienta o docente" autocomplete="off"></label>
+      </div>
+    </div>
+  </section>
+  <div class="wrap cat">
+    <aside class="filtros js-filtros" aria-label="Filtros">
+      <div class="filtro"><h4>Formato</h4><div class="js-f-tipo"></div></div>
+      <div class="filtro"><h4>Tema</h4><div class="js-f-cat"></div></div>
+      <div class="filtro"><h4>Nivel</h4><div class="js-f-nivel"></div></div>
+      <div class="filtro"><h4>Precio máximo: <span class="js-pmax-t"></span></h4><input type="range" class="rango js-pmax" min="80000" max="1300000" step="10000" value="1300000" aria-label="Precio máximo"></div>
+      <div class="filtro"><label class="check"><input type="checkbox" class="js-vivo"><span>Con sesiones en vivo</span></label><label class="check"><input type="checkbox" class="js-favs"><span>Solo mis favoritos</span></label></div>
+      <button class="btn btn-o btn-s js-limpiar">Limpiar filtros</button>
+    </aside>
+    <section>
+      <div class="cat-barra">
+        <p class="js-cuenta" aria-live="polite"></p>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn btn-o btn-s filtros-mob js-abrir-f"><svg class="ico" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>Filtros</button>
+          <label class="sr" for="orden">Ordenar</label>
+          <select id="orden" class="inp js-orden"><option value="rel">Más relevantes</option><option value="rating">Mejor calificados</option><option value="est">Más estudiantes</option><option value="pmin">Precio: menor a mayor</option><option value="pmax">Precio: mayor a menor</option></select>
+        </div>
+      </div>
+      <div class="activos js-activos"></div>
+      <div class="grid-cursos js-res"></div>
+    </section>
+  </div>
+</main>
+<footer id="pie"></footer>
+<script src="assets/js/data.js?v=5"></script>
+<script src="assets/js/core.js?v=5"></script>
+<script>Semply.iniciar('cursos');</script>
+<script src="assets/js/catalogo.js?v=5"></script>
+</body>
+</html>
