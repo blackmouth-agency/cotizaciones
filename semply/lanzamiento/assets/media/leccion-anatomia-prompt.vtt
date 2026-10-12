@@ -1,0 +1,89 @@
+WEBVTT
+
+1
+00:00:03.240 --> 00:00:04.560
+¡Hola! Soy Mariana.
+
+2
+00:00:04.600 --> 00:00:09.540
+En esta clase vamos a desarmar un prompt como si fuera un motor:
+
+3
+00:00:09.580 --> 00:00:14.610
+rol, contexto, tarea, formato y restricciones.
+
+4
+00:00:14.720 --> 00:00:18.990
+Y te voy a mostrar por qué casi todos los prompts fallan
+
+5
+00:00:19.030 --> 00:00:21.700
+en el contexto... no en la redacción.
+
+6
+00:00:21.740 --> 00:00:26.210
+Ten a mano la ficha de tu negocio, porque la usamos desde el primer minuto.
+
+7
+00:00:26.360 --> 00:00:28.780
+¿Listos? Empecemos.
+
+8
+00:00:30.080 --> 00:00:32.090
+Pieza uno: el rol.
+
+9
+00:00:32.180 --> 00:00:37.530
+No es decirle «eres un experto»; es decirle desde dónde mira:
+
+10
+00:00:37.720 --> 00:00:42.010
+«Eres la estratega de contenido de una panadería de barrio en Cali».
+
+11
+00:00:42.100 --> 00:00:45.180
+Pieza dos: el contexto.
+
+12
+00:00:45.220 --> 00:00:51.400
+Aquí va la materia prima: qué vendes, a quién, y qué funcionó el mes pasado.
+
+13
+00:00:51.440 --> 00:00:55.050
+Sin esto, la IA rellena con lugares comunes.
+
+14
+00:00:55.120 --> 00:01:00.960
+Pieza tres: la tarea, con un verbo y un resultado:
+
+15
+00:01:01.000 --> 00:01:04.170
+«Escribe cinco ganchos para un reel de treinta segundos».
+
+16
+00:01:04.240 --> 00:01:07.360
+Pieza cuatro: el formato.
+
+17
+00:01:07.400 --> 00:01:12.090
+Tabla, lista o guion... tú decides cómo quieres recibirlo.
+
+18
+00:01:12.440 --> 00:01:15.750
+Y pieza cinco: las restricciones.
+
+19
+00:01:15.790 --> 00:01:19.190
+Lo que no puede pasar: nada de emojis,
+
+20
+00:01:19.230 --> 00:01:22.970
+máximo doce palabras, sin prometer descuentos.
+
+21
+00:01:23.950 --> 00:01:25.870
+Ahora ve al taller de la unidad:
+
+22
+00:01:25.910 --> 00:01:30.010
+arma tu primer prompt con las cinco piezas y súbelo como entregable.
