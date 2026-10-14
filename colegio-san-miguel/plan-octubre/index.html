@@ -5,875 +5,750 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>San Miguel · Octubre</title>
 <link rel="icon" href="/logo.ico" sizes="any">
-<meta name="description" content="Plan de contenidos de octubre 2026 para el Liceo Campestre San Miguel: concepto, series, calendario, guiones y pendientes.">
+<meta name="description" content="Plan de contenidos de octubre 2026 para el Liceo Campestre San Miguel: lo que cabe en un «nada».">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="https://use.typekit.net/dfu3yuy.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;900&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --negro:#000; --blanco:#fff; --naranja:#F39200;
-  --papel:#f6f5f2; --linea:#dedbd4; --gris:#6b6862; --tinta:#141414;
-  --navy:#24214f; --rojo:#b5001b;
-  --f:"franklin-gothic-atf","Libre Franklin","Franklin Gothic Medium",Arial,sans-serif;
-  --sm:"Poppins",Arial,sans-serif;
-  --ancho:1120px;
+  --navy:#24214f; --indigo:#3b337f; --rojo:#b5001b; --rojo2:#d71313;
+  --amarillo:#f7ef73; --amarillo2:#fdf4b5; --verde:#c3f58a; --celeste:#9fdcec; --rosa:#f6b8cf;
+  --papel:#fbfbf7; --renglon:#dbe4f1; --margen:#f2a3a3; --tinta:#1b1a2e; --gris:#5f5d74; --linea:#e3e1ea;
+  --d:"Calistoga",Georgia,serif; --p:"Poppins",Arial,sans-serif;
+  --sombra:0 2px 0 rgba(27,26,46,.08),0 14px 30px rgba(27,26,46,.12);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--papel);color:var(--tinta);font-family:var(--f);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{font-family:var(--p);color:var(--tinta);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  background:var(--papel) repeating-linear-gradient(transparent 0 31px,var(--renglon) 31px 32px);overflow-x:hidden}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 a{color:inherit}
-.wrap{max-width:var(--ancho);margin:0 auto;padding:0 24px}
-@media (max-width:600px){.wrap{padding:0 16px}body{font-size:16px}}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px;position:relative}
+@media (max-width:640px){.wrap{padding:0 16px}body{font-size:15.5px}}
+.margen{position:fixed;top:0;bottom:0;left:max(18px,calc(50% - 640px));width:2px;background:var(--margen);opacity:.55;pointer-events:none;z-index:0}
+@media (max-width:900px){.margen{display:none}}
+main,header,footer,nav{position:relative;z-index:1}
+
+/* ---------- utilidades de cuaderno ---------- */
+.rasgado{display:inline-block;background:#fff;color:var(--rojo);font-weight:800;padding:8px 18px 9px;line-height:1.15;
+  clip-path:polygon(0 8%,4% 0,9% 6%,15% 1%,22% 7%,30% 0,37% 5%,45% 1%,52% 7%,60% 0,67% 6%,75% 1%,82% 7%,90% 0,96% 6%,100% 2%,99% 92%,95% 100%,88% 94%,81% 100%,73% 95%,66% 100%,58% 94%,50% 100%,43% 95%,35% 100%,27% 94%,20% 100%,12% 95%,5% 100%,0 93%);
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.08))}
+.cinta{position:absolute;width:92px;height:26px;background:rgba(215,19,19,.78);top:-12px;left:50%;transform:translateX(-50%) rotate(-4deg);
+  clip-path:polygon(3% 0,97% 0,100% 20%,97% 45%,100% 70%,97% 100%,3% 100%,0 75%,3% 50%,0 25%);z-index:2}
+.cinta.amarilla{background:rgba(247,239,115,.9)}
+.cinta.celeste{background:rgba(159,220,236,.9)}
+.marcador{background:linear-gradient(transparent 58%,var(--amarillo) 58%,var(--amarillo) 92%,transparent 92%);padding:0 .08em}
+.doodle{position:absolute;pointer-events:none;z-index:0}
+.doodle svg{width:100%;height:100%;overflow:visible}
+@keyframes flota{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-10px) rotate(calc(var(--r,0deg) + 8deg))}}
+@keyframes gira{to{transform:rotate(360deg)}}
+.flota{animation:flota 5s ease-in-out infinite}
+.gira{animation:gira 22s linear infinite}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px) rotate(var(--rr,0deg));transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1}
+.rv.in{transform:rotate(var(--rr,0deg))}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+/* ---------- barra superior ---------- */
+.barra{position:sticky;top:0;z-index:30;background:rgba(251,251,247,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--navy)}
+.barra .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.barra .logo{height:34px;width:auto;flex:none}
+.barra nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.barra nav::-webkit-scrollbar{display:none}
+.barra nav a{white-space:nowrap;text-decoration:none;font-weight:600;font-size:14px;color:var(--navy);padding:6px 10px;border-radius:99px;transition:background .2s}
+.barra nav a:hover,.barra nav a.on{background:var(--amarillo)}
+.vista{display:flex;background:#fff;border:2px solid var(--navy);border-radius:99px;padding:3px;flex:none}
+.vista button{font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:99px;color:var(--navy);transition:background .25s,color .25s}
+.vista button[aria-pressed="true"]{background:var(--navy);color:#fff}
+@media (max-width:760px){.barra .logo{height:26px}.barra nav{display:none}.barra .wrap{justify-content:space-between}}
+.solo-prod{display:none!important}
+body.prod .solo-prod{display:block!important}
+body.prod span.solo-prod{display:inline!important}
+body.prod .solo-colegio{display:none!important}
 
 /* ---------- portada ---------- */
-.hero{background:var(--negro);color:var(--blanco);padding:28px 0 72px}
-.hero .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.hero .top img{height:34px;width:auto}
-.hero .meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#bdbdbd}
-.hero .cliente{margin-top:72px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja);font-weight:700}
-.hero h1{font-weight:900;font-size:clamp(44px,8vw,104px);line-height:.95;letter-spacing:-.02em;margin-top:14px;max-width:14ch}
-.hero h1 em{font-style:normal;color:var(--naranja)}
-.hero .bajada{margin-top:26px;max-width:60ch;font-size:clamp(17px,2vw,21px);color:#dcdcdc}
-.cifras{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;border-top:1px solid #333}
-.cifras div{padding:18px 16px 0 0}
-.cifras b{display:block;font-size:clamp(34px,5vw,54px);font-weight:900;line-height:1}
-.cifras span{font-size:13px;color:#bdbdbd;letter-spacing:.04em}
-@media (max-width:700px){.cifras{grid-template-columns:repeat(3,1fr)}.cifras div{padding-bottom:14px}}
+.portada{padding:56px 0 40px;position:relative;overflow:hidden}
+.portada .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.portada .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.portada .chips .rasgado{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.portada .chips .rasgado.r{color:var(--rojo)}
+h1.titulo{font-family:var(--d);font-weight:400;color:var(--navy);font-size:clamp(52px,8.4vw,112px);line-height:.92;letter-spacing:-.01em}
+h1.titulo .nada{color:var(--rojo);position:relative;display:inline-block;white-space:nowrap}
+h1.titulo .nada svg{position:absolute;left:-4%;bottom:-.16em;width:108%;height:.34em;overflow:visible}
+h1.titulo .nada path{fill:none;stroke:var(--rojo2);stroke-width:7;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:traza 1.1s .9s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.portada .bajada{font-size:clamp(17px,1.8vw,20px);max-width:36ch;margin-top:28px;color:#2c2b45}
+.portada .bajada b{color:var(--rojo)}
+@media (max-width:900px){.portada .grid{grid-template-columns:1fr}.portada{padding-top:34px}}
 
-/* ---------- navegación ---------- */
-nav.indice{position:sticky;top:0;z-index:5;background:var(--blanco);border-bottom:1px solid var(--linea)}
-nav.indice .wrap{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
-nav.indice a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:700;padding:14px 0;color:var(--gris)}
-nav.indice a:hover{color:var(--tinta)}
+/* chat del hero */
+.chat{background:#fff;border:3px solid var(--tinta);border-radius:26px;padding:22px 18px 18px;box-shadow:8px 8px 0 var(--navy);position:relative;max-width:420px;margin:0 auto;width:100%;transform:rotate(1.2deg)}
+.chat .cab{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:2px dashed var(--linea);margin-bottom:14px}
+.chat .av{width:34px;height:34px;border-radius:50%;background:var(--amarillo);border:2px solid var(--tinta);display:grid;place-items:center}
+.chat .cab b{font-size:14px;color:var(--navy)}
+.chat .cab small{display:block;font-size:11.5px;color:var(--gris);line-height:1.2}
+.msgs{display:flex;flex-direction:column;gap:10px;min-height:250px}
+.msg{max-width:78%;padding:10px 15px;border-radius:18px;font-weight:600;font-size:16px;opacity:0;transform:translateY(10px) scale(.96);transition:all .35s cubic-bezier(.2,.8,.2,1.2)}
+.msg.in{opacity:1;transform:none}
+.msg.yo{align-self:flex-end;background:var(--navy);color:#fff;border-bottom-right-radius:4px}
+.msg.el{align-self:flex-start;background:var(--amarillo);border:2px solid var(--tinta);border-bottom-left-radius:4px}
+.msg.el.grande{font-family:var(--d);font-weight:400;font-size:34px;padding:6px 20px;line-height:1.2}
+.escribiendo{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;background:#efeef5;border-radius:16px;opacity:0;transition:opacity .2s}
+.escribiendo.in{opacity:1}
+.escribiendo i{width:7px;height:7px;border-radius:50%;background:#9a98ad;animation:salta 1s infinite}
+.escribiendo i:nth-child(2){animation-delay:.15s}.escribiendo i:nth-child(3){animation-delay:.3s}
+@keyframes salta{0%,60%,100%{transform:none}30%{transform:translateY(-5px)}}
+.revela{margin-top:14px;background:var(--navy);color:#fff;border-radius:16px;padding:14px 16px;opacity:0;transform:translateY(8px);transition:all .5s}
+.revela.in{opacity:1;transform:none}
+.revela small{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--amarillo);font-weight:700}
+.rodillo{height:30px;overflow:hidden;position:relative;margin-top:2px}
+.rodillo span{position:absolute;left:0;top:0;font-weight:800;font-size:19px;white-space:nowrap;transition:transform .45s cubic-bezier(.6,0,.2,1),opacity .45s}
+.rodillo span.sale{transform:translateY(-110%);opacity:0}
+.rodillo span.entra{transform:translateY(110%);opacity:0}
+.chat .otra{position:absolute;right:14px;bottom:-16px;background:var(--rojo2);color:#fff;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:99px;border:2px solid var(--tinta);transform:rotate(-3deg)}
+.chat .otra:hover{transform:rotate(0) scale(1.05)}
+
+/* notas adhesivas con cifras */
+.notas{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:56px}
+.nota{background:var(--amarillo2);padding:16px 14px 14px;box-shadow:var(--sombra);position:relative;transform:rotate(var(--rr,0deg));transition:transform .3s}
+.nota:hover{transform:rotate(0) translateY(-4px)}
+.nota:nth-child(2){background:#dff3f8}.nota:nth-child(3){background:#e8fbd2}.nota:nth-child(4){background:#fde1ea}.nota:nth-child(5){background:#e9e6fb}
+.nota b{display:block;font-family:var(--d);font-weight:400;font-size:46px;line-height:1;color:var(--navy)}
+.nota span{font-weight:600;font-size:14px;color:#3c3a55}
+@media (max-width:760px){.notas{grid-template-columns:repeat(3,1fr)}.nota b{font-size:38px}}
+@media (max-width:420px){.notas{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- secciones ---------- */
-section{padding:84px 0 20px}
-.kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gris)}
-.kicker b{color:var(--naranja)}
-h2{font-weight:900;font-size:clamp(32px,4.6vw,56px);line-height:1;letter-spacing:-.015em;margin:10px 0 22px;max-width:20ch}
-h3{font-weight:900;font-size:24px;line-height:1.15;letter-spacing:-.01em}
-p+p{margin-top:12px}
-.lead{font-size:clamp(18px,2vw,21px);max-width:62ch}
-.nota{font-size:14px;color:var(--gris)}
-.pendiente{background:#fff3df;border-left:3px solid var(--naranja);padding:2px 6px;font-size:.92em}
+section{padding:96px 0 30px;position:relative}
+.sec-cab{margin-bottom:34px;max-width:780px}
+.sec-cab .rasgado{font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+h2{font-family:var(--d);font-weight:400;font-size:clamp(36px,5vw,62px);line-height:1;color:var(--navy);margin-top:16px;letter-spacing:-.005em}
+h2 em{font-style:normal;color:var(--rojo)}
+.lead{font-size:clamp(16.5px,1.6vw,19px);color:#34334c;margin-top:14px;max-width:62ch}
+h3{font-weight:800;font-size:21px;line-height:1.2;color:var(--navy)}
+.peq{font-size:13.5px;color:var(--gris)}
+.pend{background:var(--amarillo);padding:1px 7px;border-radius:4px;font-weight:700;font-size:.85em;color:var(--tinta);white-space:nowrap}
+
+/* bloque de color (como los carruseles azules) */
+.bloque-color{background:var(--indigo);color:#fff;padding:96px 0 90px;margin-top:70px;position:relative;overflow:hidden}
+.bloque-color h2{color:#fff}
+.bloque-color .lead{color:#dcd9f3}
+.bloque-color.rojo{background:var(--rojo2)}
+
+/* septiembre -> octubre (tarjeta que voltea) */
+.volteo{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.tarjeta3d{perspective:1400px;height:420px}
+.tarjeta3d .in3d{position:relative;width:100%;height:100%;transition:transform .9s cubic-bezier(.5,0,.2,1);transform-style:preserve-3d}
+.tarjeta3d.vuelta .in3d{transform:rotateY(180deg)}
+.cara{position:absolute;inset:0;backface-visibility:hidden;border:3px solid var(--tinta);border-radius:22px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.cara.a{background:#e9e8e4;color:var(--tinta)}
+.cara.b{background:var(--amarillo);transform:rotateY(180deg);color:var(--tinta)}
+.cara .mes{font-weight:800;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.cara.b .mes{color:var(--rojo)}
+.cara h3{font-family:var(--d);font-weight:400;font-size:40px;line-height:1;margin:8px 0 12px}
+.cara p{font-size:15.5px}
+.cara .ilus{position:absolute;top:22px;right:22px;width:150px;height:150px}
+.volteo .lado-texto p{margin-top:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--rojo2);color:#fff;font-weight:700;padding:12px 20px;border-radius:99px;border:2px solid var(--tinta);box-shadow:4px 4px 0 var(--tinta);transition:transform .15s,box-shadow .15s;margin-top:22px}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--tinta)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--tinta)}
+.btn.claro{background:#fff;color:var(--navy)}
+@media (max-width:860px){.volteo{grid-template-columns:1fr}.tarjeta3d{height:380px}}
 
 /* idea */
-.idea{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:28px}
-.idea > div{background:var(--blanco);padding:26px}
-.idea .et{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gris);margin-bottom:8px}
-.idea .concepto{grid-column:1/-1;background:var(--negro);color:var(--blanco);padding:44px 26px}
-.idea .concepto .et{color:var(--naranja)}
-.idea .concepto p.grande{font-weight:900;font-size:clamp(34px,5.4vw,66px);line-height:1;letter-spacing:-.02em}
-@media (max-width:700px){.idea{grid-template-columns:1fr}}
+.idea{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:10px}
+.post-it{background:#fff;border:3px solid var(--tinta);border-radius:18px;padding:26px;position:relative;box-shadow:6px 6px 0 rgba(27,26,46,.9)}
+.post-it .et{font-weight:800;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo);margin-bottom:8px}
+.post-it.insight{background:var(--verde)}
+.concepto{grid-column:1/-1;text-align:center;padding:50px 20px 30px;position:relative}
+.concepto .et{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--navy);display:inline-block;padding:5px 12px;border-radius:6px}
+.concepto p.grande{font-family:var(--d);font-size:clamp(44px,7.4vw,96px);line-height:1;color:var(--navy);margin-top:18px}
+.concepto p.grande span{color:var(--rojo)}
+.bocadillo{position:relative;display:inline-block;background:var(--amarillo);border:3px solid var(--tinta);border-radius:40px;padding:14px 26px;font-weight:800;font-size:18px;color:var(--rojo);transform:rotate(-2deg);margin-top:20px}
+.bocadillo:after{content:"";position:absolute;bottom:-18px;left:40px;border:12px solid transparent;border-top:16px solid var(--tinta)}
+@media (max-width:760px){.idea{grid-template-columns:1fr}}
 
-/* puente septiembre-octubre */
-.puente{display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch;margin-top:30px}
-.puente .mes{background:var(--blanco);border:1px solid var(--linea);padding:24px}
-.puente .mes.oct{background:var(--negro);color:var(--blanco);border-color:var(--negro)}
-.puente .mes .et{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gris)}
-.puente .mes.oct .et{color:var(--naranja)}
-.puente .mes h3{margin:8px 0}
-.puente .flecha{display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:var(--naranja)}
-@media (max-width:700px){.puente{grid-template-columns:1fr}.puente .flecha{transform:rotate(90deg);height:50px}}
+/* series: pestañas de cuaderno */
+.pestanas{display:flex;gap:6px;flex-wrap:wrap;position:relative;z-index:2}
+.pestanas button{font-weight:800;font-size:15px;padding:12px 20px 14px;border:3px solid var(--tinta);border-bottom:0;border-radius:14px 14px 0 0;background:#fff;color:var(--navy);transform:translateY(3px);transition:transform .2s,background .2s}
+.pestanas button[aria-selected="true"]{transform:translateY(3px) scale(1.03);z-index:3}
+.pestanas button:nth-child(1)[aria-selected="true"]{background:var(--amarillo)}
+.pestanas button:nth-child(2)[aria-selected="true"]{background:var(--verde)}
+.pestanas button:nth-child(3)[aria-selected="true"]{background:var(--celeste)}
+.pestanas button small{display:block;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris)}
+.panel-serie{color:var(--tinta);background:#fff;border:3px solid var(--tinta);border-radius:0 18px 18px 18px;padding:30px;display:grid;grid-template-columns:1fr 280px;gap:30px;box-shadow:8px 8px 0 var(--navy);min-height:360px}
+.panel-serie h3{font-family:var(--d);font-weight:400;font-size:38px;line-height:1.05}
+.panel-serie .desc{margin:10px 0 16px;font-size:16.5px}
+.ficha-serie{display:grid;grid-template-columns:110px 1fr;gap:8px 14px;font-size:14.5px}
+.ficha-serie dt{font-weight:800;color:var(--rojo);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+.panel-serie .capitulos{display:flex;flex-direction:column;gap:10px}
+.cap-btn{display:flex;align-items:center;gap:12px;text-align:left;background:var(--papel);border:2px solid var(--tinta);border-radius:14px;padding:10px 12px;transition:transform .15s,background .15s}
+.cap-btn:hover{background:var(--amarillo2);transform:translateX(4px)}
+.cap-btn b{font-family:var(--d);font-weight:400;font-size:24px;color:var(--rojo);min-width:44px}
+.cap-btn span{font-weight:700;font-size:14px;line-height:1.25}
+.cap-btn small{display:block;font-weight:500;color:var(--gris);font-size:12.5px}
+.anima-panel{animation:entraPanel .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes entraPanel{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (max-width:860px){.panel-serie{grid-template-columns:1fr;padding:22px}.pestanas button{font-size:13.5px;padding:10px 12px 12px}}
 
 /* mezcla */
-.mezcla{display:flex;height:46px;margin:22px 0 10px;border:1px solid var(--negro)}
-.mezcla div{display:flex;align-items:center;padding:0 10px;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden}
-.leyenda{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--gris)}
-
-/* series */
-.series{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-.serie{background:var(--blanco);border:1px solid var(--linea);padding:24px;display:flex;flex-direction:column;gap:12px}
-.serie .num{font-size:13px;font-weight:900;color:var(--naranja);letter-spacing:.1em}
-.serie dl{display:grid;grid-template-columns:96px 1fr;gap:6px 10px;font-size:14px;margin-top:4px}
-.serie dt{color:var(--gris);font-weight:700}
-@media (max-width:900px){.series{grid-template-columns:1fr}}
+.mezcla{display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:center;margin-top:56px;background:#fff;border:3px dashed var(--navy);border-radius:22px;padding:28px}
+.dona{width:220px;height:220px;position:relative}
+.dona svg{width:100%;height:100%;transform:rotate(-90deg)}
+.dona circle{fill:none;stroke-width:26;transition:stroke-dasharray 1.2s cubic-bezier(.4,0,.2,1)}
+.dona circle.borde{stroke-width:3}
+.dona .centro{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.dona .centro b{font-family:var(--d);font-size:44px;font-weight:400;color:var(--navy);line-height:1}
+.dona .centro span{display:block;font-size:12.5px;font-weight:600;color:var(--gris)}
+.leyenda{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.leyenda button{display:flex;gap:10px;align-items:center;text-align:left;padding:8px 10px;border-radius:12px;border:2px solid transparent;transition:border-color .2s,background .2s}
+.leyenda button:hover,.leyenda button.on{border-color:var(--tinta);background:var(--papel)}
+.leyenda i{width:16px;height:16px;border-radius:5px;border:2px solid var(--tinta);flex:none}
+.leyenda b{font-weight:800;font-size:14.5px}
+.leyenda small{display:block;color:var(--gris);font-size:12.5px;line-height:1.3}
+@media (max-width:700px){.mezcla{grid-template-columns:1fr;justify-items:center}}
 
 /* calendario */
-.cal{margin-top:26px;border-top:2px solid var(--negro)}
-.semana{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--linea)}
-.semana > .sem{padding:18px 0;font-weight:900;font-size:15px}
-.semana > .sem span{display:block;font-weight:500;font-size:13px;color:var(--gris)}
-.dias{display:flex;flex-direction:column}
-.dia{display:grid;grid-template-columns:82px 92px 1fr auto;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid var(--linea)}
-.dia:first-child{border-top:0}
-.dia .f{font-weight:900}
-.dia .tipo{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.dia .q a{font-weight:700;text-decoration:none;border-bottom:1px solid var(--linea)}
-.dia .q a:hover{border-color:var(--naranja)}
-.dia .q small{display:block;color:var(--gris);font-size:13.5px}
-.chip{font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap;border:1px solid currentColor}
-.c-alc{color:#0b57d0}.c-gua{color:#7a4bb7}.c-com{color:#b26200}.c-ven{color:#0f7b3d}.c-mar{color:#9a1b4b}.c-rod{color:var(--tinta)}.c-his{color:var(--gris)}
-.dia.rodaje{background:repeating-linear-gradient(-45deg,#fff 0 8px,#f1efea 8px 16px)}
-@media (max-width:760px){
-  .semana{grid-template-columns:1fr}.semana > .sem{padding-bottom:4px}
-  .dia{grid-template-columns:70px 1fr;gap:4px 10px}
-  .dia .tipo{grid-column:2}.dia .q{grid-column:1/-1}.dia .chip{grid-column:1/-1;justify-self:start}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.filtros button{font-weight:700;font-size:13.5px;padding:7px 14px;border-radius:99px;border:2px solid var(--tinta);background:#fff;transition:all .2s}
+.filtros button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.mes-grid{background:#fff;border:3px solid var(--tinta);border-radius:20px;overflow:hidden;box-shadow:8px 8px 0 var(--navy)}
+.mes-grid .dsem{display:grid;grid-template-columns:repeat(7,1fr);background:var(--navy);color:#fff;font-weight:800;font-size:13px;text-align:center}
+.mes-grid .dsem div{padding:10px 0}
+.mes-grid .celdas{display:grid;grid-template-columns:repeat(7,1fr)}
+.celda{min-height:118px;border-right:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:8px;position:relative;display:flex;flex-direction:column;gap:5px}
+.celda:nth-child(7n){border-right:0}
+.celda .n{font-weight:800;font-size:15px;color:var(--navy)}
+.celda.pasado{background:repeating-linear-gradient(-45deg,#f6f5f9 0 6px,#fff 6px 12px)}
+.celda.pasado .n{color:#b9b7c8}
+.celda.vacia{background:#faf9fc}
+.celda.festivo .n:after{content:" festivo";font-weight:600;font-size:10.5px;color:var(--rojo)}
+.celda.hoy{outline:3px solid var(--rojo2);outline-offset:-3px}
+.celda.hoy .n:after{content:" hoy";font-weight:700;font-size:10.5px;color:var(--rojo2)}
+.ev{display:block;width:100%;text-align:left;font-size:12px;font-weight:700;line-height:1.2;padding:6px 7px;border-radius:9px;border:2px solid var(--tinta);transition:transform .15s,opacity .25s,filter .25s}
+.ev:hover{transform:scale(1.04) rotate(-1deg)}
+.ev small{display:block;font-weight:600;font-size:10.5px;opacity:.8}
+.ev.apagado{opacity:.18;filter:grayscale(1)}
+.ev.his{background:#fff;border-style:dashed;font-weight:600;color:var(--gris)}
+.ev.rod{background:var(--tinta);color:#fff}
+.o-alc{background:var(--celeste)}.o-gua{background:var(--verde)}.o-com{background:var(--amarillo)}.o-vis{background:var(--rosa)}.o-mar{background:#d9d4ff}.o-com2{background:#ffd29a}
+.nota-cal{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;color:var(--gris)}
+@media (max-width:820px){
+  .mes-grid .dsem,.mes-grid .celdas{display:none}
+  .lista-movil{display:flex!important}
 }
+.lista-movil{display:none;flex-direction:column}
+.lista-movil .dia{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linea)}
+.lista-movil .dia b{font-weight:800;color:var(--navy);font-size:14px;line-height:1.2}
+.lista-movil .dia b small{display:block;font-weight:600;color:var(--gris);font-size:11.5px}
+.lista-movil .dia .evs{display:flex;flex-direction:column;gap:6px}
 
-/* fichas */
-.ficha{background:var(--blanco);border:1px solid var(--linea);margin-top:26px;display:grid;grid-template-columns:230px 1fr}
-.ficha .lado{background:#efede8;padding:24px;border-right:1px solid var(--linea);display:flex;flex-direction:column;gap:16px;align-items:flex-start}
-.ficha .cuerpo{padding:26px 28px;min-width:0}
-.ficha .cab{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:6px}
-.ficha .cab .cod{font-weight:900;font-size:14px;letter-spacing:.1em}
-.ficha .cab .fecha{font-size:14px;color:var(--gris)}
-.ficha h3{font-size:28px;margin-bottom:6px}
-.ficha .resumen{color:#3b3935;max-width:68ch}
-.datos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin:18px 0}
-.datos div{background:var(--blanco);padding:10px 12px;font-size:14px}
-.datos b{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
-@media (max-width:600px){.datos{grid-template-columns:1fr 1fr}}
-table.guion{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 6px}
-table.guion th{text-align:left;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);padding:6px 10px 6px 0;border-bottom:2px solid var(--negro)}
-table.guion td{vertical-align:top;padding:9px 10px 9px 0;border-bottom:1px solid var(--linea)}
-table.guion td:first-child{font-weight:700;white-space:nowrap;width:76px;font-variant-numeric:tabular-nums}
-table.guion .tx{display:inline-block;background:var(--negro);color:var(--blanco);font-weight:700;padding:1px 7px;margin-top:3px;font-size:14px}
-table.guion .vo{display:block;color:#3b3935;font-style:italic;margin-top:3px}
-.bloque{margin-top:18px}
-.bloque h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:6px}
-.post{background:#f8f7f4;border:1px dashed #cfcac0;padding:14px 16px;font-size:15px;white-space:pre-line}
-ul.lista{padding-left:18px}
-ul.lista li{margin:4px 0}
-.reglas{font-size:13.5px;color:var(--gris)}
-.reglas b{color:var(--tinta)}
-@media (max-width:800px){
-  .ficha{grid-template-columns:1fr}
-  .ficha .lado{border-right:0;border-bottom:1px solid var(--linea);flex-direction:row;flex-wrap:wrap;align-items:flex-start}
-  .ficha .cuerpo{padding:20px 16px}
-  table.guion{font-size:14px}
-}
+/* piezas */
+.tira{display:flex;gap:10px;overflow-x:auto;padding:6px 4px 16px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.tira button{scroll-snap-align:start;flex:none;width:168px;text-align:left;background:#fff;border:2px solid var(--tinta);border-radius:16px;padding:12px 13px;transition:transform .2s,box-shadow .2s,background .2s}
+.tira button:hover{transform:translateY(-3px)}
+.tira button[aria-selected="true"]{background:var(--navy);color:#fff;box-shadow:4px 4px 0 var(--rojo2)}
+.tira button .cod{font-weight:800;font-size:11.5px;letter-spacing:.1em;color:var(--rojo)}
+.tira button[aria-selected="true"] .cod{color:var(--amarillo)}
+.tira button b{display:block;font-weight:700;font-size:14.5px;line-height:1.2;margin:4px 0}
+.tira button small{font-size:12px;opacity:.75}
+.ficha{display:grid;grid-template-columns:300px 1fr;gap:38px;background:#fff;border:3px solid var(--tinta);border-radius:24px;padding:32px;box-shadow:10px 10px 0 var(--navy);margin-top:8px;position:relative}
+.ficha .izq{display:flex;flex-direction:column;align-items:center;gap:14px}
+.ficha .cab{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+.ficha .cab .cod{font-weight:800;font-size:13px;letter-spacing:.12em;color:var(--rojo)}
+.ficha .cab .fecha{font-size:14px;color:var(--gris);font-weight:600}
+.tag{font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;border:2px solid var(--tinta)}
+.ficha h3.t{font-family:var(--d);font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1.02;margin:6px 0 10px}
+.ficha .res{font-size:16px;color:#33324a;max-width:64ch}
+.datos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.datos div{background:var(--papel);border:2px solid var(--linea);border-radius:12px;padding:9px 12px;font-size:13.5px}
+.datos b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rojo)}
+.guion{margin-top:16px;border-top:3px solid var(--tinta)}
+.fila{display:grid;grid-template-columns:78px 1fr;gap:12px;padding:11px 10px;border-bottom:1px solid var(--linea);border-radius:10px;transition:background .3s}
+.fila.activa{background:var(--amarillo2)}
+.fila .tm{font-weight:800;font-size:14px;color:var(--navy);font-variant-numeric:tabular-nums}
+.fila p{font-size:15px}
+.fila .tx{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13.5px;padding:2px 9px;border-radius:6px;margin:4px 4px 0 0}
+.fila .vo{display:block;font-style:italic;color:#4a4863;margin-top:4px;font-size:14.5px}
+.sub{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo);margin:22px 0 8px}
+.post{background:var(--papel);border:2px dashed #c9c6d6;border-radius:14px;padding:14px 16px;font-size:15px;white-space:pre-line;position:relative}
+.copiar{position:absolute;top:8px;right:8px;font-size:12px;font-weight:700;background:#fff;border:2px solid var(--tinta);border-radius:99px;padding:3px 10px}
+.copiar:hover{background:var(--amarillo)}
+.aviso{margin-top:16px;background:var(--amarillo2);border-left:5px solid var(--rojo2);padding:10px 14px;border-radius:8px;font-size:14.5px}
+.reglas{margin-top:16px;font-size:13.5px;color:var(--gris);border-top:1px dashed var(--linea);padding-top:12px}
+.reglas b{color:var(--navy)}
+.navpie{display:flex;justify-content:space-between;margin-top:22px;gap:10px}
+.navpie button{font-weight:700;font-size:14px;color:var(--navy);border:2px solid var(--tinta);border-radius:99px;padding:8px 16px;background:#fff}
+.navpie button:hover{background:var(--amarillo)}
+@media (max-width:900px){.ficha{grid-template-columns:1fr;padding:22px 16px}.datos{grid-template-columns:1fr 1fr}}
 
-/* maqueta de cuadro 0 (identidad del colegio) */
-.cel{width:170px;aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:14px;box-shadow:0 1px 0 rgba(0,0,0,.08),0 10px 24px rgba(0,0,0,.12);font-family:var(--sm);color:#fff;flex:none}
-.cel .bg{position:absolute;inset:0}
-.cel .seg{position:absolute;left:0;right:0;top:26%;bottom:32%;border-top:1px dashed rgba(255,255,255,.35);border-bottom:1px dashed rgba(255,255,255,.35)}
-.cel .t{position:absolute;left:12px;right:12px;font-weight:800;line-height:1.08;letter-spacing:-.01em}
-.cel .t small{display:block;font-weight:600;font-size:.6em;opacity:.85;margin-top:4px}
-.cel .pie{position:absolute;left:10px;bottom:8px;font-size:9px;opacity:.7;font-family:var(--f)}
-.cel .tag{position:absolute;top:8px;left:10px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--f);font-weight:700;opacity:.75}
-.cel.carr{aspect-ratio:4/5}
-.cel.carr .seg{display:none}
-.cel .papel{position:absolute;inset:0;background:#fbfbf8 repeating-linear-gradient(#fbfbf8 0 15px,#dfe6f2 15px 16px)}
-.lado .cap{font-size:12px;color:var(--gris);max-width:170px}
+/* reproductor de reel */
+.cel{width:270px;aspect-ratio:9/16;border-radius:30px;border:4px solid var(--tinta);background:#000;position:relative;overflow:hidden;box-shadow:6px 6px 0 var(--rojo2)}
+.cel .esc{position:absolute;inset:0;transition:background .5s,filter .5s}
+.cel .ico{position:absolute;right:-10px;bottom:22%;width:150px;height:150px;opacity:.9;transition:transform .6s}
+.cel .plano{position:absolute;left:12px;right:12px;bottom:58px;font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.42);padding:5px 8px;border-radius:8px;line-height:1.25;backdrop-filter:blur(2px)}
+.cel .plano:before{content:"PLANO · ";color:var(--amarillo)}
+.cel .zona{position:absolute;left:0;right:0;top:26%;bottom:32%;border-top:1px dashed rgba(255,255,255,.35);border-bottom:1px dashed rgba(255,255,255,.35);display:none}
+body.prod .cel .zona{display:block}
+.cel .txts{position:absolute;left:16px;right:16px;top:25%;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.cel .txts.centro{top:30%;align-items:center;text-align:center}
+.cel .tt{background:#fff;color:var(--navy);font-weight:800;font-size:17px;line-height:1.15;padding:5px 10px;border-radius:8px;opacity:0;transform:translateY(8px) scale(.9);transition:all .3s cubic-bezier(.2,.9,.3,1.3)}
+.cel .tt.show{opacity:1;transform:none}
+.cel .tt.gr{font-family:var(--d);font-weight:400;font-size:40px;background:var(--amarillo);color:var(--tinta);padding:2px 14px}
+.cel .tt.rojo{background:var(--rojo2);color:#fff}
+.cel .tt.voz{background:rgba(27,26,46,.75);color:#fff;font-weight:600;font-size:13px;font-style:italic}
+.cel .tt.voz:before{content:"VOZ: ";font-style:normal;font-weight:800;color:var(--amarillo)}
+.cel .tt.cont{font-size:15px;background:var(--amarillo);color:var(--tinta)}
+.cel .tt.etq{font-size:12.5px;background:var(--navy);color:#fff}
+.cel .placa{position:absolute;inset:0;background:var(--papel) repeating-linear-gradient(transparent 0 15px,var(--renglon) 15px 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px;text-align:center}
+.cel .placa img{width:170px}
+.cel .barras{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:3px;z-index:3}
+.cel .barras i{flex:1;height:3px;background:rgba(255,255,255,.35);border-radius:2px;overflow:hidden;position:relative}
+.cel .barras i b{position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
+.cel .reloj{position:absolute;top:20px;right:12px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.35);padding:2px 7px;border-radius:99px;z-index:3;font-variant-numeric:tabular-nums}
+.controles{display:flex;gap:8px}
+.controles button{width:44px;height:44px;border-radius:50%;border:2px solid var(--tinta);background:#fff;display:grid;place-items:center;transition:background .2s}
+.controles button:hover{background:var(--amarillo)}
+.controles svg{width:18px;height:18px}
+.izq .pie-cel{font-size:12.5px;color:var(--gris);text-align:center;max-width:270px}
 
-/* rodajes */
-.rodajes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
-.rodaje{background:var(--blanco);border:1px solid var(--linea);padding:24px}
-.rodaje .f{font-size:13px;font-weight:900;letter-spacing:.1em;color:var(--naranja);text-transform:uppercase}
-.rodaje ol{padding-left:20px;margin-top:10px}
-.rodaje li{margin:7px 0;font-size:15px}
-.rodaje li b{font-weight:700}
-.estrella{color:var(--naranja);font-weight:900}
-@media (max-width:800px){.rodajes{grid-template-columns:1fr}}
+/* carrusel */
+.carr{width:270px;position:relative}
+.carr .vp{aspect-ratio:4/5;border:4px solid var(--tinta);border-radius:20px;overflow:hidden;position:relative;box-shadow:6px 6px 0 var(--rojo2);background:var(--papel)}
+.carr .pista{display:flex;height:100%;transition:transform .5s cubic-bezier(.6,0,.2,1)}
+.lam{flex:0 0 100%;height:100%;padding:22px 18px;position:relative;display:flex;flex-direction:column;justify-content:center;gap:10px;background:var(--papel) repeating-linear-gradient(transparent 0 19px,var(--renglon) 19px 20px);overflow:hidden}
+.lam.navy{background:var(--indigo);color:#fff}
+.lam.rojo{background:var(--rojo2);color:#fff}
+.lam .n{position:absolute;top:12px;right:14px;font-weight:800;font-size:11px;opacity:.6}
+.lam h4{font-family:var(--d);font-weight:400;font-size:27px;line-height:1.05;color:var(--rojo)}
+.lam.navy h4,.lam.rojo h4{color:#fff}
+.lam p{font-weight:600;font-size:14.5px;line-height:1.35;position:relative;z-index:1}
+.lam .ic{position:absolute;bottom:-14px;right:-14px;width:110px;height:110px;opacity:.95}
+.carr .flechas{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.carr .flechas button{width:40px;height:40px;border-radius:50%;border:2px solid var(--tinta);background:#fff;font-weight:800}
+.carr .flechas button:hover{background:var(--amarillo)}
+.puntos{display:flex;gap:5px}
+.puntos i{width:7px;height:7px;border-radius:50%;background:#cfcde0;transition:background .2s,transform .2s}
+.puntos i.on{background:var(--rojo2);transform:scale(1.3)}
 
 /* historias */
-.historias{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:26px}
-.historias div{background:var(--blanco);padding:16px 18px;font-size:15px}
-.historias b{display:block;font-size:13px;letter-spacing:.06em}
-@media (max-width:800px){.historias{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.historias{grid-template-columns:1fr}}
+.hist-wrap{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center}
+.hist{color:var(--tinta);width:300px;aspect-ratio:9/16;border-radius:28px;border:4px solid var(--tinta);overflow:hidden;position:relative;box-shadow:8px 8px 0 var(--amarillo);background:var(--papel);user-select:none}
+.hist .barras{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:3px;z-index:5}
+.hist .barras i{flex:1;height:3px;background:rgba(27,26,46,.18);border-radius:2px;overflow:hidden;position:relative}
+.hist .barras i b{position:absolute;inset:0;background:var(--navy);transform-origin:left;transform:scaleX(0)}
+.hist .quien{position:absolute;top:22px;left:12px;display:flex;gap:8px;align-items:center;z-index:5;font-size:12.5px;font-weight:700;color:var(--navy)}
+.hist .quien i{width:26px;height:26px;border-radius:50%;background:#fff;border:2px solid var(--navy);display:grid;place-items:center;overflow:hidden}
+.hist .quien i img{width:22px}
+.hist .cont{position:absolute;inset:0;padding:70px 22px 30px;display:flex;flex-direction:column;justify-content:center;gap:14px;background:var(--papel) repeating-linear-gradient(transparent 0 19px,var(--renglon) 19px 20px)}
+.hist .cont.navy{background:var(--indigo);color:#fff}
+.hist .dia{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo)}
+.hist .cont.navy .dia{color:var(--amarillo)}
+.hist h4{font-family:var(--d);font-weight:400;font-size:28px;line-height:1.06;color:var(--navy)}
+.hist .cont.navy h4{color:#fff}
+.hist p{font-weight:600;font-size:14px}
+.sticker-enc{background:#fff;border-radius:14px;padding:10px;box-shadow:0 6px 16px rgba(0,0,0,.12);display:flex;flex-direction:column;gap:6px;color:var(--tinta)}
+.sticker-enc b{font-size:13px;text-align:center}
+.sticker-enc button{position:relative;border:2px solid #e5e3ee;border-radius:10px;padding:7px 10px;font-weight:700;font-size:13px;text-align:left;overflow:hidden;z-index:6}
+.sticker-enc button span{position:relative;z-index:1}
+.sticker-enc button i{position:absolute;inset:0;background:var(--amarillo);transform-origin:left;transform:scaleX(0);transition:transform .6s}
+.sticker-enc button em{position:absolute;right:10px;top:7px;font-style:normal;font-weight:800;z-index:1;opacity:0;transition:opacity .4s}
+.sticker-enc.votado button em{opacity:1}
+.sticker-caja{background:var(--rojo2);color:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:700;font-size:13px}
+.sticker-caja div{background:#fff;color:#aaa;border-radius:8px;padding:8px;margin-top:8px;font-weight:500}
+.hist .tap{position:absolute;top:60px;bottom:0;width:35%;z-index:4}
+.hist .tap.izq{left:0}.hist .tap.der{right:0}
+.hist-lista{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hist-lista button{color:var(--tinta);text-align:left;border:2px solid var(--tinta);border-radius:14px;padding:10px 12px;background:#fff;font-size:13.5px;line-height:1.3;transition:background .2s}
+.hist-lista button b{display:block;font-weight:800;color:var(--rojo);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.hist-lista button.on{background:var(--amarillo)}
+@media (max-width:860px){.hist-wrap{grid-template-columns:1fr;justify-items:center}.hist-lista{grid-template-columns:1fr 1fr;width:100%}}
+
+/* rodajes */
+.rod-tabs{display:flex;gap:10px;margin-bottom:-3px;position:relative;z-index:2;flex-wrap:wrap}
+.rod-tabs button{font-weight:800;padding:12px 18px;border:3px solid var(--tinta);border-bottom:0;border-radius:14px 14px 0 0;background:rgba(255,255,255,.6);color:#fff}
+.rod-tabs button[aria-selected="true"]{background:#fff;color:var(--navy)}
+.rod-panel{background:#fff;color:var(--tinta);border:3px solid var(--tinta);border-radius:0 18px 18px 18px;padding:28px;display:grid;grid-template-columns:1fr 1.4fr;gap:30px}
+.rod-panel h3{font-family:var(--d);font-weight:400;font-size:34px;line-height:1.05}
+.tomas{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tomas label{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:10px 12px;border:2px solid var(--linea);border-radius:12px;cursor:pointer;transition:background .2s,border-color .2s}
+.tomas label:hover{border-color:var(--tinta)}
+.tomas input{appearance:none;width:24px;height:24px;border:2px solid var(--tinta);border-radius:7px;display:grid;place-items:center;margin-top:1px;cursor:pointer;background:#fff}
+.tomas input:checked{background:var(--verde)}
+.tomas input:checked:after{content:"✓";font-weight:900;font-size:15px}
+.tomas input:checked + span{opacity:.55;text-decoration:line-through;text-decoration-color:var(--rojo2)}
+.tomas span b{color:var(--navy)}
+.estrella{color:var(--rojo2)}
+.progreso{height:12px;background:var(--linea);border-radius:99px;overflow:hidden;margin:12px 0 4px;border:2px solid var(--tinta)}
+.progreso i{display:block;height:100%;background:var(--verde);width:0;transition:width .5s}
+@media (max-width:860px){.rod-panel{grid-template-columns:1fr;padding:20px}}
 
 /* comodín */
-.comodin{background:var(--negro);color:var(--blanco);padding:30px;margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.comodin h3{color:var(--naranja)}
-.comodin p,.comodin li{color:#dedede}
-.comodin ul{padding-left:18px}
-@media (max-width:800px){.comodin{grid-template-columns:1fr}}
+.interruptor{display:inline-flex;background:#fff;border:3px solid var(--tinta);border-radius:99px;padding:4px;margin:6px 0 24px;flex-wrap:wrap}
+.interruptor button{font-weight:800;font-size:14.5px;padding:9px 18px;border-radius:99px;transition:background .25s,color .25s}
+.interruptor button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.comodin-panel{background:#fff;border:3px solid var(--tinta);border-radius:20px;padding:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;box-shadow:8px 8px 0 var(--rojo2)}
+.comodin-panel.sobrio{background:#111;color:#eee;box-shadow:8px 8px 0 #888}
+.comodin-panel.sobrio h3{color:#fff}
+.comodin-panel h3{font-family:var(--d);font-weight:400;font-size:36px;line-height:1.05}
+.comodin-panel ul{padding-left:20px}.comodin-panel li{margin:6px 0}
+@media (max-width:860px){.comodin-panel{grid-template-columns:1fr;padding:22px}}
 
 /* pendientes */
-.checks{list-style:none;margin-top:22px;border-top:2px solid var(--negro)}
-.checks li{display:grid;grid-template-columns:34px 1fr auto;gap:10px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:baseline}
-.checks .n{font-weight:900;color:var(--naranja)}
-.checks .urg{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.checks .urg.si{color:var(--rojo)}
-.checks small{display:block;color:var(--gris);font-size:14px}
-@media (max-width:600px){.checks li{grid-template-columns:28px 1fr}.checks .urg{grid-column:2}}
+.pendientes{background:#fff;border:3px solid var(--tinta);border-radius:22px;padding:26px;box-shadow:8px 8px 0 var(--navy)}
+.pend-cab{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.pend-cab b{font-family:var(--d);font-weight:400;font-size:34px;color:var(--navy)}
+.pend-lista{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.pend-lista label{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:start;padding:12px;border-radius:14px;border:2px solid var(--linea);cursor:pointer;transition:border-color .2s,background .2s}
+.pend-lista label:hover{border-color:var(--tinta)}
+.pend-lista input{appearance:none;width:24px;height:24px;border:2px solid var(--tinta);border-radius:50%;display:grid;place-items:center;cursor:pointer;background:#fff;margin-top:2px}
+.pend-lista input:checked{background:var(--verde)}
+.pend-lista input:checked:after{content:"✓";font-weight:900;font-size:14px}
+.pend-lista input:checked ~ span{opacity:.5}
+.pend-lista span b{font-weight:700}
+.pend-lista small{display:block;color:var(--gris);font-size:13.5px}
+.pend-lista .cuando{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:99px;background:var(--papel);border:2px solid var(--linea);white-space:nowrap}
+.pend-lista .cuando.ya{background:var(--rojo2);color:#fff;border-color:var(--tinta)}
+@media (max-width:640px){.pend-lista label{grid-template-columns:28px 1fr}.pend-lista .cuando{grid-column:2;justify-self:start}}
 
-/* no negociables y medición */
-.dos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
-.caja{background:var(--blanco);border:1px solid var(--linea);padding:24px}
-.caja ul{padding-left:18px}.caja li{margin:6px 0;font-size:15px}
-table.med{width:100%;border-collapse:collapse;font-size:15px}
-table.med th{text-align:left;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);padding:6px 8px 6px 0;border-bottom:2px solid var(--negro)}
-table.med td{padding:9px 8px 9px 0;border-bottom:1px solid var(--linea);vertical-align:top}
-@media (max-width:800px){.dos{grid-template-columns:1fr}}
-.tabla-scroll{overflow-x:auto}
+/* reglas y medición */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.caja{background:#fff;border:3px solid var(--tinta);border-radius:20px;padding:26px}
+.caja h3{font-family:var(--d);font-weight:400;font-size:30px;margin-bottom:10px}
+.caja ul{padding-left:20px}.caja li{margin:7px 0;font-size:15px}
+.med{width:100%;border-collapse:collapse;font-size:14.5px}
+.med th{text-align:left;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--rojo);padding:6px 8px 8px 0;border-bottom:3px solid var(--tinta)}
+.med td{padding:9px 8px 9px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+@media (max-width:860px){.dos{grid-template-columns:1fr}}
 
-footer{background:var(--negro);color:#bdbdbd;margin-top:90px;padding:46px 0;font-size:14px}
+footer{margin-top:100px;background:var(--navy);color:#cfcce8;padding:44px 0;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-footer img{height:30px;width:auto}
+footer .firma{display:flex;align-items:center;gap:14px}
+footer .firma img{height:26px;width:auto}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(80px);background:var(--tinta);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:99px;transition:transform .3s;z-index:50}
+.toast.on{transform:translateX(-50%) translateY(0)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  h1.titulo .nada path{stroke-dashoffset:0}
+}
 </style>
 <meta property="og:title" content="San Miguel · Octubre">
-<meta property="og:description" content="Plan de contenidos de octubre 2026 para el Liceo Campestre San Miguel: concepto, series, calendario, guiones y pendientes.">
+<meta property="og:description" content="Plan de contenidos de octubre 2026 para el Liceo Campestre San Miguel: lo que cabe en un «nada».">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/plan-octubre/">
 <meta property="og:image" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/plan-octubre/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<div class="margen" aria-hidden="true"></div>
 
-<header class="hero">
+<!-- dibujos (estilo de las piezas del colegio) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sol" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linecap="round" fill="none"><path d="M60 8v14M60 98v14M8 60h14M98 60h14M23 23l10 10M87 87l10 10M97 23 87 33M33 87 23 97"/></g><circle cx="60" cy="60" r="27" fill="#f7ef73" stroke="#1b1a2e" stroke-width="5"/><path d="M50 56h.1M70 56h.1" stroke="#1b1a2e" stroke-width="7" stroke-linecap="round"/><path d="M49 68q11 9 22 0" fill="none" stroke="#1b1a2e" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <symbol id="estrella" viewBox="0 0 120 120"><path d="M60 10l14 32 34 3-26 22 8 34-30-18-30 18 8-34-26-22 34-3z" fill="#f7ef73" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/><path d="M42 50q6-4 10 2" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="flor" viewBox="0 0 120 120"><g fill="#fff" stroke="#1b1a2e" stroke-width="5"><ellipse cx="60" cy="30" rx="17" ry="22"/><ellipse cx="60" cy="90" rx="17" ry="22"/><ellipse cx="30" cy="60" rx="22" ry="17"/><ellipse cx="90" cy="60" rx="22" ry="17"/></g><circle cx="60" cy="60" r="15" fill="#f7ef73" stroke="#1b1a2e" stroke-width="5"/></symbol>
+    <symbol id="cara" viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" fill="#f7ef73" stroke="#1b1a2e" stroke-width="5"/><path d="M45 52v6M75 52v6" stroke="#1b1a2e" stroke-width="7" stroke-linecap="round"/><path d="M40 72q20 20 40 0" fill="none" stroke="#1b1a2e" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="corazon" viewBox="0 0 120 120"><path d="M60 100S14 72 14 42c0-16 12-26 25-26 10 0 17 6 21 13 4-7 11-13 21-13 13 0 25 10 25 26 0 30-46 58-46 58z" fill="#f6b8cf" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/></symbol>
+    <symbol id="lapiz" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"><path d="M22 98l8-26 58-58 18 18-58 58z" fill="#f7ef73"/><path d="M88 14l18 18 6-6a6 6 0 0 0 0-9l-9-9a6 6 0 0 0-9 0z" fill="#f6b8cf"/><path d="M22 98l8-26 18 18z" fill="#fff"/></g></symbol>
+    <symbol id="morral" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"><path d="M44 30q0-16 16-16t16 16" fill="none"/><rect x="26" y="28" width="68" height="80" rx="18" fill="#9fdcec"/><rect x="38" y="66" width="44" height="30" rx="8" fill="#fff"/><path d="M38 76h44"/></g></symbol>
+    <symbol id="nota" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M44 88V30l46-10v56"/><path d="M44 42l46-10"/></g><ellipse cx="34" cy="88" rx="14" ry="11" fill="#c3f58a" stroke="#1b1a2e" stroke-width="5"/><ellipse cx="80" cy="78" rx="14" ry="11" fill="#c3f58a" stroke="#1b1a2e" stroke-width="5"/></symbol>
+    <symbol id="pincel" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"><path d="M70 16l34 34-30 18-22-22z" fill="#c3f58a"/><path d="M52 46l22 22-14 14q-10 10-24 6l-18 14 6-24q-4-14 6-24z" fill="#f6b8cf"/></g></symbol>
+    <symbol id="ola" viewBox="0 0 120 120"><g fill="none" stroke="#1b1a2e" stroke-width="5" stroke-linecap="round"><path d="M10 50q12-14 25 0t25 0 25 0 25 0"/><path d="M10 74q12-14 25 0t25 0 25 0 25 0"/></g><circle cx="60" cy="28" r="12" fill="#9fdcec" stroke="#1b1a2e" stroke-width="5"/></symbol>
+    <symbol id="columna" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" fill="#fff" stroke-linejoin="round"><rect x="30" y="14" width="60" height="14" rx="3"/><rect x="40" y="28" width="40" height="64"/><rect x="26" y="92" width="68" height="14" rx="3"/></g><path d="M52 30v60M68 30v60" stroke="#1b1a2e" stroke-width="3"/></symbol>
+    <symbol id="manos" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M18 70q14-22 34-14l16 8q8 4 4 12t-14 2l-12-4" fill="#f6b8cf"/><path d="M102 50q-14 22-34 14l-16-8q-8-4-4-12t14-2l12 4" fill="#f7ef73"/></g></symbol>
+    <symbol id="globo" viewBox="0 0 120 120"><ellipse cx="60" cy="48" rx="30" ry="36" fill="#f6b8cf" stroke="#1b1a2e" stroke-width="5"/><path d="M60 84l-5 8h10z" fill="#1b1a2e"/><path d="M60 92q-10 12 0 24" fill="none" stroke="#1b1a2e" stroke-width="3"/></symbol>
+    <symbol id="mascara" viewBox="0 0 120 120"><path d="M16 40q44-16 88 0q4 36-20 46-12 4-24-8-12 12-24 8-24-10-20-46z" fill="#f7ef73" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/><ellipse cx="42" cy="54" rx="10" ry="7" fill="#1b1a2e"/><ellipse cx="78" cy="54" rx="10" ry="7" fill="#1b1a2e"/></symbol>
+    <symbol id="pregunta" viewBox="0 0 120 120"><path d="M20 24h80q8 0 8 8v46q0 8-8 8H54l-22 20v-20H20q-8 0-8-8V32q0-8 8-8z" fill="#9fdcec" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/><path d="M48 46q2-12 13-12 12 0 12 10t-12 12v6" fill="none" stroke="#1b1a2e" stroke-width="5" stroke-linecap="round"/><circle cx="61" cy="73" r="3.5" fill="#1b1a2e"/></symbol>
+    <symbol id="camara" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"><rect x="14" y="36" width="72" height="54" rx="10" fill="#9fdcec"/><path d="M86 52l22-12v46l-22-12z" fill="#f7ef73"/><circle cx="50" cy="63" r="14" fill="#fff"/></g></symbol>
+    <symbol id="garabato" viewBox="0 0 200 40"><path d="M4 26q20-20 40 0t40 0 40 0 40 0 30-6" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="barra">
   <div class="wrap">
-    <div class="top">
-      <img src="media/4a5a3a73af.png" alt="BLACKMOUTH">
-      <span class="meta">Plan de contenidos · 15–31 oct 2026 · versión 14-oct</span>
-    </div>
-    <p class="cliente">Liceo Campestre San Miguel · Yumbo</p>
-    <h1>Lo que cabe en un <em>«nada»</em>.</h1>
-    <p class="bajada">En septiembre mostramos la estructura del edificio. En octubre mostramos la otra: lo que pasa adentro un día cualquiera, eso que su hijo resume en una palabra cuando le preguntan qué hizo hoy.</p>
-    <div class="cifras">
-      <div><b>6</b><span>reels</span></div>
-      <div><b>4</b><span>carruseles</span></div>
-      <div><b>9</b><span>días de historias</span></div>
-      <div><b>2</b><span>rodajes</span></div>
-      <div><b>3</b><span>series</span></div>
+    <img class="logo" src="media/f713e89272.png" alt="Liceo Campestre San Miguel">
+    <nav aria-label="Secciones">
+      <a href="#idea">La idea</a><a href="#series">Series</a><a href="#calendario">Calendario</a><a href="#piezas">Piezas</a><a href="#historias">Historias</a><a href="#rodajes">Rodajes</a><a href="#pendientes">Por confirmar</a>
+    </nav>
+    <div class="vista" role="group" aria-label="Vista">
+      <button type="button" data-vista="colegio" aria-pressed="true">Vista colegio</button>
+      <button type="button" data-vista="prod" aria-pressed="false">Producción</button>
     </div>
   </div>
 </header>
 
-<nav class="indice" aria-label="Secciones">
-  <div class="wrap">
-    <a href="#idea">La idea</a>
-    <a href="#series">Series</a>
-    <a href="#calendario">Calendario</a>
-    <a href="#piezas">Piezas</a>
-    <a href="#historias">Historias</a>
-    <a href="#rodajes">Rodajes</a>
-    <a href="#comodin">Comodín</a>
-    <a href="#pendientes">Por confirmar</a>
-    <a href="#reglas">Reglas y medición</a>
-  </div>
-</nav>
-
 <main>
 
-<!-- ================= IDEA ================= -->
+<!-- ============ PORTADA ============ -->
+<section class="portada" style="padding-top:44px">
+  <div class="doodle flota" style="--r:-8deg;top:30px;right:4%;width:90px;height:90px"><svg><use href="#sol"/></svg></div>
+  <div class="doodle flota" style="--r:12deg;bottom:120px;left:46%;width:54px;height:54px;animation-delay:-2s"><svg><use href="#estrella"/></svg></div>
+  <div class="doodle flota" style="--r:0deg;top:52%;left:-30px;width:80px;height:80px;animation-delay:-1s"><svg><use href="#flor"/></svg></div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="chips">
+          <span class="rasgado">Plan de contenidos</span>
+          <span class="rasgado r">Octubre 2026</span>
+          <span class="rasgado">15 – 31 oct</span>
+        </div>
+        <h1 class="titulo">Lo que cabe en un <span class="nada">«nada»<svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M6 28 Q 60 6 120 24 T 240 20 T 394 18"/></svg></span>.</h1>
+        <p class="bajada">Todo papá ha preguntado <b>«¿qué hiciste hoy?»</b> y ha recibido la misma respuesta. Este mes mostramos todo lo que hay detrás de esa palabra.</p>
+      </div>
+      <div>
+        <div class="chat" id="chat">
+          <div class="cab">
+            <div class="av"><svg width="22" height="22"><use href="#morral"/></svg></div>
+            <div><b>En el carro, 3:15 p. m.</b><small>de vuelta del colegio</small></div>
+          </div>
+          <div class="msgs" id="msgs" aria-live="polite"></div>
+          <div class="revela" id="revela">
+            <small>Lo que de verdad pasó</small>
+            <div class="rodillo" id="rodillo"><span>un largo en la piscina</span></div>
+          </div>
+          <button class="otra" id="otraVez" type="button">↻ Otra vez</button>
+        </div>
+      </div>
+    </div>
+    <div class="notas">
+      <div class="nota rv" style="--rr:-2deg"><b data-cuenta="6">0</b><span>reels</span></div>
+      <div class="nota rv d1" style="--rr:1.5deg"><b data-cuenta="4">0</b><span>carruseles</span></div>
+      <div class="nota rv d2" style="--rr:-1deg"><b data-cuenta="9">0</b><span>días de historias</span></div>
+      <div class="nota rv d3" style="--rr:2deg"><b data-cuenta="3">0</b><span>series</span></div>
+      <div class="nota rv d4" style="--rr:-1.5deg"><b data-cuenta="2">0</b><span>días de rodaje</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IDEA ============ -->
 <section id="idea">
   <div class="wrap">
-    <p class="kicker"><b>01</b> · La idea del mes</p>
-    <h2>Septiembre respondió una pregunta. Octubre da una razón.</h2>
+    <div class="sec-cab rv">
+      <span class="rasgado">01 · La idea</span>
+      <h2>Septiembre respondió una pregunta. <em>Octubre da una razón.</em></h2>
+    </div>
 
-    <div class="puente">
-      <div class="mes">
-        <span class="et">Septiembre · Primero la estructura</span>
-        <h3>La del edificio</h3>
-        <p>Después del 10 de agosto, la única pregunta de un papá en Yumbo era si el edificio aguanta. Contamos la revisión, el regreso y la capacitación con la Defensa Civil. Describimos el proceso, sin dar veredicto.</p>
-        <p class="nota">Quedaron pendientes los guiones 03 «La otra estructura» y 04 «Los grandes cuidan a los chiquitos», que dependían de tener a los niños de vuelta. Ya volvieron.</p>
+    <div class="volteo">
+      <div class="tarjeta3d rv" id="tarjeta3d">
+        <div class="in3d">
+          <div class="cara a">
+            <svg class="ilus" style="filter:grayscale(1)"><use href="#columna"/></svg>
+            <span class="mes">Septiembre · Primero la estructura</span>
+            <h3>La del edificio</h3>
+            <p>Después del 10 de agosto, la pregunta de todo papá en Yumbo era si el edificio aguanta. Mostramos la revisión, el regreso y la capacitación con la Defensa Civil. Contamos el proceso sin dar veredicto.</p>
+          </div>
+          <div class="cara b">
+            <svg class="ilus gira"><use href="#sol"/></svg>
+            <span class="mes">Octubre · La otra estructura</span>
+            <h3>La que sostiene a los niños</h3>
+            <p>SER+T funcionando: los viernes por afinidad, los grandes con los chiquitos, los profes que se preparan. No lo contamos con frases. Lo mostramos.</p>
+          </div>
+        </div>
       </div>
-      <div class="flecha" aria-hidden="true">→</div>
-      <div class="mes oct">
-        <span class="et">Octubre · La otra estructura</span>
-        <h3>La que sostiene a los niños</h3>
-        <p>La seguridad es el piso para que una familia considere un colegio, pero no es la razón para elegirlo. Este mes mostramos SER+T funcionando: los viernes por afinidad, los grandes con los chiquitos, los profes que se preparan. Sin decirlo con frases institucionales: mostrándolo.</p>
+      <div class="lado-texto rv d1">
+        <p class="lead" style="margin-top:0">La seguridad es lo mínimo que una familia le pide a un colegio para tenerlo en cuenta. <b>Pero nadie elige colegio por eso.</b></p>
+        <p>En septiembre contestamos la pregunta urgente. En octubre le damos a una familia algo para recordar del San Miguel. Y lo hacemos con los dos guiones que estaban esperando a los niños: «La otra estructura» y «Los grandes cuidan a los chiquitos». Ya volvieron.</p>
+        <button class="btn" id="voltear" type="button">Ver la otra estructura ↻</button>
       </div>
     </div>
 
-    <div class="idea">
-      <div>
-        <p class="et">Problema de negocio</p>
-        <p>Las familias que están decidiendo colegio necesitan una razón para elegir este, y la conversación sigue atrapada en una sola pregunta. Y las frases que sirven para cualquier colegio («un nuevo período comienza») informan bien, pero no dejan en la memoria nada que sea solo del San Miguel.</p>
+    <div class="idea" style="margin-top:70px">
+      <div class="post-it rv" style="--rr:-1deg">
+        <div class="cinta"></div>
+        <p class="et">El problema</p>
+        <p>Las familias que están eligiendo colegio necesitan una razón para elegir este, y la conversación sigue atrapada en una sola pregunta. Además, las frases que sirven para cualquier colegio («un nuevo período comienza») informan, pero no dejan en la memoria nada que sea solo del San Miguel.</p>
       </div>
-      <div>
-        <p class="et">Insight</p>
-        <p>Un papá no conoce el colegio por lo que el colegio publica. Lo conoce por lo que su hijo le cuenta en el carro de vuelta. Y lo que le cuenta, casi siempre, es: <b>«nada»</b>.</p>
+      <div class="post-it insight rv d1" style="--rr:1deg">
+        <div class="cinta amarilla"></div>
+        <p class="et">Lo que todo papá vive</p>
+        <p>Un papá no conoce el colegio por lo que el colegio publica. Lo conoce por lo que su hijo le cuenta en el carro de vuelta. Y lo que le cuenta, casi siempre, es <b>«nada»</b>.</p>
       </div>
-      <div class="concepto">
-        <p class="et">Concepto</p>
-        <p class="grande">Lo que cabe en un «nada».</p>
-      </div>
-      <div>
-        <p class="et">Por qué funciona</p>
-        <p>Todos los papás han vivido el «¿qué hiciste hoy? —nada». Es un chiste que se comparte, y le da al colegio una forma de mostrar el día por dentro sin sonar a folleto. Además, conecta con septiembre: después de la estructura del edificio viene la otra, la que no se ve desde afuera.</p>
-      </div>
-      <div>
-        <p class="et">Tono</p>
-        <p>Cálido, con humor de papá, sin chistes a costa de los niños. La identidad que manda es la del colegio (navy, rojo, Poppins y el estilo de cuaderno que ya conocen sus seguidores). La única regla nueva es que cada pieza muestra algo que pasó, no algo que se dice.</p>
+      <div class="concepto rv">
+        <span class="et">El concepto del mes</span>
+        <p class="grande">Lo que cabe en un <span>«nada»</span>.</p>
+        <div class="bocadillo">Es un chiste que todos los papás comparten, y nos deja mostrar el colegio por dentro sin sonar a folleto.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SERIES ================= -->
-<section id="series">
+<!-- ============ SERIES ============ -->
+<div class="bloque-color" id="series">
+  <div class="doodle flota" style="--r:10deg;top:60px;right:6%;width:70px;height:70px"><svg><use href="#estrella"/></svg></div>
+  <div class="doodle flota" style="--r:-6deg;bottom:40px;left:3%;width:80px;height:80px;animation-delay:-3s"><svg><use href="#corazon"/></svg></div>
   <div class="wrap">
-    <p class="kicker"><b>02</b> · Series</p>
-    <h2>Tres series, cada una con un solo trabajo.</h2>
-    <p class="lead">Una serie tiene la misma apertura, el mismo cierre y el mismo CTA. Así se reconoce sin leer el nombre de la cuenta. Cada capítulo trae, aun así, su propio gancho.</p>
-
-    <div class="series">
-      <article class="serie">
-        <span class="num">SERIE A</span>
-        <h3>«¿Qué hiciste hoy? —Nada.»</h3>
-        <p>El niño dice «nada» y el reel muestra todo lo que cupo en ese «nada», con un contador. Corto, rítmico y sin barrera: lo entiende cualquier papá.</p>
-        <dl>
-          <dt>Objetivo</dt><dd>Alcance</dd>
-          <dt>Capítulos</dt><dd>2 en octubre (19 y 31)</dd>
-          <dt>Duración</dt><dd>15–22 s</dd>
-          <dt>Apertura</dt><dd>De espaldas con el morral: «—¿Qué hiciste hoy?» · corte seco · «—Nada.»</dd>
-          <dt>Cierre</dt><dd>«Eso fue nada.» + placa del colegio</dd>
-          <dt>CTA</dt><dd>Pregunta en voz y en pantalla: «¿Y el tuyo qué te contesta?»</dd>
-        </dl>
-      </article>
-      <article class="serie">
-        <span class="num">SERIE B</span>
-        <h3>La otra estructura</h3>
-        <p>SER+T explicado con imágenes del viernes: clases por afinidad, grados mezclados, los grandes cuidando a los chiquitos. Es la serie que vende el colegio.</p>
-        <dl>
-          <dt>Objetivo</dt><dd>Marca y visita</dd>
-          <dt>Capítulos</dt><dd>2 reels + 1 carrusel</dd>
-          <dt>Duración</dt><dd>22–33 s</dd>
-          <dt>Apertura</dt><dd>Un plano que empalma con septiembre (la columna de la revisión)</dd>
-          <dt>Cierre</dt><dd>La misma placa que en septiembre: logo + una línea</dd>
-          <dt>CTA</dt><dd>«Comenta VISITA y te mandamos los horarios» · o pregunta de anécdota</dd>
-        </dl>
-      </article>
-      <article class="serie">
-        <span class="num">SERIE C</span>
-        <h3>Pregúntale distinto</h3>
-        <p>La respuesta práctica al «nada»: el psicólogo del colegio da las preguntas que sí sacan conversación. Sirve a cualquier papá, sea o no del colegio, y se guarda.</p>
-        <dl>
-          <dt>Objetivo</dt><dd>Comentarios y guardados</dd>
-          <dt>Capítulos</dt><dd>1 reel + su carrusel</dd>
-          <dt>Duración</dt><dd>35–40 s</dd>
-          <dt>Apertura</dt><dd>La frase que todos reconocen, escrita sobre el psicólogo</dd>
-          <dt>Cierre</dt><dd>La palabra PREGUNTAS, grande, en rojo del colegio</dd>
-          <dt>CTA</dt><dd>«Comenta PREGUNTAS y te mandamos las 20»</dd>
-        </dl>
-      </article>
+    <div class="sec-cab rv">
+      <span class="rasgado">02 · Series</span>
+      <h2>Tres series, cada una con un solo trabajo.</h2>
+      <p class="lead">Cada serie tiene la misma apertura, el mismo cierre y el mismo llamado a la acción, así se reconoce sin leer el nombre de la cuenta. Toca una pestaña.</p>
+    </div>
+    <div class="rv">
+      <div class="pestanas" role="tablist" id="pestanas"></div>
+      <div class="panel-serie" id="panelSerie" role="tabpanel"></div>
     </div>
 
-    <p class="kicker" style="margin-top:44px">Mezcla por objetivo (reels y carruseles)</p>
-    <div class="mezcla" role="img" aria-label="Alcance 3 piezas, guardado 3, comentario 1, venta 1, marca 1">
-      <div style="flex:3;background:#0b57d0;color:#fff">Alcance · 3</div>
-      <div style="flex:3;background:#7a4bb7;color:#fff">Guardado · 3</div>
-      <div style="flex:1;background:#b26200;color:#fff">Coment. · 1</div>
-      <div style="flex:1;background:#0f7b3d;color:#fff">Visita · 1</div>
-      <div style="flex:1;background:#9a1b4b;color:#fff">Marca · 1</div>
+    <div class="mezcla rv" style="background:#fff;color:var(--tinta)">
+      <div class="dona" id="dona">
+        <svg viewBox="0 0 220 220" id="donaSvg"></svg>
+        <div class="centro"><div><b>9</b><span>piezas del feed</span></div></div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:6px">Cada pieza con un solo objetivo</h3>
+        <p class="peq" style="margin-bottom:14px">Toca un objetivo para ver sus piezas en el calendario. Hay una sola pieza de venta por semana y un reel por día como máximo.</p>
+        <div class="leyenda" id="leyenda"></div>
+      </div>
     </div>
-    <p class="leyenda">El carrusel 4 es comodín: depende del concepto técnico (ver <a href="#comodin">Comodín</a>). Una sola pieza de venta por semana y un reel por día como máximo.</p>
   </div>
-</section>
+</div>
 
-<!-- ================= CALENDARIO ================= -->
+<!-- ============ CALENDARIO ============ -->
 <section id="calendario">
+  <div class="doodle flota" style="--r:-10deg;top:70px;right:5%;width:80px;height:80px"><svg><use href="#lapiz"/></svg></div>
   <div class="wrap">
-    <p class="kicker"><b>03</b> · Calendario</p>
-    <h2>Del jueves 15 al sábado 31.</h2>
-    <p class="lead">La primera semana sale de archivo para darle tiempo al rodaje. Lo grabado el viernes 16 alimenta la segunda y la tercera semana, y el viernes 30 se cubre el Día de los niños para cerrar el mes con la serie A.</p>
-
-    <div class="cal">
-      <div class="semana">
-        <div class="sem">Semana 1<span>15–18 oct</span></div>
-        <div class="dias">
-          <div class="dia"><span class="f">Jue 15</span><span class="tipo">Reel 1</span><span class="q"><a href="#r1">Primero, los que cuidan</a><small>Los profes en el taller de bienestar del 23-ago (archivo)</small></span><span class="chip c-mar">Marca</span></div>
-          <div class="dia rodaje"><span class="f">Vie 16</span><span class="tipo">Carrusel 1</span><span class="q"><a href="#c1">Disfraz sin comprar nada</a><small>Para el Día de los niños, dos semanas antes · + <a href="#rodajes">Rodaje 1</a> (viernes SER+T)</small></span><span class="chip c-gua">Guardado</span></div>
-          <div class="dia"><span class="f">Sáb 17</span><span class="tipo">Historias</span><span class="q">Encuesta: «Cuando le preguntas qué hizo hoy, te dice…»<small>Siembra la serie A y nos da datos reales para el lunes</small></span><span class="chip c-his">Historias</span></div>
-        </div>
-      </div>
-      <div class="semana">
-        <div class="sem">Semana 2<span>19–25 oct</span></div>
-        <div class="dias">
-          <div class="dia"><span class="f">Lun 19</span><span class="tipo">Reel 2</span><span class="q"><a href="#r2">¿Qué hiciste hoy? —Nada. · cap. 1</a><small>El viernes del rodaje en 15–20 s, con contador</small></span><span class="chip c-alc">Alcance</span></div>
-          <div class="dia"><span class="f">Mié 21</span><span class="tipo">Carrusel 2</span><span class="q"><a href="#c2">SER+T, explicado a un papá que nunca lo ha oído</a><small>Seis láminas con el documento oficial</small></span><span class="chip c-gua">Guardado</span></div>
-          <div class="dia"><span class="f">Jue 22</span><span class="tipo">Reel 3</span><span class="q"><a href="#r3">La otra estructura</a><small>El guion 03 de septiembre, ahora con los niños de vuelta</small></span><span class="chip c-ven">Visita</span></div>
-          <div class="dia"><span class="f">Sáb 24</span><span class="tipo">Historias</span><span class="q">Detrás de cámaras del viernes + resultados de la encuesta<small>Recordatorio de VISITA</small></span><span class="chip c-his">Historias</span></div>
-        </div>
-      </div>
-      <div class="semana">
-        <div class="sem">Semana 3<span>26–31 oct</span></div>
-        <div class="dias">
-          <div class="dia"><span class="f">Lun 26</span><span class="tipo">Reel 4</span><span class="q"><a href="#r4">Los grandes cuidan a los chiquitos</a><small>El guion 04 de septiembre, el más diferenciador</small></span><span class="chip c-alc">Alcance</span></div>
-          <div class="dia"><span class="f">Mié 28</span><span class="tipo">Reel 5</span><span class="q"><a href="#r5">Pregúntale distinto</a><small>El psicólogo del colegio responde al «nada»</small></span><span class="chip c-com">Comentarios</span></div>
-          <div class="dia"><span class="f">Jue 29</span><span class="tipo">Carrusel 3</span><span class="q"><a href="#c3">8 preguntas que sí sacan respuesta</a><small>La versión guardable del reel 5</small></span><span class="chip c-gua">Guardado</span></div>
-          <div class="dia rodaje"><span class="f">Vie 30</span><span class="tipo">Rodaje 2</span><span class="q"><a href="#rodajes">Día de los niños</a><small>Historias en vivo + material para el reel 6 y el carrusel 4</small></span><span class="chip c-rod">Rodaje</span></div>
-          <div class="dia"><span class="f">Sáb 31</span><span class="tipo">Reel 6</span><span class="q"><a href="#r6">¿Qué hiciste hoy? —Nada. · cap. 2</a><small>Disfrazado. Cierra el mes y la secuela del carrusel 1</small></span><span class="chip c-alc">Alcance</span></div>
-        </div>
-      </div>
-      <div class="semana">
-        <div class="sem">Transición<span>3 nov</span></div>
-        <div class="dias">
-          <div class="dia"><span class="f">Mar 3</span><span class="tipo">Carrusel 4</span><span class="q"><a href="#comodin">Comodín</a><small>«Lo prometimos» si el concepto técnico está firmado; si no, el Día de los niños en fotos (el lunes 2 es festivo)</small></span><span class="chip c-mar">Según el caso</span></div>
-        </div>
-      </div>
+    <div class="sec-cab rv">
+      <span class="rasgado">03 · Calendario</span>
+      <h2>Octubre, <em>día por día.</em></h2>
+      <p class="lead">La primera semana sale de material de archivo, mientras grabamos. El viernes 16 se graba lo de las semanas 2 y 3, y el viernes 30 cerramos con el Día de los niños. Toca cualquier pieza para abrirla.</p>
     </div>
-    <p class="nota" style="margin-top:12px">Los días con rayas son de rodaje. Las historias de los días con publicación están en <a href="#historias">Historias</a>.</p>
+    <div class="filtros rv" id="filtros"></div>
+    <div class="mes-grid rv">
+      <div class="dsem"><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div></div>
+      <div class="celdas" id="celdas"></div>
+      <div class="lista-movil" id="listaMovil"></div>
+    </div>
+    <div class="nota-cal">
+      <span>▧ Días que ya pasaron: el plan arranca el 15.</span>
+      <span>Las piezas con borde punteado son historias.</span>
+      <span>El martes 3 de noviembre sale el carrusel 4 (<a href="#comodin">comodín</a>), porque el lunes 2 es festivo.</span>
+    </div>
   </div>
 </section>
 
-<!-- ================= PIEZAS ================= -->
+<!-- ============ PIEZAS ============ -->
 <section id="piezas">
   <div class="wrap">
-    <p class="kicker"><b>04</b> · Piezas</p>
-    <h2>Guion, texto y post de cada una.</h2>
-    <p class="lead">Las maquetas muestran el cuadro 0 con la identidad del colegio. La franja punteada es la zona segura de Reels: ahí van los textos y los subtítulos, nunca encima de una cara.</p>
-
-    <!-- R1 -->
-    <article class="ficha" id="r1">
-      <div class="lado">
-        <div class="cel">
-          <div class="bg" style="background:linear-gradient(160deg,#5b6b55,#2f3a2c)"></div>
-          <div class="seg"></div>
-          <span class="tag">cenital · grupo acostado</span>
-          <div class="t" style="top:28%;font-size:17px">Antes de recibir a sus hijos,<small>los profes se tomaron un día para ellos.</small></div>
-          <span class="pie">cuadro 0</span>
-        </div>
-        <p class="cap">Plano cenital de la visualización guiada (bloque 03 del 23-ago).</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">REEL 1</span><span class="fecha">Jueves 15 de octubre · 20–25 s</span><span class="chip c-mar">Marca</span></div>
-        <h3>Primero, los que cuidan</h3>
-        <p class="resumen">El taller de bienestar docente del 23 de agosto, una semana antes del primer día, contado como lo que fue: el colegio cuidando a los que cuidan. Retoma la frase de septiembre («Primero la estructura») y la lleva a las personas. El montaje ya existe en borrador (<i>_EDL - Reel frases docentes</i>).</p>
-        <div class="datos">
-          <div><b>Material</b>Archivo 2026-08-23, bloques 02–08</div>
-          <div><b>Audio</b>Música cálida + frases de los profes</div>
-          <div><b>Cámara lenta</b>Bloque 07 (60 fps)</div>
-        </div>
-        <table class="guion">
-          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
-          <tr><td>0,0–2,5</td><td>Cenital del grupo acostado en la visualización guiada.<br><span class="tx">Antes de recibir a sus hijos,</span> <span class="tx">los profes se tomaron un día para ellos.</span></td></tr>
-          <tr><td>2,5–8</td><td>Respiración y relajación: tres planos cortos (manos, ojos cerrados, el facilitador). Cambio cada 2 s.</td></tr>
-          <tr><td>8–15</td><td>Ejercicio del globo: lo sueltan.<span class="vo">La mejor frase de un docente del EDL «frases docentes» (subtitulada).</span></td></tr>
-          <tr><td>15–20</td><td>Presentaciones en cámara lenta, abrazos, círculo de cierre.<br><span class="tx">Primero, los que cuidan.</span></td></tr>
-          <tr><td>20–23</td><td>Placa del colegio.<br><span class="tx">¿Qué profe te marcó a ti? Etiquétalo.</span></td></tr>
-        </table>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">Una semana antes de que volvieran los niños, volvieron ellos. Un día para respirar, soltar y encontrarse como equipo.
-Porque un profe que está bien enseña mejor.
-
-¿Qué profe te marcó a ti? Etiquétalo aquí abajo 👇</div></div>
-        <p class="reglas bloque"><b>Reglas:</b> 09 §1.17 y 06 §9 pregunta de anécdota con etiqueta, no sí/no · 01 §1 la recompensa visual en el cuadro 0, no el logo · 06 §17 frase-sello que vuelve («Primero…»).</p>
-      </div>
-    </article>
-
-    <!-- C1 -->
-    <article class="ficha" id="c1">
-      <div class="lado">
-        <div class="cel carr">
-          <div class="papel"></div>
-          <div class="t" style="top:12%;color:#b5001b;font-size:20px">Disfraz sin comprar nada<small style="color:#24214f">6 ideas con lo que hay en casa</small></div>
-          <div style="position:absolute;bottom:12%;left:50%;transform:translateX(-50%);width:70px;height:78px;background:#c9a77a;border:3px solid #24214f;border-radius:4px"></div>
-          <div style="position:absolute;bottom:calc(12% + 50px);left:calc(50% - 20px);width:12px;height:12px;background:#24214f;border-radius:50%;box-shadow:28px 0 0 #24214f"></div>
-        </div>
-        <p class="cap">Lámina 1: el disfraz ya terminado (robot de caja) en el estilo de cuaderno de septiembre.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">CARRUSEL 1</span><span class="fecha">Viernes 16 de octubre · 8 láminas</span><span class="chip c-gua">Guardado</span></div>
-        <h3>Disfraz sin comprar nada</h3>
-        <p class="resumen">Sale dos semanas antes del Día de los niños, que es cuando los papás empiezan a pensar en el disfraz. Es útil para cualquier familia, se guarda y conecta con un objetivo del colegio: la sostenibilidad. Cierra con una invitación que se convierte en la secuela del 31.</p>
-        <div class="bloque"><h4>Láminas</h4>
-          <ul class="lista">
-            <li><b>1.</b> Disfraz sin comprar nada. 6 ideas con lo que hay en casa (con el robot ya hecho).</li>
-            <li><b>2.</b> Robot: una caja, tapas de botella y papel aluminio.</li>
-            <li><b>3.</b> Astronauta: dos botellas de gaseosa como tanques y un casco de cartón.</li>
-            <li><b>4.</b> Pintor: camiseta vieja, pinceles y manchas de témpera.</li>
-            <li><b>5.</b> Árbol del campo: ropa café, hojas de papel verde y mucha paciencia.</li>
-            <li><b>6.</b> Superhéroe: una toalla de capa y una inicial de cartulina.</li>
-            <li><b>7.</b> Chef: delantal, gorro de cartulina y una cuchara de palo.</li>
-            <li><b>8.</b> El 30 de octubre mándanos la foto del disfraz por mensaje directo y armamos el álbum del colegio.</li>
-          </ul>
-        </div>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">El Día de los niños se acerca y el mejor disfraz no se compra: se arma en casa, juntos.
-Guarda estas 6 ideas y el 30 mándanos la foto del resultado. Armamos el álbum del colegio.
-
-¿Cuál van a hacer en tu casa?</div></div>
-        <p class="nota bloque"><span class="pendiente">Confirmar</span> que el colegio celebra el Día de los niños el viernes 30 y si hay reglas de disfraz (sin máscaras, sin armas de juguete, etc.). Si no lo celebra, esta pieza se cambia por la que el colegio tenga en esa fecha.</p>
-        <p class="reglas bloque"><b>Reglas:</b> 09 §1.13 fecha de temporada 2–3 semanas antes, nunca el mismo día · 09 §4.7 la primera lámina es la recompensa · 09 §1.12 la acción trae su secuela agendada (reel 6 y carrusel 4).</p>
-      </div>
-    </article>
-
-    <!-- R2 -->
-    <article class="ficha" id="r2">
-      <div class="lado">
-        <div class="cel">
-          <div class="bg" style="background:linear-gradient(170deg,#9fb3c9,#3a4a5c)"></div>
-          <div class="seg"></div>
-          <span class="tag">de espaldas · morral</span>
-          <div class="t" style="top:29%;font-size:21px">—¿Qué hiciste hoy?</div>
-          <div class="t" style="top:46%;font-size:34px;color:#fff">—Nada.</div>
-          <span class="pie">0,0–2,5 s</span>
-        </div>
-        <p class="cap">Sin cara: el niño camina de espaldas hacia la salida y el plano no lo identifica.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">REEL 2</span><span class="fecha">Lunes 19 de octubre · 15–20 s</span><span class="chip c-alc">Alcance</span><span class="chip c-rod">Serie A · cap. 1</span></div>
-        <h3>¿Qué hiciste hoy? —Nada.</h3>
-        <p class="resumen">El chiste que todo papá conoce, y después la prueba: ocho «nadas» del viernes, uno por segundo y medio, con un contador. Pieza de alcance: corta, se entiende sin sonido y no pide nada salvo una respuesta fácil de dar.</p>
-        <div class="datos">
-          <div><b>Material</b>Rodaje 1, bloques A y B</div>
-          <div><b>Audio</b>Base rítmica cálida, cortes a tiempo</div>
-          <div><b>Texto</b>Poppins, navy y blanco</div>
-        </div>
-        <table class="guion">
-          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
-          <tr><td>0,0–1,4</td><td>Niño de espaldas con el morral, caminando hacia la salida.<br><span class="tx">—¿Qué hiciste hoy?</span></td></tr>
-          <tr><td>1,4–2,5</td><td>Corte seco. El mismo plano, quieto.<br><span class="tx">—Nada.</span></td></tr>
-          <tr><td>2,5–14</td><td>Ocho planos de 1,4 s del viernes, cada uno con su etiqueta pequeña: «nada n.º 1: <i>lo que se ve</i>»… hasta «nada n.º 8». Las etiquetas se escriben con lo que de verdad pase ese día (una maqueta, una canción, un largo en la piscina…). Prioridad a manos y detalles.</td></tr>
-          <tr><td>14–17</td><td>Vuelve el niño, ya en la puerta o en el carro.<br><span class="tx">Eso fue nada.</span></td></tr>
-          <tr><td>17–20</td><td>Placa del colegio.<br><span class="tx">¿Y el tuyo qué te contesta?</span><span class="vo">Voz de una mamá o un papá del colegio: «¿Y el tuyo qué te contesta?»</span></td></tr>
-        </table>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">—¿Qué hiciste hoy?
-—Nada.
-
-Esto fue «nada» un viernes en el San Miguel.
-¿Y el tuyo qué te contesta cuando le preguntas? 👇</div></div>
-        <p class="reglas bloque"><b>Reglas:</b> 09 §1.5 alcance: corto, sin barrera, se entiende en mudo · 09 §3 «repetición con contador» (ruva.dg Dc_nuo1JgZl) · 01 §8 el último cuadro empalma con el primero · 09 §1.6 apertura y cierre fijos de serie · 09 §1.17 pregunta en voz y en pantalla.</p>
-      </div>
-    </article>
-
-    <!-- C2 -->
-    <article class="ficha" id="c2">
-      <div class="lado">
-        <div class="cel carr">
-          <div class="bg" style="background:#24214f"></div>
-          <div class="t" style="top:14%;font-size:26px">SER+T<small>explicado a un papá que nunca lo ha oído</small></div>
-          <div class="t" style="bottom:10%;font-size:12px;color:#ffb3bf">La otra estructura · 1/6</div>
-        </div>
-        <p class="cap">Lámina 1 en navy pleno, como el carrusel «¿La fórmula para crecer?» de septiembre.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">CARRUSEL 2</span><span class="fecha">Miércoles 21 de octubre · 6 láminas</span><span class="chip c-gua">Guardado</span><span class="chip c-rod">Serie B</span></div>
-        <h3>SER+T, explicado a un papá que nunca lo ha oído</h3>
-        <p class="resumen">El modelo pedagógico es el diferencial del colegio y casi nadie afuera sabe qué es. Lo explicamos en seis láminas, con fotos del rodaje del viernes, la víspera del reel 3.</p>
-        <div class="bloque"><h4>Láminas (texto base, a validar con el documento oficial)</h4>
-          <ul class="lista">
-            <li><b>1.</b> SER+T, explicado a un papá que nunca lo ha oído.</li>
-            <li><b>2.</b> SER: el desarrollo personal, social y emocional. Lo que el niño es, no solo lo que sabe.</li>
-            <li><b>3.</b> +T: trascender. Liderazgo, compromiso con su comunidad e impacto en otros.</li>
-            <li><b>4.</b> Los viernes cada estudiante entra a la clase que eligió. No por grado: por afinidad.</li>
-            <li><b>5.</b> Y como se mezclan edades, pasa esto: los grandes cuidan a los chiquitos.</li>
-            <li><b>6.</b> Ven un viernes y míralo. Comenta VISITA y te mandamos los horarios.</li>
-          </ul>
-        </div>
-        <p class="nota bloque"><span class="pendiente">Pendiente desde el 1-sep</span> el documento escrito de SER+T. La presentación institucional dice «T = Trascender» y el guion de septiembre decía «aprender algo y saber para qué sirve». No se publica la sigla de memoria: el colegio la confirma por escrito.</p>
-        <p class="reglas bloque"><b>Reglas:</b> 09 §4.7 una idea por lámina · 06 §1–2 palabra clave que nombra lo que quiere el papá (VISITA), no un descuento.</p>
-      </div>
-    </article>
-
-    <!-- R3 -->
-    <article class="ficha" id="r3">
-      <div class="lado">
-        <div class="cel">
-          <div class="bg" style="background:linear-gradient(180deg,#d9d6cf,#8d8a84)"></div>
-          <div class="seg"></div>
-          <span class="tag" style="color:#111">columna · revisión de sept.</span>
-          <div class="t" style="top:29%;font-size:17px;color:#111">Revisamos la estructura del edificio.</div>
-          <span class="pie" style="color:#111">0,0–3,0 s</span>
-        </div>
-        <p class="cap">Empalma con septiembre: el mismo plano de la columna. Blanco y negro más un acento, como las piezas de la revisión.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">REEL 3</span><span class="fecha">Jueves 22 de octubre · 28–33 s</span><span class="chip c-ven">Visita</span><span class="chip c-rod">Serie B</span></div>
-        <h3>La otra estructura</h3>
-        <p class="resumen">El guion 03 de septiembre, que estaba esperando a los niños. Abre con la revisión del edificio y gira hacia SER+T. Es la pieza de venta del mes: el CTA no es «matricúlate», es «ven a verlo un viernes».</p>
-        <div class="datos">
-          <div><b>Material</b>Archivo 2-sep + Rodaje 1, bloques B y E</div>
-          <div><b>Audio</b>0–5 s ambiente; desde el corte, música cálida</div>
-          <div><b>VO</b>Rectoría o un docente</div>
-        </div>
-        <table class="guion">
-          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
-          <tr><td>0,0–3,0</td><td>La columna de la revisión de septiembre.<br><span class="tx">Revisamos la estructura del edificio.</span></td></tr>
-          <tr><td>3,0–5,0</td><td>Corte seco a una clase del viernes, llena de niños.<br><span class="tx">Esta es la otra.</span></td></tr>
-          <tr><td>5–12</td><td>Cuatro planos cortos: un instrumento, un pincel, baile, la feria o el proyecto que haya.<span class="vo">«Los viernes, cada estudiante entra a la clase que eligió.»</span></td></tr>
-          <tr><td>12–19</td><td>Una mesa con niños de distintas edades trabajando juntos.<span class="vo">«No por grado. Por afinidad. Y mezclados con niños de otras edades.»</span></td></tr>
-          <tr><td>19–25</td><td>Plano medio: un niño muestra lo que hizo con sus manos.<span class="vo">«Se llama SER+T.» + la definición oficial en una frase.</span></td></tr>
-          <tr><td>25–31</td><td>Placa del colegio.<br><span class="tx">Ven un viernes y míralo.</span> <span class="tx">Comenta VISITA</span><span class="vo">«Comenta VISITA y te mandamos los horarios para conocer el colegio.»</span></td></tr>
-        </table>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">Comenta VISITA y te mandamos los horarios para conocer el colegio un viernes.
-
-En septiembre revisamos la estructura del edificio. Esta es la otra: SER+T, el modelo sobre el que está construido todo lo demás.</div></div>
-        <div class="bloque"><h4>Mensaje directo para quien comente VISITA</h4>
-<div class="post">¡Hola! Estos son los horarios para visitar el colegio: [horarios que defina el colegio].
-¿Para qué grado estás buscando cupo? Así te presentamos con la persona indicada.</div></div>
-        <p class="reglas bloque"><b>Reglas:</b> 06 §1 palabra clave dicha y escrita, sin botón dibujado · 09 §1.16 la oferta entra después del 60 % · 01 §8 abre una pregunta («¿cuál es la otra?») que se cierra en el reel · regla de septiembre: ninguna afirmación sobre el veredicto del edificio.</p>
-      </div>
-    </article>
-
-    <!-- R4 -->
-    <article class="ficha" id="r4">
-      <div class="lado">
-        <div class="cel">
-          <div class="bg" style="background:linear-gradient(165deg,#b9c98f,#4d6131)"></div>
-          <div class="seg"></div>
-          <span class="tag">descanso · grande + chiquito</span>
-          <div class="t" style="top:28%;font-size:15.5px">En la mayoría de colegios, un niño de once no le habla a uno de seis.</div>
-          <span class="pie">0,0–4,0 s</span>
-        </div>
-        <p class="cap">El plano estrella del rodaje 1: un grande y un chiquito en el mismo cuadro.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">REEL 4</span><span class="fecha">Lunes 26 de octubre · 22–28 s</span><span class="chip c-alc">Alcance</span><span class="chip c-rod">Serie B</span></div>
-        <h3>Los grandes cuidan a los chiquitos</h3>
-        <p class="resumen">Sale de una observación de rodaje: los grandes cuidan a los chiquitos y los chiquitos les piden ayuda sin miedo. Es el resultado directo de mezclar grados los viernes y nadie más lo está contando. El CTA cambia frente al guion de septiembre: en vez de la visita (que ya pidió el reel 3), una pregunta que cualquiera puede contestar.</p>
-        <div class="datos">
-          <div><b>Material</b>Rodaje 1, bloque C</div>
-          <div><b>Audio</b>Música cálida</div>
-          <div><b>Si no hay toma</b>Se corre al rodaje 2</div>
-        </div>
-        <table class="guion">
-          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
-          <tr><td>0,0–4,0</td><td>Un niño grande y uno chiquito en el mismo cuadro, en el descanso.<br><span class="tx">En la mayoría de colegios, un niño de once no le habla a uno de seis.</span></td></tr>
-          <tr><td>4,0–6,5</td><td>El chiquito le pide algo al grande.<br><span class="tx">Aquí sí.</span> (solo, grande, el único texto que crece en la serie)</td></tr>
-          <tr><td>6,5–15</td><td>Tres o cuatro planos: amarrando un cordón, cargando una lonchera, explicando algo.<span class="vo">«Los viernes las clases se arman por afinidad, no por edad.»</span></td></tr>
-          <tr><td>15–21</td><td>Plano general del descanso con grados mezclados.<span class="vo">«Así que para la hora del descanso ya se conocen.»</span></td></tr>
-          <tr><td>21–26</td><td>Placa del colegio.<br><span class="tx">¿Quién te cuidaba a ti en el colegio?</span><span class="vo">«¿Y a ti quién te cuidaba en el colegio?»</span></td></tr>
-        </table>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">Aquí los grandes cuidan a los chiquitos. Y los chiquitos les piden ayuda sin miedo.
-No es casualidad: los viernes las clases se arman por afinidad, no por edad.
-
-¿Quién te cuidaba a ti en el colegio? Etiquétalo 👇</div></div>
-        <p class="reglas bloque"><b>Reglas:</b> 09 §1.17 pregunta de anécdota en voz · 09 §1.9 la serie B no repite plantilla (reel 3 es proceso, reel 4 es escena) · 03 el texto del gancho, dos líneas y 4 s completos en pantalla · la provocación va a la categoría («la mayoría de colegios»), nunca a un colegio con nombre.</p>
-      </div>
-    </article>
-
-    <!-- R5 -->
-    <article class="ficha" id="r5">
-      <div class="lado">
-        <div class="cel">
-          <div class="bg" style="background:linear-gradient(170deg,#c7c2b8,#6f6a62)"></div>
-          <div class="seg"></div>
-          <span class="tag">psicólogo a cámara</span>
-          <div class="t" style="top:27%;font-size:15px">Si le preguntas «¿qué hiciste hoy?», te va a decir «nada».</div>
-          <div class="t" style="top:52%;font-size:13px;color:#fff;opacity:.9">Pregúntale esto.</div>
-          <span class="pie">0,0–2,5 s</span>
-        </div>
-        <p class="cap">El texto va arriba de la cabeza, nunca sobre la cara.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">REEL 5</span><span class="fecha">Miércoles 28 de octubre · 35–40 s</span><span class="chip c-com">Comentarios</span><span class="chip c-rod">Serie C</span></div>
-        <h3>Pregúntale distinto</h3>
-        <p class="resumen">La respuesta útil al chiste de la serie A. El psicólogo del colegio explica por qué «¿qué hiciste hoy?» no funciona y da tres preguntas que sí. El regalo son 20 preguntas en una hoja, firmadas por él. Atrae a papás de fuera del colegio, que es justo a quien hay que llegar.</p>
-        <div class="datos">
-          <div><b>Material</b>Rodaje 1, bloque D</div>
-          <div><b>Audio</b>Su voz + base suave</div>
-          <div><b>Regalo</b>PDF «20 preguntas para después del colegio»</div>
-        </div>
-        <table class="guion">
-          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
-          <tr><td>0,0–2,5</td><td>Psicólogo a cámara, plano medio, fondo del colegio desenfocado.<br><span class="tx">Si le preguntas «¿qué hiciste hoy?», te va a decir «nada».</span></td></tr>
-          <tr><td>2,5–9</td><td><span class="vo">Con sus palabras: por qué la pregunta es demasiado grande para un niño cansado.</span> Lower third: nombre y cargo, 3 s.</td></tr>
-          <tr><td>9–28</td><td>Tres preguntas, una por plano, cada una con un B-roll del viernes detrás:<br><span class="tx">¿Con quién te sentaste hoy?</span> <span class="tx">¿Qué fue lo más chistoso?</span> <span class="tx">¿A quién ayudaste?</span><span class="vo">Las preguntas finales las elige él; estas son ejemplos.</span></td></tr>
-          <tr><td>28–33</td><td><span class="vo">«Tengo veinte más. Comenta PREGUNTAS y te las mandamos.»</span></td></tr>
-          <tr><td>33–37</td><td>Placa del colegio.<br><span class="tx">Comenta PREGUNTAS</span> (rojo del colegio, grande)</td></tr>
-        </table>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">Comenta PREGUNTAS y te mandamos las 20 preguntas que recomienda nuestro psicólogo para después del colegio.
-
-«¿Qué hiciste hoy?» es una pregunta demasiado grande para un niño cansado. Prueba con estas.</div></div>
-        <div class="bloque"><h4>Mensaje directo para quien comente PREGUNTAS</h4>
-<div class="post">¡Aquí están las 20 preguntas! [enlace al PDF]
-¿En qué grado está tu hijo? Te contamos cómo trabajamos esa edad en el colegio.</div></div>
-        <p class="nota bloque"><span class="pendiente">Confirmar</span> nombre y cargo del psicólogo, su disponibilidad el viernes 16, y que valide las 20 preguntas antes de publicar. El PDF lo diseñamos nosotros en el estilo de cuaderno del colegio.</p>
-        <p class="reglas bloque"><b>Reglas:</b> 06 §1–3 palabra clave que nombra el deseo y regalo con cantidad y forma («20 preguntas, una hoja») · 09 §1.3 el DM filtra con una pregunta · 01 §5 nombra el dolor del papá en la primera frase · 09 §4.4 prueba del DM desde otra cuenta antes de publicar.</p>
-      </div>
-    </article>
-
-    <!-- C3 -->
-    <article class="ficha" id="c3">
-      <div class="lado">
-        <div class="cel carr">
-          <div class="papel"></div>
-          <div class="t" style="top:10%;color:#24214f;font-size:15px">—¿Qué hiciste hoy?<br>—Nada.</div>
-          <div class="t" style="top:42%;color:#b5001b;font-size:21px">8 preguntas que sí sacan respuesta</div>
-          <div class="t" style="bottom:8%;color:#24214f;font-size:10px;font-weight:600">Con nuestro psicólogo</div>
-        </div>
-        <p class="cap">Estilo de cuaderno, el mismo de las historias de septiembre.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">CARRUSEL 3</span><span class="fecha">Jueves 29 de octubre · 10 láminas</span><span class="chip c-gua">Guardado</span><span class="chip c-rod">Serie C</span></div>
-        <h3>8 preguntas que sí sacan respuesta</h3>
-        <p class="resumen">La versión guardable del reel 5: una pregunta por lámina, con una línea de por qué funciona. La última lámina repite la palabra clave para quien quiera las 20.</p>
-        <div class="bloque"><h4>Estructura</h4>
-          <ul class="lista">
-            <li><b>1.</b> «—¿Qué hiciste hoy? —Nada.» 8 preguntas que sí sacan respuesta.</li>
-            <li><b>2–9.</b> Una pregunta por lámina + por qué funciona en una línea (las define el psicólogo).</li>
-            <li><b>10.</b> ¿Quieres las 20? Comenta PREGUNTAS.</li>
-          </ul>
-        </div>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">Guárdalo para esta tarde, cuando lo recojas.
-Y si quieres las 20, comenta PREGUNTAS.</div></div>
-        <p class="reglas bloque"><b>Reglas:</b> 09 §4.7 el carrusel de la semana es la versión guardable del reel · 09 §1.4 se pide guardar antes del contenido.</p>
-      </div>
-    </article>
-
-    <!-- R6 -->
-    <article class="ficha" id="r6">
-      <div class="lado">
-        <div class="cel">
-          <div class="bg" style="background:linear-gradient(170deg,#e9b44c,#8c3b2e)"></div>
-          <div class="seg"></div>
-          <span class="tag">disfrazado · de espaldas</span>
-          <div class="t" style="top:29%;font-size:21px">—¿Qué hiciste hoy?</div>
-          <div class="t" style="top:46%;font-size:34px">—Nada.</div>
-          <span class="pie">0,0–2,5 s</span>
-        </div>
-        <p class="cap">La misma apertura de la serie A, ahora con el disfraz.</p>
-      </div>
-      <div class="cuerpo">
-        <div class="cab"><span class="cod">REEL 6</span><span class="fecha">Sábado 31 de octubre · 15–18 s</span><span class="chip c-alc">Alcance</span><span class="chip c-rod">Serie A · cap. 2</span></div>
-        <h3>¿Qué hiciste hoy? —Nada. · Día de los niños</h3>
-        <p class="resumen">El capítulo 2 de la serie, con el niño disfrazado diciendo «nada». La broma se entiende sola. Cierra la acción del carrusel 1: aparecen los disfraces hechos en casa que mandaron las familias.</p>
-        <table class="guion">
-          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
-          <tr><td>0,0–2,5</td><td>Niño disfrazado de espaldas, caminando a la salida.<br><span class="tx">—¿Qué hiciste hoy?</span> <span class="tx">—Nada.</span></td></tr>
-          <tr><td>2,5–12</td><td>Siete «nadas» del día con contador: el desfile, los disfraces de cartón, los profes disfrazados. Si hay fotos de las familias, entran aquí.</td></tr>
-          <tr><td>12–15</td><td>El niño, de frente o de perfil, con el disfraz.<br><span class="tx">Eso fue nada.</span></td></tr>
-          <tr><td>15–18</td><td>Placa del colegio.<br><span class="tx">¿De qué se disfrazó el tuyo?</span></td></tr>
-        </table>
-        <div class="bloque"><h4>Post</h4>
-<div class="post">—¿Qué hiciste hoy?
-—Nada. 🎃
-
-Gracias a todas las familias que armaron su disfraz en casa. ¿De qué se disfrazó el tuyo? Muéstranos aquí abajo 👇</div></div>
-        <p class="reglas bloque"><b>Reglas:</b> 09 §1.6 apertura y cierre idénticos al cap. 1 · 09 §1.9 la serie A sale 2 veces en 14 días, no más · 09 §1.12 secuela de la acción del carrusel 1.</p>
-      </div>
-    </article>
-
+    <div class="sec-cab rv">
+      <span class="rasgado">04 · Piezas</span>
+      <h2>Dale play a <em>cada pieza.</em></h2>
+      <p class="lead">Cada reel se reproduce con sus tiempos reales: el texto en pantalla, el plano y la voz. Mientras suena, se ilumina la línea del guion que va. Los carruseles se pasan con las flechas.</p>
+    </div>
+    <div class="tira rv" id="tira" role="tablist" aria-label="Piezas del mes"></div>
+    <div id="ficha"></div>
   </div>
 </section>
 
-<!-- ================= HISTORIAS ================= -->
-<section id="historias">
+<!-- ============ HISTORIAS ============ -->
+<div class="bloque-color rojo" id="historias">
+  <div class="doodle flota" style="--r:6deg;top:50px;right:5%;width:80px;height:80px"><svg><use href="#cara"/></svg></div>
   <div class="wrap">
-    <p class="kicker"><b>05</b> · Historias</p>
-    <h2>Las historias sostienen la conversación.</h2>
-    <p class="lead">No repiten el feed: preguntan, recuerdan la palabra clave de la semana y muestran el detrás de cámaras. Los enlaces van con el sticker nativo de Instagram, nunca con un botón dibujado.</p>
-    <div class="historias">
-      <div><b>Jue 15</b>Reel 1 + sticker de mención: «Etiqueta al profe que te marcó».</div>
-      <div><b>Vie 16</b>Rodaje en vivo, sin caras de niños: manos, materiales, el salón listo.</div>
-      <div><b>Sáb 17</b>Encuesta: «Cuando le preguntas qué hizo hoy, te dice…» (Nada · Ya te dije · Me cuenta todo) + caja: «La respuesta más corta que te ha dado».</div>
-      <div><b>Lun 19</b>Reel 2 + el resultado real de la encuesta («El __ % dijo nada»). Solo con el dato que salga.</div>
-      <div><b>Mié 21</b>Carrusel 2 + prueba: «¿Qué significa la T de SER+T?» con tres opciones.</div>
-      <div><b>Sáb 24</b>Detrás de cámaras del viernes + las mejores respuestas de la caja + recordatorio de VISITA.</div>
-      <div><b>Mié 28</b>Reel 5 + caja: «¿Qué pregunta te funciona a ti?». Las respuestas se comparten el jueves.</div>
-      <div><b>Vie 30</b>Día de los niños en vivo (grupales y de espaldas) + «mándanos la foto del disfraz».</div>
-      <div><b>Sáb 31</b>Reel 6 + repost de las fotos que mandaron las familias (con su permiso).</div>
+    <div class="sec-cab rv">
+      <span class="rasgado">05 · Historias</span>
+      <h2>Las historias mantienen viva la conversación.</h2>
+      <p class="lead" style="color:#ffe3e3">No repiten lo que ya salió en el perfil: preguntan, recuerdan la palabra clave de la semana y muestran lo que pasa detrás de cámaras. Toca a los lados para pasarlas, como en Instagram, y prueba a votar en la encuesta.</p>
+    </div>
+    <div class="hist-wrap rv">
+      <div class="hist" id="hist"></div>
+      <div class="hist-lista" id="histLista"></div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ================= RODAJES ================= -->
+<!-- ============ RODAJES ============ -->
 <section id="rodajes">
+  <div class="doodle flota" style="--r:-6deg;top:80px;right:6%;width:90px;height:90px"><svg><use href="#camara"/></svg></div>
   <div class="wrap">
-    <p class="kicker"><b>06</b> · Rodajes</p>
-    <h2>Dos días de grabación alimentan el mes.</h2>
-    <div class="rodajes">
-      <div class="rodaje">
-        <p class="f">Rodaje 1 · viernes 16 de octubre</p>
-        <h3>Un viernes SER+T</h3>
-        <p class="nota">Alimenta los reels 2, 3, 4 y 5 y los carruseles 2 y 3. Si el colegio no puede el 16, pasa al viernes 23 y el calendario se corre una semana.</p>
-        <ol>
-          <li><b>A · Salida.</b> Un niño de espaldas con el morral, caminando a la puerta o al carro. Dos versiones: caminando y quieto. Es la apertura de la serie A.</li>
-          <li><b>B · Clases por afinidad.</b> Plano fijo de 8–10 s de cada clase, aunque se usen 1,5 s. Primero manos y detalles: un instrumento, un pincel, una maqueta, el agua. Anotar qué es cada clase (para las etiquetas de «nada»).</li>
-          <li><span class="estrella">★</span> <b>C · Descanso mezclado.</b> Un grande y un chiquito en el mismo cuadro: cordón, lonchera, explicación. Es el plano del mes; si aparece uno bueno, el reel 4 está hecho.</li>
-          <li><b>D · Psicólogo a cámara.</b> Plano medio, mira a la cámara. Que responda incluyendo la pregunta y que deje dos segundos de silencio al final. Grabar las 20 preguntas en voz, por si alguna sirve sola.</li>
-          <li><b>E · Lo que hicieron.</b> Un niño mostrando a cámara algo hecho con sus manos (solo con autorización).</li>
-          <li><b>F · Fotos para el carrusel 2.</b> Una por lámina: clase, mezcla de edades, grande con chiquito.</li>
-          <li><b>G · Ambiente.</b> 30 s de sonido limpio del colegio con niños.</li>
-        </ol>
-      </div>
-      <div class="rodaje">
-        <p class="f">Rodaje 2 · viernes 30 de octubre</p>
-        <h3>Día de los niños</h3>
-        <p class="nota">Alimenta el reel 6, el carrusel 4 y las historias del día. Por confirmar con el colegio.</p>
-        <ol>
-          <li><b>A · Apertura de la serie A.</b> Un niño disfrazado de espaldas, caminando a la salida. El mismo encuadre del rodaje 1.</li>
-          <li><b>B · Los «nadas» del día.</b> Desfile, disfraces de cartón, profes disfrazados. Planos de 8–10 s.</li>
-          <li><b>C · Retratos en cámara lenta</b> (FHD 60 fps) solo de niños con autorización.</li>
-          <li><b>D · Historias en vivo</b> durante la jornada: grupales y de espaldas.</li>
-          <li><b>E · Fotos</b> para el álbum del carrusel 4.</li>
-        </ol>
-        <p class="nota" style="margin-top:14px">En los dos: 4K 29,97 para lo general y FHD 59,94 para la cámara lenta. La Canon graba HDR, así que el material se conforma y se corrige en Premiere antes de montar. El texto de cada reel lo aprueba el colegio antes de publicar.</p>
-      </div>
+    <div class="sec-cab rv">
+      <span class="rasgado">06 · Rodajes</span>
+      <h2>Dos días de grabación <em>para todo el mes.</em></h2>
+      <p class="lead">Esta es la lista de tomas. Se puede ir marcando en el set y queda guardada en este navegador.</p>
+    </div>
+    <div class="rv" style="background:var(--navy);border-radius:22px;padding:22px 22px 26px;border:3px solid var(--tinta)">
+      <div class="rod-tabs" role="tablist" id="rodTabs"></div>
+      <div class="rod-panel" id="rodPanel"></div>
     </div>
   </div>
 </section>
 
-<!-- ================= COMODÍN ================= -->
+<!-- ============ COMODÍN ============ -->
 <section id="comodin">
   <div class="wrap">
-    <p class="kicker"><b>07</b> · Comodín</p>
-    <h2>Una promesa pendiente.</h2>
-    <div class="comodin">
-      <div>
-        <h3>Si el concepto técnico está firmado: «Lo prometimos»</h3>
-        <p>En septiembre el colegio dijo en público: «Cuando salga el concepto técnico, lo publicamos». Si ya existe, esta pieza tiene prioridad sobre cualquier otra del calendario y sale como reel y carrusel: el documento, qué se revisó y qué dice, con la voz de la rectoría.</p>
-        <ul>
-          <li>Sobrio: blanco y negro más un solo acento. Sin verde, amarillo ni rojo en la gráfica.</li>
-          <li>Sin música con melodía y sin audio en tendencia.</li>
-          <li>Si el concepto trae recomendaciones, el mensaje es «esto es lo que vamos a intervenir y cuándo».</li>
-          <li>El ingeniero no aparece recomendando el colegio ni pegado a un CTA.</li>
-        </ul>
+    <div class="sec-cab rv">
+      <span class="rasgado">07 · Comodín</span>
+      <h2>Una promesa <em>pendiente.</em></h2>
+      <p class="lead">En septiembre el colegio dijo en público: «Cuando salga el concepto técnico, lo publicamos». Lo que sale el 3 de noviembre depende de si ese concepto ya existe.</p>
+    </div>
+    <div class="rv">
+      <p style="font-weight:800;color:var(--navy)">¿Ya está firmado el concepto técnico de la evaluación estructural?</p>
+      <div class="interruptor" role="group" aria-label="Estado del concepto técnico">
+        <button type="button" data-c="no" aria-pressed="true">Todavía no</button>
+        <button type="button" data-c="si" aria-pressed="false">Sí, ya está</button>
       </div>
-      <div>
-        <h3>Si todavía no está: álbum del Día de los niños</h3>
-        <p>El martes 3 de noviembre sale el carrusel 4 con las fotos del día y los disfraces que mandaron las familias. Es la segunda secuela de la acción del carrusel 1.</p>
-        <p>«Lo prometimos» queda listo para salir el día que el concepto llegue, sin esperar al plan de noviembre.</p>
-      </div>
+      <div class="comodin-panel" id="comodinPanel"></div>
     </div>
   </div>
 </section>
 
-<!-- ================= PENDIENTES ================= -->
+<!-- ============ PENDIENTES ============ -->
 <section id="pendientes">
   <div class="wrap">
-    <p class="kicker"><b>08</b> · Por confirmar con el colegio</p>
-    <h2>Lo que necesitamos para arrancar.</h2>
-    <ul class="checks">
-      <li><span class="n">1</span><span>¿Podemos grabar el viernes 16? ¿A qué hora son las clases por afinidad y el descanso?<small>Si no, pasamos al 23 y corremos el calendario una semana.</small></span><span class="urg si">Antes del jue 15</span></li>
-      <li><span class="n">2</span><span>Autorización de uso de imagen de los niños que salgan en primer plano.<small>Sin autorización firmada, el niño sale de espaldas, en grupo o solo en manos y detalles.</small></span><span class="urg si">Antes del rodaje</span></li>
-      <li><span class="n">3</span><span>Psicólogo del colegio: nombre, cargo y disponibilidad el viernes 16.<small>Y su validación de las 20 preguntas antes del 28.</small></span><span class="urg si">Antes del jue 15</span></li>
-      <li><span class="n">4</span><span>El documento oficial de SER+T y el significado exacto de la T.<small>Pendiente desde el 1 de septiembre. Sin él no salen el carrusel 2 ni el reel 3.</small></span><span class="urg">Antes del lun 19</span></li>
-      <li><span class="n">5</span><span>¿Ya está el concepto técnico de la evaluación estructural? ¿Qué dice?<small>Define el comodín.</small></span><span class="urg">Lo antes posible</span></li>
-      <li><span class="n">6</span><span>¿El colegio celebra el Día de los niños el viernes 30? ¿Hay reglas de disfraz?</span><span class="urg">Antes del vie 16</span></li>
-      <li><span class="n">7</span><span>¿Quién responde los mensajes de VISITA y PREGUNTAS, y cuáles son los horarios de visita?<small>La respuesta automática la dejamos configurada y probada antes del 22.</small></span><span class="urg">Antes del jue 22</span></li>
-      <li><span class="n">8</span><span>¿Qué se publicó entre el 1 y el 14 de octubre?<small>Para no repetir temas ni plantillas.</small></span><span class="urg">Esta semana</span></li>
-      <li><span class="n">9</span><span>¿Hay capacitación docente, simulacro o reunión de padres en octubre? ¿Cuándo abren admisiones 2027-2028?<small>Cualquiera de las dos cosas entra como cubrimiento o cambia el CTA del mes.</small></span><span class="urg">Esta semana</span></li>
-    </ul>
+    <div class="sec-cab rv">
+      <span class="rasgado">08 · Por confirmar</span>
+      <h2>Lo que necesitamos <em>del colegio.</em></h2>
+      <p class="lead">Nueve respuestas para arrancar. Los dos primeros puntos son para antes del jueves 15, porque de ellos depende el rodaje del viernes.</p>
+    </div>
+    <div class="pendientes rv">
+      <div class="pend-cab">
+        <b id="pendCuenta">0 de 9 listos</b>
+        <span class="peq">Se va marcando aquí y queda guardado en este navegador.</span>
+      </div>
+      <div class="progreso"><i id="pendBarra"></i></div>
+      <ul class="pend-lista" id="pendLista"></ul>
+    </div>
   </div>
 </section>
 
-<!-- ================= REGLAS Y MEDICIÓN ================= -->
+<!-- ============ REGLAS Y MEDICIÓN ============ -->
 <section id="reglas">
   <div class="wrap">
-    <p class="kicker"><b>09</b> · Reglas y medición</p>
-    <h2>Lo que no se negocia y cómo sabremos si sirvió.</h2>
+    <div class="sec-cab rv">
+      <span class="rasgado">09 · Reglas y medición</span>
+      <h2>Lo que no se negocia y <em>cómo sabremos si sirvió.</em></h2>
+    </div>
     <div class="dos">
-      <div class="caja">
-        <h3>No negociables</h3>
+      <div class="caja rv">
+        <h3>No se negocia</h3>
         <ul>
-          <li>Ningún niño en primer plano sin autorización firmada de su acudiente.</li>
+          <li>Ningún niño sale en primer plano sin la autorización firmada de su acudiente.</li>
           <li>Ninguna pieza dice que el colegio es seguro hasta que exista el concepto técnico firmado.</li>
-          <li>Cero comparaciones con colegios con nombre y cero datos del sismo como argumento de venta.</li>
-          <li>El colegio aprueba cada texto palabra por palabra antes de publicar.</li>
-          <li>El cuadro 0 es la recompensa, nunca el logo. El logo va en la placa de cierre.</li>
-          <li>Subtítulos de máximo 3 palabras, en la zona segura, nunca sobre una cara.</li>
-          <li>Color corregido plano por plano, voz por Adobe Podcast, música y loudness a −14 LUFS.</li>
-          <li>La palabra clave se dice y se escribe. No se dibujan botones ni se cierra con «síguenos».</li>
+          <li>No hay comparaciones con colegios que se nombren ni datos del sismo usados para vender.</li>
+          <li>El colegio aprueba cada texto, palabra por palabra, antes de publicarlo.</li>
+          <li>El primer cuadro de cada reel ya muestra algo; el logo va al cierre.</li>
+          <li class="solo-prod">Subtítulos de 3 palabras como máximo, en la zona segura y nunca sobre una cara.</li>
+          <li class="solo-prod">Color corregido plano por plano, voz limpiada con Adobe Podcast y volumen final a −14 LUFS.</li>
+          <li>La palabra clave se dice en voz y se escribe en pantalla. No se dibujan botones ni se cierra con «síguenos».</li>
           <li>Un reel por día como máximo y una pieza de venta por semana.</li>
         </ul>
       </div>
-      <div class="caja">
-        <h3>Qué mediríamos</h3>
-        <div class="tabla-scroll">
+      <div class="caja rv d1">
+        <h3>Qué vamos a medir</h3>
+        <div style="overflow-x:auto">
         <table class="med">
           <tr><th>Objetivo</th><th>Métrica</th><th>Cumplió si…</th></tr>
-          <tr><td>Alcance (reels 2, 4, 6)</td><td>Vistas frente a la mediana de la cuenta en septiembre</td><td>≥ 2 veces la mediana</td></tr>
-          <tr><td>Guardado (carruseles 1–3)</td><td>Guardados ÷ alcance (Insights)</td><td>≥ 3 %</td></tr>
-          <tr><td>Comentarios (reel 5)</td><td>Comentarios ÷ vistas</td><td>≥ 0,5 %</td></tr>
-          <tr><td>Visita (reel 3)</td><td>Mensajes de VISITA → visitas agendadas</td><td>Las contamos con el colegio</td></tr>
-          <tr><td>Marca (reel 1)</td><td>Likes ÷ vistas y etiquetas a profes</td><td>≥ 5 % de likes</td></tr>
+          <tr><td>Alcance (reels 2, 4 y 6)</td><td>Vistas frente a la mediana de la cuenta en septiembre</td><td>Duplica la mediana</td></tr>
+          <tr><td>Guardado (carruseles 1 a 3)</td><td>Guardados sobre alcance</td><td>3 % o más</td></tr>
+          <tr><td>Comentarios (reel 5)</td><td>Comentarios sobre vistas</td><td>0,5 % o más</td></tr>
+          <tr><td>Visita (reel 3)</td><td>Mensajes con VISITA → visitas agendadas</td><td>Lo contamos con el colegio</td></tr>
+          <tr><td>Marca (reel 1)</td><td>Likes sobre vistas, y profes etiquetados</td><td>5 % o más</td></tr>
         </table>
         </div>
-        <p class="nota" style="margin-top:12px">La mediana de referencia la sacamos de los Insights de septiembre. Al cierre de octubre entregamos la tabla pieza por pieza con tres decisiones para noviembre: qué serie sube, cuál se pausa y qué formato probamos.</p>
+        <p class="peq" style="margin-top:12px">La mediana sale de las estadísticas de septiembre. Al cierre del mes entregamos los resultados pieza por pieza y tres decisiones para noviembre: qué serie crece, cuál se pausa y qué probamos.</p>
       </div>
     </div>
   </div>
@@ -883,10 +758,472 @@ Gracias a todas las familias que armaron su disfraz en casa. ¿De qué se disfra
 
 <footer>
   <div class="wrap">
-    <img src="media/4a5a3a73af.png" alt="BLACKMOUTH">
-    <span>Plan de contenidos para el Liceo Campestre San Miguel · Octubre 2026 · Preparado el 14 de octubre</span>
+    <span>Plan de contenidos de octubre 2026 · Liceo Campestre San Miguel · versión del 14 de octubre</span>
+    <span class="firma"><span>Hecho por</span><img src="media/4a5a3a73af.png" alt="BLACKMOUTH"></span>
   </div>
 </footer>
+<div class="toast" id="toast" role="status"></div>
 
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const QUIETO=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const LOGO_SM="media/f713e89272.png";
+const guarda={get(k,d){try{const v=localStorage.getItem('sm-oct26-'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem('sm-oct26-'+k,JSON.stringify(v))}catch(e){}}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ico=(id,cls='')=>`<svg class="${cls}"><use href="#${id}"/></svg>`;
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1800)}
+
+/* ---------------- vista colegio / producción ---------------- */
+function ponVista(v){document.body.classList.toggle('prod',v==='prod');$$('.vista button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.vista===v));guarda.set('vista',v)}
+$$('.vista button').forEach(b=>b.onclick=()=>{ponVista(b.dataset.vista);toast(b.dataset.vista==='prod'?'Vista de producción: se ven las reglas y los datos técnicos':'Vista para el colegio')});
+ponVista(guarda.get('vista','colegio'));
+
+/* ---------------- revelar al hacer scroll ---------------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+function observa(){ $$('.rv:not(.in)').forEach(el=>io.observe(el)) }
+observa();
+
+/* contadores de las notas */
+const ioN=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;ioN.unobserve(e.target);const fin=+e.target.dataset.cuenta;let i=0;
+  const paso=()=>{i++;e.target.textContent=i;if(i<fin)setTimeout(paso,QUIETO?0:140)};paso()}),{threshold:.5});
+$$('[data-cuenta]').forEach(e=>ioN.observe(e));
+
+/* barra: sección activa */
+const links=$$('.barra nav a');
+const ioS=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+links.forEach(a=>{const s=$(a.getAttribute('href'));if(s)ioS.observe(s)});
+
+/* ---------------- chat de la portada ---------------- */
+const NADAS=['un largo en la piscina','una canción nueva','una maqueta','pintura','un amigo de otro grado','un experimento','un baile','ayudar a un chiquito'];
+let chatT=[], rodT=null;
+function chat(){
+  chatT.forEach(clearTimeout);chatT=[];clearInterval(rodT);
+  const m=$('#msgs');m.innerHTML='';$('#revela').classList.remove('in');
+  const add=(html,cls,t)=>chatT.push(setTimeout(()=>{const d=document.createElement('div');d.className='msg '+cls;d.innerHTML=html;m.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('in')))},t));
+  const typing=(t0,t1)=>{chatT.push(setTimeout(()=>{const d=document.createElement('div');d.className='escribiendo';d.id='typ';d.innerHTML='<i></i><i></i><i></i>';m.appendChild(d);requestAnimationFrame(()=>d.classList.add('in'))},t0));chatT.push(setTimeout(()=>{const d=$('#typ');d&&d.remove()},t1))};
+  const k=QUIETO?0:1;
+  add('¿Cómo te fue hoy, mi amor?','yo',300*k);
+  add('¿Qué hiciste?','yo',1100*k);
+  typing(1700*k,3300*k);
+  add('Nada.','el grande',3300*k);
+  add('¿Nada de nada? 🤨','yo',4600*k);
+  add('Nada.','el',5600*k);
+  chatT.push(setTimeout(()=>{$('#revela').classList.add('in');let i=0;const r=$('#rodillo');
+    r.innerHTML=`<span>${NADAS[0]}</span>`;
+    rodT=setInterval(()=>{i=(i+1)%NADAS.length;const v=r.querySelector('span');v.classList.add('sale');const n=document.createElement('span');n.className='entra';n.textContent=NADAS[i];r.appendChild(n);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>n.classList.remove('entra')));setTimeout(()=>v.remove(),460)},1500)},6600*k));
+}
+$('#otraVez').onclick=chat;
+const ioC=new IntersectionObserver(es=>{if(es[0].isIntersecting){chat();ioC.disconnect()}},{threshold:.3});ioC.observe($('#chat'));
+
+/* ---------------- tarjeta que voltea ---------------- */
+$('#voltear').onclick=()=>{const t=$('#tarjeta3d');t.classList.toggle('vuelta');$('#voltear').textContent=t.classList.contains('vuelta')?'Volver a septiembre ↻':'Ver la otra estructura ↻'};
+$('#tarjeta3d').onclick=()=>$('#voltear').click();
+
+/* ================= DATOS ================= */
+const OBJ={alc:{n:'Alcance',c:'o-alc',col:'#9fdcec',d:'Llegar a papás que no siguen al colegio'},gua:{n:'Guardado',c:'o-gua',col:'#c3f58a',d:'Algo útil que se guarda y se comparte'},
+  com:{n:'Comentarios',c:'o-com',col:'#f7ef73',d:'Conversación con palabra clave'},vis:{n:'Visita',c:'o-vis',col:'#f6b8cf',d:'La única pieza de venta: «ven un viernes»'},
+  mar:{n:'Marca',c:'o-mar',col:'#d9d4ff',d:'Orgullo de la comunidad del colegio'}};
+
+const SERIES=[
+ {id:'A',tab:'¿Qué hiciste hoy? —Nada.',sub:'Serie A',titulo:'«¿Qué hiciste hoy? —Nada.»',
+  desc:'El niño dice «nada» y el reel muestra todo lo que cupo en ese «nada», con un contador. Es corto y rítmico, y lo entiende cualquier papá, sea o no del colegio.',
+  ficha:[['Objetivo','Alcance'],['Duración','15 a 22 s'],['Apertura','De espaldas, con el morral: «—¿Qué hiciste hoy?» · corte seco · «—Nada.»'],['Cierre','«Eso fue nada.» y la placa del colegio'],['Llamado','La pregunta, dicha y escrita: «¿Y el tuyo qué te contesta?»']],
+  caps:['r2','r6']},
+ {id:'B',tab:'La otra estructura',sub:'Serie B',titulo:'La otra estructura',
+  desc:'SER+T explicado con imágenes de un viernes: clases por afinidad, grados mezclados, los grandes cuidando a los chiquitos. Es la serie que vende el colegio.',
+  ficha:[['Objetivo','Marca y visita'],['Duración','22 a 33 s'],['Apertura','Un plano que conecta con septiembre: la columna de la revisión'],['Cierre','La misma placa de septiembre: logo y una línea'],['Llamado','«Comenta VISITA» o una pregunta para contar algo']],
+  caps:['c2','r3','r4']},
+ {id:'C',tab:'Pregúntale distinto',sub:'Serie C',titulo:'Pregúntale distinto',
+  desc:'La respuesta práctica al «nada». El psicólogo del colegio da las preguntas que sí abren conversación. Le sirve a cualquier papá, y se guarda.',
+  ficha:[['Objetivo','Comentarios y guardados'],['Duración','35 a 40 s'],['Apertura','La frase que todos conocen, escrita sobre el psicólogo'],['Cierre','La palabra PREGUNTAS, grande, en rojo'],['Llamado','«Comenta PREGUNTAS y te mandamos las 20»']],
+  caps:['r5','c3']}
+];
+
+/* escenas: d=duración, fila=fila del guion, bg, ico, plano, txt[[texto,clase,segundo]], items=[contador], gris, placa */
+const G={azul:'linear-gradient(165deg,#8fb0d6,#3b4f78)',verde:'linear-gradient(165deg,#a8cf7d,#3f6a35)',calido:'linear-gradient(165deg,#f2c27b,#b5552f)',
+  indigo:'linear-gradient(165deg,#6c63c7,#2a2462)',gris:'linear-gradient(170deg,#d8d6d0,#7d7a73)',rosa:'linear-gradient(165deg,#f3b7cf,#a1426b)',noche:'linear-gradient(165deg,#5b6b55,#2a3326)'};
+
+const PIEZAS=[
+{id:'r1',tipo:'reel',cod:'REEL 1',fecha:'Jueves 15 de octubre',dia:15,dur:'20 a 25 s',obj:'mar',serie:null,titulo:'Primero, los que cuidan',corto:'Los profes',
+ res:'El taller de bienestar docente del 23 de agosto, una semana antes del primer día, contado como lo que fue: el colegio cuidando a los que cuidan. Retoma la frase de septiembre («Primero la estructura») y la lleva a las personas.',
+ datos:[['Material','Archivo del 23-ago, bloques 02 a 08 (ya hay un montaje en borrador: «frases docentes»)'],['Audio','Música cálida y las frases de los profes'],['Cámara lenta','Bloque 07, grabado a 60 fps']],
+ escenas:[
+  {d:2.5,fila:0,bg:G.noche,ico:'flor',plano:'cenital del grupo acostado en la visualización guiada',txt:[['Antes de recibir a sus hijos,','',0],['los profes se tomaron un día para ellos.','',.6]]},
+  {d:5.5,fila:1,bg:G.azul,ico:'manos',plano:'respiración y relajación: tres planos cortos',items:['manos','ojos cerrados','el facilitador']},
+  {d:7,fila:2,bg:G.rosa,ico:'globo',plano:'el ejercicio del globo: lo sueltan',txt:[['«…la mejor frase de un profe…»','voz',.4]]},
+  {d:5,fila:3,bg:G.calido,ico:'corazon',plano:'presentaciones en cámara lenta, abrazos, círculo de cierre',txt:[['Primero, los que cuidan.','gr',.5]]},
+  {d:3,fila:4,placa:true,txt:[['¿Qué profe te marcó a ti?','',0],['Etiquétalo.','rojo',.5]]}],
+ guion:[['0–2,5','Plano cenital del grupo acostado en la visualización guiada.',['Antes de recibir a sus hijos,','los profes se tomaron un día para ellos.'],''],
+  ['2,5–8','Respiración y relajación: tres planos cortos (manos, ojos cerrados, el facilitador). Un cambio cada 2 s.',[],''],
+  ['8–15','Ejercicio del globo: lo sueltan.',[],'La mejor frase de un profe en el montaje «frases docentes», subtitulada.'],
+  ['15–20','Presentaciones en cámara lenta, abrazos, círculo de cierre.',['Primero, los que cuidan.'],''],
+  ['20–23','Placa del colegio.',['¿Qué profe te marcó a ti? Etiquétalo.'],'']],
+ post:'Una semana antes de que volvieran los niños, volvieron ellos. Un día para respirar, soltar y encontrarse como equipo.\nPorque un profe que está bien enseña mejor.\n\n¿Qué profe te marcó a ti? Etiquétalo aquí abajo 👇',
+ reglas:'09 §1.17 y 06 §9: pregunta que pide una anécdota y una etiqueta, no un sí o un no · 01 §1: el cuadro 0 es la recompensa, nunca el logo · 06 §17: frase-sello que vuelve («Primero…»).'},
+
+{id:'c1',tipo:'carr',cod:'CARRUSEL 1',fecha:'Viernes 16 de octubre',dia:16,dur:'8 láminas',obj:'gua',serie:null,titulo:'Disfraz sin comprar nada',corto:'Disfraces',
+ res:'Sale dos semanas antes del Día de los niños, justo cuando los papás empiezan a pensar en el disfraz. Le sirve a cualquier familia, se guarda y se conecta con un objetivo del colegio: la sostenibilidad. Cierra con una invitación que da pie a la secuela del 31.',
+ laminas:[['Disfraz sin comprar nada','6 ideas con lo que hay en casa','','morral'],['Robot','Una caja, tapas de botella y papel aluminio.','','columna'],['Astronauta','Dos botellas de gaseosa como tanques y un casco de cartón.','navy','estrella'],
+  ['Pintor','Una camiseta vieja, pinceles y manchas de témpera.','','pincel'],['Árbol del campo','Ropa café, hojas de papel verde y mucha paciencia.','','flor'],['Superhéroe','Una toalla de capa y una inicial de cartulina.','rojo','corazon'],
+  ['Chef','Un delantal, un gorro de cartulina y una cuchara de palo.','','sol'],['El 30, mándanos la foto','Por mensaje directo. Armamos el álbum del colegio.','navy','camara']],
+ post:'El Día de los niños se acerca y el mejor disfraz no se compra: se arma en casa, juntos.\nGuarda estas 6 ideas y el 30 mándanos la foto del resultado. Armamos el álbum del colegio.\n\n¿Cuál van a hacer en tu casa?',
+ aviso:'Confirmar que el colegio celebra el Día de los niños el viernes 30 y si hay reglas para los disfraces (sin máscaras, sin armas de juguete…). Si no lo celebra, esta pieza se cambia por lo que haya en esa fecha.',
+ reglas:'09 §1.13: las fechas de temporada se publican 2 o 3 semanas antes, nunca el mismo día · 09 §4.7: la primera lámina es la recompensa · 09 §1.12: la acción deja agendada su secuela (reel 6 y carrusel 4).'},
+
+{id:'r2',tipo:'reel',cod:'REEL 2',fecha:'Lunes 19 de octubre',dia:19,dur:'15 a 20 s',obj:'alc',serie:'A',titulo:'¿Qué hiciste hoy? —Nada.',corto:'Nada · cap. 1',
+ res:'El chiste que todo papá conoce, y después la prueba: ocho «nadas» del viernes, uno cada segundo y medio, con un contador. Es la pieza de alcance del mes: corta, se entiende sin sonido y solo pide una respuesta fácil de dar.',
+ datos:[['Material','Rodaje 1, bloques A y B'],['Audio','Base cálida y rítmica, cortes a tiempo'],['Texto','Poppins, en navy y blanco']],
+ escenas:[
+  {d:1.4,fila:0,bg:G.azul,ico:'morral',plano:'niño de espaldas con el morral, caminando a la salida',txt:[['—¿Qué hiciste hoy?','',0]]},
+  {d:1.1,fila:1,bg:G.azul,ico:'morral',plano:'el mismo plano, quieto',txt:[['—Nada.','gr',0]]},
+  {d:11.5,fila:2,bg:G.verde,ico:'estrella',plano:'ocho planos del viernes (los «nadas» se escriben con lo que pase de verdad)',items:['nada n.º 1: una maqueta','nada n.º 2: un largo en la piscina','nada n.º 3: una canción','nada n.º 4: pintura','nada n.º 5: un amigo de otro grado','nada n.º 6: un experimento','nada n.º 7: un baile','nada n.º 8: ayudar a un chiquito']},
+  {d:3,fila:3,bg:G.azul,ico:'morral',plano:'vuelve el niño, ya en la puerta o en el carro',txt:[['Eso fue nada.','gr',.3]]},
+  {d:3,fila:4,placa:true,txt:[['¿Y el tuyo qué te contesta?','',.2],['«¿Y el tuyo qué te contesta?»','voz',.6]]}],
+ guion:[['0–1,4','Niño de espaldas con el morral, caminando hacia la salida.',['—¿Qué hiciste hoy?'],''],
+  ['1,4–2,5','Corte seco. El mismo plano, quieto.',['—Nada.'],''],
+  ['2,5–14','Ocho planos de 1,4 s del viernes, cada uno con su etiqueta: «nada n.º 1: lo que se ve»… hasta el n.º 8. Las etiquetas se escriben con lo que de verdad pase ese día. Primero manos y detalles.',[],''],
+  ['14–17','Vuelve el niño, ya en la puerta o en el carro.',['Eso fue nada.'],''],
+  ['17–20','Placa del colegio.',['¿Y el tuyo qué te contesta?'],'Voz de una mamá o un papá del colegio: «¿Y el tuyo qué te contesta?»']],
+ post:'—¿Qué hiciste hoy?\n—Nada.\n\nEsto fue «nada» un viernes en el San Miguel.\n¿Y el tuyo qué te contesta cuando le preguntas? 👇',
+ reglas:'09 §1.5: alcance; corto, sin barrera, se entiende sin sonido · 09 §3: repetición con contador · 01 §8: el último cuadro empalma con el primero · 09 §1.6: apertura y cierre fijos de serie · 09 §1.17: la pregunta va en voz y en pantalla.'},
+
+{id:'c2',tipo:'carr',cod:'CARRUSEL 2',fecha:'Miércoles 21 de octubre',dia:21,dur:'6 láminas',obj:'gua',serie:'B',titulo:'SER+T, explicado a un papá que nunca lo ha oído',corto:'SER+T',
+ res:'El modelo pedagógico es lo que diferencia al colegio, y casi nadie afuera sabe qué es. Lo explicamos en seis láminas con fotos del rodaje del viernes, la víspera del reel 3.',
+ laminas:[['SER+T','explicado a un papá que nunca lo ha oído','navy','pregunta'],['SER','El desarrollo personal, social y emocional. Lo que el niño es, no solo lo que sabe.','','corazon'],['+T','Trascender: liderazgo, compromiso con su comunidad e impacto en otros.','','estrella'],
+  ['Los viernes','Cada estudiante entra a la clase que eligió. No por grado: por afinidad.','','nota'],['Y pasa esto','Como se mezclan las edades, los grandes cuidan a los chiquitos.','rojo','manos'],['Ven un viernes','Comenta VISITA y te mandamos los horarios.','navy','sol']],
+ post:'SER+T no es una sigla más: es la forma como aprendemos en el San Miguel. Te lo explicamos en 6 láminas.\n\nComenta VISITA y te mandamos los horarios para verlo un viernes.',
+ aviso:'Pendiente desde el 1-sep: el documento escrito de SER+T. La presentación del colegio dice que la T es «Trascender», y el guion de septiembre decía «aprender algo y saber para qué sirve». Ni la sigla ni su significado se publican de memoria: el colegio los confirma por escrito.',
+ reglas:'09 §4.7: una idea por lámina · 06 §1–2: la palabra clave nombra lo que quiere el papá (VISITA), no un descuento.'},
+
+{id:'r3',tipo:'reel',cod:'REEL 3',fecha:'Jueves 22 de octubre',dia:22,dur:'28 a 33 s',obj:'vis',serie:'B',titulo:'La otra estructura',corto:'La otra estructura',
+ res:'Es el guion 03 de septiembre, que estaba esperando a los niños. Abre con la revisión del edificio y gira hacia SER+T. Es la pieza de venta del mes, y el llamado no es «matricúlate» sino «ven a verlo un viernes».',
+ datos:[['Material','Archivo del 2-sep y rodaje 1, bloques B y E'],['Audio','0–5 s solo ambiente; desde el corte, música cálida'],['Voz','Rectoría o un docente']],
+ escenas:[
+  {d:3,fila:0,bg:G.gris,gris:true,ico:'columna',plano:'la columna de la revisión de septiembre',txt:[['Revisamos la estructura del edificio.','',.2]]},
+  {d:2,fila:1,bg:G.calido,ico:'sol',plano:'corte seco a una clase del viernes, llena de niños',txt:[['Esta es la otra.','gr',0]]},
+  {d:7,fila:2,bg:G.verde,ico:'nota',plano:'cuatro planos cortos: instrumento, pincel, baile, proyecto',items:['un instrumento','un pincel','un baile','el proyecto que haya'],txt:[['«Los viernes, cada estudiante entra a la clase que eligió.»','voz',.3]]},
+  {d:7,fila:3,bg:G.indigo,ico:'manos',plano:'una mesa con niños de distintas edades trabajando juntos',txt:[['«No por grado. Por afinidad.»','voz',.3]]},
+  {d:6,fila:4,bg:G.rosa,ico:'pincel',plano:'un niño muestra lo que hizo con sus manos',txt:[['«Se llama SER+T.»','voz',.3]]},
+  {d:6,fila:5,placa:true,txt:[['Ven un viernes y míralo.','',.2],['Comenta VISITA','rojo',1]]}],
+ guion:[['0–3','La columna de la revisión de septiembre.',['Revisamos la estructura del edificio.'],''],
+  ['3–5','Corte seco a una clase del viernes, llena de niños.',['Esta es la otra.'],''],
+  ['5–12','Cuatro planos cortos: un instrumento, un pincel, baile, la feria o el proyecto que haya.',[],'«Los viernes, cada estudiante entra a la clase que eligió.»'],
+  ['12–19','Una mesa con niños de distintas edades trabajando juntos.',[],'«No por grado. Por afinidad. Y mezclados con niños de otras edades.»'],
+  ['19–25','Plano medio: un niño muestra lo que hizo con sus manos.',[],'«Se llama SER+T.» + la definición oficial en una frase.'],
+  ['25–31','Placa del colegio.',['Ven un viernes y míralo.','Comenta VISITA'],'«Comenta VISITA y te mandamos los horarios para conocer el colegio.»']],
+ post:'Comenta VISITA y te mandamos los horarios para conocer el colegio un viernes.\n\nEn septiembre revisamos la estructura del edificio. Esta es la otra: SER+T, el modelo sobre el que está construido todo lo demás.',
+ dm:'¡Hola! Estos son los horarios para visitar el colegio: [horarios que defina el colegio].\n¿Para qué grado estás buscando cupo? Así te presentamos con la persona indicada.',
+ reglas:'06 §1: palabra clave dicha y escrita, sin botón dibujado · 09 §1.16: la oferta entra pasado el 60 % del reel · 01 §8: abre una pregunta («¿cuál es la otra?») que se cierra en el mismo reel · regla de septiembre: nada sobre el veredicto del edificio.'},
+
+{id:'r4',tipo:'reel',cod:'REEL 4',fecha:'Lunes 26 de octubre',dia:26,dur:'22 a 28 s',obj:'alc',serie:'B',titulo:'Los grandes cuidan a los chiquitos',corto:'Grandes y chiquitos',
+ res:'Sale de algo que vimos en un rodaje: los grandes cuidan a los chiquitos, y los chiquitos les piden ayuda sin miedo. Es el resultado directo de mezclar grados los viernes, y nadie más lo está contando. El cierre cambia frente al guion de septiembre: en vez de la visita, que ya pidió el reel 3, una pregunta que cualquiera puede contestar.',
+ datos:[['Material','Rodaje 1, bloque C'],['Audio','Música cálida'],['Si no sale la toma','Se graba en el rodaje 2']],
+ escenas:[
+  {d:4,fila:0,bg:G.verde,ico:'manos',plano:'un niño grande y uno chiquito en el mismo cuadro, en el descanso',txt:[['En la mayoría de colegios, un niño de once no le habla a uno de seis.','',.2]]},
+  {d:2.5,fila:1,bg:G.verde,ico:'corazon',plano:'el chiquito le pide algo al grande',txt:[['Aquí sí.','gr',0]]},
+  {d:8.5,fila:2,bg:G.calido,ico:'morral',plano:'tres o cuatro planos de ayuda',items:['amarrando un cordón','cargando una lonchera','explicando algo'],txt:[['«Los viernes las clases se arman por afinidad, no por edad.»','voz',.4]]},
+  {d:6,fila:3,bg:G.azul,ico:'sol',plano:'plano general del descanso, grados mezclados',txt:[['«Así que para la hora del descanso ya se conocen.»','voz',.3]]},
+  {d:5,fila:4,placa:true,txt:[['¿Quién te cuidaba a ti en el colegio?','',.2]]}],
+ guion:[['0–4','Un niño grande y uno chiquito en el mismo cuadro, en el descanso.',['En la mayoría de colegios, un niño de once no le habla a uno de seis.'],''],
+  ['4–6,5','El chiquito le pide algo al grande.',['Aquí sí.'],'Es el único texto de la serie que crece.'],
+  ['6,5–15','Tres o cuatro planos: amarrando un cordón, cargando una lonchera, explicando algo.',[],'«Los viernes las clases se arman por afinidad, no por edad.»'],
+  ['15–21','Plano general del descanso con grados mezclados.',[],'«Así que para la hora del descanso ya se conocen.»'],
+  ['21–26','Placa del colegio.',['¿Quién te cuidaba a ti en el colegio?'],'«¿Y a ti quién te cuidaba en el colegio?»']],
+ post:'Aquí los grandes cuidan a los chiquitos. Y los chiquitos les piden ayuda sin miedo.\nNo es casualidad: los viernes las clases se arman por afinidad, no por edad.\n\n¿Quién te cuidaba a ti en el colegio? Etiquétalo 👇',
+ reglas:'09 §1.17: pregunta en voz que pide una anécdota · 09 §1.9: la serie B no repite plantilla (el reel 3 es proceso, el 4 es escena) · 03: el gancho va en dos líneas y dura 4 s completos · la provocación va a la categoría («la mayoría de colegios»), nunca a un colegio con nombre.'},
+
+{id:'r5',tipo:'reel',cod:'REEL 5',fecha:'Miércoles 28 de octubre',dia:28,dur:'35 a 40 s',obj:'com',serie:'C',titulo:'Pregúntale distinto',corto:'El psicólogo',
+ res:'La respuesta útil al chiste de la serie A. El psicólogo del colegio explica por qué «¿qué hiciste hoy?» no funciona y da tres preguntas que sí. El regalo son 20 preguntas en una hoja, firmadas por él. Llega a papás de fuera del colegio, que es justo el público que buscamos.',
+ datos:[['Material','Rodaje 1, bloque D'],['Audio','Su voz y una base suave'],['Regalo','PDF «20 preguntas para después del colegio»']],
+ escenas:[
+  {d:2.5,fila:0,bg:G.indigo,ico:'pregunta',plano:'psicólogo a cámara, plano medio, colegio desenfocado detrás',txt:[['Si le preguntas «¿qué hiciste hoy?», te va a decir «nada».','',.1]]},
+  {d:6.5,fila:1,bg:G.indigo,ico:'pregunta',plano:'el psicólogo explica, con sus palabras',txt:[['[Nombre] · Psicólogo','etq',.3],['Por qué la pregunta es muy grande para un niño cansado','voz',1.2]]},
+  {d:19,fila:2,bg:G.verde,ico:'cara',plano:'una pregunta por plano, con imágenes del viernes detrás',items:['¿Con quién te sentaste hoy?','¿Qué fue lo más chistoso?','¿A quién ayudaste?']},
+  {d:5,fila:3,bg:G.indigo,ico:'pregunta',plano:'vuelve el psicólogo a cámara',txt:[['«Tengo veinte más. Comenta PREGUNTAS y te las mandamos.»','voz',.2]]},
+  {d:4,fila:4,placa:true,txt:[['Comenta','',.1],['PREGUNTAS','rojo',.5]]}],
+ guion:[['0–2,5','Psicólogo a cámara, plano medio, con el colegio desenfocado detrás.',['Si le preguntas «¿qué hiciste hoy?», te va a decir «nada».'],''],
+  ['2,5–9','Explica con sus palabras por qué la pregunta es demasiado grande para un niño cansado. Nombre y cargo en pantalla, 3 s.',[],''],
+  ['9–28','Tres preguntas, una por plano, con imágenes del viernes detrás.',['¿Con quién te sentaste hoy?','¿Qué fue lo más chistoso?','¿A quién ayudaste?'],'Las preguntas finales las elige él; estas son ejemplos.'],
+  ['28–33','Vuelve a cámara.',[],'«Tengo veinte más. Comenta PREGUNTAS y te las mandamos.»'],
+  ['33–37','Placa del colegio.',['Comenta PREGUNTAS'],'En rojo del colegio, grande.']],
+ post:'Comenta PREGUNTAS y te mandamos las 20 preguntas que recomienda nuestro psicólogo para después del colegio.\n\n«¿Qué hiciste hoy?» es una pregunta demasiado grande para un niño cansado. Prueba con estas.',
+ dm:'¡Aquí están las 20 preguntas! [enlace al PDF]\n¿En qué grado está tu hijo? Te contamos cómo trabajamos esa edad en el colegio.',
+ aviso:'Confirmar el nombre y el cargo del psicólogo, que pueda grabar el viernes 16 y que valide las 20 preguntas antes de publicarlas. El PDF lo diseñamos nosotros con el estilo de cuaderno del colegio.',
+ reglas:'06 §1–3: la palabra clave nombra lo que el papá quiere y el regalo dice cantidad y forma (20 preguntas, una hoja) · 09 §1.3: el mensaje directo filtra con una pregunta · 01 §5: la primera frase nombra el problema del papá · 09 §4.4: probar la respuesta automática desde otra cuenta antes de publicar.'},
+
+{id:'c3',tipo:'carr',cod:'CARRUSEL 3',fecha:'Jueves 29 de octubre',dia:29,dur:'10 láminas',obj:'gua',serie:'C',titulo:'8 preguntas que sí sacan respuesta',corto:'8 preguntas',
+ res:'La versión para guardar del reel 5: una pregunta por lámina, con una línea que explica por qué funciona. La última lámina repite la palabra clave para quien quiera las 20.',
+ laminas:[['—¿Qué hiciste hoy? —Nada.','8 preguntas que sí sacan respuesta. Con nuestro psicólogo.','','pregunta'],['Pregunta 1','Una por lámina, con una línea que explica por qué funciona. Las define el psicólogo.','','cara'],['…','Así hasta la pregunta 8.','navy','estrella'],['¿Quieres las 20?','Comenta PREGUNTAS.','rojo','pregunta']],
+ post:'Guárdalo para esta tarde, cuando lo recojas.\nY si quieres las 20, comenta PREGUNTAS.',
+ reglas:'09 §4.7: el carrusel de la semana es la versión para guardar del reel · 09 §1.4: se pide guardar antes del contenido.'},
+
+{id:'r6',tipo:'reel',cod:'REEL 6',fecha:'Sábado 31 de octubre',dia:31,dur:'15 a 18 s',obj:'alc',serie:'A',titulo:'—Nada. · Día de los niños',corto:'Nada · cap. 2',
+ res:'El capítulo 2 de la serie: un niño disfrazado diciendo «nada». La broma se entiende sola. Cierra la acción del carrusel 1 con los disfraces hechos en casa que mandaron las familias.',
+ datos:[['Material','Rodaje 2'],['Audio','La misma base del capítulo 1'],['Fotos','Las que manden las familias, con su permiso']],
+ escenas:[
+  {d:2.5,fila:0,bg:G.calido,ico:'mascara',plano:'niño disfrazado, de espaldas, caminando a la salida',txt:[['—¿Qué hiciste hoy?','',0],['—Nada.','gr',1.2]]},
+  {d:9.5,fila:1,bg:G.rosa,ico:'estrella',plano:'siete «nadas» del día',items:['nada n.º 1: el desfile','nada n.º 2: un robot de cartón','nada n.º 3: profes disfrazados','nada n.º 4: un astronauta','nada n.º 5: un chef','nada n.º 6: una capa de toalla','nada n.º 7: la foto del curso']},
+  {d:3,fila:2,bg:G.calido,ico:'mascara',plano:'el niño, de frente o de perfil, con el disfraz',txt:[['Eso fue nada.','gr',.3]]},
+  {d:3,fila:3,placa:true,txt:[['¿De qué se disfrazó el tuyo?','',.2]]}],
+ guion:[['0–2,5','Niño disfrazado, de espaldas, caminando a la salida.',['—¿Qué hiciste hoy?','—Nada.'],''],
+  ['2,5–12','Siete «nadas» del día con contador: el desfile, los disfraces de cartón, los profes disfrazados. Si las familias mandaron fotos, entran aquí.',[],''],
+  ['12–15','El niño, de frente o de perfil, con el disfraz.',['Eso fue nada.'],''],
+  ['15–18','Placa del colegio.',['¿De qué se disfrazó el tuyo?'],'']],
+ post:'—¿Qué hiciste hoy?\n—Nada. 🎃\n\nGracias a todas las familias que armaron el disfraz en casa. ¿De qué se disfrazó el tuyo? Muéstranos aquí abajo 👇',
+ reglas:'09 §1.6: apertura y cierre idénticos al capítulo 1 · 09 §1.9: la serie A sale 2 veces en 14 días, no más · 09 §1.12: es la secuela de la acción del carrusel 1.'}
+];
+const P=Object.fromEntries(PIEZAS.map(p=>[p.id,p]));
+
+const HISTORIAS=[
+ {dia:15,t:'Jue 15',h:'¿Qué profe te marcó a ti?',p:'Se comparte el reel 1 con un sticker de mención: «Etiqueta al profe que te marcó».',ico:'corazon'},
+ {dia:16,t:'Vie 16',h:'Hoy grabamos un viernes',p:'El rodaje en vivo, sin caras de niños: manos, materiales, el salón listo.',ico:'camara',navy:true},
+ {dia:17,t:'Sáb 17',h:'Cuando le preguntas qué hizo hoy, te dice…',encuesta:['Nada','Ya te dije','Me cuenta todo'],ico:'pregunta'},
+ {dia:19,t:'Lun 19',h:'El ___ % dijo «nada»',p:'Se comparte el reel 2 con el resultado real de la encuesta. Solo con el dato que salga.',ico:'estrella'},
+ {dia:21,t:'Mié 21',h:'¿Qué significa la T de SER+T?',encuesta:['Tecnología','Trascender','Talento'],ico:'pregunta',navy:true},
+ {dia:24,t:'Sáb 24',h:'Detrás de cámaras del viernes',p:'Las mejores respuestas de la caja de preguntas y un recordatorio: comenta VISITA.',ico:'camara'},
+ {dia:28,t:'Mié 28',h:'¿Qué pregunta te funciona a ti?',caja:true,p:'Las respuestas se comparten el jueves.',ico:'cara'},
+ {dia:30,t:'Vie 30',h:'¡Día de los niños!',p:'En vivo, en grupo y de espaldas. Y el recordatorio: «mándanos la foto del disfraz».',ico:'mascara',navy:true},
+ {dia:31,t:'Sáb 31',h:'Sus disfraces',p:'Se comparte el reel 6 junto con las fotos que mandaron las familias, con su permiso.',ico:'sol'}
+];
+
+const RODAJES=[
+ {id:'r16',tab:'Viernes 16 · Un viernes SER+T',titulo:'Un viernes SER+T',nota:'Alimenta los reels 2, 3, 4 y 5 y los carruseles 2 y 3. Si el colegio no puede el 16, se pasa al viernes 23 y el calendario se corre una semana.',
+  tomas:[['A · Salida','Un niño de espaldas con el morral, caminando a la puerta o al carro, en dos versiones: caminando y quieto. Es la apertura de la serie A.'],
+   ['B · Clases por afinidad','Plano fijo de 8–10 s de cada clase, aunque se usen 1,5 s. Primero manos y detalles: un instrumento, un pincel, una maqueta, el agua. Anotar qué es cada clase para las etiquetas de los «nadas».'],
+   ['★ C · Descanso con edades mezcladas','Un grande y un chiquito en el mismo cuadro: un cordón, una lonchera, una explicación. Es el plano del mes: con uno bueno, el reel 4 queda hecho.'],
+   ['D · Psicólogo a cámara','Plano medio, mirando a la cámara. Que responda incluyendo la pregunta y que deje dos segundos de silencio al terminar. Grabar las 20 preguntas en voz, por si alguna sirve sola.'],
+   ['E · Lo que hicieron','Un niño mostrando a cámara algo hecho con sus manos (solo con autorización).'],
+   ['F · Fotos para el carrusel 2','Una por lámina: clase, edades mezcladas, grande con chiquito.'],
+   ['G · Ambiente','30 s de sonido limpio del colegio, con niños.']]},
+ {id:'r30',tab:'Viernes 30 · Día de los niños',titulo:'Día de los niños',nota:'Alimenta el reel 6, el carrusel 4 y las historias del día. Por confirmar con el colegio.',
+  tomas:[['A · Apertura de la serie A','Un niño disfrazado de espaldas, caminando a la salida, con el mismo encuadre del rodaje 1.'],
+   ['B · Los «nadas» del día','Desfile, disfraces de cartón, profes disfrazados. Planos de 8–10 s.'],
+   ['C · Retratos en cámara lenta','Solo de niños con autorización.'],
+   ['D · Historias en vivo','Durante toda la jornada: en grupo y de espaldas.'],
+   ['E · Fotos','Para el álbum del carrusel 4.']]}
+];
+const NOTA_TEC='En los dos rodajes: 4K a 29,97 para lo general y FHD a 59,94 para la cámara lenta. La Canon graba en HDR, así que todo se conforma y se corrige de color en Premiere antes de montar.';
+
+const PENDIENTES=[
+ ['¿Podemos grabar el viernes 16? ¿A qué hora son las clases por afinidad y el descanso?','Si no se puede, pasamos al 23 y corremos el calendario una semana.','Antes del jue 15',true],
+ ['El psicólogo: nombre, cargo y si puede grabar el viernes 16','Y su visto bueno a las 20 preguntas antes del 28.','Antes del jue 15',true],
+ ['Autorización de uso de imagen de los niños que salgan en primer plano','Sin autorización firmada, el niño sale de espaldas, en grupo o solo en manos y detalles.','Antes del rodaje',true],
+ ['El documento oficial de SER+T y qué significa exactamente la T','Pendiente desde el 1 de septiembre. Sin él no salen el carrusel 2 ni el reel 3.','Antes del lun 19',false],
+ ['¿Ya está el concepto técnico de la evaluación estructural? ¿Qué dice?','De esto depende el comodín.','Lo antes posible',false],
+ ['¿El colegio celebra el Día de los niños el viernes 30? ¿Hay reglas para los disfraces?','','Antes del vie 16',false],
+ ['¿Quién responde los mensajes de VISITA y PREGUNTAS, y cuáles son los horarios de visita?','Dejamos la respuesta automática configurada y probada antes del 22.','Antes del jue 22',false],
+ ['¿Qué se publicó entre el 1 y el 14 de octubre?','Para no repetir temas ni formatos.','Esta semana',false],
+ ['¿Hay capacitación docente, simulacro o reunión de padres en octubre? ¿Cuándo abren las admisiones para 2027-2028?','Cualquiera de esas cosas puede ser un cubrimiento o cambiar el llamado del mes.','Esta semana',false]
+];
+
+/* ---------------- series ---------------- */
+let serieSel=0;
+function pintaSeries(){
+  $('#pestanas').innerHTML=SERIES.map((s,i)=>`<button type="button" role="tab" aria-selected="${i===serieSel}" data-i="${i}"><small>${s.sub}</small>${esc(s.tab)}</button>`).join('');
+  $$('#pestanas button').forEach(b=>b.onclick=()=>{serieSel=+b.dataset.i;pintaSeries()});
+  const s=SERIES[serieSel];
+  $('#panelSerie').innerHTML=`<div class="anima-panel"><h3>${esc(s.titulo)}</h3><p class="desc">${esc(s.desc)}</p>
+    <dl class="ficha-serie">${s.ficha.map(([a,b])=>`<dt>${a}</dt><dd>${esc(b)}</dd>`).join('')}</dl></div>
+    <div class="capitulos anima-panel"><p class="peq" style="font-weight:700">Piezas de la serie</p>${s.caps.map(id=>{const p=P[id];return `<button class="cap-btn" type="button" data-p="${id}"><b>${p.dia}</b><span>${esc(p.titulo)}<small>${p.cod} · ${p.fecha.split(' ')[0]}</small></span></button>`}).join('')}</div>`;
+  $$('#panelSerie .cap-btn').forEach(b=>b.onclick=()=>abrePieza(b.dataset.p,true));
+}
+pintaSeries();
+
+/* ---------------- dona de objetivos ---------------- */
+const FEED=PIEZAS.map(p=>p.obj);
+function pintaDona(){
+  const cuenta={};FEED.forEach(o=>cuenta[o]=(cuenta[o]||0)+1);
+  const R=90,C=2*Math.PI*R;let acc=0;
+  $('#donaSvg').innerHTML=Object.keys(OBJ).filter(k=>cuenta[k]).map(k=>{const f=cuenta[k]/FEED.length;const s=`<circle cx="110" cy="110" r="${R}" stroke="${OBJ[k].col}" stroke-dasharray="0 ${C}" data-len="${f*C-3}" data-off="${-acc*C}" style="stroke-dashoffset:${-acc*C}"/>`;acc+=f;return s}).join('')+`<circle class="borde" cx="110" cy="110" r="${R+14}" stroke="#1b1a2e"/><circle class="borde" cx="110" cy="110" r="${R-14}" stroke="#1b1a2e"/>`;
+  $('#leyenda').innerHTML=Object.keys(OBJ).filter(k=>cuenta[k]).map(k=>`<button type="button" data-o="${k}"><i style="background:${OBJ[k].col}"></i><span><b>${OBJ[k].n} · ${cuenta[k]}</b><small>${OBJ[k].d}</small></span></button>`).join('');
+  $$('#leyenda button').forEach(b=>b.onclick=()=>{filtro=b.dataset.o;pintaFiltros();aplicaFiltro();$('#calendario').scrollIntoView({behavior:'smooth'})});
+  const ioD=new IntersectionObserver(es=>{if(es[0].isIntersecting){$$('#donaSvg circle[data-len]').forEach(c=>c.style.strokeDasharray=`${c.dataset.len} ${C}`);ioD.disconnect()}},{threshold:.4});ioD.observe($('#dona'));
+}
+pintaDona();
+
+/* ---------------- calendario ---------------- */
+let filtro='todos';
+const FILTROS=[['todos','Todo'],...Object.keys(OBJ).map(k=>[k,OBJ[k].n]),['rod','Rodajes'],['his','Historias']];
+function pintaFiltros(){
+  $('#filtros').innerHTML=FILTROS.map(([k,n])=>`<button type="button" data-f="${k}" aria-pressed="${filtro===k}">${n}</button>`).join('');
+  $$('#filtros button').forEach(b=>b.onclick=()=>{filtro=b.dataset.f;pintaFiltros();aplicaFiltro()});
+}
+function eventosDia(d){
+  const ev=[];
+  PIEZAS.filter(p=>p.dia===d).forEach(p=>ev.push(`<button type="button" class="ev ${OBJ[p.obj].c}" data-p="${p.id}" data-f="${p.obj}"><small>${p.cod}</small>${esc(p.corto)}</button>`));
+  if(d===16||d===30) ev.push(`<button type="button" class="ev rod" data-r="${d===16?'r16':'r30'}" data-f="rod"><small>RODAJE</small>${d===16?'Un viernes SER+T':'Día de los niños'}</button>`);
+  const h=HISTORIAS.findIndex(x=>x.dia===d);
+  if(h>-1) ev.push(`<button type="button" class="ev his" data-h="${h}" data-f="his">Historias</button>`);
+  return ev.join('');
+}
+function pintaCalendario(){
+  const H=new Date(),hoy=(H.getFullYear()===2026&&H.getMonth()===9)?H.getDate():0;
+  const celdas=[];for(let i=0;i<3;i++)celdas.push('<div class="celda vacia"></div>');
+  for(let d=1;d<=31;d++){const cls=['celda'];if(d<15&&d!==hoy)cls.push('pasado');if(d===hoy)cls.push('hoy');if(d===12)cls.push('festivo');
+    celdas.push(`<div class="${cls.join(' ')}"><span class="n">${d}</span>${d>=15?eventosDia(d):''}</div>`)}
+  celdas.push('<div class="celda vacia"></div>');
+  $('#celdas').innerHTML=celdas.join('');
+  const DS=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  let lm='';for(let d=15;d<=31;d++){const e=eventosDia(d);if(!e)continue;lm+=`<div class="dia"><b>${d}<small>${DS[(d+3)%7]}</small></b><div class="evs">${e}</div></div>`}
+  $('#listaMovil').innerHTML=lm;
+  $$('.ev').forEach(b=>b.onclick=()=>{
+    if(b.dataset.p)abrePieza(b.dataset.p,true);
+    else if(b.dataset.r){rodSel=b.dataset.r==='r16'?0:1;pintaRodaje();$('#rodajes').scrollIntoView({behavior:'smooth'})}
+    else if(b.dataset.h){histI=+b.dataset.h;pintaHist(true);$('#historias').scrollIntoView({behavior:'smooth'})}
+  });
+}
+function aplicaFiltro(){$$('.ev').forEach(e=>e.classList.toggle('apagado',filtro!=='todos'&&e.dataset.f!==filtro))}
+pintaFiltros();pintaCalendario();
+
+/* ---------------- piezas ---------------- */
+let piezaSel='r2', jugador=null;
+function pintaTira(){
+  $('#tira').innerHTML=PIEZAS.map(p=>`<button type="button" role="tab" aria-selected="${p.id===piezaSel}" data-p="${p.id}"><span class="cod">${p.cod}</span><b>${esc(p.titulo)}</b><small>${p.fecha.replace(' de octubre','')}</small></button>`).join('');
+  $$('#tira button').forEach(b=>b.onclick=()=>abrePieza(b.dataset.p,false));
+  const sel=$('#tira button[aria-selected="true"]');
+  if(sel){const t=$('#tira');t.scrollTo({left:sel.offsetLeft-t.offsetLeft-20,behavior:'smooth'})}
+}
+function filaGuion(f,i){return `<div class="fila" data-fila="${i}"><span class="tm">${f[0]}</span><p>${esc(f[1])}${f[2].length?'<br>'+f[2].map(t=>`<span class="tx">${esc(t)}</span>`).join(''):''}${f[3]?`<span class="vo">${esc(f[3])}</span>`:''}</p></div>`}
+function bloqueTexto(t,txt){return `<p class="sub">${t}</p><div class="post"><button class="copiar" type="button">Copiar</button>${esc(txt)}</div>`}
+function abrePieza(id,scroll){
+  piezaSel=id;pintaTira();const p=P[id];if(jugador){jugador.para();jugador=null}
+  const idx=PIEZAS.indexOf(p);
+  const izq=p.tipo==='reel'
+    ?`<div class="cel" id="cel"></div><div class="controles"><button type="button" id="bPlay" aria-label="Pausar"></button><button type="button" id="bRe" aria-label="Desde el inicio"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5" fill="none" stroke="#1b1a2e" stroke-width="2.6" stroke-linecap="round"/></svg></button></div><p class="pie-cel">Maqueta del reel con el texto en pantalla, sin las tomas reales. <span class="solo-prod">La franja punteada es la zona segura.</span></p>`
+    :`<div class="carr" id="carr"><div class="vp"><div class="pista">${p.laminas.map((l,i)=>`<div class="lam ${l[2]}"><span class="n">${i+1}/${p.laminas.length}</span><h4>${esc(l[0])}</h4><p>${esc(l[1])}</p>${ico(l[3],'ic')}</div>`).join('')}</div></div><div class="flechas"><button type="button" data-d="-1" aria-label="Anterior">←</button><div class="puntos">${p.laminas.map(()=>'<i></i>').join('')}</div><button type="button" data-d="1" aria-label="Siguiente">→</button></div></div><p class="pie-cel">Maqueta de las láminas en el estilo de cuaderno del colegio.</p>`;
+  const tags=`<span class="tag ${OBJ[p.obj].c}">${OBJ[p.obj].n}</span>${p.serie?`<span class="tag" style="background:#fff">Serie ${p.serie}</span>`:''}`;
+  const cuerpo=`<div class="cab"><span class="cod">${p.cod}</span><span class="fecha">${p.fecha} · ${p.dur}</span>${tags}</div>
+    <h3 class="t">${esc(p.titulo)}</h3><p class="res">${esc(p.res)}</p>
+    ${p.datos?`<div class="datos solo-prod">${p.datos.map(([a,b])=>`<div><b>${a}</b>${esc(b)}</div>`).join('')}</div>`:''}
+    ${p.guion?`<p class="sub">Guion</p><div class="guion">${p.guion.map(filaGuion).join('')}</div>`:''}
+    ${p.laminas?`<p class="sub">Láminas</p><div class="guion">${p.laminas.map((l,i)=>`<div class="fila" data-fila="${i}"><span class="tm">${i+1}</span><p><b>${esc(l[0])}.</b> ${esc(l[1])}</p></div>`).join('')}</div>`:''}
+    ${bloqueTexto('Texto del post',p.post)}
+    ${p.dm?bloqueTexto('Respuesta por mensaje directo',p.dm):''}
+    ${p.aviso?`<div class="aviso"><b>Por confirmar:</b> ${esc(p.aviso)}</div>`:''}
+    <p class="reglas solo-prod"><b>Reglas que aplica:</b> ${esc(p.reglas)}</p>
+    <div class="navpie"><button type="button" data-ir="${idx-1}" ${idx===0?'disabled style="opacity:.3"':''}>← Anterior</button><button type="button" data-ir="${idx+1}" ${idx===PIEZAS.length-1?'disabled style="opacity:.3"':''}>Siguiente →</button></div>`;
+  $('#ficha').innerHTML=`<article class="ficha anima-panel"><div class="cinta celeste" style="left:80px"></div><div class="izq">${izq}</div><div>${cuerpo}</div></article>`;
+  $$('#ficha .copiar').forEach(b=>b.onclick=()=>{const t=b.parentElement.textContent.replace(/^Copiar/,'');try{navigator.clipboard.writeText(t).then(()=>toast('Texto copiado'),()=>toast('No se pudo copiar'))}catch(e){toast('No se pudo copiar')}});
+  $$('#ficha [data-ir]').forEach(b=>b.onclick=()=>{const p2=PIEZAS[+b.dataset.ir];if(p2)abrePieza(p2.id,true)});
+  if(p.tipo==='reel')jugador=new Jugador($('#cel'),p);else carrusel($('#carr'));
+  if(scroll)$('#piezas').scrollIntoView({behavior:'smooth'});
+}
+
+function carrusel(root){
+  const pista=root.querySelector('.pista'),n=pista.children.length,pts=[...root.querySelectorAll('.puntos i')];let i=0;
+  const ir=k=>{i=(k+n)%n;pista.style.transform=`translateX(-${i*100}%)`;pts.forEach((p,j)=>p.classList.toggle('on',j===i));
+    $$('#ficha .fila').forEach(f=>f.classList.toggle('activa',+f.dataset.fila===i))};
+  root.querySelectorAll('.flechas button').forEach(b=>b.onclick=()=>ir(i+ +b.dataset.d));
+  let x0=null;root.querySelector('.vp').addEventListener('pointerdown',e=>x0=e.clientX);
+  root.querySelector('.vp').addEventListener('pointerup',e=>{if(x0!==null&&Math.abs(e.clientX-x0)>30)ir(i+(e.clientX<x0?1:-1));x0=null});
+  ir(0);
+}
+
+/* reproductor del reel */
+function Jugador(root,p){
+  const E=p.escenas,total=E.reduce((a,e)=>a+e.d,0);let t=0,ult=null,corre=!QUIETO,actual=-1,sub=-1,raf=null,visible=true;
+  root.innerHTML=`<div class="esc"></div><svg class="ico"><use href="#sol"/></svg><div class="zona"></div><div class="txts"></div><div class="plano"></div>
+    <div class="barras">${E.map(()=>'<i><b></b></i>').join('')}</div><span class="reloj">0,0 s</span>`;
+  const esc_=root.querySelector('.esc'),icoEl=root.querySelector('.ico use'),tx=root.querySelector('.txts'),pl=root.querySelector('.plano'),bs=[...root.querySelectorAll('.barras b')],rel=root.querySelector('.reloj');
+  const bPlay=$('#bPlay');
+  const icoPlay='<svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#1b1a2e"/></svg>',icoPausa='<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="#1b1a2e"/></svg>';
+  const pintaBoton=()=>{bPlay.innerHTML=corre?icoPausa:icoPlay;bPlay.setAttribute('aria-label',corre?'Pausar':'Reproducir')};
+  function escena(i){
+    const e=E[i];actual=i;sub=-1;
+    root.querySelectorAll('.placa').forEach(x=>x.remove());
+    if(e.placa){const d=document.createElement('div');d.className='placa';d.innerHTML=`<img src="${LOGO_SM}" alt=""><div class="txts centro" style="position:static"></div>`;root.insertBefore(d,root.querySelector('.barras'));
+      d.querySelector('.txts').innerHTML=(e.txt||[]).map(([s,c,at])=>`<span class="tt ${c}" data-at="${at}">${esc(s)}</span>`).join('');pl.style.display='none';tx.innerHTML='';}
+    else{esc_.style.background=e.bg;esc_.style.filter=e.gris?'grayscale(1)':'none';icoEl.setAttribute('href','#'+e.ico);root.querySelector('.ico').style.filter=e.gris?'grayscale(1)':'none';
+      root.querySelector('.ico').style.transform=`rotate(${(i%2?8:-8)}deg) scale(${1+(i%3)*.06})`;
+      pl.style.display='';pl.textContent=e.plano;
+      tx.innerHTML=(e.txt||[]).map(([s,c,at])=>`<span class="tt ${c}" data-at="${at}">${esc(s)}</span>`).join('')+(e.items?'<span class="tt cont show" data-item></span>':'');}
+    $$('#ficha .guion .fila').forEach(f=>f.classList.toggle('activa',+f.dataset.fila===e.fila));
+  }
+  function cuadro(){
+    let acc=0,i=0;while(i<E.length-1&&t>=acc+E[i].d){acc+=E[i].d;i++}
+    if(i!==actual)escena(i);
+    const e=E[i],dentro=t-acc;
+    root.querySelectorAll('.tt[data-at]').forEach(s=>s.classList.toggle('show',dentro>=+s.dataset.at));
+    if(e.items){const k=Math.min(e.items.length-1,Math.floor(dentro/(e.d/e.items.length)));if(k!==sub){sub=k;const s=root.querySelector('[data-item]');if(s){s.classList.remove('show');s.textContent=e.items[k];void s.offsetWidth;s.classList.add('show')}
+      esc_.style.filter=`hue-rotate(${k*22}deg)`;}}
+    let a2=0;bs.forEach((b,j)=>{const f=Math.max(0,Math.min(1,(t-a2)/E[j].d));b.style.transform=`scaleX(${f})`;a2+=E[j].d});
+    rel.textContent=t.toFixed(1).replace('.',',')+' s';
+  }
+  function bucle(ts){if(!corre||!visible){ult=null;return}if(ult!=null){t+=(ts-ult)/1000;if(t>=total)t=0}ult=ts;cuadro();raf=requestAnimationFrame(bucle)}
+  const ioJ=new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible&&corre){cancelAnimationFrame(raf);raf=requestAnimationFrame(bucle)}},{threshold:.2});ioJ.observe(root);
+  bPlay.onclick=()=>{corre=!corre;pintaBoton();if(corre){ult=null;raf=requestAnimationFrame(bucle)}};
+  $('#bRe').onclick=()=>{t=0;actual=-1;cuadro();if(!corre){corre=true;pintaBoton();raf=requestAnimationFrame(bucle)}};
+  pintaBoton();cuadro();if(corre)raf=requestAnimationFrame(bucle);
+  this.para=()=>{corre=false;cancelAnimationFrame(raf);ioJ.disconnect()};
+}
+abrePieza('r2',false);
+
+/* ---------------- historias ---------------- */
+let histI=0,histT=null,histIni=0;const DUR_H=5000;
+const votos=guarda.get('votos',{});
+function pintaHist(reinicia){
+  const h=HISTORIAS[histI];
+  let extra='';
+  if(h.encuesta){const v=votos[histI];extra=`<div class="sticker-enc ${v!=null?'votado':''}"><b>${esc(h.h)}</b>${h.encuesta.map((o,j)=>`<button type="button" data-v="${j}"><i style="transform:scaleX(${v!=null?(j===v?.62:.19):0})"></i><span>${esc(o)}</span><em>${v!=null?(j===v?'62 %':'19 %'):''}</em></button>`).join('')}</div><p style="font-size:11.5px;opacity:.7">Porcentajes de ejemplo: los reales los da Instagram.</p>`}
+  else if(h.caja){extra=`<div class="sticker-caja">${esc(h.h)}<div>Escribe algo…</div></div><p>${esc(h.p)}</p>`}
+  $('#hist').innerHTML=`<div class="barras">${HISTORIAS.map((_,j)=>`<i><b style="transform:scaleX(${j<histI?1:0})"></b></i>`).join('')}</div>
+    <div class="quien"><i><img src="${LOGO_SM}" alt=""></i>liceocampestresanmiguel · ${h.t}</div>
+    <div class="cont ${h.navy?'navy':''}"><span class="dia">${h.t}</span>${h.encuesta||h.caja?'':`<h4>${esc(h.h)}</h4><p>${esc(h.p)}</p>`}${extra}
+    <svg style="width:110px;height:110px;align-self:flex-end;margin-top:auto" class="flota"><use href="#${h.ico}"/></svg></div>
+    <div class="tap izq" aria-hidden="true"></div><div class="tap der" aria-hidden="true"></div>`;
+  $$('#hist .sticker-enc button').forEach(b=>b.onclick=e=>{e.stopPropagation();votos[histI]=+b.dataset.v;guarda.set('votos',votos);pintaHist(true);toast('¡Votaste! Así se ve la encuesta para un papá')});
+  $('#hist .tap.izq').onclick=()=>{histI=(histI-1+HISTORIAS.length)%HISTORIAS.length;pintaHist(true)};
+  $('#hist .tap.der').onclick=()=>{histI=(histI+1)%HISTORIAS.length;pintaHist(true)};
+  $$('#histLista button').forEach((b,j)=>b.classList.toggle('on',j===histI));
+  if(reinicia){histIni=performance.now()}
+}
+$('#histLista').innerHTML=HISTORIAS.map(h=>`<button type="button"><b>${h.t}</b>${esc(h.h)}</button>`).join('');
+$$('#histLista button').forEach((b,j)=>b.onclick=()=>{histI=j;pintaHist(true)});
+let histVisible=false;
+new IntersectionObserver(es=>{histVisible=es[0].isIntersecting;if(histVisible)histIni=performance.now()},{threshold:.3}).observe($('#hist'));
+function bucleHist(ts){
+  if(histVisible&&!QUIETO){const f=Math.min(1,(ts-histIni)/DUR_H);const b=$$('#hist .barras b')[histI];if(b)b.style.transform=`scaleX(${f})`;
+    if(f>=1){histI=(histI+1)%HISTORIAS.length;pintaHist(true)}}
+  requestAnimationFrame(bucleHist)}
+pintaHist(true);requestAnimationFrame(bucleHist);
+
+/* ---------------- rodajes ---------------- */
+let rodSel=0;const marcas=guarda.get('tomas',{});
+function pintaRodaje(){
+  $('#rodTabs').innerHTML=RODAJES.map((r,i)=>`<button type="button" role="tab" aria-selected="${i===rodSel}" data-i="${i}">${esc(r.tab)}</button>`).join('');
+  $$('#rodTabs button').forEach(b=>b.onclick=()=>{rodSel=+b.dataset.i;pintaRodaje()});
+  const r=RODAJES[rodSel];
+  const hechas=r.tomas.filter((_,j)=>marcas[r.id+j]).length;
+  $('#rodPanel').innerHTML=`<div class="anima-panel"><h3>${esc(r.titulo)}</h3><p style="margin-top:10px">${esc(r.nota)}</p>
+    <div class="progreso"><i style="width:${hechas/r.tomas.length*100}%"></i></div><p class="peq">${hechas} de ${r.tomas.length} tomas listas</p>
+    <p class="peq solo-prod" style="margin-top:14px">${esc(NOTA_TEC)}</p>
+    <svg style="width:120px;height:120px;margin-top:14px" class="flota"><use href="#camara"/></svg></div>
+    <ul class="tomas anima-panel">${r.tomas.map(([a,b],j)=>`<li><label><input type="checkbox" data-k="${r.id+j}" ${marcas[r.id+j]?'checked':''}><span><b>${a.startsWith('★')?'<span class="estrella">★</span>'+esc(a.slice(1)):esc(a)}.</b> ${esc(b)}</span></label></li>`).join('')}</ul>`;
+  $$('#rodPanel input').forEach(c=>c.onchange=()=>{marcas[c.dataset.k]=c.checked;guarda.set('tomas',marcas);pintaRodaje()});
+}
+pintaRodaje();
+
+/* ---------------- comodín ---------------- */
+const COMODIN={
+ no:`<div class="anima-panel"><h3>Álbum del Día de los niños</h3><p style="margin-top:10px">El martes 3 de noviembre sale el carrusel 4 con las fotos del día y los disfraces que mandaron las familias. Es la segunda secuela de la acción del carrusel 1.</p><p style="margin-top:10px">«Lo prometimos» queda listo para salir el día que llegue el concepto, sin esperar al plan de noviembre.</p></div><svg style="width:160px;height:160px;justify-self:center" class="flota"><use href="#camara"/></svg>`,
+ si:`<div class="anima-panel"><h3>«Lo prometimos»</h3><p style="margin-top:10px">Pasa por delante de todo el calendario y sale como reel y carrusel: el documento, qué se revisó y qué dice, contado por la rectoría.</p><ul style="margin-top:12px"><li>Tono sobrio: blanco y negro con un solo acento. Sin verde, amarillo ni rojo en la gráfica.</li><li>Sin música con melodía y sin audios de moda.</li><li>Si el concepto trae recomendaciones, el mensaje es «esto es lo que vamos a intervenir, y cuándo».</li><li>El ingeniero no aparece recomendando el colegio ni junto a un llamado a la acción.</li></ul></div><svg style="width:150px;height:150px;justify-self:center;filter:grayscale(1)"><use href="#columna"/></svg>`};
+function pintaComodin(v){$('#comodinPanel').innerHTML=COMODIN[v];$('#comodinPanel').classList.toggle('sobrio',v==='si');$$('.interruptor button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===v))}
+$$('.interruptor button').forEach(b=>b.onclick=()=>pintaComodin(b.dataset.c));pintaComodin('no');
+
+/* ---------------- pendientes ---------------- */
+const listos=guarda.get('pend',{});
+function pintaPend(){
+  $('#pendLista').innerHTML=PENDIENTES.map(([q,s,c,u],i)=>`<li><label><input type="checkbox" data-i="${i}" ${listos[i]?'checked':''}><span><b>${esc(q)}</b>${s?`<small>${esc(s)}</small>`:''}</span><span class="cuando ${u?'ya':''}">${c}</span></label></li>`).join('');
+  const n=Object.values(listos).filter(Boolean).length;$('#pendCuenta').textContent=`${n} de ${PENDIENTES.length} listos`;$('#pendBarra').style.width=n/PENDIENTES.length*100+'%';
+  $$('#pendLista input').forEach(c=>c.onchange=()=>{listos[c.dataset.i]=c.checked;guarda.set('pend',listos);pintaPend();if(c.checked)toast('¡Uno menos!')});
+}
+pintaPend();
+
+observa();
+})();
+</script>
 </body>
 </html>
