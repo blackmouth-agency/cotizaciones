@@ -27,7 +27,7 @@
   /* ---------- datos reales de la institución ---------- */
   S.CONTACTO = { tel: '318 888 8328', wa: '573188888328', correo: 'semply.edu@gmail.com', dir: 'Carrera 5 No. 12-43, barrio Bolívar', ciudad: 'Yumbo, Valle del Cauca' };
   S.PROGRAMA = { nombre: 'Técnico Laboral en Marketing Digital e Inteligencia Artificial', cert: 'Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial', horas: 1200, registro: 'Resolución 1200.3.2-0496 del 27 de abril de 2026', licencia: 'Resolución 0495 del 27 de abril de 2026', jornadas: ['Diurna', 'Nocturna', 'Fin de semana'], metodologia: 'Presencial y a distancia con estrategia de educación virtual' };
-  // los 12 módulos del curso madre (estructura curricular del programa). «det» = ya tiene temario publicado.
+  // los 12 módulos del programa (estructura curricular). «det» = ya tiene plan de estudios publicado (temario.js).
   S.MODULOS = [
     { n: 'Fundamentos de Marketing', s: 1, d: 'Mercado, cliente, propuesta de valor y las bases para decidir con criterio.', img: 'prog-seo' },
     { n: 'Comunicación Digital', s: 1, d: 'Mensajes claros para cada canal, tono de marca y escritura para pantallas.', img: 'linkedin' },
@@ -63,7 +63,7 @@
     if (bt) bt.addEventListener('click', function () {
       var c = document.createElement('div'); c.className = 'cajon';
       var enlaces = S.$$('.hdr-nav a').map(function (a) { return '<a href="' + a.getAttribute('href') + '"' + (a.hasAttribute('aria-current') ? ' aria-current="page"' : '') + '>' + a.textContent + S.ico(S.I.flecha) + '</a>'; }).join('');
-      c.innerHTML = '<div class="cajon-fondo"></div><nav class="cajon-panel" aria-label="Menú"><div class="cajon-cab"><img src="assets/img/logo-color.png" alt="Semply"><button class="js-cerrar" aria-label="Cerrar">' + S.ico(S.I.x) + '</button></div>' + enlaces + '<a class="btn" href="inscripcion.html">Inscríbete</a><a class="btn btn-o" href="' + S.waLink() + '" target="_blank" rel="noopener">WhatsApp ' + S.CONTACTO.tel + '</a></nav>';
+      c.innerHTML = '<div class="cajon-fondo"></div><nav class="cajon-panel" aria-label="Menú"><div class="cajon-cab"><img src="assets/img/logo-color.png" alt="Semply"><button class="js-cerrar" aria-label="Cerrar">' + S.ico(S.I.x) + '</button></div>' + enlaces + '<a href="contacto.html">Contacto' + S.ico(S.I.flecha) + '</a><a class="btn" href="inscripcion.html">Inscríbete</a><a class="btn btn-o" href="' + S.waLink() + '" target="_blank" rel="noopener">WhatsApp ' + S.CONTACTO.tel + '</a></nav>';
       document.body.appendChild(c); document.body.style.overflow = 'hidden';
       requestAnimationFrame(function () { c.classList.add('on'); });
       c.addEventListener('click', function (e) { if (e.target.classList.contains('cajon-fondo') || e.target.closest('.js-cerrar')) { c.remove(); document.body.style.overflow = ''; } });
@@ -75,7 +75,7 @@
     var p = S.$('.js-pie'); if (!p) return;
     var C = S.CONTACTO;
     p.innerHTML = '<div class="wrap pie-grid"><div class="pie-marca"><img src="assets/img/logo-blanco-rojo.png" alt="Semply" width="130" height="34"><p>Institución de Educación para el Trabajo y el Desarrollo Humano. Marketing digital e inteligencia artificial, sin complicarlo.</p></div>' +
-      '<div><h4>Semply</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="programa.html">Curso madre</a></li><li><a href="inscripcion.html">Inscripciones</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>' +
+      '<div><h4>Semply</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="oferta-academica.html">Oferta académica</a></li><li><a href="como-funciona.html">Cómo funciona</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li><li><a href="inscripcion.html">Inscríbete</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>' +
       '<div><h4>Contacto</h4><ul><li>' + S.ico(S.I.pin) + C.dir + ', ' + C.ciudad + '</li><li><a href="tel:+57' + C.tel.replace(/ /g, '') + '">' + S.ico(S.I.tel) + C.tel + '</a></li><li><a href="mailto:' + C.correo + '">' + S.ico(S.I.correo) + C.correo + '</a></li><li><a href="' + S.waLink() + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'Escríbenos por WhatsApp</a></li></ul></div></div>' +
       '<div class="wrap pie-legal"><span>© 2026 Semply SAS. Licencia de funcionamiento: ' + S.PROGRAMA.licencia + '. Programa ' + S.PROGRAMA.nombre + ' registrado por la Secretaría de Educación de Yumbo, ' + S.PROGRAMA.registro + '.</span><span>Sitio en construcción · por BLACKMOUTH</span></div>';
   };
@@ -94,6 +94,7 @@
   /* ---------- acordeón, aparición y confeti ---------- */
   S.acordeon = function (el, items) {
     el.innerHTML = items.map(function (f, i) { return '<div class="acc-it' + (i === 0 ? ' abierto' : '') + '"><button class="acc-bt" aria-expanded="' + (i === 0) + '" data-mira>' + f[0] + '<span class="mas">' + S.ico(S.I.mas) + '</span></button><div class="acc-cont"><div><p>' + f[1] + '</p></div></div></div>'; }).join('');
+    if (el._acc) return; el._acc = true;
     el.addEventListener('click', function (e) { var b = e.target.closest('.acc-bt'); if (!b) return; var it = b.parentNode, a = it.classList.toggle('abierto'); b.setAttribute('aria-expanded', a); });
   };
   S.revelar = function () {
@@ -143,5 +144,101 @@
     return ok;
   };
 
-  S.iniciarComun = function (umbral) { S.cabecera(umbral == null ? 40 : umbral); S.pie(); S.whatsapp(); S.mira(); S.revelar(); };
+  /* ---------- preguntas frecuentes: una sola fuente para la portada, inscripciones y la página de preguntas ---------- */
+  // [tema, pregunta, respuesta, marca opcional: 'inicio' sale en la portada, 'insc' en inscripciones]
+  S.FAQ_TEMAS = [['programa', 'El programa'], ['inscripcion', 'Inscripción y pagos'], ['modalidad', 'Jornadas y modalidad'], ['certificado', 'Certificado y evaluación'], ['plataforma', 'Plataforma y clases']];
+  S.FAQ = [
+    ['programa', '¿Qué estudio en Semply?', 'El Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial: 1.200 horas repartidas en doce módulos de 100 horas y dos semestres. Es nuestra oferta académica principal, y de él nacen los cursos y rutas cortas que vienen.', 'inicio'],
+    ['programa', '¿Qué módulos tiene?', 'Semestre 1: ' + S.MODULOS.filter(function (m) { return m.s === 1; }).map(function (m) { return m.n; }).join(', ') + '. Semestre 2: ' + S.MODULOS.filter(function (m) { return m.s === 2; }).map(function (m) { return m.n; }).join(', ') + '.'],
+    ['programa', '¿Necesito saber de marketing o de programación?', 'No. El primer semestre arranca con Fundamentos de Marketing y Herramientas Digitales, y no se necesita programar: basta con manejo básico de computador y navegador.', 'inicio'],
+    ['programa', '¿Las clases son pura teoría?', 'No. La mitad de las horas de cada módulo es práctica con un entregable que se revisa, y trabajas sobre un negocio real: el tuyo, el de un cliente o uno que te asigna Semply.'],
+    ['programa', '¿Para quién es el programa?', 'Para quien termina el colegio y quiere un título técnico con salida laboral, para quien ya trabaja y quiere crecer o cambiar de área, y para quien tiene un negocio y quiere venderlo mejor en internet.'],
+    ['inscripcion', '¿Cómo me inscribo?', 'Llena el formulario de inscripción o escríbenos al WhatsApp ' + S.CONTACTO.tel + '. El equipo de admisiones te contacta para contarte el paso a paso de la matrícula.', 'inicio'],
+    ['inscripcion', '¿Cuánto cuesta y cómo se paga?', 'El equipo de admisiones te cuenta el valor, lo que incluye y las formas de pago cuando te contacte.', 'insc'],
+    ['inscripcion', '¿Cuándo empiezan las clases?', 'Admisiones te confirma la fecha de inicio del próximo grupo en la jornada que elijas.'],
+    ['inscripcion', '¿Qué documentos necesito?', 'Admisiones te envía la lista de documentos para la matrícula cuando te contacte.'],
+    ['modalidad', '¿Es presencial o virtual?', 'Las dos. El programa es presencial y a distancia, con estrategia de educación virtual. Tú eliges la modalidad al inscribirte.', 'inicio'],
+    ['modalidad', '¿En qué jornadas puedo estudiar?', 'Diurna, nocturna o fin de semana.', 'inicio'],
+    ['modalidad', '¿Dónde queda la sede?', 'En la ' + S.CONTACTO.dir + ', ' + S.CONTACTO.ciudad + '.', 'insc'],
+    ['certificado', '¿Qué certificado recibo?', 'Al aprobar el programa recibes el certificado de ' + S.PROGRAMA.cert + '.', 'inicio'],
+    ['certificado', '¿El programa está avalado?', 'Sí. Semply es una institución de Educación para el Trabajo y el Desarrollo Humano con licencia de funcionamiento (' + S.PROGRAMA.licencia + '), y el programa está registrado ante la Secretaría de Educación de Yumbo (' + S.PROGRAMA.registro + ').', 'inicio'],
+    ['certificado', '¿Cómo se aprueba cada módulo?', 'Con nota mínima de 3,5 sobre 5,0, el 80 % de los entregables radicados, el 70 % de las sesiones en vivo y la sustentación del proyecto integrador. La nota sale sobre todo de lo que produces: talleres y entregables (40 %) y proyecto integrador (40 %).'],
+    ['plataforma', '¿Qué necesito para estudiar a distancia?', 'Un computador o celular con buena conexión. La mayoría de las herramientas tienen plan gratuito, y las que requieren pago se indican desde el inicio.'],
+    ['plataforma', '¿Las sesiones en vivo quedan grabadas?', 'Sí. Se graban para quien no pudo asistir y para repasar.'],
+    ['plataforma', '¿Cómo entrego mis trabajos?', 'En la plataforma: subes cada entregable y tu docente lo revisa y te deja retroalimentación.']
+  ];
+
+  /* ---------- tarjetas de contacto ---------- */
+  S.contactos = function (el) {
+    if (!el) return; var C = S.CONTACTO;
+    el.innerHTML = [
+      [S.I.chat, 'WhatsApp', C.tel, S.waLink(), true], [S.I.tel, 'Teléfono', C.tel, 'tel:+57' + C.tel.replace(/ /g, '')], [S.I.correo, 'Correo', C.correo, 'mailto:' + C.correo], [S.I.pin, 'Sede', C.dir + ', ' + C.ciudad, 'https://www.google.com/maps?q=' + encodeURIComponent('Carrera 5 #12-43, Bolívar, Yumbo, Valle del Cauca'), true]
+    ].map(function (c) { return '<a class="contacto-it" href="' + c[3] + '"' + (c[4] ? ' target="_blank" rel="noopener"' : '') + ' data-mira><span class="ic">' + S.ico(c[0]) + '</span><div><b>' + c[1] + '</b><span>' + c[2] + '</span></div></a>'; }).join('');
+  };
+
+  /* ---------- decoración e interacción comunes ---------- */
+  // tarjetas que se inclinan hacia el cursor
+  S.tilt = function () {
+    if (S.tactil || S.reducir) return;
+    S.$$('.tilt:not([data-tilt])').forEach(function (el) {
+      el.setAttribute('data-tilt', '');
+      el.addEventListener('pointermove', function (e) { var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; el.style.transform = 'perspective(900px) rotateX(' + (-y * 7).toFixed(2) + 'deg) rotateY(' + (x * 9).toFixed(2) + 'deg) translateY(-4px)'; });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+  };
+  // números que cuentan al aparecer
+  S.contar = function () {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io.unobserve(e.target);
+        var el = e.target, n = parseFloat(el.dataset.n), dec = +(el.dataset.dec || 0), suf = el.dataset.suf || '', t0 = null;
+        function fmt(v) { return v.toLocaleString('es-CO', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf; }
+        if (S.reducir) { el.textContent = fmt(n); return; }
+        (function paso(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / 1300, 1), k = 1 - Math.pow(1 - p, 3); el.textContent = fmt(n * k); if (p < 1) requestAnimationFrame(paso); })(performance.now());
+      });
+    }, { threshold: 0.6 });
+    S.$$('.js-contar').forEach(function (el) { io.observe(el); });
+  };
+  // pieza en L de la marca (la misma del patrón del manual)
+  S.pieza = function (col, cls) { return '<svg class="' + (cls || '') + '" viewBox="0 0 60 60" aria-hidden="true"><path d="M4 4h18v34h34v18H4z" fill="' + col + '"/></svg>'; };
+  S.decorar = function () {
+    var cols = ['#F10E3B', '#FFC225', '#373435', '#ffffff'];
+    // piezas que flotan en las secciones y se mueven con el scroll
+    var piezas = [];
+    S.$$('.deco-sec').forEach(function (sec, k) {
+      var oscuro = sec.classList.contains('oscuro') || sec.classList.contains('rojo-bg');
+      [0, 1].forEach(function (j) {
+        var d = document.createElement('div'); d.className = 'deco-l';
+        var lado = (k + j) % 2 ? 'right' : 'left', tam = 46 + ((k * 37 + j * 23) % 50);
+        d.style.cssText = lado + ':' + (-tam * 0.35) + 'px;top:' + (j ? 62 : 8) + '%;width:' + tam + 'px;height:' + tam + 'px;--r:' + ((k * 53 + j * 97) % 360) + 'deg;--f:' + (0.08 + ((k + j) % 3) * 0.05);
+        d.innerHTML = S.pieza(oscuro ? cols[(k + j) % 2] : cols[(k + j * 2) % 3]);
+        sec.appendChild(d); piezas.push(d);
+      });
+    });
+    if (piezas.length && !S.reducir) {
+      var pend = false;
+      var mover = function () { pend = false; var vh = innerHeight; piezas.forEach(function (d) { var r = d.parentNode.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return; var c = (r.top + r.height / 2 - vh / 2), f = parseFloat(d.style.getPropertyValue('--f')); d.style.transform = 'translateY(' + (-c * f).toFixed(1) + 'px) rotate(calc(var(--r) + ' + (c * f * 0.25).toFixed(1) + 'deg))'; }); };
+      window.addEventListener('scroll', function () { if (!pend) { pend = true; requestAnimationFrame(mover); } }, { passive: true }); mover();
+    }
+    // sellos: tocar el fondo del encabezado deja piezas de la marca
+    S.$$('.js-sellos').forEach(function (z) {
+      var n = 0;
+      z.addEventListener('pointerdown', function (e) {
+        if (e.target.closest('a,button,input,label,.burst')) return;
+        var r = z.getBoundingClientRect(), s = document.createElement('div'); s.className = 'sello';
+        s.style.left = (e.clientX - r.left) + 'px'; s.style.top = (e.clientY - r.top) + 'px'; s.style.setProperty('--r', (Math.random() * 360) + 'deg');
+        s.innerHTML = S.pieza(cols[[1, 3, 2, 1, 0][n++ % 5]]); z.appendChild(s);
+        var p = z.querySelector('.sellos-pista'); if (p) p.classList.add('fuera');
+        setTimeout(function () { s.classList.add('sale'); setTimeout(function () { s.remove(); }, 700); }, 2600);
+      });
+    });
+    // botones magnéticos
+    if (!S.tactil && !S.reducir) document.addEventListener('pointermove', function (e) {
+      var b = e.target.closest && e.target.closest('.btn'); if (S._mag && S._mag !== b) { S._mag.style.translate = ''; S._mag = null; }
+      if (!b) return; var r = b.getBoundingClientRect(); b.style.translate = ((e.clientX - r.left - r.width / 2) * 0.18).toFixed(1) + 'px ' + ((e.clientY - r.top - r.height / 2) * 0.28).toFixed(1) + 'px'; S._mag = b;
+    });
+    S.contar(); S.tilt();
+  };
+
+  S.iniciarComun = function (umbral) { S.cabecera(umbral == null ? 40 : umbral); S.pie(); S.whatsapp(); S.mira(); S.revelar(); S.decorar(); };
 })();

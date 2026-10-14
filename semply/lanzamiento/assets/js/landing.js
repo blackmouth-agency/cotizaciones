@@ -62,10 +62,10 @@
       .to('.js-encaja', { opacity: 1, duration: 0.26 }, 0.74);
   }
 
-  /* ---------- el curso madre: los dos semestres ---------- */
+  /* ---------- oferta académica: los dos semestres ---------- */
   $('.js-semestres').innerHTML = [1, 2].map(function (s) {
     return '<div class="semestre"><h3><span>Semestre ' + s + '</span><small>600 horas</small></h3><ol>' + S.MODULOS.filter(function (m) { return m.s === s; }).map(function (m, i) {
-      return '<li class="mod' + (m.det ? ' con' : '') + '" style="--i:' + i + '" data-mira><b>' + String((s - 1) * 6 + i + 1).padStart(2, '0') + '</b><span>' + m.n + '<small>' + m.d + '</small></span><em>' + (m.det ? 'Temario listo' : '100 h') + '</em></li>';
+      return '<li class="mod' + (m.det ? ' con' : '') + '" style="--i:' + i + '" data-mira><b>' + String((s - 1) * 6 + i + 1).padStart(2, '0') + '</b><span>' + m.n + '<small>' + m.d + '</small></span><em>' + (m.det ? 'Plan listo' : '100 h') + '</em></li>';
     }).join('') + '</ol></div>';
   }).join('');
 
@@ -93,6 +93,27 @@
     if (!reducir) gsap.fromTo('.js-portatil', { rotateX: 28, scale: 0.86, y: 40 }, { rotateX: 0, scale: 1, y: 0, ease: 'none', scrollTrigger: { trigger: '.js-portatil', start: 'top 95%', end: 'center 55%', scrub: 0.6 } });
   })();
 
+
+  /* ---------- para qué te sirve: estudiante, trabajador, emprendedor ---------- */
+  (function () {
+    var PF = {
+      est: { t: 'Un título técnico y una salida laboral.', p: 'Si terminaste el colegio, en dos semestres sales como Técnico Laboral en algo que todas las empresas necesitan: vender por internet.', b: ['Certificado de Técnico Laboral por Competencias.', 'Un portafolio con proyectos reales para mostrar en entrevistas.', 'Base para trabajar en redes, contenido o marketing, o para seguir estudiando.'], m: ['Fundamentos de Marketing', 'Gestión de Redes Sociales', 'Creación de Contenidos Digitales'], j: 'Diurna', img: 'reels' },
+      tra: { t: 'Crece en tu trabajo o cambia de área.', p: 'Si ya trabajas, aprendes a usar la IA y las herramientas digitales que hoy piden en ventas, servicio al cliente, comunicaciones o administración.', b: ['Estudias de noche o el fin de semana, sin dejar tu empleo.', 'Aplicas en tu trabajo lo que ves en clase desde la primera unidad.', 'Un certificado técnico que suma en tu hoja de vida.'], m: ['Inteligencia Artificial Aplicada al Marketing', 'Analítica de Marketing Digital', 'Herramientas Digitales'], j: 'Nocturna o fin de semana', img: 'prompts' },
+      emp: { t: 'Vende más sin depender de nadie.', p: 'Si tienes un negocio, el proyecto con el que practicas es el tuyo: lo que aprendes en clase lo aplicas esa misma semana.', b: ['Redes, contenido y pauta hechos por ti, con criterio.', 'Tu negocio visible en Google y en el mapa.', 'Automatizaciones con IA para responder y vender más rápido.'], m: ['Publicidad Digital', 'SEO y Posicionamiento Web', 'Comercio Electrónico'], j: 'La que te deje el negocio', img: 'producto' }
+    };
+    var caja = $('.js-perfil'), tabs = $$('.js-perfiles-tabs button');
+    function pinta(k) {
+      var f = PF[k];
+      tabs.forEach(function (x) { x.classList.toggle('on', x.dataset.k === k); x.setAttribute('aria-selected', x.dataset.k === k); });
+      caja.innerHTML = '<div class="perfil-in"><div class="perfil-img"><img src="assets/img/cursos/' + f.img + '-sm.webp" alt="" loading="lazy">' + S.burst(k === 'est' ? '¡Arranca!' : k === 'tra' ? '¡Sube!' : '¡Vende!', '#F10E3B', '#fff', 104) + '</div>' +
+        '<div class="perfil-c"><h3>' + f.t + '</h3><p class="lead">' + f.p + '</p><ul class="chulos">' + f.b.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' +
+        '<p class="perfil-l">Módulos que más vas a usar</p><div class="perfil-mods">' + f.m.map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div>' +
+        '<p class="perfil-j">' + S.ico(S.I.reloj) + 'Jornada que suele servir: <b>' + f.j + '</b></p><a class="btn" href="inscripcion.html" data-mira>Inscríbete ' + S.ico(S.I.flecha, 'ico-f') + '</a></div></div>';
+    }
+    tabs.forEach(function (bt) { bt.addEventListener('click', function () { pinta(bt.dataset.k); }); });
+    pinta('est');
+  })();
+
   /* ---------- tarjetas para rascar: seis módulos ---------- */
   (function () {
     var elegidos = ['Inteligencia Artificial Aplicada al Marketing', 'Creación de Contenidos Digitales', 'Publicidad Digital', 'SEO y Posicionamiento Web', 'Gestión de Redes Sociales', 'Comercio Electrónico'];
@@ -118,7 +139,7 @@
       function medir() {
         var d = ctx.getImageData(0, 0, w, h).data, vac = 0, tot = 0;
         for (var i = 3; i < d.length; i += 4 * 24) { tot++; if (d[i] < 40) vac++; }
-        if (!lista && vac / tot > 0.5) { lista = true; card.classList.add('lista'); hechas++; $('.js-desc').innerHTML = 'Descubiertos: <b>' + hechas + '</b> de 6'; if (hechas === 6) { S.confeti(); S.aviso('<b>¡Los descubriste todos!</b><small>Y faltan seis más en el curso madre.</small>', '★'); } }
+        if (!lista && vac / tot > 0.5) { lista = true; card.classList.add('descubierta'); hechas++; $('.js-desc').innerHTML = 'Descubiertos: <b>' + hechas + '</b> de 6'; if (hechas === 6) { S.confeti(); S.aviso('<b>¡Los descubriste todos!</b><small>Y faltan seis más en el programa.</small>', '★'); } }
       }
       cv.addEventListener('pointerdown', function (e) { abajo = true; ult = null; cv.setPointerCapture(e.pointerId); raya(pos(e)); });
       cv.addEventListener('pointermove', function (e) { if (abajo || (!tactil && e.buttons === 0 && e.pointerType === 'mouse')) raya(pos(e)); });
@@ -154,7 +175,7 @@
       S.guardar('ruta', { tema: tema, nombre: r.t });
       caja.innerHTML = '<div class="quiz-anim"><div class="quiz-barra">' + Q.map(function () { return '<i class="ok"></i>'; }).join('') + '</div><span class="ceja">Tu perfil: ' + r.t + '</span><h3>Estos módulos van a ser tus favoritos</h3><ul class="res-mods">' +
         mods.map(function (m) { return '<li><img src="assets/img/cursos/' + m.img + '-sm.webp" alt=""><div><b>' + m.n + '</b><small>Semestre ' + m.s + ' · 100 horas</small></div></li>'; }).join('') +
-        '</ul><p class="tambien">Todos hacen parte del curso madre: el Técnico Laboral en Marketing Digital e IA, de 1.200 horas.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="inscripcion.html?interes=' + tema + '" data-mira>Inscribirme</a><button class="btn btn-o btn-s js-otra">Repetir</button></div></div>';
+        '</ul><p class="tambien">Todos hacen parte del Técnico Laboral en Marketing Digital e IA, de 1.200 horas.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="inscripcion.html?interes=' + tema + '" data-mira>Inscribirme</a><button class="btn btn-o btn-s js-otra">Repetir</button></div></div>';
     }
     caja.addEventListener('click', function (e) {
       var o = e.target.closest('.op');
@@ -174,14 +195,7 @@
   });
 
   /* ---------- preguntas ---------- */
-  S.acordeon($('.js-faq'), [
-    ['¿Qué es el curso madre?', 'Es nuestro programa principal: el Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial. Tiene 1.200 horas repartidas en doce módulos de 100 horas y dos semestres. Los cursos y rutas de Semply nacen de él.'],
-    ['¿El programa está avalado?', 'Sí. Semply es una institución de Educación para el Trabajo y el Desarrollo Humano con licencia de funcionamiento (' + S.PROGRAMA.licencia + '), y el programa está registrado ante la Secretaría de Educación de Yumbo (' + S.PROGRAMA.registro + ').'],
-    ['¿Qué certificado recibo?', 'Al aprobar el programa recibes el certificado de ' + S.PROGRAMA.cert + '.'],
-    ['¿Es presencial o virtual?', 'Las dos: el programa es presencial y a distancia, con estrategia de educación virtual. La sede queda en la ' + S.CONTACTO.dir + ', ' + S.CONTACTO.ciudad + '.'],
-    ['¿En qué horarios puedo estudiar?', 'Hay jornada diurna, nocturna y de fin de semana.'],
-    ['¿Cómo me inscribo?', 'Llena el formulario de inscripción y el equipo de admisiones te contacta. También puedes escribirnos al WhatsApp ' + S.CONTACTO.tel + '.']
-  ]);
+  S.acordeon($('.js-faq'), S.FAQ.filter(function (f) { return f[3] === 'inicio'; }).map(function (f) { return [f[1], f[2]]; }));
 
   /* ---------- texto cinético ---------- */
   $$('.js-kinetic > span').forEach(function (l) {
