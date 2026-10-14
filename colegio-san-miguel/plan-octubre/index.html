@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>San Miguel · Octubre</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Plan de contenidos de octubre 2026 para el Liceo Campestre San Miguel: concepto, series, calendario, guiones y pendientes.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://use.typekit.net/dfu3yuy.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;900&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#000; --blanco:#fff; --naranja:#F39200;
+  --papel:#f6f5f2; --linea:#dedbd4; --gris:#6b6862; --tinta:#141414;
+  --navy:#24214f; --rojo:#b5001b;
+  --f:"franklin-gothic-atf","Libre Franklin","Franklin Gothic Medium",Arial,sans-serif;
+  --sm:"Poppins",Arial,sans-serif;
+  --ancho:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--tinta);font-family:var(--f);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--ancho);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}body{font-size:16px}}
+
+/* ---------- portada ---------- */
+.hero{background:var(--negro);color:var(--blanco);padding:28px 0 72px}
+.hero .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.hero .top img{height:34px;width:auto}
+.hero .meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#bdbdbd}
+.hero .cliente{margin-top:72px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja);font-weight:700}
+.hero h1{font-weight:900;font-size:clamp(44px,8vw,104px);line-height:.95;letter-spacing:-.02em;margin-top:14px;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--naranja)}
+.hero .bajada{margin-top:26px;max-width:60ch;font-size:clamp(17px,2vw,21px);color:#dcdcdc}
+.cifras{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;border-top:1px solid #333}
+.cifras div{padding:18px 16px 0 0}
+.cifras b{display:block;font-size:clamp(34px,5vw,54px);font-weight:900;line-height:1}
+.cifras span{font-size:13px;color:#bdbdbd;letter-spacing:.04em}
+@media (max-width:700px){.cifras{grid-template-columns:repeat(3,1fr)}.cifras div{padding-bottom:14px}}
+
+/* ---------- navegación ---------- */
+nav.indice{position:sticky;top:0;z-index:5;background:var(--blanco);border-bottom:1px solid var(--linea)}
+nav.indice .wrap{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
+nav.indice a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:700;padding:14px 0;color:var(--gris)}
+nav.indice a:hover{color:var(--tinta)}
+
+/* ---------- secciones ---------- */
+section{padding:84px 0 20px}
+.kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gris)}
+.kicker b{color:var(--naranja)}
+h2{font-weight:900;font-size:clamp(32px,4.6vw,56px);line-height:1;letter-spacing:-.015em;margin:10px 0 22px;max-width:20ch}
+h3{font-weight:900;font-size:24px;line-height:1.15;letter-spacing:-.01em}
+p+p{margin-top:12px}
+.lead{font-size:clamp(18px,2vw,21px);max-width:62ch}
+.nota{font-size:14px;color:var(--gris)}
+.pendiente{background:#fff3df;border-left:3px solid var(--naranja);padding:2px 6px;font-size:.92em}
+
+/* idea */
+.idea{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:28px}
+.idea > div{background:var(--blanco);padding:26px}
+.idea .et{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gris);margin-bottom:8px}
+.idea .concepto{grid-column:1/-1;background:var(--negro);color:var(--blanco);padding:44px 26px}
+.idea .concepto .et{color:var(--naranja)}
+.idea .concepto p.grande{font-weight:900;font-size:clamp(34px,5.4vw,66px);line-height:1;letter-spacing:-.02em}
+@media (max-width:700px){.idea{grid-template-columns:1fr}}
+
+/* puente septiembre-octubre */
+.puente{display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch;margin-top:30px}
+.puente .mes{background:var(--blanco);border:1px solid var(--linea);padding:24px}
+.puente .mes.oct{background:var(--negro);color:var(--blanco);border-color:var(--negro)}
+.puente .mes .et{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gris)}
+.puente .mes.oct .et{color:var(--naranja)}
+.puente .mes h3{margin:8px 0}
+.puente .flecha{display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:var(--naranja)}
+@media (max-width:700px){.puente{grid-template-columns:1fr}.puente .flecha{transform:rotate(90deg);height:50px}}
+
+/* mezcla */
+.mezcla{display:flex;height:46px;margin:22px 0 10px;border:1px solid var(--negro)}
+.mezcla div{display:flex;align-items:center;padding:0 10px;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden}
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--gris)}
+
+/* series */
+.series{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.serie{background:var(--blanco);border:1px solid var(--linea);padding:24px;display:flex;flex-direction:column;gap:12px}
+.serie .num{font-size:13px;font-weight:900;color:var(--naranja);letter-spacing:.1em}
+.serie dl{display:grid;grid-template-columns:96px 1fr;gap:6px 10px;font-size:14px;margin-top:4px}
+.serie dt{color:var(--gris);font-weight:700}
+@media (max-width:900px){.series{grid-template-columns:1fr}}
+
+/* calendario */
+.cal{margin-top:26px;border-top:2px solid var(--negro)}
+.semana{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--linea)}
+.semana > .sem{padding:18px 0;font-weight:900;font-size:15px}
+.semana > .sem span{display:block;font-weight:500;font-size:13px;color:var(--gris)}
+.dias{display:flex;flex-direction:column}
+.dia{display:grid;grid-template-columns:82px 92px 1fr auto;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid var(--linea)}
+.dia:first-child{border-top:0}
+.dia .f{font-weight:900}
+.dia .tipo{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.dia .q a{font-weight:700;text-decoration:none;border-bottom:1px solid var(--linea)}
+.dia .q a:hover{border-color:var(--naranja)}
+.dia .q small{display:block;color:var(--gris);font-size:13.5px}
+.chip{font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap;border:1px solid currentColor}
+.c-alc{color:#0b57d0}.c-gua{color:#7a4bb7}.c-com{color:#b26200}.c-ven{color:#0f7b3d}.c-mar{color:#9a1b4b}.c-rod{color:var(--tinta)}.c-his{color:var(--gris)}
+.dia.rodaje{background:repeating-linear-gradient(-45deg,#fff 0 8px,#f1efea 8px 16px)}
+@media (max-width:760px){
+  .semana{grid-template-columns:1fr}.semana > .sem{padding-bottom:4px}
+  .dia{grid-template-columns:70px 1fr;gap:4px 10px}
+  .dia .tipo{grid-column:2}.dia .q{grid-column:1/-1}.dia .chip{grid-column:1/-1;justify-self:start}
+}
+
+/* fichas */
+.ficha{background:var(--blanco);border:1px solid var(--linea);margin-top:26px;display:grid;grid-template-columns:230px 1fr}
+.ficha .lado{background:#efede8;padding:24px;border-right:1px solid var(--linea);display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.ficha .cuerpo{padding:26px 28px;min-width:0}
+.ficha .cab{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:6px}
+.ficha .cab .cod{font-weight:900;font-size:14px;letter-spacing:.1em}
+.ficha .cab .fecha{font-size:14px;color:var(--gris)}
+.ficha h3{font-size:28px;margin-bottom:6px}
+.ficha .resumen{color:#3b3935;max-width:68ch}
+.datos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin:18px 0}
+.datos div{background:var(--blanco);padding:10px 12px;font-size:14px}
+.datos b{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+@media (max-width:600px){.datos{grid-template-columns:1fr 1fr}}
+table.guion{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 6px}
+table.guion th{text-align:left;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);padding:6px 10px 6px 0;border-bottom:2px solid var(--negro)}
+table.guion td{vertical-align:top;padding:9px 10px 9px 0;border-bottom:1px solid var(--linea)}
+table.guion td:first-child{font-weight:700;white-space:nowrap;width:76px;font-variant-numeric:tabular-nums}
+table.guion .tx{display:inline-block;background:var(--negro);color:var(--blanco);font-weight:700;padding:1px 7px;margin-top:3px;font-size:14px}
+table.guion .vo{display:block;color:#3b3935;font-style:italic;margin-top:3px}
+.bloque{margin-top:18px}
+.bloque h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:6px}
+.post{background:#f8f7f4;border:1px dashed #cfcac0;padding:14px 16px;font-size:15px;white-space:pre-line}
+ul.lista{padding-left:18px}
+ul.lista li{margin:4px 0}
+.reglas{font-size:13.5px;color:var(--gris)}
+.reglas b{color:var(--tinta)}
+@media (max-width:800px){
+  .ficha{grid-template-columns:1fr}
+  .ficha .lado{border-right:0;border-bottom:1px solid var(--linea);flex-direction:row;flex-wrap:wrap;align-items:flex-start}
+  .ficha .cuerpo{padding:20px 16px}
+  table.guion{font-size:14px}
+}
+
+/* maqueta de cuadro 0 (identidad del colegio) */
+.cel{width:170px;aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:14px;box-shadow:0 1px 0 rgba(0,0,0,.08),0 10px 24px rgba(0,0,0,.12);font-family:var(--sm);color:#fff;flex:none}
+.cel .bg{position:absolute;inset:0}
+.cel .seg{position:absolute;left:0;right:0;top:26%;bottom:32%;border-top:1px dashed rgba(255,255,255,.35);border-bottom:1px dashed rgba(255,255,255,.35)}
+.cel .t{position:absolute;left:12px;right:12px;font-weight:800;line-height:1.08;letter-spacing:-.01em}
+.cel .t small{display:block;font-weight:600;font-size:.6em;opacity:.85;margin-top:4px}
+.cel .pie{position:absolute;left:10px;bottom:8px;font-size:9px;opacity:.7;font-family:var(--f)}
+.cel .tag{position:absolute;top:8px;left:10px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--f);font-weight:700;opacity:.75}
+.cel.carr{aspect-ratio:4/5}
+.cel.carr .seg{display:none}
+.cel .papel{position:absolute;inset:0;background:#fbfbf8 repeating-linear-gradient(#fbfbf8 0 15px,#dfe6f2 15px 16px)}
+.lado .cap{font-size:12px;color:var(--gris);max-width:170px}
+
+/* rodajes */
+.rodajes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.rodaje{background:var(--blanco);border:1px solid var(--linea);padding:24px}
+.rodaje .f{font-size:13px;font-weight:900;letter-spacing:.1em;color:var(--naranja);text-transform:uppercase}
+.rodaje ol{padding-left:20px;margin-top:10px}
+.rodaje li{margin:7px 0;font-size:15px}
+.rodaje li b{font-weight:700}
+.estrella{color:var(--naranja);font-weight:900}
+@media (max-width:800px){.rodajes{grid-template-columns:1fr}}
+
+/* historias */
+.historias{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:26px}
+.historias div{background:var(--blanco);padding:16px 18px;font-size:15px}
+.historias b{display:block;font-size:13px;letter-spacing:.06em}
+@media (max-width:800px){.historias{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.historias{grid-template-columns:1fr}}
+
+/* comodín */
+.comodin{background:var(--negro);color:var(--blanco);padding:30px;margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.comodin h3{color:var(--naranja)}
+.comodin p,.comodin li{color:#dedede}
+.comodin ul{padding-left:18px}
+@media (max-width:800px){.comodin{grid-template-columns:1fr}}
+
+/* pendientes */
+.checks{list-style:none;margin-top:22px;border-top:2px solid var(--negro)}
+.checks li{display:grid;grid-template-columns:34px 1fr auto;gap:10px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:baseline}
+.checks .n{font-weight:900;color:var(--naranja)}
+.checks .urg{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.checks .urg.si{color:var(--rojo)}
+.checks small{display:block;color:var(--gris);font-size:14px}
+@media (max-width:600px){.checks li{grid-template-columns:28px 1fr}.checks .urg{grid-column:2}}
+
+/* no negociables y medición */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.caja{background:var(--blanco);border:1px solid var(--linea);padding:24px}
+.caja ul{padding-left:18px}.caja li{margin:6px 0;font-size:15px}
+table.med{width:100%;border-collapse:collapse;font-size:15px}
+table.med th{text-align:left;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);padding:6px 8px 6px 0;border-bottom:2px solid var(--negro)}
+table.med td{padding:9px 8px 9px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+@media (max-width:800px){.dos{grid-template-columns:1fr}}
+.tabla-scroll{overflow-x:auto}
+
+footer{background:var(--negro);color:#bdbdbd;margin-top:90px;padding:46px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:30px;width:auto}
+</style>
+<meta property="og:title" content="San Miguel · Octubre">
+<meta property="og:description" content="Plan de contenidos de octubre 2026 para el Liceo Campestre San Miguel: concepto, series, calendario, guiones y pendientes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/plan-octubre/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/plan-octubre/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <img src="media/4a5a3a73af.png" alt="BLACKMOUTH">
+      <span class="meta">Plan de contenidos · 15–31 oct 2026 · versión 14-oct</span>
+    </div>
+    <p class="cliente">Liceo Campestre San Miguel · Yumbo</p>
+    <h1>Lo que cabe en un <em>«nada»</em>.</h1>
+    <p class="bajada">En septiembre mostramos la estructura del edificio. En octubre mostramos la otra: lo que pasa adentro un día cualquiera, eso que su hijo resume en una palabra cuando le preguntan qué hizo hoy.</p>
+    <div class="cifras">
+      <div><b>6</b><span>reels</span></div>
+      <div><b>4</b><span>carruseles</span></div>
+      <div><b>9</b><span>días de historias</span></div>
+      <div><b>2</b><span>rodajes</span></div>
+      <div><b>3</b><span>series</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="indice" aria-label="Secciones">
+  <div class="wrap">
+    <a href="#idea">La idea</a>
+    <a href="#series">Series</a>
+    <a href="#calendario">Calendario</a>
+    <a href="#piezas">Piezas</a>
+    <a href="#historias">Historias</a>
+    <a href="#rodajes">Rodajes</a>
+    <a href="#comodin">Comodín</a>
+    <a href="#pendientes">Por confirmar</a>
+    <a href="#reglas">Reglas y medición</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= IDEA ================= -->
+<section id="idea">
+  <div class="wrap">
+    <p class="kicker"><b>01</b> · La idea del mes</p>
+    <h2>Septiembre respondió una pregunta. Octubre da una razón.</h2>
+
+    <div class="puente">
+      <div class="mes">
+        <span class="et">Septiembre · Primero la estructura</span>
+        <h3>La del edificio</h3>
+        <p>Después del 10 de agosto, la única pregunta de un papá en Yumbo era si el edificio aguanta. Contamos la revisión, el regreso y la capacitación con la Defensa Civil. Describimos el proceso, sin dar veredicto.</p>
+        <p class="nota">Quedaron pendientes los guiones 03 «La otra estructura» y 04 «Los grandes cuidan a los chiquitos», que dependían de tener a los niños de vuelta. Ya volvieron.</p>
+      </div>
+      <div class="flecha" aria-hidden="true">→</div>
+      <div class="mes oct">
+        <span class="et">Octubre · La otra estructura</span>
+        <h3>La que sostiene a los niños</h3>
+        <p>La seguridad es el piso para que una familia considere un colegio, pero no es la razón para elegirlo. Este mes mostramos SER+T funcionando: los viernes por afinidad, los grandes con los chiquitos, los profes que se preparan. Sin decirlo con frases institucionales: mostrándolo.</p>
+      </div>
+    </div>
+
+    <div class="idea">
+      <div>
+        <p class="et">Problema de negocio</p>
+        <p>Las familias que están decidiendo colegio necesitan una razón para elegir este, y la conversación sigue atrapada en una sola pregunta. Y las frases que sirven para cualquier colegio («un nuevo período comienza») informan bien, pero no dejan en la memoria nada que sea solo del San Miguel.</p>
+      </div>
+      <div>
+        <p class="et">Insight</p>
+        <p>Un papá no conoce el colegio por lo que el colegio publica. Lo conoce por lo que su hijo le cuenta en el carro de vuelta. Y lo que le cuenta, casi siempre, es: <b>«nada»</b>.</p>
+      </div>
+      <div class="concepto">
+        <p class="et">Concepto</p>
+        <p class="grande">Lo que cabe en un «nada».</p>
+      </div>
+      <div>
+        <p class="et">Por qué funciona</p>
+        <p>Todos los papás han vivido el «¿qué hiciste hoy? —nada». Es un chiste que se comparte, y le da al colegio una forma de mostrar el día por dentro sin sonar a folleto. Además, conecta con septiembre: después de la estructura del edificio viene la otra, la que no se ve desde afuera.</p>
+      </div>
+      <div>
+        <p class="et">Tono</p>
+        <p>Cálido, con humor de papá, sin chistes a costa de los niños. La identidad que manda es la del colegio (navy, rojo, Poppins y el estilo de cuaderno que ya conocen sus seguidores). La única regla nueva es que cada pieza muestra algo que pasó, no algo que se dice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERIES ================= -->
+<section id="series">
+  <div class="wrap">
+    <p class="kicker"><b>02</b> · Series</p>
+    <h2>Tres series, cada una con un solo trabajo.</h2>
+    <p class="lead">Una serie tiene la misma apertura, el mismo cierre y el mismo CTA. Así se reconoce sin leer el nombre de la cuenta. Cada capítulo trae, aun así, su propio gancho.</p>
+
+    <div class="series">
+      <article class="serie">
+        <span class="num">SERIE A</span>
+        <h3>«¿Qué hiciste hoy? —Nada.»</h3>
+        <p>El niño dice «nada» y el reel muestra todo lo que cupo en ese «nada», con un contador. Corto, rítmico y sin barrera: lo entiende cualquier papá.</p>
+        <dl>
+          <dt>Objetivo</dt><dd>Alcance</dd>
+          <dt>Capítulos</dt><dd>2 en octubre (19 y 31)</dd>
+          <dt>Duración</dt><dd>15–22 s</dd>
+          <dt>Apertura</dt><dd>De espaldas con el morral: «—¿Qué hiciste hoy?» · corte seco · «—Nada.»</dd>
+          <dt>Cierre</dt><dd>«Eso fue nada.» + placa del colegio</dd>
+          <dt>CTA</dt><dd>Pregunta en voz y en pantalla: «¿Y el tuyo qué te contesta?»</dd>
+        </dl>
+      </article>
+      <article class="serie">
+        <span class="num">SERIE B</span>
+        <h3>La otra estructura</h3>
+        <p>SER+T explicado con imágenes del viernes: clases por afinidad, grados mezclados, los grandes cuidando a los chiquitos. Es la serie que vende el colegio.</p>
+        <dl>
+          <dt>Objetivo</dt><dd>Marca y visita</dd>
+          <dt>Capítulos</dt><dd>2 reels + 1 carrusel</dd>
+          <dt>Duración</dt><dd>22–33 s</dd>
+          <dt>Apertura</dt><dd>Un plano que empalma con septiembre (la columna de la revisión)</dd>
+          <dt>Cierre</dt><dd>La misma placa que en septiembre: logo + una línea</dd>
+          <dt>CTA</dt><dd>«Comenta VISITA y te mandamos los horarios» · o pregunta de anécdota</dd>
+        </dl>
+      </article>
+      <article class="serie">
+        <span class="num">SERIE C</span>
+        <h3>Pregúntale distinto</h3>
+        <p>La respuesta práctica al «nada»: el psicólogo del colegio da las preguntas que sí sacan conversación. Sirve a cualquier papá, sea o no del colegio, y se guarda.</p>
+        <dl>
+          <dt>Objetivo</dt><dd>Comentarios y guardados</dd>
+          <dt>Capítulos</dt><dd>1 reel + su carrusel</dd>
+          <dt>Duración</dt><dd>35–40 s</dd>
+          <dt>Apertura</dt><dd>La frase que todos reconocen, escrita sobre el psicólogo</dd>
+          <dt>Cierre</dt><dd>La palabra PREGUNTAS, grande, en rojo del colegio</dd>
+          <dt>CTA</dt><dd>«Comenta PREGUNTAS y te mandamos las 20»</dd>
+        </dl>
+      </article>
+    </div>
+
+    <p class="kicker" style="margin-top:44px">Mezcla por objetivo (reels y carruseles)</p>
+    <div class="mezcla" role="img" aria-label="Alcance 3 piezas, guardado 3, comentario 1, venta 1, marca 1">
+      <div style="flex:3;background:#0b57d0;color:#fff">Alcance · 3</div>
+      <div style="flex:3;background:#7a4bb7;color:#fff">Guardado · 3</div>
+      <div style="flex:1;background:#b26200;color:#fff">Coment. · 1</div>
+      <div style="flex:1;background:#0f7b3d;color:#fff">Visita · 1</div>
+      <div style="flex:1;background:#9a1b4b;color:#fff">Marca · 1</div>
+    </div>
+    <p class="leyenda">El carrusel 4 es comodín: depende del concepto técnico (ver <a href="#comodin">Comodín</a>). Una sola pieza de venta por semana y un reel por día como máximo.</p>
+  </div>
+</section>
+
+<!-- ================= CALENDARIO ================= -->
+<section id="calendario">
+  <div class="wrap">
+    <p class="kicker"><b>03</b> · Calendario</p>
+    <h2>Del jueves 15 al sábado 31.</h2>
+    <p class="lead">La primera semana sale de archivo para darle tiempo al rodaje. Lo grabado el viernes 16 alimenta la segunda y la tercera semana, y el viernes 30 se cubre el Día de los niños para cerrar el mes con la serie A.</p>
+
+    <div class="cal">
+      <div class="semana">
+        <div class="sem">Semana 1<span>15–18 oct</span></div>
+        <div class="dias">
+          <div class="dia"><span class="f">Jue 15</span><span class="tipo">Reel 1</span><span class="q"><a href="#r1">Primero, los que cuidan</a><small>Los profes en el taller de bienestar del 23-ago (archivo)</small></span><span class="chip c-mar">Marca</span></div>
+          <div class="dia rodaje"><span class="f">Vie 16</span><span class="tipo">Carrusel 1</span><span class="q"><a href="#c1">Disfraz sin comprar nada</a><small>Para el Día de los niños, dos semanas antes · + <a href="#rodajes">Rodaje 1</a> (viernes SER+T)</small></span><span class="chip c-gua">Guardado</span></div>
+          <div class="dia"><span class="f">Sáb 17</span><span class="tipo">Historias</span><span class="q">Encuesta: «Cuando le preguntas qué hizo hoy, te dice…»<small>Siembra la serie A y nos da datos reales para el lunes</small></span><span class="chip c-his">Historias</span></div>
+        </div>
+      </div>
+      <div class="semana">
+        <div class="sem">Semana 2<span>19–25 oct</span></div>
+        <div class="dias">
+          <div class="dia"><span class="f">Lun 19</span><span class="tipo">Reel 2</span><span class="q"><a href="#r2">¿Qué hiciste hoy? —Nada. · cap. 1</a><small>El viernes del rodaje en 15–20 s, con contador</small></span><span class="chip c-alc">Alcance</span></div>
+          <div class="dia"><span class="f">Mié 21</span><span class="tipo">Carrusel 2</span><span class="q"><a href="#c2">SER+T, explicado a un papá que nunca lo ha oído</a><small>Seis láminas con el documento oficial</small></span><span class="chip c-gua">Guardado</span></div>
+          <div class="dia"><span class="f">Jue 22</span><span class="tipo">Reel 3</span><span class="q"><a href="#r3">La otra estructura</a><small>El guion 03 de septiembre, ahora con los niños de vuelta</small></span><span class="chip c-ven">Visita</span></div>
+          <div class="dia"><span class="f">Sáb 24</span><span class="tipo">Historias</span><span class="q">Detrás de cámaras del viernes + resultados de la encuesta<small>Recordatorio de VISITA</small></span><span class="chip c-his">Historias</span></div>
+        </div>
+      </div>
+      <div class="semana">
+        <div class="sem">Semana 3<span>26–31 oct</span></div>
+        <div class="dias">
+          <div class="dia"><span class="f">Lun 26</span><span class="tipo">Reel 4</span><span class="q"><a href="#r4">Los grandes cuidan a los chiquitos</a><small>El guion 04 de septiembre, el más diferenciador</small></span><span class="chip c-alc">Alcance</span></div>
+          <div class="dia"><span class="f">Mié 28</span><span class="tipo">Reel 5</span><span class="q"><a href="#r5">Pregúntale distinto</a><small>El psicólogo del colegio responde al «nada»</small></span><span class="chip c-com">Comentarios</span></div>
+          <div class="dia"><span class="f">Jue 29</span><span class="tipo">Carrusel 3</span><span class="q"><a href="#c3">8 preguntas que sí sacan respuesta</a><small>La versión guardable del reel 5</small></span><span class="chip c-gua">Guardado</span></div>
+          <div class="dia rodaje"><span class="f">Vie 30</span><span class="tipo">Rodaje 2</span><span class="q"><a href="#rodajes">Día de los niños</a><small>Historias en vivo + material para el reel 6 y el carrusel 4</small></span><span class="chip c-rod">Rodaje</span></div>
+          <div class="dia"><span class="f">Sáb 31</span><span class="tipo">Reel 6</span><span class="q"><a href="#r6">¿Qué hiciste hoy? —Nada. · cap. 2</a><small>Disfrazado. Cierra el mes y la secuela del carrusel 1</small></span><span class="chip c-alc">Alcance</span></div>
+        </div>
+      </div>
+      <div class="semana">
+        <div class="sem">Transición<span>3 nov</span></div>
+        <div class="dias">
+          <div class="dia"><span class="f">Mar 3</span><span class="tipo">Carrusel 4</span><span class="q"><a href="#comodin">Comodín</a><small>«Lo prometimos» si el concepto técnico está firmado; si no, el Día de los niños en fotos (el lunes 2 es festivo)</small></span><span class="chip c-mar">Según el caso</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="nota" style="margin-top:12px">Los días con rayas son de rodaje. Las historias de los días con publicación están en <a href="#historias">Historias</a>.</p>
+  </div>
+</section>
+
+<!-- ================= PIEZAS ================= -->
+<section id="piezas">
+  <div class="wrap">
+    <p class="kicker"><b>04</b> · Piezas</p>
+    <h2>Guion, texto y post de cada una.</h2>
+    <p class="lead">Las maquetas muestran el cuadro 0 con la identidad del colegio. La franja punteada es la zona segura de Reels: ahí van los textos y los subtítulos, nunca encima de una cara.</p>
+
+    <!-- R1 -->
+    <article class="ficha" id="r1">
+      <div class="lado">
+        <div class="cel">
+          <div class="bg" style="background:linear-gradient(160deg,#5b6b55,#2f3a2c)"></div>
+          <div class="seg"></div>
+          <span class="tag">cenital · grupo acostado</span>
+          <div class="t" style="top:28%;font-size:17px">Antes de recibir a sus hijos,<small>los profes se tomaron un día para ellos.</small></div>
+          <span class="pie">cuadro 0</span>
+        </div>
+        <p class="cap">Plano cenital de la visualización guiada (bloque 03 del 23-ago).</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">REEL 1</span><span class="fecha">Jueves 15 de octubre · 20–25 s</span><span class="chip c-mar">Marca</span></div>
+        <h3>Primero, los que cuidan</h3>
+        <p class="resumen">El taller de bienestar docente del 23 de agosto, una semana antes del primer día, contado como lo que fue: el colegio cuidando a los que cuidan. Retoma la frase de septiembre («Primero la estructura») y la lleva a las personas. El montaje ya existe en borrador (<i>_EDL - Reel frases docentes</i>).</p>
+        <div class="datos">
+          <div><b>Material</b>Archivo 2026-08-23, bloques 02–08</div>
+          <div><b>Audio</b>Música cálida + frases de los profes</div>
+          <div><b>Cámara lenta</b>Bloque 07 (60 fps)</div>
+        </div>
+        <table class="guion">
+          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
+          <tr><td>0,0–2,5</td><td>Cenital del grupo acostado en la visualización guiada.<br><span class="tx">Antes de recibir a sus hijos,</span> <span class="tx">los profes se tomaron un día para ellos.</span></td></tr>
+          <tr><td>2,5–8</td><td>Respiración y relajación: tres planos cortos (manos, ojos cerrados, el facilitador). Cambio cada 2 s.</td></tr>
+          <tr><td>8–15</td><td>Ejercicio del globo: lo sueltan.<span class="vo">La mejor frase de un docente del EDL «frases docentes» (subtitulada).</span></td></tr>
+          <tr><td>15–20</td><td>Presentaciones en cámara lenta, abrazos, círculo de cierre.<br><span class="tx">Primero, los que cuidan.</span></td></tr>
+          <tr><td>20–23</td><td>Placa del colegio.<br><span class="tx">¿Qué profe te marcó a ti? Etiquétalo.</span></td></tr>
+        </table>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">Una semana antes de que volvieran los niños, volvieron ellos. Un día para respirar, soltar y encontrarse como equipo.
+Porque un profe que está bien enseña mejor.
+
+¿Qué profe te marcó a ti? Etiquétalo aquí abajo 👇</div></div>
+        <p class="reglas bloque"><b>Reglas:</b> 09 §1.17 y 06 §9 pregunta de anécdota con etiqueta, no sí/no · 01 §1 la recompensa visual en el cuadro 0, no el logo · 06 §17 frase-sello que vuelve («Primero…»).</p>
+      </div>
+    </article>
+
+    <!-- C1 -->
+    <article class="ficha" id="c1">
+      <div class="lado">
+        <div class="cel carr">
+          <div class="papel"></div>
+          <div class="t" style="top:12%;color:#b5001b;font-size:20px">Disfraz sin comprar nada<small style="color:#24214f">6 ideas con lo que hay en casa</small></div>
+          <div style="position:absolute;bottom:12%;left:50%;transform:translateX(-50%);width:70px;height:78px;background:#c9a77a;border:3px solid #24214f;border-radius:4px"></div>
+          <div style="position:absolute;bottom:calc(12% + 50px);left:calc(50% - 20px);width:12px;height:12px;background:#24214f;border-radius:50%;box-shadow:28px 0 0 #24214f"></div>
+        </div>
+        <p class="cap">Lámina 1: el disfraz ya terminado (robot de caja) en el estilo de cuaderno de septiembre.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">CARRUSEL 1</span><span class="fecha">Viernes 16 de octubre · 8 láminas</span><span class="chip c-gua">Guardado</span></div>
+        <h3>Disfraz sin comprar nada</h3>
+        <p class="resumen">Sale dos semanas antes del Día de los niños, que es cuando los papás empiezan a pensar en el disfraz. Es útil para cualquier familia, se guarda y conecta con un objetivo del colegio: la sostenibilidad. Cierra con una invitación que se convierte en la secuela del 31.</p>
+        <div class="bloque"><h4>Láminas</h4>
+          <ul class="lista">
+            <li><b>1.</b> Disfraz sin comprar nada. 6 ideas con lo que hay en casa (con el robot ya hecho).</li>
+            <li><b>2.</b> Robot: una caja, tapas de botella y papel aluminio.</li>
+            <li><b>3.</b> Astronauta: dos botellas de gaseosa como tanques y un casco de cartón.</li>
+            <li><b>4.</b> Pintor: camiseta vieja, pinceles y manchas de témpera.</li>
+            <li><b>5.</b> Árbol del campo: ropa café, hojas de papel verde y mucha paciencia.</li>
+            <li><b>6.</b> Superhéroe: una toalla de capa y una inicial de cartulina.</li>
+            <li><b>7.</b> Chef: delantal, gorro de cartulina y una cuchara de palo.</li>
+            <li><b>8.</b> El 30 de octubre mándanos la foto del disfraz por mensaje directo y armamos el álbum del colegio.</li>
+          </ul>
+        </div>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">El Día de los niños se acerca y el mejor disfraz no se compra: se arma en casa, juntos.
+Guarda estas 6 ideas y el 30 mándanos la foto del resultado. Armamos el álbum del colegio.
+
+¿Cuál van a hacer en tu casa?</div></div>
+        <p class="nota bloque"><span class="pendiente">Confirmar</span> que el colegio celebra el Día de los niños el viernes 30 y si hay reglas de disfraz (sin máscaras, sin armas de juguete, etc.). Si no lo celebra, esta pieza se cambia por la que el colegio tenga en esa fecha.</p>
+        <p class="reglas bloque"><b>Reglas:</b> 09 §1.13 fecha de temporada 2–3 semanas antes, nunca el mismo día · 09 §4.7 la primera lámina es la recompensa · 09 §1.12 la acción trae su secuela agendada (reel 6 y carrusel 4).</p>
+      </div>
+    </article>
+
+    <!-- R2 -->
+    <article class="ficha" id="r2">
+      <div class="lado">
+        <div class="cel">
+          <div class="bg" style="background:linear-gradient(170deg,#9fb3c9,#3a4a5c)"></div>
+          <div class="seg"></div>
+          <span class="tag">de espaldas · morral</span>
+          <div class="t" style="top:29%;font-size:21px">—¿Qué hiciste hoy?</div>
+          <div class="t" style="top:46%;font-size:34px;color:#fff">—Nada.</div>
+          <span class="pie">0,0–2,5 s</span>
+        </div>
+        <p class="cap">Sin cara: el niño camina de espaldas hacia la salida y el plano no lo identifica.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">REEL 2</span><span class="fecha">Lunes 19 de octubre · 15–20 s</span><span class="chip c-alc">Alcance</span><span class="chip c-rod">Serie A · cap. 1</span></div>
+        <h3>¿Qué hiciste hoy? —Nada.</h3>
+        <p class="resumen">El chiste que todo papá conoce, y después la prueba: ocho «nadas» del viernes, uno por segundo y medio, con un contador. Pieza de alcance: corta, se entiende sin sonido y no pide nada salvo una respuesta fácil de dar.</p>
+        <div class="datos">
+          <div><b>Material</b>Rodaje 1, bloques A y B</div>
+          <div><b>Audio</b>Base rítmica cálida, cortes a tiempo</div>
+          <div><b>Texto</b>Poppins, navy y blanco</div>
+        </div>
+        <table class="guion">
+          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
+          <tr><td>0,0–1,4</td><td>Niño de espaldas con el morral, caminando hacia la salida.<br><span class="tx">—¿Qué hiciste hoy?</span></td></tr>
+          <tr><td>1,4–2,5</td><td>Corte seco. El mismo plano, quieto.<br><span class="tx">—Nada.</span></td></tr>
+          <tr><td>2,5–14</td><td>Ocho planos de 1,4 s del viernes, cada uno con su etiqueta pequeña: «nada n.º 1: <i>lo que se ve</i>»… hasta «nada n.º 8». Las etiquetas se escriben con lo que de verdad pase ese día (una maqueta, una canción, un largo en la piscina…). Prioridad a manos y detalles.</td></tr>
+          <tr><td>14–17</td><td>Vuelve el niño, ya en la puerta o en el carro.<br><span class="tx">Eso fue nada.</span></td></tr>
+          <tr><td>17–20</td><td>Placa del colegio.<br><span class="tx">¿Y el tuyo qué te contesta?</span><span class="vo">Voz de una mamá o un papá del colegio: «¿Y el tuyo qué te contesta?»</span></td></tr>
+        </table>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">—¿Qué hiciste hoy?
+—Nada.
+
+Esto fue «nada» un viernes en el San Miguel.
+¿Y el tuyo qué te contesta cuando le preguntas? 👇</div></div>
+        <p class="reglas bloque"><b>Reglas:</b> 09 §1.5 alcance: corto, sin barrera, se entiende en mudo · 09 §3 «repetición con contador» (ruva.dg Dc_nuo1JgZl) · 01 §8 el último cuadro empalma con el primero · 09 §1.6 apertura y cierre fijos de serie · 09 §1.17 pregunta en voz y en pantalla.</p>
+      </div>
+    </article>
+
+    <!-- C2 -->
+    <article class="ficha" id="c2">
+      <div class="lado">
+        <div class="cel carr">
+          <div class="bg" style="background:#24214f"></div>
+          <div class="t" style="top:14%;font-size:26px">SER+T<small>explicado a un papá que nunca lo ha oído</small></div>
+          <div class="t" style="bottom:10%;font-size:12px;color:#ffb3bf">La otra estructura · 1/6</div>
+        </div>
+        <p class="cap">Lámina 1 en navy pleno, como el carrusel «¿La fórmula para crecer?» de septiembre.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">CARRUSEL 2</span><span class="fecha">Miércoles 21 de octubre · 6 láminas</span><span class="chip c-gua">Guardado</span><span class="chip c-rod">Serie B</span></div>
+        <h3>SER+T, explicado a un papá que nunca lo ha oído</h3>
+        <p class="resumen">El modelo pedagógico es el diferencial del colegio y casi nadie afuera sabe qué es. Lo explicamos en seis láminas, con fotos del rodaje del viernes, la víspera del reel 3.</p>
+        <div class="bloque"><h4>Láminas (texto base, a validar con el documento oficial)</h4>
+          <ul class="lista">
+            <li><b>1.</b> SER+T, explicado a un papá que nunca lo ha oído.</li>
+            <li><b>2.</b> SER: el desarrollo personal, social y emocional. Lo que el niño es, no solo lo que sabe.</li>
+            <li><b>3.</b> +T: trascender. Liderazgo, compromiso con su comunidad e impacto en otros.</li>
+            <li><b>4.</b> Los viernes cada estudiante entra a la clase que eligió. No por grado: por afinidad.</li>
+            <li><b>5.</b> Y como se mezclan edades, pasa esto: los grandes cuidan a los chiquitos.</li>
+            <li><b>6.</b> Ven un viernes y míralo. Comenta VISITA y te mandamos los horarios.</li>
+          </ul>
+        </div>
+        <p class="nota bloque"><span class="pendiente">Pendiente desde el 1-sep</span> el documento escrito de SER+T. La presentación institucional dice «T = Trascender» y el guion de septiembre decía «aprender algo y saber para qué sirve». No se publica la sigla de memoria: el colegio la confirma por escrito.</p>
+        <p class="reglas bloque"><b>Reglas:</b> 09 §4.7 una idea por lámina · 06 §1–2 palabra clave que nombra lo que quiere el papá (VISITA), no un descuento.</p>
+      </div>
+    </article>
+
+    <!-- R3 -->
+    <article class="ficha" id="r3">
+      <div class="lado">
+        <div class="cel">
+          <div class="bg" style="background:linear-gradient(180deg,#d9d6cf,#8d8a84)"></div>
+          <div class="seg"></div>
+          <span class="tag" style="color:#111">columna · revisión de sept.</span>
+          <div class="t" style="top:29%;font-size:17px;color:#111">Revisamos la estructura del edificio.</div>
+          <span class="pie" style="color:#111">0,0–3,0 s</span>
+        </div>
+        <p class="cap">Empalma con septiembre: el mismo plano de la columna. Blanco y negro más un acento, como las piezas de la revisión.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">REEL 3</span><span class="fecha">Jueves 22 de octubre · 28–33 s</span><span class="chip c-ven">Visita</span><span class="chip c-rod">Serie B</span></div>
+        <h3>La otra estructura</h3>
+        <p class="resumen">El guion 03 de septiembre, que estaba esperando a los niños. Abre con la revisión del edificio y gira hacia SER+T. Es la pieza de venta del mes: el CTA no es «matricúlate», es «ven a verlo un viernes».</p>
+        <div class="datos">
+          <div><b>Material</b>Archivo 2-sep + Rodaje 1, bloques B y E</div>
+          <div><b>Audio</b>0–5 s ambiente; desde el corte, música cálida</div>
+          <div><b>VO</b>Rectoría o un docente</div>
+        </div>
+        <table class="guion">
+          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
+          <tr><td>0,0–3,0</td><td>La columna de la revisión de septiembre.<br><span class="tx">Revisamos la estructura del edificio.</span></td></tr>
+          <tr><td>3,0–5,0</td><td>Corte seco a una clase del viernes, llena de niños.<br><span class="tx">Esta es la otra.</span></td></tr>
+          <tr><td>5–12</td><td>Cuatro planos cortos: un instrumento, un pincel, baile, la feria o el proyecto que haya.<span class="vo">«Los viernes, cada estudiante entra a la clase que eligió.»</span></td></tr>
+          <tr><td>12–19</td><td>Una mesa con niños de distintas edades trabajando juntos.<span class="vo">«No por grado. Por afinidad. Y mezclados con niños de otras edades.»</span></td></tr>
+          <tr><td>19–25</td><td>Plano medio: un niño muestra lo que hizo con sus manos.<span class="vo">«Se llama SER+T.» + la definición oficial en una frase.</span></td></tr>
+          <tr><td>25–31</td><td>Placa del colegio.<br><span class="tx">Ven un viernes y míralo.</span> <span class="tx">Comenta VISITA</span><span class="vo">«Comenta VISITA y te mandamos los horarios para conocer el colegio.»</span></td></tr>
+        </table>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">Comenta VISITA y te mandamos los horarios para conocer el colegio un viernes.
+
+En septiembre revisamos la estructura del edificio. Esta es la otra: SER+T, el modelo sobre el que está construido todo lo demás.</div></div>
+        <div class="bloque"><h4>Mensaje directo para quien comente VISITA</h4>
+<div class="post">¡Hola! Estos son los horarios para visitar el colegio: [horarios que defina el colegio].
+¿Para qué grado estás buscando cupo? Así te presentamos con la persona indicada.</div></div>
+        <p class="reglas bloque"><b>Reglas:</b> 06 §1 palabra clave dicha y escrita, sin botón dibujado · 09 §1.16 la oferta entra después del 60 % · 01 §8 abre una pregunta («¿cuál es la otra?») que se cierra en el reel · regla de septiembre: ninguna afirmación sobre el veredicto del edificio.</p>
+      </div>
+    </article>
+
+    <!-- R4 -->
+    <article class="ficha" id="r4">
+      <div class="lado">
+        <div class="cel">
+          <div class="bg" style="background:linear-gradient(165deg,#b9c98f,#4d6131)"></div>
+          <div class="seg"></div>
+          <span class="tag">descanso · grande + chiquito</span>
+          <div class="t" style="top:28%;font-size:15.5px">En la mayoría de colegios, un niño de once no le habla a uno de seis.</div>
+          <span class="pie">0,0–4,0 s</span>
+        </div>
+        <p class="cap">El plano estrella del rodaje 1: un grande y un chiquito en el mismo cuadro.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">REEL 4</span><span class="fecha">Lunes 26 de octubre · 22–28 s</span><span class="chip c-alc">Alcance</span><span class="chip c-rod">Serie B</span></div>
+        <h3>Los grandes cuidan a los chiquitos</h3>
+        <p class="resumen">Sale de una observación de rodaje: los grandes cuidan a los chiquitos y los chiquitos les piden ayuda sin miedo. Es el resultado directo de mezclar grados los viernes y nadie más lo está contando. El CTA cambia frente al guion de septiembre: en vez de la visita (que ya pidió el reel 3), una pregunta que cualquiera puede contestar.</p>
+        <div class="datos">
+          <div><b>Material</b>Rodaje 1, bloque C</div>
+          <div><b>Audio</b>Música cálida</div>
+          <div><b>Si no hay toma</b>Se corre al rodaje 2</div>
+        </div>
+        <table class="guion">
+          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
+          <tr><td>0,0–4,0</td><td>Un niño grande y uno chiquito en el mismo cuadro, en el descanso.<br><span class="tx">En la mayoría de colegios, un niño de once no le habla a uno de seis.</span></td></tr>
+          <tr><td>4,0–6,5</td><td>El chiquito le pide algo al grande.<br><span class="tx">Aquí sí.</span> (solo, grande, el único texto que crece en la serie)</td></tr>
+          <tr><td>6,5–15</td><td>Tres o cuatro planos: amarrando un cordón, cargando una lonchera, explicando algo.<span class="vo">«Los viernes las clases se arman por afinidad, no por edad.»</span></td></tr>
+          <tr><td>15–21</td><td>Plano general del descanso con grados mezclados.<span class="vo">«Así que para la hora del descanso ya se conocen.»</span></td></tr>
+          <tr><td>21–26</td><td>Placa del colegio.<br><span class="tx">¿Quién te cuidaba a ti en el colegio?</span><span class="vo">«¿Y a ti quién te cuidaba en el colegio?»</span></td></tr>
+        </table>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">Aquí los grandes cuidan a los chiquitos. Y los chiquitos les piden ayuda sin miedo.
+No es casualidad: los viernes las clases se arman por afinidad, no por edad.
+
+¿Quién te cuidaba a ti en el colegio? Etiquétalo 👇</div></div>
+        <p class="reglas bloque"><b>Reglas:</b> 09 §1.17 pregunta de anécdota en voz · 09 §1.9 la serie B no repite plantilla (reel 3 es proceso, reel 4 es escena) · 03 el texto del gancho, dos líneas y 4 s completos en pantalla · la provocación va a la categoría («la mayoría de colegios»), nunca a un colegio con nombre.</p>
+      </div>
+    </article>
+
+    <!-- R5 -->
+    <article class="ficha" id="r5">
+      <div class="lado">
+        <div class="cel">
+          <div class="bg" style="background:linear-gradient(170deg,#c7c2b8,#6f6a62)"></div>
+          <div class="seg"></div>
+          <span class="tag">psicólogo a cámara</span>
+          <div class="t" style="top:27%;font-size:15px">Si le preguntas «¿qué hiciste hoy?», te va a decir «nada».</div>
+          <div class="t" style="top:52%;font-size:13px;color:#fff;opacity:.9">Pregúntale esto.</div>
+          <span class="pie">0,0–2,5 s</span>
+        </div>
+        <p class="cap">El texto va arriba de la cabeza, nunca sobre la cara.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">REEL 5</span><span class="fecha">Miércoles 28 de octubre · 35–40 s</span><span class="chip c-com">Comentarios</span><span class="chip c-rod">Serie C</span></div>
+        <h3>Pregúntale distinto</h3>
+        <p class="resumen">La respuesta útil al chiste de la serie A. El psicólogo del colegio explica por qué «¿qué hiciste hoy?» no funciona y da tres preguntas que sí. El regalo son 20 preguntas en una hoja, firmadas por él. Atrae a papás de fuera del colegio, que es justo a quien hay que llegar.</p>
+        <div class="datos">
+          <div><b>Material</b>Rodaje 1, bloque D</div>
+          <div><b>Audio</b>Su voz + base suave</div>
+          <div><b>Regalo</b>PDF «20 preguntas para después del colegio»</div>
+        </div>
+        <table class="guion">
+          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
+          <tr><td>0,0–2,5</td><td>Psicólogo a cámara, plano medio, fondo del colegio desenfocado.<br><span class="tx">Si le preguntas «¿qué hiciste hoy?», te va a decir «nada».</span></td></tr>
+          <tr><td>2,5–9</td><td><span class="vo">Con sus palabras: por qué la pregunta es demasiado grande para un niño cansado.</span> Lower third: nombre y cargo, 3 s.</td></tr>
+          <tr><td>9–28</td><td>Tres preguntas, una por plano, cada una con un B-roll del viernes detrás:<br><span class="tx">¿Con quién te sentaste hoy?</span> <span class="tx">¿Qué fue lo más chistoso?</span> <span class="tx">¿A quién ayudaste?</span><span class="vo">Las preguntas finales las elige él; estas son ejemplos.</span></td></tr>
+          <tr><td>28–33</td><td><span class="vo">«Tengo veinte más. Comenta PREGUNTAS y te las mandamos.»</span></td></tr>
+          <tr><td>33–37</td><td>Placa del colegio.<br><span class="tx">Comenta PREGUNTAS</span> (rojo del colegio, grande)</td></tr>
+        </table>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">Comenta PREGUNTAS y te mandamos las 20 preguntas que recomienda nuestro psicólogo para después del colegio.
+
+«¿Qué hiciste hoy?» es una pregunta demasiado grande para un niño cansado. Prueba con estas.</div></div>
+        <div class="bloque"><h4>Mensaje directo para quien comente PREGUNTAS</h4>
+<div class="post">¡Aquí están las 20 preguntas! [enlace al PDF]
+¿En qué grado está tu hijo? Te contamos cómo trabajamos esa edad en el colegio.</div></div>
+        <p class="nota bloque"><span class="pendiente">Confirmar</span> nombre y cargo del psicólogo, su disponibilidad el viernes 16, y que valide las 20 preguntas antes de publicar. El PDF lo diseñamos nosotros en el estilo de cuaderno del colegio.</p>
+        <p class="reglas bloque"><b>Reglas:</b> 06 §1–3 palabra clave que nombra el deseo y regalo con cantidad y forma («20 preguntas, una hoja») · 09 §1.3 el DM filtra con una pregunta · 01 §5 nombra el dolor del papá en la primera frase · 09 §4.4 prueba del DM desde otra cuenta antes de publicar.</p>
+      </div>
+    </article>
+
+    <!-- C3 -->
+    <article class="ficha" id="c3">
+      <div class="lado">
+        <div class="cel carr">
+          <div class="papel"></div>
+          <div class="t" style="top:10%;color:#24214f;font-size:15px">—¿Qué hiciste hoy?<br>—Nada.</div>
+          <div class="t" style="top:42%;color:#b5001b;font-size:21px">8 preguntas que sí sacan respuesta</div>
+          <div class="t" style="bottom:8%;color:#24214f;font-size:10px;font-weight:600">Con nuestro psicólogo</div>
+        </div>
+        <p class="cap">Estilo de cuaderno, el mismo de las historias de septiembre.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">CARRUSEL 3</span><span class="fecha">Jueves 29 de octubre · 10 láminas</span><span class="chip c-gua">Guardado</span><span class="chip c-rod">Serie C</span></div>
+        <h3>8 preguntas que sí sacan respuesta</h3>
+        <p class="resumen">La versión guardable del reel 5: una pregunta por lámina, con una línea de por qué funciona. La última lámina repite la palabra clave para quien quiera las 20.</p>
+        <div class="bloque"><h4>Estructura</h4>
+          <ul class="lista">
+            <li><b>1.</b> «—¿Qué hiciste hoy? —Nada.» 8 preguntas que sí sacan respuesta.</li>
+            <li><b>2–9.</b> Una pregunta por lámina + por qué funciona en una línea (las define el psicólogo).</li>
+            <li><b>10.</b> ¿Quieres las 20? Comenta PREGUNTAS.</li>
+          </ul>
+        </div>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">Guárdalo para esta tarde, cuando lo recojas.
+Y si quieres las 20, comenta PREGUNTAS.</div></div>
+        <p class="reglas bloque"><b>Reglas:</b> 09 §4.7 el carrusel de la semana es la versión guardable del reel · 09 §1.4 se pide guardar antes del contenido.</p>
+      </div>
+    </article>
+
+    <!-- R6 -->
+    <article class="ficha" id="r6">
+      <div class="lado">
+        <div class="cel">
+          <div class="bg" style="background:linear-gradient(170deg,#e9b44c,#8c3b2e)"></div>
+          <div class="seg"></div>
+          <span class="tag">disfrazado · de espaldas</span>
+          <div class="t" style="top:29%;font-size:21px">—¿Qué hiciste hoy?</div>
+          <div class="t" style="top:46%;font-size:34px">—Nada.</div>
+          <span class="pie">0,0–2,5 s</span>
+        </div>
+        <p class="cap">La misma apertura de la serie A, ahora con el disfraz.</p>
+      </div>
+      <div class="cuerpo">
+        <div class="cab"><span class="cod">REEL 6</span><span class="fecha">Sábado 31 de octubre · 15–18 s</span><span class="chip c-alc">Alcance</span><span class="chip c-rod">Serie A · cap. 2</span></div>
+        <h3>¿Qué hiciste hoy? —Nada. · Día de los niños</h3>
+        <p class="resumen">El capítulo 2 de la serie, con el niño disfrazado diciendo «nada». La broma se entiende sola. Cierra la acción del carrusel 1: aparecen los disfraces hechos en casa que mandaron las familias.</p>
+        <table class="guion">
+          <tr><th>Tiempo</th><th>Imagen · texto · voz</th></tr>
+          <tr><td>0,0–2,5</td><td>Niño disfrazado de espaldas, caminando a la salida.<br><span class="tx">—¿Qué hiciste hoy?</span> <span class="tx">—Nada.</span></td></tr>
+          <tr><td>2,5–12</td><td>Siete «nadas» del día con contador: el desfile, los disfraces de cartón, los profes disfrazados. Si hay fotos de las familias, entran aquí.</td></tr>
+          <tr><td>12–15</td><td>El niño, de frente o de perfil, con el disfraz.<br><span class="tx">Eso fue nada.</span></td></tr>
+          <tr><td>15–18</td><td>Placa del colegio.<br><span class="tx">¿De qué se disfrazó el tuyo?</span></td></tr>
+        </table>
+        <div class="bloque"><h4>Post</h4>
+<div class="post">—¿Qué hiciste hoy?
+—Nada. 🎃
+
+Gracias a todas las familias que armaron su disfraz en casa. ¿De qué se disfrazó el tuyo? Muéstranos aquí abajo 👇</div></div>
+        <p class="reglas bloque"><b>Reglas:</b> 09 §1.6 apertura y cierre idénticos al cap. 1 · 09 §1.9 la serie A sale 2 veces en 14 días, no más · 09 §1.12 secuela de la acción del carrusel 1.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= HISTORIAS ================= -->
+<section id="historias">
+  <div class="wrap">
+    <p class="kicker"><b>05</b> · Historias</p>
+    <h2>Las historias sostienen la conversación.</h2>
+    <p class="lead">No repiten el feed: preguntan, recuerdan la palabra clave de la semana y muestran el detrás de cámaras. Los enlaces van con el sticker nativo de Instagram, nunca con un botón dibujado.</p>
+    <div class="historias">
+      <div><b>Jue 15</b>Reel 1 + sticker de mención: «Etiqueta al profe que te marcó».</div>
+      <div><b>Vie 16</b>Rodaje en vivo, sin caras de niños: manos, materiales, el salón listo.</div>
+      <div><b>Sáb 17</b>Encuesta: «Cuando le preguntas qué hizo hoy, te dice…» (Nada · Ya te dije · Me cuenta todo) + caja: «La respuesta más corta que te ha dado».</div>
+      <div><b>Lun 19</b>Reel 2 + el resultado real de la encuesta («El __ % dijo nada»). Solo con el dato que salga.</div>
+      <div><b>Mié 21</b>Carrusel 2 + prueba: «¿Qué significa la T de SER+T?» con tres opciones.</div>
+      <div><b>Sáb 24</b>Detrás de cámaras del viernes + las mejores respuestas de la caja + recordatorio de VISITA.</div>
+      <div><b>Mié 28</b>Reel 5 + caja: «¿Qué pregunta te funciona a ti?». Las respuestas se comparten el jueves.</div>
+      <div><b>Vie 30</b>Día de los niños en vivo (grupales y de espaldas) + «mándanos la foto del disfraz».</div>
+      <div><b>Sáb 31</b>Reel 6 + repost de las fotos que mandaron las familias (con su permiso).</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RODAJES ================= -->
+<section id="rodajes">
+  <div class="wrap">
+    <p class="kicker"><b>06</b> · Rodajes</p>
+    <h2>Dos días de grabación alimentan el mes.</h2>
+    <div class="rodajes">
+      <div class="rodaje">
+        <p class="f">Rodaje 1 · viernes 16 de octubre</p>
+        <h3>Un viernes SER+T</h3>
+        <p class="nota">Alimenta los reels 2, 3, 4 y 5 y los carruseles 2 y 3. Si el colegio no puede el 16, pasa al viernes 23 y el calendario se corre una semana.</p>
+        <ol>
+          <li><b>A · Salida.</b> Un niño de espaldas con el morral, caminando a la puerta o al carro. Dos versiones: caminando y quieto. Es la apertura de la serie A.</li>
+          <li><b>B · Clases por afinidad.</b> Plano fijo de 8–10 s de cada clase, aunque se usen 1,5 s. Primero manos y detalles: un instrumento, un pincel, una maqueta, el agua. Anotar qué es cada clase (para las etiquetas de «nada»).</li>
+          <li><span class="estrella">★</span> <b>C · Descanso mezclado.</b> Un grande y un chiquito en el mismo cuadro: cordón, lonchera, explicación. Es el plano del mes; si aparece uno bueno, el reel 4 está hecho.</li>
+          <li><b>D · Psicólogo a cámara.</b> Plano medio, mira a la cámara. Que responda incluyendo la pregunta y que deje dos segundos de silencio al final. Grabar las 20 preguntas en voz, por si alguna sirve sola.</li>
+          <li><b>E · Lo que hicieron.</b> Un niño mostrando a cámara algo hecho con sus manos (solo con autorización).</li>
+          <li><b>F · Fotos para el carrusel 2.</b> Una por lámina: clase, mezcla de edades, grande con chiquito.</li>
+          <li><b>G · Ambiente.</b> 30 s de sonido limpio del colegio con niños.</li>
+        </ol>
+      </div>
+      <div class="rodaje">
+        <p class="f">Rodaje 2 · viernes 30 de octubre</p>
+        <h3>Día de los niños</h3>
+        <p class="nota">Alimenta el reel 6, el carrusel 4 y las historias del día. Por confirmar con el colegio.</p>
+        <ol>
+          <li><b>A · Apertura de la serie A.</b> Un niño disfrazado de espaldas, caminando a la salida. El mismo encuadre del rodaje 1.</li>
+          <li><b>B · Los «nadas» del día.</b> Desfile, disfraces de cartón, profes disfrazados. Planos de 8–10 s.</li>
+          <li><b>C · Retratos en cámara lenta</b> (FHD 60 fps) solo de niños con autorización.</li>
+          <li><b>D · Historias en vivo</b> durante la jornada: grupales y de espaldas.</li>
+          <li><b>E · Fotos</b> para el álbum del carrusel 4.</li>
+        </ol>
+        <p class="nota" style="margin-top:14px">En los dos: 4K 29,97 para lo general y FHD 59,94 para la cámara lenta. La Canon graba HDR, así que el material se conforma y se corrige en Premiere antes de montar. El texto de cada reel lo aprueba el colegio antes de publicar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMODÍN ================= -->
+<section id="comodin">
+  <div class="wrap">
+    <p class="kicker"><b>07</b> · Comodín</p>
+    <h2>Una promesa pendiente.</h2>
+    <div class="comodin">
+      <div>
+        <h3>Si el concepto técnico está firmado: «Lo prometimos»</h3>
+        <p>En septiembre el colegio dijo en público: «Cuando salga el concepto técnico, lo publicamos». Si ya existe, esta pieza tiene prioridad sobre cualquier otra del calendario y sale como reel y carrusel: el documento, qué se revisó y qué dice, con la voz de la rectoría.</p>
+        <ul>
+          <li>Sobrio: blanco y negro más un solo acento. Sin verde, amarillo ni rojo en la gráfica.</li>
+          <li>Sin música con melodía y sin audio en tendencia.</li>
+          <li>Si el concepto trae recomendaciones, el mensaje es «esto es lo que vamos a intervenir y cuándo».</li>
+          <li>El ingeniero no aparece recomendando el colegio ni pegado a un CTA.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Si todavía no está: álbum del Día de los niños</h3>
+        <p>El martes 3 de noviembre sale el carrusel 4 con las fotos del día y los disfraces que mandaron las familias. Es la segunda secuela de la acción del carrusel 1.</p>
+        <p>«Lo prometimos» queda listo para salir el día que el concepto llegue, sin esperar al plan de noviembre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PENDIENTES ================= -->
+<section id="pendientes">
+  <div class="wrap">
+    <p class="kicker"><b>08</b> · Por confirmar con el colegio</p>
+    <h2>Lo que necesitamos para arrancar.</h2>
+    <ul class="checks">
+      <li><span class="n">1</span><span>¿Podemos grabar el viernes 16? ¿A qué hora son las clases por afinidad y el descanso?<small>Si no, pasamos al 23 y corremos el calendario una semana.</small></span><span class="urg si">Antes del jue 15</span></li>
+      <li><span class="n">2</span><span>Autorización de uso de imagen de los niños que salgan en primer plano.<small>Sin autorización firmada, el niño sale de espaldas, en grupo o solo en manos y detalles.</small></span><span class="urg si">Antes del rodaje</span></li>
+      <li><span class="n">3</span><span>Psicólogo del colegio: nombre, cargo y disponibilidad el viernes 16.<small>Y su validación de las 20 preguntas antes del 28.</small></span><span class="urg si">Antes del jue 15</span></li>
+      <li><span class="n">4</span><span>El documento oficial de SER+T y el significado exacto de la T.<small>Pendiente desde el 1 de septiembre. Sin él no salen el carrusel 2 ni el reel 3.</small></span><span class="urg">Antes del lun 19</span></li>
+      <li><span class="n">5</span><span>¿Ya está el concepto técnico de la evaluación estructural? ¿Qué dice?<small>Define el comodín.</small></span><span class="urg">Lo antes posible</span></li>
+      <li><span class="n">6</span><span>¿El colegio celebra el Día de los niños el viernes 30? ¿Hay reglas de disfraz?</span><span class="urg">Antes del vie 16</span></li>
+      <li><span class="n">7</span><span>¿Quién responde los mensajes de VISITA y PREGUNTAS, y cuáles son los horarios de visita?<small>La respuesta automática la dejamos configurada y probada antes del 22.</small></span><span class="urg">Antes del jue 22</span></li>
+      <li><span class="n">8</span><span>¿Qué se publicó entre el 1 y el 14 de octubre?<small>Para no repetir temas ni plantillas.</small></span><span class="urg">Esta semana</span></li>
+      <li><span class="n">9</span><span>¿Hay capacitación docente, simulacro o reunión de padres en octubre? ¿Cuándo abren admisiones 2027-2028?<small>Cualquiera de las dos cosas entra como cubrimiento o cambia el CTA del mes.</small></span><span class="urg">Esta semana</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= REGLAS Y MEDICIÓN ================= -->
+<section id="reglas">
+  <div class="wrap">
+    <p class="kicker"><b>09</b> · Reglas y medición</p>
+    <h2>Lo que no se negocia y cómo sabremos si sirvió.</h2>
+    <div class="dos">
+      <div class="caja">
+        <h3>No negociables</h3>
+        <ul>
+          <li>Ningún niño en primer plano sin autorización firmada de su acudiente.</li>
+          <li>Ninguna pieza dice que el colegio es seguro hasta que exista el concepto técnico firmado.</li>
+          <li>Cero comparaciones con colegios con nombre y cero datos del sismo como argumento de venta.</li>
+          <li>El colegio aprueba cada texto palabra por palabra antes de publicar.</li>
+          <li>El cuadro 0 es la recompensa, nunca el logo. El logo va en la placa de cierre.</li>
+          <li>Subtítulos de máximo 3 palabras, en la zona segura, nunca sobre una cara.</li>
+          <li>Color corregido plano por plano, voz por Adobe Podcast, música y loudness a −14 LUFS.</li>
+          <li>La palabra clave se dice y se escribe. No se dibujan botones ni se cierra con «síguenos».</li>
+          <li>Un reel por día como máximo y una pieza de venta por semana.</li>
+        </ul>
+      </div>
+      <div class="caja">
+        <h3>Qué mediríamos</h3>
+        <div class="tabla-scroll">
+        <table class="med">
+          <tr><th>Objetivo</th><th>Métrica</th><th>Cumplió si…</th></tr>
+          <tr><td>Alcance (reels 2, 4, 6)</td><td>Vistas frente a la mediana de la cuenta en septiembre</td><td>≥ 2 veces la mediana</td></tr>
+          <tr><td>Guardado (carruseles 1–3)</td><td>Guardados ÷ alcance (Insights)</td><td>≥ 3 %</td></tr>
+          <tr><td>Comentarios (reel 5)</td><td>Comentarios ÷ vistas</td><td>≥ 0,5 %</td></tr>
+          <tr><td>Visita (reel 3)</td><td>Mensajes de VISITA → visitas agendadas</td><td>Las contamos con el colegio</td></tr>
+          <tr><td>Marca (reel 1)</td><td>Likes ÷ vistas y etiquetas a profes</td><td>≥ 5 % de likes</td></tr>
+        </table>
+        </div>
+        <p class="nota" style="margin-top:12px">La mediana de referencia la sacamos de los Insights de septiembre. Al cierre de octubre entregamos la tabla pieza por pieza con tres decisiones para noviembre: qué serie sube, cuál se pausa y qué formato probamos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="media/4a5a3a73af.png" alt="BLACKMOUTH">
+    <span>Plan de contenidos para el Liceo Campestre San Miguel · Octubre 2026 · Preparado el 14 de octubre</span>
+  </div>
+</footer>
+
+</body>
+</html>
