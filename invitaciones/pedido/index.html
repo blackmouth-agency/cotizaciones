@@ -423,7 +423,8 @@ textarea.field{ min-height:92px; resize:vertical; line-height:1.5; }
       <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2" stroke="#CBD83B"/><path d="M3.5 7l8.5 6.5L20.5 7" stroke="#A88AED"/></svg></span>
       <span><b>Invitaciones web</b><small>Tu pedido</small></span>
     </a>
-    <a class="btn btn--ghost btn--sm" id="waTop" href="#" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91A9.88 9.88 0 0 0 12.04 2zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74 2.48 1.07 2.48.72 2.93.68.45-.04 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg><span>¿Dudas?</span></a>
+    <span style="display:flex;gap:8px;align-items:center"><a class="btn btn--ghost btn--sm" id="langLink" data-pais="us" href="#"></a>
+    <a class="btn btn--ghost btn--sm" id="waTop" href="#" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91A9.88 9.88 0 0 0 12.04 2zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74 2.48 1.07 2.48.72 2.93.68.45-.04 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg><span>¿Dudas?</span></a></span>
   </div>
 </header>
 
@@ -454,6 +455,13 @@ textarea.field{ min-height:92px; resize:vertical; line-height:1.5; }
               <button class="chip" type="button" data-v="otro">Otra celebración</button>
             </div>
           </div>
+          <div class="ctl" data-pais="es">
+            <span class="lbl" id="l-trato">¿Cómo les hablas a tus invitados?</span>
+            <div class="chips" role="group" aria-labelledby="l-trato" data-name="trato">
+              <button class="chip" type="button" data-v="vosotros" aria-pressed="true">De vosotros (España)</button>
+              <button class="chip" type="button" data-v="ustedes">De ustedes (Latinoamérica)</button>
+            </div>
+          </div>
           <div class="row2" data-show="otro">
             <div class="ctl"><label for="otro_que">¿Qué celebras?</label><input class="field" id="otro_que" name="otro_que" maxlength="40" placeholder="Cumpleaños, baby shower, primera comunión…"></div>
             <div class="ctl">
@@ -477,18 +485,18 @@ textarea.field{ min-height:92px; resize:vertical; line-height:1.5; }
             <h3>Tu plan</h3>
             <div class="plans" data-name="plan">
               <button class="plan" type="button" data-v="esencial" aria-pressed="false">
-                <b>Esencial</b><span class="price tnum">$250.000</span>
+                <b>Esencial</b><span class="price tnum" data-precio="esencial"></span>
                 <ul><li>Portada que se abre, con tus colores</li><li>Cuenta regresiva, mapa y calendario</li><li>Vestuario, detalles, regalos y familia</li><li>Confirmaciones en línea · 1 ronda de ajustes</li></ul>
               </button>
               <button class="plan" type="button" data-v="premium" aria-pressed="true">
                 <span class="tag">La de las demos</span>
-                <b>Premium</b><span class="price tnum">$380.000</span>
+                <b>Premium</b><span class="price tnum" data-precio="premium"></span>
                 <ul><li>Todo lo de la Esencial</li><li>Galería de hasta 8 fotos y tu canción</li><li>Tu historia, dos lugares y pregunta extra</li><li>Link por invitado · 2 rondas de ajustes</li></ul>
               </button>
             </div>
             <div class="extras">
-              <label class="check"><input type="checkbox" name="extra" id="x48h" value="48h"><span><b>Entrega en 48 horas</b> · + $50.000</span></label>
-              <label class="check"><input type="checkbox" name="extra" id="xhistorias" value="historias"><span><b>Versión para historias de Instagram</b> · + $40.000</span></label>
+              <label class="check"><input type="checkbox" name="extra" id="x48h" value="48h"><span><b>Entrega en 48 horas</b> · + <span data-extra="48h"></span></span></label>
+              <label class="check"><input type="checkbox" name="extra" id="xhistorias" value="historias"><span><b>Versión para historias de Instagram</b> · + <span data-extra="historias"></span></span></label>
             </div>
           </div>
         </fieldset>
@@ -501,6 +509,7 @@ textarea.field{ min-height:92px; resize:vertical; line-height:1.5; }
             <div class="ctl"><label for="hora">Hora de inicio</label><input class="field" id="hora" name="hora" type="time"></div>
             <div class="ctl"><label for="hora_fin">Hora de cierre <span class="opc">(opcional)</span></label><input class="field" id="hora_fin" name="hora_fin" type="time"></div>
           </div>
+          <div class="ctl" data-pais="us es"><label for="zona">Zona horaria</label><select class="field" id="zona"></select><small class="hint">Para que la cuenta regresiva y el calendario marquen la hora exacta.</small></div>
           <p class="advice" id="advice"></p>
           <div class="rep" id="lugares"></div>
           <button class="btn btn--ghost btn--sm" type="button" id="addLugar" data-premium>+ Agregar un segundo lugar (ceremonia y recepción, misa y fiesta…)</button>
@@ -715,15 +724,16 @@ textarea.field{ min-height:92px; resize:vertical; line-height:1.5; }
    ?wa=573001234567&aliado=Nombre  → el WhatsApp y el crédito son del aliado.
    ?api=http://localhost:8781/exec → solo para pruebas en este computador. */
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyD41xxvS0mhfsT5ttElXSTm0YBrGKfP6iwBSVjwpvr18ezzMU7EOIrOFaHejyyfLXJ/exec';
-const PAGO = { esencial: '', premium: '' };
-const PRECIOS = { esencial: 250000, premium: 380000 };
-const EXTRAS = { '48h': 50000, historias: 40000 };
+const CFGP = {"pais": "co", "moneda": "COP", "precios": {"esencial": 250000, "premium": 380000}, "extras": {"48h": 50000, "historias": 40000}, "zona": "co", "tel_min": 10, "idioma": "es", "locale": "es-CO", "zonas": [], "pistas": {"xv": "../demos/xv/media/musica.mp3", "boda": "../demos/boda/media/musica.mp3", "grado": "../demos/grado/media/musica.mp3"}};          // lo que cambia por país (lo pone build_pedido.py)
+const PAGO = CFGP.pago || { esencial: '', premium: '' };
+const PRECIOS = CFGP.precios;
+const EXTRAS = CFGP.extras;
 const MAX_LADO = 2400, CALIDAD = .86;
 
 const $ = (s, r) => (r || document).querySelector(s);
 const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const peso = n => '$' + Math.round(n).toLocaleString('es-CO');
+const peso = n => CFGP.moneda === 'EUR' ? Math.round(n).toLocaleString('es-ES') + ' €' : '$' + Math.round(n).toLocaleString(CFGP.moneda === 'COP' ? CFGP.locale : 'en-US');
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const q = new URLSearchParams(location.search);
 const apiParam = q.get('api') || '';
@@ -773,10 +783,24 @@ const TYPES = [
   { v: 'clasica', n: 'Clásica' }, { v: 'editorial', n: 'Editorial' }, { v: 'romantica', n: 'Romántica' },
   { v: 'caligrafica', n: 'Caligráfica' }, { v: 'moderna', n: 'Moderna' }, { v: 'deco', n: 'Art déco' }
 ];
-const PAL_KEYS = ['lila', 'salvia', 'azul', 'rosa', 'esmeralda', 'negro'];   // mismo orden que PALETTES (autopiloto/estilos.py)
+const PAL_KEYS = ['lila', 'salvia', 'azul', 'rosa', 'esmeralda', 'negro'];
+if (CFGP.fotos) Object.assign(PHOTOS, CFGP.fotos);
+if (CFGP.evd) Object.keys(CFGP.evd).forEach(k => Object.assign(EVD[k], CFGP.evd[k]));
+if (CFGP.nombres) {
+  (CFGP.nombres.estilos || []).forEach((n, i) => { if (STYLES[i]) STYLES[i].n = n; });
+  (CFGP.nombres.paletas || []).forEach((n, i) => { if (PALETTES[i]) PALETTES[i].n = n; });
+  (CFGP.nombres.letras || []).forEach((n, i) => { if (TYPES[i]) TYPES[i].n = n; });
+}
+$$('[data-pais]').forEach(x => { x.hidden = x.dataset.pais.split(' ').indexOf(CFGP.pais) < 0; });
+$$('[data-precio]').forEach(x => { x.textContent = peso(PRECIOS[x.dataset.precio]); });
+$$('[data-extra]').forEach(x => { x.textContent = peso(EXTRAS[x.dataset.extra]); });
+(function(){
+  const z = $('#zona'); (CFGP.zonas || []).forEach(([v, n]) => { const o = el('option', null, n); o.value = v; z.append(o); }); z.value = CFGP.zona || '';
+  const l = $('#langLink'); if (CFGP.otro_idioma) { l.textContent = CFGP.otro_idioma.etiqueta; l.href = CFGP.otro_idioma.href + location.search; l.hreflang = CFGP.otro_idioma.lang; }
+})();   // mismo orden que PALETTES (autopiloto/estilos.py)
 
 /* ================= estado ================= */
-const S = { step: 1, tipo: '', voz: 'yo', plan: 'premium', pal: 0, st: 'cinta', ff: 'editorial', pista: '', cupos: 2,
+const S = { step: 1, tipo: '', voz: 'yo', trato: 'vosotros', plan: 'premium', pal: 0, st: 'cinta', ff: 'editorial', pista: '', cupos: 2,
             ninos: '', mascotas: '', vestuario: '', regalos: [] };
 const FOTOS = {};          // rol -> { blob, url, w, h }
 const STEPS = ['Celebración', 'Fecha y lugar', 'Tu gente', 'Detalles', 'Diseño', 'Fotos', 'Tus datos'];
@@ -899,9 +923,9 @@ $('#addHito').addEventListener('click', () => itemHito());
 
 /* ---------- música ---------- */
 const PISTAS = [
-  { v: 'xv', n: 'Vals de los quince', d: 'Cuerdas y piano, para entrar bailando', src: '../demos/xv/media/musica.mp3' },
-  { v: 'boda', n: 'Tiple y café', d: 'Acústica colombiana, cálida', src: '../demos/boda/media/musica.mp3' },
-  { v: 'grado', n: 'Lo logramos', d: 'Alegre y luminosa', src: '../demos/grado/media/musica.mp3' }
+  { v: 'xv', n: 'Vals de los quince', d: 'Cuerdas y piano, para entrar bailando', src: CFGP.pistas.xv },
+  { v: 'boda', n: 'Tiple y café', d: 'Acústica colombiana, cálida', src: CFGP.pistas.boda },
+  { v: 'grado', n: 'Lo logramos', d: 'Alegre y luminosa', src: CFGP.pistas.grado }
 ];
 let audio = null, sonando = '';
 const ICO_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.2-6.5a1 1 0 0 0 0-1.7L9.5 4.6A1 1 0 0 0 8 5.5z"/></svg>';
@@ -939,7 +963,7 @@ function advise(){
   if (days < 5) { a.append('Es muy pronto: marca la ', el('b', null, 'entrega en 48 horas'), ' y escríbenos para confirmar que alcanzamos.'); return; }
   if (days < 25) { a.append('Vas justo: con la ', el('b', null, 'entrega en 48 horas'), ' la mandas con tiempo.'); return; }
   const by = new Date(d); by.setDate(by.getDate() - 30);
-  a.append('Faltan ' + days + ' días. Lo ideal es enviarla ', el('b', null, 'hacia el ' + by.toLocaleDateString('es-CO', { day: 'numeric', month: 'long' })), ', un mes antes.');
+  a.append('Faltan ' + days + ' días. Lo ideal es enviarla ', el('b', null, 'hacia el ' + by.toLocaleDateString(CFGP.locale, { day: 'numeric', month: 'long' })), ', un mes antes.');
 }
 ['fecha', 'hora'].forEach(id => $('#' + id).addEventListener('input', () => { advise(); paint(); }));
 
@@ -1069,7 +1093,8 @@ function recoger(){
   for (let i = 0; i < 8; i++) if (FOTOS['g' + i]) galeria.push('g' + i + '.jpg');
   const vest = S.vestuario === 'otro' ? val('vest_otro') : S.vestuario;
   return {
-    version: 1, plan: S.plan, extras: extras(), aliado: ALIADO, voz: S.tipo === 'otro' ? S.voz : '',
+    version: 1, pais: CFGP.pais, idioma: CFGP.idioma, trato: CFGP.pais === 'es' ? S.trato : '', zona: $('#zona').value || CFGP.zona || '',
+    plan: S.plan, extras: extras(), aliado: ALIADO, voz: S.tipo === 'otro' ? S.voz : '',
     evento: { tipo: S.tipo, otro_que: val('otro_que'), nombre: val('nombre'), nombre2: val('nombre2'), apellidos: val('apellidos'),
               grado_titulo: val('grado_titulo'), grado_institucion: val('grado_institucion'), fecha: val('fecha'), hora: val('hora'), hora_fin: val('hora_fin') },
     lugares, familia,
@@ -1116,7 +1141,7 @@ function validar(n){
     });
   }
   if (n === 3) {
-    const w = val('whatsapp').replace(/\D/g, ''); if (w && w.length < 10) errs.push(malo($('#whatsapp'), 'Revisa el número: le faltan dígitos.'));
+    const w = val('whatsapp').replace(/\D/g, ''); if (w && w.length < CFGP.tel_min) errs.push(malo($('#whatsapp'), 'Revisa el número: le faltan dígitos.'));
   }
   if (n === 6) {
     if (!FOTOS.portada) errs.push(malo($('[data-rol="portada"]'), 'Falta la foto de portada.'));
@@ -1124,7 +1149,7 @@ function validar(n){
   }
   if (n === 7) {
     req('c_nombre', 'Falta tu nombre.');
-    const c = val('c_celular').replace(/\D/g, ''); if (c.length < 10) errs.push(malo($('#c_celular'), 'Revisa tu WhatsApp: le faltan dígitos.'));
+    const c = val('c_celular').replace(/\D/g, ''); if (c.length < CFGP.tel_min) errs.push(malo($('#c_celular'), 'Revisa tu WhatsApp: le faltan dígitos.'));
     const m = val('c_correo'); if (m && !/^\S+@\S+\.\S+$/.test(m)) errs.push(malo($('#c_correo'), 'Revisa el correo.'));
     if (!$('#acepta_datos').checked) errs.push(malo($('#acepta_datos'), 'Necesitamos esta autorización para hacer tu invitación.'));
   }
@@ -1162,7 +1187,7 @@ function resumen(){
   const fila = (a, b) => { const d = el('div'); d.append(el('span', null, a), el('b', null, b)); r.append(d); };
   const EV = { xv: 'Quince años', boda: 'Boda', grado: 'Grado', bautizo: 'Bautizo', otro: p.evento.otro_que || 'Celebración' };
   fila('Celebración', EV[p.evento.tipo] + ' · ' + nombrePortada());
-  const d = evDate(); if (d) fila('Fecha', d.toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) + ', ' + d.toLocaleTimeString('es-CO', { hour: 'numeric', minute: '2-digit' }));
+  const d = evDate(); if (d) fila('Fecha', d.toLocaleDateString(CFGP.locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) + ', ' + d.toLocaleTimeString(CFGP.locale, { hour: 'numeric', minute: '2-digit' }));
   if (p.lugares[0]) fila('Lugar', p.lugares.map(l => l.lugar).join(' y '));
   fila('Portada', (STYLES.find(x => x.v === S.st) || {}).n + ' · ' + curPal().n + ' · letra ' + ((TYPES.find(x => x.v === S.ff) || {}).n || '').toLowerCase());
   fila('Fotos', 1 + (FOTOS.destacada ? 1 : 0) + p.fotos.galeria.length + '');
@@ -1193,7 +1218,7 @@ function restaurar(){
     if (k.endsWith(':chk')) { const c = document.getElementById(k.slice(0, -4)); if (c) c.checked = v; }
     else if (document.getElementById(k)) document.getElementById(k).value = v;
   });
-  ['tipo', 'voz', 'ninos', 'mascotas', 'vestuario', 'regalos'].forEach(n => marcar(n, S[n]));
+  ['tipo', 'voz', 'trato', 'ninos', 'mascotas', 'vestuario', 'regalos'].forEach(n => marcar(n, S[n]));
   $('#lugares').replaceChildren(); (d.p.lugares.length ? d.p.lugares : [{}]).forEach((l, i) => {
     const it = itemLugar(i);
     [['.l-etq', 'etiqueta'], ['.l-hora', 'hora'], ['.l-lugar', 'lugar'], ['.l-dir', 'direccion'], ['.l-ciudad', 'ciudad'], ['.l-ref', 'referencia'], ['.l-mapa', 'mapa'], ['.l-nota', 'nota']]
