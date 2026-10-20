@@ -47,6 +47,7 @@ const PRESETS = {
   uno: { reel: 4, carr: 4, pieza: 8 },
   tres: { reel: 12, carr: 10, pieza: 20, ia: 1, pauta: 2 },
   fuerte: { pc: 2, reel: 16, ia: 3, carra: 4, motion: 1, t2: 1 },
+  flujo: { pe: 2, reel: 10, ia: 2, carr: 8 },
   cero: {},
 };
 const LECTURA = [
@@ -241,16 +242,32 @@ function renderTar(g) {
   const max = Math.max(...list.map(r => Math.max(r.mk[1], r.ag))) * 1.05;
   rows.innerHTML = list.map(r => {
     const pc = v => (v / max * 100).toFixed(1) + '%';
-    return `<div class="t-row">
-      <div class="srv"><h4>${r.n}</h4><p>${r.d}</p></div>
+    const m = r.ag - r.al, mp = Math.round(m / r.ag * 100);
+    return `<div class="t-row glow" role="button" tabindex="0" aria-expanded="false">
+      <div class="srv"><h4>${r.n}</h4></div>
       <div class="v mk"><span class="lbl-m">Mercado</span>${k(r.mk[0])} – ${k(r.mk[1])}</div>
       <div class="v"><span class="lbl-m">Agencia</span>${cop(r.ag)}</div>
       <div class="v hl"><span class="lbl-m">Aliado Jam</span>${cop(r.al)}</div>
-      <div class="bar" aria-hidden="true"><em style="left:${pc(r.mk[0])};width:calc(${pc(r.mk[1])} - ${pc(r.mk[0])})"></em><i class="a" style="left:${pc(r.ag)}"></i><i class="j" style="left:${pc(r.al)}"></i></div>
+      <span class="chev" aria-hidden="true"></span>
+      <div class="t-det"><div><div class="t-in">
+        <div><p>${r.d}</p><div class="bar" aria-hidden="true"><em style="left:${pc(r.mk[0])};width:calc(${pc(r.mk[1])} - ${pc(r.mk[0])})"></em><i class="a" style="left:${pc(r.ag)}"></i><i class="j" style="left:${pc(r.al)}"></i></div></div>
+        <div class="t-gain"><small class="mono">Si lo revendes a tarifa de agencia</small><b>+${cop(m)}</b><span>te quedan por ${r.u} (${mp} %)</span><span class="meter2"><i data-w="${mp * 2}"></i></span></div>
+      </div></div></div>
     </div>`;
   }).join('');
   if (hasG && !RM) gsap.from('#tarRows .t-row', { opacity: 0, x: -20, stagger: .05, duration: .6, ease: 'power3.out' });
+  openRow($('#tarRows .t-row'));
 }
+function openRow(row) {
+  if (!row) return;
+  const was = row.classList.contains('open');
+  $$('#tarRows .t-row.open').forEach(x => { x.classList.remove('open'); x.setAttribute('aria-expanded', false); $('.meter2 i', x).style.width = 0; });
+  if (was) return;
+  row.classList.add('open'); row.setAttribute('aria-expanded', true);
+  const bar = $('.meter2 i', row); requestAnimationFrame(() => bar.style.width = Math.min(100, +bar.dataset.w) + '%');
+}
+rows.addEventListener('click', e => { const r = e.target.closest('.t-row'); if (r) openRow(r); });
+rows.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('t-row')) { e.preventDefault(); openRow(e.target); } });
 tabs.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return;
   $$('button', tabs).forEach(x => x.setAttribute('aria-selected', x === b));
@@ -262,7 +279,7 @@ renderTar('Contenido');
 $('#niveles').innerHTML = NIVELES.map((l, i) => {
   const next = NIVELES[i + 1];
   const rango = next ? (l.min ? `${k(l.min)} a ${k(next.min)}` : `hasta ${k(next.min)}`) : `más de ${k(l.min)}`;
-  return `<div class="nivel" data-i="${i}"><small class="mono">Nivel 0${i + 1}</small><b>${l.n}</b><span>${rango} al mes</span><em>${l.d ? '−' + l.d * 100 + '%' : '0%'}</em></div>`;
+  return `<div class="nivel glow" data-i="${i}" role="button" tabindex="0" title="Probar un mes en este nivel"><small class="mono">Nivel 0${i + 1}</small><b>${l.n}</b><span>${rango} al mes</span><em>${l.d ? '−' + l.d * 100 + '%' : '0%'}</em></div>`;
 }).join('');
 
 const ALL = Object.entries(TARIFAS).flatMap(([g, l]) => l.map(r => ({ ...r, g })));
@@ -315,6 +332,8 @@ function calc() {
   $('#cpVenta').textContent = cop(venta);
   $('#cpMargen').textContent = cop(margen);
   $('#cpPct').textContent = venta ? `(${Math.round(margen / venta * 100)} %)` : '';
+  window.JAM_NIVEL = { i: base ? li : -1, f: fr };
+  dispatchEvent(new CustomEvent('jam:nivel', { detail: window.JAM_NIVEL }));
   const el = $('#cpTotal'), from = shownTotal; shownTotal = total;
   if (hasG && !RM) { const o = { v: from }; gsap.to(o, { v: total, duration: .6, ease: 'power2.out', onUpdate: () => el.textContent = cop(o.v) }); }
   else el.textContent = cop(total);
@@ -365,4 +384,95 @@ if (matchMedia('(hover:hover)').matches && !RM) $$('.magnet').forEach(b => {
   b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .18}px,${(e.clientY - r.top - r.height / 2) * .28}px)`; });
   b.addEventListener('pointerleave', () => b.style.transform = '');
 });
+
+/* ================= v2 · BRILLO QUE SIGUE AL CURSOR ================= */
+$$('.tcard, .stat, .sla > div, .reel, .check li').forEach(el => el.classList.add('glow'));
+document.addEventListener('pointermove', e => {
+  const g = e.target.closest && e.target.closest('.glow'); if (!g) return;
+  const r = g.getBoundingClientRect();
+  g.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+  g.style.setProperty('--my', (e.clientY - r.top) + 'px');
+}, { passive: true });
+
+// clic en un nivel = probar un mes que cae ahí
+const NIV_PRESET = ['uno', 'tres', 'flujo', 'fuerte'];
+$('#niveles').addEventListener('click', e => {
+  const n = e.target.closest('.nivel'); if (!n) return;
+  Object.keys(qty).forEach(id => qty[id] = PRESETS[NIV_PRESET[+n.dataset.i]][id] || 0);
+  calc();
+});
+$('#niveles').addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.classList.contains('nivel')) e.target.click(); });
+
+/* ================= v2 · INCLINACIÓN 3D ================= */
+if (matchMedia('(hover:hover) and (pointer:fine)').matches && !RM) $$('.win, .diagram, .taller-foto, .cot-panel').forEach(el => {
+  el.classList.add('tilt');
+  const max = el.classList.contains('cot-panel') ? 4 : 7;
+  el.addEventListener('pointermove', e => {
+    const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    el.style.transform = `perspective(1100px) rotateY(${x * max}deg) rotateX(${-y * max}deg)`;
+  });
+  el.addEventListener('pointerleave', () => el.style.transform = '');
+});
+
+/* ================= v2 · TALLERES DESPLEGABLES ================= */
+$$('.tmore').forEach(b => b.addEventListener('click', () => {
+  const c = b.closest('.tcard'), open = !c.classList.contains('open');
+  c.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+  $('span', b).textContent = open ? 'Ocultar' : 'Ver qué incluye';
+  setTimeout(() => hasG && ScrollTrigger.refresh(), 520);
+}));
+
+/* ================= v2 · CONDICIONES EN ACORDEÓN ================= */
+$$('#checklist li button').forEach(b => b.addEventListener('click', () => {
+  const li = b.closest('li'), open = !li.classList.contains('open');
+  li.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+  setTimeout(() => hasG && ScrollTrigger.refresh(), 480);
+}));
+
+/* ================= v2 · PROCESO INTERACTIVO ================= */
+(function pasos() {
+  const ol = $('#pasos'), items = $$('.paso', ol), num = $('#pasoNum'), txt = $('#pasoTxt'), bar = $('#pasoBar');
+  if (!items.length) return;
+  ol.classList.add('live');
+  let cur = -1, auto = true, t0 = 0, raf;
+  const DUR = 4200;
+  function go(i) {
+    cur = i;
+    items.forEach((p, j) => p.classList.toggle('on', j === i));
+    num.textContent = `PASO 0${i + 1} / 0${items.length} · ${$('h4', items[i]).textContent.toUpperCase()}`;
+    txt.dataset.final = $('p', items[i]).textContent;
+    txt.textContent = txt.dataset.final;
+    if (hasG && !RM) gsap.fromTo(txt, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .5, ease: 'power3.out' });
+    t0 = performance.now();
+  }
+  function tick(t) {
+    raf = requestAnimationFrame(tick);
+    if (!auto) { bar.style.width = '100%'; return; }
+    const p = (t - t0) / DUR;
+    bar.style.width = Math.min(100, p * 100) + '%';
+    if (p >= 1) go((cur + 1) % items.length);
+  }
+  items.forEach((p, i) => p.addEventListener('click', () => { auto = false; go(i); }));
+  go(0);
+  new IntersectionObserver(([en]) => { cancelAnimationFrame(raf); if (en.isIntersecting && !RM) { t0 = performance.now(); raf = requestAnimationFrame(tick); } }).observe(ol);
+})();
+
+/* ================= v2 · HUD DE COORDENADAS ================= */
+(function coords() {
+  const X = $('#cX'), Y = $('#cY'), S = $('#cS'), F = $('#cF');
+  if (!X || getComputedStyle($('.coords')).display === 'none') return;
+  const pad = n => String(Math.round(n)).padStart(4, '0');
+  addEventListener('pointermove', e => { X.textContent = 'X ' + pad(e.clientX); Y.textContent = 'Y ' + pad(e.clientY); }, { passive: true });
+  let fr = 0, last = performance.now();
+  (function loop(t) {
+    fr++;
+    if (t - last > 500) { F.textContent = 'FPS ' + Math.round(fr * 1000 / (t - last)); fr = 0; last = t; }
+    const h = document.documentElement.scrollHeight - innerHeight;
+    S.textContent = 'SCROLL ' + String(Math.round(scrollY / h * 100)).padStart(2, '0') + '%';
+    requestAnimationFrame(loop);
+  })(last);
+})();
+
+/* ================= v2 · ETIQUETAS QUE SE DESCIFRAN ================= */
+if (hasG) $$('.sec-head .tag, .cierre .tag').forEach(el => ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => scramble(el, 900) }));
 })();
