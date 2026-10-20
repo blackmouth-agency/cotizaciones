@@ -249,9 +249,47 @@ footer a{color:#fff}
 .toast{position:fixed;left:50%;top:76px;transform:translateX(-50%) translateY(-30px);opacity:0;background:var(--tinta);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:99px;transition:all .3s;z-index:60;pointer-events:none}
 .toast.on{transform:translateX(-50%);opacity:1}
 
+
+/* ---------- noche de Halloween ---------- */
+.noche{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .9s ease;overflow:hidden;
+  background:radial-gradient(ellipse at 80% 8%,rgba(255,170,90,.18),transparent 45%),linear-gradient(180deg,#0d0a22 0%,#1a1240 55%,#2a1640 100%)}
+.noche:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 31px,rgba(255,255,255,.045) 31px 32px)}
+body.hw .noche{opacity:1}
+.noche .luna{position:absolute;top:84px;right:7%;width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fffbe6,#f7e9a8 55%,#e8d07a);box-shadow:0 0 60px 18px rgba(255,236,170,.35),0 0 140px 50px rgba(255,170,90,.15);
+  transform:translateY(120px) scale(.8);transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.noche .luna i{position:absolute;border-radius:50%;background:rgba(200,170,90,.35)}
+body.hw .noche .luna{transform:none}
+.noche .estr{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 6px #fff;animation:titila 3s ease-in-out infinite}
+@keyframes titila{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+.noche .vuela{position:absolute;left:-120px;width:70px;height:70px;animation:vuela 18s linear infinite;animation-play-state:paused}
+body.hw .noche .vuela{animation-play-state:running}
+.noche .vuela svg{width:100%;height:100%;animation:aletea .35s ease-in-out infinite alternate}
+@keyframes vuela{0%{transform:translate(0,0)}25%{transform:translate(30vw,-40px)}50%{transform:translate(60vw,30px)}75%{transform:translate(90vw,-30px)}100%{transform:translate(calc(100vw + 240px),0)}}
+@keyframes aletea{from{transform:scaleY(1)}to{transform:scaleY(.55)}}
+body{transition:color .6s}
+body.hw{color:#ece8ff}
+body.hw .margen{background:#ff8a1f;opacity:.35}
+body.hw .barra{background:rgba(13,10,34,.88);border-bottom-color:#ff8a1f}
+body.hw .barra nav a{color:#ece8ff}
+body.hw .barra nav a:hover{background:rgba(255,138,31,.25)}
+body.hw .barra .logo{background:#fff;border-radius:10px;padding:3px 7px;height:38px}
+body.hw h1,body.hw .sec-cab h2{color:#fff;transition:color .6s}
+body.hw h1 .num,body.hw h1 span[style],body.hw .sec-cab h2 em{color:#ff8a1f!important}
+body.hw .bajada,body.hw .sec-cab .lead{color:#d9d3f5}
+body.hw .bajada b{color:#ffb36b}
+body.hw #cuentaF{color:#bdb5e6}
+body.hw .evitar{background:rgba(36,22,74,.85)}
+body.hw footer{background:#0b0819}
+.filtros button,.filtros input,.tarjeta,.paso,.nota,.trend-c,.cifra,.hoja,.carta .a,.modal,.chip,.sel-lista li{color:var(--tinta)}
+body.hw h1,body.hw .sec-cab h2,body.hw .bajada,body.hw .sec-cab .lead{text-shadow:0 2px 14px rgba(13,10,34,.85),0 0 2px rgba(13,10,34,.6)}
+@media (max-width:640px){.noche .luna{width:84px;height:84px;top:78px;right:5%}}
+body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
+
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
+  .noche .luna{transform:none}
 }
 </style>
 <meta property="og:title" content="San Miguel · 20 guiones">
@@ -263,6 +301,12 @@ footer a{color:#fff}
 </head>
 <body>
 <div class="margen" aria-hidden="true"></div>
+<div class="noche" id="noche" aria-hidden="true"><div class="luna"><i style="width:22px;height:22px;top:30px;left:34px"></i><i style="width:14px;height:14px;top:68px;left:70px"></i><i style="width:10px;height:10px;top:58px;left:26px"></i></div>
+  <div class="vuela" style="top:22%;animation-duration:17s"><svg><use href="#murcielago"/></svg></div>
+  <div class="vuela" style="top:58%;width:50px;height:50px;animation-duration:23s;animation-delay:-8s"><svg><use href="#murcielago"/></svg></div>
+  <div class="vuela" style="top:40%;width:40px;height:40px;animation-duration:29s;animation-delay:-15s"><svg><use href="#murcielago"/></svg></div>
+</div>
+
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
@@ -758,7 +802,7 @@ filtra();
 
 /* modo halloween */
 function ponHw(on){document.body.classList.toggle('hw',on);$('#hwBtn').setAttribute('aria-pressed',on);$('#hwBtn').textContent=on?'🎃 Halloween activado':'🎃 Modo Halloween'}
-$('#hwBtn').onclick=()=>{const on=!document.body.classList.contains('hw');ponHw(on);toast(on?'Modo Halloween: se resaltan los 6 guiones de Halloween':'Modo normal')};
+$('#hwBtn').onclick=()=>{const on=!document.body.classList.contains('hw');ponHw(on);toast(on?'🌙 Se hizo de noche: se resaltan los 6 guiones de Halloween':'☀️ Volvió el día')};
 
 /* selección del mes */
 function pintaBandeja(){
@@ -851,6 +895,10 @@ function Jugador(root,g){
   this.para=()=>{corre=false;cancelAnimationFrame(raf)};
 }
 
+
+/* estrellas de la noche */
+(function(){const n=$('#noche');let h='';for(let i=0;i<70;i++){const x=Math.random()*100,y=Math.random()*70,d=(Math.random()*3).toFixed(2),z=(Math.random()*2+1.5).toFixed(1);
+  h+=`<span class="estr" style="left:${x}%;top:${y}%;width:${z}px;height:${z}px;animation-delay:-${d}s"></span>`}n.insertAdjacentHTML('afterbegin',h)})();
 /* reveal y contador */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 $$('.rv').forEach(el=>io.observe(el));
