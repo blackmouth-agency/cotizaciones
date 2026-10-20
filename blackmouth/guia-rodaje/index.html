@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Guía de rodaje R50</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Hoja de campo para el set: una columna en el celular, esquemas en rejilla en pantalla grande */
+:root {
+  --bg: #f4f5f9; --surface: #ffffff; --ink: #12142a; --muted: #5b6078; --line: #d8dbe8;
+  --azul: #1332a9; --rosa: #c9468a; --rosa-suave: #e570a8;
+  --ok: #1d8a4e; --mal: #c23b3b; --luz: #f0b43a; --piel: #e2a77f; --piel-sombra: #6e4130;
+  --sil: #9aa0bc; --piso: #eceef5; --cuadro: #e6e8f1;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0c0e18; --surface: #151827; --ink: #eef0f8; --muted: #9ba1bb; --line: #2b2f45;
+  --azul: #7a93ff; --rosa: #f08bbd; --rosa-suave: #e570a8;
+  --ok: #4fca86; --mal: #ff7070; --luz: #f5c451; --piel: #d9a07a; --piel-sombra: #4a2a1f;
+  --sil: #5d6382; --piso: #1b1f31; --cuadro: #1e2235; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0c0e18; --surface: #151827; --ink: #eef0f8; --muted: #9ba1bb; --line: #2b2f45;
+  --azul: #7a93ff; --rosa: #f08bbd; --rosa-suave: #e570a8;
+  --ok: #4fca86; --mal: #ff7070; --luz: #f5c451; --piel: #d9a07a; --piel-sombra: #4a2a1f;
+  --sil: #5d6382; --piso: #1b1f31; --cuadro: #1e2235; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--f-body); }
+.pagina { max-width: 920px; margin: 0 auto; padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.1; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 4.5vw, 2rem); font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+p { margin: 0; max-width: 65ch; }
+.eyebrow { font: 500 0.75rem/1 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--rosa); }
+.muted { color: var(--muted); }
+section { display: grid; gap: 20px; }
+.cabeza { display: grid; gap: 10px; }
+.mono { font-family: var(--f-mono); font-weight: 500; }
+svg text { font-family: var(--f-body); }
+
+/* portada */
+.portada { display: grid; gap: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+.portada p { font-size: 1.1rem; }
+
+/* ajustes */
+.ajustes { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.ajuste { background: var(--surface); padding: 12px 14px; display: grid; gap: 2px; min-width: 0; }
+.ajuste span { font-size: 0.82rem; color: var(--muted); }
+.ajuste b { font: 500 1rem/1.3 var(--f-mono); color: var(--azul); }
+
+/* kelvin */
+.escala { position: relative; height: 54px; border-radius: 10px; margin-top: 30px;
+  background: linear-gradient(90deg, #ff9a3c 0%, #ffc27a 22%, #ffe6c4 42%, #ffffff 56%, #d7e6ff 74%, #8fb4ff 100%); border: 1px solid var(--line); }
+.marca { position: absolute; top: -28px; transform: translateX(-50%); display: grid; justify-items: center; gap: 4px; font: 500 0.78rem/1 var(--f-mono); color: var(--ink); }
+.marca::after { content: ""; width: 2px; height: 70px; background: var(--ink); opacity: 0.55; }
+.escala-pie { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
+.kelvin { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.kelvin th, .kelvin td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.kelvin th { font: 500 0.72rem/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.kelvin td:first-child { font: 500 1rem/1.3 var(--f-mono); color: var(--azul); white-space: nowrap; }
+.tabla { overflow-x: auto; }
+.reglas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.regla { border-left: 3px solid var(--rosa-suave); padding: 4px 0 4px 14px; min-width: 0; }
+.regla b { display: block; font-weight: 700; }
+
+/* esquemas */
+.rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.rejilla.chica { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.rejilla.cuadros { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.ficha { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.ficha svg { width: 100%; height: auto; display: block; }
+.ficha p { font-size: 0.93rem; }
+.veredicto { display: inline-flex; align-items: center; gap: 6px; font: 500 0.75rem/1 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 8px; border-radius: 999px; width: fit-content; }
+.veredicto.si { color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, transparent); }
+.veredicto.medio { color: var(--muted); background: color-mix(in srgb, var(--muted) 14%, transparent); }
+.veredicto.no { color: var(--mal); background: color-mix(in srgb, var(--mal) 14%, transparent); }
+.luz-fila { display: grid; grid-template-columns: 1fr 64px; gap: 10px; align-items: center; }
+.cuadro svg { max-width: 190px; margin: 0 auto; }
+.dato { font: 500 0.78rem/1.3 var(--f-mono); color: var(--azul); }
+
+.aparte { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 10px; }
+.aparte ul, .lista { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: 70ch; }
+.cobertura { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; counter-reset: c; }
+.toma { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 4px; min-width: 0; }
+.toma b { font-family: var(--f-display); font-size: 1.05rem; }
+.toma span { font-size: 0.88rem; color: var(--muted); }
+footer { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+
+/* navegación fija para el set */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-in { max-width: 920px; margin: 0 auto; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.nav-in::-webkit-scrollbar { display: none; }
+.nav a { flex: none; font: 500 0.8rem/1 var(--f-mono); color: var(--ink); text-decoration: none; padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.nav a:focus-visible, .nav a:hover { border-color: var(--rosa); color: var(--rosa); outline: none; }
+section[id] { scroll-margin-top: 64px; }
+.romper { display: grid; gap: 12px; }
+.romper .regla p { font-size: 0.93rem; color: var(--muted); margin-top: 2px; }
+.recetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.receta { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 8px; min-width: 0; align-content: start; }
+.receta h3 { font-size: 1.05rem; }
+.receta dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 0.9rem; }
+.receta dt { font: 500 0.72rem/1.6 var(--f-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.receta dd { margin: 0; min-width: 0; }
+@media (max-width: 480px) { .pagina { gap: 44px; padding-block: 20px 48px; } .ficha { padding: 12px; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Guía de rodaje R50">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/blackmouth/guia-rodaje/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/blackmouth/guia-rodaje/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="persona" viewBox="0 0 100 300">
+      <circle cx="50" cy="34" r="21"/>
+      <rect x="42" y="50" width="16" height="16"/>
+      <path d="M14 78 Q16 64 34 62 L66 62 Q84 64 86 78 L90 170 L78 172 L74 110 L72 175 L74 296 L56 296 L50 190 L44 296 L26 296 L28 175 L26 110 L22 172 L10 170 Z"/>
+    </symbol>
+    <marker id="flecha" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" style="fill:var(--rosa)"/>
+    </marker>
+    <marker id="flecha-tinta" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" style="fill:var(--ink)"/>
+    </marker>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="Secciones">
+  <div class="nav-in">
+    <a href="#ajustes">Ajustes</a>
+    <a href="#kelvin">Kelvin</a>
+    <a href="#luz">Luz</a>
+    <a href="#planos">Planos</a>
+    <a href="#composicion">Composición</a>
+    <a href="#gimbal">Gimbal</a>
+    <a href="#a-mano">Sin gimbal</a>
+    <a href="#cobertura">Cobertura</a>
+  </div>
+</nav>
+
+<main class="pagina">
+
+  <header class="portada">
+    <span class="eyebrow">BLACKMOUTH · Canon R50 · desde el 20-oct-2026</span>
+    <h1>Guía de rodaje R50</h1>
+    <p>Cómo grabar para que el material salga listo para Instagram, sin parada de color. Balance de blancos, dónde pararte según la luz, qué planos sacar y cómo moverte con gimbal y sin él.</p>
+  </header>
+
+  <section id="ajustes">
+    <div class="cabeza">
+      <span class="eyebrow">Antes de grabar</span>
+      <h2>Lo que se revisa al prender la cámara</h2>
+      <p class="muted">Si alguno de estos valores cambió, el material sale distinto al resto y hay que igualarlo después.</p>
+    </div>
+    <div class="ajustes">
+      <div class="ajuste"><span>Disparo HDR PQ</span><b>OFF</b></div>
+      <div class="ajuste"><span>Sistema de vídeo</span><b>NTSC</b></div>
+      <div class="ajuste"><span>Tamaño de video</span><b>4K 29,97p</b></div>
+      <div class="ajuste"><span>Obturación</span><b>1/60</b></div>
+      <div class="ajuste"><span>ISO</span><b>fijo, lo más bajo posible</b></div>
+      <div class="ajuste"><span>Balance de blancos</span><b>K (nunca AWB)</b></div>
+      <div class="ajuste"><span>Estilo imagen · Normal</span><b>Fuerza 2 · Contraste −1</b></div>
+      <div class="ajuste"><span>Luminosidad Automática</span><b>OFF</b></div>
+      <div class="ajuste"><span>Cebras</span><b>70 % y 100 %</b></div>
+      <div class="ajuste"><span>IS digital</span><b>On a mano · Off en gimbal</b></div>
+      <div class="ajuste"><span>Brillo pantalla / visor</span><b>4 / medio</b></div>
+      <div class="ajuste"><span>Cámara lenta</span><b>59,94p · 1/120</b></div>
+    </div>
+  </section>
+
+  <section id="kelvin">
+    <div class="cabeza">
+      <span class="eyebrow">Balance de blancos</span>
+      <h2>Pon en la cámara el número de la luz que hay</h2>
+      <p>Cada luz tiene una temperatura en grados Kelvin (K). Le dices a la cámara qué luz hay y ella la vuelve blanca. Un solo número por lugar durante toda la sesión, así todos los planos casan.</p>
+    </div>
+    <div>
+      <div class="escala" role="img" aria-label="Escala de temperatura de color de 2500 a 8000 K">
+        <span class="marca" style="left:12.7%">3200</span>
+        <span class="marca" style="left:27.3%">4000</span>
+        <span class="marca" style="left:36.4%">4500</span>
+        <span class="marca" style="left:56.4%">5600</span>
+        <span class="marca" style="left:72.7%">6500</span>
+        <span class="marca" style="left:90.9%">7500</span>
+      </div>
+      <div class="escala-pie"><span>luz cálida (naranja)</span><span>luz fría (azul)</span></div>
+    </div>
+    <div class="tabla">
+      <table class="kelvin">
+        <thead><tr><th>Pon</th><th>Cuando la luz es</th><th>Lugares típicos</th></tr></thead>
+        <tbody>
+          <tr><td>3200 K</td><td>Bombillo amarillo, velas</td><td>Restaurante de noche, bar, casa con bombillos cálidos</td></tr>
+          <tr><td>4000 K</td><td>LED blanco cálido</td><td>Locales comerciales, peluquerías, cafés</td></tr>
+          <tr><td>4500 K</td><td>Tubo o panel blanco</td><td>Oficinas, consultorios, bodegas</td></tr>
+          <tr><td>5600 K</td><td>Sol directo o ventana de día</td><td>Exteriores con sol, interior junto a una ventana grande</td></tr>
+          <tr><td>6500 K</td><td>Nublado o sombra abierta</td><td>Día gris, bajo un árbol o un toldo</td></tr>
+          <tr><td>7500 K</td><td>Sombra profunda, hora azul</td><td>Sombra a mediodía, justo después de la puesta del sol</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reglas">
+      <div class="regla"><b>Sale naranja → baja el número.</b>Sale azul → súbelo. Ajusta de 200 en 200 mirando algo blanco: una pared, una camisa, una servilleta.</div>
+      <div class="regla"><b>Luz mezclada: ventana más bombillos.</b>Apaga una de las dos, o usa WB personalizado: foto a una hoja blanca bajo esa luz, selecciónala en el menú y elige el ícono de personalizado.</div>
+      <div class="regla"><b>Para que un restaurante se vea acogedor</b>pon 300 a 500 K por encima de la luz real (3600 con bombillos de 3200). Queda cálido sin que la piel se ponga naranja.</div>
+    </div>
+  </section>
+
+  <section id="luz">
+    <div class="cabeza">
+      <span class="eyebrow">La luz</span>
+      <h2>Dónde pararte según de dónde viene la luz</h2>
+      <p>Visto desde arriba: la persona mira hacia la cámara. La luz amarilla es la ventana o la fuente principal. El círculo de la derecha muestra cómo queda la cara.</p>
+    </div>
+    <div class="rejilla">
+
+      <figure class="ficha" style="margin:0">
+        <span class="veredicto si">✓ La mejor</span>
+        <div class="luz-fila">
+          <svg viewBox="0 0 260 170" role="img" aria-label="Ventana a un lado y por delante de la persona">
+            <rect x="4" y="4" width="252" height="162" rx="8" style="fill:var(--piso);stroke:var(--line)"/>
+            <polygon points="12,86 12,146 136,84 124,60" style="fill:var(--luz);opacity:.25"/>
+            <rect x="4" y="86" width="8" height="60" style="fill:var(--luz)"/>
+            <text x="18" y="160" font-size="10" style="fill:var(--muted)">ventana</text>
+            <ellipse cx="130" cy="72" rx="24" ry="10" style="fill:var(--sil)"/>
+            <circle cx="130" cy="72" r="10" style="fill:var(--ink)"/>
+            <polygon points="126,81 134,81 130,87" style="fill:var(--ink)"/>
+            <rect x="124" y="126" width="12" height="8" style="fill:var(--azul)"/>
+            <rect x="116" y="134" width="28" height="18" rx="3" style="fill:var(--azul)"/>
+            <text x="152" y="148" font-size="10" style="fill:var(--muted)">cámara</text>
+          </svg>
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <defs><linearGradient id="g-lat" x1="0" x2="1"><stop offset="0" style="stop-color:var(--piel)"/><stop offset=".5" style="stop-color:var(--piel)"/><stop offset="1" style="stop-color:var(--piel-sombra)"/></linearGradient></defs>
+            <circle cx="32" cy="32" r="26" fill="url(#g-lat)"/>
+            <circle cx="24" cy="29" r="2.4" style="fill:var(--ink)"/><circle cx="40" cy="29" r="2.4" style="fill:var(--ink)"/>
+          </svg>
+        </div>
+        <h3>Luz de lado y un poco por delante</h3>
+        <p>Ponte con la ventana a 45°: entre la cámara y un costado. Una mejilla queda más clara que la otra y la cara tiene volumen. Es el look de las entrevistas bien hechas.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <span class="veredicto medio">~ Segura pero plana</span>
+        <div class="luz-fila">
+          <svg viewBox="0 0 260 170" role="img" aria-label="Ventana detrás de la cámara">
+            <rect x="4" y="4" width="252" height="162" rx="8" style="fill:var(--piso);stroke:var(--line)"/>
+            <polygon points="90,158 170,158 142,82 118,82" style="fill:var(--luz);opacity:.25"/>
+            <rect x="90" y="158" width="80" height="8" style="fill:var(--luz)"/>
+            <text x="180" y="164" font-size="10" style="fill:var(--muted)">ventana</text>
+            <ellipse cx="130" cy="72" rx="24" ry="10" style="fill:var(--sil)"/>
+            <circle cx="130" cy="72" r="10" style="fill:var(--ink)"/>
+            <polygon points="126,81 134,81 130,87" style="fill:var(--ink)"/>
+            <rect x="124" y="118" width="12" height="8" style="fill:var(--azul)"/>
+            <rect x="116" y="126" width="28" height="18" rx="3" style="fill:var(--azul)"/>
+            <text x="152" y="140" font-size="10" style="fill:var(--muted)">cámara</text>
+          </svg>
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="26" style="fill:var(--piel)"/>
+            <circle cx="24" cy="29" r="2.4" style="fill:var(--ink)"/><circle cx="40" cy="29" r="2.4" style="fill:var(--ink)"/>
+          </svg>
+        </div>
+        <h3>Luz de frente, detrás de la cámara</h3>
+        <p>Le das la espalda a la ventana. La cara queda bien expuesta pero sin sombras ni forma. Úsala cuando no hay cómo ponerse de lado. Con sol directo, la persona entrecierra los ojos.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <span class="veredicto no">✗ Evítala</span>
+        <div class="luz-fila">
+          <svg viewBox="0 0 260 170" role="img" aria-label="Ventana detrás de la persona">
+            <rect x="4" y="4" width="252" height="162" rx="8" style="fill:var(--piso);stroke:var(--line)"/>
+            <polygon points="90,12 170,12 142,64 118,64" style="fill:var(--luz);opacity:.25"/>
+            <rect x="90" y="4" width="80" height="8" style="fill:var(--luz)"/>
+            <text x="180" y="14" font-size="10" style="fill:var(--muted)">ventana</text>
+            <ellipse cx="130" cy="72" rx="24" ry="10" style="fill:var(--sil)"/>
+            <circle cx="130" cy="72" r="10" style="fill:var(--ink)"/>
+            <polygon points="126,81 134,81 130,87" style="fill:var(--ink)"/>
+            <rect x="124" y="126" width="12" height="8" style="fill:var(--azul)"/>
+            <rect x="116" y="134" width="28" height="18" rx="3" style="fill:var(--azul)"/>
+            <text x="152" y="148" font-size="10" style="fill:var(--muted)">cámara</text>
+          </svg>
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="26" style="fill:var(--piel-sombra);stroke:var(--luz);stroke-width:3"/>
+            <circle cx="24" cy="29" r="2.4" style="fill:var(--ink);opacity:.5"/><circle cx="40" cy="29" r="2.4" style="fill:var(--ink);opacity:.5"/>
+          </svg>
+        </div>
+        <h3>Contraluz: ventana detrás de la persona</h3>
+        <p>La cámara expone para la ventana y la cara queda oscura, o expone para la cara y la ventana se quema. Gira 90° a la persona y a la cámara. Solo sirve si buscas una silueta a propósito.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <span class="veredicto no">✗ Evítala</span>
+        <div class="luz-fila">
+          <svg viewBox="0 0 260 170" role="img" aria-label="Luz justo encima de la cabeza, vista de lado">
+            <rect x="4" y="4" width="252" height="162" rx="8" style="fill:var(--piso);stroke:var(--line)"/>
+            <line x1="4" y1="16" x2="256" y2="16" style="stroke:var(--line);stroke-width:2"/>
+            <polygon points="118,28 142,28 168,158 92,158" style="fill:var(--luz);opacity:.25"/>
+            <path d="M120 16 L140 16 L146 28 L114 28 Z" style="fill:var(--luz)"/>
+            <text x="152" y="34" font-size="10" style="fill:var(--muted)">techo / sol de mediodía</text>
+            <use href="#persona" x="112" y="40" width="40" height="120" style="color:var(--sil)"/>
+            <rect x="200" y="58" width="28" height="18" rx="3" style="fill:var(--azul)"/>
+            <rect x="192" y="63" width="8" height="8" style="fill:var(--azul)"/>
+            <text x="198" y="92" font-size="10" style="fill:var(--muted)">cámara</text>
+            <line x1="4" y1="160" x2="256" y2="160" style="stroke:var(--line);stroke-width:2"/>
+          </svg>
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <defs><linearGradient id="g-cen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" style="stop-color:var(--piel)"/><stop offset=".45" style="stop-color:var(--piel)"/><stop offset="1" style="stop-color:var(--piel-sombra)"/></linearGradient></defs>
+            <circle cx="32" cy="32" r="26" fill="url(#g-cen)"/>
+            <ellipse cx="24" cy="30" rx="6" ry="4" style="fill:var(--piel-sombra)"/><ellipse cx="40" cy="30" rx="6" ry="4" style="fill:var(--piel-sombra)"/>
+          </svg>
+        </div>
+        <h3>Luz justo encima</h3>
+        <p>Bombillo de techo o sol de 11 a 2: ojeras, sombra bajo la nariz y frente brillante. Da un paso adelante o atrás para que la luz caiga en diagonal, o busca sombra abierta.</p>
+      </figure>
+
+    </div>
+    <div class="aparte">
+      <h3>Afuera, en Cali</h3>
+      <ul>
+        <li><b>7 a 9 a. m. y 4 a 6 p. m.:</b> sol bajo y cálido, de lado. La mejor hora para exteriores y fachadas.</li>
+        <li><b>11 a. m. a 2 p. m.:</b> sol duro desde arriba. Graba en sombra abierta (bajo un árbol, toldo o alero, mirando hacia la calle iluminada) y pon 6500 K.</li>
+        <li><b>Para medir la cara:</b> con la cebra al 70 %, solo la frente, la nariz y los pómulos tienen rayas. Si la cebra del 100 % aparece en la cara o en el producto, baja la exposición.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="planos">
+    <div class="cabeza">
+      <span class="eyebrow">Planos</span>
+      <h2>Qué sacar de cada escena</h2>
+      <p>Cuadros en 9:16, como se ven en el reel. Las franjas rosadas son las zonas que tapa Instagram arriba y abajo: ahí no van caras ni texto. Abajo a la derecha también están los botones (ver Composición). La línea punteada marca los tercios.</p>
+    </div>
+    <div class="rejilla cuadros">
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Plano general">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <rect x="54" y="112" width="34" height="38" style="fill:var(--line)"/>
+          <line x1="66" y1="0" x2="66" y2="20" style="stroke:var(--muted)"/><path d="M58 20 h16 l-3 7 h-10z" style="fill:var(--luz)"/>
+          <use href="#persona" x="20" y="30" width="40" height="120" style="color:var(--sil)"/>
+          <line x1="0" y1="150" x2="90" y2="150" style="stroke:var(--muted)"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>General</h3>
+        <p>El lugar completo: fachada, local, cocina. Ubica a quien ve.</p>
+        <span class="dato">1–2 tomas · 5 s</span>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Plano medio con el subtítulo al pecho">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <rect x="0" y="40" width="90" height="3" style="fill:var(--line)"/><rect x="0" y="70" width="90" height="3" style="fill:var(--line)"/>
+          <use href="#persona" x="6" y="27" width="78" height="234" style="color:var(--sil)"/>
+          <line x1="0" y1="53.3" x2="90" y2="53.3" style="stroke:var(--ink);stroke-dasharray:2 2;opacity:.5"/>
+          <line x1="0" y1="106.7" x2="90" y2="106.7" style="stroke:var(--ink);stroke-dasharray:2 2;opacity:.5"/>
+          <rect x="22" y="94" width="46" height="11" rx="2" style="fill:var(--azul)"/>
+          <text x="45" y="102" font-size="7" text-anchor="middle" style="fill:#fff;font-weight:700">SUBTÍTULO</text>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Medio · A-roll</h3>
+        <p>De la cintura para arriba, hablando a cámara. Ojos en la línea del tercio de arriba. El subtítulo va al pecho.</p>
+        <span class="dato">el plano base · trípode</span>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Primer plano">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <use href="#persona" x="-29.5" y="10.8" width="149" height="447" style="color:var(--sil)"/>
+          <line x1="0" y1="53.3" x2="90" y2="53.3" style="stroke:var(--ink);stroke-dasharray:2 2;opacity:.5"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Primer plano</h3>
+        <p>Cara y hombros para la frase fuerte. Si grabas en 4K vertical, la fábrica lo saca del plano medio con zoom.</p>
+        <span class="dato">opcional en 4K vertical</span>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Plano detalle de un producto en las manos">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <line x1="0" y1="116" x2="90" y2="116" style="stroke:var(--muted)"/>
+          <path d="M38 38 q4 -6 0 -12 M46 38 q4 -6 0 -12 M54 38 q4 -6 0 -12" style="fill:none;stroke:var(--muted);stroke-width:1.5"/>
+          <rect x="28" y="46" width="36" height="50" rx="5" style="fill:var(--azul)"/>
+          <path d="M64 56 h6 a8 8 0 0 1 0 22 h-6" style="fill:none;stroke:var(--azul);stroke-width:5"/>
+          <ellipse cx="22" cy="82" rx="12" ry="20" style="fill:var(--sil)"/>
+          <ellipse cx="66" cy="96" rx="16" ry="10" style="fill:var(--sil)"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Detalle</h3>
+        <p>Producto, manos trabajando, textura de la comida. Es el B-roll que más vende.</p>
+        <span class="dato">2–3 tomas · 5 s</span>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Plano cenital de un plato visto desde arriba">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <circle cx="45" cy="76" r="30" style="fill:var(--surface);stroke:var(--line);stroke-width:2"/>
+          <circle cx="38" cy="70" r="9" style="fill:var(--luz)"/><circle cx="53" cy="82" r="8" style="fill:var(--rosa-suave)"/><circle cx="50" cy="66" r="5" style="fill:var(--ok)"/>
+          <rect x="8" y="50" width="4" height="54" rx="2" style="fill:var(--muted)"/>
+          <rect x="78" y="50" width="4" height="54" rx="2" style="fill:var(--muted)"/>
+          <ellipse cx="62" cy="128" rx="14" ry="22" style="fill:var(--sil)"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Cenital</h3>
+        <p>Desde arriba, para mesas servidas, platos y productos en fila. Súbete a una silla o usa el brazo del gimbal.</p>
+        <span class="dato">1 toma · 5 s</span>
+      </figure>
+
+    </div>
+    <div class="aparte">
+      <h3>Para hablar a cámara, gira la cámara a vertical</h3>
+      <p>En vertical, el 4K sale de 2160 × 3840: el doble de lo que necesita el reel. La fábrica puede hacer zooms de 2× sin perder calidad. Si grabas horizontal y recortas a vertical, solo quedan 1,1× de margen. El B-roll de movimiento con gimbal puede ir horizontal si el gimbal no monta vertical; en ese caso, marcador de formato en 9:16.</p>
+    </div>
+  </section>
+
+  <section id="composicion">
+    <div class="cabeza">
+      <span class="eyebrow">Composición</span>
+      <h2>Dónde poner las cosas en un cuadro vertical</h2>
+      <p>Casi todo lo que grabamos se ve en un celular, de pie, con la interfaz de Instagram encima. Eso cambia las reglas clásicas: el centro trabaja más que los tercios y hay tres zonas que no se pueden usar.</p>
+    </div>
+    <div class="rejilla cuadros">
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Mapa de la pantalla de un reel con las zonas tapadas">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.35"/>
+          <rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.35"/>
+          <rect x="77" y="84" width="13" height="44" style="fill:var(--rosa-suave);opacity:.35"/>
+          <circle cx="83.5" cy="92" r="3" style="fill:var(--ink)"/><circle cx="83.5" cy="104" r="3" style="fill:var(--ink)"/><circle cx="83.5" cy="116" r="3" style="fill:var(--ink)"/>
+          <text x="45" y="13" font-size="6" text-anchor="middle" style="fill:var(--ink)">nombre y audio</text>
+          <text x="40" y="142" font-size="6" text-anchor="middle" style="fill:var(--ink)">texto de la publicación</text>
+          <rect x="6" y="26" width="68" height="96" rx="3" style="fill:none;stroke:var(--ok);stroke-width:1.5;stroke-dasharray:3 2"/>
+          <text x="40" y="76" font-size="8" text-anchor="middle" style="fill:var(--ok);font-weight:700">zona útil</text>
+        </svg>
+        <h3>El mapa de la pantalla</h3>
+        <p>Arriba va el nombre de la cuenta; abajo, el texto de la publicación; a la derecha, los botones. Caras, producto y texto van dentro del recuadro verde.</p>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Persona centrada hablando a cámara">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <use href="#persona" x="6" y="27" width="78" height="234" style="color:var(--sil)"/>
+          <line x1="0" y1="53.3" x2="90" y2="53.3" style="stroke:var(--ink);stroke-dasharray:2 2;opacity:.5"/>
+          <line x1="45" y1="22" x2="45" y2="125" style="stroke:var(--rosa);stroke-dasharray:2 2"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+          <rect x="77" y="84" width="13" height="44" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Hablando a cámara: al centro</h3>
+        <p>Los ojos en la línea de arriba y la nariz en el eje del centro. Poco aire sobre la cabeza: el pelo casi toca la franja de arriba.</p>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Persona de perfil a un lado con aire hacia donde mira">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <line x1="30" y1="0" x2="30" y2="160" style="stroke:var(--ink);stroke-dasharray:2 2;opacity:.4"/>
+          <path d="M8 160 L10 92 Q12 78 26 76 L38 76 Q50 78 52 92 L54 160 Z" style="fill:var(--sil)"/>
+          <circle cx="31" cy="58" r="15" style="fill:var(--sil)"/>
+          <polygon points="45,55 52,60 45,63" style="fill:var(--sil)"/>
+          <path d="M56 60 L80 60" style="stroke:var(--rosa);stroke-width:2.5;fill:none" marker-end="url(#flecha)"/>
+          <text x="66" y="54" font-size="6" text-anchor="middle" style="fill:var(--rosa)">aire</text>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Aire hacia donde mira</h3>
+        <p>Si la persona mira o camina hacia un lado, déjale espacio libre de ese lado. Pegada al borde al que mira, el cuadro se siente encerrado.</p>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Primer término, sujeto y fondo">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <rect x="8" y="30" width="12" height="40" style="fill:var(--line)"/><rect x="66" y="26" width="16" height="48" style="fill:var(--line)"/>
+          <use href="#persona" x="28" y="44" width="34" height="102" style="color:var(--sil)"/>
+          <ellipse cx="6" cy="128" rx="26" ry="40" style="fill:var(--azul);opacity:.45"/>
+          <text x="10" y="112" font-size="5.5" style="fill:#fff">1er término</text>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Tres capas</h3>
+        <p>Algo cerca de la cámara (desenfocado), el sujeto y el fondo. Un vaso, una planta o el borde del mostrador en primer término dan profundidad.</p>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Líneas que guían la mirada hacia el sujeto">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <line x1="0" y1="160" x2="40" y2="78" style="stroke:var(--muted);stroke-width:2"/><line x1="90" y1="160" x2="50" y2="78" style="stroke:var(--muted);stroke-width:2"/>
+          <line x1="0" y1="40" x2="40" y2="62" style="stroke:var(--muted);stroke-width:2"/><line x1="90" y1="40" x2="50" y2="62" style="stroke:var(--muted);stroke-width:2"/>
+          <use href="#persona" x="38" y="50" width="14" height="42" style="color:var(--ink)"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Líneas que llevan al sujeto</h3>
+        <p>Un pasillo, el mostrador, la calle o las baldosas apuntando a la persona o al producto. El ojo llega solo.</p>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Persona enmarcada por una puerta">
+          <rect width="90" height="160" style="fill:var(--line)"/>
+          <rect x="20" y="30" width="50" height="104" style="fill:var(--cuadro)"/>
+          <rect x="20" y="30" width="50" height="104" style="fill:none;stroke:var(--muted);stroke-width:4"/>
+          <use href="#persona" x="28" y="44" width="34" height="102" style="color:var(--sil)"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Un marco dentro del cuadro</h3>
+        <p>Puerta, ventana, la ventanilla de la cocina o un estante. Encierra al sujeto y lo separa del resto.</p>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Espacio libre arriba para un titular">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <rect x="10" y="27" width="60" height="9" rx="1" style="fill:var(--azul)"/><rect x="16" y="39" width="48" height="7" rx="1" style="fill:var(--azul);opacity:.7"/>
+          <text x="40" y="34" font-size="6.5" text-anchor="middle" style="fill:#fff;font-weight:700">TITULAR</text>
+          <use href="#persona" x="12" y="60" width="66" height="198" style="color:var(--sil)"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+          <rect x="77" y="84" width="13" height="44" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Aire para el gancho</h3>
+        <p>Si el reel abre con un titular grande, encuadra un poco más abajo y deja libre la parte de arriba de la zona útil. Pídelo así en el pedido.</p>
+      </figure>
+
+      <figure class="ficha cuadro" style="margin:0">
+        <svg viewBox="0 0 90 160" role="img" aria-label="Fachada simétrica centrada">
+          <rect width="90" height="160" style="fill:var(--cuadro)"/>
+          <rect x="12" y="40" width="66" height="96" style="fill:var(--line)"/>
+          <polygon points="8,40 45,22 82,40" style="fill:var(--muted)"/>
+          <rect x="36" y="94" width="18" height="42" style="fill:var(--azul)"/>
+          <rect x="18" y="56" width="16" height="20" style="fill:var(--luz)"/><rect x="56" y="56" width="16" height="20" style="fill:var(--luz)"/>
+          <line x1="45" y1="18" x2="45" y2="140" style="stroke:var(--rosa);stroke-dasharray:2 2"/>
+          <rect width="90" height="21.7" style="fill:var(--rosa-suave);opacity:.22"/><rect y="125" width="90" height="35" style="fill:var(--rosa-suave);opacity:.22"/>
+        </svg>
+        <h3>Simetría</h3>
+        <p>Fachadas, pasillos, mesas servidas y productos de frente: al centro exacto, con la cámara recta. Si quedas un poco torcido, se nota más que si no fuera simétrico.</p>
+      </figure>
+
+    </div>
+
+    <div class="cabeza">
+      <h3>Cuándo romper la regla de los tercios</h3>
+      <p class="muted">Los tercios funcionan en planos generales y en el B-roll. En vertical para redes, el centro gana en estos casos:</p>
+    </div>
+    <div class="romper reglas">
+      <div class="regla"><b>Alguien habla a cámara.</b><p>Centrado. La mirada directa al centro conecta más, y el subtítulo (que va centrado) queda sobre la persona y no sobre el fondo. Además, la columna de botones le quita espacio a la derecha.</p></div>
+      <div class="regla"><b>El producto es la estrella.</b><p>Centrado y grande, como una portada. El primer cuadro del reel tiene que mostrar el premio de un vistazo; no hay tiempo para que el ojo lo busque en un tercio.</p></div>
+      <div class="regla"><b>Hay simetría.</b><p>Fachada, pasillo, plato visto desde arriba, una fila de productos. Moverlo a un tercio rompe justo lo que lo hace atractivo.</p></div>
+      <div class="regla"><b>Sí usa un tercio cuando el otro lado se va a llenar.</b><p>Si después va un dato, una lista o un gráfico al lado de la persona, ubícala en un tercio desde el rodaje y deja el lado libre. Eso se decide antes de grabar, no en edición.</p></div>
+      <div class="regla"><b>Y cuando el lugar cuenta la historia.</b><p>La persona pequeña abajo y el local, la obra o el paisaje ocupando el resto. Típico de constructoras, lotes y fachadas.</p></div>
+    </div>
+
+    <div class="cabeza">
+      <h3>Composiciones según lo que grabas</h3>
+    </div>
+    <div class="recetas">
+      <article class="receta"><h3>Persona hablando</h3><dl><dt>Cuadro</dt><dd>Plano medio centrado, ojos en el tercio de arriba</dd><dt>Luz</dt><dd>Ventana a 45°</dd><dt>Fondo</dt><dd>A 1–2 m de la pared, con algo del negocio detrás, desenfocado</dd><dt>Altura</dt><dd>Lente a la altura de los ojos</dd></dl></article>
+      <article class="receta"><h3>Producto</h3><dl><dt>Cuadro</dt><dd>Centrado, ocupando 60–70 % del cuadro</dd><dt>Ángulo</dt><dd>De frente o a 45°; cenital si es plano</dd><dt>Fondo</dt><dd>Limpio, de un color que contraste</dd><dt>Truco</dt><dd>Una mano que entra a tomarlo le da vida</dd></dl></article>
+      <article class="receta"><h3>Comida y bebida</h3><dl><dt>Cuadro</dt><dd>Cenital simétrico o a 45° con el plato al centro</dd><dt>Luz</dt><dd>Aquí el contraluz sí sirve: hace brillar las salsas, el vapor y los líquidos</dd><dt>Movimiento</dt><dd>Órbita lenta o deslizar sobre la mesa</dd></dl></article>
+      <article class="receta"><h3>Local o fachada</h3><dl><dt>Cuadro</dt><dd>Simétrico al centro, o con líneas que lleven a la entrada</dd><dt>Hora</dt><dd>7–9 a. m. o 4–6 p. m. para afuera</dd><dt>Movimiento</dt><dd>Acercamiento hacia la puerta o seguimiento entrando</dd></dl></article>
+      <article class="receta"><h3>Manos y proceso</h3><dl><dt>Cuadro</dt><dd>Detalle cerrado, la acción en el centro</dd><dt>Ángulo</dt><dd>Por encima del hombro de quien trabaja, o cenital</dd><dt>Truco</dt><dd>Las manos entran desde abajo, nunca desde la columna de botones</dd></dl></article>
+      <article class="receta"><h3>Antes y después</h3><dl><dt>Cuadro</dt><dd>Mismo encuadre exacto en las dos tomas: trípode marcado en el piso</dd><dt>Edición</dt><dd>Cortina o dividido arriba/abajo, nunca izquierda/derecha en vertical</dd></dl></article>
+    </div>
+
+    <div class="aparte">
+      <h3>La altura de la cámara también dice algo</h3>
+      <ul>
+        <li><b>A la altura de los ojos:</b> cercanía, de tú a tú. Es la de casi todo el A-roll.</li>
+        <li><b>Desde abajo (contrapicado):</b> poder y tamaño. Para el chef con los brazos cruzados, un edificio, la entrada del lote.</li>
+        <li><b>Desde arriba (picado):</b> muestra la mesa, el plato, el espacio de trabajo. En una cara, achica a la persona: evítalo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="gimbal">
+    <div class="cabeza">
+      <span class="eyebrow">Con gimbal</span>
+      <h2>Seis movimientos que sirven</h2>
+      <p>Visto desde arriba, salvo la subida. La flecha rosada es el recorrido de la cámara.</p>
+    </div>
+    <div class="rejilla chica">
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Acercamiento">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <circle cx="70" cy="28" r="12" style="fill:var(--sil)"/><circle cx="70" cy="28" r="6" style="fill:var(--ink)"/>
+          <path d="M70 78 L70 50" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+          <rect x="62" y="80" width="16" height="11" rx="2" style="fill:var(--azul)"/>
+        </svg>
+        <h3>Acercamiento</h3>
+        <p>Caminas hacia el sujeto. Para revelar un producto o subrayar una frase.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Alejamiento">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <circle cx="70" cy="22" r="12" style="fill:var(--sil)"/><circle cx="70" cy="22" r="6" style="fill:var(--ink)"/>
+          <rect x="62" y="42" width="16" height="11" rx="2" style="fill:var(--azul)"/>
+          <path d="M70 58 L70 88" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+        </svg>
+        <h3>Alejamiento</h3>
+        <p>Empiezas cerca y retrocedes. Para abrir al local completo o cerrar el reel.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Órbita">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <circle cx="70" cy="38" r="12" style="fill:var(--sil)"/><circle cx="70" cy="38" r="6" style="fill:var(--ink)"/>
+          <path d="M30 40 A40 36 0 0 0 108 46" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+          <rect x="20" y="28" width="16" height="11" rx="2" style="fill:var(--azul)"/>
+        </svg>
+        <h3>Órbita</h3>
+        <p>Media vuelta alrededor, con el sujeto siempre al centro. Platos, productos, la persona en su local.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Lateral con primer término">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <circle cx="70" cy="22" r="12" style="fill:var(--sil)"/><circle cx="70" cy="22" r="6" style="fill:var(--ink)"/>
+          <rect x="62" y="48" width="16" height="10" rx="2" style="fill:var(--muted)"/>
+          <rect x="18" y="78" width="16" height="11" rx="2" style="fill:var(--azul)"/>
+          <path d="M38 84 L112 84" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+        </svg>
+        <h3>Lateral</h3>
+        <p>Te deslizas de lado con algo cerca de la cámara (una botella, una planta, el mostrador). El primer término pasa rápido y da profundidad.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Seguimiento">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <circle cx="70" cy="34" r="12" style="fill:var(--sil)"/><circle cx="70" cy="34" r="6" style="fill:var(--ink)"/>
+          <path d="M70 20 L70 6" style="stroke:var(--ink);stroke-width:2;fill:none" marker-end="url(#flecha-tinta)"/>
+          <rect x="62" y="80" width="16" height="11" rx="2" style="fill:var(--azul)"/>
+          <path d="M70 76 L70 54" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+        </svg>
+        <h3>Seguimiento</h3>
+        <p>Vas detrás o al lado de la persona que camina. La llegada al local, el recorrido por la cocina.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Subida vista de lado, de la mesa a la cara">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <rect x="14" y="70" width="70" height="5" style="fill:var(--muted)"/><rect x="20" y="75" width="4" height="22" style="fill:var(--muted)"/><rect x="74" y="75" width="4" height="22" style="fill:var(--muted)"/>
+          <ellipse cx="62" cy="67" rx="12" ry="3" style="fill:var(--luz)"/>
+          <use href="#persona" x="92" y="8" width="30" height="90" style="color:var(--sil)"/>
+          <rect x="30" y="56" width="16" height="11" rx="2" style="fill:var(--azul)"/>
+          <path d="M38 52 L38 18" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+        </svg>
+        <h3>Subida</h3>
+        <p>Vista de lado: arrancas en la mesa y subes hasta la cara. Del plato a quien lo cocinó.</p>
+      </figure>
+
+    </div>
+    <div class="aparte">
+      <h3>Reglas del gimbal</h3>
+      <ul>
+        <li><b>Un movimiento por toma,</b> lento, de 4 a 6 s. Quieto 1 s al empezar y al terminar, para que haya dónde cortar.</li>
+        <li><b>Paso ninja:</b> rodillas flexionadas, talón y luego punta. Los brazos no se mueven; se mueve el cuerpo.</li>
+        <li><b>IS digital en Off.</b> El gimbal ya estabiliza; el IS de la cámara encima recorta y deforma los bordes.</li>
+        <li><b>Modo:</b> seguimiento horizontal (PF) para la órbita y el seguimiento; bloqueado para el acercamiento, el alejamiento y el lateral.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="a-mano">
+    <div class="cabeza">
+      <span class="eyebrow">Sin gimbal</span>
+      <h2>A mano o en trípode</h2>
+    </div>
+    <div class="rejilla chica">
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Cámara en trípode frente a la persona">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <line x1="44" y1="44" x2="26" y2="94" style="stroke:var(--muted);stroke-width:3"/><line x1="44" y1="44" x2="62" y2="94" style="stroke:var(--muted);stroke-width:3"/><line x1="44" y1="44" x2="44" y2="94" style="stroke:var(--muted);stroke-width:3"/>
+          <rect x="30" y="28" width="26" height="16" rx="3" style="fill:var(--azul)"/><rect x="56" y="32" width="8" height="8" style="fill:var(--azul)"/>
+          <use href="#persona" x="92" y="6" width="30" height="90" style="color:var(--sil)"/>
+          <line x1="64" y1="36" x2="98" y2="16" style="stroke:var(--rosa);stroke-dasharray:3 3"/>
+        </svg>
+        <h3>Trípode para hablar a cámara</h3>
+        <p>Siempre que alguien hable a cámara. Lente a la altura de los ojos, nunca desde abajo.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Persona sosteniendo la cámara con los codos pegados al cuerpo">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <circle cx="70" cy="18" r="9" style="fill:var(--sil)"/>
+          <line x1="70" y1="27" x2="70" y2="66" style="stroke:var(--sil);stroke-width:5"/>
+          <polyline points="62,32 58,52 63,46" style="fill:none;stroke:var(--sil);stroke-width:4;stroke-linejoin:round"/>
+          <polyline points="78,32 82,52 77,46" style="fill:none;stroke:var(--sil);stroke-width:4;stroke-linejoin:round"/>
+          <rect x="60" y="38" width="20" height="12" rx="2" style="fill:var(--azul)"/>
+          <line x1="70" y1="66" x2="58" y2="94" style="stroke:var(--sil);stroke-width:5"/><line x1="70" y1="66" x2="82" y2="94" style="stroke:var(--sil);stroke-width:5"/>
+          <text x="92" y="56" font-size="9" style="fill:var(--rosa)">codos</text><text x="92" y="67" font-size="9" style="fill:var(--rosa)">al cuerpo</text>
+        </svg>
+        <h3>A mano y quieta</h3>
+        <p>Codos pegados al cuerpo, correa tensa contra el cuello, respiras y aguantas 5 s. IS digital en On. Mejor quieta y firme que moviéndote sin gimbal.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Cámara apoyada en la mesa deslizándose hacia un producto">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <rect x="8" y="72" width="124" height="6" style="fill:var(--muted)"/>
+          <rect x="16" y="58" width="22" height="14" rx="2" style="fill:var(--azul)"/><rect x="38" y="61" width="6" height="8" style="fill:var(--azul)"/>
+          <path d="M48 52 L92 52" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+          <rect x="104" y="36" width="12" height="36" rx="3" style="fill:var(--luz)"/><rect x="107" y="28" width="6" height="9" style="fill:var(--luz)"/>
+        </svg>
+        <h3>Deslizar sobre la mesa</h3>
+        <p>Apoyas la cámara en la mesa sobre un trapo y la deslizas despacio hacia el producto. Es un slider gratis.</p>
+      </figure>
+
+      <figure class="ficha" style="margin:0">
+        <svg viewBox="0 0 140 100" role="img" aria-label="Paneo rápido de transición">
+          <rect width="140" height="100" rx="8" style="fill:var(--piso)"/>
+          <rect x="60" y="66" width="20" height="13" rx="2" style="fill:var(--azul)"/>
+          <path d="M36 54 A40 34 0 0 1 104 54" style="stroke:var(--rosa);stroke-width:3;fill:none" marker-end="url(#flecha)"/>
+          <line x1="40" y1="34" x2="62" y2="30" style="stroke:var(--muted);stroke-width:2;opacity:.6"/><line x1="44" y1="42" x2="70" y2="38" style="stroke:var(--muted);stroke-width:2;opacity:.6"/><line x1="50" y1="24" x2="74" y2="22" style="stroke:var(--muted);stroke-width:2;opacity:.6"/>
+        </svg>
+        <h3>Paneo rápido de transición</h3>
+        <p>Al final de una toma giras rápido hacia un lado y empiezas la siguiente con el mismo giro. En edición quedan pegadas con un barrido.</p>
+      </figure>
+
+    </div>
+  </section>
+
+  <section id="cobertura">
+    <div class="cabeza">
+      <span class="eyebrow">Cobertura</span>
+      <h2>Por cada idea del guion, saca esto</h2>
+      <p>Con esto el editor (o la fábrica) nunca se queda corto de B-roll ni repite el mismo encuadre más de 2,5 s.</p>
+    </div>
+    <div class="cobertura">
+      <div class="toma"><b>A-roll</b><span>Plano medio en trípode, 2 o 3 tomas de la frase.</span></div>
+      <div class="toma"><b>General</b><span>El lugar donde pasa, 5 s.</span></div>
+      <div class="toma"><b>Acción</b><span>Plano medio de alguien haciendo algo, 5 s.</span></div>
+      <div class="toma"><b>2 detalles</b><span>Manos, producto, textura. 5 s cada uno.</span></div>
+      <div class="toma"><b>1 movimiento</b><span>Uno de los seis del gimbal, o deslizar sobre la mesa.</span></div>
+    </div>
+    <ul class="lista">
+      <li>Cada toma de B-roll empieza y termina con 1 s quieto.</li>
+      <li>Cada B-roll muestra algo del negocio: el producto, el proceso, el lugar o la gente. Nada de tomas de relleno.</li>
+      <li>Antes de irte del lugar, revisa una toma en la pantalla con la cebra: si la cara no tiene rayas al 70 %, repite con más luz.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Guía interna de BLACKMOUTH · 20 de octubre de 2026. La configuración es la recomendada: falta confirmarla con un clip de prueba de 10 s (cara, ventana y algo blanco).
+  </footer>
+
+</main>
+</body>
+</html>
