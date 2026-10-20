@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>San Miguel · 20 guiones</title>
+<title>San Miguel · Banco de contenido</title>
 <link rel="icon" href="/logo.ico" sizes="any">
-<meta name="description" content="Banco de 20 guiones de reels para el Liceo Campestre San Miguel: venta, comunidad y trends, con Halloween y contenido de valor de octubre.">
+<meta name="description" content="Banco auditado de 20 reels y 20 carruseles para el Liceo Campestre San Miguel, con sugeridos por tipo, fotos necesarias y plan de rodaje.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -291,9 +291,129 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
   .rv{opacity:1;transform:none}
   .noche .luna{transform:none}
 }
+
+/* ===== v2: bancos, sugeridos, fotos, rodaje, auditoría ===== */
+.banco-sw{display:inline-flex;background:#fff;border:3px solid var(--tinta);border-radius:99px;padding:4px;margin-bottom:18px;box-shadow:4px 4px 0 var(--navy)}
+.banco-sw button{font-weight:800;font-size:15px;padding:10px 22px;border-radius:99px;color:var(--navy);transition:background .25s,color .25s}
+.banco-sw button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.banco-sw button small{font-weight:600;opacity:.7;margin-left:4px}
+.filtros .sug{background:var(--amarillo)!important;border-color:var(--tinta)}
+.filtros .sug[aria-pressed="true"]{background:var(--rojo2)!important;color:#fff!important}
+.grupo-sug{margin-bottom:34px}
+.grupo-sug h3.gs{font-family:var(--d);font-weight:400;font-size:30px;color:var(--navy);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.grupo-sug h3.gs i{font-style:normal;font-family:var(--p);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:99px;border:2px solid var(--tinta)}
+body.hw .grupo-sug h3.gs{color:#fff}
+.grid-sug{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:700px){.grid-sug{grid-template-columns:1fr}}
+.tarjeta .estrella-sug{position:absolute;top:10px;right:12px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--rojo2);color:#fff;padding:3px 10px;border-radius:99px;border:2px solid var(--tinta)}
+.tarjeta .tope .tipo{margin-right:auto;margin-left:10px}
+.tarjeta.es-sug{box-shadow:5px 5px 0 var(--rojo2)}
+.chip.foto-n{background:#ffd29a}.chip.foto-a{background:#e3dcff}.chip.foto-i{background:#eef7e3}
+.nota-sug{background:#fff;border:3px dashed var(--rojo2);border-radius:16px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:var(--tinta)}
+
+/* fotos */
+.fotos-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.col-f{background:#fff;border:3px solid var(--tinta);border-radius:18px;padding:20px;color:var(--tinta)}
+.col-f .ic{font-size:34px;line-height:1}
+.col-f b{display:block;font-family:var(--d);font-weight:400;font-size:26px;color:var(--navy);margin:6px 0 2px}
+.col-f .cuantos{font-weight:700;color:var(--gris);font-size:14px}
+.col-f ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.col-f li button{width:100%;text-align:left;font-size:14px;padding:7px 10px;border-radius:10px;border:2px solid var(--linea);background:var(--papel);transition:border-color .2s}
+.col-f li button:hover{border-color:var(--tinta)}
+.col-f li button.sug{border-color:var(--rojo2);background:#fff0f0;font-weight:700}
+.resumen-f{margin-top:20px;background:var(--navy);color:#fff;border-radius:18px;padding:20px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.resumen-f b{font-family:var(--d);font-weight:400;font-size:44px;line-height:1;color:var(--amarillo)}
+.resumen-f p{flex:1;min-width:240px}
+@media (max-width:860px){.fotos-g{grid-template-columns:1fr}}
+
+/* rodaje */
+.dias-r{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.dia-r{background:#fff;border:3px solid var(--tinta);border-radius:20px;overflow:hidden;color:var(--tinta);box-shadow:6px 6px 0 var(--navy);position:relative}
+.dia-r .cab{padding:16px 18px;border-bottom:3px solid var(--tinta);display:flex;gap:14px;align-items:center}
+.dia-r .num{font-family:var(--d);font-size:54px;line-height:.9;color:var(--navy)}
+.dia-r .cab small{display:block;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--rojo)}
+.dia-r .cab b{display:block;font-family:var(--d);font-weight:400;font-size:24px;line-height:1.05;color:var(--navy)}
+.dia-r .clima{display:inline-block;margin:12px 18px 0;font-size:12.5px;font-weight:800;padding:4px 10px;border-radius:99px;border:2px solid var(--tinta);background:#fff}
+.dia-r .porque{margin:10px 18px 0;font-size:14.5px;background:var(--amarillo2);border-radius:10px;padding:8px 12px}
+.dia-r .porque:before{content:"¿Por qué? ";font-weight:800;color:var(--rojo)}
+.dia-r ul{list-style:none;padding:14px 18px 18px;display:flex;flex-direction:column;gap:8px}
+.dia-r label{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:start;padding:9px 10px;border:2px solid var(--linea);border-radius:12px;cursor:pointer}
+.dia-r label:hover{border-color:var(--tinta)}
+.dia-r input{appearance:none;width:22px;height:22px;border:2px solid var(--tinta);border-radius:6px;background:#fff;display:grid;place-items:center;cursor:pointer;margin-top:1px}
+.dia-r input:checked{background:var(--verde)}
+.dia-r input:checked:after{content:"✓";font-weight:900;font-size:14px}
+.dia-r input:checked + span{opacity:.5;text-decoration:line-through}
+.dia-r .t b{font-weight:800;font-size:14.5px;color:var(--navy)}
+.dia-r .t small{display:block;font-size:13px;color:var(--gris);line-height:1.35}
+.dia-r .cod{font-size:11px;font-weight:800;padding:1px 7px;border-radius:99px;background:var(--navy);color:#fff;margin-right:4px}
+.dia-r .min{font-size:11.5px;font-weight:800;color:var(--gris);white-space:nowrap}
+.dia-r .flecha{position:absolute;right:-26px;top:38px;font-size:30px;font-weight:900;color:var(--rojo2);z-index:2}
+@media (max-width:980px){.dias-r{grid-template-columns:1fr}.dia-r .flecha{display:none}}
+.extras-r{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:20px}
+.extra-r{background:#fff;border:3px dashed var(--navy);border-radius:18px;padding:18px;color:var(--tinta);font-size:14.5px}
+.extra-r b{display:block;font-weight:800;color:var(--navy);margin-bottom:6px}
+@media (max-width:860px){.extras-r{grid-template-columns:1fr}}
+.cal-r{display:flex;gap:10px;overflow-x:auto;padding:6px 2px 14px;margin-top:22px;scroll-snap-type:x mandatory}
+.cal-r button{flex:none;scroll-snap-align:start;width:150px;text-align:left;background:#fff;border:2px solid var(--tinta);border-radius:14px;padding:10px 12px;color:var(--tinta);transition:transform .2s}
+.cal-r button:hover{transform:translateY(-3px)}
+.cal-r button small{display:block;font-weight:800;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--rojo)}
+.cal-r button b{display:block;font-weight:800;font-size:13px;color:var(--navy)}
+.cal-r button span{font-size:13px;line-height:1.3;display:block}
+.cal-r button.r{border-color:var(--rojo2)}
+.cal-r button.nov{background:var(--papel);width:220px}
+
+/* auditoría */
+.aud-cab{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.leyenda-c{display:flex;flex-wrap:wrap;gap:8px}
+.leyenda-c span{font-size:12.5px;font-weight:700;background:#fff;border:2px solid var(--linea);border-radius:99px;padding:3px 10px;color:var(--tinta);cursor:help}
+.aud{background:#fff;border:3px solid var(--tinta);border-radius:18px;overflow:hidden;color:var(--tinta)}
+.aud-f{display:grid;grid-template-columns:52px 1fr 92px repeat(5,minmax(38px,62px)) 56px 120px;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--linea);font-size:14px}
+.aud-f.th{background:var(--navy);color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;position:sticky;top:62px;z-index:2}
+.aud-f .cand{font-weight:800;color:var(--gris);font-size:12.5px}
+.aud-f .tit{font-weight:700;line-height:1.25}
+.aud-f .tit small{display:block;font-weight:500;color:var(--gris);font-size:12.5px}
+.barra-p{height:10px;background:var(--linea);border-radius:99px;overflow:hidden}
+.barra-p i{display:block;height:100%;background:var(--navy);border-radius:99px;width:0;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.aud-f .tot{font-family:var(--d);font-size:22px;color:var(--navy);text-align:center}
+.aud-f .est{font-size:12px;font-weight:800;padding:4px 8px;border-radius:99px;text-align:center;border:2px solid var(--tinta)}
+.aud-f .est.si{background:var(--verde)}.aud-f .est.su{background:var(--rojo2);color:#fff}.aud-f .est.no{background:#eee;color:var(--gris);border-color:#bbb}
+.aud-f.fuera{opacity:.62}
+.aud-f.fuera .barra-p i{background:#9b98ae}
+.aud-sep{padding:12px 14px;background:var(--papel);font-weight:800;color:var(--rojo);font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--linea)}
+@media (max-width:900px){
+  .aud-f{grid-template-columns:44px 1fr 56px 98px;row-gap:6px}
+  .aud-f .crit,.aud-f.th .crit,.aud-f .tp{display:none}
+  .aud-f.th{top:62px}
+}
+.carr-m{width:270px}
+.carr-m .vp{aspect-ratio:4/5;border:4px solid var(--tinta);border-radius:20px;overflow:hidden;position:relative;box-shadow:6px 6px 0 var(--rojo2);background:var(--papel)}
+.carr-m .pista{display:flex;height:100%;transition:transform .5s cubic-bezier(.6,0,.2,1)}
+.lam{flex:0 0 100%;height:100%;padding:22px 18px;position:relative;display:flex;flex-direction:column;justify-content:center;gap:10px;background:var(--papel) repeating-linear-gradient(transparent 0 19px,var(--renglon) 19px 20px);overflow:hidden;color:var(--tinta)}
+.lam.navy{background:var(--indigo);color:#fff}
+.lam.rojo{background:var(--rojo2);color:#fff}
+.lam.foto{background:linear-gradient(160deg,#c9c3b6,#7a7466);color:#fff}
+.lam.foto:after{content:"📷 FOTO";position:absolute;top:12px;left:14px;font-size:10px;font-weight:800;letter-spacing:.12em;background:rgba(0,0,0,.35);padding:2px 8px;border-radius:99px}
+.lam .n{position:absolute;top:12px;right:14px;font-weight:800;font-size:11px;opacity:.6}
+.lam h4{font-family:var(--d);font-weight:400;font-size:25px;line-height:1.05;color:var(--rojo)}
+.lam.navy h4,.lam.rojo h4,.lam.foto h4{color:#fff}
+.lam p{font-weight:600;font-size:14px;line-height:1.35;position:relative;z-index:1}
+.lam .ic{position:absolute;bottom:-14px;right:-14px;width:105px;height:105px}
+.carr-m .flechas{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.carr-m .flechas button{width:40px;height:40px;border-radius:50%;border:2px solid var(--tinta);background:#fff;font-weight:800}
+.carr-m .flechas button:hover{background:var(--amarillo)}
+.puntos{display:flex;gap:5px}
+.puntos i{width:7px;height:7px;border-radius:50%;background:#cfcde0;transition:background .2s,transform .2s}
+.puntos i.on{background:var(--rojo2);transform:scale(1.3)}
+.bandeja .grp{display:flex;align-items:center;gap:6px}
+.bandeja .grp em{font-style:normal;font-size:12px;font-weight:800;opacity:.85}
+.bandeja .sep{width:2px;height:24px;background:rgba(255,255,255,.3)}
+body.hw section > .wrap > .sub{color:#ffb36b}
+.piscina{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--tinta);border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px;color:var(--tinta);margin-top:12px}
+
 </style>
-<meta property="og:title" content="San Miguel · 20 guiones">
-<meta property="og:description" content="Banco de 20 guiones de reels para el Liceo Campestre San Miguel: venta, comunidad y trends, con Halloween y contenido de valor de octubre.">
+
+<meta property="og:title" content="San Miguel · Banco de contenido">
+<meta property="og:description" content="Banco auditado de 20 reels y 20 carruseles para el Liceo Campestre San Miguel, con sugeridos por tipo, fotos necesarias y plan de rodaje.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/guiones-octubre/">
 <meta property="og:image" content="https://cotizaciones.blackmouth.agency/colegio-san-miguel/guiones-octubre/og.jpg">
@@ -306,8 +426,6 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
   <div class="vuela" style="top:58%;width:50px;height:50px;animation-duration:23s;animation-delay:-8s"><svg><use href="#murcielago"/></svg></div>
   <div class="vuela" style="top:40%;width:40px;height:40px;animation-duration:29s;animation-delay:-15s"><svg><use href="#murcielago"/></svg></div>
 </div>
-
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
   <symbol id="sol" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linecap="round" fill="none"><path d="M60 8v14M60 98v14M8 60h14M98 60h14M23 23l10 10M87 87l10 10M97 23 87 33M33 87 23 97"/></g><circle cx="60" cy="60" r="27" fill="#f7ef73" stroke="#1b1a2e" stroke-width="5"/><path d="M50 56h.1M70 56h.1" stroke="#1b1a2e" stroke-width="7" stroke-linecap="round"/><path d="M49 68q11 9 22 0" fill="none" stroke="#1b1a2e" stroke-width="4.5" stroke-linecap="round"/></symbol>
@@ -326,13 +444,16 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
   <symbol id="fantasma" viewBox="0 0 120 120"><path d="M24 104V56q0-38 36-38t36 38v48l-12-10-12 10-12-10-12 10-12-10z" fill="#fff" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/><ellipse cx="48" cy="56" rx="6" ry="9" fill="#1b1a2e"/><ellipse cx="72" cy="56" rx="6" ry="9" fill="#1b1a2e"/><ellipse cx="60" cy="76" rx="7" ry="5" fill="#1b1a2e"/></symbol>
   <symbol id="murcielago" viewBox="0 0 120 120"><path d="M60 50q-6-10-14-4-10-12-24-10 8 10 4 22 10-4 16 4 4-8 10-4 4 10 8 12 4-2 8-12 6-4 10 4 6-8 16-4-4-12 4-22-14-2-24 10-8-6-14 4z" fill="#5b3a8c" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/><circle cx="55" cy="60" r="2.5" fill="#fff"/><circle cx="65" cy="60" r="2.5" fill="#fff"/></symbol>
   <symbol id="megafono" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"><path d="M20 50h18l44-24v68L38 70H20z" fill="#f6b8cf"/><path d="M38 70l8 26h12l-6-26" fill="#fff"/></g><path d="M94 46q8 14 0 28" fill="none" stroke="#1b1a2e" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="nube" viewBox="0 0 120 120"><path d="M30 78q-16 0-16-14t16-14q2-18 22-18 14 0 20 12 4-2 10-2 18 0 18 18 12 2 12 12 0 12-14 12z" fill="#fff" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/><g stroke="#3b6fd6" stroke-width="5" stroke-linecap="round"><path d="M40 92l-4 10M60 92l-4 10M80 92l-4 10"/></g></symbol>
+  <symbol id="mascara" viewBox="0 0 120 120"><path d="M16 40q44-16 88 0q4 36-20 46-12 4-24-8-12 12-24 8-24-10-20-46z" fill="#f7ef73" stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"/><ellipse cx="42" cy="54" rx="10" ry="7" fill="#1b1a2e"/><ellipse cx="78" cy="54" rx="10" ry="7" fill="#1b1a2e"/></symbol>
+  <symbol id="pincel" viewBox="0 0 120 120"><g stroke="#1b1a2e" stroke-width="5" stroke-linejoin="round"><path d="M70 16l34 34-30 18-22-22z" fill="#c3f58a"/><path d="M52 46l22 22-14 14q-10 10-24 6l-18 14 6-24q-4-14 6-24z" fill="#f6b8cf"/></g></symbol>
 </defs>
 </svg>
 
 <header class="barra">
   <div class="wrap">
     <img class="logo" src="media/f713e89272.png" alt="Liceo Campestre San Miguel">
-    <nav aria-label="Secciones"><a href="#guiones">Los 20 guiones</a><a href="#reco">Si arrancamos hoy</a><a href="#evitar">Temas que evitamos</a><a href="#trends">Trends del mes</a></nav>
+    <nav aria-label="Secciones"><a href="#banco">Banco</a><a href="#fotos">Fotos</a><a href="#rodaje">Rodaje</a><a href="#auditoria">Auditoría</a><a href="#evitar">Temas que evitamos</a><a href="#trends">Trends</a></nav>
     <button class="hw-btn" id="hwBtn" type="button" aria-pressed="false">🎃 Modo Halloween</button>
   </div>
 </header>
@@ -341,51 +462,40 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
 <section class="portada">
   <div class="doodle flota no-hw" style="--r:-8deg;top:24px;right:4%;width:86px;height:86px"><svg><use href="#sol"/></svg></div>
   <div class="doodle flota solo-hw" style="--r:-8deg;top:24px;right:4%;width:96px;height:96px"><svg><use href="#calabaza"/></svg></div>
-  <div class="doodle flota solo-hw" style="--r:10deg;top:46%;left:44%;width:70px;height:70px;animation-delay:-2s"><svg><use href="#murcielago"/></svg></div>
   <div class="doodle flota no-hw" style="--r:12deg;bottom:110px;left:46%;width:50px;height:50px;animation-delay:-2s"><svg><use href="#estrella"/></svg></div>
   <div class="wrap">
     <div class="grid">
       <div>
-        <div class="chips"><span class="rasgado">Banco de guiones</span><span class="rasgado n">Octubre 2026</span><span class="rasgado n">Para escoger 4 al mes</span></div>
-        <h1><span class="num" id="contador">0</span> guiones para que el colegio se vea <span style="color:var(--rojo)">vivo</span>.</h1>
-        <p class="bajada">Hay guiones para <b>vender</b>, para <b>hacer comunidad</b> y para <b>montarse en los trends</b>, con Halloween y temas útiles para las familias en octubre. Ábrelos, dales play y escoge los 4 del mes.</p>
+        <div class="chips"><span class="rasgado">Banco de contenido</span><span class="rasgado n">Octubre 2026</span><span class="rasgado n">Versión 2 · auditada</span></div>
+        <h1><span class="num" id="contador">0</span> candidatos. Se quedaron <span style="color:var(--rojo)">los mejores 40</span>.</h1>
+        <p class="bajada">Escribimos <b>32 reels y 28 carruseles</b>, los calificamos uno por uno y dejamos <b>20 de cada uno</b>. De esos, marcamos <b>2 sugeridos por tipo</b>, con su propio filtro, y armamos el plan de rodaje para la semana de lluvia.</p>
       </div>
       <div class="mazo" aria-hidden="true">
-        <div class="hoja h1" style="left:8%;top:40px;transform:rotate(-8deg)"><span class="tipo" style="color:var(--rojo)">Venta</span><b>Antes de elegir colegio, mira esto</b><i>Guion 4 · 40 s</i></div>
-        <div class="hoja h3" style="left:38%;top:30px;transform:rotate(7deg)"><span class="tipo" style="color:#2f7d1e">Comunidad</span><b>¿Qué te da miedo?</b><i>Guion 13 · 35 s</i></div>
-        <div class="hoja h2" style="left:22%;top:70px;transform:rotate(-1deg);z-index:2"><span class="tipo" style="color:#1d6f87">Trend</span><b>Lunes vs. viernes, 6:10 a. m.</b><i>Guion 18 · 25 s</i></div>
+        <div class="hoja h1" style="left:8%;top:40px;transform:rotate(-8deg)"><span class="tipo" style="color:var(--rojo)">Reel · Venta</span><b>Antes de elegir colegio, mira esto</b><i>R1 · sugerido</i></div>
+        <div class="hoja h3" style="left:38%;top:30px;transform:rotate(7deg)"><span class="tipo" style="color:#2f7d1e">Carrusel · Comunidad</span><b>Llueve otra vez: 7 planes</b><i>C7 · sugerido</i></div>
+        <div class="hoja h2" style="left:22%;top:70px;transform:rotate(-1deg);z-index:2"><span class="tipo" style="color:#1d6f87">Reel · Comunidad</span><b>Recreo bajo la lluvia</b><i>R7 · sugerido</i></div>
       </div>
     </div>
     <div class="cifras">
-      <div class="cifra rv" style="--rr:-2deg"><b>6</b><span>de venta</span></div>
-      <div class="cifra rv d1" style="--rr:1.5deg"><b>7</b><span>de comunidad</span></div>
-      <div class="cifra rv d2" style="--rr:-1deg"><b>7</b><span>de trends</span></div>
-      <div class="cifra rv d3" style="--rr:2deg"><b>6</b><span>de Halloween 🎃</span></div>
+      <div class="cifra rv" style="--rr:-2deg"><b>20</b><span>reels</span></div>
+      <div class="cifra rv d1" style="--rr:1.5deg"><b>20</b><span>carruseles</span></div>
+      <div class="cifra rv d2" style="--rr:-1deg"><b>12</b><span>sugeridos ⭐</span></div>
+      <div class="cifra rv d3" style="--rr:2deg"><b>3</b><span>días de rodaje</span></div>
     </div>
   </div>
 </section>
 
-<section style="padding-top:60px">
-  <div class="wrap">
-    <div class="sec-cab rv"><span class="rasgado">Qué cambia frente a los anteriores</span>
-      <h2>Más gente, más humor, <em>más directos.</em></h2>
-      <p class="lead">Los guiones anteriores iban sobre una sola idea. En este banco hay registros distintos para que el feed respire, y cada guion dice qué se graba, quién sale y cuál es la palabra clave.</p></div>
-    <div class="cambios">
-      <div class="nota rv"><div class="cinta"></div><h3>La gente del colegio, al frente</h3><p>Salen profes, niños, papás, admisiones y el personal de apoyo. La idea es que el colegio se vea habitado, no como un folleto.</p></div>
-      <div class="nota rv d1"><div class="cinta"></div><h3>Venta sin vergüenza</h3><p>Seis guiones piden la visita o la guía de admisiones con una palabra clave, siempre después de dar algo de valor primero.</p></div>
-      <div class="nota rv d2"><div class="cinta"></div><h3>Trends de este mes</h3><p>Usan formatos que están funcionando en octubre (la advertencia de contenido, el papel arrugado, el micro-drama), adaptados al colegio.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="guiones">
+<section id="banco">
   <div class="doodle flota no-hw" style="--r:-10deg;top:60px;right:4%;width:76px;height:76px"><svg><use href="#lapiz"/></svg></div>
   <div class="doodle flota solo-hw" style="--r:-6deg;top:50px;right:4%;width:84px;height:84px"><svg><use href="#fantasma"/></svg></div>
   <div class="wrap">
-    <div class="sec-cab rv"><span class="rasgado">Los 20 guiones</span>
+    <div class="sec-cab rv"><span class="rasgado">El banco</span>
       <h2>Escoge, <em>dale play</em> y arma el mes.</h2>
-      <p class="lead">Toca «Ver guion» para abrir el guion completo con su maqueta animada. Con «＋ Al mes» vas armando la selección (son 4 reels al mes) y al final la copias para mandarla por WhatsApp.</p></div>
+      <p class="lead">Cambia entre reels y carruseles. Con <b>⭐ Sugeridos</b> ves solo nuestros 2 por tipo, separados. «Ver» abre la pieza completa y «＋ Al mes» la suma a tu selección (4 reels y 4 carruseles).</p></div>
+    <div class="banco-sw rv" role="group" aria-label="Banco"><button type="button" data-b="reels" aria-pressed="true">🎬 Reels <small>20</small></button><button type="button" data-b="carr" aria-pressed="false">🖼️ Carruseles <small>20</small></button></div>
     <div class="filtros rv" id="filtros">
+      <button type="button" class="sug" data-s="1" aria-pressed="false">⭐ Sugeridos</button>
+      <span class="sep"></span>
       <button type="button" data-f="todos" aria-pressed="true">Todos</button>
       <button type="button" data-f="venta" aria-pressed="false">Venta</button>
       <button type="button" data-f="comu" aria-pressed="false">Comunidad</button>
@@ -393,20 +503,48 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
       <span class="sep"></span>
       <button type="button" data-t="hw" aria-pressed="false">🎃 Halloween</button>
       <button type="button" data-t="valor" aria-pressed="false">⭐ De valor</button>
-      <input type="search" id="buscar" placeholder="Buscar: profes, papás, VISITA…" aria-label="Buscar guion">
+      <input type="search" id="buscar" placeholder="Buscar: profes, lluvia, VISITA…" aria-label="Buscar">
     </div>
     <p class="cuenta-f" id="cuentaF"></p>
-    <div class="grid-g" id="grid"></div>
+    <div id="vista"></div>
   </div>
 </section>
 
-<section id="reco">
+<section id="fotos">
   <div class="wrap">
-    <div class="sec-cab rv"><span class="rasgado">Si arrancamos hoy</span>
-      <h2>Los 4 que sacaríamos <em>de aquí al 31.</em></h2>
-      <p class="lead">Mezclan venta, valor y Halloween, y se graban en dos días: el viernes 23 y el viernes 30. Lo demás queda de banco para noviembre.</p></div>
-    <div class="reco" id="recoGrid"></div>
-    <div style="margin-top:22px" class="rv"><button class="btn" id="usarReco" type="button">Usar esta selección</button></div>
+    <div class="sec-cab rv"><span class="rasgado">¿Hay que tomar fotos?</span>
+      <h2>Fotos nuevas solo para <em>4 carruseles.</em></h2>
+      <p class="lead">La mayoría de los carruseles van ilustrados, con el estilo de cuaderno. De los sugeridos, solo dos necesitan fotos nuevas, y se toman bajo techo. Toca uno para abrirlo.</p></div>
+    <div class="fotos-g" id="fotosG"></div>
+    <div class="resumen-f rv" id="resumenF"></div>
+  </div>
+</section>
+
+<section id="rodaje">
+  <div class="doodle flota no-hw" style="--r:-6deg;top:70px;right:6%;width:86px;height:86px"><svg><use href="#camara"/></svg></div>
+  <div class="doodle flota solo-hw" style="--r:8deg;top:70px;right:6%;width:80px;height:80px"><svg><use href="#murcielago"/></svg></div>
+  <div class="wrap">
+    <div class="sec-cab rv"><span class="rasgado">Plan de rodaje</span>
+      <h2>Tres días, en este orden.</h2>
+      <p class="lead">Grabamos primero lo que se vence. Todo es bajo techo, salvo el recreo, que necesita la lluvia.</p>
+      <span class="piscina">🏊 Sin piscina: nada del banco la necesita</span></div>
+    <div class="dias-r" id="diasR"></div>
+    <div class="extras-r" id="extrasR"></div>
+    <p class="sub rv" style="margin-top:34px">Cuándo sale cada sugerido</p>
+    <div class="cal-r rv" id="calR"></div>
+  </div>
+</section>
+
+<section id="auditoria">
+  <div class="wrap">
+    <div class="sec-cab rv"><span class="rasgado">Auditoría</span>
+      <h2>Por qué se quedaron <em>estos 20.</em></h2>
+      <p class="lead">Calificamos cada candidato de 1 a 5 en cinco criterios, sobre 25 puntos. Ganaba el puntaje, pero sin dejar un tipo vacío y sin repetir ideas. Pasa el cursor por un criterio para ver qué mide.</p></div>
+    <div class="aud-cab rv">
+      <div class="banco-sw" role="group" aria-label="Auditoría" style="margin:0"><button type="button" data-a="r" aria-pressed="true">Reels <small>32</small></button><button type="button" data-a="c" aria-pressed="false">Carruseles <small>28</small></button></div>
+      <div class="leyenda-c" id="leyendaC"></div>
+    </div>
+    <div class="aud rv" id="aud"></div>
   </div>
 </section>
 
@@ -415,7 +553,7 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
   <div class="wrap">
     <div class="sec-cab rv"><span class="rasgado">Temas que evitamos este mes</span>
       <h2>Un colegio no toma partido.</h2>
-      <p class="lead">El país está en plena discusión política: el presupuesto de 2027, la reforma pensional, el decreto sobre protestas, un caso judicial de la UNGRD y un gobierno nuevo desde agosto. Ninguno de los 20 guiones toca esto. Toca cada carta para ver por qué y qué hacemos en su lugar.</p></div>
+      <p class="lead">El país está en plena discusión política: el presupuesto de 2027, la reforma pensional, el decreto sobre protestas, el caso judicial de la UNGRD y un gobierno nuevo desde agosto. Ninguna de las 40 piezas toca esto. Toca cada carta para ver por qué y qué hacemos en su lugar.</p></div>
     <div class="cartas" id="cartas"></div>
   </div>
 </div>
@@ -424,7 +562,7 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
   <div class="wrap">
     <div class="sec-cab rv"><span class="rasgado">Trends del mes</span>
       <h2>Los formatos de octubre que <em>usamos.</em></h2>
-      <p class="lead">Son tendencias globales de Instagram de esta semana; las adaptamos al colegio y a Yumbo. Los audios se escogen de la biblioteca de Instagram el día que se monta.</p></div>
+      <p class="lead">Son tendencias globales de Instagram de este mes, adaptadas al colegio. Los audios se escogen en la biblioteca de Instagram el día del montaje.</p></div>
     <div class="trends" id="trendsGrid"></div>
   </div>
 </section>
@@ -432,52 +570,46 @@ body.hw .reco ~ div .btn,body.hw #usarReco{box-shadow:4px 4px 0 #ff8a1f}
 
 <footer>
   <div class="wrap">
-    <span>Banco de guiones · Liceo Campestre San Miguel · octubre 2026 · <a href="https://cotizaciones.blackmouth.agency/colegio-san-miguel/plan-octubre/">ver el plan del mes</a></span>
+    <span>Banco de contenido · Liceo Campestre San Miguel · octubre 2026 · <a href="https://cotizaciones.blackmouth.agency/colegio-san-miguel/plan-octubre/">ver el plan del mes</a></span>
     <span class="firma"><span>Hecho por</span><img src="media/4a5a3a73af.png" alt="BLACKMOUTH"></span>
   </div>
 </footer>
 
 <div class="bandeja" id="bandeja" role="region" aria-label="Selección del mes">
-  <div class="slots" id="slots"></div><b id="bandejaTxt">0 de 4</b>
-  <button type="button" id="verSel">Ver selección</button>
+  <div class="grp"><em>Reels</em><div class="slots" id="slotsR"></div></div><span class="sep"></span>
+  <div class="grp"><em>Carr.</em><div class="slots" id="slotsC"></div></div>
+  <button type="button" id="verSel">Ver</button>
 </div>
-<dialog id="dlg" aria-label="Guion"><div id="dlgIn"></div></dialog>
+<dialog id="dlg" aria-label="Pieza"><div id="dlgIn"></div></dialog>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-(function(){
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const QUIETO=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const guarda={get(k,d){try{const v=localStorage.getItem('sm-guiones-'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sm-guiones-'+k,JSON.stringify(v))}catch(e){}}};
-function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1900)}
-
-const TIPOS={venta:{n:'Venta',col:'var(--c-venta)'},comu:{n:'Comunidad',col:'var(--c-comu)'},trend:{n:'Trend',col:'var(--c-trend)'}};
+/* ===== Datos del banco de San Miguel (20 reels + 20 carruseles + auditoría + rodaje) ===== */
 const BG={rosa:'linear-gradient(165deg,#f3b7cf,#a1426b)',verde:'linear-gradient(165deg,#a8cf7d,#3f6a35)',azul:'linear-gradient(165deg,#8fb0d6,#3b4f78)',calido:'linear-gradient(165deg,#f2c27b,#b5552f)',
-  indigo:'linear-gradient(165deg,#6c63c7,#2a2462)',noche:'linear-gradient(170deg,#3a2a5c,#120d24)',hw:'linear-gradient(165deg,#ff9a3c,#5b3a8c)',gris:'linear-gradient(170deg,#d8d6d0,#7d7a73)'};
+  indigo:'linear-gradient(165deg,#6c63c7,#2a2462)',noche:'linear-gradient(170deg,#3a2a5c,#120d24)',hw:'linear-gradient(165deg,#ff9a3c,#5b3a8c)',gris:'linear-gradient(170deg,#d8d6d0,#7d7a73)',lluvia:'linear-gradient(170deg,#9fb4c4,#3d5263)'};
 
-/* ================= LOS 20 GUIONES ================= */
-const G=[
-/* ---------- VENTA ---------- */
-{n:1,tipo:'venta',tags:['valor'],ico:'morral',bg:BG.azul,titulo:'POV: es tu primer día en el San Miguel',
- obj:'Venta · visita',dur:'20 s',formato:'POV a la altura de un niño',cuando:'Noviembre (admisiones) o cuando haya un niño nuevo',
- gancho:'Cámara a la altura de un niño de 6 años cruzando la entrada: «POV: tienes 6 años y es tu primer día».',
- idea:'El papá que está decidiendo colegio se imagina a su hijo entrando. Le mostramos exactamente eso, desde los ojos del niño.',
+/* ---------------- 20 REELS ---------------- */
+const REELS=[
+/* VENTA */
+{id:'R1',tipo:'venta',sug:true,tags:['valor'],ico:'lapiz',bg:BG.rosa,titulo:'Antes de elegir colegio, mira esto',
+ obj:'Venta + valor',dur:'40 s',formato:'Lista a cámara caminando, con B-roll por punto',cuando:'Mié 28 de octubre (se graba el vie 23)',
+ gancho:'La coordinadora caminando hacia cámara: «Vas a visitar colegios. Mira estas 3 cosas, en el que sea».',
+ idea:'Le damos al papá la herramienta para evaluar cualquier colegio. Es generoso, no se compara con nadie y deja al San Miguel como el que no le teme a que lo miren.',
  esc:[
-  {t:'0–1,5',d:1.5,img:'Cámara a altura de niño cruzando la entrada; una mano adulta suelta la suya.',txt:['POV: tienes 6 años','y es tu primer día']},
-  {t:'1,5–3',d:1.5,img:'La profe se agacha a su altura y lo saluda.',txt:['—Hola, ¿cómo te llamas?']},
-  {t:'3–12',d:9,img:'Seis planos de 1,5 s, siempre a altura de niño: el salón con luz, la zona verde, el parque, el agua de la piscina, un grande que le muestra el camino, la lonchera en el descanso.',items:['el salón','la zona verde','el parque','la piscina','un grande que te ayuda','el descanso']},
-  {t:'12–16',d:4,img:'Salida: la mamá lo recibe en la puerta.',txt:['—¿Mañana volvemos?'],voz:'El niño: «¿Mañana volvemos?»'},
-  {t:'16–20',d:4,img:'Placa del colegio.',txt:['Ven a vivirlo con él.','Comenta VISITA'],voz:'«Comenta VISITA y te mandamos los horarios.»'}],
- cta:'VISITA → horarios de visita. En el mensaje directo: «¿Para qué grado buscas cupo?»',
- post:'Comenta VISITA y te mandamos los horarios para conocer el colegio.\n\nAsí se ve el primer día desde un metro de altura. 🎒',
- necesita:['Un niño de transición o primero con autorización de imagen (si no la hay, todo de espaldas y en manos)','Una profe y la mamá real del niño','Plan de rodaje a la altura de la cintura del camarógrafo'],
- confirmar:'Que la piscina se pueda mostrar en uso con niños; si no, se cambia por la cancha.'},
+  {t:'0–2',d:2,img:'Coordinadora o rectoría caminando hacia cámara por el pasillo.',txt:['Vas a visitar colegios.','Mira esto (en cualquiera)']},
+  {t:'2–12',d:10,img:'B-roll: niños saludando a un adulto en el pasillo.',txt:['1. Cómo saludan los niños'],voz:'«Si saludan a alguien que no conocen, se sienten en casa.»'},
+  {t:'12–22',d:10,img:'B-roll: baños limpios, jabón y toallas.',txt:['2. Los baños'],voz:'«Dicen todo de cómo se cuida lo que nadie mira.»'},
+  {t:'22–32',d:10,img:'B-roll: un profe llamando a un estudiante por su nombre.',txt:['3. Si el profe sabe tu nombre'],voz:'«Pregunta si el profe conoce a cada niño por su nombre.»'},
+  {t:'32–40',d:8,img:'Vuelve a cámara.',txt:['Comenta LISTA'],voz:'«Te mandamos las 12 preguntas que haríamos nosotros. Comenta LISTA.»'}],
+ cta:'LISTA → las 12 preguntas para cualquier visita de colegio (es el carrusel C1, en PDF).',
+ post:'Comenta LISTA y te mandamos las 12 preguntas para hacer en cualquier visita de colegio.\n\nGuárdalo para tu próxima visita. 📝',
+ necesita:['Coordinadora o rectoría a cámara','B-roll de saludos, baños y una clase (todo bajo techo)','Micrófono de solapa'],
+ confirmar:'Que el colegio esté cómodo mostrando los baños; si no, el punto 2 pasa a «el descanso».'},
 
-{n:2,tipo:'venta',tags:['valor'],ico:'pregunta',bg:BG.indigo,titulo:'Admisiones responde lo que todos preguntan',
- obj:'Venta · admisiones',dur:'35 s',formato:'Respuesta a comentarios (sticker de comentario en pantalla)',cuando:'En cuanto abran las admisiones 2027–2028',
- gancho:'Un comentario real en pantalla («¿Cuántos niños hay por salón?») y la persona de admisiones respondiendo de una, sin saludo.',
- idea:'Las preguntas que los papás escriben en el inbox, respondidas en público y en 5 segundos cada una. Es transparencia, y eso vende.',
+{id:'R2',tipo:'venta',sug:true,tags:['valor'],ico:'pregunta',bg:BG.indigo,titulo:'Admisiones responde lo que todos preguntan',
+ obj:'Venta · admisiones',dur:'35 s',formato:'Respuesta a comentarios (sticker de comentario en pantalla)',cuando:'Noviembre (se graba el vie 23)',
+ gancho:'Un comentario en pantalla («¿Cuántos niños hay por salón?») y la persona de admisiones contestando de una, sin saludar.',
+ idea:'Las preguntas que los papás escriben por mensaje, respondidas en público y en 5 segundos cada una. La transparencia vende.',
  esc:[
   {t:'0–6',d:6,img:'Persona de admisiones a cámara, plano medio, pasillo detrás. Sticker de comentario arriba.',txt:['«¿Cuántos niños hay por salón?»'],voz:'«Máximo [número real].»'},
   {t:'6–12',d:6,img:'Mismo plano, corte de salto.',txt:['«¿Desde qué edad los reciben?»'],voz:'«Desde [edad real], en preescolar.»'},
@@ -486,423 +618,665 @@ const G=[
   {t:'27–35',d:8,img:'Vuelve a cámara, sonríe.',txt:['«¿Puedo ir a conocerlo?»','Comenta ADMISIONES'],voz:'«Claro. Comenta ADMISIONES y te mandamos la guía con fechas, documentos y horarios de visita.»'}],
  cta:'ADMISIONES → guía de una página con fechas, documentos y horarios de visita.',
  post:'Comenta ADMISIONES y te mandamos la guía con fechas, documentos y horarios de visita.\n\n¿Tienes otra pregunta? Déjala aquí y la respondemos en el próximo video. 👇',
- necesita:['La persona de admisiones del colegio (por confirmar quién)','Los datos reales: niños por salón, edad de ingreso, fechas de admisiones','La guía de admisiones en PDF (la diseñamos nosotros)'],
- confirmar:'Nada de precios en pantalla: el valor se manda por mensaje. Si hay preguntas reales en los comentarios, se usan esas.'},
+ necesita:['La persona de admisiones del colegio, 20 minutos','Los datos reales: niños por salón, edad de ingreso, fechas de admisiones'],
+ confirmar:'Los datos reales. Nada de precios en pantalla: el valor se manda por mensaje.'},
 
-{n:3,tipo:'venta',tags:[],ico:'arbol',bg:BG.verde,titulo:'Esto es un martes cualquiera',
- obj:'Alcance + venta',dur:'12–15 s',formato:'Pieza resultado sin voz, un plano por segundo',cuando:'Cualquier semana; ideal para pauta',
- gancho:'Plano general de la zona verde con niños jugando y el texto «Esto es un martes cualquiera en el San Miguel».',
- idea:'Lo campestre se dice en el nombre del colegio pero casi nunca se ve. Aquí se ve, sin una palabra, en 12 segundos.',
- esc:[
-  {t:'0–2',d:2,img:'Plano general de la zona verde, niños corriendo, luz de la mañana.',txt:['Esto es un martes cualquiera','en el San Miguel']},
-  {t:'2–10',d:8,img:'Ocho planos de un segundo: árboles, cancha, parque infantil, el agua de la piscina, un aula iluminada, pupitres, un balón, risas.',items:['árboles','cancha','parque','piscina','aulas con luz','recreo']},
-  {t:'10–12',d:2,img:'Plano aéreo o general amplio.',txt:['Campestre, de verdad.','En Yumbo.']},
-  {t:'12–15',d:3,img:'Placa del colegio.',txt:['Comenta VISITA']}],
- cta:'VISITA → horarios de visita.',
- post:'Un martes cualquiera. 🌳\nComenta VISITA y te mandamos los horarios para venir a verlo.',
- necesita:['Una mañana de rodaje con buena luz','Plano aéreo si hay dron disponible (opcional)','Música cálida con ritmo para cortar a tiempo'],
- confirmar:'Que se puedan mostrar niños en planos generales sin que se reconozcan las caras.'},
-
-{n:4,tipo:'venta',tags:['valor'],ico:'lapiz',bg:BG.rosa,titulo:'Antes de elegir colegio, mira esto',
- obj:'Venta + valor',dur:'40 s',formato:'Lista a cámara caminando, con B-roll por punto',cuando:'Esta semana (jue 22)',
- gancho:'La coordinadora caminando hacia cámara: «Vas a visitar colegios. Mira estas 3 cosas, en el que sea».',
- idea:'Dar la herramienta para evaluar a cualquier colegio. Es generoso, no compara con nadie y deja al San Miguel como el que no le teme a ser mirado.',
- esc:[
-  {t:'0–2',d:2,img:'Coordinadora o rectoría caminando hacia cámara por el pasillo.',txt:['Vas a visitar colegios.','Mira esto (en cualquiera)']},
-  {t:'2–12',d:10,img:'B-roll: niños saludando a un adulto en el pasillo.',txt:['1. Cómo saludan los niños'],voz:'«Si saludan a alguien que no conocen, se sienten en casa.»'},
-  {t:'12–22',d:10,img:'B-roll: baños limpios, detalle de jabón y toallas.',txt:['2. Los baños'],voz:'«Dicen todo de cómo se cuida lo que nadie mira.»'},
-  {t:'22–32',d:10,img:'B-roll: un profe llamando a un estudiante por su nombre.',txt:['3. Si el profe sabe tu nombre'],voz:'«Pregunta si el profe conoce a cada niño por su nombre.»'},
-  {t:'32–40',d:8,img:'Vuelve a cámara.',txt:['Comenta LISTA'],voz:'«Te mandamos las 12 preguntas que haríamos nosotros. Comenta LISTA.»'}],
- cta:'LISTA → hoja con 12 preguntas para hacer en cualquier visita de colegio.',
- post:'Comenta LISTA y te mandamos las 12 preguntas para hacer en cualquier visita de colegio.\n\nGuárdalo para tu próxima visita. 📝',
- necesita:['Coordinadora o rectoría a cámara','B-roll de saludos, baños y una clase','La hoja de 12 preguntas (la escribimos y el colegio la aprueba)'],
- confirmar:'Que el colegio esté cómodo mostrando los baños; si no, el punto 2 se cambia por «la biblioteca» o «el descanso».'},
-
-{n:5,tipo:'venta',tags:[],ico:'corazon',bg:BG.calido,titulo:'Lo que dijo esta mamá',
- obj:'Venta · confianza',dur:'25–30 s',formato:'Testimonio con la frase más fuerte en el primer cuadro',cuando:'Noviembre, o antes si hay material listo',
- gancho:'La frase más fuerte del testimonio, escrita grande sobre la cara de la mamá, desde el cuadro 0.',
- idea:'Ya hay 20 clips grabados en «Testimonios padres». Un testimonio vende más cuando arranca por la conclusión y no por el saludo.',
- esc:[
-  {t:'0–3',d:3,img:'La mamá a cámara, en su mejor frase.',txt:['«[La frase más fuerte del testimonio]»']},
-  {t:'3–20',d:17,img:'Su historia en tres cortes, con B-roll de su hijo (de espaldas si no hay autorización).',items:['cómo llegaron','qué cambió','lo que más le gusta'],voz:'Su voz, sin música encima.'},
-  {t:'20–25',d:5,img:'Cierre de ella mirando a cámara.',txt:['«[Frase de cierre]»']},
-  {t:'25–30',d:5,img:'Placa del colegio.',txt:['Comenta VISITA']}],
- cta:'VISITA → horarios de visita.',
- post:'No lo decimos nosotros. ❤️\nComenta VISITA y conoce el colegio que ella escogió.',
- necesita:['Revisar los 20 clips de Material bruto/Testimonios padres y escoger la mejor mamá o papá','Su permiso vigente para usar el testimonio'],
- confirmar:'Que la familia siga en el colegio y esté de acuerdo con publicarlo hoy.'},
-
-{n:6,tipo:'venta',tags:[],ico:'estrella',bg:BG.verde,titulo:'Le pedimos a 5 niños que explicaran SER+T',
- obj:'Venta · diferencial',dur:'30 s',formato:'Entrevistas cortas de menor a mayor edad',cuando:'Noviembre',
+{id:'R3',tipo:'venta',sug:false,tags:[],ico:'estrella',bg:BG.verde,titulo:'Le pedimos a 5 niños que explicaran SER+T',
+ obj:'Venta · diferencial',dur:'30 s',formato:'Entrevistas cortas, de menor a mayor edad',cuando:'Noviembre',
  gancho:'Un niño de transición, muy serio: «SER+T es… cuando el viernes hacemos lo que queremos».',
- idea:'SER+T es el diferencial del colegio y nadie afuera lo entiende. Que lo expliquen los niños, de 5 a 17 años: cada respuesta es más completa y la última remata.',
+ idea:'SER+T es lo que diferencia al colegio y nadie afuera lo entiende. Que lo expliquen los niños, de 5 a 17 años: cada respuesta es más completa y la última remata.',
  esc:[
   {t:'0–3',d:3,img:'Niño de transición a cámara.',txt:['Le pedimos a 5 niños','que explicaran SER+T'],voz:'«Es cuando el viernes hacemos lo que queremos.»'},
-  {t:'3–20',d:17,img:'Tres niños más, cada uno mayor que el anterior; respuestas cada vez más completas.',items:['8 años','11 años','14 años']},
+  {t:'3–20',d:17,img:'Tres niños más, cada uno mayor; respuestas cada vez más completas.',items:['8 años','11 años','14 años']},
   {t:'20–25',d:5,img:'Un estudiante de once.',voz:'«Es que aquí te enseñan a ser persona, no solo a sacar buenas notas.»'},
   {t:'25–30',d:5,img:'Placa del colegio.',txt:['Todos tienen razón.','Comenta VISITA']}],
  cta:'VISITA → horarios para ver un viernes de SER+T.',
  post:'Cinco edades, una misma respuesta. 😄\nComenta VISITA y ven a ver un viernes de SER+T.',
- necesita:['5 estudiantes de distintas edades con autorización','Una sola pregunta, sin guion: «¿Qué es SER+T?»','El documento oficial de SER+T para no equivocarnos en la placa'],
- confirmar:'Qué significa exactamente la T (pendiente desde septiembre).'},
+ necesita:['5 estudiantes de distintas edades con autorización','Una sola pregunta, sin guion: «¿Qué es SER+T?»'],
+ confirmar:'Qué significa exactamente la T de SER+T (pendiente desde septiembre).'},
 
-/* ---------- COMUNIDAD ---------- */
-{n:7,tipo:'comu',tags:[],ico:'reloj',bg:BG.noche,titulo:'Llega antes que todos',
- obj:'Comunidad · likes',dur:'30 s',formato:'Historia de un personaje, con audio original',cuando:'Primera de una serie mensual: «Los que nadie ve»',
- gancho:'5:40 a. m., el portón cerrado y el colegio vacío. «Menos para él.»',
- idea:'El vigilante, la señora del aseo, la de la cafetería, el conductor de la ruta. Son los que más ven a los niños y nadie los nombra. Cada mes, uno.',
+{id:'R4',tipo:'venta',sug:false,tags:[],ico:'reloj',bg:BG.calido,titulo:'Un día en transición, hora por hora',
+ obj:'Venta · familias con hijos de 4–5 años',dur:'30 s',formato:'Reloj en pantalla, un plano por hora',cuando:'Noviembre',
+ gancho:'Un reloj de pared marcando las 7:00 y un niño de espaldas entrando al salón: «Un día en transición, hora por hora».',
+ idea:'El papá que va a matricular a su hijo pequeño quiere saber qué pasa en el día. Se lo mostramos con la hora en pantalla, sin un solo adjetivo.',
  esc:[
-  {t:'0–2',d:2,img:'Reloj o celular marcando 5:40 a. m.; portón cerrado.',txt:['5:40 a. m.','El colegio está vacío.']},
-  {t:'2–8',d:6,img:'Sus manos abriendo el candado, las luces que se encienden una por una.',txt:['Menos para él.']},
-  {t:'8–20',d:12,img:'[Nombre] recorre el colegio. Se le pregunta: «¿Qué es lo más bonito de su trabajo?»',voz:'Su respuesta, con sus palabras.'},
-  {t:'20–26',d:6,img:'Llegan los niños y lo saludan por su nombre; choque de manos.',txt:['Ellos sí saben cómo se llama.']},
-  {t:'26–30',d:4,img:'Placa del colegio.',txt:['¿Quién te abría la puerta en tu colegio?']}],
- cta:'Pregunta de anécdota: «¿Quién te abría la puerta en tu colegio? Etiquétalo.»',
- post:'Llega antes que todos y se va de último. Gracias, [nombre]. 💙\n\n¿Quién te abría la puerta en tu colegio? Etiquétalo 👇',
- necesita:['La persona, con su permiso y su nombre real','Rodaje de madrugada (una sola mañana)'],
- confirmar:'Hora real de llegada y nombre como quiere que lo llamen.'},
+  {t:'0–2',d:2,img:'Reloj de pared (7:00) y niño de espaldas entrando al salón.',txt:['Un día en transición,','hora por hora']},
+  {t:'2–24',d:22,img:'Un plano de 3 s por momento del día, con la hora real en pantalla.',items:['7:00 llegamos y nos saludamos','7:30 círculo de la mañana','9:00 lonchera','9:30 descanso','10:00 [actividad real]','11:30 cuento','12:30 a casa']},
+  {t:'24–30',d:6,img:'Placa del colegio.',txt:['¿Tu hijo entra a transición?','Comenta VISITA']}],
+ cta:'VISITA → horarios de visita.',
+ post:'Así es un día en transición en el San Miguel. ⏰\n¿Tu hijo entra a transición el próximo año? Comenta VISITA.',
+ necesita:['El horario real de transición','Un día normal de clase (todo bajo techo)','Niños de espaldas o con autorización'],
+ confirmar:'El horario real y la actividad de las 10:00.'},
 
-{n:8,tipo:'comu',tags:[],ico:'corazon',bg:BG.rosa,titulo:'Volvió a su salón de primero',
- obj:'Comunidad · emoción',dur:'35–45 s',formato:'Reencuentro real, sin guion',cuando:'Noviembre (cierre de año de los de once)',
- gancho:'Una estudiante de once frente a la puerta del salón de primero: «Hace 10 años entró por esta puerta».',
- idea:'Una estudiante que lleva toda la vida en el colegio vuelve a su primer salón, y adentro está su profe de primero. La reacción no se actúa.',
+{id:'R5',tipo:'venta',sug:false,tags:[],ico:'corazon',bg:BG.calido,titulo:'Lo que dijo esta mamá',
+ obj:'Venta · confianza',dur:'25–30 s',formato:'Testimonio con la frase más fuerte en el primer cuadro',cuando:'Cuando haya un hueco: no necesita rodaje',
+ gancho:'La frase más fuerte del testimonio, escrita grande sobre la cara de la mamá, desde el primer cuadro.',
+ idea:'Ya hay 20 clips grabados en «Testimonios padres». Un testimonio vende más cuando arranca por la conclusión y no por el saludo.',
  esc:[
-  {t:'0–3',d:3,img:'Ella frente a la puerta con el letrero del grado.',txt:['Hace 10 años','entró por esta puerta']},
-  {t:'3–10',d:7,img:'Abre la puerta; los niños de primero la miran.',txt:['Hoy volvió.']},
-  {t:'10–30',d:20,img:'Su profe de primero la reconoce. Reacción real, abrazo, lo que se digan.',voz:'Audio original, con subtítulos.'},
-  {t:'30–40',d:10,img:'Las dos sentadas en los pupitres pequeños.',txt:['Algunas cosas no cambian.','¿Qué profe te marcó a ti?']}],
- cta:'Pregunta de anécdota: «¿Qué profe te marcó a ti? Etiquétalo.»',
- post:'Diez años después, el mismo salón y la misma profe. 🥹\n¿Qué profe te marcó a ti? Etiquétalo 👇',
- necesita:['Una pareja estudiante–profe real con años en el colegio (el colegio la sugiere)','No avisarle a la profe del reencuentro (sí del rodaje)'],
- confirmar:'Que exista la pareja; si la profe ya no está, se hace con el salón y una carta.'},
+  {t:'0–3',d:3,img:'La mamá a cámara, en su mejor frase.',txt:['«[La frase más fuerte]»']},
+  {t:'3–20',d:17,img:'Su historia en tres cortes, con B-roll de su hijo (de espaldas si no hay autorización).',items:['cómo llegaron','qué cambió','lo que más le gusta']},
+  {t:'20–25',d:5,img:'Cierre de ella mirando a cámara.',txt:['«[Frase de cierre]»']},
+  {t:'25–30',d:5,img:'Placa del colegio.',txt:['Comenta VISITA']}],
+ cta:'VISITA → horarios de visita.',
+ post:'No lo decimos nosotros. ❤️\nComenta VISITA y conoce el colegio que ella escogió.',
+ necesita:['Escoger la mejor mamá o papá de los 20 clips de «Testimonios padres»','Su permiso vigente'],
+ confirmar:'Que la familia siga en el colegio y esté de acuerdo con publicarlo hoy.'},
 
-{n:9,tipo:'comu',tags:[],ico:'lapiz',bg:BG.azul,titulo:'Carta a mi yo de transición',
- obj:'Comunidad · guardados',dur:'40 s',formato:'Voz en off sobre fotos de infancia y de hoy',cuando:'Noviembre',
- gancho:'Foto de un niño de 5 años junto a la del mismo estudiante hoy, a los 17: «Le escribí una carta a este niño».',
- idea:'Los de once le escriben a su yo pequeño. Las fotos de infancia las ponen las familias, y eso ya activa la comunidad antes de publicar.',
+{id:'R6',tipo:'venta',sug:false,tags:[],ico:'manos',bg:BG.rosa,titulo:'Conoce a tu profe de transición',
+ obj:'Venta · confianza',dur:'30 s',formato:'Tres preguntas rápidas a una profe',cuando:'Noviembre',
+ gancho:'La profe a cámara, riéndose: «El primer día casi todos lloran. Los papás, más».',
+ idea:'Lo que más pesa al escoger preescolar es quién va a cuidar a tu hijo. Le ponemos cara y voz.',
  esc:[
-  {t:'0–3',d:3,img:'Foto de infancia y foto de hoy, lado a lado.',txt:['Le escribí una carta','a este niño']},
-  {t:'3–30',d:27,img:'Fotos de archivo que avanzan por los años mientras lee.',items:['«No te preocupes por las sumas…»','«…te vas a enredar con otras cosas.»','«Vas a tener amigos para siempre.»'],voz:'Él mismo leyendo, con humor y ternura.'},
-  {t:'30–36',d:6,img:'Él hoy, en el patio, mirando a cámara.',txt:['Gracias por no rendirte.']},
-  {t:'36–40',d:4,img:'Placa del colegio.',txt:['¿Qué le dirías tú a tu yo de primero?']}],
- cta:'Pregunta de anécdota: «¿Qué le dirías tú a tu yo de primero?»',
- post:'Le escribí una carta a mi yo de transición. ✉️\n¿Qué le dirías tú a tu yo de primero?',
- necesita:['1 o 2 estudiantes de once que escriban su carta (los ayudamos con el tono)','Fotos de infancia que manden sus familias'],
- confirmar:'Autorización de los estudiantes y de las familias para usar las fotos.'},
+  {t:'0–3',d:3,img:'La profe de transición a cámara, en su salón.',txt:['«El primer día casi todos lloran.»','«Los papás, más.»']},
+  {t:'3–24',d:21,img:'Tres preguntas, una por plano, con B-roll del salón (sin caras).',items:['¿Qué hace cuando un niño llora?','¿Qué les enseña que no está en el libro?','¿Cómo sabe que un niño ya se adaptó?']},
+  {t:'24–30',d:6,img:'Placa del colegio.',txt:['Ven a conocerla.','Comenta VISITA']}],
+ cta:'VISITA → horarios de visita.',
+ post:'Ella va a estar con tu hijo el primer día. 💙\nComenta VISITA y ven a conocerla.',
+ necesita:['Una profe de transición, 20 minutos','Su salón como fondo'],
+ confirmar:'Nombre y cargo de la profe.'},
 
-{n:10,tipo:'comu',tags:['hw'],ico:'calabaza',bg:BG.hw,titulo:'Este disfraz costó $0 y tres tardes',
- obj:'Comunidad · contenido de las familias',dur:'30 s',formato:'Construcción y revelación del disfraz (trend de octubre)',cuando:'Sáb 31 de octubre',
- gancho:'Una caja de cartón vacía en la mesa del comedor y el texto «Este disfraz costó $0 y tres tardes».',
- idea:'Una familia del colegio arma el disfraz en casa y lo graba con el celular. Lo revelamos el día de la celebración en el colegio. Es la secuela del carrusel de disfraces.',
+/* COMUNIDAD */
+{id:'R7',tipo:'comu',sug:true,tags:[],ico:'nube',bg:BG.lluvia,titulo:'Recreo bajo la lluvia',
+ obj:'Comunidad · likes',dur:'20–25 s',formato:'Ambiente con sonido de lluvia (estilo ASMR)',cuando:'El primer día que llueva en el recreo; publicar al día siguiente',
+ gancho:'Gotas en la ventana del salón y el texto «Llueve en el San Miguel. ¿Y el recreo?».',
+ idea:'Esta semana está lloviendo y eso es escenografía gratis. Mostramos cómo el recreo se muda bajo techo: juegos de mesa, dibujos en el tablero, la ronda en el corredor. Todo con el sonido real de la lluvia.',
  esc:[
-  {t:'0–2',d:2,img:'Caja de cartón vacía en la mesa.',txt:['Este disfraz costó $0','y tres tardes']},
-  {t:'2–14',d:12,img:'Construcción en cámara rápida, un plano por segundo: cortar, pintar, pegar, el error gracioso.',items:['tarde 1: cortar','tarde 2: pintar','tarde 3: arreglar lo que se dañó']},
-  {t:'14–24',d:10,img:'Revelación: el niño sale disfrazado en el colegio, giro a cámara, la reacción de sus amigos.',txt:['Día de los niños 🎃']},
-  {t:'24–30',d:6,img:'Placa del colegio.',txt:['¿De qué se disfrazó el tuyo?','Mándanos la foto']}],
- cta:'«¿De qué se disfrazó el tuyo? Mándanos la foto por mensaje directo.» (contenido de las familias para las historias)',
- post:'Una caja, tres tardes y mucha cinta. 🎃\n¿De qué se disfrazó el tuyo? Mándanos la foto y la compartimos.',
- necesita:['Una familia voluntaria que grabe con el celular (les mandamos una lista de 8 tomas)','Rodaje del Día de los niños en el colegio'],
- confirmar:'Si el colegio celebra el 30 y las reglas de disfraces.'},
+  {t:'0–3',d:3,img:'Gotas en la ventana, sonido de lluvia.',txt:['Llueve en el San Miguel.','¿Y el recreo?']},
+  {t:'3–18',d:15,img:'Un plano cada 2,5 s, bajo techo.',items:['juegos de mesa','dibujos en el tablero','la ronda en el corredor','el grande que le enseña un juego al chiquito','las botas en fila','risas']},
+  {t:'18–22',d:4,img:'Plano general del corredor lleno.',txt:['El recreo no se cancela.','Se muda.']},
+  {t:'22–25',d:3,img:'Placa del colegio.',txt:['¿A qué jugabas tú','cuando llovía?']}],
+ cta:'Pregunta de anécdota: «¿A qué jugabas tú cuando llovía en el colegio?»',
+ post:'El recreo no se cancela. Se muda. 🌧️\n¿A qué jugabas tú cuando llovía en el colegio? 👇',
+ necesita:['Que llueva a la hora del recreo (esta semana es probable)','Grabar el sonido de la lluvia limpio, 30 s','Niños en grupo o de espaldas'],
+ confirmar:'Nada. Si no llueve antes del 26, pasa al banco y se graba en la próxima lluvia.'},
 
-{n:11,tipo:'comu',tags:['hw','valor'],ico:'fantasma',bg:BG.noche,titulo:'Halloween seguro: lo que revisa la enfermera',
- obj:'Valor · guardados',dur:'35 s',formato:'Experta a cámara con objetos en la mano',cuando:'Mié 28 o jue 29 de octubre',
- gancho:'La enfermera con una bolsa de dulces: «Antes de que se coma esto, mira».',
- idea:'Cinco cuidados para el 31 dichos por alguien del colegio. Los papás lo guardan y lo mandan al grupo del salón.',
- esc:[
-  {t:'0–2',d:2,img:'Enfermera o coordinadora de bienestar con una bolsa de dulces.',txt:['Antes de que se coma esto,','mira']},
-  {t:'2–8',d:6,img:'Revisa un empaque.',txt:['1. Solo empaques sellados']},
-  {t:'8–14',d:6,img:'Muestra un brazalete reflectivo o una linterna.',txt:['2. Algo que brille si salen de noche']},
-  {t:'14–20',d:6,img:'Prueba maquillaje en la muñeca.',txt:['3. El maquillaje, a prueba un día antes']},
-  {t:'20–26',d:6,img:'Una máscara que tapa la vista vs. maquillaje.',txt:['4. Nada que le tape la vista']},
-  {t:'26–31',d:5,img:'Escribe un número de celular en una pulsera.',txt:['5. Tu celular en su muñeca']},
-  {t:'31–35',d:4,img:'Vuelve a cámara.',txt:['Comenta SEGURO'],voz:'«Comenta SEGURO y te mandamos la lista para pegar en la nevera.»'}],
- cta:'SEGURO → lista de 1 página para la nevera.',
- post:'Comenta SEGURO y te mandamos la lista para pegar en la nevera. 🎃\n\nGuárdalo y compártelo con el grupo del salón.',
- necesita:['La enfermera o la persona de bienestar del colegio','Que revise y apruebe los 5 consejos (no inventamos recomendaciones de salud)'],
- confirmar:'Quién es la persona de enfermería o bienestar.'},
-
-{n:12,tipo:'comu',tags:[],ico:'nota',bg:BG.indigo,titulo:'Lo que aprendí de mi alumno',
- obj:'Comunidad · likes',dur:'30 s',formato:'Una pregunta, varios profes, una toma cada uno',cuando:'Cualquier semana',
- gancho:'Una profe riéndose antes de contestar: «Le preguntamos a los profes qué les enseñó un estudiante».',
- idea:'Al revés de lo esperado: los profes cuentan lo que aprendieron de los niños. Es tierno y da ganas de etiquetar.',
- esc:[
-  {t:'0–3',d:3,img:'Profe riéndose antes de contestar.',txt:['Le preguntamos a los profes','qué les enseñó un alumno']},
-  {t:'3–25',d:22,img:'Cuatro o cinco profes, una toma cada uno, respuestas cortas.',items:['«A tener paciencia…»','«A pedir perdón»','«Un baile, todavía no me sale»','«Que el error no es el final»'],voz:'Audio original, con subtítulos.'},
-  {t:'25–30',d:5,img:'Placa del colegio.',txt:['¿Y tú qué le enseñaste a tu profe?']}],
- cta:'Pregunta: «¿Y tú qué le enseñaste a tu profe?»',
- post:'Ellos enseñan. Pero también aprenden. 🍎\n¿Y tú qué le enseñaste a tu profe?',
- necesita:['4 o 5 profes con 10 minutos cada uno','Una pared o pasillo bonito de fondo, siempre el mismo'],
- confirmar:'Nada.'},
-
-{n:13,tipo:'comu',tags:['hw','valor'],ico:'fantasma',bg:BG.noche,titulo:'¿Qué te da miedo?',
- obj:'Comunidad + valor',dur:'35 s',formato:'Misma pregunta de transición a once, cierra el psicólogo',cuando:'Lun 26 de octubre',
- gancho:'Un niño chiquito, serio: «Los monstruos debajo de la cama».',
- idea:'En la semana de Halloween, la misma pregunta a todas las edades: los miedos van cambiando con los años, y eso es tierno y real. Cierra el psicólogo con algo útil para los papás.',
+{id:'R8',tipo:'comu',sug:true,tags:['hw','valor'],ico:'fantasma',bg:BG.noche,titulo:'¿Qué te da miedo?',
+ obj:'Comunidad + valor',dur:'35 s',formato:'La misma pregunta de transición a once; cierra el psicólogo',cuando:'Lun 26 de octubre (se graba el jue 22)',
+ gancho:'Un niño chiquito, muy serio: «Los monstruos debajo de la cama».',
+ idea:'En la semana de Halloween, la misma pregunta a todas las edades: los miedos cambian con los años, y eso es tierno y real. Cierra el psicólogo con algo útil para los papás.',
  esc:[
   {t:'0–3',d:3,img:'Niño de transición a cámara.',txt:['¿Qué te da miedo?','(de transición a once)'],voz:'«Los monstruos debajo de la cama.»'},
   {t:'3–24',d:21,img:'Respuestas en orden de edad, una cada 3 s.',items:['«la oscuridad»','«los payasos»','«las arañas»','«que me regañen»','«los exámenes»','«no saber qué estudiar»']},
-  {t:'24–31',d:7,img:'El psicólogo del colegio a cámara.',txt:['El miedo no se quita.','Se acompaña.'],voz:'Su frase con sus palabras.'},
+  {t:'24–31',d:7,img:'El psicólogo del colegio a cámara.',txt:['El miedo no se quita.','Se acompaña.']},
   {t:'31–35',d:4,img:'Placa del colegio.',txt:['Comenta MIEDO']}],
- cta:'MIEDO → «Cómo hablar del miedo con tu hijo en Halloween», hoja del psicólogo.',
+ cta:'MIEDO → «Cómo hablar del miedo con tu hijo en Halloween», hoja del psicólogo (es el carrusel C9).',
  post:'Los miedos cambian con los años. 👻\nComenta MIEDO y te mandamos cómo hablar del miedo con tu hijo esta semana.',
- necesita:['8 estudiantes de distintas edades con autorización','El psicólogo para el cierre y para escribir la hoja'],
+ necesita:['8 estudiantes de distintas edades con autorización, 40 minutos en un salón','El psicólogo para el cierre (5 minutos)'],
  confirmar:'Nombre y cargo del psicólogo.'},
 
-/* ---------- TRENDS ---------- */
-{n:14,tipo:'trend',tags:['hw'],ico:'murcielago',bg:BG.gris,titulo:'Advertencia: contenido aterrador (para papás)',
- obj:'Alcance + comentarios',dur:'18 s',formato:'Trend de la advertencia de contenido (octubre)',cuando:'Jue 29 de octubre',
- gancho:'Pantalla gris borrosa, como el aviso de contenido sensible de Instagram: «Este video puede contener escenas aterradoras para papás».',
- idea:'El trend de Halloween de este mes, pero lo que asusta es la vida de un papá en época de colegio. Todos se ven ahí.',
+{id:'R9',tipo:'comu',sug:false,tags:['hw','valor'],ico:'fantasma',bg:BG.noche,titulo:'Halloween seguro: lo que revisa la enfermera',
+ obj:'Valor · guardados',dur:'35 s',formato:'Experta a cámara con objetos en la mano',cuando:'Banco (la versión sugerida es el carrusel C8)',
+ gancho:'La enfermera con una bolsa de dulces: «Antes de que se coma esto, mira».',
+ idea:'Cinco cuidados para el 31, dichos por alguien del colegio. Los papás lo guardan y lo mandan al grupo del salón.',
  esc:[
-  {t:'0–2',d:2,img:'Pantalla gris con desenfoque y un ícono de ojo tachado.',txt:['⚠️ Este video puede contener','escenas aterradoras para papás']},
-  {t:'2–3,5',d:1.5,img:'La misma pantalla.',txt:['¿Seguro que quieres seguir?']},
-  {t:'3,5–4,5',d:1,img:'Corte fuerte con efecto de susto.',txt:['¡BU! 👻']},
-  {t:'4,5–15',d:10.5,img:'Cinco escenas actuadas, una cada 2 s, con su número.',items:['1. Domingo 9 p. m.: «Ma, era para mañana una maqueta»','2. El grupo de papás: 147 mensajes','3. La media del uniforme que desapareció','4. Lunes 6:10 a. m. y nadie se ha levantado','5. La lonchera del viernes, abierta el lunes']},
-  {t:'15–18',d:3,img:'Placa del colegio con una calabaza.',txt:['¿Cuál te da más miedo?','Comenta el número']}],
- cta:'Comentar el número (fácil de responder, sube el alcance).',
- post:'⚠️ Contenido aterrador para papás. 🎃\n¿Cuál te da más miedo? Comenta el número 👇',
- necesita:['Un papá o una mamá del colegio (o un profe) que actúe las 5 escenas','Una tarde de rodaje en una casa o en el colegio','Sonido de susto de la biblioteca de Instagram'],
- confirmar:'Nada; no salen niños de frente.'},
+  {t:'0–2',d:2,img:'Enfermera con una bolsa de dulces.',txt:['Antes de que se coma esto,','mira']},
+  {t:'2–31',d:29,img:'Un cuidado por plano, con el objeto en la mano.',items:['1. Solo empaques sellados','2. Algo que brille si salen de noche','3. El maquillaje, a prueba un día antes','4. Nada que le tape la vista','5. Tu celular en su muñeca']},
+  {t:'31–35',d:4,img:'Vuelve a cámara.',txt:['Comenta SEGURO']}],
+ cta:'SEGURO → lista de 1 página para la nevera.',
+ post:'Comenta SEGURO y te mandamos la lista para pegar en la nevera. 🎃',
+ necesita:['La enfermera o la persona de bienestar','Que apruebe los 5 consejos'],
+ confirmar:'Quién es la persona de enfermería o bienestar.'},
 
-{n:15,tipo:'trend',tags:[],ico:'lapiz',bg:BG.azul,titulo:'Deja de hacer scroll y… ven a conocernos',
- obj:'Venta · alcance',dur:'10–12 s',formato:'Trend del papel arrugado (octubre)',cuando:'Cualquier semana; muy barato de hacer',
- gancho:'Una hoja de cuaderno arrugada que se abre despacio y deja ver, escrito a mano, «Deja de hacer scroll y…».',
- idea:'El trend del papel arrugado encaja perfecto con el estilo de cuaderno del colegio. Detrás pasan fotos rápidas del San Miguel.',
+{id:'R10',tipo:'comu',sug:false,tags:['hw'],ico:'calabaza',bg:BG.hw,titulo:'Dulce o truco… en la oficina del rector',
+ obj:'Comunidad · alcance',dur:'20 s',formato:'Recorrido con revelación en cada puerta',cuando:'Sáb 31 (se graba el vie 30)',
+ gancho:'Un niño disfrazado tocando la puerta de Rectoría: «Dulce o truco… en la oficina del rector».',
+ idea:'El Día de los niños, los chiquitos recorren las oficinas pidiendo dulces y cada oficina abre disfrazada. Es divertido y muestra que los directivos están cerca.',
  esc:[
-  {t:'0–2',d:2,img:'Hoja de cuaderno arrugada que se abre despacio, en primer plano.',txt:['Deja de hacer scroll y…']},
-  {t:'2–8',d:6,img:'Detrás de la hoja pasan fotos del colegio, una cada 0,4 s.',items:['zonas verdes','salones','piscina','recreo','profes','viernes de SER+T']},
-  {t:'8–12',d:4,img:'El mensaje completo se repite cinco veces y termina en la placa.',txt:['…ven a conocernos.','Comenta VISITA']}],
- cta:'VISITA → horarios de visita.',
- post:'Deja de hacer scroll y… ven a conocernos. ✏️\nComenta VISITA y te mandamos los horarios.',
- necesita:['Una hoja de cuaderno con la frase escrita a mano por un estudiante','10 fotos del colegio (ya hay archivo)'],
- confirmar:'Nada; se hace sin rodaje.'},
+  {t:'0–2',d:2,img:'Niño disfrazado tocando la puerta con el letrero «Rectoría».',txt:['Dulce o truco…','en la oficina del rector']},
+  {t:'2–16',d:14,img:'Cada puerta se abre y aparece alguien disfrazado con dulces.',items:['Rectoría','Coordinación','Admisiones','Enfermería (fruta 🍎)']},
+  {t:'16–20',d:4,img:'Los niños con las bolsas llenas.',txt:['¿Quién dio el mejor dulce?']}],
+ cta:'Pregunta: «¿Quién dio el mejor dulce?»',
+ post:'Dulce o truco… en las oficinas del colegio. 🍬🎃\n¿Quién dio el mejor dulce?',
+ necesita:['Que las oficinas acepten disfrazarse el 30','Un grupo de chiquitos con autorización'],
+ confirmar:'Celebración del 30 y qué oficinas participan.'},
 
-{n:16,tipo:'trend',tags:['valor'],ico:'reloj',bg:BG.indigo,titulo:'Cómo evitar el estrés de las tareas',
- obj:'Valor · guardados',dur:'25 s',formato:'Meme «Cómo evitar el estrés de…» (octubre) + consejo útil',cuando:'Primera semana de noviembre (cierre de período)',
- gancho:'Texto grande: «Cómo evitar el estrés de las tareas del domingo».',
- idea:'El meme del mes con un giro útil. Primero el chiste, después tres hábitos de la coordinadora académica y una plantilla de regalo.',
+{id:'R11',tipo:'comu',sug:false,tags:['hw'],ico:'estrella',bg:BG.hw,titulo:'Disfrázate de lo que quieres ser',
+ obj:'Comunidad · emoción',dur:'25 s',formato:'Desfile de respuestas con remate',cuando:'Sáb 31, solo si el colegio pone ese tema',
+ gancho:'Una niña con bata blanca: «Hoy soy veterinaria».',
+ idea:'Si el colegio propone ese tema para el disfraz, cada niño llega vestido de lo que quiere ser. Remata una profe: «Y yo, de lo que siempre quise ser: profe».',
  esc:[
-  {t:'0–2',d:2,img:'Mamá con la cabeza entre las manos frente a una maqueta, domingo de noche.',txt:['Cómo evitar el estrés','de las tareas del domingo:']},
-  {t:'2–4',d:2,img:'Corte seco a la misma mesa, vacía.',txt:['No hagas tareas el domingo.']},
-  {t:'4–20',d:16,img:'Coordinadora académica a cámara, con B-roll.',items:['1. Mismo lugar, misma hora','2. El celular en otra habitación','3. El viernes se revisa la agenda'],voz:'Los tres hábitos, con sus palabras.'},
-  {t:'20–25',d:5,img:'Placa del colegio.',txt:['Comenta RUTINA']}],
- cta:'RUTINA → horario semanal de tareas para imprimir.',
- post:'Comenta RUTINA y te mandamos el horario semanal para imprimir. 📅\n\nGuárdalo para el próximo domingo.',
- necesita:['Coordinadora académica a cámara','Que ella defina los hábitos (no los inventamos nosotros)','La plantilla de horario (la diseñamos nosotros)'],
- confirmar:'Fechas de cierre del primer período.'},
+  {t:'0–2',d:2,img:'Niña con bata blanca a cámara.',txt:['«Hoy soy veterinaria.»']},
+  {t:'2–18',d:16,img:'Seis niños, uno cada 2,5 s.',items:['piloto','chef','futbolista','científica','bombero','youtuber']},
+  {t:'18–25',d:7,img:'Una profe con su ropa de siempre.',txt:['«Y yo, de lo que siempre quise ser:','profe.»','¿Qué querías ser tú a los 7?']}],
+ cta:'Pregunta: «¿Qué querías ser tú a los 7 años?»',
+ post:'Hoy se disfrazaron de lo que quieren ser. ✨\n¿Qué querías ser tú a los 7 años?',
+ necesita:['Que el colegio proponga el tema a tiempo (esta semana)','6 niños con autorización'],
+ confirmar:'Si el colegio quiere ponerle ese tema al día de disfraces.'},
 
-{n:17,tipo:'trend',tags:[],ico:'megafono',bg:BG.rosa,titulo:'Los profes adivinan cómo hablan sus estudiantes',
- obj:'Alcance + comentarios',dur:'30 s',formato:'Reto con tarjetas, reacción real',cuando:'Cualquier semana',
- gancho:'Una profe leyendo una tarjeta con cara de duda: «¿Tienes aura?»',
- idea:'Los estudiantes escogen palabras que usan; los profes adivinan qué significan. La risa es real y los papás comentan las palabras que no entienden de sus hijos.',
+{id:'R12',tipo:'comu',sug:false,tags:['hw'],ico:'calabaza',bg:BG.hw,titulo:'Este disfraz costó $0 y tres tardes',
+ obj:'Comunidad · contenido de las familias',dur:'30 s',formato:'Construcción y revelación del disfraz (trend de octubre)',cuando:'Sáb 31',
+ gancho:'Una caja de cartón vacía en la mesa del comedor: «Este disfraz costó $0 y tres tardes».',
+ idea:'Una familia del colegio arma el disfraz en casa y lo graba con el celular, y lo revelamos el día de la celebración.',
  esc:[
-  {t:'0–3',d:3,img:'Profe leyendo una tarjeta, cara de duda.',txt:['«¿Tienes aura?»','Los profes adivinan']},
-  {t:'3–24',d:21,img:'Cuatro profes, una palabra cada uno; adivinan, y un estudiante corrige a un lado de la cámara.',items:['«aura»','«random»','«cringe»','«de una»']},
-  {t:'24–30',d:6,img:'Placa del colegio.',txt:['¿Qué palabra de tu hijo','no entiendes?']}],
- cta:'Pregunta: «¿Qué palabra de tu hijo no entiendes? Te la traducimos.»',
- post:'Profes vs. el vocabulario de sus estudiantes. 😂\n¿Qué palabra de tu hijo no entiendes? Déjala aquí y te la traducimos.',
- necesita:['4 profes con sentido del humor','Palabras escogidas por los estudiantes y revisadas por el colegio'],
- confirmar:'Ninguna palabra con doble sentido, ni grosera, ni de memes políticos.'},
+  {t:'0–2',d:2,img:'Caja de cartón vacía en la mesa.',txt:['Este disfraz costó $0','y tres tardes']},
+  {t:'2–14',d:12,img:'Construcción en cámara rápida.',items:['tarde 1: cortar','tarde 2: pintar','tarde 3: arreglar lo que se dañó']},
+  {t:'14–24',d:10,img:'Revelación en el colegio; reacción de los amigos.',txt:['Día de los niños 🎃']},
+  {t:'24–30',d:6,img:'Placa del colegio.',txt:['¿De qué se disfrazó el tuyo?']}],
+ cta:'«Mándanos la foto del disfraz por mensaje directo» (contenido de las familias para las historias).',
+ post:'Una caja, tres tardes y mucha cinta. 🎃\n¿De qué se disfrazó el tuyo? Mándanos la foto.',
+ necesita:['Una familia voluntaria que grabe con el celular (le mandamos 8 tomas)'],
+ confirmar:'Si el colegio celebra el 30.'},
 
-{n:18,tipo:'trend',tags:[],ico:'reloj',bg:BG.calido,titulo:'Lunes vs. viernes, 6:10 a. m.',
- obj:'Alcance + venta suave',dur:'25 s',formato:'Micro-drama en pantalla partida',cuando:'Cualquier semana; puede volverse serie',
- gancho:'Pantalla partida: a la izquierda «Lunes 6:10 a. m.», un niño enterrado en la cobija; a la derecha «Viernes 6:10 a. m.», el mismo niño ya vestido despertando a su mamá.',
- idea:'El micro-drama del mes: el lunes nadie se levanta y el viernes el niño despierta a todos, porque ese día escoge su clase. El diferencial del colegio, contado como chiste de casa.',
+{id:'R13',tipo:'comu',sug:false,tags:['valor'],ico:'morral',bg:BG.verde,titulo:'Si la lonchera vuelve llena, mira esto',
+ obj:'Valor · guardados',dur:'30 s',formato:'Tres ideas a cámara, con las manos',cuando:'Noviembre',
+ gancho:'Una lonchera abierta que volvió intacta: «Si la lonchera vuelve llena, mira esto».',
+ idea:'Un problema de todas las casas, resuelto por la cafetería o la persona de nutrición del colegio. Útil y fácil de grabar.',
  esc:[
-  {t:'0–3',d:3,img:'Pantalla partida, el mismo cuarto.',txt:['Lunes 6:10 a. m. | Viernes 6:10 a. m.']},
-  {t:'3–15',d:12,img:'Lunes: la mamá golpea la puerta, la media perdida, la tarea sin firmar. Viernes: el niño ya listo, sirve el desayuno, empuja a todos.',items:['«¡La ruta pasa en 20 minutos!»','«Ma, ¿y mi otra media?»','Viernes: «¡Vamos tarde, mamá!»']},
-  {t:'15–21',d:6,img:'La mamá, confundida: «¿Y a ti qué te pasa?»',voz:'Niño: «Hoy es viernes. Hoy escojo mi clase.»'},
-  {t:'21–25',d:4,img:'Placa del colegio.',txt:['¿Tu hijo es de lunes','o de viernes?']}],
- cta:'Pregunta de identidad: «¿Tu hijo es de lunes o de viernes?»',
- post:'Mismo niño, misma hora. 😴 vs. 🤩\nLos viernes cada estudiante escoge su clase. ¿Tu hijo es de lunes o de viernes?',
- necesita:['Una familia del colegio o un profe con su hijo que quieran actuar','Rodaje en una casa, temprano'],
- confirmar:'Autorización del niño.'},
+  {t:'0–3',d:3,img:'Lonchera abierta con todo intacto.',txt:['Si la lonchera vuelve llena,','mira esto']},
+  {t:'3–25',d:22,img:'Tres ideas, una por plano, armadas en la mesa.',items:['1. [idea de la persona de nutrición]','2. [idea]','3. [idea]']},
+  {t:'25–30',d:5,img:'Placa del colegio.',txt:['Comenta LONCHERA']}],
+ cta:'LONCHERA → menú de una semana para imprimir.',
+ post:'Comenta LONCHERA y te mandamos el menú de una semana. 🍎',
+ necesita:['Cafetería o persona de nutrición','Que ella defina las 3 ideas (no las inventamos)'],
+ confirmar:'Quién lo presenta.'},
 
-{n:19,tipo:'trend',tags:['hw'],ico:'calabaza',bg:BG.hw,titulo:'¿Quién es este profe?',
- obj:'Alcance + comentarios',dur:'20 s',formato:'Adivinanza con revelación (disfraces)',cuando:'Sáb 31 de octubre (se graba el 30)',
+/* TRENDS */
+{id:'R14',tipo:'trend',sug:true,tags:['hw'],ico:'calabaza',bg:BG.hw,titulo:'¿Quién es este profe?',
+ obj:'Alcance + comentarios',dur:'20 s',formato:'Adivinanza con revelación (disfraces)',cuando:'Sáb 31 de octubre (se graba el vie 30)',
  gancho:'Un profe totalmente disfrazado frente a cámara y la pregunta «¿Quién es este profe?».',
- idea:'Los profes se disfrazan para el Día de los niños. Los estudiantes intentan adivinar quién es cada uno, y la revelación es la recompensa.',
+ idea:'Los profes se disfrazan para el Día de los niños; los estudiantes intentan adivinar quién es cada uno. La revelación es la recompensa.',
  esc:[
   {t:'0–2',d:2,img:'Profe disfrazado frente a cámara, quieto.',txt:['¿Quién es este profe?','🎃']},
-  {t:'2–16',d:14,img:'Cuatro rondas de 3,5 s: profe disfrazado, estudiantes adivinando en voz alta, se quita la máscara o el sombrero.',items:['Ronda 1','Ronda 2','Ronda 3','Ronda 4']},
+  {t:'2–16',d:14,img:'Cuatro rondas de 3,5 s: profe disfrazado, estudiantes adivinando, se quita la máscara.',items:['Ronda 1','Ronda 2','Ronda 3','Ronda 4']},
   {t:'16–20',d:4,img:'Los cuatro profes juntos.',txt:['¿A cuántos adivinaste?']}],
  cta:'Pregunta: «¿A cuántos adivinaste?»',
  post:'¿A cuántos adivinaste? 🎃👇',
- necesita:['4 profes dispuestos a disfrazarse el 30','Un grupo de estudiantes que adivinen (de espaldas o en grupo)'],
+ necesita:['4 profes dispuestos a disfrazarse el 30','Estudiantes adivinando, en grupo o de espaldas'],
  confirmar:'Celebración del 30 y si los profes se disfrazan.'},
 
-{n:20,tipo:'trend',tags:['hw'],ico:'nota',bg:BG.noche,titulo:'Thriller en el patio',
- obj:'Alcance · se comparte',dur:'20–25 s',formato:'Canción reconocible con idea visual',cuando:'Sáb 31 de octubre (se graba el 30)',
- gancho:'La profe de educación física sola en el patio, en la pose zombi: «Le dijimos que lo bailara sola…».',
- idea:'El coro de Thriller empieza con una sola profe y en cada corte se suma más gente, hasta que baila todo un curso. Que crezca es lo que engancha.',
+{id:'R15',tipo:'trend',sug:true,tags:[],ico:'megafono',bg:BG.rosa,titulo:'Los profes adivinan cómo hablan sus estudiantes',
+ obj:'Alcance + comentarios',dur:'30 s',formato:'Reto con tarjetas, reacción real',cuando:'Noviembre (se graba el vie 23)',
+ gancho:'Una profe leyendo una tarjeta con cara de duda: «¿Tienes aura?».',
+ idea:'Los estudiantes escogen palabras que usan y los profes adivinan qué significan. La risa es real, y los papás comentan las palabras de sus hijos que no entienden.',
  esc:[
-  {t:'0–3',d:3,img:'Profe sola en el patio, pose zombi.',txt:['Le dijimos que lo','bailara sola…']},
-  {t:'3–18',d:15,img:'Cada 4 s se suma más gente: 5 estudiantes, 2 profes más, un curso entero.',items:['1 profe','+5 estudiantes','+2 profes','todo el curso']},
-  {t:'18–23',d:5,img:'Plano general alto con todos bailando.',txt:['…no le hicimos caso.']}],
- cta:'Pregunta: «Etiqueta al profe que más se le mediría a esto.»',
- post:'Le dijimos que lo bailara sola… 🧟‍♀️🎃\nEtiqueta al profe que más se le mediría a esto.',
- necesita:['Ensayo de 15 minutos el 29 o el 30','Audio de Thriller de la biblioteca de Instagram','Un curso con autorización (en grupo)'],
- confirmar:'Celebración del 30.'}
+  {t:'0–3',d:3,img:'Profe leyendo una tarjeta, cara de duda.',txt:['«¿Tienes aura?»','Los profes adivinan']},
+  {t:'3–24',d:21,img:'Cuatro profes, una palabra cada uno; adivinan y un estudiante corrige a un lado de la cámara.',items:['«aura»','«random»','«cringe»','«de una»']},
+  {t:'24–30',d:6,img:'Placa del colegio.',txt:['¿Qué palabra de tu hijo','no entiendes?']}],
+ cta:'Pregunta: «¿Qué palabra de tu hijo no entiendes? Te la traducimos.»',
+ post:'Profes vs. el vocabulario de sus estudiantes. 😂\n¿Qué palabra de tu hijo no entiendes? Déjala aquí y te la traducimos.',
+ necesita:['4 profes con sentido del humor, 20 minutos','Palabras escogidas por los estudiantes y revisadas por el colegio'],
+ confirmar:'Ninguna palabra con doble sentido, grosera o de memes políticos.'},
+
+{id:'R16',tipo:'trend',sug:false,tags:['hw'],ico:'murcielago',bg:BG.gris,titulo:'Advertencia: contenido aterrador (para papás)',
+ obj:'Alcance + comentarios',dur:'18 s',formato:'Trend de la advertencia de contenido',cuando:'Banco (la versión sugerida es el carrusel C14, que es el formato original)',
+ gancho:'Pantalla gris borrosa, como el aviso de contenido sensible: «Este video puede contener escenas aterradoras para papás».',
+ idea:'El trend de Halloween del mes, pero lo que asusta es la vida de un papá en época de colegio.',
+ esc:[
+  {t:'0–3,5',d:3.5,img:'Pantalla gris con desenfoque.',txt:['⚠️ Escenas aterradoras','para papás','¿Seguro que quieres seguir?']},
+  {t:'3,5–4,5',d:1,img:'Corte fuerte con efecto de susto.',txt:['¡BU! 👻']},
+  {t:'4,5–15',d:10.5,img:'Cinco escenas actuadas, una cada 2 s.',items:['1. Domingo 9 p. m.: «Ma, era para mañana una maqueta»','2. El grupo de papás: 147 mensajes','3. La media del uniforme que desapareció','4. Lunes 6:10 a. m. y nadie se ha levantado','5. La lonchera del viernes, abierta el lunes']},
+  {t:'15–18',d:3,img:'Placa con una calabaza.',txt:['¿Cuál te da más miedo?','Comenta el número']}],
+ cta:'Comentar el número.',
+ post:'⚠️ Contenido aterrador para papás. 🎃\n¿Cuál te da más miedo? Comenta el número 👇',
+ necesita:['Un papá o un profe que actúe las 5 escenas'],
+ confirmar:'Nada.'},
+
+{id:'R17',tipo:'trend',sug:false,tags:[],ico:'lapiz',bg:BG.azul,titulo:'Este anuncio lo hicieron niños de 3.°',
+ obj:'Venta · alcance',dur:'20 s',formato:'Trend «hecho por humanos, no por IA»',cuando:'Banco (la versión sugerida es el carrusel C15)',
+ gancho:'Una hoja pintada a mano, con letra de niño: «Este anuncio no lo hizo una IA».',
+ idea:'Mientras todo el mundo hace anuncios con IA, los de tercero hacen el del colegio a mano. Es tierno y es venta.',
+ esc:[
+  {t:'0–2',d:2,img:'La hoja dibujada a mano, en primer plano.',txt:['Este anuncio','no lo hizo una IA']},
+  {t:'2–15',d:13,img:'Manos dibujando, colores, letras torcidas; lo que escribieron del colegio.',items:['«mi colegio tiene árboles»','«aquí juego con los grandes»','«mi profe me ayuda»']},
+  {t:'15–20',d:5,img:'Todos los dibujos sobre una mesa.',txt:['Lo hicieron los de 3.°','Comenta VISITA']}],
+ cta:'VISITA → horarios de visita.',
+ post:'Este anuncio no lo hizo una IA: lo hicieron nuestros estudiantes de tercero. ✏️\nComenta VISITA y ven a conocerlos.',
+ necesita:['Una clase de 30 minutos con tercero','Grabar solo manos y dibujos'],
+ confirmar:'Nada.'},
+
+{id:'R18',tipo:'trend',sug:false,tags:['valor'],ico:'reloj',bg:BG.indigo,titulo:'Cómo evitar el estrés de las tareas',
+ obj:'Valor · guardados',dur:'25 s',formato:'Meme «Cómo evitar el estrés de…» con un consejo útil',cuando:'Noviembre (cierre de período)',
+ gancho:'Texto grande: «Cómo evitar el estrés de las tareas del domingo».',
+ idea:'El meme del mes con un giro útil: primero el chiste, después tres hábitos de la coordinadora académica.',
+ esc:[
+  {t:'0–2',d:2,img:'Mamá con la cabeza entre las manos frente a una maqueta, domingo de noche.',txt:['Cómo evitar el estrés','de las tareas del domingo:']},
+  {t:'2–4',d:2,img:'La misma mesa, vacía.',txt:['No hagas tareas el domingo.']},
+  {t:'4–20',d:16,img:'Coordinadora académica a cámara.',items:['1. Mismo lugar, misma hora','2. El celular en otra habitación','3. El viernes se revisa la agenda']},
+  {t:'20–25',d:5,img:'Placa del colegio.',txt:['Comenta RUTINA']}],
+ cta:'RUTINA → horario semanal de tareas para imprimir.',
+ post:'Comenta RUTINA y te mandamos el horario semanal para imprimir. 📅',
+ necesita:['Coordinadora académica a cámara','Que ella defina los hábitos'],
+ confirmar:'Fechas de cierre del período.'},
+
+{id:'R19',tipo:'trend',sug:false,tags:[],ico:'reloj',bg:BG.calido,titulo:'Lunes vs. viernes, 6:10 a. m.',
+ obj:'Alcance + venta suave',dur:'25 s',formato:'Micro-drama en pantalla partida',cuando:'Noviembre; puede volverse serie',
+ gancho:'Pantalla partida: «Lunes 6:10 a. m.», un niño enterrado en la cobija; «Viernes 6:10 a. m.», el mismo niño ya vestido despertando a su mamá.',
+ idea:'El lunes nadie se levanta; el viernes el niño despierta a todos porque ese día escoge su clase. Lo que diferencia al colegio, contado como un chiste de casa.',
+ esc:[
+  {t:'0–3',d:3,img:'Pantalla partida, el mismo cuarto.',txt:['Lunes 6:10 a. m. | Viernes 6:10 a. m.']},
+  {t:'3–15',d:12,img:'Lunes: la mamá golpea la puerta, la media perdida. Viernes: el niño listo, empuja a todos.',items:['«¡La ruta pasa en 20 minutos!»','«Ma, ¿y mi otra media?»','Viernes: «¡Vamos tarde, mamá!»']},
+  {t:'15–21',d:6,img:'La mamá, confundida: «¿Y a ti qué te pasa?»',voz:'«Hoy es viernes. Hoy escojo mi clase.»'},
+  {t:'21–25',d:4,img:'Placa del colegio.',txt:['¿Tu hijo es de lunes','o de viernes?']}],
+ cta:'Pregunta: «¿Tu hijo es de lunes o de viernes?»',
+ post:'Mismo niño, misma hora. 😴 vs. 🤩\n¿Tu hijo es de lunes o de viernes?',
+ necesita:['Una familia o un profe con su hijo que quieran actuar','Rodaje en una casa, temprano'],
+ confirmar:'Autorización del niño.'},
+
+{id:'R20',tipo:'trend',sug:false,tags:[],ico:'lapiz',bg:BG.azul,titulo:'Deja de hacer scroll y… ven a conocernos',
+ obj:'Venta · alcance',dur:'10–12 s',formato:'Trend del papel arrugado',cuando:'Cualquier semana: no necesita rodaje',
+ gancho:'Una hoja de cuaderno arrugada que se abre despacio: «Deja de hacer scroll y…».',
+ idea:'El trend del papel arrugado encaja con el estilo de cuaderno del colegio. Detrás pasan fotos rápidas del San Miguel.',
+ esc:[
+  {t:'0–2',d:2,img:'Hoja de cuaderno arrugada que se abre despacio.',txt:['Deja de hacer scroll y…']},
+  {t:'2–8',d:6,img:'Detrás de la hoja pasan fotos del colegio, una cada 0,4 s.',items:['zonas verdes','salones','cancha','recreo','profes','viernes de SER+T']},
+  {t:'8–12',d:4,img:'El mensaje completo y la placa.',txt:['…ven a conocernos.','Comenta VISITA']}],
+ cta:'VISITA → horarios de visita.',
+ post:'Deja de hacer scroll y… ven a conocernos. ✏️\nComenta VISITA.',
+ necesita:['Una hoja con la frase escrita a mano por un estudiante','10 fotos del colegio (ya hay archivo)'],
+ confirmar:'Nada.'}
 ];
 
-/* recomendados para lo que queda de octubre */
-const RECO=[[4,'Jue 22','Venta con valor: la hoja de 12 preguntas trae prospectos sin presionar.'],[13,'Lun 26','Halloween con valor, y el psicólogo deja la palabra MIEDO.'],[14,'Jue 29','El trend del mes, a dos días del 31. Sin caras de niños: rápido de grabar.'],[19,'Sáb 31','El cierre de Halloween con los profes disfrazados. Si hay ganas de bailar, se cambia por el 20.']];
+/* ---------------- 20 CARRUSELES ---------------- */
+/* fotos: 'nuevas' | 'archivo' | 'ilus' ; lam: [titulo, texto, estilo(''|navy|rojo|foto), icono] */
+const CARR=[
+{id:'C1',tipo:'venta',sug:true,tags:['valor'],fotos:'ilus',titulo:'12 preguntas para tu visita a un colegio',obj:'Venta + valor',lams:6,cuando:'Vie 30 de octubre (va con el reel R1)',
+ idea:'La versión para guardar del reel R1 y, al mismo tiempo, el regalo de la palabra LISTA. Sirve para visitar cualquier colegio, y por eso se comparte.',
+ lam:[['Vas a visitar colegios.','Lleva estas 12 preguntas.','navy','lapiz'],['El día a día','¿Cómo es un día normal, hora por hora? · ¿Cuántos niños hay por salón? · ¿Qué pasa en el descanso?','','reloj'],
+  ['Los profes','¿Cuánto llevan en el colegio? · ¿Cómo acompañan a un niño al que le cuesta una materia? · ¿Cada cuánto me cuentan cómo va?','','manos'],
+  ['El bienestar','¿Hay psicólogo y cómo trabaja? · ¿Qué hacen si hay un conflicto entre niños? · ¿Cómo cuidan la salud?','','corazon'],
+  ['Lo que lo hace distinto','¿Qué aprende mi hijo aquí que no aprendería en otro lado? · ¿Puedo ver una clase? · ¿Puedo hablar con otro papá?','','estrella'],
+  ['Guárdalo para tu visita.','¿Y si empiezas por nosotros? Comenta VISITA.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos: va ilustrado con el estilo de cuaderno.',cta:'VISITA',post:'Guárdalo para tu próxima visita a un colegio. 📝\n¿Y si empiezas por nosotros? Comenta VISITA.',confirmar:'Que el colegio apruebe las 12 preguntas.'},
 
-/* temas que evitamos */
-const EVITAR=[
- ['Gobierno, partidos y elecciones','No se nombra al presidente, a la oposición ni a ningún partido, y no se usan sus frases ni sus colores de campaña. Un colegio con familias de todas las posturas no toma partido.'],
- ['Presupuesto, reformas e impuestos','Presupuesto 2027, reforma pensional, impuestos: ni como chiste. Si sale el tema de costos, se habla de la pensión del colegio por mensaje directo y punto.'],
- ['Protestas y fuerza pública','No hay contenido sobre marchas, el decreto de manifestaciones ni la Policía. Si hay una marcha en Cali, ese día no se publica nada en tono de humor.'],
- ['UNGRD y el sismo','La UNGRD está en un caso judicial: este mes no se nombra, aunque en septiembre citamos su metodología. El sismo no se usa para vender.'],
- ['Orden público en la región','Nada sobre Jamundí, el Cauca u otras noticias de orden público. La palabra «seguridad» se usa solo para el colegio y los niños.'],
- ['Temas polarizados en educación','Nada de debates sobre religión, educación sexual o ideología en el aula. Halloween se cuenta como Día de los niños: disfraces, juego y nada de terror fuerte.'],
- ['Audios y memes con políticos','Ningún trend que use la voz, la cara o la frase de un político, aunque sea viral. Se revisa el audio antes de publicar.'],
- ['Migración y conflicto armado','No se tocan, ni en chiste ni en contenido de valor.']
+{id:'C2',tipo:'venta',sug:true,tags:[],fotos:'nuevas',titulo:'Así es un viernes en el San Miguel',obj:'Venta · diferencial',lams:7,cuando:'Noviembre (fotos el vie 23)',
+ idea:'Las clases por afinidad son lo que diferencia al colegio, y solo pasan los viernes. Una foto por clase, con su nombre real.',
+ lam:[['Los viernes, cada estudiante escoge su clase.','Así se ve.','foto','estrella'],['[Clase 1]','Foto de la clase, con su nombre real.','foto','nota'],['[Clase 2]','Foto de la clase.','foto','pincel'],
+  ['[Clase 3]','Foto de la clase.','foto','manos'],['[Clase 4]','Foto de la clase.','foto','lapiz'],['Y se mezclan las edades','Por eso los grandes cuidan a los chiquitos.','foto','corazon'],['Ven un viernes.','Comenta VISITA.','rojo','sol']],
+ fotosTxt:'Sí: 6 fotos nuevas de las clases del viernes (manos, materiales y grupos, bajo techo).',cta:'VISITA',post:'Los viernes, cada estudiante escoge su clase. Así se ve. ✨\nComenta VISITA y ven a verlo.',confirmar:'Los nombres reales de las clases por afinidad.'},
+
+{id:'C3',tipo:'venta',sug:false,tags:[],fotos:'ilus',titulo:'SER+T, explicado a un papá que nunca lo ha oído',obj:'Venta · diferencial',lams:6,cuando:'Noviembre',
+ idea:'El modelo pedagógico en seis láminas, en palabras de papá.',
+ lam:[['SER+T','explicado a un papá que nunca lo ha oído','navy','pregunta'],['SER','El desarrollo personal, social y emocional.','','corazon'],['+T','[Significado oficial de la T]','','estrella'],['Los viernes','Cada estudiante escoge su clase, por afinidad.','','nota'],['Y pasa esto','Los grandes cuidan a los chiquitos.','rojo','manos'],['Ven un viernes','Comenta VISITA.','navy','sol']],
+ fotosTxt:'No hace falta: va ilustrado (o con las fotos del C2).',cta:'VISITA',post:'SER+T, explicado en 6 láminas.\nComenta VISITA y ven a verlo un viernes.',confirmar:'El documento oficial de SER+T.'},
+
+{id:'C4',tipo:'venta',sug:false,tags:['valor'],fotos:'ilus',titulo:'Admisiones 2027–2028, paso a paso',obj:'Venta · admisiones',lams:6,cuando:'En cuanto abran las admisiones',
+ idea:'El proceso real en pasos numerados. Quien lo guarda está decidiendo.',
+ lam:[['Admisiones 2027–2028','paso a paso','navy','lapiz'],['Paso 1','[Paso real]','','reloj'],['Paso 2','[Paso real]','','pregunta'],['Paso 3','[Paso real]','','manos'],['Documentos','[Lista real]','','nota'],['¿Empezamos?','Comenta ADMISIONES.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'ADMISIONES',post:'Admisiones 2027–2028, paso a paso. Guárdalo.\nComenta ADMISIONES y te mandamos la guía.',confirmar:'Los pasos, las fechas y los documentos reales.'},
+
+{id:'C5',tipo:'venta',sug:false,tags:[],fotos:'nuevas',titulo:'Un día en transición, hora por hora',obj:'Venta · preescolar',lams:7,cuando:'Noviembre',
+ idea:'La versión en fotos del reel R4: una foto por hora con la hora en grande.',
+ lam:[['Un día en transición','hora por hora','foto','reloj'],['7:00','Llegamos y nos saludamos.','foto','manos'],['7:30','Círculo de la mañana.','foto','sol'],['9:00','Lonchera.','foto','morral'],['10:00','[Actividad real]','foto','pincel'],['12:30','A casa.','foto','corazon'],['¿Entra a transición?','Comenta VISITA.','rojo','estrella']],
+ fotosTxt:'Sí: 5 fotos nuevas en el salón de transición (de espaldas o con autorización).',cta:'VISITA',post:'Un día en transición, hora por hora. ⏰\nComenta VISITA.',confirmar:'El horario real.'},
+
+{id:'C6',tipo:'venta',sug:false,tags:[],fotos:'archivo',titulo:'De transición a once',obj:'Venta · emoción',lams:6,cuando:'Noviembre (cierre de año de los de once)',
+ idea:'El mismo estudiante en transición y hoy, lado a lado, en cada lámina. La prueba de que el colegio acompaña toda la vida escolar.',
+ lam:[['De transición a once','en el mismo colegio','foto','estrella'],['2014 → 2026','[Foto de infancia | foto de hoy]','foto','corazon'],['2014 → 2026','[Otro estudiante]','foto','sol'],['2014 → 2026','[Otro estudiante]','foto','manos'],['Doce años.','Un mismo lugar.','navy','arbol'],['Empieza aquí.','Comenta VISITA.','rojo','lapiz']],
+ fotosTxt:'Sí: fotos de infancia que manden las familias + una foto nueva de hoy de cada estudiante.',cta:'VISITA',post:'De transición a once, en el mismo colegio. 💙\nComenta VISITA.',confirmar:'Estudiantes con toda la vida en el colegio y fotos de sus familias.'},
+
+{id:'C7',tipo:'comu',sug:true,tags:['valor'],fotos:'ilus',titulo:'Llueve otra vez: 7 planes para la tarde en casa',obj:'Valor · guardados',lams:9,cuando:'Mié 21 de octubre (ya: está lloviendo)',
+ idea:'Esta semana llueve todas las tardes y los papás no saben qué hacer con los niños en casa. Le damos 7 planes sin pantallas y sin gastar. Es la pieza más oportuna del mes.',
+ lam:[['Llueve otra vez.','7 planes para la tarde en casa (sin pantallas).','navy','nube'],['1. Galletas fáciles','Cocinar algo simple juntos.','','corazon'],['2. Fuerte de cobijas','Con linterna y un cuento adentro.','','estrella'],
+  ['3. Bingo casero','Con lo que haya en la nevera.','','pregunta'],['4. Teatro de sombras','Manos, linterna y una pared.','','manos'],['5. Volcán de bicarbonato','Bicarbonato, vinagre y colorante.','','sol'],
+  ['6. Carta para los abuelos','A mano y con dibujo.','','lapiz'],['7. Dibuja la lluvia','Mirarla por la ventana y dibujarla.','','nube'],['¿Cuál hacen hoy?','Comenta el número.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos: va ilustrado.',cta:'Comentar el número',post:'Llueve otra vez. 🌧️ Guarda estos 7 planes para la tarde.\n¿Cuál hacen hoy? Comenta el número 👇',confirmar:'Nada.'},
+
+{id:'C8',tipo:'comu',sug:true,tags:['hw','valor'],fotos:'ilus',titulo:'Halloween seguro: 5 cuidados de la enfermera',obj:'Valor · guardados',lams:7,cuando:'Mar 27 de octubre',
+ idea:'Cinco cuidados para el 31, firmados por la enfermera del colegio. Es el contenido de valor de Halloween y la palabra SEGURO trae la lista para la nevera.',
+ lam:[['Halloween seguro','5 cuidados de nuestra enfermera','navy','fantasma'],['1. Empaques sellados','Si está abierto, no se come.','','calabaza'],['2. Algo que brille','Reflectivo o linterna si salen de noche.','','estrella'],
+  ['3. Maquillaje a prueba','En la muñeca, un día antes.','','pincel'],['4. Que vea bien','Nada de máscaras que tapen los ojos.','','mascara'],['5. Tu celular en su muñeca','Escrito en una pulsera.','','manos'],['Comenta SEGURO','Y te mandamos la lista para la nevera.','rojo','calabaza']],
+ fotosTxt:'Opcional: un retrato de la enfermera para la portada (5 minutos). Si no, va ilustrado.',cta:'SEGURO',post:'Halloween seguro: 5 cuidados de nuestra enfermera. 🎃\nComenta SEGURO y te mandamos la lista para la nevera.',confirmar:'Que la enfermera revise y apruebe los 5 cuidados.'},
+
+{id:'C9',tipo:'comu',sug:false,tags:['hw','valor'],fotos:'ilus',titulo:'Si a tu hijo le asustan los disfraces',obj:'Valor · guardados',lams:6,cuando:'Banco (es el regalo de la palabra MIEDO del reel R8)',
+ idea:'Lo que dice el psicólogo para acompañar el miedo en Halloween.',
+ lam:[['Si a tu hijo le asustan los disfraces…','Esto dice nuestro psicólogo.','navy','fantasma'],['No le digas «no seas miedoso»','[Explicación del psicólogo]','','pregunta'],['Ponle nombre','[Explicación]','','corazon'],['Muéstrale el disfraz por dentro','La máscara en la mano deja de asustar.','','mascara'],['Tengan un plan de salida','Si se asusta, se van. Sin drama.','','manos'],['El miedo no se quita.','Se acompaña.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'—',post:'Si a tu hijo le asustan los disfraces, guarda esto. 👻',confirmar:'Que el psicólogo escriba y apruebe el contenido.'},
+
+{id:'C10',tipo:'comu',sug:false,tags:['hw'],fotos:'ilus',titulo:'Bingo de Halloween para jugar en familia',obj:'Comunidad · guardados',lams:3,cuando:'Jue 29 de octubre',
+ idea:'Un cartón de bingo para imprimir y jugar en casa el fin de semana del 31. Cuando lo completan, mandan la foto.',
+ lam:[['Bingo de Halloween','para jugar en familia este fin de semana','navy','calabaza'],['El cartón','16 casillas: comer algo naranja, contar un cuento de miedo amable, dibujar un murciélago…','','estrella'],['¿Completaron el cartón?','Mándanos la foto.','rojo','camara']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'Mandar la foto',post:'Imprímelo y juega este fin de semana. 🎃\nCuando completen el cartón, mándanos la foto.',confirmar:'Nada.'},
+
+{id:'C11',tipo:'comu',sug:false,tags:['hw'],fotos:'ilus',titulo:'Disfraz sin comprar nada',obj:'Guardado',lams:8,cuando:'Banco (ideal publicarlo 2 semanas antes del 31)',
+ idea:'Seis disfraces con lo que hay en casa.',
+ lam:[['Disfraz sin comprar nada','6 ideas con lo que hay en casa','','morral'],['Robot','Una caja, tapas y papel aluminio.','','estrella'],['Astronauta','Dos botellas como tanques y un casco de cartón.','navy','estrella'],['Pintor','Camiseta vieja y témpera.','','pincel'],['Árbol del campo','Ropa café y hojas de papel.','','arbol'],['Superhéroe','Una toalla de capa.','rojo','corazon'],['Chef','Delantal y gorro de cartulina.','','sol'],['El 30, mándanos la foto','Armamos el álbum del colegio.','navy','camara']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'Mandar la foto',post:'Guarda estas 6 ideas y el 30 mándanos la foto. 🎃',confirmar:'Celebración del 30 y reglas de disfraces.'},
+
+{id:'C12',tipo:'comu',sug:false,tags:['valor'],fotos:'ilus',titulo:'8 preguntas que sí sacan respuesta',obj:'Valor · comentarios',lams:10,cuando:'Noviembre',
+ idea:'«¿Qué hiciste hoy?» «Nada». Las preguntas del psicólogo que sí abren conversación.',
+ lam:[['—¿Qué hiciste hoy? —Nada.','8 preguntas que sí sacan respuesta','','pregunta'],['¿Con quién te sentaste hoy?','Una por lámina, con su porqué.','','manos'],['¿Qué fue lo más chistoso?','…','','sol'],['¿Quieres las 20?','Comenta PREGUNTAS.','rojo','pregunta']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'PREGUNTAS',post:'Guárdalo para esta tarde.\nComenta PREGUNTAS y te mandamos las 20.',confirmar:'Que el psicólogo defina las preguntas.'},
+
+{id:'C13',tipo:'comu',sug:false,tags:['hw'],fotos:'nuevas',titulo:'Álbum del Día de los niños',obj:'Comunidad · etiquetas',lams:10,cuando:'Mar 3 de noviembre',
+ idea:'Las mejores fotos del 30 y los disfraces que mandaron las familias. Cada familia etiqueta a la otra.',
+ lam:[['Día de los niños','el álbum','foto','calabaza'],['[Foto]','','foto','estrella'],['[Foto]','','foto','sol'],['¿Encontraste a tu hijo?','Etiquétalo.','rojo','camara']],
+ fotosTxt:'Sí: fotos del 30 (en grupo o con autorización) + las que manden las familias.',cta:'Etiquetar',post:'Así fue el Día de los niños. 🎃\n¿Encontraste a tu hijo? Etiquétalo.',confirmar:'Celebración del 30.'},
+
+{id:'C14',tipo:'trend',sug:true,tags:['hw'],fotos:'ilus',titulo:'⚠️ Contenido aterrador para papás',obj:'Alcance + comentarios',lams:8,cuando:'Jue 29 de octubre',
+ idea:'Es el formato original del trend de octubre: un carrusel que imita el aviso de contenido sensible. Lo que asusta es la vida de papá, y en la última lámina viene lo único que no da miedo.',
+ lam:[['⚠️ Contenido sensible','Este carrusel puede contener escenas aterradoras para papás.','navy','murcielago'],['¿Seguro que quieres seguir?','Desliza bajo tu propio riesgo.','navy','fantasma'],['¡BU! 👻','','rojo','calabaza'],
+  ['Domingo, 9 p. m.','«Ma, era para mañana una maqueta.»','','reloj'],['El grupo de papás','147 mensajes sin leer.','','pregunta'],['La media del uniforme','Desapareció. Otra vez.','','morral'],['Lunes, 6:10 a. m.','Y nadie se ha levantado.','','reloj'],['Lo único que no da miedo:','venir a conocernos. Comenta VISITA.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos: es ilustración y texto (así es el trend).',cta:'VISITA',post:'⚠️ Contenido aterrador para papás. 🎃\n¿Cuál te da más miedo? Y si quieres algo que no asuste: comenta VISITA.',confirmar:'Nada.'},
+
+{id:'C15',tipo:'trend',sug:true,tags:[],fotos:'nuevas',titulo:'Hecho a mano, no con IA',obj:'Venta · alcance',lams:6,cuando:'Noviembre (fotos el jue 22)',
+ idea:'El trend de los anuncios hechos a mano: los de tercero dibujan el anuncio del colegio. Es la actividad perfecta para un día de lluvia, y vende sin parecer anuncio.',
+ lam:[['Este anuncio no lo hizo una IA.','Lo hicieron nuestros estudiantes de 3.°','foto','lapiz'],['«Mi colegio tiene árboles»','[Foto del dibujo]','foto','arbol'],['«Aquí juego con los grandes»','[Foto del dibujo]','foto','manos'],
+  ['«Mi profe me ayuda»','[Foto del dibujo]','foto','corazon'],['Manos a la obra','[Foto de manos dibujando]','foto','pincel'],['¿Quieres conocerlos?','Comenta VISITA.','rojo','sol']],
+ fotosTxt:'Sí: fotos de los dibujos y de las manos dibujando (sin caras), en una clase de 30 minutos.',cta:'VISITA',post:'Este anuncio no lo hizo una IA: lo hicieron nuestros estudiantes de tercero. ✏️\nComenta VISITA y ven a conocerlos.',confirmar:'Nada.'},
+
+{id:'C16',tipo:'trend',sug:false,tags:['hw'],fotos:'ilus',titulo:'¿De qué te disfrazas según tu materia favorita?',obj:'Comentarios',lams:7,cuando:'Lun 26 de octubre',
+ idea:'Un quiz ligero de Halloween: cada materia, un disfraz. Se comenta la materia.',
+ lam:[['¿De qué te disfrazas','según tu materia favorita?','navy','calabaza'],['Matemáticas','Robot calculadora.','','estrella'],['Ciencias','Científico de bata y gafas.','','pregunta'],['Arte','Pintor con boina.','','pincel'],['Educación física','Superhéroe.','','corazon'],['Música','Estrella de rock.','','nota'],['¿Cuál es la tuya?','Comenta tu materia.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'Comentar la materia',post:'¿De qué te disfrazas según tu materia favorita? 🎃\nComenta la tuya.',confirmar:'Nada.'},
+
+{id:'C17',tipo:'trend',sug:false,tags:[],fotos:'ilus',titulo:'Cómo evitar el estrés de…',obj:'Alcance · se comparte',lams:5,cuando:'Noviembre',
+ idea:'El meme del mes en tres situaciones de papá, con una salida amable.',
+ lam:[['Cómo evitar el estrés','de la vida de papá','navy','reloj'],['…de la maqueta del domingo:','No la dejes para el domingo. Pregunta el lunes qué hay en la semana.','','lapiz'],['…del grupo del salón:','Silencia el grupo. Lee el resumen del viernes.','','pregunta'],['…de la mañana del lunes:','Deja el uniforme listo el domingo.','','morral'],['¿Cuál te sirvió?','Etiqueta a quien lo necesita.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'Etiquetar',post:'Cómo evitar el estrés de la vida de papá. 😅',confirmar:'Nada.'},
+
+{id:'C18',tipo:'trend',sug:false,tags:[],fotos:'ilus',titulo:'Sigue la historia',obj:'Venta · visita',lams:3,cuando:'Noviembre',
+ idea:'El carrusel interactivo de octubre: tres láminas que parecen historias, y el logo del colegio salta entre ellas hasta revelar la invitación.',
+ lam:[['Sigue la historia…','(parece una historia de Instagram)','navy','estrella'],['…el logo salta…','','','sol'],['Visitas los viernes.','Comenta VISITA.','rojo','corazon']],
+ fotosTxt:'No hace falta tomar fotos (es animado).',cta:'VISITA',post:'Sigue la historia hasta el final. ✨\nComenta VISITA.',confirmar:'Nada.'},
+
+{id:'C19',tipo:'trend',sug:false,tags:[],fotos:'archivo',titulo:'Dump de octubre',obj:'Comunidad · likes',lams:10,cuando:'Dom 1 de noviembre',
+ idea:'El cierre del mes en fotos sueltas: lluvia, disfraces, viernes y profes.',
+ lam:[['Octubre en el San Miguel','📸','foto','camara'],['[Foto]','','foto','nube'],['[Foto]','','foto','calabaza'],['¿Cuál es tu favorita?','Comenta el número.','rojo','sol']],
+ fotosTxt:'Archivo del mes: no hace falta una sesión aparte.',cta:'Comentar el número',post:'Así se fue octubre. 🍂',confirmar:'Nada.'},
+
+{id:'C20',tipo:'trend',sug:false,tags:[],fotos:'ilus',titulo:'¿Qué papá eres en el grupo del salón?',obj:'Comentarios + etiquetas',lams:6,cuando:'Noviembre',
+ idea:'Humor amable sobre el grupo de WhatsApp, sin burlarse de nadie. Todos se reconocen y etiquetan.',
+ lam:[['¿Qué papá eres','en el grupo del salón?','navy','pregunta'],['El de los stickers','Responde todo con un sticker.','','estrella'],['El que pregunta','«¿Alguien sabe si mañana hay clase?»','','reloj'],['El del audio','4 minutos y 32 segundos.','','megafono'],['El silencioso','Lo lee todo, nunca escribe.','','corazon'],['¿Cuál eres tú?','Etiqueta a tu compañero de grupo.','rojo','sol']],
+ fotosTxt:'No hace falta tomar fotos.',cta:'Etiquetar',post:'¿Qué papá eres en el grupo del salón? 😂\nEtiqueta a tu compañero de grupo.',confirmar:'Tono amable: que nadie se sienta señalado.'}
 ];
 
-/* trends del mes */
-const TRENDS=[
- ['Advertencia de contenido','Parodia del aviso de contenido sensible de Instagram: «¿Seguro que quieres seguir?» y luego «¡BU!». Es para las últimas dos semanas de octubre.','Guion 14'],
- ['Papel arrugado','Una hoja arrugada que se abre y dice «Deja de hacer scroll y…», con fotos rápidas detrás. Va perfecto con el cuaderno del colegio.','Guion 15'],
- ['«Cómo evitar el estrés de…»','Meme: «Cómo evitar el estrés de X: no vayas a X. Haz Y». Lo usamos con un consejo útil de verdad.','Guion 16'],
- ['Micro-dramas por capítulos','Abren en plena situación y terminan con un remate o un cliffhanger. Sirven para contar el producto sin cortar la historia.','Guion 18'],
- ['Construcción y revelación de disfraces','En vez de mostrar la compra, se muestra cómo se arma el disfraz y la revelación final.','Guiones 10 y 19'],
- ['Canción reconocible con idea visual','Una canción que todos conocen, con una idea visual literal que la hace nueva.','Guion 20']
+/* ---------------- AUDITORÍA ---------------- */
+/* [código candidato, título, tipo, [gancho, valor, facilidad (lluvia y permisos), momento, riesgo bajo], destino o null, nota] */
+const AUD_R=[
+ ['G4','Antes de elegir colegio, mira esto','venta',[5,5,5,4,5],'R1','Se graba bajo techo, solo con adultos, y trae prospectos con LISTA.'],
+ ['G11','Halloween seguro (reel)','comu',[4,5,5,5,4],'R9','Fuerte, pero la versión sugerida es el carrusel C8: se guarda mejor.'],
+ ['G13','¿Qué te da miedo?','comu',[5,5,4,5,4],'R8','Halloween con valor, y el cierre del psicólogo trae la palabra MIEDO.'],
+ ['G14','Advertencia: contenido aterrador','trend',[5,3,5,5,5],'R16','Se queda, pero el formato original es carrusel (C14).'],
+ ['N24','Recreo bajo la lluvia','comu',[4,4,5,5,5],'R7','Nuevo: convierte la lluvia de esta semana en escenografía.'],
+ ['G2','Admisiones responde','venta',[4,5,5,3,5],'R2','Una persona, 20 minutos, y la palabra ADMISIONES.'],
+ ['N22','Este anuncio lo hicieron niños de 3.°','trend',[5,4,4,4,5],'R17','Nuevo. La versión sugerida es el carrusel C15.'],
+ ['G6','5 niños explican SER+T','venta',[5,5,4,3,4],'R3','Depende del documento de SER+T.'],
+ ['G16','Cómo evitar el estrés de las tareas','trend',[4,4,5,3,5],'R18','Mejor en noviembre, cuando cierra el período.'],
+ ['G19','¿Quién es este profe?','trend',[4,3,4,5,5],'R14','El cierre de Halloween, y no exige caras de niños.'],
+ ['N26','Dulce o truco en la oficina del rector','comu',[4,3,4,5,5],'R10','Nuevo: muestra a los directivos cerca.'],
+ ['N28','Disfrázate de lo que quieres ser','comu',[5,4,3,5,4],'R11','Nuevo, pero depende de que el colegio ponga el tema.'],
+ ['G17','Profes adivinan el vocabulario','trend',[5,3,5,3,4],'R15','Solo profes, bajo techo y con mucho alcance.'],
+ ['G18','Lunes vs. viernes, 6:10 a. m.','trend',[5,5,3,3,4],'R19','Necesita una familia que actúe en casa.'],
+ ['N21','Un día en transición, hora por hora','venta',[4,5,4,3,4],'R4','Nuevo: le habla al papá de un niño de 4–5 años.'],
+ ['G5','Lo que dijo esta mamá','venta',[4,4,5,2,4],'R5','No necesita rodaje: ya hay 20 clips.'],
+ ['N32','Conoce a tu profe de transición','venta',[3,4,5,2,5],'R6','Nuevo: un adulto, bajo techo.'],
+ ['G10','Este disfraz costó $0','comu',[4,3,3,5,4],'R12','Depende de una familia voluntaria.'],
+ ['N25','Si la lonchera vuelve llena','comu',[4,4,4,3,4],'R13','Nuevo: valor de todos los días.'],
+ ['G15','Deja de hacer scroll (papel arrugado)','trend',[4,2,5,3,5],'R20','Cero rodaje: un comodín para cualquier semana.'],
+ ['N27','Dump de «Hola, octubre»','trend',[3,2,5,4,5],null,'Sale: queda mejor como carrusel (C19).'],
+ ['N29','Debate profe vs. estudiante','trend',[4,3,5,3,4],null,'Sale: se parece mucho al de los profes adivinando.'],
+ ['G12','Lo que aprendí de mi alumno','comu',[3,3,5,2,5],null,'Sale: el gancho es débil frente a los demás.'],
+ ['G20','Thriller en el patio','trend',[4,3,2,5,4],null,'Sale: es en el patio y con lluvia no se puede; además pide ensayo.'],
+ ['N31','Expectativa vs. realidad del disfraz','trend',[4,2,3,5,4],null,'Sale: repite la idea del disfraz de $0.'],
+ ['G7','Llega antes que todos','comu',[4,3,3,2,5],null,'Sale por ahora: queda de banco para noviembre (pide madrugar).'],
+ ['G9','Carta a mi yo de transición','comu',[4,4,3,2,4],null,'Sale por ahora: es para noviembre, con el cierre de los de once.'],
+ ['G1','POV: primer día en el San Miguel','venta',[4,4,3,2,3],null,'Sale: necesitaba la piscina y un niño nuevo con autorización.'],
+ ['G3','Esto es un martes cualquiera','venta',[4,4,2,2,4],null,'Sale: es todo al aire libre (lluvia) y mostraba la piscina.'],
+ ['G8','Volvió a su salón de primero','comu',[4,4,2,2,4],null,'Sale por ahora: depende de encontrar a la pareja estudiante–profe.'],
+ ['N23','Exalumnos: ¿qué te dio el San Miguel?','venta',[3,4,2,2,5],null,'Sale: hay que localizar exalumnos; queda para el próximo año.'],
+ ['N30','Papás vuelven al pupitre','comu',[4,3,2,2,5],null,'Sale: necesita convocar papás un día de clase.']
 ];
+const AUD_C=[
+ ['c18','Llueve otra vez: 7 planes en casa','comu',[4,5,5,5,5],'C7','Es lo más oportuno del mes, y es pura ilustración.'],
+ ['c2','12 preguntas para tu visita','venta',[4,5,5,4,5],'C1','Es el regalo de LISTA: va con el reel R1.'],
+ ['c9','Halloween seguro','comu',[4,5,5,5,4],'C8','Valor de Halloween; la palabra SEGURO.'],
+ ['c12','Si a tu hijo le asustan los disfraces','comu',[4,5,5,5,4],'C9','Es el regalo de MIEDO (reel R8).'],
+ ['c20','⚠️ Contenido aterrador para papás','trend',[5,3,5,5,5],'C14','El trend de octubre en su formato original.'],
+ ['c28','Bingo de Halloween en familia','comu',[4,4,5,5,5],'C10','Se imprime y se juega; trae fotos de las familias.'],
+ ['c10','Disfraz sin comprar nada','comu',[4,4,5,4,5],'C11','Ya va tarde: ideal dos semanas antes.'],
+ ['c11','8 preguntas que sí sacan respuesta','comu',[4,5,5,3,5],'C12','Se guarda; es para noviembre.'],
+ ['c21','Hecho a mano, no con IA','trend',[5,4,4,4,5],'C15','Actividad de clase para un día de lluvia.'],
+ ['c25','Quiz: disfraz según tu materia','trend',[4,3,5,5,5],'C16','Rápido de diseñar; da comentarios.'],
+ ['c16','Álbum del Día de los niños','comu',[4,3,4,5,4],'C13','Sale el 3 de noviembre con las fotos del 30.'],
+ ['c22','Cómo evitar el estrés de…','trend',[4,3,5,3,5],'C17','El meme del mes con salida útil.'],
+ ['c3','Admisiones paso a paso','venta',[3,5,4,3,4],'C4','Espera las fechas reales.'],
+ ['c4','Un día en transición','venta',[4,5,3,3,4],'C5','Pide fotos en el salón.'],
+ ['c5','Así es un viernes','venta',[4,5,3,3,4],'C2','Lo que diferencia al colegio, en fotos.'],
+ ['c24','Sigue la historia (interactivo)','trend',[4,3,4,3,5],'C18','Formato nuevo de octubre.'],
+ ['c1','SER+T en 6 láminas','venta',[3,5,4,3,3],'C3','Espera el documento oficial de SER+T.'],
+ ['c8','De transición a once','venta',[5,4,2,2,4],'C6','Se queda pese al puntaje: tiene el gancho más fuerte del banco y es la pieza del cierre de año.'],
+ ['c23','Dump de octubre','trend',[3,2,4,4,5],'C19','Cierre del mes con fotos de archivo.'],
+ ['c26','¿Qué papá eres en el grupo?','trend',[5,2,5,3,4],'C20','Se queda con tono amable.'],
+ ['c13','3 loncheras que sí se comen','comu',[4,4,3,3,4],null,'Sale: pide producción de comida; queda el reel R13.'],
+ ['c14','Primero, los que cuidan','comu',[3,3,5,2,5],null,'Sale: el material es de agosto y el gancho es suave.'],
+ ['c19','Frases de profes que todos recordamos','comu',[4,3,5,2,4],null,'Sale: es genérico, podría ser de cualquier colegio.'],
+ ['c7','Tour de espacios','venta',[3,4,3,2,5],null,'Sale: es al aire libre (lluvia) y se parece a un folleto.'],
+ ['c15','Los que nadie ve (perfil)','comu',[4,3,3,2,5],null,'Sale por ahora: queda para noviembre.'],
+ ['c17','Rutina de tareas para imprimir','comu',[3,4,5,3,5],null,'Sale: repite el reel R18 (RUTINA).'],
+ ['c6','Mitos de un colegio campestre','venta',[4,4,3,2,3],null,'Sale: pide datos que no tenemos.'],
+ ['c27','Encuentra al profe (ilustración)','trend',[4,2,2,2,5],null,'Sale: es mucho diseño para poco resultado.']
+];
+const CRIT=['Gancho','Valor','Facilidad','Momento','Riesgo bajo'];
+const CRIT_D=['Si el primer cuadro (o la primera lámina) ya da algo','Si deja algo útil o muestra lo que diferencia al colegio','Si se graba rápido, bajo techo y sin permisos difíciles (la lluvia cuenta)','Si sirve justo ahora: Halloween, la lluvia, octubre','Pocos datos por confirmar y nada sensible'];
 
-/* ================= VISTA ================= */
-const sel=new Set(guarda.get('sel',[]));
-function tarjeta(g){
-  const tags=g.tags.map(t=>t==='hw'?'<span class="chip hw">🎃 Halloween</span>':'<span class="chip valor">⭐ Valor</span>').join('');
-  return `<article class="tarjeta ${g.tipo} ${g.tags.includes('hw')?'es-hw':''} rv" data-n="${g.n}">
-    <div class="tope"><span class="n">${g.n}</span><span class="tipo">${TIPOS[g.tipo].n}</span></div>
-    ${g.tags.includes('hw')?'<svg class="calab solo-hw"><use href="#calabaza"/></svg>':''}
-    <div class="cuerpo"><h3>${esc(g.titulo)}</h3><p class="gancho">${esc(g.gancho)}</p>
-      <div class="meta"><span class="chip">${esc(g.dur)}</span><span class="chip">${esc(g.obj)}</span>${tags}</div></div>
-    <div class="pie"><button type="button" class="ver" data-n="${g.n}">Ver guion</button><button type="button" class="elegir" data-n="${g.n}" aria-pressed="${sel.has(g.n)}">${sel.has(g.n)?'✓ En el mes':'＋ Al mes'}</button></div>
+/* ---------------- PLAN DE RODAJE ---------------- */
+const RODAJE=[
+ {n:1,dia:'Jue 22',titulo:'Lo que se vence primero',clima:'☔ Mejor si llueve',color:'#9fdcec',
+  porque:'Lo de Halloween tiene que salir antes del 31, y la lluvia de esta semana es la escenografía del recreo.',
+  tareas:[['R7','Recreo bajo la lluvia','A la hora del recreo, si llueve. 30 s de sonido de lluvia.','15 min'],['R8','¿Qué te da miedo?','8 niños en un salón, uno por uno. Cierra el psicólogo.','40 min'],['C15','Fotos: «Hecho a mano»','Tercero dibuja el anuncio del colegio. Solo manos y dibujos.','30 min'],['C8','Foto de la enfermera','Retrato para la portada (opcional).','5 min']]},
+ {n:2,dia:'Vie 23',titulo:'El viernes SER+T',clima:'🏠 Todo bajo techo',color:'#c3f58a',
+  porque:'Las clases por afinidad solo pasan los viernes. Lo demás es con adultos y se acomoda entre clases.',
+  tareas:[['C2','Fotos de las clases del viernes','Una por clase: manos, materiales, grupos.','30 min'],['R1','Antes de elegir colegio','Coordinadora caminando + saludos, baños y un profe llamando por nombre.','40 min'],['R2','Admisiones responde','Una persona a cámara, 5 preguntas.','20 min'],['R15','Profes adivinan el vocabulario','4 profes, una tarjeta cada uno.','20 min']]},
+ {n:3,dia:'Vie 30',titulo:'Día de los niños',clima:'🎃 Pasa una sola vez',color:'#ffd29a',
+  porque:'Solo pasa ese día. Se publica el sábado 31.',
+  tareas:[['R14','¿Quién es este profe?','4 profes disfrazados, estudiantes adivinando.','30 min'],['—','Historias en vivo','En grupo y de espaldas.','toda la jornada']]}
+];
+const SIN_CAMARA=[['C1','12 preguntas para tu visita'],['C7','Llueve otra vez: 7 planes en casa'],['C14','Contenido aterrador para papás']];
+const CAL=[['Mié 21','C7','Llueve otra vez: 7 planes'],['Vie 23','R7','Recreo bajo la lluvia'],['Lun 26','R8','¿Qué te da miedo?'],['Mar 27','C8','Halloween seguro'],['Mié 28','R1','Antes de elegir colegio'],['Jue 29','C14','Contenido aterrador'],['Vie 30','C1','12 preguntas para tu visita'],['Sáb 31','R14','¿Quién es este profe?'],['Noviembre','R2 · R15 · C2 · C15','Admisiones, vocabulario, el viernes y «Hecho a mano»']];
+
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const QUIETO=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const guarda={get(k,d){try{const v=localStorage.getItem('sm-banco2-'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sm-banco2-'+k,JSON.stringify(v))}catch(e){}}};
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1900)}
+const TIPOS={venta:{n:'Venta',col:'var(--c-venta)'},comu:{n:'Comunidad',col:'var(--c-comu)'},trend:{n:'Trend',col:'var(--c-trend)'}};
+const FOTOS={nuevas:['📷','Fotos nuevas','foto-n'],archivo:['🗂️','Archivo','foto-a'],ilus:['✏️','Ilustración','foto-i']};
+const TODO=Object.fromEntries([...REELS,...CARR].map(p=>[p.id,p]));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+const observa=()=>$$('.rv:not(.in)').forEach(el=>io.observe(el));
+
+/* ---------- tarjetas ---------- */
+function chipsTags(p){return p.tags.map(t=>t==='hw'?'<span class="chip hw">🎃 Halloween</span>':'<span class="chip valor">⭐ Valor</span>').join('')}
+function tarjeta(p){
+  const esR=p.id[0]==='R';
+  const meta=esR?`<span class="chip">${esc(p.dur)}</span><span class="chip">${esc(p.obj)}</span>`:`<span class="chip ${FOTOS[p.fotos][2]}">${FOTOS[p.fotos][0]} ${FOTOS[p.fotos][1]}</span><span class="chip">${p.lams} láminas</span>`;
+  const gancho=esR?p.gancho:p.idea;
+  return `<article class="tarjeta ${p.tipo} ${p.tags.includes('hw')?'es-hw':''} ${p.sug?'es-sug':''} rv" data-id="${p.id}">
+    <div class="tope"><span class="n">${p.id}</span><span class="tipo">${TIPOS[p.tipo].n}</span>${p.sug?'<span class="estrella-sug">⭐ Sugerido</span>':''}</div>
+    ${p.tags.includes('hw')?'<svg class="calab solo-hw"><use href="#calabaza"/></svg>':''}
+    <div class="cuerpo"><h3>${esc(p.titulo)}</h3><p class="gancho">${esc(gancho)}</p>
+      <div class="meta">${meta}${chipsTags(p)}</div></div>
+    <div class="pie"><button type="button" class="ver" data-id="${p.id}">Ver ${esR?'guion':'carrusel'}</button><button type="button" class="elegir" data-id="${p.id}" aria-pressed="false">＋ Al mes</button></div>
   </article>`;
 }
-$('#grid').innerHTML=G.map(tarjeta).join('');
 
-/* filtros */
-let fTipo='todos',fTags=new Set(),fTxt='';
-function filtra(){
-  let n=0;
-  $$('#grid .tarjeta').forEach(c=>{const g=G[+c.dataset.n-1];
-    const txt=(g.titulo+' '+g.gancho+' '+g.idea+' '+g.cta+' '+g.necesita.join(' ')).toLowerCase();
-    const ok=(fTipo==='todos'||g.tipo===fTipo)&&[...fTags].every(t=>g.tags.includes(t))&&(!fTxt||txt.includes(fTxt));
-    c.classList.toggle('oculta',!ok);if(ok){n++;c.classList.add('in')}});
-  $('#cuentaF').textContent=n===G.length?'Mostrando los 20 guiones':`Mostrando ${n} de ${G.length} guiones`;
+/* ---------- banco con filtros ---------- */
+let banco='reels',fTipo='todos',fSug=false,fTags=new Set(),fTxt='';
+function lista(){return banco==='reels'?REELS:CARR}
+function pasa(p){
+  const txt=(p.titulo+' '+(p.gancho||'')+' '+p.idea+' '+(p.cta||'')+' '+(p.fotosTxt||'')).toLowerCase();
+  return (fTipo==='todos'||p.tipo===fTipo)&&[...fTags].every(t=>p.tags.includes(t))&&(!fTxt||txt.includes(fTxt));
 }
-$$('#filtros [data-f]').forEach(b=>b.onclick=()=>{fTipo=b.dataset.f;$$('#filtros [data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));filtra()});
-$$('#filtros [data-t]').forEach(b=>b.onclick=()=>{const t=b.dataset.t;fTags.has(t)?fTags.delete(t):fTags.add(t);b.setAttribute('aria-pressed',fTags.has(t));
-  if(t==='hw')ponHw(fTags.has('hw'));filtra()});
-$('#buscar').addEventListener('input',e=>{fTxt=e.target.value.trim().toLowerCase();filtra()});
-filtra();
+function pinta(){
+  const L=lista().filter(pasa);
+  if(fSug){
+    const S=L.filter(p=>p.sug);
+    const grupos=['venta','comu','trend'].filter(t=>fTipo==='todos'||fTipo===t);
+    $('#vista').innerHTML=`<div class="nota-sug">Estos son nuestros sugeridos: 2 por tipo, elegidos con la auditoría y pensados para grabarse con lluvia. Están separados para que no se mezclen con el resto del banco.</div>`+
+      grupos.map(t=>{const g=S.filter(p=>p.tipo===t);if(!g.length)return '';return `<div class="grupo-sug"><h3 class="gs">${TIPOS[t].n} <i style="background:${TIPOS[t].col}">${g.length} sugeridos</i></h3><div class="grid-sug">${g.map(tarjeta).join('')}</div></div>`}).join('');
+    $('#cuentaF').textContent=`⭐ ${S.length} sugeridos de ${banco==='reels'?'reels':'carruseles'}, agrupados por tipo`;
+  }else{
+    $('#vista').innerHTML=`<div class="grid-g">${L.map(tarjeta).join('')}</div>`;
+    $('#cuentaF').textContent=L.length===20?`Mostrando los 20 ${banco==='reels'?'reels':'carruseles'}`:`Mostrando ${L.length} de 20`;
+  }
+  pintaSel();observa();
+  $$('#vista .rv').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),QUIETO?0:i*30));
+}
+$$('[data-b]').forEach(b=>b.onclick=()=>{banco=b.dataset.b;$$('[data-b]').forEach(x=>x.setAttribute('aria-pressed',x===b));pinta()});
+$('#filtros [data-s]').onclick=e=>{fSug=!fSug;e.currentTarget.setAttribute('aria-pressed',fSug);pinta();if(fSug)toast('⭐ Solo los sugeridos, separados por tipo')};
+$$('#filtros [data-f]').forEach(b=>b.onclick=()=>{fTipo=b.dataset.f;$$('#filtros [data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));pinta()});
+$$('#filtros [data-t]').forEach(b=>b.onclick=()=>{const t=b.dataset.t;fTags.has(t)?fTags.delete(t):fTags.add(t);b.setAttribute('aria-pressed',fTags.has(t));if(t==='hw')ponHw(fTags.has('hw'));pinta()});
+$('#buscar').addEventListener('input',e=>{fTxt=e.target.value.trim().toLowerCase();pinta()});
 
-/* modo halloween */
+/* ---------- modo Halloween (de noche) ---------- */
 function ponHw(on){document.body.classList.toggle('hw',on);$('#hwBtn').setAttribute('aria-pressed',on);$('#hwBtn').textContent=on?'🎃 Halloween activado':'🎃 Modo Halloween'}
-$('#hwBtn').onclick=()=>{const on=!document.body.classList.contains('hw');ponHw(on);toast(on?'🌙 Se hizo de noche: se resaltan los 6 guiones de Halloween':'☀️ Volvió el día')};
+$('#hwBtn').onclick=()=>{const on=!document.body.classList.contains('hw');ponHw(on);toast(on?'🌙 Se hizo de noche: se resaltan las piezas de Halloween':'☀️ Volvió el día')};
 
-/* selección del mes */
-function pintaBandeja(){
-  const arr=[...sel];
-  $('#slots').innerHTML=[0,1,2,3].map(i=>`<i class="${arr[i]?'ok':''}">${arr[i]||''}</i>`).join('');
-  $('#bandejaTxt').textContent=`${arr.length} de 4`+(arr.length>4?' (te pasaste)':'');
-  $('#bandeja').classList.toggle('on',arr.length>0);
-  $$('.elegir').forEach(b=>{const on=sel.has(+b.dataset.n);b.setAttribute('aria-pressed',on);b.textContent=on?'✓ En el mes':'＋ Al mes'});
-  guarda.set('sel',arr);
+/* ---------- selección del mes ---------- */
+const sel={R:new Set(guarda.get('R',[])),C:new Set(guarda.get('C',[]))};
+function pintaSel(){
+  ['R','C'].forEach(k=>{const a=[...sel[k]];$('#slots'+k).innerHTML=[0,1,2,3].map(i=>`<i class="${a[i]?'ok':''}">${a[i]?a[i].slice(1):''}</i>`).join('');guarda.set(k,a)});
+  $('#bandeja').classList.toggle('on',sel.R.size+sel.C.size>0);
+  $$('.elegir').forEach(b=>{const k=b.dataset.id[0];const on=sel[k].has(b.dataset.id);b.setAttribute('aria-pressed',on);b.textContent=on?'✓ En el mes':'＋ Al mes'});
 }
-function alterna(n){if(sel.has(n)){sel.delete(n);toast('Lo quitaste del mes')}else{if(sel.size>=4){toast('Ya tienes 4: el paquete es de 4 reels al mes');return}sel.add(n);toast(`Guion ${n} agregado (${sel.size} de 4)`)}pintaBandeja()}
-document.addEventListener('click',e=>{const b=e.target.closest('.elegir');if(b)alterna(+b.dataset.n);const v=e.target.closest('.ver');if(v)abre(+v.dataset.n)});
-pintaBandeja();
-function textoWhatsapp(){return 'Guiones escogidos para San Miguel:\n'+[...sel].map(n=>{const g=G[n-1];return `• ${n}. ${g.titulo} (${TIPOS[g.tipo].n}, ${g.dur})`}).join('\n')}
+function alterna(id){const k=id[0],S=sel[k];
+  if(S.has(id)){S.delete(id);toast('Lo quitaste del mes')}
+  else{if(S.size>=4){toast(k==='R'?'Ya tienes 4 reels: es el paquete del mes':'Ya tienes 4 carruseles: es el paquete del mes');return}S.add(id);toast(`${id} agregado (${S.size} de 4 ${k==='R'?'reels':'carruseles'})`)}
+  pintaSel()}
+document.addEventListener('click',e=>{const b=e.target.closest('.elegir');if(b){alterna(b.dataset.id);return}const v=e.target.closest('[data-ver]')||e.target.closest('.ver');if(v)abre(v.dataset.ver||v.dataset.id)});
+function textoWA(){const l=k=>[...sel[k]].map(id=>`• ${id}. ${TODO[id].titulo} (${TIPOS[TODO[id].tipo].n})`).join('\n')||'• (ninguno)';return `Selección del mes · San Miguel\n\nReels:\n${l('R')}\n\nCarruseles:\n${l('C')}`}
+function copia(t){try{navigator.clipboard.writeText(t).then(()=>toast('Copiado'),()=>toast('No se pudo copiar'))}catch(e){toast('No se pudo copiar')}}
 $('#verSel').onclick=()=>{
-  const d=$('#dlg');
-  $('#dlgIn').innerHTML=`<div class="modal chico"><button class="cerrar" type="button" aria-label="Cerrar">×</button>
-    <div><span class="rasgado">Tu selección</span><h3 class="m-tit" style="margin-top:12px">Los guiones del mes</h3>
-    <ul class="sel-lista">${[...sel].map(n=>`<li><b>${n}</b><span>${esc(G[n-1].titulo)}</span><button type="button" data-q="${n}">Quitar</button></li>`).join('')||'<li>No has escogido ninguno.</li>'}</ul>
-    <button class="btn" id="copiaSel" type="button">Copiar para WhatsApp</button></div></div>`;
-  d.showModal();
-  $$('#dlgIn [data-q]').forEach(b=>b.onclick=()=>{sel.delete(+b.dataset.q);pintaBandeja();$('#verSel').click()});
-  $('#copiaSel').onclick=()=>copia(textoWhatsapp());
+  const d=$('#dlg');const fila=id=>`<li><b>${id}</b><span>${esc(TODO[id].titulo)}</span><button type="button" data-q="${id}">Quitar</button></li>`;
+  $('#dlgIn').innerHTML=`<div class="modal chico"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div><span class="rasgado">Tu selección</span>
+    <h3 class="m-tit" style="margin-top:12px">El mes</h3><p class="sub">Reels (${sel.R.size} de 4)</p><ul class="sel-lista">${[...sel.R].map(fila).join('')||'<li>Ninguno todavía.</li>'}</ul>
+    <p class="sub">Carruseles (${sel.C.size} de 4)</p><ul class="sel-lista">${[...sel.C].map(fila).join('')||'<li>Ninguno todavía.</li>'}</ul>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="copiaSel" type="button">Copiar para WhatsApp</button><button class="btn claro" id="usarSug" type="button">Usar los sugeridos de octubre</button></div></div></div>`;
+  if(!d.open)d.showModal();
+  $$('#dlgIn [data-q]').forEach(b=>b.onclick=()=>{const id=b.dataset.q;sel[id[0]].delete(id);pintaSel();$('#verSel').click()});
+  $('#copiaSel').onclick=()=>copia(textoWA());
+  $('#usarSug').onclick=()=>{sel.R=new Set(['R7','R8','R1','R14']);sel.C=new Set(['C7','C8','C14','C1']);pintaSel();$('#verSel').click();toast('Listo: los 8 de octubre')};
   $('#dlgIn .cerrar').onclick=()=>d.close();
 };
-function copia(t){try{navigator.clipboard.writeText(t).then(()=>toast('Copiado'),()=>toast('No se pudo copiar'))}catch(e){toast('No se pudo copiar')}}
 
-/* recomendados */
-$('#recoGrid').innerHTML=RECO.map(([n,f,p],i)=>{const g=G[n-1];return `<div class="paso rv${i?' d'+i:''}"><span class="f">${f}</span><b>${n}. ${esc(g.titulo)}</b><p>${esc(p)}</p><button type="button" class="ver" data-n="${n}">Ver guion</button></div>`}).join('');
-$('#usarReco').onclick=()=>{sel.clear();RECO.forEach(([n])=>sel.add(n));pintaBandeja();toast('Listo: estos 4 quedaron en tu selección')};
-
-/* evitar */
-$('#cartas').innerHTML=EVITAR.map(([a,b],i)=>`<div class="carta rv${i%4?' d'+(i%4):''}" tabindex="0" role="button" aria-label="${esc(a)}"><div class="in"><div class="c a"><span>Evitamos</span><b>${esc(a)}</b><span style="color:var(--gris);font-weight:600">Toca para ver ↻</span></div><div class="c b"><strong>Por qué y qué hacemos</strong><p>${esc(b)}</p></div></div></div>`).join('');
-$$('.carta').forEach(c=>{c.onclick=()=>c.classList.toggle('vuelta');c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();c.classList.toggle('vuelta')}}});
-
-/* trends */
-$('#trendsGrid').innerHTML=TRENDS.map(([a,b,c],i)=>`<div class="trend-c rv${i%3?' d'+(i%3):''}"><b>${esc(a)}</b><p>${esc(b)}</p><small>Lo usamos en: ${c}</small></div>`).join('');
-
-/* ================= MODAL CON EL GUION ================= */
+/* ---------- modal: reel o carrusel ---------- */
 let jug=null;
-function abre(n){
-  const g=G[n-1],d=$('#dlg');if(jug){jug.para();jug=null}
-  const filas=g.esc.map((e,i)=>`<div class="fila" data-i="${i}"><span class="tm">${e.t} s</span><p>${esc(e.img)}${(e.txt||[]).length?'<br>'+e.txt.map(t=>`<span class="tx">${esc(t)}</span>`).join(''):''}${e.items?'<br>'+e.items.map(t=>`<span class="tx" style="background:var(--amarillo);color:var(--tinta)">${esc(t)}</span>`).join(''):''}${e.voz?`<span class="vo">${esc(e.voz)}</span>`:''}</p></div>`).join('');
-  const tags=g.tags.map(t=>t==='hw'?'<span class="chip hw">🎃 Halloween</span>':'<span class="chip valor">⭐ Valor</span>').join('');
-  $('#dlgIn').innerHTML=`<div class="modal"><button class="cerrar" type="button" aria-label="Cerrar">×</button>
-    <div class="m-izq"><div class="cel" id="cel"></div><div class="controles"><button type="button" id="bPlay"></button><button type="button" id="bRe" aria-label="Desde el inicio"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5" fill="none" stroke="#1b1a2e" stroke-width="2.6" stroke-linecap="round"/></svg></button></div>
-      <p class="peq" style="text-align:center;max-width:260px">Maqueta con los tiempos reales del guion. Las tomas reales se graban en el rodaje.</p>
-      <button type="button" class="btn claro elegir" data-n="${g.n}" aria-pressed="${sel.has(g.n)}">${sel.has(g.n)?'✓ En el mes':'＋ Al mes'}</button></div>
-    <div>
-      <div class="m-cab"><span class="num">GUION ${g.n}</span><span class="chip" style="background:${TIPOS[g.tipo].col}">${TIPOS[g.tipo].n}</span>${tags}</div>
-      <h3 class="m-tit">${esc(g.titulo)}</h3>
-      <p>${esc(g.idea)}</p>
-      <div class="datos"><div><b>Objetivo</b>${esc(g.obj)}</div><div><b>Duración</b>${esc(g.dur)}</div><div><b>Formato</b>${esc(g.formato)}</div><div><b>Cuándo</b>${esc(g.cuando)}</div></div>
-      <p class="sub">Guion</p><div class="guion">${filas}</div>
-      <p class="sub">Llamado a la acción</p><p>${esc(g.cta)}</p>
-      <p class="sub">Texto del post</p><div class="post"><button class="copiar" type="button">Copiar</button>${esc(g.post)}</div>
-      <p class="sub">Qué se necesita</p><ul class="lista">${g.necesita.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
-      ${g.confirmar&&g.confirmar!=='Nada.'?`<div class="aviso"><b>Por confirmar:</b> ${esc(g.confirmar)}</div>`:''}
-      <div class="m-nav"><button type="button" data-ir="${g.n-1}" ${g.n===1?'disabled style="opacity:.3"':''}>← Anterior</button><button type="button" data-ir="${g.n+1}" ${g.n===G.length?'disabled style="opacity:.3"':''}>Siguiente →</button></div>
-    </div></div>`;
-  if(!d.open)d.showModal();
-  d.scrollTop=0;
+function abre(id){
+  const p=TODO[id];if(!p)return;const d=$('#dlg');if(jug){jug.para();jug=null}
+  const esR=id[0]==='R',L=esR?REELS:CARR,i=L.indexOf(p);
+  const cab=`<div class="m-cab"><span class="num">${esR?'REEL':'CARRUSEL'} ${p.id}</span><span class="chip" style="background:${TIPOS[p.tipo].col}">${TIPOS[p.tipo].n}</span>${p.sug?'<span class="chip" style="background:var(--rojo2);color:#fff">⭐ Sugerido</span>':''}${chipsTags(p)}</div><h3 class="m-tit">${esc(p.titulo)}</h3><p>${esc(p.idea)}</p>`;
+  const nav=`<div class="m-nav"><button type="button" data-ir="${L[i-1]?L[i-1].id:''}" ${i===0?'disabled style="opacity:.3"':''}>← Anterior</button><button type="button" data-ir="${L[i+1]?L[i+1].id:''}" ${i===L.length-1?'disabled style="opacity:.3"':''}>Siguiente →</button></div>`;
+  let izq,der;
+  if(esR){
+    const filas=p.esc.map((e,k)=>`<div class="fila" data-i="${k}"><span class="tm">${e.t} s</span><p>${esc(e.img)}${(e.txt||[]).length?'<br>'+e.txt.map(t=>`<span class="tx">${esc(t)}</span>`).join(''):''}${e.items?'<br>'+e.items.map(t=>`<span class="tx" style="background:var(--amarillo);color:var(--tinta)">${esc(t)}</span>`).join(''):''}${e.voz?`<span class="vo">${esc(e.voz)}</span>`:''}</p></div>`).join('');
+    izq=`<div class="cel" id="cel"></div><div class="controles"><button type="button" id="bPlay"></button><button type="button" id="bRe" aria-label="Desde el inicio"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5" fill="none" stroke="#1b1a2e" stroke-width="2.6" stroke-linecap="round"/></svg></button></div><p class="peq" style="text-align:center;max-width:260px">Maqueta con los tiempos reales del guion.</p>`;
+    der=`${cab}<div class="datos"><div><b>Objetivo</b>${esc(p.obj)}</div><div><b>Duración</b>${esc(p.dur)}</div><div><b>Formato</b>${esc(p.formato)}</div><div><b>Cuándo</b>${esc(p.cuando)}</div></div>
+      <p class="sub">Guion</p><div class="guion">${filas}</div><p class="sub">Llamado a la acción</p><p>${esc(p.cta)}</p>
+      <p class="sub">Texto del post</p><div class="post"><button class="copiar" type="button">Copiar</button>${esc(p.post)}</div>
+      <p class="sub">Qué se necesita</p><ul class="lista">${p.necesita.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${p.confirmar&&p.confirmar!=='Nada.'?`<div class="aviso"><b>Por confirmar:</b> ${esc(p.confirmar)}</div>`:''}${nav}`;
+  }else{
+    izq=`<div class="carr-m" id="carr"><div class="vp"><div class="pista">${p.lam.map((l,k)=>`<div class="lam ${l[2]}"><span class="n">${k+1}/${p.lam.length}</span><h4>${esc(l[0])}</h4><p>${esc(l[1])}</p><svg class="ic"><use href="#${l[3]}"/></svg></div>`).join('')}</div></div><div class="flechas"><button type="button" data-d="-1" aria-label="Anterior">←</button><div class="puntos">${p.lam.map(()=>'<i></i>').join('')}</div><button type="button" data-d="1" aria-label="Siguiente">→</button></div></div><p class="peq" style="text-align:center;max-width:270px">Maqueta de las láminas. Desliza o usa las flechas.</p>`;
+    der=`${cab}<div class="datos"><div><b>Objetivo</b>${esc(p.obj)}</div><div><b>Láminas</b>${p.lams}</div><div><b>Fotos</b>${FOTOS[p.fotos][0]} ${FOTOS[p.fotos][1]}</div><div><b>Cuándo</b>${esc(p.cuando)}</div></div>
+      <p class="sub">Láminas</p><div class="guion">${p.lam.map((l,k)=>`<div class="fila" data-i="${k}"><span class="tm">${k+1}</span><p><b>${esc(l[0])}</b>${l[1]?' '+esc(l[1]):''}</p></div>`).join('')}</div>
+      <p class="sub">¿Hay que tomar fotos?</p><p>${esc(p.fotosTxt)}</p>
+      <p class="sub">Texto del post</p><div class="post"><button class="copiar" type="button">Copiar</button>${esc(p.post)}</div>
+      ${p.confirmar&&p.confirmar!=='Nada.'?`<div class="aviso"><b>Por confirmar:</b> ${esc(p.confirmar)}</div>`:''}${nav}`;
+  }
+  $('#dlgIn').innerHTML=`<div class="modal"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="m-izq">${izq}<button type="button" class="btn claro elegir" data-id="${p.id}" aria-pressed="false">＋ Al mes</button></div><div>${der}</div></div>`;
+  if(!d.open)d.showModal();d.scrollTop=0;
   $('#dlgIn .cerrar').onclick=()=>d.close();
-  $('#dlgIn .copiar').onclick=()=>copia(g.post);
-  $$('#dlgIn [data-ir]').forEach(b=>b.onclick=()=>abre(+b.dataset.ir));
-  jug=new Jugador($('#cel'),g);
+  $('#dlgIn .copiar').onclick=()=>copia(p.post);
+  $$('#dlgIn [data-ir]').forEach(b=>b.onclick=()=>{if(b.dataset.ir)abre(b.dataset.ir)});
+  pintaSel();
+  if(esR)jug=new Jugador($('#cel'),p);else carrusel($('#carr'));
 }
 $('#dlg').addEventListener('close',()=>{if(jug){jug.para();jug=null}});
 $('#dlg').addEventListener('click',e=>{if(e.target===$('#dlg'))$('#dlg').close()});
 
+function carrusel(root){
+  const pista=root.querySelector('.pista'),n=pista.children.length,pts=[...root.querySelectorAll('.puntos i')];let i=0;
+  const ir=k=>{i=(k+n)%n;pista.style.transform=`translateX(-${i*100}%)`;pts.forEach((p,j)=>p.classList.toggle('on',j===i));$$('#dlgIn .fila').forEach(f=>f.classList.toggle('activa',+f.dataset.i===i))};
+  root.querySelectorAll('.flechas button').forEach(b=>b.onclick=()=>ir(i+ +b.dataset.d));
+  let x0=null;const vp=root.querySelector('.vp');vp.addEventListener('pointerdown',e=>x0=e.clientX);vp.addEventListener('pointerup',e=>{if(x0!==null&&Math.abs(e.clientX-x0)>30)ir(i+(e.clientX<x0?1:-1));x0=null});
+  ir(0);
+}
 function Jugador(root,g){
   const E=g.esc,total=E.reduce((a,e)=>a+e.d,0);let t=0,ult=null,corre=!QUIETO,act=-1,sub=-1,raf=null;
   root.innerHTML=`<div class="esc" style="background:${g.bg}"></div><svg class="ico"><use href="#${g.ico}"/></svg><div class="txts"></div><div class="plano"></div><div class="barras">${E.map(()=>'<i><b></b></i>').join('')}</div><span class="reloj">0,0 s</span>`;
-  const tx=root.querySelector('.txts'),pl=root.querySelector('.plano'),bs=[...root.querySelectorAll('.barras b')],rel=root.querySelector('.reloj'),ic=root.querySelector('.ico'),es=root.querySelector('.esc');
-  const bP=$('#bPlay');
-  const pinta=()=>{bP.innerHTML=corre?'<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="#1b1a2e"/></svg>':'<svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#1b1a2e"/></svg>';bP.setAttribute('aria-label',corre?'Pausar':'Reproducir')};
+  const tx=root.querySelector('.txts'),pl=root.querySelector('.plano'),bs=[...root.querySelectorAll('.barras b')],rel=root.querySelector('.reloj'),ic=root.querySelector('.ico'),es=root.querySelector('.esc'),bP=$('#bPlay');
+  const pintaB=()=>{bP.innerHTML=corre?'<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="#1b1a2e"/></svg>':'<svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#1b1a2e"/></svg>';bP.setAttribute('aria-label',corre?'Pausar':'Reproducir')};
   function escena(i){act=i;sub=-1;const e=E[i];pl.textContent=e.img;
     tx.innerHTML=(e.txt||[]).map(s=>`<span class="tt">${esc(s)}</span>`).join('')+(e.voz?`<span class="tt voz">${esc(e.voz)}</span>`:'')+(e.items?'<span class="tt cont" data-it></span>':'');
-    ic.style.transform=`rotate(${i%2?9:-9}deg) scale(${1+(i%3)*.07})`;es.style.filter='none';
-    $$('#dlgIn .fila').forEach(f=>f.classList.toggle('activa',+f.dataset.i===i));}
-  function cuadro(){let acc=0,i=0;while(i<E.length-1&&t>=acc+E[i].d){acc+=E[i].d;i++}
-    if(i!==act)escena(i);const e=E[i],dentro=t-acc;
+    ic.style.transform=`rotate(${i%2?9:-9}deg) scale(${1+(i%3)*.07})`;es.style.filter='none';$$('#dlgIn .fila').forEach(f=>f.classList.toggle('activa',+f.dataset.i===i))}
+  function cuadro(){let acc=0,i=0;while(i<E.length-1&&t>=acc+E[i].d){acc+=E[i].d;i++}if(i!==act)escena(i);const e=E[i],dentro=t-acc;
     if(e.items){const k=Math.min(e.items.length-1,Math.floor(dentro/(e.d/e.items.length)));if(k!==sub){sub=k;const s=tx.querySelector('[data-it]');if(s){const c=s.cloneNode();c.textContent=e.items[k];s.replaceWith(c)}es.style.filter=`hue-rotate(${k*24}deg)`}}
-    let a=0;bs.forEach((b,j)=>{b.style.transform=`scaleX(${Math.max(0,Math.min(1,(t-a)/E[j].d))})`;a+=E[j].d});
-    rel.textContent=t.toFixed(1).replace('.',',')+' s'}
+    let a=0;bs.forEach((b,j)=>{b.style.transform=`scaleX(${Math.max(0,Math.min(1,(t-a)/E[j].d))})`;a+=E[j].d});rel.textContent=t.toFixed(1).replace('.',',')+' s'}
   function bucle(ts){if(!corre){ult=null;return}if(ult!=null){t+=(ts-ult)/1000;if(t>=total)t=0}ult=ts;cuadro();raf=requestAnimationFrame(bucle)}
-  bP.onclick=()=>{corre=!corre;pinta();if(corre){ult=null;raf=requestAnimationFrame(bucle)}};
-  $('#bRe').onclick=()=>{t=0;act=-1;cuadro();if(!corre){corre=true;pinta();raf=requestAnimationFrame(bucle)}};
-  pinta();cuadro();if(corre)raf=requestAnimationFrame(bucle);
-  this.para=()=>{corre=false;cancelAnimationFrame(raf)};
+  bP.onclick=()=>{corre=!corre;pintaB();if(corre){ult=null;raf=requestAnimationFrame(bucle)}};
+  $('#bRe').onclick=()=>{t=0;act=-1;cuadro();if(!corre){corre=true;pintaB();raf=requestAnimationFrame(bucle)}};
+  pintaB();cuadro();if(corre)raf=requestAnimationFrame(bucle);this.para=()=>{corre=false;cancelAnimationFrame(raf)};
 }
 
+/* ---------- fotos ---------- */
+(function(){
+  const cols=['nuevas','archivo','ilus'];
+  $('#fotosG').innerHTML=cols.map((k,i)=>{const L=CARR.filter(c=>c.fotos===k);
+    return `<div class="col-f rv${i?' d'+i:''}"><span class="ic">${FOTOS[k][0]}</span><b>${FOTOS[k][1]}</b><span class="cuantos">${L.length} carruseles${k==='nuevas'?' · hay que tomarlas':k==='archivo'?' · ya existen o las mandan las familias':' · no necesitan fotos'}</span>
+      <ul>${L.map(c=>`<li><button type="button" data-ver="${c.id}" class="${c.sug?'sug':''}">${c.sug?'⭐ ':''}${c.id} · ${esc(c.titulo)}</button></li>`).join('')}</ul></div>`}).join('');
+  const sugF=CARR.filter(c=>c.sug&&c.fotos==='nuevas');
+  $('#resumenF').innerHTML=`<b>${sugF.length}</b><p><strong>De los 6 carruseles sugeridos, solo ${sugF.length} necesitan fotos nuevas:</strong> ${sugF.map(c=>`${c.id} (${esc(c.titulo)})`).join(' y ')}. Se toman en los días de rodaje 1 y 2, bajo techo. El retrato de la enfermera para el C8 es opcional.</p>`;
+})();
 
-/* estrellas de la noche */
+/* ---------- rodaje ---------- */
+const hechas=guarda.get('rod',{});
+function pintaRodaje(){
+  $('#diasR').innerHTML=RODAJE.map((d,i)=>`<div class="dia-r rv${i?' d'+i:''}">
+    <div class="cab" style="background:${d.color}"><span class="num">${d.n}</span><div><small>${d.dia}</small><b>${esc(d.titulo)}</b></div></div>
+    <span class="clima">${d.clima}</span><p class="porque">${esc(d.porque)}</p>
+    <ul>${d.tareas.map((t,j)=>{const k=d.n+'-'+j;return `<li><label><input type="checkbox" data-k="${k}" ${hechas[k]?'checked':''}><span class="t"><b>${t[0]!=='—'?`<span class="cod">${t[0]}</span>`:''}${esc(t[1])}</b><small>${esc(t[2])}</small></span><span class="min">${t[3]}</span></label></li>`}).join('')}</ul>
+    ${i<RODAJE.length-1?'<span class="flecha" aria-hidden="true">→</span>':''}</div>`).join('');
+  $$('#diasR input').forEach(c=>c.onchange=()=>{hechas[c.dataset.k]=c.checked;guarda.set('rod',hechas);if(c.checked)toast('¡Toma lista!')});
+}
+pintaRodaje();
+$('#extrasR').innerHTML=`
+  <div class="extra-r rv"><b>✏️ Sin cámara, en paralelo</b>${SIN_CAMARA.map(s=>`<button type="button" data-ver="${s[0]}" style="display:block;text-align:left;margin:4px 0;font-weight:600;text-decoration:underline">${s[0]} · ${esc(s[1])}</button>`).join('')}<span class="peq">Los diseñamos mientras se graba.</span></div>
+  <div class="extra-r rv d1"><b>☔ Si llueve / ☀️ si sale el sol</b>Si llueve el jueves, el recreo (R7) se graba ese día. Si no llueve, el día 1 sigue igual y el R7 espera la próxima lluvia. Nada depende de la piscina ni del patio.</div>
+  <div class="extra-r rv d2"><b>🎒 Qué llevar</b>Canon R50 (ya en SDR), micrófono de solapa para las entrevistas y una luz suave: con lluvia, la luz de la ventana baja. Autorizaciones de imagen firmadas antes del día 1.</div>`;
+$('#calR').innerHTML=CAL.map(c=>{const ids=c[1].split(' · ');const uno=ids.length===1;return `<button type="button" class="${c[1][0]==='R'&&uno?'r':''} ${c[0]==='Noviembre'?'nov':''}" ${uno?`data-ver="${c[1]}"`:''}><small>${c[0]}</small><b>${c[1]}</b><span>${esc(c[2])}</span></button>`}).join('');
+
+/* ---------- auditoría ---------- */
+let audB='r';
+$('#leyendaC').innerHTML=CRIT.map((c,i)=>`<span title="${esc(CRIT_D[i])}">${c}</span>`).join('');
+function pintaAud(){
+  const A=(audB==='r'?AUD_R:AUD_C).map(a=>({...Object.fromEntries(['cand','tit','tipo','pts','dest','nota'].map((k,i)=>[k,a[i]])),tot:a[3].reduce((x,y)=>x+y,0)}));
+  const dentro=A.filter(a=>a.dest).sort((a,b)=>b.tot-a.tot),fuera=A.filter(a=>!a.dest).sort((a,b)=>b.tot-a.tot);
+  const fila=a=>{const p=a.dest&&TODO[a.dest];const est=a.dest?(p&&p.sug?`<span class="est su">⭐ ${a.dest}</span>`:`<span class="est si">✓ ${a.dest}</span>`):'<span class="est no">Sale</span>';
+    return `<div class="aud-f ${a.dest?'':'fuera'}" ${a.dest?`data-ver="${a.dest}" style="cursor:pointer"`:''}><span class="cand">${a.cand}</span><span class="tit">${esc(a.tit)}<small>${esc(a.nota)}</small></span><span class="tp"><span class="chip" style="background:${TIPOS[a.tipo].col}">${TIPOS[a.tipo].n}</span></span>
+      ${a.pts.map(v=>`<span class="crit"><span class="barra-p"><i data-w="${v*20}"></i></span></span>`).join('')}<span class="tot">${a.tot}</span>${est}</div>`};
+  $('#aud').innerHTML=`<div class="aud-f th"><span>#</span><span>Candidato</span><span class="tp">Tipo</span>${CRIT.map(c=>`<span class="crit">${c}</span>`).join('')}<span>/25</span><span>Queda como</span></div>`+
+    dentro.map(fila).join('')+`<div class="aud-sep">Salieron (${fuera.length})</div>`+fuera.map(fila).join('');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>$$('#aud .barra-p i').forEach(i=>i.style.width=i.dataset.w+'%')));
+}
+$$('[data-a]').forEach(b=>b.onclick=()=>{audB=b.dataset.a;$$('[data-a]').forEach(x=>x.setAttribute('aria-pressed',x===b));pintaAud()});
+const ioA=new IntersectionObserver(es=>{if(es[0].isIntersecting){pintaAud();ioA.disconnect()}},{threshold:.05});ioA.observe($('#aud'));
+
+/* ---------- temas que evitamos y trends ---------- */
+const EVITAR=[
+ ['Gobierno, partidos y elecciones','No se nombra al presidente, a la oposición ni a ningún partido, y no se usan sus frases ni sus colores. Un colegio con familias de todas las posturas no toma partido.'],
+ ['Presupuesto, reformas e impuestos','Presupuesto 2027, reforma pensional, impuestos: ni como chiste. Los costos del colegio se hablan por mensaje directo.'],
+ ['Protestas y fuerza pública','Nada sobre marchas, el decreto de manifestaciones o la Policía. Si hay una marcha en Cali, ese día no se publica humor.'],
+ ['UNGRD y el sismo','La UNGRD está en un caso judicial: este mes no se nombra. El sismo no se usa para vender.'],
+ ['Orden público en la región','Nada sobre Jamundí, el Cauca u otras noticias de orden público. «Seguridad» se usa solo para hablar del colegio y de los niños.'],
+ ['Temas polarizados en educación','Nada de debates de religión, educación sexual o ideología. Halloween se cuenta como Día de los niños: disfraces y juego, sin terror fuerte.'],
+ ['Audios y memes con políticos','Ningún trend con la voz, la cara o la frase de un político, aunque sea viral.'],
+ ['Migración y conflicto armado','No se tocan, ni en chiste ni en contenido de valor.']];
+$('#cartas').innerHTML=EVITAR.map(([a,b],i)=>`<div class="carta rv${i%4?' d'+(i%4):''}" tabindex="0" role="button" aria-label="${esc(a)}"><div class="in"><div class="c a"><span>Evitamos</span><b>${esc(a)}</b><span style="color:var(--gris);font-weight:600">Toca para ver ↻</span></div><div class="c b"><strong>Por qué y qué hacemos</strong><p>${esc(b)}</p></div></div></div>`).join('');
+$$('.carta').forEach(c=>{c.onclick=()=>c.classList.toggle('vuelta');c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();c.classList.toggle('vuelta')}}});
+const TRENDS=[['Advertencia de contenido','Un carrusel que imita el aviso de contenido sensible: «¿Seguro que quieres seguir?» y luego «¡BU!». Es para las dos últimas semanas de octubre.','C14 · R16'],
+ ['Hecho a mano, no con IA','Anuncios hechos a mano que se presentan como «hechos por personas». Aquí los hacen los niños.','C15 · R17'],
+ ['Papel arrugado','Una hoja arrugada que se abre: «Deja de hacer scroll y…».','R20'],
+ ['«Cómo evitar el estrés de…»','Meme: «No vayas a X. Haz Y». Lo usamos con un consejo de verdad.','R18 · C17'],
+ ['Carrusel que sigue la historia','Láminas que parecen historias, con el logo saltando hasta la invitación.','C18'],
+ ['Disfraces: construir y revelar','Mostrar cómo se arma el disfraz y la revelación final, no la compra.','R12 · R14']];
+$('#trendsGrid').innerHTML=TRENDS.map(([a,b,c],i)=>`<div class="trend-c rv${i%3?' d'+(i%3):''}"><b>${esc(a)}</b><p>${esc(b)}</p><small>Lo usamos en: ${c}</small></div>`).join('');
+
+/* ---------- noche: estrellas ---------- */
 (function(){const n=$('#noche');let h='';for(let i=0;i<70;i++){const x=Math.random()*100,y=Math.random()*70,d=(Math.random()*3).toFixed(2),z=(Math.random()*2+1.5).toFixed(1);
   h+=`<span class="estr" style="left:${x}%;top:${y}%;width:${z}px;height:${z}px;animation-delay:-${d}s"></span>`}n.insertAdjacentHTML('afterbegin',h)})();
-/* reveal y contador */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-$$('.rv').forEach(el=>io.observe(el));
-(function(){const c=$('#contador');let i=0;const p=()=>{i++;c.textContent=i;if(i<20)setTimeout(p,QUIETO?0:55)};setTimeout(p,300)})();
+
+pinta();observa();
+(function(){const c=$('#contador');let i=0;const p=()=>{i+=2;c.textContent=Math.min(i,60);if(i<60)setTimeout(p,QUIETO?0:28)};setTimeout(p,300)})();
 })();
 </script>
 </body>
