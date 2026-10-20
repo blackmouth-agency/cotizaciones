@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jam × BLACKMOUTH · Propuesta de alianza</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Propuesta de alianza para Jam Digital Community: servicio de agencia, subcontratación en marca blanca y talleres de IA para equipos.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0b">
+<meta property="og:title" content="Jam × BLACKMOUTH · Propuesta de alianza">
+<meta property="og:description" content="Jam pone el criterio. BLACKMOUTH pone la capacidad.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/jam/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/jam/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,800;1,900&family=JetBrains+Mono:wght@400;500&family=Satisfy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/jam.css?v=3">
+<script>document.documentElement.classList.add('js')</script>
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<!-- ============ ARRANQUE ============ -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-ring">
+    <svg viewBox="0 0 200 200" id="bootTicks"></svg>
+    <div class="boot-pct"><span id="bootPct">00</span><small>%</small></div>
+  </div>
+  <div class="boot-log" id="bootLog"></div>
+  <button class="boot-skip" id="bootSkip" type="button">Saltar ›</button>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ BARRA HUD ============ -->
+<header class="hud">
+  <a href="#inicio" class="hud-brand" aria-label="Inicio">
+    <img src="assets/img/jam-logo.png" alt="Jam" class="hud-jam">
+    <span class="hud-x mono">× BLACKMOUTH</span>
+  </a>
+  <div class="hud-sec mono"><span id="hudNum">01</span>/09 · <span id="hudName">INICIO</span></div>
+  <nav class="hud-nav mono" aria-label="Secciones">
+    <a href="#lectura">Lectura</a><a href="#modelos">Modelos</a><a href="#tarifas">Tarifas</a><a href="#cotizador">Cotizador</a><a href="#talleres">Talleres</a><a href="#condiciones">Condiciones</a>
+  </nav>
+  <div class="hud-bar"><i id="hudBar"></i></div>
+</header>
+
+<main>
+
+<!-- ============ 01 HERO ============ -->
+<section id="inicio" class="hero" data-name="INICIO">
+  <canvas id="wave" aria-hidden="true"></canvas>
+  <div class="plus-grid" aria-hidden="true"></div>
+
+  <figure class="hero-head" aria-hidden="true">
+    <img src="assets/img/cabeza.webp" alt="">
+    <span class="scan"></span>
+    <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+    <div class="readout r1 mono"><span>SUJETO</span><b data-scramble>JAM DIGITAL COMMUNITY</b></div>
+    <div class="readout r2 mono"><span>CRITERIO</span><em class="meter"><i style="--v:1"></i></em><b>100%</b></div>
+    <div class="readout r3 mono"><span>CAPACIDAD</span><em class="meter"><i class="grow"></i></em><b id="capPct">+∞</b></div>
+  </figure>
+
+  <div class="hero-copy">
+    <p class="kicker mono"><span class="dot"></span> Propuesta de alianza · Cali · Oct 2026</p>
+    <h1 class="title">
+      <span class="ln"><span class="lt">Jam pone el</span> <span class="bd">criterio.</span></span>
+      <span class="ln"><span class="lt">BLACKMOUTH pone la</span> <span class="script">capacidad.</span></span>
+    </h1>
+    <p class="lead">Jaime, aquí está todo lo que hablamos: cómo trabajar como agencia, cómo subcontratarnos en marca blanca y los talleres para los equipos de tus clientes. Con precios, escalones y un cotizador para que lo pruebes con tus números.</p>
+    <div class="hero-meta mono">
+      <div><span>REUNIÓN</span><b>Martes 20 de octubre · 6:00 p. m.</b></div>
+      <div><span>PARA</span><b>Jaime Andrés Mesa · Jam</b></div>
+    </div>
+    <a href="#lectura" class="btn-scan mono magnet"><span>Iniciar lectura</span><i></i></a>
+  </div>
+  <div class="hero-foot mono" aria-hidden="true"><span>SCROLL</span><i></i></div>
+</section>
+
+<!-- ============ 02 LECTURA ============ -->
+<section id="lectura" class="sec" data-name="LECTURA">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="tag mono">02 · Lectura de perfil</p>
+      <h2 class="h2"><span class="lt">Antes de cotizar,</span> <span class="bd">miramos a Jam.</span></h2>
+      <p class="sub">Vimos los 13 posts de @jamdigitalcommunity, uno por uno. Esto es lo que encontramos.</p>
+    </header>
+
+    <div class="lectura">
+      <div class="win reveal" id="win">
+        <div class="win-top mono"><span>JAM // LECTURA DE PERFIL</span><span class="win-ctl"><i></i><i></i><i></i></span></div>
+        <div class="win-tabs mono" role="tablist">
+          <button role="tab" aria-selected="true" data-t="0">01 Marca</button>
+          <button role="tab" aria-selected="false" data-t="1">02 Contenido</button>
+          <button role="tab" aria-selected="false" data-t="2">03 Lo que sumamos</button>
+        </div>
+        <div class="win-body">
+          <p class="mono win-ia"><i></i> ANÁLISIS</p>
+          <p class="win-text" id="winText"></p>
+        </div>
+        <div class="win-foot mono"><span>13 publicaciones</span><span>264 seguidores</span><span>Cali, Colombia</span></div>
+      </div>
+
+      <div class="reels reveal">
+        <figure class="reel"><img src="assets/img/reels/cartier.webp" alt="Spec ad de Cartier hecha con IA" loading="lazy"><figcaption class="mono">Spec ad · Cartier<b>100 % IA, sin rodaje</b></figcaption></figure>
+        <figure class="reel"><img src="assets/img/reels/hud.webp" alt="Reel personal de Jaime con gráficos tipo HUD" loading="lazy"><figcaption class="mono">¿Dejarías que una IA te dirigiera?<b>Motion propio</b></figcaption></figure>
+        <figure class="reel"><img src="assets/img/reels/talcual.webp" alt="Tal Cual reinterpretado con IA" loading="lazy"><figcaption class="mono">Tal Cual × Bulin 47<b>Trend con IA</b></figcaption></figure>
+        <figure class="reel"><img src="assets/img/reels/tesla.webp" alt="Homenaje a Martín de Francisco hecho con IA" loading="lazy"><figcaption class="mono">Chibchombia y el Tesla<b>Humor local</b></figcaption></figure>
+        <figure class="reel"><img src="assets/img/reels/montana.webp" alt="Paisaje generado con IA" loading="lazy"><figcaption class="mono">🏔<b>617 reacciones</b></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><b class="mono"><span data-count="617">0</span></b><p>reacciones en su pieza más vista: el formato de IA ya engancha.</p></div>
+      <div class="stat reveal"><b class="mono"><span data-count="7">0</span></b><p>videos hechos con IA en tres semanas. Jam ya domina las herramientas.</p></div>
+      <div class="stat reveal"><b class="mono"><span data-count="1">0</span>&nbsp;campaña</b><p>completa sin cámara (Cartier). Es justo lo que las marcas van a pedir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 MODELOS ============ -->
+<section id="modelos" class="sec" data-name="MODELOS">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="tag mono">03 · Dos formas de trabajar juntos</p>
+      <h2 class="h2"><span class="lt">Tú eliges quién</span> <span class="bd">da la cara.</span></h2>
+      <p class="sub">Cada cliente que muevas puede ir por un camino distinto. Cambia el modo y mira cómo se mueve el trabajo.</p>
+    </header>
+
+    <div class="toggle reveal" role="tablist" aria-label="Modelo">
+      <button role="tab" aria-selected="true" data-m="agencia" class="on">Servicio de agencia<sup>A</sup></button>
+      <button role="tab" aria-selected="false" data-m="blanca">Marca blanca<sup>B</sup></button>
+      <i class="toggle-pill"></i>
+    </div>
+
+    <div class="modelo reveal" data-mode="agencia" id="modelo">
+      <div class="diagram">
+        <svg viewBox="0 0 600 420" id="diag" aria-label="Diagrama del flujo de trabajo">
+          <defs>
+            <radialGradient id="gl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          </defs>
+          <g class="rings" transform="translate(300 210)">
+            <circle r="60"/><circle r="120"/><circle r="185"/>
+          </g>
+          <!-- rutas -->
+          <path id="pCJ" class="route r-blanca" d="M300 70 L130 330"/>
+          <path id="pJB" class="route r-blanca r-agencia" d="M130 330 L470 330"/>
+          <path id="pCB" class="route r-agencia" d="M300 70 L470 330"/>
+          <circle class="pkt r-blanca" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#pCJ"/></animateMotion></circle>
+          <circle class="pkt r-blanca r-agencia" r="4"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1"><mpath href="#pJB"/></animateMotion></circle>
+          <circle class="pkt r-agencia" r="4"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#pCB"/></animateMotion></circle>
+          <!-- nodos -->
+          <g class="node" transform="translate(300 70)"><circle r="40" fill="url(#gl)"/><circle r="26"/><text y="5">CLIENTE</text></g>
+          <g class="node n-jam" transform="translate(130 330)"><circle r="40" fill="url(#gl)"/><circle r="26"/><text y="5">JAM</text></g>
+          <g class="node" transform="translate(470 330)"><circle r="40" fill="url(#gl)"/><circle r="26"/><text y="5">BM</text></g>
+          <!-- etiquetas -->
+          <text class="lbl r-agencia" x="410" y="190">contrata y paga</text>
+          <text class="lbl r-agencia" x="300" y="362" text-anchor="middle">refiere  ·  10 % de comisión</text>
+          <text class="lbl r-blanca" x="120" y="190">contrata a Jam</text>
+          <text class="lbl r-blanca" x="300" y="362" text-anchor="middle">orden de trabajo  ·  precio aliado</text>
+        </svg>
+      </div>
+
+      <div class="modelo-txt">
+        <article class="m-card" data-for="agencia">
+          <p class="tag mono">Modelo A</p>
+          <h3>Servicio de agencia</h3>
+          <p>Le presentas el cliente a BLACKMOUTH y nosotros lo atendemos de punta a punta, con contrato y factura nuestros, a la tarifa de agencia.</p>
+          <ul class="ticks">
+            <li>Jam recibe el <b>10 %</b> de lo que pague el cliente durante sus primeros <b>6 meses</b>.</li>
+            <li>Sirve cuando el cliente necesita una agencia completa y tú no quieres operarla.</li>
+            <li>Si quieres, entras como consultor de IA del cliente y lo cobras aparte.</li>
+          </ul>
+        </article>
+        <article class="m-card" data-for="blanca">
+          <p class="tag mono">Modelo B</p>
+          <h3>Subcontratación en marca blanca</h3>
+          <p>Tú vendes con tu marca y tu precio. Nosotros producimos sin aparecer: no firmamos, no publicamos el trabajo como nuestro y nunca contactamos a tu cliente.</p>
+          <ul class="ticks">
+            <li>Pagas el <b>precio aliado</b> (alrededor de 30 % menos que nuestra tarifa de agencia).</li>
+            <li>Mientras más trabajo pidas en el mes, más baja: hasta <b>−15 %</b> adicional.</li>
+            <li>La relación con el cliente y el margen se quedan en Jam.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 TARIFAS ============ -->
+<section id="tarifas" class="sec" data-name="TARIFAS">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="tag mono">04 · Tarifas</p>
+      <h2 class="h2"><span class="lt">Tres precios para</span> <span class="bd">cada servicio.</span></h2>
+      <p class="sub">Lo que cobra el mercado, lo que cobramos como agencia y lo que pagas tú como aliado. Así ves de un vistazo cuánto margen te queda al revender.</p>
+    </header>
+
+    <div class="tabs mono reveal" role="tablist" id="tarTabs"></div>
+    <div class="tabla reveal">
+      <div class="t-head mono"><span>Servicio</span><span>Mercado <small>freelance</small></span><span>Agencia <small>BLACKMOUTH</small></span><span class="hl">Aliado <small>Jam</small></span></div>
+      <div id="tarRows"></div>
+    </div>
+    <p class="leyenda mono reveal"><span><em></em>Rango de mercado</span><span><i class="a"></i>Agencia</span><span><i class="j"></i>Aliado Jam</span></p>
+    <p class="nota mono reveal">Precios en COP antes de IVA. «Mercado» son rangos de referencia en Colombia (2026) de freelancers y agencias pequeñas de Cali; no incluyen pauta. La tarifa de agencia es la tabla vigente de BLACKMOUTH.</p>
+  </div>
+</section>
+
+<!-- ============ 05 COTIZADOR ============ -->
+<section id="cotizador" class="sec sec-alt" data-name="COTIZADOR">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="tag mono">05 · Escalones por volumen</p>
+      <h2 class="h2"><span class="lt">Pide más,</span> <span class="bd">paga menos</span> <span class="script">por pieza.</span></h2>
+      <p class="sub">El descuento no depende de cuántos clientes tengas sino de cuánto trabajo pides en el mes. Arma un mes cualquiera y mira en qué nivel quedas.</p>
+    </header>
+
+    <div class="niveles reveal" id="niveles"></div>
+
+    <div class="cot reveal">
+      <div class="cot-list">
+        <div class="presets mono">
+          <span>Probar con:</span>
+          <button type="button" data-p="uno">Un cliente pequeño</button>
+          <button type="button" data-p="tres">Tres clientes</button>
+          <button type="button" data-p="fuerte">Mes fuerte</button>
+          <button type="button" data-p="cero">Limpiar</button>
+        </div>
+        <div id="cotItems"></div>
+      </div>
+
+      <aside class="cot-panel" aria-live="polite">
+        <div class="cp-top mono"><span>COTIZACIÓN // MES</span><span class="blink">● EN VIVO</span></div>
+        <div class="cp-ring">
+          <svg viewBox="0 0 220 220" id="cpTicks"></svg>
+          <div class="cp-ring-in">
+            <small class="mono">NIVEL</small>
+            <b id="cpNivel">—</b>
+            <small class="mono" id="cpDesc">0 % de descuento</small>
+          </div>
+        </div>
+        <div class="cp-seg" id="cpSeg"><i></i><i></i><i></i><i></i></div>
+        <p class="cp-next mono" id="cpNext">Agrega servicios para empezar.</p>
+        <dl class="cp-nums">
+          <div><dt class="mono">Precio aliado base</dt><dd id="cpBase">$0</dd></div>
+          <div><dt class="mono">Descuento por volumen</dt><dd id="cpOff">−$0</dd></div>
+          <div class="big"><dt class="mono">Pagas a BLACKMOUTH</dt><dd id="cpTotal">$0</dd></div>
+          <div class="sep"><dt class="mono">Si lo vendes a precio de agencia</dt><dd id="cpVenta">$0</dd></div>
+          <div class="gain"><dt class="mono">Te queda a Jam</dt><dd><span id="cpMargen">$0</span> <small id="cpPct"></small></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 TALLERES ============ -->
+<section id="talleres" class="sec" data-name="TALLERES">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="tag mono">06 · Paquetes educativos</p>
+      <h2 class="h2"><span class="lt">Talleres de IA para</span> <span class="bd">los equipos de tus clientes.</span></h2>
+      <p class="sub">La herramienta cambia cada mes; el criterio se queda. Por eso cada taller se trabaja sobre la marca real del cliente, no sobre ejemplos de manual.</p>
+    </header>
+
+    <figure class="taller-foto reveal">
+      <img src="assets/img/taller.webp" alt="Taller de IA con un equipo de marketing" loading="lazy">
+      <span class="scan"></span>
+      <figcaption class="mono"><span>SESIÓN EN VIVO</span><span>presencial en Cali o virtual</span></figcaption>
+    </figure>
+
+    <div class="talleres">
+      <article class="tcard reveal">
+        <p class="tag mono">T1 · Exprés</p>
+        <h3>IA para tu equipo</h3>
+        <ul class="tspecs mono"><li><b>3 h</b> una sesión</li><li><b>15</b> personas máx.</li></ul>
+        <p>Qué herramienta usar para cada tarea, cómo pedirle a la IA con criterio y una pieza real hecha en vivo con la marca del cliente.</p>
+        <div class="tprice"><div><small class="mono">Agencia</small><b>$1.500.000</b></div><div class="hl"><small class="mono">Aliado Jam</small><b>$1.050.000</b></div></div>
+      </article>
+      <article class="tcard feat reveal">
+        <p class="tag mono">T2 · Intensivo <span class="badge">Recomendado</span></p>
+        <h3>Contenido con IA, de la idea al reel</h3>
+        <ul class="tspecs mono"><li><b>8 h</b> en 2 sesiones</li><li><b>15</b> personas máx.</li></ul>
+        <p>Copy, imagen y video con IA para redes. El equipo sale con 4 piezas propias y una guía de prompts de su marca.</p>
+        <div class="tprice"><div><small class="mono">Agencia</small><b>$3.200.000</b></div><div class="hl"><small class="mono">Aliado Jam</small><b>$2.250.000</b></div></div>
+      </article>
+      <article class="tcard reveal">
+        <p class="tag mono">T3 · Programa</p>
+        <h3>Equipo IA en 30 días</h3>
+        <ul class="tspecs mono"><li><b>4 × 3 h</b> sesiones</li><li><b>30 días</b> de acompañamiento</li></ul>
+        <p>Flujos de trabajo con IA instalados en el equipo: contenido, atención y reportes. Incluye un kit de prompts y plantillas de la marca.</p>
+        <div class="tprice"><div><small class="mono">Agencia</small><b>$5.500.000</b></div><div class="hl"><small class="mono">Aliado Jam</small><b>$3.900.000</b></div></div>
+      </article>
+    </div>
+
+    <div class="chips reveal">
+      <span class="mono">Temas a la carta:</span>
+      <b>Prompts con criterio</b><b>Imagen con IA</b><b>Video con IA</b><b>Reels sin editor</b><b>Flujos de contenido</b><b>IA para ventas y atención</b><b>Ética y límites de la IA</b>
+    </div>
+    <p class="nota mono reveal">Los talleres se pueden dictar con Jaime en la misma sala; en ese caso el reparto se define por taller. Fuera de Cali se suman transporte y viáticos.</p>
+  </div>
+</section>
+
+<!-- ============ 07 PROCESO ============ -->
+<section id="proceso" class="sec sec-alt" data-name="PROCESO">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="tag mono">07 · Cómo se mueve un pedido</p>
+      <h2 class="h2"><span class="lt">Del brief a la entrega,</span> <span class="bd">sin que se note que existimos.</span></h2>
+    </header>
+    <ol class="pasos" id="pasos">
+      <li class="paso"><span class="mono">01</span><h4>Orden de trabajo</h4><p>Nos mandas brief y material por un formulario. Una orden por pieza o por paquete.</p></li>
+      <li class="paso"><span class="mono">02</span><h4>Confirmación</h4><p>En menos de 24 h te confirmamos fecha de entrega y si falta algo.</p></li>
+      <li class="paso"><span class="mono">03</span><h4>Producción</h4><p>Edición, diseño, motion o IA con nuestro estándar: color, sonido y subtítulos revisados.</p></li>
+      <li class="paso"><span class="mono">04</span><h4>Revisión</h4><p>Revisas tú y pides los ajustes (una ronda incluida por pieza).</p></li>
+      <li class="paso"><span class="mono">05</span><h4>Entrega en blanco</h4><p>Archivos finales sin rastro de BLACKMOUTH y, si los pides, los editables.</p></li>
+      <i class="pasos-scan" aria-hidden="true"></i>
+    </ol>
+    <div class="sla mono reveal">
+      <div><span>Reel editado</span><b>3 días hábiles</b></div>
+      <div><span>Carrusel</span><b>2 días hábiles</b></div>
+      <div><span>Video con IA</span><b>5 días hábiles</b></div>
+      <div><span>Urgencia</span><b>24 h · +30 %</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 CONDICIONES ============ -->
+<section id="condiciones" class="sec" data-name="CONDICIONES">
+  <div class="wrap narrow">
+    <header class="sec-head reveal">
+      <p class="tag mono">08 · Guárdalo</p>
+      <h2 class="h2"><span class="lt">Las reglas,</span> <span class="bd">claras desde el día uno.</span></h2>
+    </header>
+    <div class="check reveal">
+      <p class="check-tag mono">CHECKLIST <sup>09</sup></p>
+      <ul id="checklist">
+        <li><i></i><span><b>Marca blanca de verdad.</b> BLACKMOUTH no aparece, no firma y no contacta a tus clientes.</span></li>
+        <li><i></i><span><b>Confidencialidad y no captación</b> en ambos sentidos, durante la alianza y 12 meses después.</span></li>
+        <li><i></i><span><b>El nivel se calcula con lo pedido en el mes</b> y el descuento aplica a toda la factura de ese mes.</span></li>
+        <li><i></i><span><b>Primer mes en nivel Ritmo (−5 %)</b>, pidas lo que pidas, para que pruebes sin presión.</span></li>
+        <li><i></i><span><b>Una ronda de ajustes por pieza.</b> Cada ronda adicional suma el 20 % del valor de la pieza.</span></li>
+        <li><i></i><span><b>Corte mensual:</b> factura el último día hábil y pago a 10 días. Proyectos: 50 % al iniciar y 50 % al entregar.</span></li>
+        <li><i></i><span><b>Modelo agencia:</b> el cliente firma con BLACKMOUTH (3 meses de permanencia) y Jam recibe el 10 % durante 6 meses.</span></li>
+        <li><i></i><span><b>Precios en pesos colombianos</b>, antes de IVA.</span></li>
+        <li><i></i><span><b>Vigencia:</b> 30 días desde la reunión.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 CIERRE ============ -->
+<section id="cierre" class="cierre" data-name="CIERRE">
+  <canvas id="tunnel" aria-hidden="true"></canvas>
+  <div class="cierre-in">
+    <p class="tag mono">09 · Antes de los números</p>
+    <h2 class="h2 center"><span class="lt">¿Cuántos clientes más podría atender Jam</span> <span class="bd">si producir dejara de ser el cuello de botella?</span></h2>
+    <p class="sub center">Esa es la pregunta que queremos responder el martes, contigo y con tus clientes en la mesa.</p>
+    <div class="cierre-cta">
+      <a class="btn-solid magnet" href="https://wa.me/message/RZ4RFIU4PD4FJ1">Hablar con David</a>
+      <a class="btn-line mono" href="#cotizador">Volver al cotizador</a>
+    </div>
+  </div>
+  <footer class="pie mono">
+    <span>Hecho para Jam por</span>
+    <img src="assets/img/blackmouth-blanco.png" alt="BLACKMOUTH, agencia de publicidad">
+    <span>Cali · octubre de 2026</span>
+  </footer>
+</section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/jam.js?v=3"></script>
+</body>
+</html>
