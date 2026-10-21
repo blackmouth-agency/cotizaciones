@@ -1,0 +1,1231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puente Legal · Plan de contenidos</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Eso tiene nombre: el plan de contenidos de Puente Legal para el trimestre noviembre 2026 – enero 2027.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ciruela:#5E385A; --ciruela-700:#4A2B47; --ciruela-300:#8E6A8A; --crema:#FFF7C1;
+  --negro:#0F0F0F; --negro-2:#1A1A1A; --tinta:#161616; --blanco:#fff;
+  --gris-50:#F5F5F3; --gris-100:#EBEBE8; --gris-300:#C9C9C5; --gris-texto:#626266;
+  --f:"Hanken Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1); --spring:cubic-bezier(.34,1.4,.64,1);
+  --r:18px; --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--blanco);color:var(--tinta);font:400 17px/1.6 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+h1,h2,h3,h4{margin:0;font-weight:500;letter-spacing:-.028em;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--ciruela);outline-offset:3px;border-radius:4px}
+.s-negro :focus-visible{outline-color:var(--crema)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+section{position:relative}
+.band{padding:120px 0}
+.s-negro{background:var(--negro);color:#fff}
+.s-gris{background:var(--gris-50)}
+.s-ciruela{background:var(--ciruela);color:#fff}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font:600 .75rem/1.3 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--ciruela)}
+.eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+.s-negro .eyebrow,.s-ciruela .eyebrow{color:var(--crema)}
+.h2{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.05;margin-top:18px}
+.h3{font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.2}
+.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);line-height:1.55;max-width:58ch;color:var(--gris-texto);margin-top:18px}
+.s-negro .lead,.s-ciruela .lead{color:rgba(255,255,255,.72)}
+.muted{color:var(--gris-texto)}
+.tag{display:inline-block;font:600 .7rem/1 var(--f);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:99px;background:var(--gris-100);color:var(--tinta)}
+.tag.c{background:var(--ciruela);color:#fff}.tag.k{background:var(--crema);color:var(--ciruela-700)}
+.pend{background:var(--crema);color:var(--ciruela-700);padding:0 .3em;border-radius:4px;font-size:.92em;white-space:nowrap}
+.s-negro .pend{background:rgba(255,247,193,.14);color:var(--crema)}
+
+/* reveal */
+[data-rv]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
+[data-rv].in{opacity:1;transform:none}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 24px;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(15,15,15,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:rgba(255,255,255,.08)}
+.nav img{height:22px;width:auto}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.82rem;font-weight:500;padding:8px 11px;border-radius:99px;transition:color .25s,background .25s}
+.nav a:hover,.nav a.on{color:#fff;background:rgba(255,255,255,.08)}
+.prog{position:fixed;top:0;left:0;height:2px;background:var(--crema);z-index:60;width:100%;transform-origin:0 50%;transform:scaleX(0)}
+@media (max-width:980px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;overflow:hidden;padding:120px 0 80px}
+.hero-bg{position:absolute;inset:-10% 0;background:url(img/carretera-noche.webp) center/cover;filter:grayscale(1) contrast(1.05);opacity:.32;transform:translateY(var(--py,0))}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(94,56,90,.45),transparent 60%),linear-gradient(180deg,rgba(15,15,15,.3),var(--negro) 92%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(3rem,8.4vw,7rem);line-height:.95;letter-spacing:-.045em;margin-top:22px;font-weight:500}
+.hero h1 em{font-style:normal;color:var(--crema);position:relative;white-space:nowrap}
+.hero h1 em svg{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.3em;overflow:visible}
+.hero h1 em path{fill:none;stroke:var(--crema);stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.4s 1s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;font-size:.88rem;color:rgba(255,255,255,.6)}
+.hero-meta b{display:block;color:#fff;font-size:1.5rem;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.bridge{position:absolute;left:0;right:0;bottom:7%;z-index:1;opacity:.5;pointer-events:none}
+.bridge path{fill:none;stroke:rgba(255,247,193,.5);stroke-width:1.4;stroke-dasharray:6 7}
+.bridge .deck{stroke:rgba(255,247,193,.35);stroke-dasharray:none}
+
+/* traductor (flip) */
+.trad{perspective:1400px}
+.trad-k{display:flex;justify-content:space-between;font:600 .72rem/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+.flip{position:relative;height:250px;transform-style:preserve-3d;transition:transform .9s var(--spring)}
+.flip.turn{transform:rotateX(180deg)}
+.face{position:absolute;inset:0;border-radius:24px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.face.front{background:#fff;color:var(--tinta);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.face.back{background:var(--crema);color:var(--ciruela);transform:rotateX(180deg);box-shadow:0 30px 80px rgba(94,56,90,.5)}
+.face small{font:600 .7rem/1 var(--f);letter-spacing:.16em;text-transform:uppercase;opacity:.55}
+.face .q{font-size:clamp(1.25rem,2.3vw,1.7rem);line-height:1.3;font-weight:500;letter-spacing:-.015em}
+.face .q::before{content:"«"}.face .q::after{content:"»"}
+.face .n{font-size:clamp(1.6rem,3.2vw,2.5rem);line-height:1.02;font-weight:600;letter-spacing:-.03em;text-transform:uppercase}
+.face .sal{font-size:.95rem;font-weight:500;color:var(--ciruela-700)}
+.trad-dots{display:flex;gap:6px;margin-top:18px}
+.trad-dots i{height:3px;flex:1;background:rgba(255,255,255,.14);border-radius:3px;overflow:hidden;position:relative}
+.trad-dots i.on::after{content:"";position:absolute;inset:0;background:var(--crema);transform-origin:0;animation:fill 3.4s linear forwards}
+.trad-dots i.done::after{content:"";position:absolute;inset:0;background:rgba(255,247,193,.55)}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.scroll-cue{position:absolute;left:50%;bottom:26px;z-index:3;transform:translateX(-50%);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue::after{content:"";width:1px;height:38px;background:linear-gradient(var(--crema),transparent);animation:cue 2s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:40px}.flip{height:220px}}
+
+/* punto de partida */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:40px}}
+.phone{width:min(330px,100%);margin:0 auto;border-radius:44px;background:#000;padding:12px;box-shadow:0 40px 90px rgba(0,0,0,.22),inset 0 0 0 2px #2a2a2a}
+.screen{border-radius:34px;overflow:hidden;background:#fff;position:relative;aspect-ratio:9/19.5}
+.ig{padding:44px 16px 16px;font-size:13px;line-height:1.4;color:#111}
+.ig-top{display:flex;align-items:center;gap:18px}
+.ig-av{width:78px;height:78px;border-radius:50%;flex:none;display:grid;place-items:center;overflow:hidden;transition:all .6s var(--ease)}
+.ig-st{display:flex;flex:1;justify-content:space-between;gap:6px;text-align:center;font-size:11px}
+.ig-st b{display:block;font-size:16px;font-variant-numeric:tabular-nums}
+.ig-name{font-weight:700;margin-top:12px}
+.ig-bio{white-space:pre-line;margin-top:2px;min-height:96px}
+.ig-btn{display:flex;gap:6px;margin-top:12px}.ig-btn span{flex:1;text-align:center;background:#efefef;border-radius:8px;padding:7px 0;font-weight:600;font-size:12px}
+.ig-hl{display:flex;gap:12px;margin-top:16px;overflow:hidden}
+.ig-hl div{text-align:center;font-size:10.5px;flex:none;width:56px}
+.ig-hl i{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:1.5px solid #ddd;margin-bottom:4px;background:var(--ciruela);color:var(--crema);font-style:normal;font-weight:700;font-size:15px}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:14px -16px 0}
+.ig-grid div{aspect-ratio:4/5;background:#ddd center/cover}
+.ig.old .ig-hl i{background:#ccc;color:#fff}
+.seg{display:inline-flex;background:var(--gris-100);border-radius:99px;padding:4px;gap:4px}
+.seg button{padding:10px 18px;border-radius:99px;font-weight:600;font-size:.88rem;color:var(--gris-texto);transition:all .3s var(--ease)}
+.seg button.on{background:var(--tinta);color:#fff}
+.s-negro .seg{background:rgba(255,255,255,.08)}.s-negro .seg button{color:rgba(255,255,255,.6)}.s-negro .seg button.on{background:var(--crema);color:var(--ciruela-700)}
+.facts{display:grid;gap:14px;margin-top:30px}
+.fact{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:18px 0;border-top:1px solid var(--gris-100)}
+.fact b{font-size:2.1rem;font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--ciruela);min-width:2.6ch;font-variant-numeric:tabular-nums}
+
+/* insight: texto que se ilumina */
+.lit{font-size:clamp(1.7rem,4vw,3.2rem);line-height:1.18;letter-spacing:-.03em;font-weight:500;max-width:22ch}
+.lit span{color:rgba(255,255,255,.16);transition:color .5s}
+.lit span.on{color:#fff}
+.lit span.hl.on{color:var(--crema)}
+.pp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:80px}
+.pp article{border-top:1px solid rgba(255,255,255,.14);padding-top:22px}
+.pp h3{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--crema)}
+.pp p{margin-top:12px;color:rgba(255,255,255,.72)}
+@media (max-width:900px){.pp{grid-template-columns:1fr}}
+
+/* concepto */
+.concept{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+@media (max-width:900px){.concept{grid-template-columns:1fr}}
+.big-c{font-size:clamp(3rem,9vw,7.6rem);line-height:.92;letter-spacing:-.05em;font-weight:500}
+.big-c span{display:block}
+.big-c .y{color:var(--crema)}
+.filtro{list-style:none;margin:0;padding:0;counter-reset:f}
+.filtro li{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.16);opacity:.25;transition:opacity .6s}
+.filtro li.on{opacity:1}
+.filtro li::before{counter-increment:f;content:counter(f);font-weight:600;color:var(--crema);font-size:.85rem;padding-top:2px}
+.filtro b{font-weight:600}.filtro span{display:block;color:rgba(255,255,255,.7);font-size:.95rem}
+
+/* públicos */
+.aud{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+@media (max-width:820px){.aud{grid-template-columns:1fr}}
+.aud article{border-radius:26px;overflow:hidden;background:#fff;border:1px solid var(--gris-100);display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s}
+.aud article:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,.08)}
+.aud .ph{aspect-ratio:16/8;background:center/cover;filter:grayscale(1);transition:filter .8s}
+.aud article:hover .ph{filter:none}
+.aud .bd{padding:28px}
+.aud .say{margin-top:16px;font-size:1.15rem;font-weight:500;letter-spacing:-.01em}
+.aud .say::before{content:"Dice: ";color:var(--gris-texto);font-weight:400}
+.aud ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+
+/* series */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.tabs button{padding:12px 18px;border-radius:99px;border:1px solid var(--gris-300);font-weight:600;font-size:.92rem;transition:all .3s var(--ease)}
+.tabs button.on{background:var(--ciruela);border-color:var(--ciruela);color:#fff}
+.serie{display:grid;grid-template-columns:330px 1fr;gap:56px;margin-top:44px;align-items:center}
+@media (max-width:900px){.serie{grid-template-columns:1fr}}
+.serie dl{display:grid;grid-template-columns:150px 1fr;gap:0;margin:26px 0 0}
+.serie dt,.serie dd{padding:14px 0;border-top:1px solid var(--gris-100);margin:0}
+.serie dt{font:600 .72rem/1.5 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--gris-texto);padding-top:17px}
+@media (max-width:560px){.serie dl{grid-template-columns:1fr}.serie dd{border-top:0;padding-top:0}}
+.fade-sw{animation:sw .6s var(--ease)}
+@keyframes sw{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* reel player */
+.reel{position:absolute;inset:0;background:#111 center/cover;overflow:hidden}
+.reel .bg{position:absolute;inset:-4%;background:inherit;background-size:cover;background-position:center;transition:filter .7s,transform 2.4s var(--ease)}
+.reel.gray .bg{filter:grayscale(1) brightness(.75)}
+.reel .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 60%,rgba(0,0,0,.55))}
+.reel .safe{position:absolute;left:0;right:0;top:13.5%;bottom:21.9%;border:1px dashed rgba(255,247,193,0);transition:border-color .3s}
+.show-safe .reel .safe{border-color:rgba(255,247,193,.45)}
+.r-box{position:absolute;left:9%;right:9%;top:30%;background:#fff;color:var(--tinta);border-radius:14px;padding:13px 15px;font-weight:500;font-size:15px;line-height:1.3;transform-origin:50% 50%;transition:transform .6s var(--spring),opacity .4s;opacity:0;transform:scale(.85) rotateX(0)}
+.r-box.in{opacity:1;transform:scale(1)}
+.r-box.name{background:var(--crema);color:var(--ciruela);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;font-size:19px;animation:flipin .7s var(--spring)}
+@keyframes flipin{from{transform:rotateX(90deg)}to{transform:rotateX(0)}}
+.r-sub{position:absolute;left:0;right:0;top:58%;text-align:center;font-weight:700;font-size:22px;line-height:1.05;color:#fff;text-transform:uppercase;letter-spacing:-.01em;text-shadow:0 2px 14px rgba(0,0,0,.6);padding:0 14px}
+.r-sub span{display:block;opacity:0;transform:translateY(10px) scale(.94);transition:all .35s var(--spring)}
+.r-sub span.in{opacity:1;transform:none}
+.r-sub span.k{color:var(--crema)}
+.r-kw{position:absolute;left:8%;right:8%;top:44%;text-align:center;opacity:0;transform:scale(.6);transition:all .5s var(--spring)}
+.r-kw.in{opacity:1;transform:scale(1)}
+.r-kw small{display:block;color:#fff;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.r-kw b{display:inline-block;background:var(--ciruela);color:var(--crema);font-size:28px;font-weight:700;padding:6px 14px;border-radius:10px;letter-spacing:-.01em}
+.r-end{position:absolute;inset:0;background:var(--crema);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0;transition:opacity .5s;padding:24px;text-align:center}
+.r-end.in{opacity:1}
+.r-end p{color:var(--ciruela);font-weight:600;font-size:20px;line-height:1.1;letter-spacing:-.02em}
+.r-end img{width:44%}
+.r-end svg{width:70%}
+.r-end svg path{fill:none;stroke:var(--ciruela);stroke-width:30;stroke-linecap:round;stroke-dasharray:2200;stroke-dashoffset:2200}
+.r-end.in svg path{animation:draw 1.3s var(--ease) forwards}
+.r-hud{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;color:#fff;font-size:11px;font-variant-numeric:tabular-nums}
+.r-bar{flex:1;height:3px;background:rgba(255,255,255,.3);border-radius:3px;overflow:hidden}
+.r-bar i{display:block;height:100%;width:0;background:var(--crema)}
+.r-play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.25);transition:opacity .3s}
+.r-play span{width:64px;height:64px;border-radius:50%;background:rgba(255,247,193,.95);display:grid;place-items:center;transition:transform .3s var(--spring)}
+.r-play:hover span{transform:scale(1.1)}
+.r-play svg{width:22px;height:22px;fill:var(--ciruela);margin-left:4px}
+.playing .r-play{opacity:0;pointer-events:none}
+.reel:has(.r-end.in) .r-play{background:none}
+.r-label{position:absolute;left:14px;top:40px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+
+/* calendario */
+.cal-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:40px}
+.cal .dow{font:600 .7rem/1 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--gris-texto);padding:0 0 8px 6px}
+.day{min-height:112px;border-radius:14px;background:#fff;border:1px solid var(--gris-100);padding:10px;display:flex;flex-direction:column;gap:6px;text-align:left;transition:all .35s var(--ease);position:relative}
+.day .d{font-size:.82rem;font-weight:600;color:var(--gris-texto);font-variant-numeric:tabular-nums}
+.day.empty{background:transparent;border-color:transparent}
+.day.off{background:repeating-linear-gradient(135deg,#fff 0 8px,var(--gris-50) 8px 16px)}
+.day.off .d::after{content:" · festivo";font-weight:500}
+.day.has{cursor:pointer}
+.day.has:hover{border-color:var(--ciruela);transform:translateY(-3px);box-shadow:0 14px 30px rgba(94,56,90,.12)}
+.day.sel{border-color:var(--ciruela);box-shadow:0 0 0 2px var(--ciruela)}
+.chip{font-size:.74rem;font-weight:600;line-height:1.2;padding:6px 8px;border-radius:8px;transition:opacity .4s,filter .4s}
+.chip.R{background:var(--ciruela);color:#fff}
+.chip.C{background:var(--crema);color:var(--ciruela-700)}
+.chip.H{background:var(--gris-100);color:var(--tinta)}
+.chip.X{background:var(--tinta);color:#fff}
+.dim{opacity:.18;filter:grayscale(1)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--gris-texto)}
+.legend span{display:inline-flex;align-items:center;gap:7px}.legend i{width:12px;height:12px;border-radius:4px}
+.det{margin-top:22px;border-radius:22px;background:var(--tinta);color:#fff;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;min-height:170px}
+.det h3{font-size:1.5rem}
+.det dl{display:grid;grid-template-columns:110px 1fr;margin:0;font-size:.95rem}
+.det dt,.det dd{margin:0;padding:8px 0;border-top:1px solid rgba(255,255,255,.1)}
+.det dt{color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding-top:11px}
+@media (max-width:820px){.cal{grid-template-columns:1fr}.cal .dow,.day.empty,.day:not(.has):not(.off){display:none}.day{min-height:0;flex-direction:row;flex-wrap:wrap;align-items:center}.det{grid-template-columns:1fr}}
+
+/* reels grid */
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 26px;margin-top:56px}
+@media (max-width:980px){.reels{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.reels{grid-template-columns:1fr}}
+.rc .phone{width:100%;max-width:290px;border-radius:38px;padding:10px}
+.rc .screen{border-radius:29px}
+.rc h3{margin-top:22px;font-size:1.25rem}
+.rc .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.rc p{margin-top:10px;font-size:.95rem;color:var(--gris-texto)}
+.safe-t{display:inline-flex;align-items:center;gap:10px;font-size:.88rem;color:var(--gris-texto);cursor:pointer}
+.safe-t input{accent-color:var(--ciruela);width:18px;height:18px}
+
+/* palabras clave */
+.kws{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+@media (max-width:820px){.kws{grid-template-columns:1fr}}
+.kw{border-radius:24px;padding:28px;border:1px solid rgba(255,255,255,.14);text-align:left;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.kw::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(255,247,193,.12),transparent 50%);opacity:0;transition:opacity .4s}
+.kw:hover::before{opacity:1}
+.kw.on{background:var(--crema);color:var(--ciruela-700);border-color:var(--crema)}
+.kw b{display:block;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1}
+.kw span{display:block;margin-top:12px;font-size:.92rem;opacity:.75}
+.chat{margin-top:22px;display:grid;grid-template-columns:330px 1fr;gap:50px;align-items:center}
+@media (max-width:900px){.chat{grid-template-columns:1fr}}
+.dm{color:#111;padding:46px 14px 14px;display:flex;flex-direction:column;gap:9px;font-size:13.5px;line-height:1.35;height:100%;background:#fff;overflow:hidden}
+.dm .hd{display:flex;align-items:center;gap:10px;font-weight:700;padding-bottom:10px;border-bottom:1px solid #eee;margin-bottom:6px}
+.dm .hd i{width:30px;height:30px;border-radius:50%;background:var(--ciruela) url(img/favicon.svg) center/cover}
+.msg{max-width:82%;padding:9px 12px;border-radius:18px;opacity:0;transform:translateY(10px) scale(.96);transition:all .45s var(--spring)}
+.msg.in{opacity:1;transform:none}
+.msg.me{align-self:flex-end;background:#3797F0;color:#fff;border-bottom-right-radius:6px}
+.msg.them{align-self:flex-start;background:#efefef;color:#111;border-bottom-left-radius:6px}
+.msg.file{background:var(--ciruela);color:var(--crema);display:flex;gap:10px;align-items:center;font-weight:600}
+.msg.file::before{content:"PDF";font-size:10px;background:var(--crema);color:var(--ciruela);padding:6px 5px;border-radius:5px}
+.msg.cm{align-self:stretch;max-width:100%;background:none;color:#111;padding:6px 0;border-bottom:1px solid #eee;border-radius:0}
+.msg.cm b{margin-right:6px}
+.typing{align-self:flex-start;background:#efefef;border-radius:18px;padding:10px 12px;display:none;gap:4px}
+.typing.in{display:flex}
+.typing i{width:6px;height:6px;border-radius:50%;background:#999;animation:ty 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes ty{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+.kw-det dl{display:grid;grid-template-columns:140px 1fr;margin:0}
+.kw-det dt,.kw-det dd{margin:0;padding:14px 0;border-top:1px solid rgba(255,255,255,.12)}
+.kw-det dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);padding-top:17px}
+
+/* carruseles */
+.cars{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px}
+.cars button{padding:10px 16px;border-radius:99px;border:1px solid var(--gris-300);font-weight:600;font-size:.86rem;transition:all .3s}
+.cars button.on{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.slides{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px 24px 20px;margin:0 -24px;scrollbar-width:thin}
+.slide{flex:none;width:min(300px,76vw);aspect-ratio:4/5;border-radius:16px;scroll-snap-align:start;padding:24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.08);border:1px solid var(--gris-100);background:#fff;transition:transform .5s var(--ease)}
+.slide:hover{transform:translateY(-6px) rotate(-.6deg)}
+.slide.dk{background:var(--negro);color:#fff;border-color:var(--negro)}
+.slide.cr{background:var(--crema);color:var(--ciruela-700);border-color:var(--crema)}
+.slide.ci{background:var(--ciruela);color:#fff;border-color:var(--ciruela)}
+.slide .no{font-size:.72rem;font-weight:600;letter-spacing:.14em;opacity:.55}
+.slide h4{font-size:1.45rem;line-height:1.1;font-weight:600;letter-spacing:-.025em}
+.slide p{font-size:.92rem;line-height:1.4}
+.slide .box{background:#fff;color:var(--tinta);border-radius:10px;padding:9px 11px;font-size:.84rem;font-weight:500;border:1px solid var(--gris-100)}
+.slide .nm{color:var(--ciruela);font-weight:700;font-size:.9rem;text-transform:uppercase;margin-top:6px}
+.slide.dk .nm{color:var(--crema)}
+.slide .ph{position:absolute;inset:0;background:center/cover;opacity:.9}
+.slide .ph~*{position:relative}
+.slide.pf>div,.slide.pf>p{max-width:58%}
+.slide .tm{position:absolute;right:-4%;bottom:0;width:46%!important}
+.slide img.lg{width:84px;opacity:.9}
+.slide .x{text-decoration:line-through;color:var(--gris-texto)}
+
+/* mezcla */
+.mix{display:flex;height:72px;border-radius:16px;overflow:hidden;margin-top:40px;gap:3px}
+.mix div{flex:var(--f);display:flex;align-items:flex-end;padding:12px;font-weight:600;font-size:.86rem;transform:scaleY(0);transform-origin:bottom;transition:transform 1s var(--spring);transition-delay:calc(var(--i)*120ms)}
+.mix.in div{transform:none}
+.mx-a{background:var(--ciruela);color:#fff}.mx-c{background:var(--ciruela-300);color:#fff}.mx-g{background:var(--crema);color:var(--ciruela-700)}.mx-v{background:var(--tinta);color:#fff}
+.tbl{width:100%;border-collapse:collapse;margin-top:44px;font-size:.95rem}
+.tbl th{text-align:left;font:600 .7rem/1.4 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--gris-texto);padding:0 12px 12px 0}
+.tbl td{padding:16px 12px 16px 0;border-top:1px solid var(--gris-100);vertical-align:top}
+.tbl td:first-child{font-weight:600}
+.tbl .u{color:var(--ciruela);font-weight:600;white-space:nowrap}
+@media (max-width:700px){.tbl thead{display:none}.tbl tr{display:block;padding:14px 0;border-top:1px solid var(--gris-100)}.tbl td{display:block;border:0;padding:3px 0}}
+
+/* grabación */
+.tl{margin-top:50px;position:relative}
+.tl-bar{display:flex;height:64px;border-radius:14px;overflow:hidden;gap:3px}
+.tl-bar button{flex:var(--w);background:var(--gris-100);font-weight:600;font-size:.8rem;text-align:left;padding:10px;transition:all .3s;color:var(--tinta)}
+.tl-bar button.on,.tl-bar button:hover{background:var(--ciruela);color:#fff}
+.tl-axis{display:flex;justify-content:space-between;font-size:.75rem;color:var(--gris-texto);margin-top:8px;font-variant-numeric:tabular-nums}
+.tl-det{margin-top:26px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;min-height:150px}
+.tl-det img{width:140px;height:150px;object-fit:cover;object-position:top;border-radius:16px;background:var(--gris-50)}
+@media (max-width:620px){.tl-bar button{font-size:0;padding:0}.tl-det{grid-template-columns:1fr}}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
+@media (max-width:900px){.rules{grid-template-columns:1fr 1fr}}@media (max-width:520px){.rules{grid-template-columns:1fr}}
+.rules article{background:#fff;border:1px solid var(--gris-100);border-radius:20px;padding:22px}
+.rules h4{font-size:1rem;font-weight:600}.rules p{margin-top:8px;font-size:.9rem;color:var(--gris-texto)}
+
+/* pendientes */
+.chk-top{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.ring{width:120px;height:120px;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:8}
+.ring .bgc{stroke:rgba(255,255,255,.12)}.ring .fg{stroke:var(--crema);stroke-linecap:round;transition:stroke-dashoffset .8s var(--ease)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:1.6rem;font-weight:500;font-variant-numeric:tabular-nums}
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+@media (max-width:900px){.groups{grid-template-columns:1fr}}
+.groups h3{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--crema);margin-bottom:10px}
+.ck{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);cursor:pointer;font-size:.95rem;color:rgba(255,255,255,.85);align-items:start}
+.ck input{appearance:none;width:22px;height:22px;border-radius:7px;border:1.5px solid rgba(255,255,255,.4);margin:1px 0 0;display:grid;place-items:center;transition:all .25s;cursor:pointer}
+.ck input:checked{background:var(--crema);border-color:var(--crema)}
+.ck input:checked::after{content:"";width:10px;height:6px;border:2px solid var(--ciruela);border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.ck:has(input:checked) span{color:rgba(255,255,255,.4);text-decoration:line-through}
+
+/* calendario con piezas */
+.idx{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.ix{display:flex;flex-direction:column;align-items:flex-start;padding:10px 14px;border-radius:14px;border:1px solid var(--gris-300);background:#fff;font-weight:700;font-size:.85rem;text-align:left;transition:all .25s}
+.ix small{font-weight:500;font-size:.75rem;color:var(--gris-texto);max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ix.r{border-color:var(--ciruela);color:var(--ciruela)}.ix:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.06)}
+.day.out{opacity:.55}.day.out.has{opacity:1}
+.chip.W{background:#e3f1ea;color:#1f5e43}.chip.X{background:var(--tinta);color:#fff}
+.dd{margin-top:24px;display:block}
+.dd>div>.eyebrow{margin-bottom:12px}
+.dd .note{background:var(--crema);color:var(--ciruela-700);padding:10px 14px;border-radius:12px;font-size:.9rem;margin-bottom:12px}
+.ddp{background:#fff;border:1px solid var(--gris-100);border-radius:24px;padding:28px;margin-bottom:16px}
+.ddp.r{border-top:6px solid var(--ciruela)}.ddp.c{border-top:6px solid var(--crema)}.ddp.dimp{opacity:.45}
+.ddp header h3{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-top:12px}
+.meta2{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:16px 0 0;font-size:.93rem}
+.meta2 dt{font:600 .68rem/1.9 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--gris-texto)}.meta2 dd{margin:0}
+.blk{margin-top:24px}.blk h4{font:600 .72rem/1.4 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--ciruela);margin-bottom:10px}
+.blk p+p{margin-top:8px}.blk ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:.94rem}
+.gtw{overflow-x:auto;border:1px solid var(--gris-100);border-radius:14px}
+.gt{width:100%;border-collapse:collapse;font-size:.88rem;min-width:760px}
+.gt th{text-align:left;background:var(--gris-50);font:600 .68rem/1.4 var(--f);letter-spacing:.12em;text-transform:uppercase;color:var(--gris-texto);padding:10px 12px}
+.gt td{padding:11px 12px;border-top:1px solid var(--gris-100);vertical-align:top}
+.gt td.t{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
+.gt td.pl{color:var(--ciruela);font-weight:600;width:150px}
+.gt td.tx{font-weight:600;text-transform:uppercase;font-size:.8rem;letter-spacing:.02em;width:190px}
+.gt td.sx{color:var(--gris-texto);width:110px}
+.leyenda{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.78rem;color:var(--gris-texto);margin-top:10px}.leyenda b{color:var(--ciruela)}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}@media (max-width:820px){.cols2{grid-template-columns:1fr}}
+.post{white-space:normal;background:var(--gris-50);border-radius:14px;padding:16px;font-size:.92rem}
+.hfig{margin:0;display:flex;gap:14px;align-items:flex-start}.hfig img{width:130px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.12)}.hfig figcaption{font-size:.88rem;color:var(--gris-texto)}
+.lams{display:flex;gap:12px;overflow-x:auto;margin-top:20px;padding-bottom:8px;scroll-snap-type:x mandatory}
+.lams img{width:min(260px,64vw);border-radius:10px;flex:none;scroll-snap-align:start;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.hrow{display:flex;gap:20px;align-items:flex-start}.hrow img{width:150px;border-radius:12px;flex:none}
+.ddp.x{padding:20px 24px}
+/* dominio */
+.dom{width:100%;border-collapse:collapse;margin-top:36px;font-size:.95rem}
+.dom th{text-align:left;font:600 .7rem/1.4 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--gris-texto);padding:0 12px 12px 0}
+.dom td{padding:14px 12px 14px 0;border-top:1px solid var(--gris-100);vertical-align:top}
+.dom td.n{font-weight:600;white-space:nowrap}.dom .ok{color:#1f7a4f;font-weight:600}.dom .no{color:#a33;font-weight:600}
+.dom tr.best td{background:var(--crema)}.dom tr.best td:first-child{border-radius:12px 0 0 12px;padding-left:12px}.dom tr.best td:last-child{border-radius:0 12px 12px 0}
+@media (max-width:760px){.dom thead{display:none}.dom tr{display:block;padding:12px 0;border-top:1px solid var(--gris-100)}.dom td{display:block;border:0;padding:3px 0}}
+.domrec{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}@media (max-width:900px){.domrec{grid-template-columns:1fr}}
+.domrec article{border-radius:22px;padding:24px;background:#fff;border:1px solid var(--gris-100)}
+.domrec article.win{background:var(--ciruela);color:#fff;border-color:var(--ciruela)}
+.domrec .k{font:600 .7rem/1 var(--f);letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.domrec h3{font-size:1.5rem;margin-top:10px;word-break:break-all}.domrec p{margin-top:10px;font-size:.93rem;opacity:.85}
+.domrec b.pr{display:block;margin-top:14px;font-size:1.05rem}
+
+/* metas */
+.lineas{display:grid;gap:8px;margin-top:44px}
+.lin{display:grid;grid-template-columns:48px 1fr auto;gap:6px 18px;align-items:center;text-align:left;background:#fff;border:1px solid var(--gris-100);border-radius:18px;padding:18px 22px;transition:border-color .3s,box-shadow .3s}
+.lin:hover{border-color:var(--ciruela-300)}
+.lin.open{border-color:var(--ciruela);box-shadow:0 18px 40px rgba(94,56,90,.1)}
+.lin .ln{width:38px;height:38px;border-radius:50%;background:var(--gris-50);display:grid;place-items:center;font-weight:600;color:var(--ciruela);transition:all .3s}
+.lin.open .ln{background:var(--ciruela);color:var(--crema)}
+.lin .lt b{display:block;font-size:1.12rem;font-weight:600;letter-spacing:-.01em}
+.lin .lt small{color:var(--gris-texto);font-size:.85rem}
+.lin .lw{display:flex;gap:4px}.lin .lw i{width:22px;height:8px;border-radius:4px;background:var(--ciruela)}.lin .lw i.o{background:var(--gris-100)}
+.lin .ld{grid-column:2/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s var(--ease),opacity .4s,margin .4s}
+.lin.open .ld{max-height:420px;opacity:1;margin-top:14px}
+.lin .ld em{display:block;font-style:normal;font:600 .68rem/1.4 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--gris-texto);margin-bottom:4px}
+.lin .ld span{font-size:.93rem}
+@media (max-width:820px){.lin{grid-template-columns:40px 1fr}.lin .lw{display:none}.lin .ld{grid-template-columns:1fr 1fr}}
+.metas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+@media (max-width:900px){.metas{grid-template-columns:1fr}}
+.metas article{background:var(--tinta);color:#fff;border-radius:22px;padding:26px}
+.metas .mn{font-size:.75rem;font-weight:600;letter-spacing:.14em;color:var(--crema)}
+.metas h3{font-size:1.3rem;margin-top:12px}.metas p{margin-top:10px;color:rgba(255,255,255,.72);font-size:.95rem}
+.preg{margin-top:22px;background:var(--crema);color:var(--ciruela-700);border-radius:22px;padding:28px}
+.preg .eyebrow{color:var(--ciruela)}
+.preg ol{margin:14px 0 0;padding-left:22px;display:grid;gap:10px;font-size:1.02rem;font-weight:500}
+/* oportunidad */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+@media (max-width:900px){.nums{grid-template-columns:1fr 1fr}}@media (max-width:560px){.nums{grid-template-columns:1fr}}
+.num{border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px;position:relative}
+.num s{position:absolute;right:22px;top:24px;color:rgba(255,255,255,.35);font-size:1.1rem;text-decoration-color:var(--crema)}
+.num b{display:block;font-size:clamp(2.6rem,5vw,3.6rem);font-weight:500;letter-spacing:-.04em;line-height:1;color:var(--crema);font-variant-numeric:tabular-nums}
+.num i{font-style:normal;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.num p{margin-top:14px;color:rgba(255,255,255,.8);font-size:.95rem}
+.num small{display:block;margin-top:12px;font-size:.72rem;color:rgba(255,255,255,.4)}
+.bars{margin-top:26px;display:grid;gap:12px}
+.bar{display:grid;grid-template-columns:1fr auto;gap:4px 14px;font-size:.86rem;color:rgba(255,255,255,.75)}
+.bar div{grid-column:1/-1;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;order:3}
+.bar i{display:block;height:100%;width:0;background:var(--ciruela-300);border-radius:6px;transition:width 1.4s var(--ease)}
+.bars.in .bar i{width:var(--w)}
+.bar b{font-variant-numeric:tabular-nums;color:#fff;font-weight:500}
+.bar.me{color:var(--crema)}.bar.me i{background:var(--crema)}
+.refs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.refs article{border-radius:18px;background:rgba(255,255,255,.05);padding:18px}
+.refs b{font-size:2rem;font-weight:500;color:var(--crema);letter-spacing:-.03em}
+.refs p{margin-top:6px;font-size:.88rem;color:rgba(255,255,255,.72)}.refs strong{color:#fff}
+.opps{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;counter-reset:o}
+@media (max-width:820px){.opps{grid-template-columns:1fr}}
+.opps li{display:grid;grid-template-columns:34px 1fr auto;gap:4px 12px;padding:16px 0;border-top:1px solid rgba(255,255,255,.12);align-items:baseline}
+.opps li::before{counter-increment:o;content:counter(o,decimal-leading-zero);color:var(--crema);font-weight:600;font-size:.8rem;grid-row:span 2}
+.opps b{font-weight:600}.opps span{grid-column:2;color:rgba(255,255,255,.6);font-size:.9rem}
+.opps em{font-style:normal;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--crema);grid-row:1;grid-column:3;white-space:nowrap}
+/* trimestre */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+@media (max-width:900px){.tri{grid-template-columns:1fr}}
+.tri article{border-radius:24px;padding:28px;border:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:12px}
+.tri article.on{background:var(--crema);color:var(--ciruela-700);border-color:var(--crema)}
+.tri .tm-k{font:600 .72rem/1 var(--f);letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.tri h3{font-size:1.7rem}.tri p{font-size:.96rem;opacity:.85}
+.tri ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.92rem}
+.tri .tm-p{margin-top:auto;font-size:.8rem;font-weight:600;opacity:.75}
+/* canales */
+.chans{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}
+@media (max-width:1000px){.chans{grid-template-columns:1fr 1fr}}@media (max-width:560px){.chans{grid-template-columns:1fr}}
+.chans article{background:#fff;border:1px solid var(--gris-100);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.chans h3{font-size:1.15rem;font-weight:600}.chans small{color:var(--ciruela);font-weight:600;font-size:.8rem}
+.chans p{font-size:.9rem;color:var(--gris-texto);flex:1}
+.seo{margin-top:22px;background:var(--tinta);color:#fff;border-radius:22px;padding:28px}
+.seo ul{margin:14px 0 0;padding-left:18px;display:grid;gap:10px;color:rgba(255,255,255,.8)}.seo b{color:var(--crema)}
+/* piezas reales */
+.pz{flex:none;margin:0;scroll-snap-align:start;position:relative}
+.pz img{border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.12);background:#ddd}
+.pz.c img{width:min(300px,72vw);aspect-ratio:4/5}
+.pz.v img{width:min(220px,56vw);aspect-ratio:9/16}
+.pz figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:var(--crema);color:var(--ciruela-700);font-size:.78rem;font-weight:600;padding:8px 10px;border-radius:8px}
+
+footer{background:var(--negro);color:rgba(255,255,255,.55);padding:70px 0 50px;font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:30px}
+footer .pl{width:150px}
+footer .bm{display:flex;align-items:center;gap:12px}
+footer .bm img{height:22px;width:auto;opacity:.75}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  [data-rv]{opacity:1;transform:none}
+}
+</style>
+<meta property="og:title" content="Puente Legal · Plan de contenidos">
+<meta property="og:description" content="Eso tiene nombre: el plan de contenidos de Puente Legal para el trimestre noviembre 2026 – enero 2027.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/puente-legal/plan-noviembre/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/puente-legal/plan-noviembre/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<nav class="nav" id="nav" aria-label="Secciones">
+  <a href="#top" style="padding:0;background:none"><img src="img/wordmark-crema.png" alt="Puente Legal"></a>
+  <ul>
+    <li><a href="#metas">Metas</a></li>
+    <li><a href="#oportunidad">Oportunidad</a></li>
+    <li><a href="#concepto">Concepto</a></li>
+    <li><a href="#trimestre">Trimestre</a></li>
+    <li><a href="#mes">Calendario</a></li>
+    <li><a href="#reels">Historias</a></li>
+    <li><a href="#canales">Canales</a></li>
+    <li><a href="#piezas">Piezas</a></li>
+    <li><a href="#dominio">Dominio</a></li>
+    <li><a href="#pendientes">Pendientes</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero s-negro" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <svg class="bridge" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 200 H1440" class="deck"/>
+    <path d="M120 200 Q 420 -10 720 200 Q 1020 -10 1320 200"/>
+    <path d="M300 200 V96 M540 200 V60 M900 200 V60 M1140 200 V96"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Plan de contenidos · Trimestre nov-2026 → ene-2027</p>
+      <h1>Eso tiene <em>nombre.<svg viewBox="0 0 400 30" preserveAspectRatio="none"><path d="M4 22 C 90 6, 220 4, 396 16"/></svg></em></h1>
+      <p class="lead">La norma del transporte cambió hace un año y casi nadie lo sabe. Este plan pone a Puente Legal a traducirla —y de paso la de tu empresa y la de tus deudas— donde está su público: Instagram, Facebook, TikTok y WhatsApp.</p>
+      <div class="hero-meta">
+        <span><b>5</b>líneas de negocio</span><span><b>6</b>reels al mes</span><span><b>6</b>carruseles</span><span><b>12</b>historias</span><span><b>3 meses</b>noviembre en detalle</span>
+      </div>
+    </div>
+    <div class="trad" aria-live="polite">
+      <div class="trad-k"><span id="tradK">Si te pasa esto</span><span id="tradN">01 / 06</span></div>
+      <div class="flip" id="flip">
+        <div class="face front"><small>Lo que dices</small><p class="q" id="fq"></p><small>Puente Legal traduce →</small></div>
+        <div class="face back"><small>Eso se llama</small><p class="n" id="fn"></p><p class="sal">Y tiene salida.</p></div>
+      </div>
+      <div class="trad-dots" id="dots"></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Baja</div>
+</header>
+
+<!-- ============ PUNTO DE PARTIDA ============ -->
+<section class="band" id="partida">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow" data-rv>Punto de partida</p>
+      <h2 class="h2" data-rv>La web ya dice quiénes son. El perfil todavía no.</h2>
+      <p class="lead" data-rv>El 21 de octubre, @puentelegaldigital tiene 48 seguidores, el logo anterior y una bio de pensiones y seguridad social que no coincide con lo que la firma ofrece hoy. Antes del primer reel, el perfil se pone al día.</p>
+      <div class="facts">
+        <div class="fact" data-rv><b data-count="48">0</b><p><strong>seguidores.</strong> El primer mes no se mide en clientes: fija la línea base y abre las primeras conversaciones.</p></div>
+        <div class="fact" data-rv><b data-count="5">0</b><p><strong>frentes en la web</strong> (empresas, SST y PESV, insolvencia, comercio exterior, transporte de carga) y uno solo como producto estrella: la habilitación.</p></div>
+        <div class="fact" data-rv><b data-count="11">0</b><p><strong>situaciones</strong> del traductor de la web que se vuelven contenido: cada una puede ser un capítulo.</p></div>
+      </div>
+    </div>
+    <div data-rv style="text-align:center">
+      <div class="seg" role="tablist" aria-label="Perfil">
+        <button class="on" data-prof="old" role="tab" aria-selected="true">Hoy</button>
+        <button data-prof="new" role="tab" aria-selected="false">El 3 de noviembre</button>
+      </div>
+      <div class="phone" style="margin-top:22px">
+        <div class="screen">
+          <div class="ig old" id="ig">
+            <div class="ig-top">
+              <div class="ig-av" id="igAv" style="background:#5b4058"><span style="color:#fff;font-size:10px;opacity:.7">logo<br>anterior</span></div>
+              <div class="ig-st"><div><b id="igP">9</b>publicaciones</div><div><b id="igS">48</b>seguidores</div><div><b>7</b>seguidos</div></div>
+            </div>
+            <p class="ig-name" id="igName">Puente Legal</p>
+            <p class="ig-bio" id="igBio"></p>
+            <div class="ig-btn"><span>Seguir</span><span id="igB2">Mensaje</span></div>
+            <div class="ig-hl" id="igHl"></div>
+            <div class="ig-grid" id="igGrid"></div>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="font-size:.82rem;margin-top:14px">Número de publicaciones aproximado. Los posts que ya no correspondan se <strong>archivan</strong>, no se borran <span class="pend">confirmar</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METAS ============ -->
+<section class="band s-gris" id="metas">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Lo que el negocio necesita</p>
+    <h2 class="h2" data-rv>Cinco líneas de negocio, cinco trabajos distintos.</h2>
+    <p class="lead" data-rv>Puente Legal no vende «presencia en redes». Vende cinco cosas que no valen lo mismo ni se compran igual. El contenido tiene un trabajo distinto en cada una. Toca una línea.</p>
+    <div class="lineas" id="lineas"></div>
+    <div class="metas">
+      <article data-rv><span class="mn">01</span><h3>Ocupar un lugar vacío</h3><p>La firma que explica la norma del transporte de carga en 40 segundos. Hoy ningún abogado con audiencia lo hace.</p></article>
+      <article data-rv style="--d:1"><span class="mn">02</span><h3>Conversaciones que se vuelven casos</h3><p>Noviembre fija la línea base. A los 90 días: 30 conversaciones calificadas al mes, 2 cotizaciones de habilitación y 1 asesoría recurrente. <span class="pend">por calibrar</span></p></article>
+      <article data-rv style="--d:2"><span class="mn">03</span><h3>Estar donde está el transportador</h3><p>No solo en Instagram: Facebook, TikTok y un canal de WhatsApp, con las mismas piezas.</p></article>
+    </div>
+    <div class="preg" data-rv>
+      <p class="eyebrow">Tres preguntas antes de arrancar</p>
+      <ol>
+        <li>¿Cuál de las cinco líneas les deja mejor margen y cuál les consume más horas? El contenido empuja la primera.</li>
+        <li>¿De dónde llegan hoy sus clientes y cuántas consultas reciben al mes?</li>
+        <li>En el cobro de saldos, ¿de qué lado del puente están: propietarios, empresas o ambos? Eso define el tono: «la norma es pareja», nunca «las empresas te roban».</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPORTUNIDAD ============ -->
+<section class="band s-negro" id="oportunidad">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>La oportunidad</p>
+    <h2 class="h2" data-rv>La norma cambió hace un año.<br><span style="color:var(--crema)">Casi nadie lo sabe.</span></h2>
+    <p class="lead" data-rv>El Decreto 1017 de 2025 reescribió las reglas del transporte de carga, y en redes todavía circula la regla vieja. Con la insolvencia y la reforma laboral pasa lo mismo. Cada cambio es un capítulo.</p>
+    <div class="nums">
+      <div class="num" data-rv><s>12 h</s><b data-count="8">0</b><i>horas</i><p>Tope de cargue, y otras 8 de descargue, contadas desde la hora de la cita.</p><small>D. 1079 art. 2.2.1.7.6.8 · mod. D. 1017/2025</small></div>
+      <div class="num" data-rv style="--d:1"><b data-count="175" data-pre="$" data-suf=" mil">0</b><i>por hora</i><p>Cada hora de más en vehículo articulado (3 salarios mínimos diarios). En rígido, unos $117 mil.</p><small>ídem · SMMLV 2026</small></div>
+      <div class="num" data-rv style="--d:2"><b data-count="5">0</b><i>días hábiles</i><p>Para pagar el saldo con las horas de espera, aunque el cliente no le haya pagado a la empresa. Si se pasa, con intereses.</p><small>art. 2.2.1.7.6.6</small></div>
+      <div class="num" data-rv style="--d:3"><s>1.000</s><b data-count="250">0</b><i>SMMLV</i><p>Capital para habilitar una empresa formada solo por propietarios. Tiene 5 años para llegar a 1.000.</p><small>art. 2.2.1.7.2.3</small></div>
+      <div class="num" data-rv style="--d:4"><s>50 %</s><b data-count="30" data-suf=" %">0</b><i>en mora</i><p>Basta para pedir insolvencia de persona natural. Y el vehículo de trabajo no cuenta para el tope de activos.</p><small>CGP arts. 532 y 538 · Ley 2445/2025</small></div>
+      <div class="num" data-rv style="--d:5"><s>44 h</s><b data-count="42">0</b><i>horas</i><p>Jornada máxima desde julio de 2026. Además, dominical al 90 % y nocturno desde las 7 p. m.</p><small>Ley 2101/2021 · Ley 2466/2025</small></div>
+    </div>
+
+    <div class="split" style="margin-top:110px;align-items:start">
+      <div>
+        <h3 class="h3" data-rv>Dónde está el público</h3>
+        <p class="lead" data-rv style="font-size:1rem">Seguidores al 21 de octubre. El transportador vive en Facebook, TikTok y WhatsApp. Los gremios comunican hacia adentro, y en esas comunidades nadie traduce la ley.</p>
+        <div class="bars" id="bars"></div>
+      </div>
+      <div>
+        <h3 class="h3" data-rv>Lo que funciona en la categoría</h3>
+        <div class="refs">
+          <article data-rv><b>2,3 M</b><p><strong>Guerrero Abogados</strong> · sus tres videos de deudas más vistos son «Respuesta a @…»</p></article>
+          <article data-rv style="--d:1"><b>2,8 M</b><p><strong>Soy Laboralista</strong> · un artículo de ley aplicado a la plata del trabajador</p></article>
+          <article data-rv style="--d:2"><b>0</b><p><strong>Abogados con audiencia</strong> que expliquen el standby, el saldo del manifiesto o la habilitación en video</p></article>
+          <article data-rv style="--d:3"><b>9×</b><p><strong>más guardados</strong> sacan los carruseles que una imagen sola (Metricool, 2026)</p></article>
+        </div>
+        <p class="muted" style="font-size:.85rem;margin-top:14px">El patrón: plata que te deben o te pueden quitar, el titular es la búsqueda literal, una persona habla a cámara y se responden comentarios. Ningún sketch está entre lo más visto.</p>
+      </div>
+    </div>
+
+    <h3 class="h3" data-rv style="margin-top:100px">Diez oportunidades, priorizadas</h3>
+    <ol class="opps" id="opps"></ol>
+  </div>
+</section>
+
+<!-- ============ INSIGHT ============ -->
+<section class="band s-negro" id="insight">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Insight</p>
+    <p class="lit" id="lit" style="margin-top:26px">La gente no busca un abogado: busca a alguien que le diga <span class="hl">qué le está pasando.</span></p>
+    <div class="pp">
+      <article data-rv><h3>Problema de negocio</h3><p>En Instagram decenas de firmas dicen lo mismo: experiencia, compromiso, asesoría integral. Nadie recuerda eso y nadie escribe por eso. Y la cuenta arranca casi en cero.</p></article>
+      <article data-rv style="--d:1"><h3>Lo que pasa de verdad</h3><p>El transportador no escribe «necesito reclamar standby»: escribe «esperé todo el día en el descargue y nadie me pagó». La persona con deudas no busca «insolvencia», busca «ya no me alcanza».</p></article>
+      <article data-rv style="--d:2"><h3>Por eso</h3><p>Mientras el problema no tiene nombre parece un enredo sin salida, y nadie llama a un abogado por un enredo. El contenido empieza en la frase del cliente, no en la norma.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONCEPTO ============ -->
+<section class="band s-ciruela" id="concepto">
+  <div class="wrap concept">
+    <div>
+      <p class="eyebrow" data-rv>Concepto del mes</p>
+      <p class="big-c" data-rv style="margin-top:26px"><span>Eso tiene</span><span>nombre.</span><span class="y">Y tiene salida.</span></p>
+      <p class="lead" data-rv>Puente Legal es el puente entre lo que te pasa y cómo se llama. Es el mismo mecanismo del traductor de situaciones de la web. Y cada capítulo trae además un dato nuevo y verificable, con su artículo en pantalla: el nombre da tranquilidad y el dato da una razón para compartirlo.</p>
+      <p class="lead" data-rv style="margin-top:12px"><strong style="color:#fff">Posicionamiento:</strong> la firma que traduce la norma del transporte, y de paso la de tu empresa y la de tus deudas. La especialidad abre la puerta y el resto de servicios entra por ella.</p>
+    </div>
+    <ol class="filtro" id="filtro">
+      <li><div><b>Hay una idea</b><span>Traducir en vez de explicar.</span></div></li>
+      <li><div><b>Es relevante</b><span>Arranca en la frase que diría el cliente.</span></div></li>
+      <li><div><b>Es auténtica</b><span>Es literalmente el nombre de la firma: un puente.</span></div></li>
+      <li><div><b>Genera conversación</b><span>Cada quien reconoce su situación y la cuenta.</span></div></li>
+      <li><div><b>Se recuerda</b><span>La caja blanca que se voltea y la frase-sello.</span></div></li>
+      <li><div><b>Construye marca y vende</b><span>Posiciona a la firma que entiende; cada capítulo lleva a un servicio.</span></div></li>
+      <li><div><b>La ejecución fortalece la idea</b><span>El problema en gris se vuelve nombre en ciruela y crema: el paso se ve.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PÚBLICOS ============ -->
+<section class="band s-gris" id="publicos">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>A quién le hablamos</p>
+    <h2 class="h2" data-rv>Dos públicos, dos estados de ánimo.</h2>
+    <p class="lead" data-rv>Mismo concepto, distinto tono. La provocación siempre va contra el trámite o la confusión, nunca contra el transportador ni contra quien tiene deudas.</p>
+    <div class="aud">
+      <article data-rv>
+        <div class="ph" style="background-image:url(img/n-habilitacion.webp)"></div>
+        <div class="bd">
+          <span class="tag c">Empresas y transportadores</span>
+          <p class="say">«Esperé todo el día en el descargue y nadie me pagó eso.»</p>
+          <p class="muted" style="margin-top:12px">Dueños de empresas de carga, propietarios de vehículo y quien va a crear su empresa. Papeleo, plazos, plata que no llega. Se les habla directo y con la palabra del gremio: «lo conocemos por dentro».</p>
+          <ul><li class="tag">Habilitación</li><li class="tag">Manifiestos</li><li class="tag">PESV</li><li class="tag">SAS</li></ul>
+        </div>
+      </article>
+      <article data-rv style="--d:1">
+        <div class="ph" style="background-image:url(img/n-insolvencia.webp)"></div>
+        <div class="bd">
+          <span class="tag k">Personas con deudas</span>
+          <p class="say">«Tengo varias deudas y ya no me alcanza.»</p>
+          <p class="muted" style="margin-top:12px">Llegan tarde y con vergüenza; buscan que alguien les diga que hay salida. Sin juzgar, sin sonar a juzgado, sin prometer resultados. La respuesta les llega por privado.</p>
+          <ul><li class="tag">Insolvencia de persona natural</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERIES ============ -->
+<section class="band" id="series">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Series</p>
+    <h2 class="h2" data-rv>Nombre fijo, apertura fija, cierre fijo.</h2>
+    <p class="lead" data-rv>Que se reconozcan sin leer el usuario. Cada capítulo trae su propio gancho y su propio objetivo. Toca el teléfono para ver cómo abre.</p>
+    <div class="tabs" role="tablist" id="sTabs"></div>
+    <div class="serie" id="sBody"></div>
+  </div>
+</section>
+
+<!-- ============ TRIMESTRE ============ -->
+<section class="band s-negro" id="trimestre">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>El trimestre</p>
+    <h2 class="h2" data-rv>Un concepto, tres meses, tres públicos.</h2>
+    <p class="lead" data-rv>Diciembre y enero van en borrador y se ajustan con los números del 30 de noviembre. Lo que no cambia son las fechas que obligan.</p>
+    <div class="tri">
+      <article data-rv class="on"><span class="tm-k">Noviembre</span><h3>Lo que cambió</h3><p>Presentarse y ocupar el hueco del transporte: standby, saldo, habilitación e insolvencia.</p><ul><li>Decreto 1017, un año después</li><li>Respuestas a comentarios</li><li>Prima: el 20 es domingo</li></ul><span class="tm-p">Propietarios · personas</span></article>
+      <article data-rv style="--d:1"><span class="tm-k">Diciembre</span><h3>Cierre de año en regla</h3><p>Ganarse al dueño de empresa con las fechas que obligan: nómina con 42 h, descargos, SG-SST y salario mínimo.</p><ul><li>Prima y dotación: vie 18</li><li>Reacción en 24 h al salario mínimo 2027</li><li>Diana: «POV: llevas 14 horas manejando»</li></ul><span class="tm-p">Pymes · empresas de transporte</span></article>
+      <article data-rv style="--d:2"><span class="tm-k">Enero</span><h3>Arrancar en regla</h3><p>Convertir la intención de año nuevo en trámites: habilitación, SAS, reporte del PESV y la cuesta de enero.</p><ul><li>Reporte PESV, 6–31 ene</li><li>SARLAFT según lo facturado a 31-dic</li><li>Insolvencia: «no eres el único»</li></ul><span class="tm-p">Emprendedores · empresas con flota · personas</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL MES ============ -->
+<section class="band s-gris" id="mes">
+  <div class="wrap">
+    <div class="cal-top">
+      <div>
+        <p class="eyebrow" data-rv>El plan, día por día</p>
+        <h2 class="h2" data-rv>Toca un día y aparece la pieza.</h2>
+        <p class="lead" data-rv>Para cada reel, el guion completo plano por plano: gancho, voz, texto en pantalla, sonido, tomas y texto del post. Para cada carrusel, sus láminas y su texto; para cada historia, lo que dice y su sticker. Los reels salen a las 7:00 p. m. y los lunes 2 y 16 son festivos.</p>
+      </div>
+      <div data-rv>
+        <div class="seg" id="planSeg" role="tablist" aria-label="Plan">
+          <button class="on" data-plan="crec" role="tab" aria-selected="true">Crecimiento</button>
+          <button data-plan="esen" role="tab" aria-selected="false">Si es Esencial</button>
+        </div>
+        <div class="legend" style="margin-top:14px"><span><i style="background:var(--ciruela)"></i>Reel</span><span><i style="background:var(--crema);border:1px solid var(--gris-300)"></i>Carrusel</span><span><i style="background:var(--gris-300)"></i>Historia</span><span><i style="background:#2f7d5b"></i>WhatsApp · LinkedIn · trial</span><span><i style="background:var(--tinta)"></i>Preparación</span></div>
+      </div>
+    </div>
+    <div class="idx" id="idx" aria-label="Ir a una pieza"></div>
+    <div class="cal" id="cal"></div>
+    <div class="dd" id="det" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ REELS ============ -->
+<section class="band" id="reels">
+  <div class="wrap">
+    <div class="cal-top">
+      <div>
+        <p class="eyebrow" data-rv>Historias animadas</p>
+        <h2 class="h2" data-rv>Ya están hechas: una por reel.</h2>
+        <p class="lead" data-rv>Cada reel se anuncia el mismo día con una historia animada: con el gancho, los datos clave y la palabra clave. El guion de cada reel está en el calendario. Dale play.</p>
+      </div>
+      <label class="safe-t" data-rv><input type="checkbox" id="safeT"> Ver zonas seguras de Reels</label>
+    </div>
+    <div class="reels" id="reelGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CANALES ============ -->
+<section class="band s-gris" id="canales">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Canales</p>
+    <h2 class="h2" data-rv>Una pieza, cinco lugares.</h2>
+    <p class="lead" data-rv>Con 48 seguidores, el alcance va a venir de gente que todavía no sigue la cuenta. Las mismas piezas salen donde está cada público, sin producción adicional.</p>
+    <div class="chans" id="chans"></div>
+    <div class="seo" data-rv>
+      <h3 class="h3">Para que la encuentren</h3>
+      <ul>
+        <li><b>Trial reels:</b> R02 y R05 salen primero, solo para gente que no sigue la cuenta, con dos ganchos distintos. A las 48 horas se publica el que retuvo más.</li>
+        <li><b>El titular es la búsqueda:</b> «standby decreto 1017», «requisitos habilitación empresa de carga 2026», «insolvencia persona natural 30 %». Se dice en voz, se escribe en pantalla y va en la primera línea del texto.</li>
+        <li><b>Uno o dos hashtags,</b> no veinte: las publicaciones con hashtags tienen 32 % menos visualizaciones (Metricool, 2026).</li>
+        <li><b>Cada carrusel de norma</b> se vuelve un artículo corto en la web, para que Google también lo encuentre.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALABRAS CLAVE ============ -->
+<section class="band s-negro" id="palabras">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Palabras clave</p>
+    <h2 class="h2" data-rv>Se dice, se escribe y se cambia por algo útil.</h2>
+    <p class="lead" data-rv>En Instagram no se dibujan botones: el llamado se dice. Cada palabra trae un regalo de una página que ya existe antes de publicar, y el mensaje hace una pregunta que separa al curioso del caso real. Elige una.</p>
+    <div class="kws" id="kws"></div>
+    <div class="chat">
+      <div class="phone"><div class="screen"><div class="dm" id="dm"></div></div></div>
+      <div class="kw-det" id="kwDet"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARRUSELES ============ -->
+<section class="band s-gris" id="piezas">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Piezas listas</p>
+    <h2 class="h2" data-rv>Ya están hechas.</h2>
+    <p class="lead" data-rv>Los 6 carruseles, las 12 historias y las portadas, con la norma al pie de cada dato. La primera lámina es la recompensa, no la portada. Desliza para verlas. Todo pasa por la validación de la firma antes de publicarse.</p>
+    <div class="cars" id="cars"></div>
+    <div class="slides" id="slides"></div>
+  </div>
+</section>
+
+<!-- ============ MEZCLA Y MEDICIÓN ============ -->
+<section class="band" id="medir">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Mezcla, ética y medición</p>
+    <h2 class="h2" data-rv>Qué mediríamos el 30 de noviembre.</h2>
+    <p class="lead" data-rv>Seis reels, cada uno con un solo objetivo: uno de marca, uno de alcance por búsqueda, dos de conversación, uno para guardar y uno de venta, que entra en la última semana, cuando ya hay quien lo vea.</p>
+    <div class="mix" id="mix">
+      <div class="mx-v" style="--f:1;--i:0">Marca · R01</div>
+      <div class="mx-a" style="--f:1;--i:1">Alcance · R05</div>
+      <div class="mx-c" style="--f:2;--i:2">Comentario · R02 R04</div>
+      <div class="mx-g" style="--f:1;--i:3">Guardado · R03</div>
+      <div class="mx-a" style="--f:1;--i:4">Venta · R06</div>
+    </div>
+    <table class="tbl">
+      <thead><tr><th>Qué</th><th>Cómo</th><th>Umbral de partida</th></tr></thead>
+      <tbody>
+        <tr><td>Alcance a no seguidores</td><td>R01, R02 y R05, medido por separado en Instagram, Facebook y TikTok</td><td class="u">Línea base; el ganador del trial se repite</td></tr>
+        <tr><td>Comentarios con palabra clave</td><td>Comentarios ÷ vistas en R02, R04 y R06</td><td class="u">≥ 0,5 %</td></tr>
+        <tr><td>Guardados</td><td>R03, C2, C4, C5 y C6</td><td class="u">Likes ÷ vistas ≥ 3 %</td></tr>
+        <tr><td>Conversaciones calificadas</td><td>DMs y WhatsApp que responden la pregunta filtro (los anota la firma en una hoja)</td><td class="u">Línea base · 30 al mes a 90 días</td></tr>
+        <tr><td>Casos</td><td>Saldos y standby revisados, cotizaciones de habilitación, consultas de insolvencia y de pymes que vienen de redes</td><td class="u">2 cotizaciones y 1 asesoría recurrente a 90 días</td></tr>
+        <tr><td>Canal de WhatsApp</td><td>Suscriptores y reenvíos</td><td class="u">Línea base</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ GRABACIÓN ============ -->
+<section class="band s-gris" id="grabacion">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Grabación</p>
+    <h2 class="h2" data-rv>Dos horas y media para todo el mes.</h2>
+    <p class="lead" data-rv>Miércoles 28 de octubre <span class="pend">confirmar</span>. Presencial con nuestra cámara, o guiada por videollamada con celular en SDR (video HDR apagado). R01 no se graba: es animación. Ya no hay sketch: R05 es una respuesta a cámara.</p>
+    <div class="tl" data-rv>
+      <div class="tl-bar" id="tlBar"></div>
+      <div class="tl-axis"><span>0:00</span><span>1:00</span><span>2:00</span><span>3:00</span></div>
+      <div class="tl-det" id="tlDet"></div>
+    </div>
+    <div class="rules">
+      <article data-rv><h4>Educar, no hacer propaganda</h4><p>El perfil y los cierres se limitan a nombres, títulos, asuntos que atienden y contacto. Nada de «los mejores». Ley 1123, art. 31.</p></article>
+      <article data-rv style="--d:1"><h4>Nunca prometer resultados</h4><p>Se dice qué existe y qué se puede intentar. Nada de «te ganamos» (arts. 28 y 34).</p></article>
+      <article data-rv style="--d:2"><h4>Nunca comisión por cliente</h4><p>A una colaboración se le paga producción o pauta, y se declara. Nada de testimonios que elogien a la firma (arts. 30 y 31).</p></article>
+      <article data-rv style="--d:3"><h4>Ningún dato sin validar</h4><p>Cada cifra lleva su artículo y la aprueban Karem o Katherine. Ningún caso real ni documento de cliente en cámara.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOMINIO ============ -->
+<section class="band s-gris" id="dominio">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>Dominio para la web y el correo</p>
+    <h2 class="h2" data-rv>puentelegal.com ya tiene dueño.<br>La mejor opción es <span style="color:var(--ciruela)">puentelegal.com.co</span>.</h2>
+    <p class="lead" data-rv>Revisamos en Hostinger, el 21 de octubre de 2026, qué nombres están libres y cuánto cuestan el primer año y desde el segundo. La cifra que importa es la de renovación: el primer año lo cubre la cotización de la web y desde el segundo lo paga la firma. Precios en pesos colombianos.</p>
+    <table class="dom" data-rv>
+      <thead><tr><th>Dominio</th><th>¿Libre?</th><th>Primer año</th><th>Desde el 2.º año</th><th>Lectura</th></tr></thead>
+      <tbody>
+        <tr class="best"><td class="n">puentelegal.com.co</td><td class="ok">Libre</td><td>$65.900</td><td>$91.900</td><td><b>Recomendado.</b> El nombre exacto, se lee colombiano y da confianza en una firma legal. Correo: karem@puentelegal.com.co</td></tr>
+        <tr><td class="n">puentelegal.net</td><td class="ok">Libre</td><td>$53.900</td><td>$58.900</td><td>El nombre exacto más barato a largo plazo. Pero .net suena a tecnología, no a firma, y la gente tiende a escribir .com.</td></tr>
+        <tr><td class="n">puentelegal.co</td><td class="ok">Libre</td><td>$91.900</td><td>$113.900</td><td>Corto, pero es el más caro de los exactos y se confunde con un «.com» mal escrito. Sirve como segundo dominio que redirige al principal.</td></tr>
+        <tr><td class="n">puentelegalcolombia.com</td><td class="ok">Libre</td><td>$1 (exige plazo de 3 años)</td><td>$61.900</td><td>Es .com, pero largo. Si la firma quiere .com sí o sí, es la mejor de las variantes.</td></tr>
+        <tr><td class="n">puentelegaldigital.com</td><td class="ok">Libre</td><td>$1 (plazo de 3 años)</td><td>$61.900</td><td>Coincide con el Instagram, pero «digital» le resta a una firma que atiende en persona.</td></tr>
+        <tr><td class="n">puentelegalsas.com</td><td class="ok">Libre</td><td>$1 (plazo de 3 años)</td><td>$61.900</td><td>Barato, pero «SAS» confunde: parece el nombre de una empresa cliente.</td></tr>
+        <tr><td class="n">puentelegalabogados.com.co</td><td class="ok">Libre</td><td>$65.900</td><td>$91.900</td><td>Largo y deja por fuera a Diana, que es psicóloga y no abogada.</td></tr>
+        <tr><td class="n">puentelegal.org</td><td class="ok">Libre</td><td>$29.900</td><td>$58.900</td><td>.org se asocia a fundaciones, no a firmas.</td></tr>
+        <tr><td class="n">puentelegal.legal</td><td class="ok">Libre</td><td>$19.900</td><td>$270.900</td><td>Trampa: casi gratis el primer año y 14 veces más caro después.</td></tr>
+        <tr><td class="n">puentelegal.online · .site · .store</td><td class="ok">Libres</td><td>$3.900</td><td>$117.900–$179.900</td><td>Gancho de primer año; poco serios para una firma legal.</td></tr>
+        <tr><td class="n">puentelegal.com</td><td class="no">Ocupado</td><td colspan="2">A la venta en Afternic, sin precio publicado (este tipo de dominio suele costar millones)</td><td>No vale la pena para arrancar.</td></tr>
+        <tr><td class="n">puentelegalabogados.com · puente-legal.com</td><td class="no">Ocupados</td><td colspan="2">—</td><td>Conviene averiguar si otra firma usa el nombre «Puente Legal».</td></tr>
+      </tbody>
+    </table>
+    <div class="domrec">
+      <article class="win" data-rv><span class="k">Mejor calidad-precio</span><h3>puentelegal.com.co</h3><p>El nombre exacto con terminación colombiana. Lo más serio para una firma legal y el correo con dominio propio que estaba pendiente.</p><b class="pr">$65.900 el primer año · $91.900/año después</b></article>
+      <article data-rv style="--d:1"><span class="k">Para blindar la marca</span><h3>+ puentelegal.co</h3><p>Se compra también y redirige al principal, para que nadie más lo use.</p><b class="pr">Los dos: $157.800 el primer año · $205.800/año después</b></article>
+      <article data-rv style="--d:2"><span class="k">Si el presupuesto manda</span><h3>puentelegal.net</h3><p>El nombre exacto con la renovación más baja. Funciona, pero se lee menos profesional para una firma colombiana.</p><b class="pr">$53.900 el primer año · $58.900/año después</b></article>
+    </div>
+    <p class="muted" style="font-size:.82rem;margin-top:18px">Fuente: buscador y páginas de precios de Hostinger Colombia, 21-oct-2026. Los precios de promoción cambian. El total exacto de los .com con plazo de 3 años solo aparece en el carrito: se confirma antes de comprar. La compra la hace BLACKMOUTH desde su cuenta, con el dominio a nombre de la firma.</p>
+  </div>
+</section>
+
+<!-- ============ PENDIENTES ============ -->
+<section class="band s-negro" id="pendientes">
+  <div class="wrap">
+    <div class="chk-top">
+      <div class="ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle class="bgc" cx="60" cy="60" r="52"/><circle class="fg" id="ringFg" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"/></svg><b id="ringN">0</b></div>
+      <div>
+        <p class="eyebrow">Lo que necesitamos de ustedes</p>
+        <h2 class="h2" style="margin-top:12px">Antes del martes 27 de octubre.</h2>
+      </div>
+    </div>
+    <p class="lead">Sin estos datos la pieza no sale: en una firma legal no se publica nada que no esté validado. Puedes ir marcando lo que ya está (se guarda en este navegador).</p>
+    <div class="groups" id="groups"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="pl" src="img/logo-full-crema.png" alt="Puente Legal">
+      <p style="margin-top:18px">Plan de contenidos · Trimestre nov-2026 → ene-2027 · noviembre en detalle.<br>Documento de trabajo, sin publicar.</p>
+    </div>
+    <div class="bm"><span>Plan hecho por</span><img src="img/blackmouth-blanco.png" alt="BLACKMOUTH"></div>
+  </div>
+</footer>
+
+<script src="plan-data.js"></script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- nav, progreso, parallax ---------- */
+const nav=$('#nav'),prog=$('#prog'),heroBg=$('#heroBg');
+const links=$$('.nav ul a'),secs=links.map(a=>$(a.getAttribute('href')));
+addEventListener('scroll',()=>{
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  nav.classList.toggle('solid',y>40);
+  prog.style.transform=`scaleX(${h>0?y/h:0})`;
+  if(!RM&&y<innerHeight)heroBg.style.setProperty('--py',y*.25+'px');
+  let cur=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=i});
+  links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+},{passive:true});
+
+/* ---------- reveal + contadores ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+  const c=e.target.querySelector('[data-count]');if(c)count(c);io.unobserve(e.target)}),{threshold:.15});
+$$('[data-rv]').forEach(el=>io.observe(el));
+function count(el){const to=+el.dataset.count,t0=performance.now(),d=RM?1:1200;
+  const pre=el.dataset.pre||'',suf=el.dataset.suf||'';
+  (function f(t){const p=Math.min(1,(t-t0)/d);el.textContent=pre+Math.round(to*(1-Math.pow(1-p,3))).toLocaleString('es-CO')+suf;if(p<1)requestAnimationFrame(f)})(t0)}
+
+/* ---------- traductor del hero ---------- */
+const SIT=[
+ ['Hice el viaje y no me han pagado el saldo.','Saldo del manifiesto'],
+ ['Esperé todo el día en el descargue y nadie me pagó eso.','Standby'],
+ ['Tengo varias deudas y ya no me alcanza.','Insolvencia de persona natural'],
+ ['Ya tengo mi empresa y necesito habilitarla para transportar carga.','Habilitación de empresas'],
+ ['Me pidieron el PESV y no sé por dónde empezar.','Plan Estratégico de Seguridad Vial'],
+ ['Tengo que sancionar a alguien sin terminar demandado.','Descargos']];
+const flip=$('#flip'),fq=$('#fq'),fn=$('#fn'),dots=$('#dots'),tN=$('#tradN'),tK=$('#tradK');
+dots.innerHTML=SIT.map(()=>'<i></i>').join('');
+let si=0;
+function showSit(){const [q,n]=SIT[si];flip.classList.remove('turn');
+  setTimeout(()=>{fq.textContent=q;fn.textContent=n},RM?0:250);
+  tN.textContent=String(si+1).padStart(2,'0')+' / '+String(SIT.length).padStart(2,'0');tK.textContent='Si te pasa esto';
+  [...dots.children].forEach((d,i)=>{d.className=i<si?'done':i===si?'on':''});
+  setTimeout(()=>{flip.classList.add('turn');tK.textContent='Eso se llama'},1500);
+  setTimeout(()=>{si=(si+1)%SIT.length;showSit()},3400)}
+fq.textContent=SIT[0][0];fn.textContent=SIT[0][1];showSit();
+
+/* ---------- perfil antes / después ---------- */
+const PROF={
+ old:{p:'9',s:'48',bio:'Tus asesores digitales de confianza\n💼Pensiones | Seguridad Social Empresas | Insolvencia\n💡Cotiza bien hoy, para recibir… más',
+   name:'Puente Legal',hl:['','',''],hln:['Pensiones','Tips','Contacto'],btn:'Mensaje',
+   grid:['#c9c2cf','#d8d2c8','#bfb8c6','#d4cfc3','#c7c0cc','#dcd6cb']},
+ new:{p:'1',s:'48',bio:'Firma legal · Empresas · SST y PESV · Insolvencia\nEspecialistas en transporte de carga 🚚\nTu problema tiene nombre. Y tiene salida.\n👇 Escríbenos por WhatsApp',
+   name:'Puente Legal | Abogados y SST',hl:['H','T','I','E','W'],hln:['Habilitación','Transporte','Insolvencia','Equipo','Escríbenos'],btn:'WhatsApp',
+   grid:['url(img/carretera-noche.webp)','','','','','']}
+};
+function setProf(k){const P=PROF[k],ig=$('#ig');ig.className='ig '+k;
+  $('#igP').textContent=P.p;$('#igS').textContent=P.s;$('#igBio').textContent=P.bio;$('#igName').textContent=P.name;$('#igB2').textContent=P.btn;
+  const av=$('#igAv');
+  if(k==='new'){av.style.background='var(--ciruela)';av.innerHTML='<img src="img/favicon.svg" alt="" style="width:100%;height:100%">'}
+  else{av.style.background='#5b4058';av.innerHTML='<span style="color:#fff;font-size:10px;opacity:.7">logo<br>anterior</span>'}
+  $('#igHl').innerHTML=P.hln.map((n,i)=>`<div><i>${P.hl[i]||''}</i>${n}</div>`).join('');
+  $('#igGrid').innerHTML=P.grid.map((g,i)=>k==='new'?(i===0?`<div style="background:${g} center/cover;position:relative"><span style="position:absolute;left:6px;right:6px;top:38%;background:#fff;border-radius:4px;font-size:7px;padding:3px">«Hice el viaje y no me han pagado…»</span></div>`:`<div style="background:${i%2?'var(--crema)':'#f2f2f0'};opacity:${i>2?.35:1}"></div>`):`<div style="background:${g}"></div>`).join('');
+  $$('[data-prof]').forEach(b=>{const on=b.dataset.prof===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)})}
+$$('[data-prof]').forEach(b=>b.onclick=()=>setProf(b.dataset.prof));setProf('old');
+
+/* ---------- insight: texto que se ilumina ---------- */
+const lit=$('#lit');
+(function splitWords(el){const out=[];el.childNodes.forEach(n=>{
+  if(n.nodeType===3)n.textContent.split(/(\s+)/).forEach(w=>out.push(/^\s+$/.test(w)||!w?document.createTextNode(w):Object.assign(document.createElement('span'),{textContent:w})));
+  else{n.textContent.split(/(\s+)/).forEach(w=>{if(/^\s+$/.test(w)||!w)out.push(document.createTextNode(w));else{const s=document.createElement('span');s.className='hl';s.textContent=w;out.push(s)}})}});
+  el.textContent='';out.forEach(o=>el.appendChild(o))})(lit);
+const litW=[...lit.querySelectorAll('span')];
+function litScroll(){const r=lit.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(innerHeight*.6)));
+  const n=Math.round(p*litW.length);litW.forEach((w,i)=>w.classList.toggle('on',RM||i<n))}
+addEventListener('scroll',litScroll,{passive:true});litScroll();
+
+/* ---------- filtro de 7 preguntas ---------- */
+const fil=$$('#filtro li');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){fil.forEach((li,i)=>setTimeout(()=>li.classList.add('on'),RM?0:i*260));o.disconnect()}}),{threshold:.3}).observe($('#filtro'));
+
+/* ---------- datos de reels ---------- */
+const REELS=[
+ {id:'R01',t:'Eso tiene nombre',d:'mar 3-nov',obj:'Marca',img:'carretera-noche.webp',dur:13,serie:'Lanzamiento',who:'Animación (sin grabar)',
+  txt:'13 s sin voz: cuatro situaciones en caja blanca que se voltean y muestran su nombre. Presenta el perfil nuevo; el alcance lo buscan R02 y R05.',
+  beats:[[0,'box','Hice el viaje y no me han pagado el saldo.'],[.9,'name','Saldo del manifiesto'],[2.4,'box','Tengo varias deudas y ya no me alcanza.'],[3.3,'name','Insolvencia'],[4.8,'box','Voy a crear mi empresa y no sé qué figura me conviene.'],[5.7,'name','Constitución de SAS'],[7.2,'box','Me pidieron el PESV y no sé por dónde empezar.'],[8.1,'name','Plan Estratégico de Seguridad Vial'],[9.6,'sub','Eso tiene nombre.|Y tiene salida.'],[11.4,'end','']]},
+ {id:'R02',t:'El standby ya no son 12 horas',d:'jue 5-nov',obj:'Comentario',img:'n-standby.webp',dur:40,serie:'Eso tiene nombre · 1',who:'Karem · trial A/B',kw:'MANIFIESTO',
+  txt:'La noticia que nadie cuenta bien: 8 horas desde la cita, cada hora de más ≈ $175 mil (articulado) y el saldo en 5 días hábiles aunque el cliente no le haya pagado a la empresa.',
+  beats:[[0,'box','Me tuvieron todo el día en el descargue y no me pagaron nada.'],[1.2,'name','Standby'],[2.5,'sub','8 horas|cargue'],[5,'sub','8 horas|descargue'],[7,'sub','Desde|la cita'],[10.5,'sub','+3 SMLDV|≈ $175.000'],[14,'sub','+2 SMLDV|≈ $117.000'],[17,'sub','5 días|hábiles'],[20.5,'sub','Aunque no|le hayan pagado'],[23,'sub','+ intereses'],[26,'sub','Sin papeles|no hay cobro'],[31,'kw','MANIFIESTO'],[37,'end','']]},
+ {id:'R03',t:'9 requisitos para habilitarte',d:'mié 11-nov',obj:'Guardado',img:'n-habilitacion.webp',dur:36,serie:'En regla · 1',who:'Katherine',
+  txt:'La lista que pide hoy el Ministerio, uno por plano. La que más hay que planear es la 8: 1.000 salarios mínimos de capital, o 250 si la empresa es solo de propietarios.',
+  beats:[[0,'sub','9 requisitos|para habilitarte'],[3,'sub','Guárdalo'],[5,'sub','1 · Solicitud|2 · Certificado'],[9,'sub','3 · Domicilio|4 · Estructura'],[13,'sub','5 · Vehículos|6 · Estados'],[17,'sub','8 · 1.000 SMMLV|o 250'],[24,'sub','9 · Derechos'],[27,'sub','Hasta 90|días hábiles'],[32,'end','']]},
+ {id:'R04',t:'Ya no me alcanza',d:'mar 17-nov',obj:'Comentario',img:'n-insolvencia.webp',dur:40,serie:'Eso tiene nombre · 2',who:'Karem',kw:'DEUDAS',
+  txt:'Desde la Ley 2445 basta el 30 % en mora; se frenan los embargos y la libranza; el empleador no puede despedirte por eso; y el camión con que trabajas no cuenta para el tope.',
+  beats:[[0,'box','Tengo varias deudas y ya no me alcanza para pagarlas.'],[1.4,'name','Insolvencia'],[2.5,'sub','Antes 50 %|ahora 30 %'],[8,'sub','Se frenan|los embargos'],[13,'sub','No pueden|despedirte'],[17,'sub','Pequeño|comerciante'],[21,'sub','El camión|no cuenta'],[25,'sub','5|preguntas'],[30,'kw','DEUDAS'],[37,'end','']]},
+ {id:'R05',t:'Respuesta a…: ¿qué me pueden descontar?',d:'jue 19-nov',obj:'Alcance',img:'n-descargos.webp',dur:30,serie:'Respuesta a… · 1',who:'Karem · trial A/B',
+  txt:'El formato que más rinde en la categoría. Se responde el comentario real más repetido; si no llega, la pregunta semilla: del saldo solo se puede descontar retención e ICA.',
+  beats:[[0,'box','¿Me pueden descontar del saldo lo que ellos quieran?'],[1.2,'sub','Solo|dos cosas'],[2.5,'sub','Retención|e ICA'],[8,'sub','Casilla|aparte'],[14,'sub','Ni por debajo|del SICE-TAC'],[19,'sub','Guarda la|liquidación'],[25,'sub','¿Qué te|descontaron?'],[29,'end','']]},
+ {id:'R06',t:'¿Y si montan su propia empresa?',d:'mié 25-nov',obj:'Venta',img:'habilitacion-hero-1100.webp',dur:47,serie:'Sin vueltas · 1',who:'Karem',kw:'HABILITAR',
+  txt:'Del dolor al producto: cansados de esperar el saldo de otros, varios propietarios pueden montar su empresa con 250 SMMLV de capital. La oferta entra al 60 % del reel y sin precio.',
+  beats:[[0,'sub','Tu propia|empresa de carga'],[3,'sub','Solo|propietarios'],[6.5,'sub','250 SMMLV|no 1.000'],[10,'sub','5 años|para llegar a 1.000'],[15,'sub','SAS · 4 áreas|90 días'],[24,'sub','Del otro lado|del puente'],[28,'sub','Dos caminos|un puente'],[33,'sub','Por|escrito'],[38,'kw','HABILITAR'],[44,'end','']]}
+];
+const ARC='<svg viewBox="560 210 810 770" aria-hidden="true"><path d="M596 950V600A368 362 0 0 1 1332 600V950"/><path d="M755.5 950V600A208.75 226 0 0 1 1173 600V950"/></svg>';
+function reelHTML(r){return `<div class="reel gray" style="background-image:url(img/${r.img})"><div class="bg"></div><div class="shade"></div><div class="safe"></div>
+  <span class="r-label">${r.id} · ${esc(r.serie)}</span><div class="r-box"></div><div class="r-sub"></div><div class="r-kw"><small>Comenta</small><b></b></div>
+  <div class="r-end">${ARC}<p>Eso tiene nombre.<br>Y tiene salida.</p><img src="img/logo-full-ciruela.png" alt=""></div>
+  <div class="r-hud"><span class="tm">0:00</span><div class="r-bar"><i></i></div><span>0:${String(r.dur).padStart(2,'0')}</span></div>
+  <button class="r-play" aria-label="Reproducir maqueta de ${esc(r.t)}"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button></div>`}
+function player(root,r){
+  const box=root.querySelector('.r-box'),sub=root.querySelector('.r-sub'),kw=root.querySelector('.r-kw'),end=root.querySelector('.r-end'),
+        bar=root.querySelector('.r-bar i'),tm=root.querySelector('.tm'),reel=root.querySelector('.reel'),btn=root.querySelector('.r-play');
+  let raf=0,t0=0,last=-1;
+  function reset(){box.className='r-box';box.textContent='';sub.innerHTML='';kw.classList.remove('in');end.classList.remove('in');reel.classList.add('gray');bar.style.width='0';tm.textContent='0:00';last=-1}
+  function apply(i){const [t,k,v]=r.beats[i];
+    if(k==='box'){end.classList.remove('in');kw.classList.remove('in');sub.innerHTML='';reel.classList.add('gray');box.className='r-box';box.textContent=v;void box.offsetWidth;box.classList.add('in')}
+    if(k==='name'){box.className='r-box in name';box.textContent=v;reel.classList.remove('gray')}
+    if(k==='sub'){box.className='r-box';kw.classList.remove('in');reel.classList.remove('gray');
+      sub.innerHTML=v.split('|').map((w,j)=>`<span class="${j===1||/^\d/.test(w)?'k':''}">${esc(w)}</span>`).join('');
+      [...sub.children].forEach((s,j)=>setTimeout(()=>s.classList.add('in'),j*260))}
+    if(k==='kw'){box.className='r-box';sub.innerHTML='';kw.querySelector('b').textContent=v;kw.classList.add('in');reel.classList.remove('gray')}
+    if(k==='end'){box.className='r-box';sub.innerHTML='';kw.classList.remove('in');end.classList.add('in')}}
+  function loop(now){const t=(now-t0)/1000;
+    if(t>=r.dur){stop(false);return}
+    bar.style.width=(t/r.dur*100)+'%';tm.textContent='0:'+String(Math.floor(t)).padStart(2,'0');
+    let idx=-1;r.beats.forEach((b,i)=>{if(t>=b[0])idx=i});
+    if(idx!==last&&idx>=0){for(let i=last+1;i<=idx;i++)if(i===idx||r.beats[i][1]==='name')apply(i);last=idx}
+    raf=requestAnimationFrame(loop)}
+  function play(){$$('.rc.playing,.serie .playing').forEach(o=>o!==root&&o._stop&&o._stop(true));reset();root.classList.add('playing');t0=performance.now();raf=requestAnimationFrame(loop)}
+  function stop(hard){cancelAnimationFrame(raf);root.classList.remove('playing');if(hard)reset()}
+  root._stop=stop;btn.onclick=play;reel.addEventListener('click',e=>{if(root.classList.contains('playing')&&e.target!==btn)stop(true)});
+  apply(0);if(r.beats[0][1]==='box')box.classList.add('in');
+}
+$('#reelGrid').innerHTML=REELS.map((r,i)=>`<article class="rc" data-rv style="--d:${i%3}"><div class="phone"><div class="screen">${reelHTML(r)}</div></div>
+  <h3>Historia de ${r.id} · ${esc(r.t)}</h3><div class="meta"><span class="tag c">${r.obj}</span><span class="tag">${r.d}</span><span class="tag">${esc(r.who)}</span>${r.kw?`<span class="tag k">${r.kw}</span>`:''}</div><p>${esc(r.txt)}</p></article>`).join('');
+$$('#reelGrid .rc').forEach((el,i)=>{player(el,REELS[i]);io.observe(el)});
+$('#safeT').onchange=e=>document.body.classList.toggle('show-safe',e.target.checked);
+
+/* ---------- series ---------- */
+const SERIES=[
+ {n:'Eso tiene nombre',obj:'Comentario',reel:1,ap:'Cuadro 0: caja blanca con la frase del cliente en sus palabras, sobre la escena en gris; la abogada al pecho.',ci:'La caja se voltea → el nombre en ciruela → «Eso tiene nombre. Y tiene salida.» → se arma el arco del isologo.',cta:'Palabra clave + regalo de una página (MANIFIESTO, DEUDAS).',caps:'R02 · jue 5-nov · R04 · mar 17-nov',ins:'Soy Laboralista: un artículo de ley aplicado a la plata del trabajador (2,8 M) · brainmasterco: la pregunta en caja en el cuadro 0'},
+ {n:'En regla',obj:'Guardado',reel:2,ap:'El resultado terminado en el cuadro 0 (el expediente armado) y «guárdalo» a los 3 segundos.',ci:'La lista completa quieta 3 segundos, para el pantallazo.',cta:'«Guárdalo», y la receta completa en el texto.',caps:'R03 · mié 11-nov',ins:'tomytaw: recetas con los valores exactos (108–539 mil vistas)'},
+ {n:'Respuesta a…',obj:'Alcance por búsqueda',reel:4,ap:'El comentario real en pantalla y la respuesta corta en la primera frase.',ci:'«¿Qué te pasó a ti? Déjalo en los comentarios y te respondemos en el próximo video.»',cta:'Pregunta de anécdota.',caps:'R05 · jue 19-nov · y una al mes desde diciembre',ins:'Guerrero Abogados: sus tres videos de deudas más vistos son respuestas (2,3 M; 1,6 M; 1,6 M)'},
+ {n:'Sin vueltas',obj:'Venta',reel:5,ap:'El sistema funcionando desde el cuadro 0: el cotizador de habilitación en el celular.',ci:'«Escríbenos: el WhatsApp está en el perfil» + isologo.',cta:'Palabra clave HABILITAR.',caps:'R06 · mié 25-nov',ins:'brainmasterco: mostrar el sistema vende más que actuarlo'}
+];
+const sTabs=$('#sTabs'),sBody=$('#sBody');
+sTabs.innerHTML=SERIES.map((s,i)=>`<button role="tab" data-s="${i}">${esc(s.n)}</button>`).join('');
+function setSerie(i){const s=SERIES[i],r=REELS[s.reel];
+  $$('#sTabs button').forEach((b,j)=>{b.classList.toggle('on',j===i);b.setAttribute('aria-selected',j===i)});
+  sBody.innerHTML=`<div class="fade-sw sp"><div class="phone"><div class="screen">${reelHTML(r)}</div></div></div>
+   <div class="fade-sw"><span class="tag c">${s.obj}</span><h3 class="h3" style="margin-top:16px;font-size:clamp(1.6rem,3vw,2.4rem)">${esc(s.n)}</h3>
+   <dl><dt>Apertura fija</dt><dd>${esc(s.ap)}</dd><dt>Cierre fijo</dt><dd>${esc(s.ci)}</dd><dt>Llamado</dt><dd>${esc(s.cta)}</dd><dt>Capítulos</dt><dd>${esc(s.caps)}</dd><dt>Se inspira en</dt><dd class="muted">${esc(s.ins)}</dd></dl></div>`;
+  player(sBody.querySelector('.sp'),r)}
+$$('#sTabs button').forEach(b=>b.onclick=()=>setSerie(+b.dataset.s));setSerie(0);
+
+/* ---------- calendario (datos en plan-data.js) ---------- */
+const P=window.PLAN, RX={}, CX={}; P.reels.forEach(r=>RX[r.id]=r); P.carruseles.forEach(c=>CX[c.id]=c);
+const DAYS={}; const addD=(k,it)=>(DAYS[k]=DAYS[k]||[]).push(it);
+P.reels.forEach(r=>addD(r.fecha,['r',r.id])); P.carruseles.forEach(c=>addD(c.fecha,['c',c.id])); P.historias.forEach(h=>addD(h[0],['h',h[1]]));
+Object.keys(P.extra).forEach(k=>P.extra[k].forEach(it=>addD(k,it)));
+const ESEN=new Set(['R02','R06','C1','C2','C4','C6','H01','H03','H04','H06','H08','H09','H11','H12']);
+const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'], DIAS=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const isoK=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const nice=k=>{const d=new Date(k+'T12:00:00');return DIAS[d.getDay()]+' '+d.getDate()+' de '+['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][d.getMonth()]};
+const br=t=>esc(t).replace(/\n/g,'<br>').replace(/\[(VALIDAR|CONFIRMAR)\]/g,'<span class="pend">$1</span>');
+let plan='crec', sel='2026-11-05';
+function label(it){const [t,v]=it;
+  if(t==='r')return v+' · '+RX[v].titulo; if(t==='c')return v+' · '+CX[v].titulo; if(t==='h')return v+' · historia';
+  return {w:'WhatsApp',l:'LinkedIn',t:'Trial reel',g:'Preparación',f:'Festivo'}[t]||'';}
+const chipCls={r:'R',c:'C',h:'H',w:'W',l:'W',t:'W',g:'X',f:'F'};
+function inc(it){return plan!=='esen'||!['r','c','h'].includes(it[0])||ESEN.has(it[1])}
+function drawCal(){
+  let h=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(d=>`<div class="dow">${d}</div>`).join('');
+  const start=new Date(2026,9,19,12);
+  for(let i=0;i<49;i++){const d=new Date(start);d.setDate(start.getDate()+i);const k=isoK(d),ev=DAYS[k]||[];
+    const out=d.getMonth()!==10;
+    h+=`<button class="day${ev.length?' has':''}${out?' out':''}${ev.some(e=>e[0]==='f')?' off':''}${k===sel?' sel':''}" data-k="${k}" ${ev.length?'':'tabindex="-1" disabled'}><span class="d">${d.getDate()}${d.getDate()===1||i===0?' '+MES[d.getMonth()]:''}</span>${ev.filter(e=>e[0]!=='f').map(e=>`<span class="chip ${chipCls[e[0]]}${inc(e)?'':' dim'}">${esc(label(e))}</span>`).join('')}</button>`}
+  $('#cal').innerHTML=h;
+  $$('#cal .day.has').forEach(b=>b.onclick=()=>{sel=b.dataset.k;drawCal();drawDet();if(innerWidth<820)$('#det').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})})}
+function reelHTMLdet(r){
+  const pl=Object.entries(P.planos).map(([k,v])=>`<span><b>${k}</b> ${esc(v)}</span>`).join('');
+  return `<article class="ddp r${inc(['r',r.id])?'':' dimp'}">
+   <header><span class="tag c">Reel · ${r.id}</span><h3>${esc(r.titulo)}</h3>
+    <dl class="meta2"><dt>Serie</dt><dd>${esc(r.serie)}</dd><dt>Objetivo</dt><dd>${esc(r.objetivo)}</dd><dt>Línea</dt><dd>${esc(r.linea)}</dd><dt>Duración</dt><dd>${esc(r.dur)}</dd><dt>Quién</dt><dd>${esc(r.quien)}</dd><dt>Dónde</dt><dd>${esc(r.redes)}</dd>${r.palabra?`<dt>Palabra clave</dt><dd><b>${r.palabra}</b> → ${esc(r.regalo)}</dd>`:''}</dl></header>
+   <div class="blk"><h4>Gancho 0–2 s</h4><p><b>Cuadro 0:</b> ${br(r.gancho.c0)}</p><p><b>Voz:</b> ${br(r.gancho.voz)}</p></div>
+   <div class="blk"><h4>Guion plano por plano</h4><div class="gtw"><table class="gt"><thead><tr><th>Tiempo</th><th>Plano</th><th>Voz</th><th>Texto en pantalla</th><th>Sonido</th></tr></thead><tbody>${r.guion.map(g=>`<tr><td class="t">${esc(g[0])} s</td><td class="pl">${esc(g[1])}</td><td>${esc(g[2])}</td><td class="tx">${esc(g[3])}</td><td class="sx">${esc(g[4])}</td></tr>`).join('')}</tbody></table></div>
+    <p class="leyenda">${pl}</p><p class="leyenda">Subtítulos de 2 o 3 palabras, al pecho y nunca sobre la cara (y 0,55–0,68). Ningún encuadre pasa de 2,5 s: punch-in o B-roll.</p></div>
+   <div class="cols2"><div class="blk"><h4>Tomas y material</h4><ul>${r.tomas.map(t=>`<li>${br(t)}</li>`).join('')}</ul></div>
+    <div class="blk"><h4>Música y SFX</h4><p>${br(r.musica)}</p>${r.validar.length?`<h4 style="margin-top:18px">Valida la firma antes de grabar</h4><ul>${r.validar.map(v=>`<li><span class="pend">validar</span> ${esc(v)}</li>`).join('')}</ul>`:''}</div></div>
+   <div class="cols2"><div class="blk"><h4>Texto del post (Instagram y Facebook)</h4><p class="post">${br(r.post)}</p></div>
+    <div class="blk">${r.tiktok?`<h4>Descripción en TikTok</h4><p class="post">${br(r.tiktok)}</p>`:''}<h4 style="margin-top:${r.tiktok?18:0}px">Historia del día (ya hecha)</h4><figure class="hfig"><img src="img/piezas/${r.historia.img}.webp" alt="Historia de ${r.id}" loading="lazy"><figcaption>${esc(r.historia.nota)}</figcaption></figure></div></div>
+  </article>`}
+function carHTMLdet(c){return `<article class="ddp c${inc(['c',c.id])?'':' dimp'}"><header><span class="tag k">Carrusel · ${c.id} · ya hecho</span><h3>${esc(c.titulo)}</h3><dl class="meta2"><dt>Objetivo</dt><dd>${esc(c.objetivo)}</dd><dt>Dónde</dt><dd>${esc(c.redes)}</dd><dt>Láminas</dt><dd>${c.laminas.length}</dd></dl></header>
+  <div class="lams">${c.laminas.map(l=>`<img src="img/piezas/${l}.webp" alt="${c.id} lámina ${l.slice(-2)}" loading="lazy">`).join('')}</div>
+  <div class="cols2"><div class="blk"><h4>Texto del post</h4><p class="post">${br(c.post)}</p></div><div class="blk"><h4>Valida la firma</h4><ul>${c.validar.map(v=>`<li><span class="pend">validar</span> ${esc(v)}</li>`).join('')}</ul></div></div></article>`}
+function histHTMLdet(id){const h=P.historias.find(x=>x[1]===id);return `<article class="ddp h${inc(['h',id])?'':' dimp'}"><div class="hrow"><img src="img/piezas/${id}.webp" alt="Historia ${id}" loading="lazy"><div><span class="tag">Historia · ${id} · ya hecha</span><p style="margin-top:12px;font-size:1.05rem">${br(h[2])}</p><p class="muted" style="margin-top:8px"><b>Sticker o acción:</b> ${esc(h[3])}</p></div></div></article>`}
+function drawDet(){const ev=DAYS[sel]||[];
+  let h=`<p class="eyebrow">${nice(sel)}</p>`;
+  const esenOut=plan==='esen'&&ev.some(e=>['r','c','h'].includes(e[0])&&!inc(e));
+  if(esenOut)h+=`<p class="note">En el plan Esencial algunas de estas piezas no salen; quedan atenuadas.</p>`;
+  ev.forEach(e=>{const [t,v]=e;
+    if(t==='r')h+=reelHTMLdet(RX[v]); else if(t==='c')h+=carHTMLdet(CX[v]); else if(t==='h')h+=histHTMLdet(v);
+    else h+=`<article class="ddp x"><span class="tag">${esc(label(e))}</span><p style="margin-top:10px">${esc(v)}</p></article>`});
+  $('#det').innerHTML=`<div class="fade-sw">${h}</div>`}
+$$('[data-plan]').forEach(b=>b.onclick=()=>{plan=b.dataset.plan;$$('[data-plan]').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b)});drawCal();drawDet()});
+$('#idx').innerHTML=[...P.reels.map(r=>['r',r.id,r.fecha,r.titulo]),...P.carruseles.map(c=>['c',c.id,c.fecha,c.titulo])].sort((a,b)=>a[2]<b[2]?-1:1).map(x=>`<button class="ix ${x[0]}" data-k="${x[2]}">${x[1]}<small>${esc(x[3])}</small></button>`).join('');
+$$('#idx .ix').forEach(b=>b.onclick=()=>{sel=b.dataset.k;drawCal();drawDet();$('#det').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})});
+drawCal();drawDet();
+
+/* ---------- palabras clave + DM ---------- */
+const KW=[
+ {w:'MANIFIESTO',r:'R02 · jue 5-nov',gift:'Lo que tienes que guardar de cada viaje para cobrar saldo y standby',dm:'Aquí está la lista. Guárdala en el celular, que en la carretera se pierde todo.',q:'¿El viaje que te deben fue este año o antes?',next:'Foto del manifiesto y del cumplido por WhatsApp, para revisar qué se puede hacer.',user:'transportes_rio'},
+ {w:'DEUDAS',r:'R04 · mar 17-nov',gift:'5 preguntas para saber si la insolvencia es para ti',dm:'Te escribimos por aquí para que sea privado. Estas son las 5 preguntas.',q:'¿Las deudas están a tu nombre o a nombre de un negocio?',next:'Persona: cita de diagnóstico con Karem. Negocio: ruta de pequeño comerciante o empresarial.',user:'maria.p'},
+ {w:'HABILITAR',r:'R06 · mié 25-nov',gift:'Los 9 requisitos + el enlace al cotizador',dm:'Aquí cotizas la habilitación de tu empresa. Y esta es la lista de lo que te van a pedir.',q:'¿Ya tienen la empresa constituida o arrancan de cero?',next:'Ruta SAS o ruta desde cero, igual que en la web. Cotización por escrito.',user:'cargas.andina'}
+];
+const kws=$('#kws');let kwT=[];
+kws.innerHTML=KW.map((k,i)=>`<button class="kw" data-k="${i}"><b>${k.w}</b><span>${k.r}</span></button>`).join('');
+$$('.kw').forEach(b=>{b.onclick=()=>setKw(+b.dataset.k);b.onpointermove=e=>{const r=b.getBoundingClientRect();b.style.setProperty('--mx',e.clientX-r.left+'px');b.style.setProperty('--my',e.clientY-r.top+'px')}});
+function setKw(i){const k=KW[i];kwT.forEach(clearTimeout);kwT=[];
+  $$('.kw').forEach((b,j)=>b.classList.toggle('on',j===i));
+  $('#kwDet').innerHTML=`<div class="fade-sw"><p class="eyebrow">${k.r}</p><h3 class="h3" style="margin-top:12px;font-size:clamp(1.8rem,3.4vw,2.8rem);color:var(--crema)">${k.w}</h3>
+   <dl style="margin-top:22px"><dt>Regalo</dt><dd>${esc(k.gift)} <span class="pend">validar</span></dd><dt>Pregunta filtro</dt><dd>${esc(k.q)}</dd><dt>Si responde</dt><dd>${esc(k.next)}</dd><dt>En público</dt><dd>Solo «Te escribimos por privado 🙌». Nunca detalles del caso.</dd></dl></div>`;
+  const dm=$('#dm');dm.innerHTML=`<div class="hd"><i></i>puentelegaldigital</div>
+   <div class="msg cm"><b>${k.user}</b>${k.w}</div><div class="msg cm" style="color:#888;font-size:12px"><b style="color:#111">puentelegaldigital</b>Te escribimos por privado 🙌</div>
+   <div class="typing"><i></i><i></i><i></i></div>
+   <div class="msg them">${esc(k.dm)}</div><div class="msg file">${esc(k.gift)}</div><div class="msg them">${esc(k.q)}</div>
+   <div class="msg me">${i===0?'Este año, en agosto':i===1?'A mi nombre':'Ya tengo la SAS'}</div>`;
+  const ms=[...dm.querySelectorAll('.msg')],ty=dm.querySelector('.typing'),step=RM?0:1;
+  const seq=[[0,()=>ms[0].classList.add('in')],[700,()=>ms[1].classList.add('in')],[1300,()=>ty.classList.add('in')],[2300,()=>{ty.classList.remove('in');ms[2].classList.add('in')}],[3000,()=>ms[3].classList.add('in')],[3800,()=>ms[4].classList.add('in')],[5200,()=>ms[5].classList.add('in')]];
+  seq.forEach(([t,f])=>kwT.push(setTimeout(f,t*step)))}
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){setKw(0);o.disconnect()}}),{threshold:.3}).observe($('#kws'));
+
+/* ---------- piezas reales ---------- */
+const PZ=[
+ {n:'C1 · Quién te responde',d:'mié 4-nov',k:'c',f:['C1-01','C1-02','C1-03','C1-04','C1-05']},
+ {n:'C2 · Los papeles de cada viaje',d:'vie 6-nov',k:'c',f:['C2-01','C2-02','C2-03','C2-04','C2-05','C2-06']},
+ {n:'C3 · 11 situaciones',d:'mar 10-nov',k:'c',f:['C3-01','C3-02','C3-03','C3-04','C3-05','C3-06']},
+ {n:'C4 · Habilitación, la lista',d:'vie 13-nov',k:'c',f:['C4-01','C4-02','C4-03','C4-04','C4-05','C4-06']},
+ {n:'C5 · Insolvencia',d:'vie 20-nov',k:'c',f:['C5-01','C5-02','C5-03','C5-04','C5-05','C5-06']},
+ {n:'C6 · La prima de diciembre',d:'vie 27-nov',k:'c',f:['C6-01','C6-02','C6-03','C6-04','C6-05','C6-06']},
+ {n:'Historias',d:'12',k:'v',f:['H01','H02','H03','H04','H05','H06','H07','H08','H09','H10','H11','H12'],nota:{H09:'Cambia: «¿qué te han descontado del saldo?»'}},
+ {n:'Historias de los reels',d:'6',k:'v',f:['R01','R02','R03','R04','R05','R06'],nota:{R02:'Se ajusta: «ya no son 12 horas»',R05:'Cambia a «Respuesta a…»',R06:'Cambia a «Tu propia empresa de carga»'}}
+];
+const cars=$('#cars'),slides=$('#slides');
+cars.innerHTML=PZ.map((c,i)=>`<button data-c="${i}">${esc(c.n)} <span class="muted" style="font-weight:500">· ${c.d}</span></button>`).join('');
+function setCar(i){const c=PZ[i];$$('#cars button').forEach((b,j)=>b.classList.toggle('on',j===i));
+  slides.innerHTML=c.f.map((f,j)=>`<figure class="pz ${c.k} fade-sw" style="animation-delay:${j*60}ms"><img src="img/piezas/${f}.webp" alt="${esc(c.n)} · ${f}" loading="lazy">${c.nota&&c.nota[f]?`<figcaption>${esc(c.nota[f])}</figcaption>`:''}</figure>`).join('');slides.scrollLeft=0}
+$$('#cars button').forEach(b=>b.onclick=()=>setCar(+b.dataset.c));setCar(1);
+
+/* ---------- líneas de negocio ---------- */
+const LIN=[
+ ['Habilitación de empresas de carga','El producto estrella','Empresarios y grupos de propietarios','Pago alto, una vez, decisión de semanas','Mostrar que la firma conoce el trámite al detalle y abrir conversación con quien ya lo está pensando','R03 · R06 · C4',2],
+ ['Cumplimiento para empresas de transporte','El ingreso que se repite','Gerentes de empresas habilitadas','Asesoría mensual: PESV, SARLAFT, SG-SST, reporte en el RNDC','Autoridad: ser quien avisa qué cambió antes de que llegue Supertransporte','LinkedIn de Karem · diciembre',1],
+ ['Cobro de saldos y standby','Muchos casos','Propietarios y conductores','Conversación por WhatsApp','Alcance en la comunidad camionera y una razón concreta para escribir','R02 · R05 · C2',3],
+ ['Laboral y SST para pymes','Puntual que se vuelve recurrente','Dueños de pyme y RR. HH.','Consulta en las fechas que duelen','Utilidad guardable: prima, salario mínimo, 42 horas, descargos','C6 · diciembre',1],
+ ['Insolvencia de persona natural','Volumen con emoción','Personas y pequeños comerciantes','Decisión emocional, con vergüenza','Quitar el miedo con datos ciertos; la respuesta llega por privado','R04 · C5',2]
+];
+$('#lineas').innerHTML=LIN.map((l,i)=>`<button class="lin" data-rv style="--d:${i}"><span class="ln">${i+1}</span><span class="lt"><b>${esc(l[0])}</b><small>${esc(l[1])}</small></span><span class="lw" title="Peso en noviembre">${'<i></i>'.repeat(l[6])}${'<i class="o"></i>'.repeat(3-l[6])}</span><span class="ld"><span><em>Quién compra</em>${esc(l[2])}</span><span><em>Cómo compra</em>${esc(l[3])}</span><span><em>Qué hace el contenido</em>${esc(l[4])}</span><span><em>En noviembre</em>${esc(l[5])}</span></span></button>`).join('');
+$$('.lin').forEach(b=>{io.observe(b);b.onclick=()=>{const on=b.classList.contains('open');$$('.lin').forEach(x=>x.classList.remove('open'));if(!on)b.classList.add('open')}});
+$$('.lin')[0].classList.add('open');
+
+/* ---------- dónde está el público ---------- */
+const BARS=[['Colombian Truckers · Facebook',710717],['Colombian Truckers · Instagram',223000],['Al Mejor Estilo Camionero · TikTok',174700],['Asoc. Colombiana de Camioneros · Facebook',74799],['Colfecar (gremio) · Instagram',15000],['@puentelegaldigital · Instagram',48,1]];
+const bmax=BARS[0][1];
+$('#bars').innerHTML=BARS.map(([n,v,me])=>`<div class="bar${me?' me':''}"><span>${esc(n)}</span><div><i style="--w:${Math.max(.6,v/bmax*100)}%"></i></div><b>${v.toLocaleString('es-CO')}</b></div>`).join('');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.disconnect()}}),{threshold:.3}).observe($('#bars'));
+
+/* ---------- oportunidades ---------- */
+const OPP=[
+ ['«La norma cambió y nadie te avisó» en el transporte','Es el hueco más claro de la categoría y el dato es oficial','R02 · C2'],
+ ['Respuestas en video a comentarios','Es el formato con más vistas del gremio legal','R05'],
+ ['Facebook, TikTok y canal de WhatsApp con las mismas piezas','Ahí está el transportador; no cuesta producción adicional','Todo el mes'],
+ ['Del dolor al producto: la empresa de propietarios (250 SMMLV)','Conecta el cobro de saldos con la habilitación','R06'],
+ ['Insolvencia para el pequeño comerciante con camión','Cruza los dos públicos; el tema de deudas es el de más alcance','R04 · C5'],
+ ['Carruseles guardables con la norma en una lámina','Sacan 9 veces más guardados que una imagen','C2 · C4 · C5 · C6'],
+ ['Trial reels con dos ganchos','Con 48 seguidores, el alcance viene de gente que no los sigue','R02 · R05'],
+ ['Calendario de coyuntura','La prima, el salario mínimo, el PESV en enero y la cuesta de enero','Trimestre'],
+ ['LinkedIn de Karem para el gerente de empresa','El perfil personal saca 63 % más interacción que la página de empresa','2 al mes'],
+ ['Colaboración con un creador camionero','Tiene la audiencia que la firma no tiene; se paga producción, nunca comisión','Piloto en diciembre']
+];
+$('#opps').innerHTML=OPP.map((o,i)=>`<li data-rv style="--d:${i%5}"><b>${esc(o[0])}</b><span>${esc(o[1])}</span><em>${esc(o[2])}</em></li>`).join('');
+$$('#opps li').forEach(el=>io.observe(el));
+
+/* ---------- canales ---------- */
+const CH=[
+ ['Instagram','@puentelegaldigital','Todo. Es la cuenta base; R02 y R05 salen primero como trial reel.','6 reels · 6 carruseles · 12 historias'],
+ ['Facebook','Página de la firma','Los 6 reels como Facebook Reels y los carruseles como álbum. Es donde está la masa camionera.','Mismas piezas'],
+ ['TikTok','@puentelegal (por confirmar)','Los reels de transporte e insolvencia y los carruseles en modo foto. Los primeros 3 segundos dicen la búsqueda literal.','R02–R06'],
+ ['Canal de WhatsApp','Puente Legal · Al día en transporte','Una alerta cada lunes: la norma o el plazo de la semana en una imagen y tres líneas.','4 alertas en noviembre'],
+ ['LinkedIn de Karem','Perfil personal','Para el gerente de empresa: C2 y C4 en PDF, con un párrafo propio.','2 al mes']
+];
+$('#chans').innerHTML=CH.map((c,i)=>`<article data-rv style="--d:${i}"><h3>${esc(c[0])}</h3><small>${esc(c[1])}</small><p>${esc(c[2])}</p><span class="tag">${esc(c[3])}</span></article>`).join('');
+$$('#chans article').forEach(el=>io.observe(el));
+
+/* ---------- mezcla ---------- */
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.disconnect()}}),{threshold:.4}).observe($('#mix'));
+
+/* ---------- grabación ---------- */
+const TL=[
+ {w:20,t:'Montaje',h:'0:00–0:20',who:'Todos',img:'',d:'Luz, sonido y 10 s de silencio del cuarto. Celular: video HDR apagado, 1080p a 30 fps, vertical, lente 1×.'},
+ {w:40,t:'Karem · R02 + R06',h:'0:20–1:00',who:'Karem',img:'karem-tarazona-recorte.webp',d:'Fondo liso para recortarla sobre el texto del decreto. R02 completo y los dos ganchos del trial, 3 veces cada uno. Después R06.'},
+ {w:30,t:'Katherine · R03',h:'1:00–1:30',who:'Katherine',img:'katherine-gil-recorte.webp',d:'Los 9 requisitos al pecho y los cenitales de la carpeta con 9 separadores ciruela.'},
+ {w:30,t:'Karem · R04',h:'1:30–2:00',who:'Karem',img:'karem-tarazona-recorte.webp',d:'Set cálido, otra prenda y voz tranquila: es el reel de deudas.'},
+ {w:20,t:'R05 + selfie',h:'2:00–2:20',who:'Karem',img:'karem-tarazona-recorte.webp',d:'La pregunta semilla de R05, por si no llega un comentario mejor, y una prueba del selfie de 60 s para la reacción en 24 h de diciembre.'},
+ {w:10,t:'Diana',h:'2:20–2:30',who:'Diana',img:'diana-camargo-recorte.webp',d:'Diez frases a cámara para su aparición de diciembre: el POV de la fatiga y el PESV.'}
+];
+$('#tlBar').innerHTML=TL.map((b,i)=>`<button style="--w:${b.w}" data-t="${i}">${esc(b.t)}</button>`).join('');
+function setTl(i){const b=TL[i];$$('#tlBar button').forEach((x,j)=>x.classList.toggle('on',j===i));
+  $('#tlDet').innerHTML=`${b.img?`<img class="fade-sw" src="img/${b.img}" alt="">`:'<div></div>'}<div class="fade-sw"><p class="eyebrow">${b.h} · ${esc(b.who)}</p><h3 class="h3" style="margin-top:10px">${esc(b.t)}</h3><p class="muted" style="margin-top:10px;max-width:60ch">${esc(b.d)}</p></div>`}
+$$('#tlBar button').forEach(b=>b.onclick=()=>setTl(+b.dataset.t));setTl(1);
+
+/* ---------- pendientes ---------- */
+const G=[
+ ['Para arrancar',['Plan contratado (Crecimiento o Esencial)','¿Qué línea deja mejor margen y cuál consume más horas?','¿De dónde llegan hoy los clientes y cuántas consultas al mes?','¿De qué lado del puente están en los cobros de saldo?','¿Siguen ofreciendo pensiones?','Quién responde DMs y WhatsApp, y en qué horario']],
+ ['Validación legal',['D. 1017: el pago al propietario aunque el generador no haya pagado','Cifras en pesos del standby (SMMLV 2026)','Que los arts. 4, 14 y 15 del D. 1017 no estén suspendidos','Plazo para rechazar el cumplido en la app RNDC','Cómo hablar de daños o faltantes de la carga','Insolvencia: el camión que «no cuenta» y las 5 preguntas','Empresa de propietarios: 250 SMMLV, 3 vehículos, 5 años','Cómo aplica el art. 31 de la Ley 1123 a su contenido']],
+ ['Canales y permisos',['Abrir TikTok y el canal de WhatsApp','¿Karem publica en LinkedIn y colabora desde su cuenta?','Quién aparece en cada reel; autorizaciones firmadas','Fecha de grabación: mié 28-oct','Piloto con un creador camionero en diciembre (producción pagada, nunca comisión)','¿Pauta para R02 y R06?']]
+];
+const KEY='pl-plan-nov-chk';let st={};try{st=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
+$('#groups').innerHTML=G.map(([h,items],gi)=>`<div><h3>${h}</h3>${items.map((t,ii)=>{const id=`c${gi}-${ii}`;return `<label class="ck"><input type="checkbox" id="${id}" ${st[id]?'checked':''}><span>${esc(t)}</span></label>`}).join('')}</div>`).join('');
+const allCk=$$('#groups input');
+function ring(){const n=allCk.filter(c=>c.checked).length,p=n/allCk.length;$('#ringFg').style.strokeDashoffset=326.7*(1-p);$('#ringN').textContent=n+'/'+allCk.length}
+allCk.forEach(c=>c.onchange=()=>{st[c.id]=c.checked;try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}ring()});ring();
+})();
+</script>
+</body>
+</html>
