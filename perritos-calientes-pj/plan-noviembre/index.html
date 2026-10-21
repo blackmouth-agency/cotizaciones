@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Plan de contenidos del primer mes de Perritos Calientes P&amp;J Gourmet: Capa por capa, del 30 de octubre al 29 de noviembre de 2026.">
+<meta name="description" content="Plan de lanzamiento y primer mes de Perritos Calientes P&amp;J Gourmet: expectativa, inauguración y noviembre, capa por capa.">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#4D1111">
-<title>Plan Mes 1 · P&amp;J Gourmet</title>
+<title>Plan de lanzamiento · P&amp;J Gourmet</title>
 <link rel="icon" href="/logo.ico" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -244,9 +244,44 @@ footer img{height:30px;width:auto;opacity:.85}
   *,*::before,*::after{animation:none!important;transition:none!important}
   body.anim .rv{opacity:1;transform:none}
 }
+
+/* ===== añadidos 21-oct: fases, tipos, jornadas, pauta ===== */
+.fases{display:grid;gap:1rem}
+@media(min-width:860px){.fases{grid-template-columns:repeat(3,1fr)}}
+.fase{background:var(--blanco);border:1px solid var(--rule);border-radius:18px;padding:1.3rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;position:relative}
+.fase .when{font-family:var(--f-type);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo-t)}
+.fase h3{font-family:var(--f-slab);font-size:1.6rem;line-height:1.05;color:var(--vino)}
+.fase p{color:var(--ink-2)}
+.fase.hot{background:var(--vino);border-color:var(--vino);background-image:var(--grain)}
+.fase.hot .when{color:var(--mostaza)}.fase.hot h3{color:var(--mostaza)}.fase.hot p{color:var(--d-ink)}
+.pz{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.2rem}
+.pz button{border:none;background:var(--rojo);color:#fff;font-weight:700;font-size:.78rem;padding:.25rem .65rem;border-radius:999px;cursor:pointer}
+.fase.hot .pz button{background:var(--mostaza);color:var(--vino)}
+.tipolist{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
+.tipolist button{display:flex;gap:.8rem;align-items:center;text-align:left;border:1px solid var(--d-rule);background:rgba(255,255,255,.04);border-radius:14px;padding:.7rem .9rem;cursor:pointer;color:var(--d-ink);transition:background .2s,border-color .2s}
+.tipolist button b{font-family:var(--f-slab);color:var(--mostaza);font-size:1rem;min-width:2.2rem}
+.tipolist button span{font-weight:700}
+.tipolist button small{display:block;color:var(--d-muted);font-weight:400;font-size:.82rem}
+.tipolist button[aria-pressed=true]{background:rgba(250,188,29,.12);border-color:var(--mostaza)}
+.it.p{background:#2A0909;color:var(--mostaza)}
+.jors{display:grid;gap:1rem}
+@media(min-width:860px){.jors{grid-template-columns:1.3fr 1fr 1fr}}
+.jor{border:1px solid var(--d-rule);border-radius:18px;padding:1.2rem;background:rgba(255,255,255,.04);display:flex;flex-direction:column;gap:.6rem}
+.jor .when{font-family:var(--f-type);color:var(--mostaza);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.jor h3{font-family:var(--f-slab);font-size:1.5rem;color:#fff;line-height:1.05}
+.jor p{color:var(--d-muted);font-size:.94rem}
+.jor ul{margin:0;padding-left:1.1rem;color:var(--d-ink);font-size:.92rem;display:flex;flex-direction:column;gap:.25rem}
+.jor.main{border-color:var(--mostaza);background:rgba(250,188,29,.08)}
+.prow{display:grid;gap:1rem}
+@media(min-width:860px){.prow{grid-template-columns:repeat(3,1fr)}}
+.pcard{background:var(--blanco);border:1px solid var(--rule);border-radius:18px;padding:1.3rem;display:flex;flex-direction:column;gap:.5rem}
+.pcard .when{font-family:var(--f-type);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo-t)}
+.pcard h3{font-family:var(--f-slab);font-size:1.35rem;color:var(--vino);line-height:1.1}
+.pcard p{color:var(--ink-2);font-size:.95rem}
+.note-box{border:1.5px dashed var(--rule);border-radius:16px;padding:1rem 1.2rem;color:var(--ink-2)}
 </style>
-<meta property="og:title" content="Plan Mes 1 · P&amp;J Gourmet">
-<meta property="og:description" content="Plan de contenidos del primer mes de Perritos Calientes P&amp;J Gourmet: Capa por capa, del 30 de octubre al 29 de noviembre de 2026.">
+<meta property="og:title" content="Plan de lanzamiento · P&amp;J Gourmet">
+<meta property="og:description" content="Plan de lanzamiento y primer mes de Perritos Calientes P&amp;J Gourmet: expectativa, inauguración y noviembre, capa por capa.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cotizaciones.blackmouth.agency/perritos-calientes-pj/plan-noviembre/">
 <meta property="og:image" content="https://cotizaciones.blackmouth.agency/perritos-calientes-pj/plan-noviembre/og.jpg">
@@ -254,24 +289,23 @@ footer img{height:30px;width:auto;opacity:.85}
 </head>
 <body>
 
-<!-- ===================== HERO ===================== -->
 <header class="hero dark">
   <div class="shell">
     <div class="top">
       <img src="img/logo-pj.png" alt="Perritos Calientes P&amp;J Gourmet">
-      <span class="pill">Plan de contenidos · Mes 1</span>
+      <span class="pill">Plan de lanzamiento · Mes 1</span>
     </div>
     <div class="hero-grid">
       <div>
         <p class="kick">Perritos Calientes P&amp;J Gourmet</p>
         <h1 style="margin-top:.8rem">Capa<span>por capa.</span></h1>
-        <p class="lead">El primer mes de tu cuenta. Aquí no decimos que es gourmet: lo vamos a mostrar en pantalla, una capa a la vez.</p>
-        <p class="dates">Del viernes 30 de octubre al domingo 29 de noviembre de 2026</p>
+        <p class="lead">Tu kiosco abre en días. Primero antojamos a Buga sin mostrarlo todo; el día que abres, contamos cómo llegó la gente; y en noviembre demostramos, capa por capa, por qué es gourmet.</p>
+        <p class="dates" id="heroDates"></p>
         <div class="stats">
           <div class="stat"><b data-count="8">0</b><span>reels</span></div>
           <div class="stat"><b data-count="6">0</b><span>carruseles</span></div>
           <div class="stat"><b data-count="16">0</b><span>historias</span></div>
-          <div class="stat"><b data-count="1">0</b><span>jornada de grabación</span></div>
+          <div class="stat"><b data-count="4">0</b><span>anuncios para pauta</span></div>
         </div>
       </div>
       <div>
@@ -291,89 +325,95 @@ footer img{height:30px;width:auto;opacity:.85}
 
 <nav class="nav" aria-label="Secciones">
   <div class="shell">
-    <a href="#idea">La idea</a><a href="#series">Series</a><a href="#calendario">Calendario</a><a href="#jornada">Grabación</a><a href="#dm">Palabras clave</a><a href="#medir">Qué medimos</a><a href="#necesitamos">Lo que necesitamos</a>
+    <a href="#idea">La idea</a><a href="#fases">Fases</a><a href="#contenidos">Contenidos</a><a href="#calendario">Calendario</a><a href="#grabacion">Grabación</a><a href="#pauta">Pauta</a><a href="#dm">Palabras clave</a><a href="#medir">Qué medimos</a><a href="#necesitamos">Lo que necesitamos</a>
   </div>
 </nav>
 
-<!-- ===================== IDEA ===================== -->
 <section class="section" id="idea">
   <div class="shell">
     <div class="head rv">
-      <p class="kick">01 · La idea del mes</p>
+      <p class="kick">01 · La idea</p>
       <h2 class="sec-title">En el pasillo, el antojo se decide <em>en segundos.</em></h2>
-      <p class="sub-h">Tu kiosco es nuevo y tu cuenta arranca casi en cero. Este mes tiene un trabajo: que Buga sepa que P&amp;J existe, dónde queda y por qué es gourmet.</p>
+      <p class="sub-h">Abres en un centro comercial y tu cuenta arranca casi en cero. El trabajo de estas semanas es que Buga sepa que llegas, dónde quedas y por qué es gourmet.</p>
     </div>
     <div class="idea-grid">
       <article class="card rv"><p class="lab">Lo que pasa</p><h3>Nadie se antoja de lo que no ha visto.</h3><p>En un centro comercial la gente decide en el pasillo. Si no te conoce, si no sabe dónde estás ni qué te hace distinto, sigue de largo.</p></article>
       <article class="card rv"><p class="lab">Lo que sabemos de tu cliente</p><h3>Cada quien pide su perro como si fuera una firma.</h3><p>«Sin piña», «con todas las salsas», «la papita aparte». La gente defiende su manera de pedirlo. Ahí está la conversación.</p></article>
-      <article class="card concept rv"><p class="lab">El concepto</p><h3>Capa por capa</h3><p>Cada pieza muestra una capa de lo que hace gourmet a P&amp;J: el pan, la salchicha, la salsa de la casa, quien lo arma, el plan en Buga Plaza y la gente de Buga.</p></article>
+      <article class="card concept rv"><p class="lab">El concepto</p><h3>Capa por capa</h3><p>Antes de abrir mostramos capas sueltas, nunca el perro completo. Después, cada pieza muestra una capa de lo que hace gourmet a P&amp;J: el pan, la salsa de la casa, quien lo arma y la gente de Buga.</p></article>
     </div>
-    <div class="rv">
-      <p class="kick" style="margin-bottom:.8rem">La mezcla del mes · 8 reels</p>
-      <div class="mix" id="mix">
-        <div class="a" style="--f:3">Alcance · 3</div>
-        <div class="b" style="--f:3">Conversación · 3</div>
-        <div class="cc" style="--f:1">Guardar · 1</div>
-        <div class="d" style="--f:1">Venta · 1</div>
-      </div>
-      <p class="small" style="margin-top:.6rem">Para una cuenta que arranca, el mes empuja alcance y conversación. Cada reel tiene un solo objetivo; en diciembre ajustamos la mezcla con los números de noviembre.</p>
+  </div>
+</section>
+
+<section class="section" id="fases" style="padding-top:0">
+  <div class="shell">
+    <div class="head rv">
+      <p class="kick">02 · Las fases</p>
+      <h2 class="sec-title">Antes, durante <em>y después</em> de abrir.</h2>
+      <p class="sub-h">Toca un contenido para verlo en el calendario.</p>
     </div>
+    <div class="fases" id="fasesBox"></div>
   </div>
 </section>
 <svg class="zz rv" viewBox="0 0 260 40" style="margin:0 auto" aria-hidden="true"><path class="o" pathLength="1" d="M8 20 Q22 2 36 20 T64 20 T92 20 T120 20 T148 20 T176 20 T204 20 T232 20 T252 14"/><path class="m" pathLength="1" d="M8 20 Q22 2 36 20 T64 20 T92 20 T120 20 T148 20 T176 20 T204 20 T232 20 T252 14"/></svg>
 
-<!-- ===================== SERIES ===================== -->
-<section class="section dark" id="series" style="margin-top:clamp(3rem,8vw,5rem)">
+<section class="section dark" id="contenidos" style="margin-top:clamp(3rem,8vw,5rem)">
   <div class="shell">
     <div class="head rv">
-      <p class="kick">02 · Las series</p>
-      <h2 class="sec-title">Cuatro series que <em>se reconocen</em> sin leer el nombre.</h2>
-      <p class="sub-h">Cada serie abre y cierra siempre igual. Así, al tercer reel, la gente ya sabe que es P&amp;J antes de ver el logo.</p>
+      <p class="kick">03 · Los contenidos</p>
+      <h2 class="sec-title">Seis tipos de contenido, <em>un solo antojo.</em></h2>
+      <p class="sub-h">Cada tipo tiene un trabajo distinto. Elige uno y mira en el celular cómo arranca cada reel.</p>
     </div>
-    <div class="tabs rv" role="tablist" id="serieTabs"></div>
-    <div class="serie rv" id="serieBox">
-      <div id="serieInfo"></div>
-      <div class="phone" id="seriePhone"></div>
+    <div class="tabs rv" role="tablist" id="tipoTabs"></div>
+    <div class="serie rv">
+      <div id="tipoInfo"></div>
+      <div class="phone" id="tipoPhone"></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== CALENDARIO ===================== -->
 <section class="section" id="calendario">
   <div class="shell">
     <div class="head rv">
-      <p class="kick">03 · El calendario</p>
-      <h2 class="sec-title">El mes, <em>día por día.</em></h2>
-      <p class="sub-h">Reels los miércoles y viernes a las 5:30 p. m., que es cuando se planea el fin de semana. Toca un día para ver qué sale.</p>
+      <p class="kick">04 · El calendario</p>
+      <h2 class="sec-title">Día por día, <em>desde la víspera.</em></h2>
+      <p class="sub-h" id="calLead"></p>
     </div>
-    <div class="legend rv"><span><i style="background:var(--c-reel)"></i>Reel</span><span><i style="background:var(--c-car)"></i>Carrusel</span><span><i style="background:#fde7bf"></i>Historia</span><span><i style="background:var(--vino)"></i>Grabación y preparación</span></div>
-    <div class="rv">
-      <div class="cal" id="cal"></div>
-    </div>
+    <div class="legend rv"><span><i style="background:var(--c-reel)"></i>Reel</span><span><i style="background:var(--c-car)"></i>Carrusel</span><span><i style="background:#fde7bf"></i>Historia</span><span><i style="background:#2A0909"></i>Anuncio</span><span><i style="background:var(--vino)"></i>Grabación y preparación</span></div>
+    <div class="rv"><div class="cal" id="cal"></div></div>
     <div class="detail rv" id="detail" aria-live="polite"></div>
   </div>
 </section>
 
-<!-- ===================== JORNADA ===================== -->
-<section class="section dark" id="jornada">
+<section class="section dark" id="grabacion">
   <div class="shell">
     <div class="head rv">
-      <p class="kick">04 · La grabación</p>
-      <h2 class="sec-title">Una tarde en tu kiosco <em>graba el mes entero.</em></h2>
-      <p class="sub-h">Propuesta: viernes 23 de octubre, de 12:30 a 8:00 p. m. <span class="tbc">por confirmar contigo</span> El producto se graba con calma en la tarde; la gente, en la hora pico.</p>
+      <p class="kick">05 · La grabación</p>
+      <h2 class="sec-title">Tres jornadas. <em>La primera es mañana.</em></h2>
+      <p class="sub-h">Las pruebas del menú son el mejor día para el producto: la comida de cerca y el equipo probando de verdad. La gente real la grabamos el día que abres.</p>
     </div>
-    <div class="tl" id="tl"></div>
-    <p class="small rv">Llevamos fondo, luz y las autorizaciones de imagen impresas. Tú pones los ingredientes para unos 12 perros de cámara (el equipo se los come después) y avisas a la administración de Buga Plaza.</p>
+    <div class="jors" id="jors"></div>
+    <p class="small rv">Llevamos fondo, luz y autorizaciones de imagen impresas. Tú pones los ingredientes para unos 12 perros de cámara y avisas a la administración de Buga Plaza.</p>
   </div>
 </section>
 
-<!-- ===================== DM ===================== -->
-<section class="section" id="dm">
+<section class="section" id="pauta">
   <div class="shell">
     <div class="head rv">
-      <p class="kick">05 · Palabras clave</p>
-      <h2 class="sec-title">Comentan una palabra. <em>Les llega la carta.</em></h2>
-      <p class="sub-h">Los reels que más conversan no dicen «síguenos»: piden una palabra a cambio de algo que la persona quiere. En P&amp;J eso es la carta, cómo pedir para el grupo y el combo.</p>
+      <p class="kick">06 · Pauta</p>
+      <h2 class="sec-title">Lo orgánico se gana el cariño. <em>La pauta llena el pasillo.</em></h2>
+      <p class="sub-h">Una cuenta nueva no llega sola a todo Buga. Proponemos anuncios cortos en Instagram y Facebook, hechos con el mismo material de la grabación, para la gente que vive cerca de Buga Plaza.</p>
+    </div>
+    <div class="prow" id="prow"></div>
+    <p class="note-box rv">La inversión en pauta no está incluida en el plan: la defines tú y se paga directamente a Meta desde tu cuenta publicitaria. <span class="tbc">El presupuesto lo definimos contigo</span></p>
+  </div>
+</section>
+
+<section class="section" id="dm" style="padding-top:0">
+  <div class="shell">
+    <div class="head rv">
+      <p class="kick">07 · Palabras clave</p>
+      <h2 class="sec-title">Comentan una palabra. <em>Les llega lo que quieren.</em></h2>
+      <p class="sub-h">Los reels que más conversan no dicen «síguenos»: piden una palabra a cambio de algo útil. En P&amp;J es el aviso de apertura, la carta y el combo.</p>
     </div>
     <div class="kw-tabs rv" role="tablist" id="kwTabs"></div>
     <div class="dm-wrap rv">
@@ -383,29 +423,27 @@ footer img{height:30px;width:auto;opacity:.85}
   </div>
 </section>
 
-<!-- ===================== MEDIR ===================== -->
 <section class="section" id="medir" style="padding-top:0">
   <div class="shell">
     <div class="head rv">
-      <p class="kick">06 · Qué medimos</p>
-      <h2 class="sec-title">Noviembre fija <em>la línea de partida.</em></h2>
-      <p class="sub-h">Una cuenta nueva no se compara con La Perrera ni con nadie: se compara consigo misma. Esto es lo que vamos a mirar el lunes 30 de noviembre.</p>
+      <p class="kick">08 · Qué medimos</p>
+      <h2 class="sec-title">Estas semanas fijan <em>la línea de partida.</em></h2>
+      <p class="sub-h">Una cuenta nueva no se compara con nadie: se compara consigo misma. Esto es lo que miramos el lunes 30 de noviembre.</p>
     </div>
     <div class="kpis">
-      <article class="kpi rv"><b>Alcance</b><h4>¿Buga ya te vio?</h4><p>Vistas de los reels de alcance y cuántas vienen de gente que no te sigue. Con este mes armamos tu promedio y desde diciembre medimos contra él.</p></article>
-      <article class="kpi rv"><b>CARTA</b><h4>¿Te escriben?</h4><p>Comentarios con la palabra sobre las vistas del reel. La meta de referencia es medio comentario por cada cien vistas.</p></article>
-      <article class="kpi rv"><b>Kiosco</b><h4>¿Llegan por Instagram?</h4><p>Quien muestre el mensaje de CARTA en el kiosco recibe un detalle de la casa <span class="tbc">por confirmar contigo</span>. Tú anotas cuántos lo muestran: es la cifra que dice si Instagram trae gente.</p></article>
+      <article class="kpi rv"><b>PRIMERO</b><h4>¿Cuántos esperaban la apertura?</h4><p>La lista de quienes comentaron PRIMERO antes de abrir. Es la primera medida de interés real en Buga.</p></article>
+      <article class="kpi rv"><b>CARTA</b><h4>¿Te escriben?</h4><p>Comentarios con la palabra sobre las vistas del reel, y los mensajes por WhatsApp e Instagram que traen los anuncios.</p></article>
+      <article class="kpi rv"><b>Kiosco</b><h4>¿Llegan por Instagram?</h4><p>Quien muestre el mensaje de CARTA en el kiosco recibe un detalle de la casa <span class="tbc">por confirmar contigo</span>. Tú anotas cuántos lo muestran.</p></article>
     </div>
   </div>
 </section>
 
-<!-- ===================== NECESITAMOS ===================== -->
 <section class="section dark" id="necesitamos">
   <div class="shell">
     <div class="head rv">
-      <p class="kick">07 · Lo que necesitamos de ti</p>
-      <h2 class="sec-title">Antes de grabar, <em>esto.</em></h2>
-      <p class="sub-h">Nada de lo que sale en pantalla lo inventamos nosotros: precios, horarios y nombres salen de ti. Ve marcando lo que ya tengas listo.</p>
+      <p class="kick">09 · Lo que necesitamos de ti</p>
+      <h2 class="sec-title">Para arrancar, <em>esto.</em></h2>
+      <p class="sub-h">Nada de lo que sale en pantalla lo inventamos: fechas, precios y nombres salen de ti. Ve marcando lo que ya tengas.</p>
     </div>
     <div class="progress rv"><div class="track"><i id="pbar"></i></div><b id="pnum">0/0</b></div>
     <div class="checks rv" id="checks"></div>
@@ -413,12 +451,11 @@ footer img{height:30px;width:auto;opacity:.85}
   </div>
 </section>
 
-<!-- ===================== CIERRE ===================== -->
 <section class="section close">
   <div class="shell">
     <svg class="zz rv" viewBox="0 0 260 40" aria-hidden="true"><path class="o" pathLength="1" d="M8 20 Q22 2 36 20 T64 20 T92 20 T120 20 T148 20 T176 20 T204 20 T232 20 T252 14"/><path class="m" pathLength="1" d="M8 20 Q22 2 36 20 T64 20 T92 20 T120 20 T148 20 T176 20 T204 20 T232 20 T252 14"/></svg>
     <h2 class="rv">Gourmet no es un adorno en el nombre. <em>Es una promesa.</em></h2>
-    <p class="rv">Este mes la cumplimos en pantalla, capa por capa. Una pregunta antes de la grabación: ¿cuál es el perro que quieres que Buga recuerde primero?</p>
+    <p class="rv">La cumplimos en pantalla, capa por capa. Una pregunta antes de abrir: ¿cuál es el perro que quieres que Buga recuerde primero?</p>
     <a class="btn rv" href="https://wa.me/573137329265" rel="noopener">Hablemos por WhatsApp →</a>
   </div>
 </section>
@@ -429,271 +466,176 @@ footer img{height:30px;width:auto;opacity:.85}
 <script>
 (function(){
 "use strict";
+var D={"inauguracion": "2026-10-30", "tipos": {"expectativa": {"n": "Expectativa", "d": "Antes de abrir. Se muestra por partes, nunca el perro completo, y siempre con la fecha y el lugar."}, "inauguracion": {"n": "Inauguración", "d": "El día que abre y el día después: gente real, horas reales, cifras reales."}, "antojo": {"n": "Antojo", "d": "Producto de cerca y sin voz. Alcance: que Buga lo vea y se antoje."}, "hecho": {"n": "Hecho en P&J", "d": "El gourmet demostrado: capas, ingredientes con nombre, la salsa de la casa."}, "gente": {"n": "Gente y humor", "d": "Sketches de pasillo y clientes reales. Buga en la cuenta."}, "venta": {"n": "Venta", "d": "Combos y precios. La única pieza orgánica con precio en pantalla."}, "pauta": {"n": "Pauta", "d": "Anuncios pagados en Meta. Cortos, producto en el primer segundo, botón de la plataforma."}}, "tomas": {"A01": ["J1", "macro", "Gota de salsa de la casa cayendo y reventando sobre el perro, sin que se vea qué es", "1080p a 120 cuadros, obturación 1/250. Cuchara a 20 cm del perro, 4 intentos."], "A02": ["J1", "macro", "El pan abriéndose: solo la miga, nunca el pan entero", "Manos fuera de cuadro. 3 intentos."], "A03": ["J1", "macro", "Salchicha en la plancha, de lado, con el humo a contraluz", "LED detrás a 45°. 10 s seguidos sin mover la cámara."], "A04": ["J1", "macro", "Queso estirándose al levantar el perro", "120 cuadros. 3 intentos, de frente y de ¾."], "A05": ["J1", "macro", "Manos con guantes poniendo el queso, encuadre tan cerrado que no se ve el perro completo", "4 s por toma."], "A06": ["J1", "macro", "El pan cruzando frente al lente (sirve de transición)", "Dos velocidades: rápida y media."], "A07": ["J1", "macro", "La mostaza dibujando el zigzag sobre el perro: una completa y otra que se corta a la mitad", "Cenital y de ¾. Es el cierre de todas las series."], "A08": ["J1", "macro", "Macros para adivinar: textura del pan tostado, queso burbujeando, salsa brillante", "4 s quietos cada uno, y un alejamiento rápido que se frena justo antes de revelar el perro."], "A09": ["J1", "macro", "La primera mordida de perfil (alguien del equipo)", "120 cuadros. Fondo limpio."], "B01": ["J1", "cenital", "Plato vacío sobre el fondo vino", "10 s quietos. Es el arranque de «Capa por capa»."], "B02": ["J1", "cenital", "El de la casa capa por capa: una toma por capa, la mano entra, deja la capa y sale", "Cámara fija todo el tiempo. No mover el plato entre capas."], "B03": ["J1", "cenital", "Un segundo perro de la carta, capa por capa", "Igual que B02."], "B04": ["J1", "cenital", "Cada perro de la carta: foto cenital, foto de ¾ y 5 s de video", "Es la carta digital y el anuncio P3. Anotar el nombre de cada uno."], "B05": ["J1", "cenital", "Perro partido a la mitad: macro de las capas", "Cuchillo limpio, un solo corte."], "B06": ["J1", "cenital", "Perro completo girando", "Plato giratorio o la cámara orbita a mano, despacio."], "B07": ["J1", "cenital", "Las salsas en fila, una por una", "Un plano por salsa. Anotar el nombre de cada salsa."], "B08": ["J1", "cenital", "Combo completo y cada elemento por separado [solo si ya existe el combo]", "Si no existe, pasa a la semana 2 (H03)."], "C01": ["J1", "kiosco", "El kiosco completo con el letrero, de frente", "Trípode, 6 s quieto. Con y sin el equipo detrás."], "C02": ["J1", "kiosco", "Las luces del kiosco encendiéndose o la persiana subiendo", "Solo si se puede. 3 tomas."], "C03": ["J1", "kiosco", "Caminata desde la entrada de Buga Plaza hasta el kiosco", "Estable, 20 s, a paso normal. Es el «cómo llegar»."], "C04": ["J1", "kiosco", "Fachada de Buga Plaza y un plano de Buga que se reconozca", "La Basílica o una calle conocida [CONFIRMAR]. 5 s cada uno."], "C05": ["J1", "kiosco", "Detalles de marca: sello, servilletas, empaques, delantal, carta impresa", "2–3 s cada uno. Sirven de transición y para historias."], "C06": ["J1", "kiosco", "Timelapse de toda la tarde", "Celular en trípode en una esquina, grabando desde que llegamos."], "D01": ["J1", "equipo", "Reacciones del equipo probando el menú, de verdad, sin actuar", "Primer plano a la altura de los ojos. Cada persona, 2 mordidas."], "D02": ["J1", "equipo", "La dueña a cámara: «Faltan cinco días para abrir y hoy probamos todo el menú.»", "Grabar también con «cuatro» y «seis» días por si se mueve la fecha."], "D03": ["J1", "equipo", "Dos salsas lado a lado y el equipo probando la A y la B", "Solo si de verdad están decidiendo entre dos."], "D04": ["J1", "equipo", "La dueña a cámara: «Ustedes deciden. Comenten A o B…»", "Y la versión del plan B: «¿Cuál van a pedir primero?»"], "D05": ["J1", "equipo", "Todo el equipo junto: «¡Mañana abrimos!», «¡Hoy abrimos!» y «¡El viernes abrimos!»", "2 tomas de cada una. Energía real."], "D06": ["J1", "equipo", "Manos armando rápido, plano medio cerrado", "Dos velocidades."], "D07": ["J1", "equipo", "Retrato de cada persona del equipo: foto y 3 s de video", "Anotar nombre y cargo de cada uno."], "D08": ["J1", "equipo", "Las 4 pruebas de «gourmet» que confirme la clienta", "Una toma por prueba."], "E01": ["J1", "sketch", "«¿Cuánto era?»: plano del cliente y contraplano de quien atiende, todo el diálogo", "3 tomas de cada lado. David o Sebas hacen de cliente."], "E02": ["J1", "sketch", "«El pedido de la oficina»: el oficinista con la lista y el contraplano", "Utilería: rollo de papel de caja escrito a mano."], "F01": ["J1", "sonido", "Chisporroteo de la plancha grabado de cerca", "30 s con el micrófono a un palmo."], "F02": ["J1", "sonido", "Crujido del pan y mordidas de cerca", "10 s de cada uno."], "F03": ["J1", "sonido", "Ambiente del pasillo y del kiosco en silencio", "10 s de cada uno."], "G01": ["J2", "apertura", "El momento de abrir: luces o persiana", "Llegar antes de la hora de apertura."], "G02": ["J2", "apertura", "El primer pedido: el ticket o la primera venta", "Anotar la hora."], "G03": ["J2", "apertura", "Cliente #1 mordiendo, en cámara lenta", "Con autorización firmada en el momento."], "G04": ["J2", "apertura", "La fila, familias, el equipo a toda", "Planos de 1–2 s; de cerca solo caras con permiso, el resto de espaldas o manos."], "G05": ["J2", "apertura", "El equipo al cierre diciendo la cifra del día a cámara", "La cifra sale de la caja."], "G06": ["J2", "gente", "Vox pop: «¿Qué no le puede faltar a su perro?»", "10–15 personas, cada una con autorización. Micrófono de mano con el sello."], "G07": ["J2", "gente", "Pareja o familia: salen del cine, caminan, piden y muerden a la vez", "Con autorización. Si no hay cine, salen de una tienda."], "G08": ["J2", "gente", "Historias en vivo durante el día", "Abrimos · la fila · cliente #1 · respuesta del juego · gracias."], "G09": ["J2", "gente", "El kiosco con gente, de frente", "10 s quieto. Para los anuncios."], "H01": ["J3", "sketch3", "«¿Cuánto era?» completo (si no se grabó el 22)", "Igual que E01."], "H02": ["J3", "sketch3", "«El pedido de la oficina» o «El indeciso»", "Igual que E02."], "H03": ["J3", "combo", "Combo del viernes negro: cenital, cada elemento y armado", "Solo si hay oferta."], "H04": ["J3", "combo", "Dos personas mordiendo el combo a la vez", "Con autorización."]}, "piezas": [{"c": "X1", "tipo": "expectativa", "t": "Algo se está armando", "obj": "Alcance + lista de aviso", "dur": "10–12 s", "j": "J1", "off": -7, "nucleo": true, "idea": "Algo nuevo llega a Buga Plaza y todavía no lo mostramos entero: solo capas que se arman. La promesa es concreta: el día, el lugar y que es gourmet.", "c0": "Macro de la salsa de la casa cayendo en cámara lenta sobre algo que no se alcanza a ver. «ALGO» escrito desde el primer cuadro.", "beats": [["0,0–1,0", "Macro: la gota de salsa revienta en cámara lenta", "", "ALGO", "Golpe grave"], ["1,0–2,0", "Macro: el pan se abre, solo la miga", "", "SE ESTÁ", "Crujido"], ["2,0–3,0", "Lateral: la salchicha en la plancha, humo a contraluz", "", "ARMANDO", "Chisporroteo"], ["3,0–4,5", "Manos con guantes ponen el queso; encuadre cerrado", "", "", ""], ["4,5–5,5", "El pan cruza frente al lente", "", "EN BUGA · PLAZA", "Whoosh"], ["5,5–7,5", "La mostaza empieza el zigzag… y corte a negro a la mitad", "", "", "La música se corta 0,3 s"], ["7,5–10,0", "Fondo vino: el sello P&J quieto; debajo, la fecha", "", "[FECHA DE APERTURA]", "«Tic»"], ["10,0–12,0", "El mismo cuadro", "", "COMENTA · PRIMERO", ""]], "cta": "Escrito, sin voz: «Comenta PRIMERO». A quien comente le llega un mensaje el día que abren.", "palabra": "PRIMERO", "post": "Algo se está armando en Buga Plaza. 🌭\nComenta PRIMERO y te avisamos por mensaje el día que abrimos [+ lo que reciben los primeros].\n📍 C.C. Buga Plaza · [fecha de apertura]", "notas": ["Nunca se ve el perro completo: esa es la regla del teaser.", "Un teaser que no promete nada concreto no rinde (guía 09, antipatrón 2): por eso la fecha y el lugar van escritos.", "Si el jueves no hay fecha confirmada, el cierre dice «MUY PRONTO» y sale igual."], "confirmar": ["Fecha de apertura", "¿Hay algo para los primeros clientes?"], "tomas": ["A01", "A02", "A03", "A05", "A06", "A07", "F01", "F02"], "inspira": "ignaciovasconez DczaTj7RPRE (spot de 10 s que cierra en el producto)"}, {"c": "X2", "tipo": "expectativa", "t": "Hoy probamos el menú", "obj": "Comentario", "dur": "25–32 s", "j": "J1", "off": -5, "nucleo": true, "idea": "Lo que pasa el jueves es el mejor contenido que hay: el equipo probando el menú de verdad, días antes de abrir. Y la gente decide algo.", "c0": "Primer plano de alguien del equipo mordiendo y cerrando los ojos. «FALTAN 5 DÍAS» escrito desde el primer cuadro.", "beats": [["0,0–2,0", "Primer plano: una mordida, los ojos cerrados", "", "FALTAN · [5] DÍAS", "Mordida"], ["2,0–5,0", "La dueña a cámara, con delantal, frente al kiosco", "«Faltan [cinco] días para abrir y hoy probamos todo el menú.»", "HOY PROBAMOS · TODO", ""], ["5,0–13,0", "Montaje: platos saliendo, manos, cuatro reacciones distintas (una seria, una exagerada, una que pide otro, una que no comparte)", "", "APROBADO (sello en cada reacción)", "Golpe de sello en cada una"], ["13,0–17,0", "Dos salsas lado a lado en la tabla", "«Y aquí hay un problema: tenemos dos salsas de la casa y solo cabe una.»", "¿A · O B?", "La música baja"], ["17,0–23,0", "Prueban la A, prueban la B; caras de duda; alguien vuelve por más de la B", "", "A → B", ""], ["23,0–30,0", "La dueña a cámara", "«Ustedes deciden. Comenten A o B: la que gane es la que van a probar el [viernes].»", "COMENTA · A O B", ""]], "cta": "Dicho y escrito: «Comenten A o B». La ganadora se anuncia en historias el día de la apertura.", "planB": "Si no están decidiendo entre dos salsas de verdad, no se finge. Desde el segundo 13: la dueña tapa la carta con la mano y dice «¿Cuál van a pedir primero? Comenten PRIMERO y les avisamos el día que abrimos».", "post": "Faltan [5] días y hoy probamos todo el menú. 🌭\nTenemos dos salsas de la casa y solo cabe una: comenta A o B.\n📍 C.C. Buga Plaza · abrimos el [fecha]", "notas": ["Las reacciones no se actúan: se graba mientras prueban, con la cámara a la altura de los ojos.", "El sello «APROBADO» es motion graphics en edición, en mostaza, sin tapar caras.", "El número de días se graba en tres versiones por si se mueve la fecha."], "confirmar": ["¿Están entre dos salsas de verdad?", "Nombre de la dueña y si habla a cámara", "Autorizaciones de imagen del equipo"], "tomas": ["D01", "D02", "D03", "D04", "B07"], "inspira": "luisanhello Dc1OMIaiq1u (pregunta que pide postura) · tomytaw Db3TsSOKNDO (comentario pedido en voz y escrito)"}, {"c": "X4", "tipo": "expectativa", "t": "Mañana abrimos", "obj": "Alcance y visitas", "dur": "17–19 s", "j": "J1", "off": -1, "nucleo": true, "idea": "El aviso con todo lo necesario para venir: día, hora, dónde queda el kiosco y por qué vale la pena llegar de primero.", "c0": "Las luces del kiosco encendiéndose (o el letrero) con «MAÑANA ABRIMOS» desde el primer cuadro.", "beats": [["0,0–1,5", "Las luces del kiosco se encienden, o el letrero", "", "MAÑANA · ABRIMOS", "Golpe y zumbido de luces"], ["1,5–4,0", "Todo el equipo junto, a cámara", "«¡Mañana abrimos!»", "", "El grito real"], ["4,0–9,0", "Montaje del menú de las pruebas: un plano cada 0,8 s", "", "", "Música arriba"], ["9,0–14,0", "Caminata de la entrada de Buga Plaza al kiosco, con el mapa ilustrado encima", "Dueña, en off: «[Viernes 30], desde las [hora], en Buga Plaza, [referencia].»", "[VIE 30] · [HORA] · [REFERENCIA]", ""], ["14,0–17,0", "El de la casa en cenital", "«Los primeros [N] se llevan [beneficio].»", "LOS PRIMEROS · [N]", ""], ["17,0–19,0", "Sello + zigzag", "", "BUGA PLAZA", "«Tic»"]], "cta": "Día, hora y lugar sostenidos al menos 4 s (guía 06·E3). En el post: «Etiqueta a con quién vienes».", "planB": "Si no hay nada para los primeros, del segundo 14 al 17 la dueña dice «Vengan con hambre».", "post": "Mañana abrimos. 🌭\n📍 C.C. Buga Plaza · [referencia]\n🕐 [día y hora]\n[Los primeros N se llevan…]\nEtiqueta a con quién vienes 👇", "notas": ["Se graba el jueves con las tres variantes («mañana», «hoy», «el viernes») para no depender de la fecha.", "Este mismo material arma el anuncio P1."], "confirmar": ["Fecha y hora de apertura", "Referencia del kiosco dentro de Buga Plaza", "Beneficio para los primeros"], "tomas": ["C01", "C02", "C03", "C04", "D05", "B06"], "inspira": "juanpavg11 Db8VtIdxxw9 (dato de acción sostenido en pantalla)"}, {"c": "I1", "tipo": "inauguracion", "t": "El primer día", "obj": "Marca y alcance", "dur": "26–28 s", "j": "J2", "off": 1, "nucleo": true, "idea": "La prueba de que Buga llegó, contada por horas: abrir, el primer pedido, el primer cliente, la fila y la cifra del día.", "c0": "La primera mordida del cliente #1 en cámara lenta, con «CLIENTE #1» escrito.", "beats": [["0,0–2,0", "Cliente #1 mordiendo, en cámara lenta", "", "CLIENTE · #1", "Mordida"], ["2,0–4,0", "Las luces o la persiana: abrir", "", "[HORA] · ABRIMOS", ""], ["4,0–7,0", "El primer pedido: el ticket, las manos de quien atiende", "", "[HORA] · PRIMER PEDIDO", "«Ding» de caja"], ["7,0–14,0", "La fila, familias, el equipo a toda: un plano cada 1,2 s", "", "[HORA] · LA FILA", "Música arriba"], ["14,0–20,0", "El equipo al cierre, cansado, frente al kiosco", "«Hoy vendimos [N] perros. Gracias, Buga.»", "[N] PERROS · GRACIAS, BUGA", ""], ["20,0–26,0", "La dueña a cámara", "«Si viniste hoy, etiquétate. Y si no… ya sabes dónde estamos.»", "¿VINISTE? · ETIQUÉTATE", ""], ["26,0–28,0", "Sello + zigzag", "", "", "«Tic»"]], "cta": "Dicho: «Si viniste hoy, etiquétate».", "post": "Así fue el primer día de P&J en Buga Plaza. Gracias, Buga. 🌭\n¿Viniste? Etiquétate 👇", "notas": ["La cifra sale de la caja. Si la clienta no la quiere decir, esa línea se cambia por «Gracias, Buga» y ya.", "Solo caras con autorización; en la fila, espaldas y manos."], "confirmar": ["Autorización del cliente #1", "¿Se puede decir la cifra del día?"], "tomas": ["G01", "G02", "G03", "G04", "G05"], "inspira": "juanpavg11 DcHBQDJRakq (la secuela con pruebas y agradecimientos)"}, {"c": "A1", "tipo": "antojo", "t": "El perro caliente gourmet de Buga", "obj": "Alcance", "dur": "12–13 s", "j": "J1", "off": 7, "nucleo": true, "idea": "Doce segundos de antojo sin decir una palabra. Es el reel insignia y la base de los anuncios.", "c0": "El queso estirándose al levantar el perro, en cámara lenta. «EN BUGA» a 0,4 s.", "beats": [["0,0–1,5", "El queso se estira al levantar el perro, cámara lenta", "", "EN BUGA → GOURMET", "Golpe grave"], ["1,5–2,5", "Fachada de Buga Plaza (o la Basílica)", "", "", "Ambiente"], ["2,5–3,5", "La salchicha en la plancha, humo a contraluz", "", "", "Chisporroteo grabado en el kiosco"], ["3,5–4,5", "El pan cruza el lente", "", "", "Whoosh"], ["4,5–6,0", "La salsa cae, cenital", "", "SALSA · DE LA CASA", "«Squeeze»"], ["6,0–7,5", "Manos armando", "", "", ""], ["7,5–9,0", "El perro girando sobre el fondo vino", "", "", "Whoosh"], ["9,0–10,5", "La primera mordida de perfil", "", "", "Mordida"], ["10,5–13,0", "La mostaza en zigzag sobre el sello P&J", "", "BUGA PLAZA", "«Tic»"]], "cta": "Nada en el video. En el post: «¿Con quién vienes? Etiquétalo».", "post": "El perro caliente gourmet de Buga. 🌭\n¿Con quién vienes? Etiquétalo 👇\n📍 C.C. Buga Plaza · [horario]", "notas": ["El último cuadro empalma con el primero (bucle).", "Un plano nuevo cada 1–1,5 s; texto en pantalla al menos 1,8 s (guía 04·E4)."], "confirmar": ["Colaboración con la cuenta de Buga Plaza"], "tomas": ["A04", "A03", "A06", "A07", "A09", "B06", "C04", "D06"], "inspira": "ignaciovasconez DczaTj7RPRE · gustavorossiribeiro DRhaq1Ljwsh"}, {"c": "H1", "tipo": "hecho", "t": "Capa por capa: el de la casa", "obj": "Comentario", "dur": "22–23 s", "j": "J1", "off": 5, "nucleo": true, "idea": "El de la casa armado frente a la cámara, una capa a la vez y cada capa con su nombre. El gourmet se ve, no se dice.", "c0": "El de la casa ya armado, cenital sobre el fondo vino, con «CAPA POR CAPA» escrito.", "beats": [["0,0–2,0", "El de la casa armado, cenital", "«Esto no se arma así no más. Va capa por capa.»", "CAPA · POR CAPA", ""], ["2,0–2,8", "Corte en seco: el plato vacío", "", "", "Corte"], ["2,8–5,5", "Entra el pan", "«Primero, el pan: [detalle real], tostado en la plancha cuando lo pides.»", "1 · [PAN]", "Tecla de máquina"], ["5,5–8,5", "Entra la salchicha", "«Después, la salchicha: [tipo real].»", "2 · [SALCHICHA]", "Tecla"], ["8,5–11,5", "Entra la tercera capa", "«Encima, [capa 3 real].»", "3 · [CAPA 3]", "Tecla"], ["11,5–14,5", "Cae la salsa", "«Y la salsa de la casa. La receta no se la vamos a contar.»", "4 · SALSA · DE LA CASA", "«Squeeze»"], ["14,5–16,5", "La mostaza en zigzag", "«Al final, la firma.»", "LA FIRMA", ""], ["16,5–23,0", "El perro terminado; la palabra entra grande", "«Comenta CARTA y te mando la carta completa, con precios, por mensaje.»", "COMENTA · CARTA", ""]], "cta": "Dicho y escrito: «Comenta CARTA». El mensaje automático manda la carta, el horario y el detalle por mostrarlo en el kiosco.", "palabra": "CARTA", "post": "Comenta CARTA y te mando la carta completa con precios. 🌭\nEl de la casa, capa por capa: [pan] · [salchicha] · [capa 3] · salsa de la casa · mostaza.\n📍 C.C. Buga Plaza", "notas": ["Cada nombre entra a máquina de escribir a la derecha del plato, sin tapar el producto, al menos 1,8 s.", "Ningún nombre de capa se inventa: sale de la carta."], "confirmar": ["Capas del de la casa, en orden", "Quién pone la voz", "Detalle por mostrar el mensaje en el kiosco"], "tomas": ["B01", "B02", "A07"], "inspira": "billycreative__ DbV326ottwF (la carta flotando sobre el producto)"}, {"c": "G1", "tipo": "gente", "t": "¿Cuánto era?", "obj": "Alcance", "dur": "38–40 s", "j": "J3", "off": 14, "nucleo": true, "idea": "Alguien pide «un perro» y no sabe en qué se metió. El chiste son las opciones reales de la carta; el antagonista es el pedido, nunca el cliente.", "c0": "El cliente ya frente al kiosco, a mitad de pedido. «UN PERRO» escrito.", "beats": [["0,0–1,5", "Plano medio del cliente frente al kiosco", "CLIENTE: «Buenas, ¿me regala un perro?»", "UN PERRO", ""], ["1,5–5,0", "Contraplano: la que atiende, seria", "ATIENDE: «¿[Opción 1], [opción 2] o el de la casa?»", "¿CUÁL?", ""], ["5,0–9,0", "Punch-in al cliente dudando", "CLIENTE: «Eh… el de la casa.» ATIENDE: «¿Con todas las salsas o solo la de la casa?»", "¿TODAS?", ""], ["9,0–14,0", "Las salsas en fila, una por cuadro, al ritmo de la lista", "CLIENTE: «¿Cuántas hay?» ATIENDE, de corrido: «[lista real de salsas].»", "(el nombre de cada salsa)", "Un «pop» por salsa"], ["14,0–19,0", "El cliente en cámara lenta", "CLIENTE: «Con todas.» ATIENDE: «¿Piña?» CLIENTE, ofendido: «¿Cómo así que piña? ¿Usted me vio cara de qué?»", "¿PIÑA?", "La música se corta"], ["19,0–26,0", "Armado rápido, cenital", "ATIENDE: «Mire: aquí usted no pide un perro. Usted lo diseña.»", "USTED · LO DISEÑA", ""], ["26,0–32,0", "Entra un tercero; silencio; ella mira a cámara", "TERCERO: «¿Me lo hace sin pan?»", "¿SIN PAN?", "Silencio"], ["32,0–36,0", "El perro terminado", "CLIENTE: «¿Y cuánto era?» ATIENDE: «[precio real].» CLIENTE: «¿Y el diseño?» ATIENDE: «Incluido.»", "[PRECIO]", "«Ding» de caja"], ["36,0–40,0", "Mordida → sello", "ATIENDE, a cámara: «¿Quién es el que siempre lo pide con todo? Etiquétenlo.»", "¿QUIÉN?", ""]], "cta": "Pregunta dicha: «¿Quién es el que siempre lo pide con todo? Etiquétenlo».", "post": "¿Quién es el que siempre lo pide con todo? Etiquétalo 👇\nEn P&J no pides un perro: lo diseñas.\n📍 C.C. Buga Plaza", "notas": ["Ningún encuadre pasa de 2,5 s: plano, contraplano y punch-ins.", "Si tienen piña, el chiste cambia: «¿Piña?» / «¡Obvio!».", "Se puede grabar el 22 si sobra tiempo, con David o Sebas de cliente."], "confirmar": ["Opciones de la carta, lista de salsas y precio del de la casa", "¿Tienen piña?", "Quién actúa"], "tomas": ["E01", "H01", "B07", "D06"], "inspira": "luisanhello DdEpeJRiLr3 (escena del oficio, 901 mil vistas) · guía 06 §4.1 plantilla C"}, {"c": "V1", "tipo": "venta", "t": "El viernes negro en P&J", "obj": "Venta", "dur": "22–24 s", "j": "J3", "fecha": "2026-11-25", "nucleo": true, "idea": "El combo del viernes negro sin gritar descuentos: lo que te llevas desde el primer cuadro y el precio después del 60 % del video.", "c0": "El combo completo sobre el fondo vino, con la mostaza dibujándose. «VIERNES NEGRO» escrito.", "beats": [["0,0–2,5", "El combo completo", "«Este viernes negro no te vamos a gritar descuentos.»", "VIERNES · NEGRO", ""], ["2,5–7,0", "Cada elemento del combo entra por separado, cenital", "«Te vamos a dar esto:»", "(nombre de cada elemento)", "Un golpe por elemento"], ["7,0–12,0", "Armado rápido", "«[Elementos del combo], armados cuando llegas.»", "AL LLEGAR", ""], ["12,0–15,0", "Dos personas mordiendo a la vez", "«Para venir con quien quieras.»", "", ""], ["15,0–19,0", "Combo + sello", "«Viernes 27, en Buga Plaza, por [precio real].»", "[PRECIO] · VIE 27", ""], ["19,0–24,0", "Combo cenital; la palabra entra grande", "«Comenta COMBO y te mando cómo reclamarlo.»", "COMENTA · COMBO", ""]], "cta": "Dicho y escrito: «Comenta COMBO». La oferta entra en el segundo 15 de 24 (0,63; regla 16 de la guía 09).", "palabra": "COMBO", "planB": "Si no hay oferta de viernes negro, sale «El combo para dos» con la misma estructura y el combo de la carta.", "post": "Comenta COMBO y te mando cómo reclamarlo 🌭🌭\nViernes negro en P&J: [combo] por [precio], solo el vie 27-nov.\n📍 C.C. Buga Plaza · [horario]", "notas": ["Sale el miércoles 25, nunca el mismo viernes.", "Es la única pieza orgánica con precio en pantalla."], "confirmar": ["¿Hay oferta? Qué lleva, precio y días"], "tomas": ["H03", "H04", "B08"], "inspira": "juanpavg11 DeFy7cGBody (la oferta al final, después de la recompensa)"}, {"c": "P1", "tipo": "pauta", "t": "Nuevo en Buga Plaza", "obj": "Alcance local", "dur": "10 s · 9:16 y 4:5", "j": "J1", "off": -5, "hasta": 7, "nucleo": null, "idea": "El anuncio de apertura para que todo el que vive cerca de Buga Plaza sepa que existe, antes y durante la primera semana.", "c0": "Tres ganchos para probar con el mismo cuerpo: A) el queso estirándose · B) la mostaza en zigzag · C) el equipo gritando «¡abrimos!».", "beats": [["0,0–1,0", "Gancho A, B o C", "", "NUEVO EN · BUGA PLAZA", ""], ["1,0–5,0", "Cuatro planos de producto de ~1 s: plancha, salsa, armado, mordida", "", "", "Chisporroteo"], ["5,0–7,0", "El kiosco con el letrero", "", "[REFERENCIA]", ""], ["7,0–10,0", "Sello + fecha", "", "ABRIMOS · [FECHA]  (después de abrir: «YA ABRIMOS»)", "«Tic»"]], "cta": "Botón de la plataforma: «Cómo llegar» o «Enviar mensaje». En el video no se dibuja ningún botón.", "post": "Texto principal: «El perro caliente gourmet de Buga abre el [fecha] en el C.C. Buga Plaza. [Lo de los primeros clientes].»\nTítulo: «Nuevo en Buga Plaza»", "notas": ["Corre desde 5 días antes de abrir hasta una semana después.", "Al tercer o cuarto día se apaga el gancho con peor costo por resultado.", "Se exporta en 9:16 (reels e historias) y 4:5 (feed)."], "confirmar": ["Presupuesto y cuenta publicitaria", "Fecha y referencia"], "tomas": ["A04", "A07", "D05", "A03", "C01", "C04", "B06", "G09"], "inspira": "guía 06 §4.1 plantilla F · guía 02 §4.5 (anuncio de 10–15 s)"}, {"c": "P2", "tipo": "pauta", "t": "Antojo en 6 segundos", "obj": "Recordación", "dur": "6 s · 9:16", "j": "J1", "off": 0, "hasta": 21, "nucleo": null, "idea": "Un bumper de 6 segundos para repetir el antojo muchas veces a la misma gente cerca de Buga Plaza. Tres versiones con el mismo cierre.", "c0": "Versión 1: el queso estirándose · versión 2: la salsa cayendo · versión 3: la mordida.", "beats": [["0,0–4,0", "El plano del antojo de la versión, en cámara lenta", "", "BUGA PLAZA", "El sonido del plano, alto"], ["4,0–6,0", "Sello + zigzag", "", "PERROS GOURMET · BUGA PLAZA", "«Tic»"]], "cta": "Botón de la plataforma: «Cómo llegar».", "post": "Texto principal: «El antojo de hoy está en Buga Plaza. 🌭»", "notas": ["Corre desde el día de apertura tres semanas, en historias y reels.", "Mismo cierre en las tres: se recuerda el sello."], "confirmar": ["Presupuesto"], "tomas": ["A04", "A01", "A09", "A07", "G09"], "inspira": "ignaciovasconez DczaTj7RPRE"}, {"c": "P3", "tipo": "pauta", "t": "La carta en 15 segundos", "obj": "Mensajes", "dur": "15 s · 9:16 y 4:5", "j": "J1", "off": 3, "hasta": 28, "nucleo": null, "idea": "La carta completa pasando perro por perro, con nombre y precio. Para que escriban por WhatsApp o por Instagram.", "c0": "El de la casa en cenital con su nombre y su precio desde el primer cuadro.", "beats": [["0,0–1,5", "El de la casa, cenital", "", "[EL DE LA CASA] · [PRECIO]", ""], ["1,5–11,0", "Un perro cada 1,5 s, mismo encuadre", "", "[NOMBRE] · [PRECIO]", "Un golpe por perro"], ["11,0–15,0", "Todos juntos en la mesa + sello", "Opcional, voz: «Escríbenos y te lo tenemos listo.»", "ESCRÍBENOS · [WHATSAPP]", ""]], "cta": "Botón de la plataforma: «Enviar mensaje» a WhatsApp o Instagram.", "post": "Texto principal: «La carta de P&J, perro por perro. Escríbenos y te lo tenemos listo. 📍 C.C. Buga Plaza»", "notas": ["Aquí el precio sí va: es un anuncio de venta.", "Sale de las fotos de la carta (B04)."], "confirmar": ["Carta con precios", "WhatsApp de pedidos"], "tomas": ["B04"], "inspira": "guía 09 §3 (venta mostrando el producto)"}, {"c": "P4", "tipo": "pauta", "t": "El combo del viernes", "obj": "Mensajes y visitas", "dur": "10 s · 9:16", "j": "J3", "fecha": "2026-11-24", "hasta_fecha": "2026-11-27", "nucleo": null, "idea": "La versión corta de V1 para la semana del viernes negro.", "c0": "El combo completo con «VIERNES NEGRO».", "beats": [["0,0–1,5", "El combo completo", "", "VIERNES · NEGRO", ""], ["1,5–6,0", "Elementos y armado", "", "", ""], ["6,0–10,0", "Combo + sello", "", "[PRECIO] · VIE 27", ""]], "cta": "Botón de la plataforma: «Enviar mensaje».", "post": "Texto principal: «Viernes negro en P&J: [combo] por [precio]. Solo el viernes 27 en Buga Plaza.»", "notas": ["Solo si hay oferta."], "confirmar": ["Oferta y precio"], "tomas": ["H03", "B08"], "inspira": "—"}], "carruseles": [{"c": "C1", "t": "Cómo encontrarnos en Buga Plaza", "off": -2, "d": "Mapa ilustrado del centro comercial con el kiosco marcado, la referencia y el horario. Queda fijado.", "tomas": ["C03", "C01"]}, {"c": "C2", "t": "La carta P&J", "off": 0, "d": "Un perro por lámina: foto cenital, ingredientes y precio. Queda fijada y es la misma de las destacadas.", "tomas": ["B04"]}, {"c": "C3", "t": "Capa por capa", "off": 13, "d": "La versión para guardar de H1: una capa por lámina.", "tomas": ["B02"]}, {"c": "C4", "t": "Gourmet no es un adorno", "off": 20, "d": "Las cuatro pruebas de H2, una por lámina.", "tomas": ["B05", "D08"]}, {"c": "C5", "t": "El combo del viernes", "fecha": "2026-11-26", "d": "Qué lleva, precio, día y «comenta COMBO».", "tomas": ["H03"]}, {"c": "C6", "t": "Lo que pidió Buga en noviembre", "fecha": "2026-11-28", "d": "Clientes reales y lo que pidieron, con su permiso. «Gracias, Buga».", "tomas": ["G04", "G06", "D07"]}], "otros": [[-8, "Grabación J1: pruebas del menú", "g"], [-8, "En la noche: perfil listo (foto con el logo nuevo, nombre con «Gourmet», bio, archivar el post de IA)", "g"], [-6, "Historia: detrás de las pruebas del menú (timelapse)", "h"], [-4, "Historia: encuesta «¿A o B?» con las dos salsas", "h"], [-2, "Historia: «Faltan 2 días»", "h"], [-1, "Mensaje a todos los que comentaron PRIMERO", "g"], [0, "Grabación J2: inauguración", "g"], [0, "Historias en vivo: abrimos, la fila, cliente #1, respuesta de «¿Qué es esto?» y la salsa ganadora", "h"], [3, "Historia: encuesta «¿Piña en el perro? Sí / Jamás»", "h"], [6, "Historia: el reel H1 + «comenta CARTA»", "h"], [9, "Historia: quién prepara la salsa (retrato del equipo)", "h"], ["2026-11-02", "Festivo (puente)", "f"], ["2026-11-16", "Festivo (puente)", "f"], ["2026-11-07", "Grabación J3: semana 2 [CONFIRMAR]", "g"], ["2026-11-27", "Viernes negro: 2 historias con el combo", "h"], ["2026-11-30", "Cierre del mes y plan de diciembre", "g"]], "pauta": {"quien": "La inversión no está en el plan: la pone la clienta desde su cuenta publicitaria de Meta y nosotros administramos [CONFIRMAR presupuesto y acceso].", "fases": [["Expectativa y apertura", "5 días antes → 7 días después", "P1", "Alcance (reconocimiento)", "Que todo el que vive cerca sepa que abre y dónde."], ["Primer mes", "día 3 → día 28", "P3 + P2", "Mensajes (P3) · Alcance en historias (P2)", "Que escriban por WhatsApp e Instagram y que el antojo se repita."], ["Viernes negro", "mar 24 → vie 27-nov", "P4", "Mensajes", "Solo si hay oferta."]], "publico": "Ubicación: Buga y alrededores en un radio a definir [CONFIRMAR km; propuesta: Buga, Guacarí, San Pedro]. 18–55 años. Sin intereses al principio: que la plataforma aprenda.", "reglas": ["Producto en el primer segundo y texto que se entienda sin sonido.", "El botón lo pone la plataforma; en el video nunca se dibuja uno.", "Versión 9:16 (reels e historias) y 4:5 (feed) de cada anuncio.", "Precio solo en P3 y P4.", "P1 y P2 salen con 3 ganchos en el mismo conjunto; al día 3–4 se apaga el de peor costo por resultado (criterio nuestro, no dato de la investigación)."], "mide": "Fase 1: alcance y frecuencia. Fase 2: costo por mensaje. Siempre: cuántos muestran el mensaje en el kiosco (lo anota la clienta)."}, "cliente_textos": {"Grabación J1: pruebas del menú": "Grabación: pruebas del menú", "En la noche: perfil listo (foto con el logo nuevo, nombre con «Gourmet», bio, archivar el post de IA)": "Perfil listo: logo nuevo, nombre con «Gourmet», bio y destacadas", "Grabación J2: inauguración": "Grabación: inauguración", "Historias en vivo: abrimos, la fila, cliente #1, respuesta de «¿Qué es esto?» y la salsa ganadora": "Historias en vivo: abrimos, la fila, el cliente #1 y la salsa ganadora", "Historia: el reel H1 + «comenta CARTA»": "Historia: «Capa por capa» + «comenta CARTA»", "Grabación J3: semana 2 [CONFIRMAR]": "Grabación: semana 2 (por confirmar)"}, "kw": {"PRIMERO": {"d": "Antes de abrir · «Algo se está armando» y «Mañana abrimos»", "lead": "Un aviso el día que abres, con la hora, el lugar y [lo que reciben los primeros]. Es la lista de los que ya te estaban esperando.", "chat": [["me", "PRIMERO"], ["note", "Respuesta automática"], ["pj", "¡Listo! Te avisamos el día que abramos 🌭"], ["note", "El día de la apertura"], ["pj", "¡Hoy abrimos! Desde las [hora] en el C.C. Buga Plaza, [referencia]."], ["pj", "Muestra este mensaje y [lo de los primeros clientes]."]]}, "CARTA": {"d": "«Capa por capa» y los carruseles", "lead": "La carta completa, con precios, horario y ubicación. Y una sorpresa si muestran el mensaje en el kiosco.", "chat": [["me", "CARTA"], ["note", "Respuesta automática"], ["pj", "¡Hola! Aquí está la carta de P&J 🌭"], ["pj", "📄 Carta P&J · [enlace]"], ["pj", "Estamos en el C.C. Buga Plaza. Horario: [horario]."], ["pj", "Muéstrale este mensaje a quien te atienda y [el detalle] va por la casa."], ["pj", "¿Cuál vas a probar primero?"]]}, "COMBO": {"d": "Semana del viernes negro", "lead": "El combo del viernes 27, su precio y cómo reclamarlo. Solo si defines una oferta.", "chat": [["me", "COMBO"], ["note", "Respuesta automática"], ["pj", "¡Hola! El viernes negro en P&J: [combo] por [precio]."], ["pj", "Muestra este mensaje en el kiosco para reclamarlo."], ["pj", "¿Vienes el viernes o el fin de semana?"]]}}, "checks": [["Fecha y hora de apertura", "Para el aviso, el calendario y los anuncios."], ["Algo para los primeros clientes", "Qué y para cuántos. Es opcional."], ["La carta con precios", "Nombre, ingredientes y precio de cada perro."], ["El de la casa", "Sus capas, en orden."], ["Las salsas", "Cuáles hay y si están decidiendo entre dos."], ["Lo que te hace gourmet", "Cuatro cosas que hagas distinto."], ["Horario y WhatsApp de pedidos", "Van en la bio, la carta y cada post."], ["Dónde queda el kiosco", "Una referencia fácil dentro de Buga Plaza."], ["Permiso de Buga Plaza", "Para grabar en el pasillo el día que abres."], ["La cuenta de Buga Plaza", "Para publicar juntos en colaboración."], ["Tu equipo", "Nombres, quién habla a cámara y autorizaciones de imagen."], ["Viernes negro", "¿Habrá oferta? Qué lleva y su precio."], ["Presupuesto de pauta", "Y acceso a tu cuenta publicitaria de Meta."], ["El detalle de la casa", "Lo que recibe quien muestre el mensaje de CARTA."], ["Ingredientes para cámara", "Unos 12 perros el día de las pruebas."]]};
 var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
 var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 document.body.classList.add("anim");
-
-/* ---------- datos ---------- */
-var REELS = {
- R01:{t:"El perro caliente gourmet de Buga",serie:"La primera mordida",obj:"Alcance",dur:"12–15 s",cta:"Sin pedir nada en el video. En el post: «Etiqueta a con quién vienes este puente».",
-   how:"Sin voz: un plano nuevo cada segundo, del queso estirándose a la plancha, la salsa, las manos que arman y la primera mordida. Cierra con la mostaza en zigzag sobre tu sello y «Buga Plaza». Lo publicamos en colaboración con la cuenta de Buga Plaza.",
-   why:"Quincena, puente festivo y Halloween el sábado: el centro comercial va a estar lleno.",capas:false,
-   steps:[[0,"EN BUGA","Macro: el queso se estira (cámara lenta)"],[1.2,"GOURMET","Macro: el queso se estira"],[2.2,"","Plano de Buga que se reconoce"],[3.4,"","La salchicha en la plancha"],[4.6,"SALSA DE LA CASA","La salsa cae en cenital"],[7.2,"","La primera mordida"],[9.5,"BUGA PLAZA","Mostaza en zigzag sobre el sello P&J"]],end:12,tbc:["Colaboración con Buga Plaza","Permiso para grabar en el pasillo"]},
- R02:{t:"Capa por capa: el de la casa",serie:"Capa por capa",obj:"Conversación",dur:"20–25 s",cta:"«Comenta CARTA y te mando la carta completa, con precios y horario.»",
-   how:"Desde arriba, sobre fondo vino: el perro ya armado, el plato vacío y luego cada capa entra con su nombre escrito a máquina. La última capa es la firma: la mostaza en zigzag.",
-   why:"Es la primera vez que la gente ve por dentro lo que hace gourmet a P&J, y le deja la carta a un comentario de distancia.",capas:true,
-   steps:[[0,"CAPA POR CAPA","El perro de la casa ya armado"],[2.8,"1 · EL PAN","Cenital: entra el pan"],[5.5,"2 · LA SALCHICHA","Entra la salchicha"],[8.5,"3 · [CAPA 3]","Tercera capa"],[11.5,"SALSA DE LA CASA","Cae la salsa"],[14.5,"LA FIRMA","Mostaza en zigzag"],[16.5,"COMENTA CARTA","El perro terminado"]],end:22,tbc:["Nombre y capas del de la casa","Quién pone la voz"]},
- R03:{t:"¿Cuánto era?",serie:"En el kiosco",obj:"Alcance",dur:"35–45 s",cta:"Pregunta en voz: «¿Quién es el que siempre lo pide con todo? Etiquétenlo.»",
-   how:"Un sketch frente al kiosco. Alguien pide «un perro» y no sabe en qué se metió: ¿cuál?, ¿con todas las salsas?, ¿piña? «Aquí usted no pide un perro: usted lo diseña.» Remata con el precio real.",
-   why:"El humor de pasillo y las opciones de tu carta convertidas en chiste. Todos conocen al que lo pide con todo, y lo etiquetan.",capas:false,
-   steps:[[0,"UN PERRO","«Buenas, ¿me regala un perro?»"],[1.5,"¿CUÁL?","La que atiende, seria"],[5,"¿TODAS?","«¿Con todas las salsas?»"],[14,"¿PIÑA?","El cliente, ofendido"],[19,"USTED LO DISEÑA","Armado rápido, cenital"],[32,"¿CUÁNTO ERA?","El perro terminado"],[36,"¿QUIÉN?","Mordida → sello P&J"]],end:40,tbc:["Opciones, salsas y precio de la carta","¿Tienen piña?","Quién actúa"]},
- R04:{t:"Buga pide",serie:"Buga pide",obj:"Conversación",dur:"25–35 s",cta:"Pregunta en voz: «¿Cuál es la que no le puede faltar al suyo?»",
-   how:"Micrófono con tu sello en el pasillo. Clientes reales responden qué no le puede faltar a su perro. Abre con la respuesta más contundente y cierra con el perro armado con todo lo que pidió Buga.",
-   why:"La gente de Buga en tu cuenta desde la primera semana. Cada quien defiende su manera de pedirlo, y eso se responde en comentarios.",capas:false,
-   steps:[[0,"¡SIN PIÑA!","Una clienta, perro en mano"],[2.5,"¿QUÉ NO LE PUEDE FALTAR?","Vox pop en el pasillo"],[8,"TODAS LAS SALSAS","Otro cliente"],[14,"LA PAPITA","Otro cliente"],[20,"LO QUE PIDIÓ BUGA","Cenital del perro con todo"],[24,"¿Y A USTEDES?","A cámara"]],end:30,tbc:["Autorizaciones de imagen","Permiso del pasillo"]},
- R05:{t:"Después de cine",serie:"La primera mordida",obj:"Alcance",dur:"12–16 s",cta:"Sin pedir nada en el video. En el post: «Etiqueta a con quién vienes».",
-   how:"Abre con una pareja a punto de morder; el video se rebobina hasta la salida del cine y vuelve a avanzar: pasillo, kiosco, armado, mordida doble. Cierra igual que R01: zigzag y sello.",
-   why:"P&J como el plan del viernes en Buga Plaza, publicado en colaboración con el centro comercial en semana de quincena.",capas:false,
-   steps:[[0,"EL PLAN DEL VIERNES","Pareja a punto de morder"],[1.5,"","Rebobinado rápido"],[3,"DESPUÉS DE CINE","Salen del cine"],[6,"","Piden en el kiosco"],[10,"","Mordida doble"],[12,"BUGA PLAZA","Zigzag sobre el sello P&J"]],end:14.5,tbc:["¿Buga Plaza tiene cine?","Pareja con autorización"]},
- R06:{t:"Gourmet no es un adorno: 4 pruebas",serie:"Capa por capa",obj:"Guardar",dur:"20–28 s",cta:"«Guárdalo para tu próximo antojo», dicho a los 3 segundos.",
-   how:"El perro partido a la mitad en macro y cuatro pruebas, una por plano: lo que hace gourmet a P&J dicho con hechos. «Si tiene las cuatro, es gourmet.»",
-   why:"Es la pieza que la gente guarda y que sostiene la palabra «Gourmet» de tu nombre.",capas:true,
-   steps:[[0,"GOURMET","Perro partido a la mitad, macro"],[1.5,"¿QUÉ SIGNIFICA?","Macro"],[3,"GUÁRDALO","Perro completo"],[4.5,"1 · [PRUEBA]","Primera prueba"],[9,"2 · [PRUEBA]","Segunda prueba"],[13,"3 · SALSA PROPIA","La salsa de la casa"],[17,"4 · AL PEDIRLO","Manos armando"],[21,"CAPA POR CAPA","Mostaza en zigzag"]],end:25,tbc:["Las 4 pruebas reales"]},
- R07:{t:"El pedido de la oficina",serie:"En el kiosco",obj:"Conversación",dur:"30–40 s",cta:"«Si tienen novena, oficina o cumpleaños, comenten PEDIDO.»",
-   how:"Un oficinista desenrolla una lista de pedidos que llega al piso. La que atiende anota sin pestañear. «¿Y para el jefe?» «El de la casa. Siempre es el de la casa.» Sale la bandeja completa.",
-   why:"Cuatro semanas antes de las novenas, para que los pedidos de diciembre empiecen a llegar en noviembre. Si no hacen pedidos grandes, sale «El indeciso».",capas:false,
-   steps:[[0,"PARA LA OFICINA","La lista cae hasta el piso"],[2,"3 DE LA CASA","Lee rápido"],[8,"14 PERROS","La que atiende anota"],[14,"EL DE LA CASA","«…y uno para el jefe»"],[20,"LISTOS","La bandeja, cenital"],[26,"COMENTA PEDIDO","A cámara"]],end:34,tbc:["¿Hacen pedidos grandes?","WhatsApp de pedidos"]},
- R08:{t:"El viernes negro en P&J",serie:"Combos y precios",obj:"Venta",dur:"18–25 s",cta:"«Comenta COMBO y te mando cómo reclamarlo.»",
-   how:"El combo completo desde el primer cuadro. «Este viernes negro no te vamos a gritar descuentos. Te vamos a dar esto.» El precio aparece pasado el 60 % del video. Sale dos días antes, nunca el mismo viernes.",
-   why:"La única pieza del mes con precio. Si no hay oferta para el viernes 27, sale «El combo para dos» con la misma estructura.",capas:false,
-   steps:[[0,"VIERNES NEGRO","El combo sobre fondo vino"],[2.5,"TE DAMOS ESTO","Cada elemento entra"],[7,"AL LLEGAR","Armado rápido"],[15,"[PRECIO] · VIE 27","Combo + sello"],[19,"COMENTA COMBO","Combo, cenital"]],end:24,tbc:["¿Hay oferta? Qué lleva y precio"]}
-};
-var CARS = {
- C1:{t:"Cómo encontrarnos en Buga Plaza",d:"Mapa ilustrado del centro comercial con el kiosco marcado, la referencia para llegar y el horario. Queda fijado en el perfil."},
- C2:{t:"La carta P&J",d:"Un perro por lámina: foto desde arriba, ingredientes y precio. Queda fijado en el perfil y es la misma carta de las destacadas."},
- C3:{t:"Capa por capa",d:"La versión para guardar de R02: una capa por lámina, con su nombre."},
- C4:{t:"Gourmet no es un adorno",d:"Las 4 pruebas de R06, una por lámina."},
- C5:{t:"El combo del viernes",d:"Qué lleva, precio, día y cómo reclamarlo con la palabra COMBO."},
- C6:{t:"Lo que pidió Buga en noviembre",d:"Clientes reales con lo que pidieron (con su permiso). «Gracias, Buga.»"}
-};
-/* fecha ISO -> items [tipo, id o texto] */
-var DAYS = {
- "2026-10-21":[["g","Pedimos datos y permisos"]],
- "2026-10-23":[["g","Jornada de grabación"]],
- "2026-10-24":[["g","Perfil y carta digital"]],
- "2026-10-28":[["g","DM automático probado"]],
- "2026-10-30":[["r","R01"],["h","2 historias"]],
- "2026-10-31":[["c","C1"],["h","Halloween en Buga Plaza"]],
- "2026-11-01":[["h","Puente en Buga Plaza"]],
- "2026-11-02":[["f","Festivo"]],
- "2026-11-04":[["r","R02"],["h","«Comenta CARTA»"]],
- "2026-11-05":[["c","C2"]],
- "2026-11-06":[["r","R03"],["h","Encuesta: ¿con todo?"]],
- "2026-11-08":[["h","Encuesta: ¿piña sí o no?"]],
- "2026-11-11":[["r","R04"],["h","Caja de preguntas"]],
- "2026-11-12":[["c","C3"]],
- "2026-11-13":[["r","R05"],["h","Quincena = plan"]],
- "2026-11-15":[["h","Resultado de la piña"]],
- "2026-11-16":[["f","Festivo"]],
- "2026-11-18":[["r","R06"],["h","«Guárdalo»"]],
- "2026-11-19":[["c","C4"]],
- "2026-11-20":[["r","R07"],["h","«Comenta PEDIDO»"]],
- "2026-11-22":[["h","Detrás del kiosco"]],
- "2026-11-25":[["r","R08"],["h","Cuenta regresiva"]],
- "2026-11-26":[["c","C5"]],
- "2026-11-27":[["h","Black Friday · 2 historias"]],
- "2026-11-28":[["c","C6"]],
- "2026-11-30":[["g","Cierre del mes y plan de diciembre"]]
-};
-var SERIES = [
- {n:"La primera mordida",obj:"Alcance · R01 y R05",ab:"El queso o la salsa ya cayendo desde el primer cuadro, en macro y sin voz.",ci:"La mordida, y la mostaza en zigzag se dibuja sobre tu sello.",cta:"Nada en el video; en el post, «etiqueta a con quién vienes».",r:"R01"},
- {n:"Capa por capa",obj:"Conversación y guardar · R02 y R06",ab:"Desde arriba, sobre fondo vino: el perro ya armado y cada capa con su nombre a máquina de escribir.",ci:"La última capa es la firma: la mostaza en zigzag y «Capa por capa · P&J».",cta:"La palabra CARTA, o «guárdalo».",r:"R02"},
- {n:"En el kiosco",obj:"Alcance · R03 y R07",ab:"A mitad de conversación: «Buenas, ¿me regala un perro?»",ci:"«¿Cuánto era?» y el sello P&J.",cta:"Una pregunta en voz que empieza por «¿Quién…?» para que etiqueten.",r:"R03"},
- {n:"Buga pide",obj:"Conversación · R04",ab:"Un micrófono con tu sello frente a un cliente real, en el pasillo.",ci:"El cliente muerde y dice su pedido en una frase.",cta:"Una pregunta de identidad: «¿Cuál no le puede faltar al suyo?»",r:"R04"}
-];
-var BLOQUES = [
- ["12:30","45 min","Buga y la fachada","Un plano de Buga que se reconozca y la entrada de Buga Plaza, para los primeros 3 segundos de R01 y R05.",["R01","R05"]],
- ["13:15","45 min","Montaje","Fondo vino, luz cálida y el plato listo en el kiosco.",[]],
- ["14:00","2 h 30","Producto","Queso en cámara lenta, plancha, salsa, capas desde arriba, mostaza en zigzag y la foto de cada perro de la carta.",["R01","R02","R06","R08","Carruseles"]],
- ["16:30","1 h 15","Sketches","«¿Cuánto era?» y «El pedido de la oficina» con tu equipo y dos amigos.",["R03","R07"]],
- ["17:45","1 h 45","Hora pico","Clientes reales en el vox pop, la pareja «después de cine», la fila y el letrero encendido.",["R04","R05","C6","Historias"]],
- ["19:30","30 min","Cierre","Respaldo del material y autorizaciones contadas.",[]]
-];
-var KW = {
- CARTA:{d:"R02 y los carruseles C1, C2 y C3",lead:"La carta completa, con precios, horario y ubicación. Y una sorpresa si muestran el mensaje en el kiosco.",
-   chat:[["me","CARTA"],["note","Respuesta automática"],["pj","¡Hola! Aquí está la carta de P&J 🌭"],["pj","📄 Carta P&J · [enlace]"],["pj","Estamos en el C.C. Buga Plaza. Horario: [horario]."],["pj","Muéstrale este mensaje a quien te atienda y [el detalle] va por la casa."],["pj","¿Cuál vas a probar primero?"]]},
- PEDIDO:{d:"R07 · 20 de noviembre",lead:"Cómo pedir para novenas, oficina o cumpleaños: cantidades, con cuánta anticipación y a qué WhatsApp. Solo si hacen pedidos grandes.",
-   chat:[["me","PEDIDO"],["note","Respuesta automática"],["pj","¡Hola! Para grupos funciona así: [cantidad mínima], con [anticipación]."],["pj","Escríbenos al [WhatsApp] con el número de personas y la fecha."],["pj","¿Para cuántas personas y qué día?"]]},
- COMBO:{d:"R08 y C5 · semana del viernes negro",lead:"El combo del viernes 27, su precio y cómo reclamarlo. Solo si defines una oferta.",
-   chat:[["me","COMBO"],["note","Respuesta automática"],["pj","¡Hola! El viernes negro en P&J: [combo] por [precio]."],["pj","Muestra este mensaje en el kiosco para reclamarlo."],["pj","¿Vienes el viernes o el fin de semana?"]]}
-};
-var CHECKS = [
- ["Fecha de la grabación","Propuesta: viernes 23 de octubre, 12:30 a 8:00 p. m."],
- ["La carta","Nombre, ingredientes y precio de cada perro; cuál es «el de la casa»; las salsas; si hay piña."],
- ["Horario y WhatsApp de pedidos","Van en la bio, en la carta y en cada post."],
- ["Dónde está el kiosco","Una referencia fácil dentro de Buga Plaza para el mapa."],
- ["Permiso de Buga Plaza","Grabar en el pasillo y en la fachada. ¿Tiene cine?"],
- ["La cuenta de Buga Plaza","Para publicar R01 y R05 en colaboración."],
- ["Quién actúa","Alguien de tu equipo para los sketches y la voz, y dos amigos."],
- ["Lo que te hace gourmet","Las 4 pruebas del reel R06."],
- ["Pedidos para grupos","¿Los hacen? ¿Con cuánta anticipación? ¿Hay domicilio?"],
- ["Viernes negro","¿Hay oferta? Qué lleva, precio y días."],
- ["El detalle de la casa","Lo que recibe quien muestre el mensaje de CARTA en el kiosco."],
- ["Ingredientes para cámara","Unos 12 perros el día de la grabación."]
-];
-
-/* ---------- utilidades ---------- */
-var MESES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
-var DIAS=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
-function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function tbc(s){return esc(s).replace(/\[([^\]]+)\]/g,'<span class="tbc">$1</span>')}
-var DOG = $("#heroDog").innerHTML;
+var MESES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"], MESL=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"], DIAS=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+function parse(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function add(d,n){var x=new Date(d);x.setDate(x.getDate()+n);return x}
+var I=parse(D.inauguracion);
+function fechaDe(o){return o.fecha?parse(o.fecha):add(I,o.off)}
+function corto(d){return DIAS[d.getDay()].slice(0,3)+" "+d.getDate()+" "+MESES[d.getMonth()]}
+function largo(d){return DIAS[d.getDay()]+" "+d.getDate()+" de "+MESL[d.getMonth()]}
+var P={}; D.piezas.forEach(function(p){P[p.c]=p});
+var REELS=D.piezas.filter(function(p){return p.nucleo===true}), ADS=D.piezas.filter(function(p){return p.tipo==="pauta"});
+function secs(t){return parseFloat(t.split("–")[0].replace(",","."))}
+function fin(p){var t=p.beats[p.beats.length-1][0].split("–"); return parseFloat(t[t.length-1].replace(",","."))}
+function steps(p){return p.beats.map(function(b){return [secs(b[0]), b[3].replace(/\s*\(.*\)$/,"").replace(/\[|\]/g,""), b[1]]})}
+$("#heroDates").innerHTML="Del "+add(I,-7).getDate()+" de "+MESL[add(I,-7).getMonth()]+" al 29 de noviembre de 2026 · apertura: "+largo(I)+' <span class="tbc">por confirmar</span>';
 
-/* ---------- reproductor de gancho ---------- */
+/* ---------- reproductor ---------- */
+var DOG=$("#heroDog").innerHTML;
 function Player(el){
   el.innerHTML='<div class="scr"></div><div class="bar"><i></i></div><div class="tc">0,0 s</div><div class="scene"></div><svg class="pdog" viewBox="0 0 520 250" aria-hidden="true">'+DOG+'</svg><div class="sub"></div><div class="handle"><img src="img/logo-pj.png" alt="">perritoscalientespj</div>';
   var bar=$(".bar i",el), tc=$(".tc",el), scene=$(".scene",el), sub=$(".sub",el), dog=$(".pdog",el), lyrs=$$(".lyr",dog);
-  var timer=null, reel=null, t0=0, idx=-1;
+  var timer=null, st=null, end=10, capas=false, t0=0, idx=-1;
   function stop(){ if(timer){cancelAnimationFrame(timer);timer=null} }
   function frame(now){
-    var t=(now-t0)/1000*1.6; /* 1,6× para que el gancho completo se vea en pocos segundos */
-    if(t>reel.end){ t0=now; t=0; idx=-1; }
-    bar.style.width=Math.min(100,t/reel.end*100)+"%";
-    tc.textContent=t.toFixed(1).replace(".",",")+" s";
-    var i=-1; for(var k=0;k<reel.steps.length;k++){ if(t>=reel.steps[k][0]) i=k; }
-    if(i!==idx){
-      idx=i; var s=reel.steps[Math.max(0,i)];
-      sub.textContent=s[1]; sub.classList.remove("pop"); void sub.offsetWidth; if(s[1]) sub.classList.add("pop");
-      scene.textContent="Imagen: "+s[2];
-      var sc=1+((i%3)*.12); dog.style.transform="scale("+sc+") translateY("+((i%2)?-4:4)+"%)";
-      if(reel.capas){ lyrs.forEach(function(g,n){ g.classList.toggle("v", i===0 || n< i+0 || i>=reel.steps.length-2); }); }
-    }
+    var t=(now-t0)/1000*1.6; if(t>end){t0=now;t=0;idx=-1}
+    bar.style.width=Math.min(100,t/end*100)+"%"; tc.textContent=t.toFixed(1).replace(".",",")+" s";
+    var i=0; for(var k=0;k<st.length;k++){ if(t>=st[k][0]) i=k }
+    if(i!==idx){ idx=i; var s=st[i]; sub.innerHTML=esc(s[1]).replace(/ · /g,"<br>"); sub.classList.remove("pop"); void sub.offsetWidth; if(s[1]) sub.classList.add("pop");
+      scene.textContent="Imagen: "+s[2]; dog.style.transform="scale("+(1+(i%3)*.12)+") translateY("+((i%2)?-4:4)+"%)";
+      if(capas) lyrs.forEach(function(g,n){ g.classList.toggle("v", i===0 || n<i || i>=st.length-2) }); }
     timer=requestAnimationFrame(frame);
   }
-  return { play:function(r){ stop(); reel=r; idx=-1; dog.classList.toggle("capas",!!r.capas);
-      if(!r.capas) lyrs.forEach(function(g){g.classList.remove("v")});
-      if(reduce){ var s=r.steps[0]; sub.textContent=s[1]; scene.textContent="Imagen: "+s[2]; tc.textContent="0,0 s"; return; }
-      t0=performance.now(); timer=requestAnimationFrame(frame); }, stop:stop };
+  return {play:function(p){ stop(); st=steps(p); end=fin(p); capas=p.tipo==="hecho"; idx=-1; dog.classList.toggle("capas",capas); if(!capas) lyrs.forEach(function(g){g.classList.remove("v")});
+      if(reduce){ sub.textContent=st[0][1]; scene.textContent="Imagen: "+st[0][2]; return }
+      t0=performance.now(); timer=requestAnimationFrame(frame) }, stop:stop};
 }
 
-/* ---------- hero: perro que se arma ---------- */
-var caps=["el pan","la salchicha","el pan","el queso","las papitas","la mostaza: la firma"];
-function buildDog(){
-  var d=$("#heroDog"), lyrs=$$(".lyr",d), cap=$("#dogCap");
-  if(reduce){ d.classList.add("built"); cap.textContent="Capa por capa"; return; }
-  lyrs.forEach(function(g,i){ g.style.transitionDelay=(i*.42)+"s"; });
-  setTimeout(function(){ d.classList.add("built"); },300);
-  caps.forEach(function(c,i){ setTimeout(function(){ cap.textContent="Capa "+(i+1)+" · "+c; }, 300+i*420); });
-  setTimeout(function(){ cap.textContent="Capa por capa"; }, 300+caps.length*420+600);
-}
-buildDog();
+/* ---------- hero ---------- */
+(function(){var d=$("#heroDog"), lyrs=$$(".lyr",d), cap=$("#dogCap"), caps=["el pan","la salchicha","el pan","el queso","las papitas","la mostaza: la firma"];
+  if(reduce){d.classList.add("built");cap.textContent="Capa por capa";return}
+  lyrs.forEach(function(g,i){g.style.transitionDelay=(i*.42)+"s"}); setTimeout(function(){d.classList.add("built")},300);
+  caps.forEach(function(c,i){setTimeout(function(){cap.textContent="Capa "+(i+1)+" · "+c},300+i*420)}); setTimeout(function(){cap.textContent="Capa por capa"},300+caps.length*420+600)})();
+$$("[data-count]").forEach(function(el){var n=+el.getAttribute("data-count"); if(reduce){el.textContent=n;return} var s=performance.now(); (function f(now){var p=Math.min(1,(now-s)/1100); el.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(f)})(s)});
 
-/* contadores */
-function countUp(el){ var n=+el.getAttribute("data-count"); if(reduce){el.textContent=n;return}
-  var s=performance.now(); (function f(now){ var p=Math.min(1,(now-s)/1100); el.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(f); })(s); }
-$$("[data-count]").forEach(countUp);
+/* ---------- fases ---------- */
+var FASES=[
+ {n:"Expectativa",w:"Del "+corto(add(I,-7))+" al "+corto(add(I,-1)),d:"Mostramos el perro por partes, nunca completo, y siempre con la fecha y el lugar. Quien comente PRIMERO recibe un mensaje el día que abres.",f:function(p){return p.tipo==="expectativa"}},
+ {n:"Inauguración",w:largo(I),d:"El día que abres grabamos a la gente real: el primer cliente, la fila y cómo terminó el día. Al día siguiente sale la historia del primer día.",f:function(p){return p.tipo==="inauguracion"},hot:true},
+ {n:"Primer mes",w:"Hasta el 29 de noviembre",d:"El antojo de cerca, el gourmet demostrado capa por capa, el humor del kiosco y el combo del viernes negro.",f:function(p){return ["antojo","hecho","gente","venta"].indexOf(p.tipo)>=0}}
+];
+FASES.forEach(function(F){var el=document.createElement("article"); el.className="fase rv"+(F.hot?" hot":"");
+  el.innerHTML='<p class="when">'+esc(F.w)+'</p><h3>'+F.n+'</h3><p>'+esc(F.d)+'</p><div class="pz">'+REELS.filter(F.f).map(function(p){return '<button type="button" data-cal="'+iso(fechaDe(p))+'">'+esc(p.t)+'</button>'}).join("")+'</div>';
+  $("#fasesBox").appendChild(el)});
 
-/* ---------- series ---------- */
-var sp=Player($("#seriePhone"));
-SERIES.forEach(function(s,i){
-  var b=document.createElement("button"); b.className="tab"; b.type="button"; b.setAttribute("role","tab"); b.textContent=s.n;
-  b.addEventListener("click",function(){ selSerie(i) }); $("#serieTabs").appendChild(b);
-});
-function selSerie(i){
-  var s=SERIES[i]; $$(".tab").forEach(function(b,k){ b.setAttribute("aria-selected",k===i) });
-  $("#serieInfo").innerHTML='<h3>'+esc(s.n)+'</h3><p class="obj">'+esc(s.obj)+'</p><dl class="rows">'+
-   '<div class="row"><dt>Abre siempre</dt><dd>'+esc(s.ab)+'</dd></div><div class="row"><dt>Cierra siempre</dt><dd>'+esc(s.ci)+'</dd></div><div class="row"><dt>Qué pide</dt><dd>'+esc(s.cta)+'</dd></div></dl>'+
-   '<div class="chips"><span class="chip">Gancho de '+s.r+' en el celular →</span></div>';
-  sp.play(REELS[s.r]);
-}
-selSerie(0);
+/* ---------- contenidos por tipo ---------- */
+var TIPOS=["expectativa","inauguracion","antojo","hecho","gente","venta"], tp=Player($("#tipoPhone")), tipoSel=0, piezaSel=null;
+TIPOS.forEach(function(k,i){var b=document.createElement("button"); b.className="tab"; b.type="button"; b.setAttribute("role","tab"); b.textContent=D.tipos[k].n; b.addEventListener("click",function(){selTipo(i)}); $("#tipoTabs").appendChild(b)});
+function selTipo(i){tipoSel=i; var k=TIPOS[i], ps=REELS.filter(function(p){return p.tipo===k});
+  $$("#tipoTabs .tab").forEach(function(b,n){b.setAttribute("aria-selected",n===i)});
+  $("#tipoInfo").innerHTML='<h3>'+esc(D.tipos[k].n)+'</h3><p class="obj">'+esc(D.tipos[k].d)+'</p><div class="tipolist">'+ps.map(function(p){return '<button type="button" data-p="'+p.c+'"><b>'+p.c+'</b><span>'+esc(p.t)+'<small>'+esc(corto(fechaDe(p)))+' · '+esc(p.obj)+' · '+esc(p.dur)+'</small></span></button>'}).join("")+'</div>';
+  $$("#tipoInfo [data-p]").forEach(function(b){b.addEventListener("click",function(){selPieza(b.getAttribute("data-p"))})});
+  selPieza(ps[0].c)}
+function selPieza(c){$$("#tipoInfo [data-p]").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-p")===c)}); tp.play(P[c])}
+selTipo(0);
 
 /* ---------- calendario ---------- */
-var cal=$("#cal"); ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"].forEach(function(d){ var h=document.createElement("div"); h.className="dh"; h.textContent=d; cal.appendChild(h) });
-var start=new Date(2026,9,19), detailPhone=null;
+var DAYS={};
+function put(d,it){var k=iso(d);(DAYS[k]=DAYS[k]||[]).push(it)}
+REELS.forEach(function(p){put(fechaDe(p),["r",p.c])});
+ADS.forEach(function(p){put(fechaDe(p),["p",p.c])});
+D.carruseles.forEach(function(c){put(fechaDe(c),["c",c.c])});
+D.otros.forEach(function(o){var d=typeof o[0]==="number"?add(I,o[0]):parse(o[0]); var t=o[1]; if(D.cliente_textos[t]) t=D.cliente_textos[t]; if(t) put(d,[o[2],t])});
+var CARS={}; D.carruseles.forEach(function(c){CARS[c.c]=c});
+$("#calLead").textContent="Reels a las 5:30 p. m., cuando se planea el fin de semana. Toca un día para ver qué sale.";
+var cal=$("#cal"); ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"].forEach(function(d){var h=document.createElement("div");h.className="dh";h.textContent=d;cal.appendChild(h)});
+var start=new Date(2026,9,19);
 for(var i=0;i<42;i++){
-  var d=new Date(start); d.setDate(start.getDate()+i); var k=iso(d), items=DAYS[k]||[];
-  var inMonth = d>=new Date(2026,9,30) && d<=new Date(2026,10,29);
-  var b=document.createElement(items.length?"button":"div"); b.className="day"+(inMonth||items.length?"":" off")+(items.length?" has":"")+(k==="2026-10-30"?" start":"");
-  if(items.length){ b.type="button"; b.setAttribute("data-k",k); b.setAttribute("aria-label",d.getDate()+" de "+MESES[d.getMonth()]); }
+  var d=add(start,i), k=iso(d), items=DAYS[k]||[];
+  var b=document.createElement(items.length?"button":"div"); b.className="day"+(items.length?" has":" off")+(k===iso(I)?" start":"");
+  if(items.length){b.type="button"; b.setAttribute("data-k",k); b.setAttribute("aria-label",d.getDate()+" de "+MESL[d.getMonth()])}
   var html='<span class="n">'+d.getDate()+(d.getDate()===1||i===0?' <small>'+MESES[d.getMonth()]+'</small>':'')+'</span>';
-  items.forEach(function(it){ var lab = it[0]==="r"? it[1]+" · "+REELS[it[1]].t : it[0]==="c"? it[1]+" · "+CARS[it[1]].t : it[1]; html+='<span class="it '+it[0]+'">'+esc(lab)+'</span>'; });
+  items.forEach(function(it){var lab=it[0]==="r"||it[0]==="p"?it[1]+" · "+P[it[1]].t:it[0]==="c"?it[1]+" · "+CARS[it[1]].t:it[1]; html+='<span class="it '+(it[0]==="g"?"g":it[0])+'">'+esc(lab.replace(/\[CONFIRMAR\]/g,""))+'</span>'});
   b.innerHTML=html; cal.appendChild(b);
-  if(items.length) b.addEventListener("click",function(){ selDay(this.getAttribute("data-k")) });
+  if(items.length) b.addEventListener("click",function(){selDay(this.getAttribute("data-k"))});
 }
+var dPhone=null;
 function selDay(k){
-  $$(".day").forEach(function(x){ x.classList.toggle("sel",x.getAttribute("data-k")===k) });
-  var p=k.split("-"), d=new Date(+p[0],+p[1]-1,+p[2]), items=DAYS[k], box=$("#detail");
-  var date=DIAS[d.getDay()]+" "+d.getDate()+" de "+MESES[d.getMonth()];
-  var reel=null; items.forEach(function(it){ if(it[0]==="r") reel=it[1] });
-  if(detailPhone) detailPhone.stop();
-  if(reel){
-    var r=REELS[reel];
-    box.innerHTML='<div><p class="dd-date">'+date+' · 5:30 p. m. · '+reel+'</p><h3>'+esc(r.t)+'</h3>'+
-      '<div class="meta"><span class="k">'+esc(r.obj)+'</span><span>Serie: '+esc(r.serie)+'</span><span>'+esc(r.dur)+'</span></div>'+
-      '<div class="blk"><b>Cómo se ve</b><p>'+tbc(r.how)+'</p></div><div class="blk"><b>Por qué ese día</b><p>'+tbc(r.why)+'</p></div>'+
-      '<div class="blk"><b>Qué pide al final</b><p>'+tbc(r.cta)+'</p></div>'+
-      '<div class="blk"><b>Lo confirmamos contigo</b><p>'+r.tbc.map(function(x){return '<span class="tbc">'+esc(x)+'</span>'}).join(" ")+'</p></div>'+
-      items.filter(function(it){return it[0]!=="r"}).map(function(it){return '<div class="blk"><b>Además ese día</b><p>Historia: '+esc(it[1])+'</p></div>'}).join("")+
-      '<button class="replay" type="button">Ver el gancho otra vez ↻</button></div><div class="phone" id="dPhone"></div>';
-    detailPhone=Player($("#dPhone")); detailPhone.play(r);
-    $(".replay",box).addEventListener("click",function(){ detailPhone.play(r) });
+  $$(".day").forEach(function(x){x.classList.toggle("sel",x.getAttribute("data-k")===k)});
+  var d=parse(k), items=DAYS[k], box=$("#detail"), main=null;
+  items.forEach(function(it){if((it[0]==="r"||it[0]==="p")&&!main) main=it[1]});
+  if(dPhone) dPhone.stop();
+  if(main){var p=P[main], ad=p.tipo==="pauta";
+    box.innerHTML='<div><p class="dd-date">'+largo(d)+(ad?' · arranca el anuncio':' · 5:30 p. m.')+' · '+main+'</p><h3>'+esc(p.t)+'</h3>'+
+      '<div class="meta"><span class="k">'+esc(D.tipos[p.tipo].n)+'</span><span>'+esc(p.obj)+'</span><span>'+esc(p.dur)+'</span></div>'+
+      '<div class="blk"><b>La idea</b><p>'+tbc(p.idea)+'</p></div><div class="blk"><b>Cómo arranca</b><p>'+tbc(p.c0)+'</p></div>'+
+      '<div class="blk"><b>'+(ad?"A qué invita":"Qué pide al final")+'</b><p>'+tbc(p.cta)+'</p></div>'+
+      (p.confirmar&&p.confirmar.length?'<div class="blk"><b>Lo confirmamos contigo</b><p>'+p.confirmar.map(function(x){return '<span class="tbc">'+esc(x)+'</span>'}).join(" ")+'</p></div>':'')+
+      items.filter(function(it){return it[1]!==main}).map(function(it){return '<div class="blk"><b>Además ese día</b><p>'+(it[0]==="c"?"Carrusel: "+esc(CARS[it[1]].t):it[0]==="p"||it[0]==="r"?esc(it[1]+" · "+P[it[1]].t):esc(it[1]))+'</p></div>'}).join("")+
+      '<button class="replay" type="button">Ver cómo arranca otra vez ↻</button></div><div class="phone" id="dPhone"></div>';
+    dPhone=Player($("#dPhone")); dPhone.play(p); $(".replay",box).addEventListener("click",function(){dPhone.play(p)});
   } else {
-    box.innerHTML='<div style="grid-column:1/-1"><p class="dd-date">'+date+'</p><h3>'+(items[0][0]==="g"?"Preparación":"Ese día")+'</h3><div class="list-day">'+
-      items.map(function(it){ var col=it[0]==="c"?"var(--c-car)":it[0]==="h"?"#fde7bf":it[0]==="g"?"var(--vino)":"var(--rule)";
-        var txt = it[0]==="c"? '<b>'+it[1]+' · '+esc(CARS[it[1]].t)+'</b><br><span class="small">'+esc(CARS[it[1]].d)+'</span>' : it[0]==="h"? '<b>Historia</b> · '+esc(it[1]) : it[0]==="f"? 'Festivo: el centro comercial se llena; refuerzo en historias.' : '<b>'+esc(it[1])+'</b>';
-        return '<div class="li"><i style="background:'+col+'"></i><div>'+txt+'</div></div>' }).join("")+'</div></div>';
+    box.innerHTML='<div style="grid-column:1/-1"><p class="dd-date">'+largo(d)+'</p><h3>'+(items.some(function(it){return it[0]==="g"})?"Preparación":"Ese día")+'</h3><div class="list-day">'+
+      items.map(function(it){var col=it[0]==="c"?"var(--c-car)":it[0]==="h"?"#fde7bf":it[0]==="g"?"var(--vino)":"var(--rule)";
+        var txt=it[0]==="c"?'<b>'+it[1]+' · '+esc(CARS[it[1]].t)+'</b><br><span class="small">'+esc(CARS[it[1]].d)+'</span>':it[0]==="h"?'<b>Historia</b> · '+tbc(it[1].replace("Historia: ","")):it[0]==="f"?'Festivo: el centro comercial se llena; refuerzo en historias.':'<b>'+tbc(it[1])+'</b>';
+        return '<div class="li"><i style="background:'+col+'"></i><div>'+txt+'</div></div>'}).join("")+'</div></div>';
   }
 }
-selDay("2026-10-30");
+document.addEventListener("click",function(e){var b=e.target.closest("[data-cal]"); if(!b) return; selDay(b.getAttribute("data-cal")); $("#detail").scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"})});
+selDay(iso(fechaDe(P.X1)));
 
-/* ---------- jornada ---------- */
-BLOQUES.forEach(function(b){ var el=document.createElement("div"); el.className="blq rv";
-  el.innerHTML='<div class="h">'+b[0]+'<small>'+b[1]+'</small></div><div><h4>'+esc(b[2])+'</h4><p>'+esc(b[3])+'</p>'+(b[4].length?'<div class="tags">'+b[4].map(function(t){return '<span>'+t+'</span>'}).join("")+'</div>':'')+'</div>';
-  $("#tl").appendChild(el); });
+/* ---------- grabación ---------- */
+var JOR=[
+ {k:"J1",main:true,when:"jue 22 de octubre · tarde",n:"Pruebas del menú",d:"El kiosco antes de abrir y el equipo probando el menú. Es el día del producto.",l:["La comida de cerca y en cámara lenta: queso, salsa, plancha, mordida","El de la casa armado capa por capa, desde arriba","Foto de cada perro de la carta","El equipo probando de verdad y diciendo «¡mañana abrimos!»","El kiosco, el letrero y el camino desde la entrada"]},
+ {k:"J2",when:largo(I),n:"Inauguración",d:"Llegamos antes de abrir.",l:["La apertura y el primer pedido","El cliente #1 y la fila","Clientes respondiendo qué no le puede faltar a su perro"]},
+ {k:"J3",when:"sáb 7 de noviembre (por confirmar)",n:"Semana 2",d:"Lo que necesita el kiosco funcionando.",l:["El sketch «¿Cuánto era?»","El combo del viernes negro"]}
+];
+JOR.forEach(function(J){var el=document.createElement("article"); el.className="jor rv"+(J.main?" main":"");
+  var n=Object.keys(D.tomas).filter(function(t){return D.tomas[t][0]===J.k}).length;
+  el.innerHTML='<p class="when">'+esc(J.when)+'</p><h3>'+J.n+'</h3><p>'+esc(J.d)+' '+n+' tomas planeadas.</p><ul>'+J.l.map(function(x){return "<li>"+esc(x)+"</li>"}).join("")+'</ul>';
+  $("#jors").appendChild(el)});
+
+/* ---------- pauta ---------- */
+D.pauta.fases.forEach(function(f){var el=document.createElement("article"); el.className="pcard rv";
+  var cuando=f[0]==="Expectativa y apertura"?"Del "+corto(add(I,-5))+" al "+corto(add(I,7)):f[0]==="Primer mes"?"Desde el "+corto(add(I,3)):"Del mar 24 al vie 27 de nov";
+  var ads=f[2].split(" + ").map(function(c){return P[c]});
+  el.innerHTML='<p class="when">'+esc(cuando)+'</p><h3>'+esc(f[0])+'</h3><p>'+esc(f[4])+'</p><div class="pz">'+ads.map(function(p){return '<button type="button" data-cal="'+iso(fechaDe(p))+'">'+esc(p.t)+'</button>'}).join("")+'</div>';
+  $("#prow").appendChild(el)});
 
 /* ---------- palabras clave ---------- */
 var chatTimers=[];
-Object.keys(KW).forEach(function(w,i){ var b=document.createElement("button"); b.className="kw"; b.type="button"; b.setAttribute("role","tab"); b.textContent=w;
-  b.addEventListener("click",function(){ selKw(w) }); $("#kwTabs").appendChild(b); });
-function selKw(w){
-  var k=KW[w]; $$(".kw").forEach(function(b){ b.setAttribute("aria-selected",b.textContent===w) });
-  $("#kwInfo").innerHTML='<p class="kick">'+esc(k.d)+'</p><h3 class="sec-title" style="font-size:clamp(2.6rem,9vw,4.6rem);margin:.6rem 0 .8rem">'+w+'</h3><p class="sub-h">'+tbc(k.lead)+'</p><p class="small" style="margin-top:1rem">La palabra se dice en el video y se escribe en pantalla. La respuesta automática la dejamos configurada y probada antes de publicar.</p>';
+Object.keys(D.kw).forEach(function(w){var b=document.createElement("button"); b.className="kw"; b.type="button"; b.setAttribute("role","tab"); b.textContent=w; b.addEventListener("click",function(){selKw(w)}); $("#kwTabs").appendChild(b)});
+function selKw(w){var k=D.kw[w]; $$(".kw").forEach(function(b){b.setAttribute("aria-selected",b.textContent===w)});
+  $("#kwInfo").innerHTML='<p class="kick">'+esc(k.d)+'</p><h3 class="sec-title" style="font-size:clamp(2.6rem,9vw,4.6rem);margin:.6rem 0 .8rem">'+w+'</h3><p class="sub-h">'+tbc(k.lead)+'</p><p class="small" style="margin-top:1rem">La palabra se dice en el video y se escribe en pantalla. La respuesta automática queda configurada y probada antes de publicar.</p>';
   chatTimers.forEach(clearTimeout); chatTimers=[];
   var c=$("#chat"); c.innerHTML='<div class="who"><img src="img/logo-pj.png" alt="">perritoscalientespj</div>';
   var typing=document.createElement("div"); typing.className="typing"; typing.innerHTML="<i></i><i></i><i></i>";
-  k.chat.forEach(function(m,n){
-    var el=document.createElement("div"); el.className="msg "+m[0]; el.innerHTML=tbc(m[1]); c.appendChild(el);
-    var delay = reduce?0: 300+n*850;
-    chatTimers.push(setTimeout(function(){ if(m[0]==="pj"){ c.appendChild(typing); typing.classList.add("v"); } },Math.max(0,delay-500)));
-    chatTimers.push(setTimeout(function(){ typing.classList.remove("v"); c.appendChild(el); el.classList.add("v"); },delay));
-  });
+  k.chat.forEach(function(m,n){var el=document.createElement("div"); el.className="msg "+m[0]; el.innerHTML=tbc(m[1]); c.appendChild(el);
+    var delay=reduce?0:300+n*850;
+    chatTimers.push(setTimeout(function(){if(m[0]==="pj"){c.appendChild(typing);typing.classList.add("v")}},Math.max(0,delay-500)));
+    chatTimers.push(setTimeout(function(){typing.classList.remove("v");c.appendChild(el);el.classList.add("v")},delay))});
 }
-selKw("CARTA");
+selKw("PRIMERO");
 
 /* ---------- checklist ---------- */
-var KEY="pj-plan-mes1-checks", saved={};
-try{ saved=JSON.parse(localStorage.getItem(KEY)||"{}")||{} }catch(e){ saved={} }
-CHECKS.forEach(function(c,i){ var l=document.createElement("label"); l.className="chk"+(saved[i]?" done":"");
-  l.innerHTML='<input type="checkbox"'+(saved[i]?" checked":"")+'><span>'+esc(c[0])+'<small>'+esc(c[1])+'</small></span>';
-  $("input",l).addEventListener("change",function(){ saved[i]=this.checked; l.classList.toggle("done",this.checked); try{ localStorage.setItem(KEY,JSON.stringify(saved)) }catch(e){} prog(); });
-  $("#checks").appendChild(l); });
-function prog(){ var n=$$(".chk input").filter(function(x){return x.checked}).length, t=CHECKS.length; $("#pbar").style.width=(n/t*100)+"%"; $("#pnum").textContent=n+"/"+t; }
+var KEY="pj-plan-lanzamiento-checks", saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){saved={}}
+D.checks.forEach(function(c,i){var l=document.createElement("label"); l.className="chk"+(saved[i]?" done":"");
+  l.innerHTML='<input type="checkbox" id="chk-'+i+'"'+(saved[i]?" checked":"")+'><span>'+esc(c[0])+'<small>'+esc(c[1])+'</small></span>';
+  $("input",l).addEventListener("change",function(){saved[i]=this.checked; l.classList.toggle("done",this.checked); try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){} prog()});
+  $("#checks").appendChild(l)});
+function prog(){var n=$$(".chk input").filter(function(x){return x.checked}).length, t=D.checks.length; $("#pbar").style.width=(n/t*100)+"%"; $("#pnum").textContent=n+"/"+t}
 prog();
 
-/* ---------- reveal y nav ---------- */
+/* ---------- aparición ---------- */
 if("IntersectionObserver" in window && !reduce){
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target) } }) },{threshold:.12});
-  $$(".rv,.zz,#mix").forEach(function(el){ io.observe(el) });
-  var links=$$(".nav a"), secs=links.map(function(a){ return $(a.getAttribute("href")) });
-  var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var id="#"+e.target.id; links.forEach(function(a){ a.classList.toggle("on",a.getAttribute("href")===id) }) } }) },{rootMargin:"-45% 0px -50% 0px"});
-  secs.forEach(function(s){ if(s) io2.observe(s) });
-} else { $$(".rv,.zz,#mix").forEach(function(el){ el.classList.add("in") }); }
-/* respaldo: si el observador no dispara (pestaña en segundo plano, navegadores viejos), revela por posición */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+  $$(".rv,.zz").forEach(function(el){io.observe(el)});
+  var links=$$(".nav a"), secs2=links.map(function(a){return $(a.getAttribute("href"))});
+  var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id="#"+e.target.id; links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")===id)})}})},{rootMargin:"-45% 0px -50% 0px"});
+  secs2.forEach(function(s){if(s) io2.observe(s)});
+} else { $$(".rv,.zz").forEach(function(el){el.classList.add("in")}) }
 var chatSeen=false;
-function sweep(){ var h=window.innerHeight;
-  if(!chatSeen){ var cr=$("#chat").getBoundingClientRect(); if(cr.top<h*.8 && cr.bottom>0){ chatSeen=true; var on=$('.kw[aria-selected="true"]'); selKw(on?on.textContent:"CARTA"); } } $$(".rv:not(.in),.zz:not(.in),#mix:not(.in)").forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<h*.95 && r.bottom>0) el.classList.add("in") }) }
+function sweep(){var h=window.innerHeight;
+  if(!chatSeen){var cr=$("#chat").getBoundingClientRect(); if(cr.top<h*.8&&cr.bottom>0){chatSeen=true; var on=$('.kw[aria-selected="true"]'); selKw(on?on.textContent:"PRIMERO")}}
+  $$(".rv:not(.in),.zz:not(.in)").forEach(function(el){var r=el.getBoundingClientRect(); if(r.top<h*.95&&r.bottom>0) el.classList.add("in")})}
 window.addEventListener("scroll",sweep,{passive:true}); window.addEventListener("resize",sweep); setTimeout(sweep,400);
 })();
 </script>
