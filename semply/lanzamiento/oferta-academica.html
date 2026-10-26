@@ -10,14 +10,14 @@
 <meta name="theme-color" content="#F10E3B">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/landing.css?v=5">
-<link rel="stylesheet" href="assets/css/sitio.css?v=5">
+<link rel="stylesheet" href="assets/css/landing.css?v=6">
+<link rel="stylesheet" href="assets/css/sitio.css?v=6">
 </head>
 <body class="interna" data-pagina="oferta">
 <header class="hdr js-hdr">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Semply, inicio"><img class="l-blanco" src="assets/img/logo-blanco-rojo.png" alt="Semply" width="140" height="36"><img class="l-color" src="assets/img/logo-color.png" alt="" width="140" height="36"></a>
-    <nav class="hdr-nav" aria-label="Principal"><a href="index.html" data-mira>Inicio</a><a href="nosotros.html" data-mira>Nosotros</a><a href="oferta-academica.html" aria-current="page" data-mira>Oferta académica</a><a href="como-funciona.html" data-mira>Cómo funciona</a><a href="preguntas.html" data-mira>Preguntas frecuentes</a></nav>
+    <nav class="hdr-nav" aria-label="Principal"><a href="index.html" data-mira>Inicio</a><a href="nosotros.html" data-mira>Nosotros</a><a href="oferta-academica.html" aria-current="page" data-mira>Oferta académica</a><a href="plan-de-estudios/" data-mira>Plan de estudios</a><a href="como-funciona.html" data-mira>Cómo funciona</a><a href="preguntas.html" data-mira>Preguntas frecuentes</a></nav>
     <a class="btn btn-s" href="inscripcion.html" data-mira>Inscríbete</a>
     <button class="hdr-menu js-menu" aria-label="Abrir menú"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
@@ -29,7 +29,7 @@
       <span class="ceja ceja-clara" style="margin-top:22px">Oferta académica</span>
       <h1>Técnico Laboral en <span>Marketing Digital e IA.</span></h1>
       <p class="lead" style="color:rgba(255,255,255,.9)">Nuestro programa principal: doce módulos de 100 horas, en dos semestres, para salir con un perfil completo de marketing digital e inteligencia artificial.</p>
-      <div class="hero-cta" style="margin-top:28px"><a class="btn btn-y" href="#modulos" data-mira>Ver los 12 módulos</a><a class="btn btn-claro btn-o" href="#plan" data-mira>Ver el plan de estudios</a></div>
+      <div class="hero-cta" style="margin-top:28px"><a class="btn btn-y" href="#modulos" data-mira>Ver los 12 módulos</a><a class="btn btn-claro btn-o" href="plan-de-estudios/" data-mira>Ver el plan de estudios</a></div>
       <div class="js-burst-p"></div>
       <p class="sellos-pista" aria-hidden="true">Toca el fondo rojo y deja tu sello</p>
     </div>
@@ -62,14 +62,14 @@
     <div class="wrap">
       <div class="cab-fila"><div class="cab rv" style="margin:0"><span class="ceja">Estructura curricular</span><h2 class="t-l" style="margin-top:12px">Doce módulos, dos semestres.</h2></div><div class="seg-sem rv js-filtro" role="tablist"><button class="on" data-s="0">Todos</button><button data-s="1">Semestre 1</button><button data-s="2">Semestre 2</button></div></div>
       <div class="modulos-p js-modulos"></div>
-      <p class="aviso-demo rv" style="margin-top:24px"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><span>Estamos publicando el plan de estudios de cada módulo. Los que dicen «Plan en construcción» se completan muy pronto.</span></p>
+      <p class="aviso-demo rv" style="margin-top:24px"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><span>Cada módulo tiene su temario completo en el <a class="enl" href="plan-de-estudios/">plan de estudios</a>: para quién es, qué necesitas, las 10 unidades y lo que entregas en cada una.</span></p>
     </div>
   </section>
 
-  <!-- Plan de estudios: los dos módulos que ya tienen plan completo -->
+  <!-- Plan de estudios: resumen de cualquiera de los 12 módulos; el detalle vive en plan-de-estudios/ -->
   <section class="sec claro deco-sec" id="plan">
     <div class="wrap">
-      <div class="cab-fila"><div class="cab rv" style="margin:0"><span class="ceja">Plan de estudios</span><h2 class="t-l" style="margin-top:12px">No son 100 horas de video. <span class="roj">Son 100 horas de trabajo.</span></h2><p class="lead" style="margin-top:10px">Así está armado cada módulo, unidad por unidad. Empezamos por los dos que ya están listos.</p></div><div class="seg-sem rv js-plan-tabs" role="tablist"><button class="on" data-k="ia">IA aplicada al marketing</button><button data-k="seo">SEO y posicionamiento web</button></div></div>
+      <div class="cab-fila"><div class="cab rv" style="margin:0"><span class="ceja">Plan de estudios</span><h2 class="t-l" style="margin-top:12px">No son 100 horas de video. <span class="roj">Son 100 horas de trabajo.</span></h2><p class="lead" style="margin-top:10px">Así está armado cada módulo, unidad por unidad. Elige uno aquí o abre el <a class="enl" href="plan-de-estudios/" data-mira>plan de estudios completo</a>.</p></div><div class="seg-sem seg-12 rv js-plan-tabs" role="tablist" aria-label="Elige un módulo"></div></div>
       <div class="plan js-plan rv" aria-live="polite"></div>
     </div>
   </section>
@@ -96,8 +96,8 @@
 <footer class="pie js-pie"></footer>
 <div class="mira js-mira" aria-hidden="true"></div><div class="mira-punto js-mira-p" aria-hidden="true"></div><div class="mira-txt js-mira-t" aria-hidden="true"></div>
 <div class="avisos js-avisos" aria-live="polite"></div>
-<script src="assets/js/comun.js?v=5"></script>
-<script src="assets/js/temario.js?v=5"></script>
-<script src="assets/js/internas.js?v=5"></script>
+<script src="assets/js/comun.js?v=6"></script>
+<script src="assets/js/plan.js?v=1"></script>
+<script src="assets/js/internas.js?v=6"></script>
 </body>
 </html>

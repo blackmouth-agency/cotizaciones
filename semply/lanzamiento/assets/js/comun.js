@@ -27,7 +27,7 @@
   /* ---------- datos reales de la institución ---------- */
   S.CONTACTO = { tel: '318 888 8328', wa: '573188888328', correo: 'semply.edu@gmail.com', dir: 'Carrera 5 No. 12-43, barrio Bolívar', ciudad: 'Yumbo, Valle del Cauca' };
   S.PROGRAMA = { nombre: 'Técnico Laboral en Marketing Digital e Inteligencia Artificial', cert: 'Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial', horas: 1200, registro: 'Resolución 1200.3.2-0496 del 27 de abril de 2026', licencia: 'Resolución 0495 del 27 de abril de 2026', jornadas: ['Diurna', 'Nocturna', 'Fin de semana'], metodologia: 'Presencial y a distancia con estrategia de educación virtual' };
-  // los 12 módulos del programa (estructura curricular). «det» = ya tiene plan de estudios publicado (temario.js).
+  // los 12 módulos del programa (estructura curricular). El temario completo de cada uno vive en plan-de-estudios/ (datos en plan.js).
   S.MODULOS = [
     { n: 'Fundamentos de Marketing', s: 1, d: 'Mercado, cliente, propuesta de valor y las bases para decidir con criterio.', img: 'prog-seo' },
     { n: 'Comunicación Digital', s: 1, d: 'Mensajes claros para cada canal, tono de marca y escritura para pantallas.', img: 'linkedin' },
@@ -42,9 +42,11 @@
     { n: 'Inteligencia Artificial Aplicada al Marketing', s: 2, d: 'De usar ChatGPT a operar un sistema de marketing con IA.', img: 'prompts', det: 'ia' },
     { n: 'Proyecto Integrador', s: 2, d: 'Un proyecto real de principio a fin que se sustenta ante el equipo docente.', img: 'prog-ia' }
   ];
+  // número y enlace al módulo dentro del plan de estudios (las páginas internas viven en la raíz del sitio)
+  S.MODULOS.forEach(function (m, i) { m.num = i + 1; m.plan = 'plan-de-estudios/#m' + (i + 1); m.det = true; });
   // equipo directivo: fotos y cargos enviados por el rector el 13 de octubre de 2026
   S.EQUIPO = [
-    { n: 'Sebastián Beltrán', c: 'Rector y Director Académico', img: 'assets/img/equipo-sebastian.webp', col: '#F10E3B' },
+    { n: 'Sebastián Beltrán', c: 'Rector y Director Académico', img: 'assets/img/equipo-sebastian.webp?v=2', col: '#F10E3B' },
     { n: 'Jhon Luque', c: 'Director de Admisiones y Ventas B2B y B2C', img: 'assets/img/equipo-jhon.webp', col: '#FFC225' },
     { n: 'Karol Díaz', c: 'Directora de Contenido Orgánico y Estrategia Visual', img: 'assets/img/equipo-karol.webp', col: '#373435' }
   ];
@@ -75,7 +77,7 @@
     var p = S.$('.js-pie'); if (!p) return;
     var C = S.CONTACTO;
     p.innerHTML = '<div class="wrap pie-grid"><div class="pie-marca"><img src="assets/img/logo-blanco-rojo.png" alt="Semply" width="130" height="34"><p>Institución de Educación para el Trabajo y el Desarrollo Humano. Marketing digital e inteligencia artificial, sin complicarlo.</p></div>' +
-      '<div><h4>Semply</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="oferta-academica.html">Oferta académica</a></li><li><a href="como-funciona.html">Cómo funciona</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li><li><a href="inscripcion.html">Inscríbete</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>' +
+      '<div><h4>Semply</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="oferta-academica.html">Oferta académica</a></li><li><a href="plan-de-estudios/">Plan de estudios</a></li><li><a href="como-funciona.html">Cómo funciona</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li><li><a href="inscripcion.html">Inscríbete</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>' +
       '<div><h4>Contacto</h4><ul><li>' + S.ico(S.I.pin) + C.dir + ', ' + C.ciudad + '</li><li><a href="tel:+57' + C.tel.replace(/ /g, '') + '">' + S.ico(S.I.tel) + C.tel + '</a></li><li><a href="mailto:' + C.correo + '">' + S.ico(S.I.correo) + C.correo + '</a></li><li><a href="' + S.waLink() + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'Escríbenos por WhatsApp</a></li></ul></div></div>' +
       '<div class="wrap pie-legal"><span>© 2026 Semply SAS. Licencia de funcionamiento: ' + S.PROGRAMA.licencia + '. Programa ' + S.PROGRAMA.nombre + ' registrado por la Secretaría de Educación de Yumbo, ' + S.PROGRAMA.registro + '.</span><span>Sitio en construcción · por BLACKMOUTH</span></div>';
   };
@@ -149,9 +151,9 @@
   S.FAQ_TEMAS = [['programa', 'El programa'], ['inscripcion', 'Inscripción y pagos'], ['modalidad', 'Jornadas y modalidad'], ['certificado', 'Certificado y evaluación'], ['plataforma', 'Plataforma y clases']];
   S.FAQ = [
     ['programa', '¿Qué estudio en Semply?', 'El Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial: 1.200 horas repartidas en doce módulos de 100 horas y dos semestres. Es nuestra oferta académica principal, y de él nacen los cursos y rutas cortas que vienen.', 'inicio'],
-    ['programa', '¿Qué módulos tiene?', 'Semestre 1: ' + S.MODULOS.filter(function (m) { return m.s === 1; }).map(function (m) { return m.n; }).join(', ') + '. Semestre 2: ' + S.MODULOS.filter(function (m) { return m.s === 2; }).map(function (m) { return m.n; }).join(', ') + '.'],
+    ['programa', '¿Qué módulos tiene?', 'Semestre 1: ' + S.MODULOS.filter(function (m) { return m.s === 1; }).map(function (m) { return m.n; }).join(', ') + '. Semestre 2: ' + S.MODULOS.filter(function (m) { return m.s === 2; }).map(function (m) { return m.n; }).join(', ') + '. El temario completo de cada uno, unidad por unidad, está en el <a href="plan-de-estudios/">plan de estudios</a>.'],
     ['programa', '¿Necesito saber de marketing o de programación?', 'No. El primer semestre arranca con Fundamentos de Marketing y Herramientas Digitales, y no se necesita programar: basta con manejo básico de computador y navegador.', 'inicio'],
-    ['programa', '¿Las clases son pura teoría?', 'No. La mitad de las horas de cada módulo es práctica con un entregable que se revisa, y trabajas sobre un negocio real: el tuyo, el de un cliente o uno que te asigna Semply.'],
+    ['programa', '¿Las clases son pura teoría?', 'No. De las 100 horas de cada módulo, 15 son clases grabadas, 20 son sesiones en vivo con el docente, 50 son práctica con un entregable que se revisa y 15 son evaluación y retroalimentación. Trabajas sobre un negocio real: el tuyo, el de un cliente o uno que te asigna Semply.'],
     ['programa', '¿Para quién es el programa?', 'Para quien termina el colegio y quiere un título técnico con salida laboral, para quien ya trabaja y quiere crecer o cambiar de área, y para quien tiene un negocio y quiere venderlo mejor en internet.'],
     ['inscripcion', '¿Cómo me inscribo?', 'Llena el formulario de inscripción o escríbenos al WhatsApp ' + S.CONTACTO.tel + '. El equipo de admisiones te contacta para contarte el paso a paso de la matrícula.', 'inicio'],
     ['inscripcion', '¿Cuánto cuesta y cómo se paga?', 'El equipo de admisiones te cuenta el valor, lo que incluye y las formas de pago cuando te contacte.', 'insc'],

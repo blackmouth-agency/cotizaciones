@@ -65,9 +65,12 @@
   /* ---------- oferta académica: los dos semestres ---------- */
   $('.js-semestres').innerHTML = [1, 2].map(function (s) {
     return '<div class="semestre"><h3><span>Semestre ' + s + '</span><small>600 horas</small></h3><ol>' + S.MODULOS.filter(function (m) { return m.s === s; }).map(function (m, i) {
-      return '<li class="mod' + (m.det ? ' con' : '') + '" style="--i:' + i + '" data-mira><b>' + String((s - 1) * 6 + i + 1).padStart(2, '0') + '</b><span>' + m.n + '<small>' + m.d + '</small></span><em>' + (m.det ? 'Plan listo' : '100 h') + '</em></li>';
+      return '<li class="mod con" style="--i:' + i + '" data-mira role="link" tabindex="0" data-href="' + m.plan + '"><b>' + String(m.num).padStart(2, '0') + '</b><span>' + m.n + '<small>' + m.d + '</small></span><em>Ver temario</em></li>';
     }).join('') + '</ol></div>';
   }).join('');
+  // cada módulo abre su temario en el plan de estudios
+  $('.js-semestres').addEventListener('click', function (e) { var li = e.target.closest('[data-href]'); if (li) location.href = li.dataset.href; });
+  $('.js-semestres').addEventListener('keydown', function (e) { var li = e.target.closest('[data-href]'); if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); location.href = li.dataset.href; } });
 
   /* ---------- videos ---------- */
   function autoplay(v) { new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }); }, { threshold: 0.15 }).observe(v); }
@@ -174,8 +177,8 @@
       var mods = r.m.map(function (n) { return S.MODULOS.filter(function (m) { return m.n === n; })[0]; });
       S.guardar('ruta', { tema: tema, nombre: r.t });
       caja.innerHTML = '<div class="quiz-anim"><div class="quiz-barra">' + Q.map(function () { return '<i class="ok"></i>'; }).join('') + '</div><span class="ceja">Tu perfil: ' + r.t + '</span><h3>Estos módulos van a ser tus favoritos</h3><ul class="res-mods">' +
-        mods.map(function (m) { return '<li><img src="assets/img/cursos/' + m.img + '-sm.webp" alt=""><div><b>' + m.n + '</b><small>Semestre ' + m.s + ' · 100 horas</small></div></li>'; }).join('') +
-        '</ul><p class="tambien">Todos hacen parte del Técnico Laboral en Marketing Digital e IA, de 1.200 horas.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="inscripcion.html?interes=' + tema + '" data-mira>Inscribirme</a><button class="btn btn-o btn-s js-otra">Repetir</button></div></div>';
+        mods.map(function (m) { return '<li><img src="assets/img/cursos/' + m.img + '-sm.webp" alt=""><div><b>' + m.n + '</b><small>Semestre ' + m.s + ' · 100 horas · <a href="' + m.plan + '">Ver temario</a></small></div></li>'; }).join('') +
+        '</ul><p class="tambien">Todos hacen parte del Técnico Laboral en Marketing Digital e IA, de 1.200 horas.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="inscripcion.html?interes=' + tema + '" data-mira>Inscribirme</a><a class="btn btn-o btn-s" href="plan-de-estudios/#m' + mods[0].num + '" data-mira>Ver en el plan de estudios</a><button class="btn btn-o btn-s js-otra">Repetir</button></div></div>';
     }
     caja.addEventListener('click', function (e) {
       var o = e.target.closest('.op');

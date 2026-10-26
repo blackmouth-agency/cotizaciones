@@ -5,9 +5,7 @@
   S.iniciarComun(function () { return hero ? hero.offsetHeight - 90 : 40; });
   var b = $('.js-burst-p');
   if (b) b.outerHTML = { nosotros: S.burst('Yumbo<small>Valle</small>', '#FFC225', '#373435', 130), oferta: S.burst('1.200<small>horas</small>', '#FFC225', '#373435', 140), funciona: S.burst('5<small>pasos</small>', '#F10E3B', '#fff', 130), preguntas: S.burst('¿?', '#FFC225', '#373435', 120), inscripcion: S.burst('¡Abiertas!', '#F10E3B', '#fff', 130), contacto: S.burst('Hola<small>¿qué tal?</small>', '#FFC225', '#373435', 120) }[pag] || '';
-  var P = window.SMP_PLAN || {};
   var TIPOS = [['Grabadas', '#F10E3B'], ['En vivo', '#FFC225'], ['Práctica', '#373435'], ['Evaluación', '#9b9591']];
-  function suma(m) { return m.units.reduce(function (a, u) { return a.map(function (v, i) { return v + u.h[i]; }); }, [0, 0, 0, 0]); }
   // barra apilada de horas: [grabadas, en vivo, práctica, evaluación]
   function barra(h, con) {
     var t = h.reduce(function (a, v) { return a + v; }, 0);
@@ -20,12 +18,12 @@
 
   /* ---------- oferta académica ---------- */
   if (pag === 'oferta') {
-    var cont = $('.js-modulos');
+    var cont = $('.js-modulos'), PM = window.SMP_MODULOS || [];
+    function porNum(n) { return PM.filter(function (x) { return x.n === n; })[0]; }
     cont.innerHTML = S.MODULOS.map(function (m, i) {
-      var t = m.det && P[m.det];
-      return '<article class="modp rv tilt' + (t ? '' : ' pendiente') + '" data-s="' + m.s + '" style="--d:' + (i % 3 * 0.05) + 's"><div class="modp-img"><img src="assets/img/cursos/' + m.img + '-sm.webp" alt="" loading="lazy"><span class="tag ' + (t ? 'tag-y' : 'tag-b') + '">' + (t ? 'Plan de estudios listo' : 'Plan en construcción') + '</span></div>' +
-        '<div class="modp-c"><small>Módulo ' + String(i + 1).padStart(2, '0') + ' · Semestre ' + m.s + ' · 100 h</small><h3>' + m.n + '</h3><p>' + m.d + '</p>' +
-        (t ? '<button class="btn btn-s btn-o js-ver-plan" data-k="' + m.det + '" data-mira>Ver plan de estudios</button>' : '') + '</div></article>';
+      return '<article class="modp rv tilt" data-s="' + m.s + '" style="--d:' + (i % 3 * 0.05) + 's"><div class="modp-img"><img src="assets/img/cursos/' + m.img + '-sm.webp" alt="" loading="lazy"><span class="tag tag-y">Temario completo</span></div>' +
+        '<div class="modp-c"><small>Módulo ' + String(m.num).padStart(2, '0') + ' · Semestre ' + m.s + ' · 100 h</small><h3>' + m.n + '</h3><p>' + m.d + '</p>' +
+        '<div class="modp-acc"><a class="btn btn-s" href="' + m.plan + '" data-mira>Ver temario ' + S.ico(S.I.flecha, 'ico-f') + '</a><button class="btn btn-s btn-o js-ver-plan" data-k="' + m.num + '" data-mira>Resumen</button></div></div></article>';
     }).join('');
     $$('.js-filtro button').forEach(function (bt) {
       bt.addEventListener('click', function () {
@@ -33,24 +31,26 @@
         var s = bt.dataset.s; $$('.modp', cont).forEach(function (c) { c.style.display = s === '0' || c.dataset.s === s ? '' : 'none'; });
       });
     });
-    var planEl = $('.js-plan');
+    var planEl = $('.js-plan'), tabs = $('.js-plan-tabs');
+    tabs.innerHTML = PM.map(function (m) { return '<button data-k="' + m.n + '" title="' + S.esc(m.corto) + '">' + String(m.n).padStart(2, '0') + '</button>'; }).join('');
     function plan(k) {
-      var m = P[k]; if (!m) return; var h = suma(m);
-      $$('.js-plan-tabs button').forEach(function (x) { x.classList.toggle('on', x.dataset.k === k); });
-      planEl.innerHTML = '<div class="plan-cab"><div><small>Módulo de 100 horas · ' + m.units.length + ' unidades</small><h3>' + S.esc(m.name) + '</h3></div>' + S.burst(Math.round(h[2]) + '%<small>práctica</small>', '#FFC225', '#373435', 96) + '</div>' +
-        '<div class="plan-tres"><div><h4>Para quién es</h4><p>' + S.esc(m.who) + '</p></div><div><h4>Qué necesitas</h4><ul>' + m.req.map(function (r) { return '<li>' + S.esc(r) + '</li>'; }).join('') + '</ul></div><div><h4>Lo que vas a saber hacer</h4><ul class="chulos">' + m.out.map(function (r) { return '<li>' + S.esc(r) + '</li>'; }).join('') + '</ul></div></div>' +
-        '<div class="plan-horas"><h4>Cómo se reparten las 100 horas</h4>' + barra(h, true) + '</div>' +
-        '<h4 class="plan-u-t">Unidades <small>Toca una para ver sus lecciones y el entregable</small></h4><ol class="unidades">' + m.units.map(function (u, i) {
+      var m = porNum(+k); if (!m) return;
+      $$('button', tabs).forEach(function (x) { x.classList.toggle('on', +x.dataset.k === m.n); });
+      planEl.innerHTML = '<div class="plan-cab"><div><small>Módulo ' + String(m.n).padStart(2, '0') + ' · Semestre ' + m.s + ' · 100 horas · ' + m.unidades.length + ' unidades</small><h3>' + S.esc(m.corto) + '</h3><p class="plan-lema">' + S.esc(m.lema) + '</p></div>' + S.burst(m.horas[2] + '%<small>práctica</small>', '#FFC225', '#373435', 96) + '</div>' +
+        '<div class="plan-tres"><div><h4>Para quién es</h4><p>' + S.esc(m.paraQuien) + '</p></div><div><h4>Qué necesitas</h4><ul>' + m.necesitas.map(function (r) { return '<li>' + S.esc(r) + '</li>'; }).join('') + '</ul></div><div><h4>Lo que vas a hacer</h4><p>' + S.esc(m.haras) + '</p></div></div>' +
+        '<div class="plan-horas"><h4>Cómo se reparten las 100 horas</h4>' + barra(m.horas, true) + '</div>' +
+        '<h4 class="plan-u-t">Unidades <small>Toca una para ver de qué se trata y el entregable</small></h4><ol class="unidades">' + m.unidades.map(function (u, i) {
           var t = u.h.reduce(function (a, v) { return a + v; }, 0);
-          return '<li class="unidad' + (i === 0 ? ' abierta' : '') + '"><button class="unidad-bt" aria-expanded="' + (i === 0) + '" data-mira><b>' + u.c + '</b><span>' + S.esc(u.n) + '</span><em>' + t + ' h</em>' + barra(u.h) + '<i class="mas">' + S.ico(S.I.mas) + '</i></button>' +
-            '<div class="unidad-c"><div><ul class="lecciones">' + u.l.map(function (l) { return '<li>' + S.esc(l) + '</li>'; }).join('') + '</ul><div class="entregable"><small>Entregable</small><p>' + S.esc(u.d) + '</p></div></div></div></li>';
-        }).join('') + '</ol>';
+          return '<li class="unidad' + (i === 0 ? ' abierta' : '') + '"><button class="unidad-bt" aria-expanded="' + (i === 0) + '" data-mira><b>U' + (i + 1) + '</b><span>' + S.esc(u.t) + '</span><em>' + String(t).replace('.', ',') + ' h</em>' + barra(u.h) + '<i class="mas">' + S.ico(S.I.mas) + '</i></button>' +
+            '<div class="unidad-c"><div><p class="unidad-txt">' + S.esc(u.c) + '</p><div class="entregable"><small>Entregable</small><p>' + S.esc(u.e) + '</p></div></div></div></li>';
+        }).join('') + '</ol>' +
+        '<div class="plan-ir"><p>Herramientas, horas por unidad y el proyecto que sustentas al final, en el plan de estudios.</p><a class="btn" href="plan-de-estudios/#m' + m.n + '" data-mira>Ver el módulo completo ' + S.ico(S.I.flecha, 'ico-f') + '</a></div>';
     }
-    plan('ia');
+    plan(1);
     planEl.addEventListener('click', function (e) { var bt = e.target.closest('.unidad-bt'); if (!bt) return; var a = bt.parentNode.classList.toggle('abierta'); bt.setAttribute('aria-expanded', a); });
-    $$('.js-plan-tabs button').forEach(function (bt) { bt.addEventListener('click', function () { plan(bt.dataset.k); }); });
+    $$('button', tabs).forEach(function (bt) { bt.addEventListener('click', function () { plan(bt.dataset.k); }); });
     cont.addEventListener('click', function (e) { var bt = e.target.closest('.js-ver-plan'); if (!bt) return; plan(bt.dataset.k); $('#plan').scrollIntoView({ behavior: S.reducir ? 'auto' : 'smooth' }); });
-    if (location.hash === '#plan-seo') plan('seo');
+    var hm = /^#plan-(\d+)$/.exec(location.hash); if (hm) plan(hm[1]);
     S.revelar(); S.tilt();
   }
 
@@ -94,9 +94,10 @@
       });
     });
 
-    var rep = $('.js-reparto');
-    function pintaRep(k) { if (!P[k]) return; rep.innerHTML = barra(suma(P[k]), true); $$('.js-reparto-tabs button').forEach(function (x) { x.classList.toggle('on', x.dataset.k === k); }); }
-    pintaRep('ia');
+    var rep = $('.js-reparto'), PM2 = window.SMP_MODULOS || [];
+    var REP = { mod: PM2.length ? PM2[0].horas : [15, 20, 50, 15], prog: PM2.reduce(function (a, m) { return a.map(function (v, i) { return v + m.horas[i]; }); }, [0, 0, 0, 0]) };
+    function pintaRep(k) { if (!REP[k]) return; rep.innerHTML = barra(REP[k], true); $$('.js-reparto-tabs button').forEach(function (x) { x.classList.toggle('on', x.dataset.k === k); }); }
+    pintaRep('mod');
     $$('.js-reparto-tabs button').forEach(function (bt) { bt.addEventListener('click', function () { pintaRep(bt.dataset.k); }); });
 
     // dona de la evaluación: se resalta el peso que tocas

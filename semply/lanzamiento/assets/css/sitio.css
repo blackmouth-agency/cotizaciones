@@ -402,3 +402,22 @@ textarea.inp { height: auto; min-height: 110px; padding: 14px 16px; resize: vert
   .perfiles-tabs button { white-space: normal; padding: 9px 6px; font-size: 14px; line-height: 1.15; }
   .deco-l { width: 34px !important; height: 34px !important; opacity: .3 !important; }
 }
+
+/* ---------- enlace con el plan de estudios (oct-2026) ---------- */
+.enl { color: var(--rojo); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--amarillo); }
+.enl:hover { color: var(--gris); }
+.mod[data-href] { cursor: pointer; }
+.mod[data-href]:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
+.mod[data-href]:hover em { background: var(--rojo); color: #fff; }
+.modp-acc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.seg-12 { max-width: 100%; overflow-x: auto; scrollbar-width: none; flex-wrap: nowrap; }
+.seg-12::-webkit-scrollbar { display: none; }
+.seg-12 button { padding: 8px 12px; flex: none; }
+.plan-lema { margin-top: 8px; color: var(--tx2); font-size: 16px; max-width: 56ch; }
+.unidad-txt { margin: 0; padding-left: 64px; font-size: 15px; color: var(--tx2); line-height: 1.6; }
+.plan-ir { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-top: 26px; padding: 18px 22px; border-radius: 18px; background: var(--nube); }
+.plan-ir p { margin: 0; color: var(--tx2); font-size: 15px; max-width: 52ch; }
+.rascas-ir { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-top: 28px; }
+.rascas-ir p { margin: 0; color: var(--tx2); max-width: 56ch; }
+.res-mods small a { color: var(--rojo); font-weight: 700; }
+@media (max-width: 720px) { .unidad-txt { padding-left: 4px; } }
