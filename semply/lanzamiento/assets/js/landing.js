@@ -46,8 +46,6 @@
     }, 3000);
   })();
 
-  /* ---------- cintas ---------- */
-  $$('.js-cinta').forEach(function (c) { var t = c.dataset.t.split(' · '); var s = t.concat(t, t).map(function (x) { return '<span>' + x + '</span>'; }).join(''); c.innerHTML = s + s; });
 
   /* ---------- escena: avance del scroll ---------- */
   ScrollTrigger.create({ trigger: escenaEl, start: 'top top', end: 'bottom bottom', onUpdate: function (s) { estado3d.p = s.progress; $('.js-encaja').classList.toggle('on', s.progress > 0.62); } });

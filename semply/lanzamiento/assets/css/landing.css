@@ -151,15 +151,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .encaja-chips span b { color: var(--amarillo); }
 .hero-burst { position: absolute; right: 9vw; top: 20vh; }
 
-/* ---------- cintas ---------- */
-.cintas { position: relative; height: 230px; overflow: hidden; background: var(--rojo); display: grid; place-items: center; }
-.cinta { position: absolute; left: -5%; width: 110%; padding: 16px 0; overflow: hidden; box-shadow: 0 10px 30px -10px rgba(0,0,0,.4); }
-.cinta-1 { background: var(--amarillo); color: var(--gris); transform: rotate(-4deg); }
-.cinta-2 { background: var(--gris); color: var(--amarillo); transform: rotate(3deg); }
-.cinta-pista { display: flex; width: max-content; animation: corre 32s linear infinite; }
-.cinta-2 .cinta-pista { animation-direction: reverse; animation-duration: 38s; }
-.cinta-pista span { display: inline-flex; align-items: center; gap: 26px; padding-right: 26px; font-family: var(--f-tit); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 2rem); text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
-.cinta-pista span::after { content: ''; width: 16px; height: 16px; border-top: 5px solid currentColor; border-right: 5px solid currentColor; transform: translateY(3px); }
 @keyframes corre { to { transform: translateX(-50%); } }
 
 /* ---------- así vamos ---------- */
