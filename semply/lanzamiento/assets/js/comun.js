@@ -48,12 +48,14 @@
   S.EQUIPO = [
     { n: 'Sebastián Beltrán', c: 'Rector y Director Académico', img: 'assets/img/equipo-sebastian.webp?v=2', col: '#F10E3B' },
     { n: 'Jhon Luque', c: 'Director de Admisiones y Ventas B2B y B2C', img: 'assets/img/equipo-jhon.webp', col: '#FFC225' },
-    { n: 'Karol Díaz', c: 'Directora de Contenido Orgánico y Estrategia Visual', img: 'assets/img/equipo-karol.webp', col: '#373435' }
+    { n: 'Karol Díaz', c: 'Directora de Contenido Orgánico y Estrategia Visual', img: 'assets/img/equipo-karol.webp', col: '#373435' },
+    // Sebastián Ortiz, de BLACKMOUTH (la agencia aliada); agregado por pedido de David el 26-oct-2026
+    { n: 'Sebastián Ortiz', c: 'Director de Estrategia y Marketing · BLACKMOUTH', img: 'assets/img/equipo-ortiz.webp', col: '#FFFFFF', claro: true }
   ];
   S.waLink = function (msg) { return 'https://wa.me/' + S.CONTACTO.wa + '?text=' + encodeURIComponent(msg || 'Hola, quiero información sobre Semply.'); };
   S.tarjetaEquipo = function (p, i) {
     var ini = p.n.split(' ').map(function (x) { return x[0]; }).join('');
-    return '<article class="miembro rv" style="--d:' + (i * 0.08) + 's;--c:' + p.col + '" data-mira><div class="miembro-foto"><img src="' + p.img + '" alt="' + S.esc(p.n) + '" loading="lazy" onerror="this.remove()"><span class="miembro-ini">' + ini + '</span></div><div class="miembro-c"><b>' + S.esc(p.n) + '</b><span>' + S.esc(p.c) + '</span></div></article>';
+    return '<article class="miembro rv' + (p.claro ? ' claro' : '') + '" style="--d:' + (i * 0.08) + 's;--c:' + p.col + '" data-mira><div class="miembro-foto"><img src="' + p.img + '" alt="' + S.esc(p.n) + '" loading="lazy" onerror="this.remove()"><span class="miembro-ini">' + ini + '</span></div><div class="miembro-c"><b>' + S.esc(p.n) + '</b><span>' + S.esc(p.c) + '</span></div></article>';
   };
 
   /* ---------- encabezado: fondo al bajar y menú del celular ---------- */
