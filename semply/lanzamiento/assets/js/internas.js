@@ -14,7 +14,44 @@
   }
 
   /* ---------- nosotros ---------- */
-  if (pag === 'nosotros') { $('.js-equipo').innerHTML = S.EQUIPO.map(S.tarjetaEquipo).join(''); S.revelar(); }
+  if (pag === 'nosotros') {
+    $('.js-equipo').innerHTML = S.EQUIPO.map(S.tarjetaEquipo).join(''); S.revelar();
+    // misión y visión: las palabras entran una tras otra y luego se subrayan las claves
+    $$('.js-palabras').forEach(function (el) {
+      var i = 0, m = 0;
+      (function partir(nodo) {
+        [].slice.call(nodo.childNodes).forEach(function (n) {
+          if (n.nodeType === 3) {
+            var f = document.createDocumentFragment();
+            n.textContent.split(/(\s+)/).forEach(function (w) {
+              if (!w) return;
+              if (/^\s+$/.test(w)) { f.appendChild(document.createTextNode(w)); return; }
+              var s = document.createElement('span'); s.className = 'w'; s.style.setProperty('--i', i++); s.textContent = w; f.appendChild(s);
+            });
+            n.parentNode.replaceChild(f, n);
+          } else if (n.nodeType === 1) { if (n.tagName === 'MARK') n.style.setProperty('--m', m++); partir(n); }
+        });
+      })(el);
+      if (S.reducir) { el.classList.add('ver'); return; }
+      new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { el.classList.add('ver'); o.disconnect(); } }); }, { threshold: 0.3 }).observe(el);
+    });
+    // historia: el paso que está en el centro de la pantalla se enciende y mueve el contador
+    var pasos = $$('.js-hist .hist-paso'), num = $('.js-hist-n'), barra = $('.js-hist-barra');
+    function encender(k) {
+      pasos.forEach(function (p, j) { p.classList.toggle('on', j <= k); });
+      num.textContent = String(k + 1).padStart(2, '0'); barra.style.transform = 'scaleX(' + ((k + 1) / pasos.length) + ')';
+    }
+    if (S.reducir) encender(pasos.length - 1);
+    else {
+      // el último paso cuyo borde superior ya pasó la mitad de la pantalla (al final de la sección quedan todos encendidos)
+      var pend = false, ult = -1;
+      var medir = function () { pend = false; var k = 0, mitad = innerHeight * 0.55; pasos.forEach(function (p, j) { if (p.getBoundingClientRect().top < mitad) k = j; }); if (k !== ult) { ult = k; encender(k); } };
+      addEventListener('scroll', function () { if (!pend) { pend = true; requestAnimationFrame(medir); } }, { passive: true });
+      medir();
+    }
+    var simple = $('.js-simple');
+    simple.addEventListener('click', function () { simple.classList.remove('wig'); void simple.offsetWidth; simple.classList.add('wig'); S.confeti(); setTimeout(function () { simple.classList.remove('wig'); }, 500); });
+  }
 
   /* ---------- oferta académica ---------- */
   if (pag === 'oferta') {
