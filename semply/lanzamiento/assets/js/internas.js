@@ -4,7 +4,7 @@
   var hero = $('.p-hero');
   S.iniciarComun(function () { return hero ? hero.offsetHeight - 90 : 40; });
   var b = $('.js-burst-p');
-  if (b) b.outerHTML = { nosotros: S.burst('Yumbo<small>Valle</small>', '#FFC225', '#373435', 130), oferta: S.burst('1.200<small>horas</small>', '#FFC225', '#373435', 140), funciona: S.burst('5<small>pasos</small>', '#F10E3B', '#fff', 130), preguntas: S.burst('¿?', '#FFC225', '#373435', 120), inscripcion: S.burst('¡Abiertas!', '#F10E3B', '#fff', 130), contacto: S.burst('Hola<small>¿qué tal?</small>', '#FFC225', '#373435', 120) }[pag] || '';
+  if (b) b.outerHTML = { nosotros: S.burst('100%<small>virtual</small>', '#FFC225', '#373435', 130), oferta: S.burst('1.200<small>horas</small>', '#FFC225', '#373435', 140), funciona: S.burst('5<small>pasos</small>', '#F10E3B', '#fff', 130), preguntas: S.burst('¿?', '#FFC225', '#373435', 120), inscripcion: S.burst('¡Abiertas!', '#F10E3B', '#fff', 130), contacto: S.burst('Hola<small>¿qué tal?</small>', '#FFC225', '#373435', 120) }[pag] || '';
   var TIPOS = [['Grabadas', '#F10E3B'], ['En vivo', '#FFC225'], ['Práctica', '#373435'], ['Evaluación', '#9b9591']];
   // barra apilada de horas: [grabadas, en vivo, práctica, evaluación]
   function barra(h, con) {
@@ -57,9 +57,9 @@
   /* ---------- cómo funciona ---------- */
   if (pag === 'funciona') {
     var PASOS = [
-      ['Te inscribes', 'Llenas el formulario en dos minutos o nos escribes por WhatsApp. Nos dices qué jornada y qué modalidad prefieres.', 'inscripcion.html', 'Ir al formulario'],
+      ['Te inscribes', 'Llenas el formulario en dos minutos o nos escribes por WhatsApp. Nos cuentas qué te interesa aprender.', 'inscripcion.html', 'Ir al formulario'],
       ['Te contacta admisiones', 'El equipo de admisiones resuelve tus dudas: valor, formas de pago, fecha de inicio del próximo grupo, horarios y documentos.', S.waLink('Hola, quiero hablar con admisiones de Semply.'), 'Hablar con admisiones'],
-      ['Haces tu matrícula', 'Formalizas tu cupo en la jornada y la modalidad que elegiste, y recibes tu acceso a la plataforma.', '', ''],
+      ['Haces tu matrícula', 'Formalizas tu cupo en el próximo grupo y recibes tu acceso a la plataforma.', '', ''],
       ['Estudias dos semestres', 'Seis módulos por semestre, de 100 horas cada uno. La mitad del tiempo es práctica sobre un negocio real, con un entregable por unidad.', 'oferta-academica.html', 'Ver los 12 módulos'],
       ['Sustentas y te certificas', 'Presentas tu proyecto integrador ante el equipo docente y recibes el certificado de Técnico Laboral por Competencias en Marketing Digital e IA.', '#evaluacion', 'Cómo se aprueba']
     ];
@@ -76,22 +76,23 @@
       if (e.target.closest('.js-rec-ant') && pi) { pi--; pintaRec(); }
     });
 
-    var MOD = { presencial: ['En la sede de Yumbo', 'Clases en el aula con tu grupo y el docente, en la ' + C.dir + '.', S.ico('<path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/>')], virtual: ['Desde donde estés', 'Lecciones en la plataforma a tu ritmo y sesiones en vivo con el docente. Solo necesitas computador o celular y buena conexión.', S.ico('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/>')] };
-    var JOR = { diurna: ['Jornada diurna', 'Para quien tiene libres las mañanas o las tardes, por ejemplo si acabas de terminar el colegio.', [1, 1, 1, 1, 1, 0, 0], '☀'], nocturna: ['Jornada nocturna', 'Para quien trabaja de día y estudia después del trabajo.', [1, 1, 1, 1, 1, 0, 0], '☾'], finde: ['Fin de semana', 'Para quien solo tiene libres los sábados y domingos.', [0, 0, 0, 0, 0, 1, 1], '★'] };
-    var sel = { m: 'presencial', j: 'diurna' }, res = $('.js-elige');
+    // cómo se estudia a distancia: tres momentos de cada unidad
+    var VIR = {
+      grabadas: ['Clases grabadas', 'Cápsulas de 8 a 10 minutos con la teoría, casos reales y demostraciones. Las ves cuando quieras y las repites las veces que necesites.', S.ico(S.I.libro), 'A tu ritmo, cualquier día'],
+      vivo: ['Sesiones en vivo', 'Talleres con tu docente y tu grupo para resolver dudas y avanzar en tu proyecto. Tienen horario fijo por grupo y quedan grabadas.', S.ico(S.I.chat), 'Horario que te confirma admisiones'],
+      practica: ['Práctica y entregas', 'Construyes el entregable de cada unidad sobre un negocio real, lo subes a la plataforma y recibes retroalimentación con rúbrica.', S.ico(S.I.check), 'A tu ritmo, con fecha de entrega']
+    };
+    var sel = 'grabadas', res = $('.js-elige');
     function pintaElige() {
-      var m = MOD[sel.m], j = JOR[sel.j];
-      res.innerHTML = '<div class="elige-tarj"><span class="elige-ic">' + m[2] + '</span><h3>' + m[0] + ' · ' + j[0].toLowerCase() + '</h3><p>' + m[1] + '</p><p>' + j[1] + '</p>' +
-        '<div class="semana">' + ['L', 'M', 'M', 'J', 'V', 'S', 'D'].map(function (d, i) { return '<div class="' + (j[2][i] ? 'si' : '') + '" style="--i:' + i + '"><small>' + d + '</small><b>' + (j[2][i] ? j[3] : '') + '</b></div>'; }).join('') + '</div>' +
-        '<p class="elige-nota">Semana de ejemplo. Admisiones te confirma los horarios exactos de cada jornada.</p><a class="btn btn-y btn-s" href="inscripcion.html" data-mira>Inscribirme así ' + S.ico(S.I.flecha, 'ico-f') + '</a></div>';
+      var v = VIR[sel];
+      res.innerHTML = '<div class="elige-tarj"><span class="elige-ic">' + v[2] + '</span><h3>' + v[0] + '</h3><p>' + v[1] + '</p><p class="elige-cuando">' + S.ico(S.I.reloj) + v[3] + '</p>' +
+        '<p class="elige-nota">Solo necesitas computador o celular con buena conexión.</p><a class="btn btn-y btn-s" href="inscripcion.html" data-mira>Inscribirme ' + S.ico(S.I.flecha, 'ico-f') + '</a></div>';
     }
     pintaElige();
-    [['.js-modalidad', 'm'], ['.js-jornada', 'j']].forEach(function (g) {
-      $(g[0]).addEventListener('click', function (e) {
-        var bt = e.target.closest('button'); if (!bt) return; sel[g[1]] = bt.dataset.v;
-        $$('button', $(g[0])).forEach(function (x) { x.classList.toggle('on', x === bt); x.setAttribute('aria-checked', x === bt); });
-        pintaElige();
-      });
+    $('.js-virtual').addEventListener('click', function (e) {
+      var bt = e.target.closest('button'); if (!bt) return; sel = bt.dataset.v;
+      $$('button', $('.js-virtual')).forEach(function (x) { x.classList.toggle('on', x === bt); x.setAttribute('aria-checked', x === bt); });
+      pintaElige();
     });
 
     var rep = $('.js-reparto'), PM2 = window.SMP_MODULOS || [];
@@ -139,10 +140,8 @@
         '<div class="fld full"><label for="i-n">Nombre completo</label><input id="i-n" class="inp" autocomplete="name" required><span class="err">Escribe tu nombre.</span></div>' +
         '<div class="fld"><label for="i-t">Celular o WhatsApp</label><input id="i-t" type="tel" class="inp" inputmode="numeric" autocomplete="tel" placeholder="300 123 4567" required><span class="err">Escribe un número de 10 dígitos.</span></div>' +
         '<div class="fld"><label for="i-c">Correo</label><input id="i-c" type="email" class="inp" autocomplete="email" required><span class="err">Revisa el correo.</span></div>' +
-        '<div class="fld"><label for="i-ci">Ciudad</label><input id="i-ci" class="inp" autocomplete="address-level2" list="ciudades" value="Yumbo"><datalist id="ciudades"><option>Yumbo</option><option>Cali</option><option>Palmira</option><option>Jamundí</option><option>Buga</option><option>Tuluá</option></datalist></div>' +
-        '<div class="fld"><label for="i-co">¿Cómo nos conociste?</label><select id="i-co" class="inp"><option>Redes sociales</option><option>Un amigo o familiar</option><option>Google</option><option>En la sede</option><option>Otro</option></select></div>' +
-        '<div class="fld full"><span class="lbl">Jornada que prefieres</span><div class="opciones">' + ['Diurna', 'Nocturna', 'Fin de semana'].map(function (j, k) { return '<label class="opcion"><input type="radio" name="jornada" value="' + j + '"' + (k === 0 ? ' checked' : '') + '><span><b>' + j + '</b></span></label>'; }).join('') + '</div></div>' +
-        '<div class="fld full"><span class="lbl">Modalidad</span><div class="opciones"><label class="opcion"><input type="radio" name="modalidad" value="Presencial" checked><span><b>Presencial</b>Sede Yumbo</span></label><label class="opcion"><input type="radio" name="modalidad" value="A distancia"><span><b>A distancia</b>Clases virtuales</span></label></div></div>' +
+        '<div class="fld"><label for="i-ci">Ciudad</label><input id="i-ci" class="inp" autocomplete="address-level2" list="ciudades" placeholder="Tu ciudad"><datalist id="ciudades"><option>Yumbo</option><option>Cali</option><option>Palmira</option><option>Jamundí</option><option>Buga</option><option>Tuluá</option></datalist></div>' +
+        '<div class="fld"><label for="i-co">¿Cómo nos conociste?</label><select id="i-co" class="inp"><option>Redes sociales</option><option>Un amigo o familiar</option><option>Google</option><option>Otro</option></select></div>' +
         '<div class="fld full"><label for="i-m">¿Algo que quieras contarnos? (opcional)</label><textarea id="i-m" class="inp">' + (interes && temas[interes] ? 'Me interesa sobre todo ' + temas[interes] + '.' : '') + '</textarea></div>' +
         '<label class="check full"><input type="checkbox" required><span>Autorizo a Semply a contactarme y a tratar mis datos según la Ley 1581 de 2012.</span></label>' +
         '<button class="btn full" data-mira>Enviar inscripción ' + S.ico(S.I.flecha, 'ico-f') + '</button></div></form>';
@@ -150,12 +149,12 @@
     formulario();
     caja.addEventListener('submit', function (e) {
       e.preventDefault(); var f = e.target; if (!S.validar(f)) return;
-      var d = { nombre: $('#i-n').value.trim(), tel: $('#i-t').value.trim(), correo: $('#i-c').value.trim(), ciudad: $('#i-ci').value.trim(), como: $('#i-co').value, jornada: $('input[name=jornada]:checked').value, modalidad: $('input[name=modalidad]:checked').value, nota: $('#i-m').value.trim() };
+      var d = { nombre: $('#i-n').value.trim(), tel: $('#i-t').value.trim(), correo: $('#i-c').value.trim(), ciudad: $('#i-ci').value.trim(), como: $('#i-co').value, nota: $('#i-m').value.trim() };
       var btn = $('button.btn', f); btn.classList.add('cargando');
       setTimeout(function () {
         S.guardar('inscripcion', d);
-        var msg = 'Hola, quiero inscribirme al Técnico Laboral en Marketing Digital e IA.\nNombre: ' + d.nombre + '\nCelular: ' + d.tel + '\nCorreo: ' + d.correo + '\nCiudad: ' + d.ciudad + '\nJornada: ' + d.jornada + '\nModalidad: ' + d.modalidad + (d.nota ? '\nNota: ' + d.nota : '');
-        caja.innerHTML = '<div class="exito">' + S.burst('¡Listo!', '#F10E3B', '#fff', 120, 'rel') + '<h3>Gracias, ' + S.esc(d.nombre.split(' ')[0]) + '.</h3><p style="color:var(--tx2);max-width:420px">Recibimos tu inscripción para la jornada <b>' + d.jornada.toLowerCase() + '</b>, modalidad <b>' + d.modalidad.toLowerCase() + '</b>. Para que admisiones te atienda más rápido, envíanos también tus datos por WhatsApp.</p>' +
+        var msg = 'Hola, quiero inscribirme al Técnico Laboral en Marketing Digital e IA.\nNombre: ' + d.nombre + '\nCelular: ' + d.tel + '\nCorreo: ' + d.correo + '\nCiudad: ' + d.ciudad + (d.nota ? '\nNota: ' + d.nota : '');
+        caja.innerHTML = '<div class="exito">' + S.burst('¡Listo!', '#F10E3B', '#fff', 120, 'rel') + '<h3>Gracias, ' + S.esc(d.nombre.split(' ')[0]) + '.</h3><p style="color:var(--tx2);max-width:420px">Recibimos tu inscripción al Técnico Laboral, 100 % virtual. Para que admisiones te atienda más rápido, envíanos también tus datos por WhatsApp.</p>' +
           '<div class="compartir"><a class="btn" href="' + S.waLink(msg) + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'Enviar por WhatsApp</a><button class="btn btn-o btn-s js-otra">Inscribir a otra persona</button></div></div>';
         S.confeti();
       }, 900);

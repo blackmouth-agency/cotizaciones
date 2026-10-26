@@ -430,3 +430,7 @@ textarea.inp { height: auto; min-height: 110px; padding: 14px 16px; resize: vert
 .miembro.claro .miembro-ini { color: rgba(55,52,53,.35); }
 @media (max-width: 1100px) { .equipo { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-inline: auto; } }
 @media (max-width: 720px) { .equipo { grid-template-columns: 1fr; max-width: 380px; } }
+
+/* ---------- 100 % virtual: cuándo se hace cada momento (26-oct-2026) ---------- */
+.elige-tarj .elige-cuando { display: inline-flex; align-items: center; gap: 8px; margin: 6px 0 14px; padding: 8px 14px; border-radius: 999px; background: var(--nube); color: var(--gris); font-family: var(--f-tit); font-weight: 600; font-size: 14px; }
+.elige-cuando .ico { width: 18px; height: 18px; }

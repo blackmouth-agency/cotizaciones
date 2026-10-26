@@ -26,7 +26,7 @@
 
   /* ---------- datos reales de la institución ---------- */
   S.CONTACTO = { tel: '318 888 8328', wa: '573188888328', correo: 'semply.edu@gmail.com', dir: 'Carrera 5 No. 12-43, barrio Bolívar', ciudad: 'Yumbo, Valle del Cauca', instagram: 'https://www.instagram.com/semplyedu/' };
-  S.PROGRAMA = { nombre: 'Técnico Laboral en Marketing Digital e Inteligencia Artificial', cert: 'Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial', horas: 1200, registro: 'Resolución 1200.3.2-0496 del 27 de abril de 2026', licencia: 'Resolución 0495 del 27 de abril de 2026', jornadas: ['Diurna', 'Nocturna', 'Fin de semana'], metodologia: 'Presencial y a distancia con estrategia de educación virtual' };
+  S.PROGRAMA = { nombre: 'Técnico Laboral en Marketing Digital e Inteligencia Artificial', cert: 'Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial', horas: 1200, registro: 'Resolución 1200.3.2-0496 del 27 de abril de 2026', licencia: 'Resolución 0495 del 27 de abril de 2026', metodologia: '100 % virtual: clases grabadas a tu ritmo y sesiones en vivo con tu docente' };
   // los 12 módulos del programa (estructura curricular). El temario completo de cada uno vive en plan-de-estudios/ (datos en plan.js).
   S.MODULOS = [
     { n: 'Fundamentos de Marketing', s: 1, d: 'Mercado, cliente, propuesta de valor y las bases para decidir con criterio.', img: 'prog-seo' },
@@ -80,7 +80,7 @@
     var C = S.CONTACTO;
     p.innerHTML = '<div class="wrap pie-grid"><div class="pie-marca"><img src="assets/img/logo-blanco-rojo.png" alt="Semply" width="130" height="34"><p>Institución de Educación para el Trabajo y el Desarrollo Humano. Marketing digital e inteligencia artificial, sin complicarlo.</p></div>' +
       '<div><h4>Semply</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="oferta-academica.html">Oferta académica</a></li><li><a href="plan-de-estudios/">Plan de estudios</a></li><li><a href="como-funciona.html">Cómo funciona</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li><li><a href="inscripcion.html">Inscríbete</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>' +
-      '<div><h4>Contacto</h4><ul><li>' + S.ico(S.I.pin) + C.dir + ', ' + C.ciudad + '</li><li><a href="tel:+57' + C.tel.replace(/ /g, '') + '">' + S.ico(S.I.tel) + C.tel + '</a></li><li><a href="mailto:' + C.correo + '">' + S.ico(S.I.correo) + C.correo + '</a></li><li><a href="' + S.waLink() + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'Escríbenos por WhatsApp</a></li><li><a href="' + C.instagram + '" target="_blank" rel="noopener">' + S.ico('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/>') + '@semplyedu en Instagram</a></li></ul></div></div>' +
+      '<div><h4>Contacto</h4><ul><li><a href="tel:+57' + C.tel.replace(/ /g, '') + '">' + S.ico(S.I.tel) + C.tel + '</a></li><li><a href="mailto:' + C.correo + '">' + S.ico(S.I.correo) + C.correo + '</a></li><li><a href="' + S.waLink() + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'Escríbenos por WhatsApp</a></li><li><a href="' + C.instagram + '" target="_blank" rel="noopener">' + S.ico('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/>') + '@semplyedu en Instagram</a></li></ul></div></div>' +
       '<div class="wrap pie-legal"><span>© 2026 Semply SAS. Licencia de funcionamiento: ' + S.PROGRAMA.licencia + '. Programa ' + S.PROGRAMA.nombre + ' registrado por la Secretaría de Educación de Yumbo, ' + S.PROGRAMA.registro + '.</span><span>Sitio en construcción · por BLACKMOUTH</span></div>';
   };
 
@@ -150,7 +150,7 @@
 
   /* ---------- preguntas frecuentes: una sola fuente para la portada, inscripciones y la página de preguntas ---------- */
   // [tema, pregunta, respuesta, marca opcional: 'inicio' sale en la portada, 'insc' en inscripciones]
-  S.FAQ_TEMAS = [['programa', 'El programa'], ['inscripcion', 'Inscripción y pagos'], ['modalidad', 'Jornadas y modalidad'], ['certificado', 'Certificado y evaluación'], ['plataforma', 'Plataforma y clases']];
+  S.FAQ_TEMAS = [['programa', 'El programa'], ['inscripcion', 'Inscripción y pagos'], ['modalidad', 'Modalidad y horarios'], ['certificado', 'Certificado y evaluación'], ['plataforma', 'Plataforma y clases']];
   S.FAQ = [
     ['programa', '¿Qué estudio en Semply?', 'El Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial: 1.200 horas repartidas en doce módulos de 100 horas y dos semestres. Es nuestra oferta académica principal, y de él nacen los cursos y rutas cortas que vienen.', 'inicio'],
     ['programa', '¿Qué módulos tiene?', 'Semestre 1: ' + S.MODULOS.filter(function (m) { return m.s === 1; }).map(function (m) { return m.n; }).join(', ') + '. Semestre 2: ' + S.MODULOS.filter(function (m) { return m.s === 2; }).map(function (m) { return m.n; }).join(', ') + '. El temario completo de cada uno, unidad por unidad, está en el <a href="plan-de-estudios/">plan de estudios</a>.'],
@@ -159,11 +159,10 @@
     ['programa', '¿Para quién es el programa?', 'Para quien termina el colegio y quiere un título técnico con salida laboral, para quien ya trabaja y quiere crecer o cambiar de área, y para quien tiene un negocio y quiere venderlo mejor en internet.'],
     ['inscripcion', '¿Cómo me inscribo?', 'Llena el formulario de inscripción o escríbenos al WhatsApp ' + S.CONTACTO.tel + '. El equipo de admisiones te contacta para contarte el paso a paso de la matrícula.', 'inicio'],
     ['inscripcion', '¿Cuánto cuesta y cómo se paga?', 'El equipo de admisiones te cuenta el valor, lo que incluye y las formas de pago cuando te contacte.', 'insc'],
-    ['inscripcion', '¿Cuándo empiezan las clases?', 'Admisiones te confirma la fecha de inicio del próximo grupo en la jornada que elijas.'],
+    ['inscripcion', '¿Cuándo empiezan las clases?', 'Admisiones te confirma la fecha de inicio del próximo grupo.'],
     ['inscripcion', '¿Qué documentos necesito?', 'Admisiones te envía la lista de documentos para la matrícula cuando te contacte.'],
-    ['modalidad', '¿Es presencial o virtual?', 'Las dos. El programa es presencial y a distancia, con estrategia de educación virtual. Tú eliges la modalidad al inscribirte.', 'inicio'],
-    ['modalidad', '¿En qué jornadas puedo estudiar?', 'Diurna, nocturna o fin de semana.', 'inicio'],
-    ['modalidad', '¿Dónde queda la sede?', 'En la ' + S.CONTACTO.dir + ', ' + S.CONTACTO.ciudad + '.', 'insc'],
+    ['modalidad', '¿Las clases son virtuales?', 'Sí. El programa es 100 % virtual: ves las clases grabadas a tu ritmo, te conectas a las sesiones en vivo con tu docente y entregas tus trabajos en la plataforma. Estudias desde donde estés.', 'inicio'],
+    ['modalidad', '¿En qué horario son las clases?', 'Las clases grabadas las ves cuando quieras. Las sesiones en vivo tienen un horario fijo por grupo que admisiones te confirma al inscribirte, y quedan grabadas por si no puedes conectarte.', 'inicio'],
     ['certificado', '¿Qué certificado recibo?', 'Al aprobar el programa recibes el certificado de ' + S.PROGRAMA.cert + '.', 'inicio'],
     ['certificado', '¿El programa está avalado?', 'Sí. Semply es una institución de Educación para el Trabajo y el Desarrollo Humano con licencia de funcionamiento (' + S.PROGRAMA.licencia + '), y el programa está registrado ante la Secretaría de Educación de Yumbo (' + S.PROGRAMA.registro + ').', 'inicio'],
     ['certificado', '¿Cómo se aprueba cada módulo?', 'Con nota mínima de 3,5 sobre 5,0, el 80 % de los entregables radicados, el 70 % de las sesiones en vivo y la sustentación del proyecto integrador. La nota sale sobre todo de lo que produces: talleres y entregables (40 %) y proyecto integrador (40 %).'],
@@ -176,7 +175,7 @@
   S.contactos = function (el) {
     if (!el) return; var C = S.CONTACTO;
     el.innerHTML = [
-      [S.I.chat, 'WhatsApp', C.tel, S.waLink(), true], [S.I.tel, 'Teléfono', C.tel, 'tel:+57' + C.tel.replace(/ /g, '')], [S.I.correo, 'Correo', C.correo, 'mailto:' + C.correo], [S.I.pin, 'Sede', C.dir + ', ' + C.ciudad, 'https://www.google.com/maps?q=' + encodeURIComponent('Carrera 5 #12-43, Bolívar, Yumbo, Valle del Cauca'), true]
+      [S.I.chat, 'WhatsApp', C.tel, S.waLink(), true], [S.I.tel, 'Teléfono', C.tel, 'tel:+57' + C.tel.replace(/ /g, '')], [S.I.correo, 'Correo', C.correo, 'mailto:' + C.correo]
     ].map(function (c) { return '<a class="contacto-it" href="' + c[3] + '"' + (c[4] ? ' target="_blank" rel="noopener"' : '') + ' data-mira><span class="ic">' + S.ico(c[0]) + '</span><div><b>' + c[1] + '</b><span>' + c[2] + '</span></div></a>'; }).join('');
   };
 

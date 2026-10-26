@@ -34,7 +34,7 @@
 
   /* ---------- palabra que cambia ---------- */
   (function () {
-    var P = ['sin complicarte la vida.', 'con tu negocio real.', 'de día o de noche.', 'presencial o virtual.'], k = 0, el = $('.js-palabra');
+    var P = ['sin complicarte la vida.', 'con tu negocio real.', 'desde donde estés.', '100 % virtual.'], k = 0, el = $('.js-palabra');
     // cada palabra va en su propio bloque sin cortes, para que la frase solo salte de línea entre palabras
     function pinta(w, cls) { var i = 0; el.innerHTML = w.split(' ').map(function (p) { return '<span class="pw">' + p.split('').map(function (l) { return '<span class="l ' + cls + '" style="--i:' + (i++) + '">' + l + '</span>'; }).join('') + '</span>'; }).join(' '); }
     pinta(P[0], '');
@@ -98,9 +98,9 @@
   /* ---------- para qué te sirve: estudiante, trabajador, emprendedor ---------- */
   (function () {
     var PF = {
-      est: { t: 'Un título técnico y una salida laboral.', p: 'Si terminaste el colegio, en dos semestres sales como Técnico Laboral en algo que todas las empresas necesitan: vender por internet.', b: ['Certificado de Técnico Laboral por Competencias.', 'Un portafolio con proyectos reales para mostrar en entrevistas.', 'Base para trabajar en redes, contenido o marketing, o para seguir estudiando.'], m: ['Fundamentos de Marketing', 'Gestión de Redes Sociales', 'Creación de Contenidos Digitales'], j: 'Diurna', img: 'reels' },
-      tra: { t: 'Crece en tu trabajo o cambia de área.', p: 'Si ya trabajas, aprendes a usar la IA y las herramientas digitales que hoy piden en ventas, servicio al cliente, comunicaciones o administración.', b: ['Estudias de noche o el fin de semana, sin dejar tu empleo.', 'Aplicas en tu trabajo lo que ves en clase desde la primera unidad.', 'Un certificado técnico que suma en tu hoja de vida.'], m: ['Inteligencia Artificial Aplicada al Marketing', 'Analítica de Marketing Digital', 'Herramientas Digitales'], j: 'Nocturna o fin de semana', img: 'prompts' },
-      emp: { t: 'Vende más sin depender de nadie.', p: 'Si tienes un negocio, el proyecto con el que practicas es el tuyo: lo que aprendes en clase lo aplicas esa misma semana.', b: ['Redes, contenido y pauta hechos por ti, con criterio.', 'Tu negocio visible en Google y en el mapa.', 'Automatizaciones con IA para responder y vender más rápido.'], m: ['Publicidad Digital', 'SEO y Posicionamiento Web', 'Comercio Electrónico'], j: 'La que te deje el negocio', img: 'producto' }
+      est: { t: 'Un título técnico y una salida laboral.', p: 'Si terminaste el colegio, en dos semestres sales como Técnico Laboral en algo que todas las empresas necesitan: vender por internet.', b: ['Certificado de Técnico Laboral por Competencias.', 'Un portafolio con proyectos reales para mostrar en entrevistas.', 'Base para trabajar en redes, contenido o marketing, o para seguir estudiando.'], m: ['Fundamentos de Marketing', 'Gestión de Redes Sociales', 'Creación de Contenidos Digitales'], img: 'reels' },
+      tra: { t: 'Crece en tu trabajo o cambia de área.', p: 'Si ya trabajas, aprendes a usar la IA y las herramientas digitales que hoy piden en ventas, servicio al cliente, comunicaciones o administración.', b: ['Estudias a tu ritmo y desde donde estés, sin dejar tu empleo.', 'Aplicas en tu trabajo lo que ves en clase desde la primera unidad.', 'Un certificado técnico que suma en tu hoja de vida.'], m: ['Inteligencia Artificial Aplicada al Marketing', 'Analítica de Marketing Digital', 'Herramientas Digitales'], img: 'prompts' },
+      emp: { t: 'Vende más sin depender de nadie.', p: 'Si tienes un negocio, el proyecto con el que practicas es el tuyo: lo que aprendes en clase lo aplicas esa misma semana.', b: ['Redes, contenido y pauta hechos por ti, con criterio.', 'Tu negocio visible en Google y en el mapa.', 'Automatizaciones con IA para responder y vender más rápido.'], m: ['Publicidad Digital', 'SEO y Posicionamiento Web', 'Comercio Electrónico'], img: 'producto' }
     };
     var caja = $('.js-perfil'), tabs = $$('.js-perfiles-tabs button');
     function pinta(k) {
@@ -109,7 +109,7 @@
       caja.innerHTML = '<div class="perfil-in"><div class="perfil-img"><img src="assets/img/cursos/' + f.img + '-sm.webp" alt="" loading="lazy">' + S.burst(k === 'est' ? '¡Arranca!' : k === 'tra' ? '¡Sube!' : '¡Vende!', '#F10E3B', '#fff', 104) + '</div>' +
         '<div class="perfil-c"><h3>' + f.t + '</h3><p class="lead">' + f.p + '</p><ul class="chulos">' + f.b.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' +
         '<p class="perfil-l">Módulos que más vas a usar</p><div class="perfil-mods">' + f.m.map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div>' +
-        '<p class="perfil-j">' + S.ico(S.I.reloj) + 'Jornada que suele servir: <b>' + f.j + '</b></p><a class="btn" href="inscripcion.html" data-mira>Inscríbete ' + S.ico(S.I.flecha, 'ico-f') + '</a></div></div>';
+        '<a class="btn" href="inscripcion.html" data-mira>Inscríbete ' + S.ico(S.I.flecha, 'ico-f') + '</a></div></div>';
     }
     tabs.forEach(function (bt) { bt.addEventListener('click', function () { pinta(bt.dataset.k); }); });
     pinta('est');

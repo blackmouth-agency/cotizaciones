@@ -191,7 +191,7 @@
   if (P.cert) $('#cert-nombre').textContent = P.cert;
   $('#r-registro').textContent = P.registro ? 'Registrado ante la Secretaría de Educación de Yumbo: ' + P.registro + '.' : '';
   $('#r-licencia').textContent = P.licencia ? 'Semply es una institución de Educación para el Trabajo y el Desarrollo Humano. Licencia de funcionamiento: ' + P.licencia + '.' : '';
-  $('#r-modalidad').textContent = P.metodologia ? P.metodologia + '. Jornadas ' + (P.jornadas || []).join(', ').toLowerCase().replace(/, ([^,]*)$/, ' y $1') + '.' : '';
+  $('#r-modalidad').textContent = P.metodologia ? P.metodologia + '. Las sesiones en vivo quedan grabadas.' : '';
   $('#legal').textContent = '© 2026 Semply SAS · ' + (P.nombre || '') + ' · ' + (P.registro || '');
   if (S.whatsapp) S.whatsapp();
 
