@@ -202,9 +202,13 @@ a,button{touch-action:manipulation}
 .salsa .nota-s{font-size:29px;color:var(--cr);margin:18px 0 0 4px;transform:rotate(-3deg);transform-origin:left;width:max-content;max-width:100%;position:relative;z-index:2}
 .salsa .todos{font-size:20px;margin-top:20px;transform:rotate(-3deg);position:relative;z-index:2}
 .salsa .marco-s{position:relative;width:min(78%,300px);margin:34px 12px 0 auto;transform:rotate(3deg)}
-.salsa .foto-s{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border:8px solid var(--cr);outline:5px solid var(--vp);border-radius:26px;box-shadow:14px 14px 0 var(--vp)}
+.salsa .foto-s{display:block;width:100%;aspect-ratio:1000/1241;object-fit:cover;border:8px solid var(--cr);outline:5px solid var(--vp);border-radius:26px;box-shadow:14px 14px 0 var(--vp)}
 .salsa .ico-s{position:absolute;right:-18px;top:-46px;width:62px;transform:rotate(14deg);z-index:2}
-.salsa .ofi{position:absolute;left:2px;bottom:46px;width:min(25vw,100px);z-index:3;transform-origin:50% 100%}
+.salsa .ofi{position:absolute;left:0;bottom:40px;width:min(25vw,100px);z-index:3;transform-origin:50% 100%}
+.salsa .ofi img{display:block;width:100%;height:auto}
+.salsa .baba{position:absolute;left:56%;top:33%;width:9px;height:12px;background:#DDF1FF;border:2px solid var(--vp);border-radius:50% 50% 50% 50%/40% 40% 60% 60%;opacity:0}
+.salsa .censura{position:absolute;left:5%;top:2%;width:64%;height:29%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:var(--vp);border:3px dashed var(--cr);outline:4px solid var(--vp);border-radius:10px;box-shadow:6px 6px 0 rgba(0,0,0,.45);font:400 clamp(19px,6.2vw,26px)/1 var(--slab);color:var(--mz);letter-spacing:1px;text-shadow:var(--x3);transform:rotate(-7deg);z-index:2}
+.salsa .clasif{position:absolute;left:44%;top:25%;font:700 12px/1 "Courier New",monospace;letter-spacing:2px;color:var(--bl);background:var(--rj);border:3px solid var(--vp);border-radius:6px;padding:6px 8px 5px;transform:rotate(9deg);box-shadow:3px 3px 0 var(--vp);z-index:3;white-space:nowrap}
 .salsa .gota-s{position:absolute;width:16px;height:16px;background:#F1B9A4;border:3px solid var(--vp);border-radius:0 50% 50% 50%;transform:rotate(45deg);opacity:0;z-index:3}
 .salsa .chispa{z-index:2}
 
@@ -275,10 +279,20 @@ a,button{touch-action:manipulation}
 .anim [data-rv]{opacity:0}
 .anim [data-rv].vis{animation:pega .6s var(--resorte) both}
 .anim .op-prot .ico{animation:bambolea 3s ease-in-out infinite}
-.anim .salsa .foto-s{animation:respira-s 4.6s ease-in-out infinite}
+.anim .salsa .marco-s[data-rv].vis{animation:pega .6s var(--resorte) both,respira-s 4.6s ease-in-out .6s infinite}
 .anim .salsa .ico-s{animation:flota 3.6s ease-in-out var(--d,0s) infinite}
 .anim .salsa .gota-s{animation:cae-gota 2.8s ease-in var(--d,0s) infinite}
-@keyframes respira-s{0%,100%{scale:1;rotate:0deg}50%{scale:1.03;rotate:-1deg}}
+.anim .salsa .baba{animation:baba 2.6s ease-in 1s infinite}
+.anim .salsa .censura{opacity:0}
+.anim .salsa .clasif{opacity:0}
+.anim .salsa .marco-s.vis .censura{animation:golpe-c .55s var(--resorte) .35s both,re-golpe-c 6s ease-in-out 1s infinite}
+.anim .salsa .marco-s.vis .clasif{animation:golpe-s .5s var(--resorte) .8s both,re-golpe-s 6s ease-in-out 1.4s infinite}
+@keyframes golpe-c{0%{opacity:0;transform:rotate(-7deg) scale(2.3)}70%{opacity:1;transform:rotate(-7deg) scale(.94)}100%{opacity:1;transform:rotate(-7deg) scale(1)}}
+@keyframes re-golpe-c{0%,86%,100%{opacity:1;transform:rotate(-7deg) scale(1)}90%{transform:rotate(-7deg) scale(1.12)}94%{transform:rotate(-7deg) scale(.96)}}
+@keyframes golpe-s{0%{opacity:0;transform:rotate(9deg) scale(2.6)}70%{opacity:1;transform:rotate(9deg) scale(.92)}100%{opacity:1;transform:rotate(9deg) scale(1)}}
+@keyframes re-golpe-s{0%,86%,100%{opacity:1;transform:rotate(9deg) scale(1)}90%{transform:rotate(9deg) scale(1.25)}94%{transform:rotate(9deg) scale(.94)}}
+@keyframes baba{0%{opacity:0;translate:0 0;scale:.5}15%{opacity:1;scale:1}75%{opacity:1}100%{opacity:0;translate:0 46px;scale:.8 1.3}}
+@keyframes respira-s{0%,100%{scale:1;rotate:3deg}50%{scale:1.025;rotate:2deg}}
 
 
 @media (prefers-reduced-motion:reduce){
@@ -433,12 +447,15 @@ a,button{touch-action:manipulation}
   <span class="tag tag-rj todos" data-rv>VA EN TODOS</span>
   <svg class="chispa" style="right:36px;top:250px;--d:.3s" width="40" height="40" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 36 64 46 100 50 64 54 54 64 50 100 46 64 36 54 0 50 36 46 46 36 50 0Z" fill="#FABC1D" stroke="#2A0909" stroke-width="6"/></svg>
   <svg class="chispa" style="right:96px;top:276px;--d:1.2s" width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 36 64 46 100 50 64 54 54 64 50 100 46 64 36 54 0 50 36 46 46 36 50 0Z" fill="#FFF6E6" stroke="#2A0909" stroke-width="6"/></svg>
-  <img class="gente ofi" src="img/ofi-02.webp" width="300" height="970" alt="Oficinista pensativo, intrigado por la receta" loading="lazy" data-rv style="--rr:4deg">
+  <div class="gente ofi" data-rv style="--rr:4deg">
+    <img src="img/ofi-babea.webp" width="485" height="1024" alt="Oficinista babeando por la salsa de la casa" loading="lazy">
+    <span class="baba" aria-hidden="true"></span>
+  </div>
   <div class="marco-s" data-rv>
-    <img class="foto-s" src="img/salsa-casa.webp" width="720" height="960" alt="La salsa de la casa cayendo sobre un perro de P&amp;J" loading="lazy">
+    <img class="foto-s" src="img/salsa-secreta.webp" width="1000" height="1241" alt="La salsa de la casa cayendo en zigzag sobre un perro de P&amp;J; el frasco va censurado" loading="lazy">
+    <div class="censura" aria-hidden="true"><span>RECETA</span><span>SECRETA</span></div>
+    <span class="clasif" aria-hidden="true">TOP SECRET</span>
     <img class="ico-s dura-s" src="img/ico-09.webp" width="180" height="397" alt="" loading="lazy" style="--d:.5s">
-    <span class="gota-s" style="left:58%;top:44%;--d:.4s"></span>
-    <span class="gota-s" style="left:70%;top:54%;--d:1.6s"></span>
   </div>
 </section>
 
