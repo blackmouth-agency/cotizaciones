@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programas de inglés · Centro de Formación Tutor</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Inglés presencial para adolescentes de bachillerato, adultos y profesionales, y empresas. El mismo método, ajustado a cada público.">
+<meta property="og:title" content="Programas de inglés · Centro de Formación Tutor">
+<meta property="og:description" content="Inglés presencial para adolescentes de bachillerato, adultos y profesionales, y empresas. El mismo método, ajustado a cada público.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/programas.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF0000">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tutor.css?v=1">
+<link rel="stylesheet" href="assets/css/interna.css?v=1">
+</head>
+<body data-pagina="programas">
+<main>
+<section class="portada-int">
+  <img class="boc-deco" src="assets/logo/simbolo-color.svg" alt="">
+  <div class="envoltura">
+    <span class="etq rev">Programas</span>
+    <h1 class="t6 rev">El mismo turno al frente, para cada quien.</h1>
+    <p class="lead rev">Adolescentes, adultos y empresas aprenden con el método Toma la Palabra. Lo que cambia es la tarea, el ritmo y lo que se mide.</p>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:20px">
+  <div class="envoltura">
+    <div class="pestanas" role="tablist" id="pest"></div>
+    <div id="panel" role="tabpanel"></div>
+  </div>
+</section>
+
+<section class="sec sec--hueso" id="diagnostico">
+  <div class="envoltura grid-2" style="align-items:start">
+    <div><span class="etq rojo">Para empresas</span><h2 class="t5 rev" style="margin-top:18px">Arma el diagnóstico de tu equipo.</h2>
+      <p class="lead rev" style="margin-top:22px">Cuéntanos en qué situaciones necesita inglés tu gente. Te armamos el mensaje y lo conversamos por WhatsApp.</p></div>
+    <form class="diag bocadillo" id="diag" style="--c:44px">
+      <fieldset class="campo" style="border:0;padding:0"><legend>¿En qué situaciones usan inglés?</legend>
+        <div class="opciones" id="sits"></div></fieldset>
+      <div class="campo"><label for="dPers">¿Cuántas personas?</label><input id="dPers" type="number" min="1" max="500" value="8" inputmode="numeric"></div>
+      <div class="campo"><label for="dEmp">Empresa</label><input id="dEmp" type="text" placeholder="Nombre de la empresa" autocomplete="organization"></div>
+      <button class="btn" type="submit" style="background:var(--rojo)">Enviar por WhatsApp <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+    </form>
+  </div>
+</section>
+</main>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/comun.js?v=1"></script>
+<script>
+(() => {
+  const T = TUTOR, pest = document.getElementById("pest"), panel = document.getElementById("panel");
+  pest.innerHTML = T.PROGRAMAS.map(p => `<button role="tab" data-id="${p.id}" aria-selected="false">${p.nombre}</button>`).join("");
+  function ver(id, empujar) {
+    const p = T.PROGRAMAS.find(x => x.id === id) || T.PROGRAMAS[0];
+    pest.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", b.dataset.id === p.id));
+    panel.innerHTML = `<div class="prog-panel">
+      <div class="foto-boc bocadillo"><img src="${p.img}" alt="Clase de inglés de ${p.nombre.toLowerCase()} en Tutor"></div>
+      <div><span class="etq rojo">${p.sub}</span><h2 style="margin-top:14px">${p.nombre}</h2><p class="gancho">${p.gancho}</p>
+        <div class="bloque"><h3>Para qué</h3><p>${p.objetivo}</p></div>
+        <div class="bloque"><h3>Qué cambia en la clase</h3><ul>${p.cambia.map(c => `<li>${c}</li>`).join("")}</ul></div>
+        <div class="bloque"><h3>Cómo se mide tu avance</h3><p>${p.evalua}</p></div>
+        <div class="bloque"><h3>Exámenes que encajan</h3><p>${p.examen}</p></div>
+        <div class="bloque"><h3>Horario</h3><p>${p.horario}. <span class="pend" title="Dato por confirmar con el cliente">Horarios exactos por confirmar.</span></p></div>
+        <div class="fila" style="margin-top:26px"><a class="btn" href="${p.id === "empresas" ? "#diagnostico" : "prueba.html"}">${p.id === "empresas" ? "Arma el diagnóstico" : "Haz la prueba de nivel"} ${T.ICO.flecha}</a>
+        <a class="enlace" rel="noopener" href="${T.wa(`¡Hola, Tutor! Quiero información del programa de ${p.nombre.toLowerCase()}.`)}">Preguntar por WhatsApp</a></div>
+      </div></div>`;
+    if (empujar) history.replaceState(null, "", "#" + p.id);
+    if (window.gsap) gsap.from(panel.querySelectorAll(".foto-boc,.bloque,h2,.gancho"), { y: 20, opacity: 0, duration: .6, stagger: .05, ease: "power3.out" });
+  }
+  pest.addEventListener("click", e => { const b = e.target.closest("button"); if (b) ver(b.dataset.id, true); });
+  ver((location.hash || "").slice(1));
+  addEventListener("hashchange", () => ver(location.hash.slice(1)));
+  const SITS = ["Reuniones", "Llamadas", "Correos", "Presentaciones", "Atención a clientes", "Viajes de trabajo", "Negociación", "Documentos técnicos"];
+  document.getElementById("sits").innerHTML = SITS.map(s => `<label class="opcion"><input type="checkbox" value="${s}"><span>${s}</span></label>`).join("");
+  document.getElementById("diag").addEventListener("submit", e => {
+    e.preventDefault();
+    const sel = [...document.querySelectorAll("#sits input:checked")].map(i => i.value);
+    const emp = document.getElementById("dEmp").value.trim(), n = document.getElementById("dPers").value;
+    const msg = `¡Hola, Tutor! Quiero un diagnóstico de inglés para ${emp || "mi empresa"}.\nPersonas: ${n}\nSituaciones: ${sel.length ? sel.join(", ") : "por definir"}`;
+    open(T.wa(msg), "_blank", "noopener");
+  });
+  T.observar();
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</body>
+</html>

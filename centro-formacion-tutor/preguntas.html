@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preguntas frecuentes · Centro de Formación Tutor</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Dudas sobre niveles, método, certificados, horarios y sede del Centro de Formación Tutor.">
+<meta property="og:title" content="Preguntas frecuentes · Centro de Formación Tutor">
+<meta property="og:description" content="Dudas sobre niveles, método, certificados, horarios y sede del Centro de Formación Tutor.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/preguntas.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF0000">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tutor.css?v=1">
+<link rel="stylesheet" href="assets/css/interna.css?v=1">
+</head>
+<body data-pagina="preguntas">
+<main>
+<section class="portada-int">
+  <img class="boc-deco" src="assets/logo/simbolo-color.svg" alt="">
+  <div class="envoltura">
+    <span class="etq rev">Preguntas frecuentes</span>
+    <h1 class="t6 rev">Pregunta. Para eso estamos.</h1>
+    <p class="lead rev">Si no encuentras lo que buscas, escríbenos por WhatsApp y te respondemos.</p>
+  </div>
+</section>
+<section class="sec" style="padding-top:10px">
+  <div class="envoltura" style="max-width:980px">
+    <div class="buscador"><label class="sr" for="q">Buscar una pregunta</label><input id="q" type="search" placeholder="Busca: horario, título, Saber 11, empresas…" autocomplete="off"></div>
+    <div class="temas" id="temas" role="group" aria-label="Temas"></div>
+    <div class="acord" id="lista"></div>
+    <p class="vacio" id="vacio" hidden>No encontramos esa pregunta. <a class="enlace" id="vacioWa" rel="noopener">Pregúntanos por WhatsApp</a></p>
+  </div>
+</section>
+</main>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/comun.js?v=1"></script>
+<script>
+(() => {
+  const T = TUTOR, q = document.getElementById("q"), lista = document.getElementById("lista"), temas = document.getElementById("temas");
+  const TEMAS = ["Todas", ...new Set(T.FAQ.map(f => f.t))]; let tema = "Todas";
+  temas.innerHTML = TEMAS.map(t => `<button type="button" aria-pressed="${t === tema}">${t}</button>`).join("");
+  const sin = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const marcar = (txt, term) => { if (!term || /<span/.test(txt)) return txt; const i = sin(txt).indexOf(sin(term)); return i < 0 ? txt : txt.slice(0, i) + "<mark>" + txt.slice(i, i + term.length) + "</mark>" + txt.slice(i + term.length); };
+  function pintar() {
+    const term = q.value.trim();
+    const fs = T.FAQ.filter(f => (tema === "Todas" || f.t === tema) && (!term || sin(f.p + " " + f.r).includes(sin(term))));
+    lista.innerHTML = fs.map(f => `<details${term ? " open" : ""}><summary>${marcar(f.p, term)}<i aria-hidden="true"></i></summary><div class="resp">${marcar(f.r, term)}</div></details>`).join("");
+    document.getElementById("vacio").hidden = fs.length > 0;
+    document.getElementById("vacioWa").href = T.wa(`¡Hola, Tutor! Tengo una pregunta: ${term}`);
+  }
+  q.addEventListener("input", pintar);
+  temas.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; tema = b.textContent; temas.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); pintar(); });
+  pintar(); T.observar();
+})();
+</script>
+</body>
+</html>

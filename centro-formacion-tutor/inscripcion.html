@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscripción · Centro de Formación Tutor</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Reserva tu clase de prueba de inglés en Tutor. Te armamos el mensaje para WhatsApp.">
+<meta property="og:title" content="Inscripción · Centro de Formación Tutor">
+<meta property="og:description" content="Reserva tu clase de prueba de inglés en Tutor. Te armamos el mensaje para WhatsApp.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/inscripcion.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF0000">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tutor.css?v=1">
+<link rel="stylesheet" href="assets/css/interna.css?v=1">
+</head>
+<body data-pagina="inscripcion">
+<main>
+<section class="portada-int">
+  <img class="boc-deco" src="assets/logo/simbolo-color.svg" alt="">
+  <div class="envoltura">
+    <span class="etq rev">Inscripción</span>
+    <h1 class="t6 rev">Reserva tu clase de prueba.</h1>
+    <p class="lead rev">Llena esto en un minuto. Te armamos el mensaje y lo envías tú por WhatsApp: no guardamos tus datos en ningún servidor.</p>
+  </div>
+</section>
+<section class="sec" style="padding-top:10px">
+  <div class="envoltura grid-2" style="align-items:start">
+    <form id="ins" novalidate>
+      <div class="campo"><label for="iNom">Nombre</label><input id="iNom" required autocomplete="name" placeholder="Tu nombre"></div>
+      <fieldset class="campo" style="border:0;padding:0"><legend>¿Para quién es?</legend><div class="opciones" id="iPerfil"></div></fieldset>
+      <p id="iMenor" hidden style="background:var(--hueso);padding:14px 16px;font-size:15px">Si el estudiante es menor de edad, la inscripción la hace su acudiente.</p>
+      <fieldset class="campo" style="border:0;padding:0"><legend>Nivel</legend><div class="opciones" id="iNivel"></div></fieldset>
+      <fieldset class="campo" style="border:0;padding:0"><legend>¿Cuándo te queda mejor?</legend><div class="opciones" id="iHora"></div></fieldset>
+      <div class="campo"><label for="iMsg">¿Algo más? <span class="grafito" style="font-weight:400">(opcional)</span></label><textarea id="iMsg" rows="3" placeholder="Para qué necesitas el inglés, por ejemplo"></textarea></div>
+      <p id="iErr" role="alert" style="color:var(--rojo-t);font-weight:700;min-height:1.5em"></p>
+      <button class="btn" type="submit">Enviar por WhatsApp <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+    </form>
+    <aside class="tarjeta bocadillo ins-vista" style="--c:40px;background:var(--tinta);color:#fff;position:sticky;top:110px">
+      <p class="etq" style="color:var(--rojo);margin-bottom:12px">Así quedará tu mensaje</p>
+      <p id="vista" style="font-size:18px;white-space:pre-line;margin:0;min-height:8em"></p>
+    </aside>
+  </div>
+</section>
+</main>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/comun.js?v=1"></script>
+<script>
+(() => {
+  const T = TUTOR, $ = id => document.getElementById(id);
+  const op = (id, name, vals, sel) => $(id).innerHTML = vals.map(v => `<label class="opcion"><input type="radio" name="${name}" value="${v}"${v === sel ? " checked" : ""}><span>${v}</span></label>`).join("");
+  let previo = null; try { previo = JSON.parse(localStorage.getItem("tutor-resultado")); } catch {}
+  op("iPerfil", "perfil", ["Para mí", "Para mi hijo o hija", "Para mi empresa"]);
+  op("iNivel", "nivel", ["No sé", "A1", "A2", "B1", "B2", "C1"], previo ? previo.nivel : "No sé");
+  op("iHora", "hora", ["Tarde entre semana", "Noche entre semana", "Sábado"]);
+  const val = n => (document.querySelector(`input[name=${n}]:checked`) || {}).value;
+  const armar = () => {
+    const nom = $("iNom").value.trim(), nv = val("nivel"), extra = $("iMsg").value.trim();
+    $("iMenor").hidden = val("perfil") !== "Para mi hijo o hija";
+    return `¡Hola, Tutor! Soy ${nom || "…"}.\nQuiero reservar una clase de prueba de inglés.\nPara: ${(val("perfil") || "…").toLowerCase()}\nNivel: ${nv || "…"}${previo && nv === previo.nivel ? ` (prueba de la web, ${previo.total}/20)` : ""}\nHorario: ${(val("hora") || "…").toLowerCase()}${extra ? "\n" + extra : ""}`;
+  };
+  const vista = () => $("vista").textContent = armar();
+  $("ins").addEventListener("input", vista); vista();
+  $("ins").addEventListener("submit", e => {
+    e.preventDefault();
+    if (!$("iNom").value.trim()) { $("iErr").textContent = "Escribe tu nombre para saber a quién responder."; $("iNom").focus(); return; }
+    if (!val("perfil") || !val("hora")) { $("iErr").textContent = "Elige para quién es y el horario que te queda mejor."; return; }
+    $("iErr").textContent = ""; open(T.wa(armar()), "_blank", "noopener");
+  });
+  T.observar();
+})();
+</script>
+</body>
+</html>

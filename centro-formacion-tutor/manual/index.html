@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de identidad · Centro de Formación Tutor</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Manual de identidad visual del Centro de Formación Tutor: idea, logo, color, tipografía, recursos, fotografía, movimiento, voz y aplicaciones.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Manual de identidad · Centro de Formación Tutor">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/manual/">
+<meta name="theme-color" content="#FF0000">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tutor.css?v=1">
+<style>
+body{display:grid;grid-template-columns:260px 1fr}
+.indice{position:sticky;top:0;height:100svh;background:var(--tinta);color:#fff;padding:28px 24px;display:flex;flex-direction:column;gap:4px;overflow:auto}
+.indice img{width:150px;margin-bottom:26px}
+.indice a{text-decoration:none;display:flex;gap:12px;padding:8px 0;font-weight:600;font-size:15px;color:#B9BBBA;transition:color .2s}
+.indice a b{font:800 13px/1.6 var(--f-tit);color:var(--rojo);width:22px}
+.indice a.act,.indice a:hover{color:#fff}
+.indice small{margin-top:auto;color:#8c8e8d;font-size:12px;padding-top:20px}
+.cap{padding:clamp(64px,8vw,120px) clamp(24px,5vw,88px);border-bottom:2px solid var(--tinta);position:relative}
+.cap__n{font:900 15px/1 var(--f-tit);color:var(--rojo);letter-spacing:.04em;margin-bottom:16px;display:block}
+.cap h2{font-size:var(--s5);margin-bottom:22px;max-width:16ch}
+.cap h3{font-size:var(--s3);margin:56px 0 18px}
+.cap .lead{max-width:56ch}
+.port{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;background:var(--rojo);color:var(--tinta);padding:0 clamp(24px,5vw,88px);border:0;overflow:hidden}
+.port h1{font-size:clamp(56px,7vw,120px)}
+.port .en{font-size:var(--s4)}
+.port__sim{width:min(30vw,420px);justify-self:center;filter:drop-shadow(18px 22px 0 rgba(31,33,32,.9))}
+.lect{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center;margin-top:40px}
+.lect__logo{background:var(--hueso);padding:9%}
+.lect__logo .lienzo{position:relative;aspect-ratio:2573/1544}
+.lect__logo img{position:absolute;transition:opacity .35s}
+.lect__logo img[data-k=fig]{opacity:0}
+.lect__logo[data-p] img{opacity:.12}
+.lect__logo[data-p] img[data-k=fig]{opacity:0}
+.lect__logo[data-p=boc] img[data-k=boc],.lect__logo[data-p=fig] img[data-k=fig],.lect__logo[data-p=nom] img[data-k=nom]{opacity:1}
+.lect ol{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.lect li button{all:unset;cursor:pointer;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-bottom:2px solid var(--tinta);width:100%}
+.lect li button:focus-visible{outline:3px solid var(--rojo)}
+.lect li b{font:900 34px/1 var(--f-tit);color:var(--rojo)}
+.lect li strong{display:block;font:800 22px/1.15 var(--f-tit);margin-bottom:6px}
+.plat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plat .tarjeta{background:var(--hueso);min-height:180px}
+.plat .tarjeta .etq{color:var(--rojo-t);display:block;margin-bottom:10px}
+.plat .tarjeta p{margin:0;font-size:17px}
+.plat .ancha{grid-column:span 3;background:var(--tinta);color:#fff}
+@media (max-width:1100px){.plat{grid-template-columns:1fr}.plat .ancha{grid-column:auto}}
+.vers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.vers figure{margin:0;aspect-ratio:16/11;display:grid;place-items:center;padding:12%;position:relative}
+.vers figure img{width:100%;height:100%;object-fit:contain}
+.vers figcaption{position:absolute;left:14px;bottom:10px;font:600 12px/1 var(--f-txt);letter-spacing:.08em;text-transform:uppercase}
+.constr{position:relative;background:#fff;border:2px solid var(--tinta);padding:6%;overflow:hidden}
+.constr svg{width:100%}
+.mal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mal figure{margin:0;background:var(--hueso);aspect-ratio:16/10;display:grid;place-items:center;position:relative;overflow:hidden}
+.mal figure img{width:58%}
+.mal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 2px),var(--rojo) calc(50% - 2px),var(--rojo) calc(50% + 2px),transparent calc(50% + 2px))}
+.mal figcaption{position:absolute;left:12px;bottom:10px;font-weight:600;font-size:14px;z-index:1;background:#fff;padding:4px 8px}
+.desc{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sw button{all:unset;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:1/1.1;padding:20px;transition:transform .35s var(--muelle)}
+.sw button:hover{transform:translateY(-6px)}
+.sw button:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.sw b{font:900 26px/1 var(--f-tit)}
+.sw span{font:500 13px/1.6 var(--f-txt)}
+.sw .copiado{font-weight:700}
+.prop{display:flex;height:84px;margin-top:20px}
+.prop div{display:flex;align-items:flex-end;padding:10px;font:700 13px/1 var(--f-txt)}
+.niv{display:flex;align-items:flex-end;gap:8px;height:220px;margin-top:20px}
+.niv div{flex:1;padding:12px;font:900 30px/1 var(--f-tit)}
+.tipo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tipo .tarjeta{background:var(--hueso);padding:34px}
+.tipo .aa{font:900 clamp(90px,10vw,170px)/.9 var(--f-tit);letter-spacing:-.04em}
+.tipo .aa.s{font-family:var(--f-txt);font-weight:700;letter-spacing:-.03em}
+.escala p{margin:0 0 6px;display:flex;align-items:baseline;gap:20px;max-width:none}
+.escala small{font:600 12px/1 var(--f-txt);color:var(--grafito);width:64px;flex:none}
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.recs .tarjeta{background:var(--hueso);display:flex;flex-direction:column;gap:14px;min-height:320px}
+.recs .demo{flex:1;display:grid;place-items:center;background:#fff;min-height:170px;position:relative;overflow:hidden}
+.recs p{margin:0;font-size:16px}
+.fotos{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px;gap:10px}
+.fotos img{width:100%;height:100%;object-fit:cover}
+.fotos img:first-child{grid-row:span 2}
+.reglas{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+.reglas ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:17px}
+.mov{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mov .tarjeta{background:var(--hueso);display:flex;flex-direction:column;gap:12px}
+.mov .esc{background:#fff;height:200px;position:relative;overflow:hidden;display:grid;place-items:center}
+.mov button.rep{align-self:flex-start;border:2px solid var(--tinta);background:#fff;font-weight:700;padding:10px 14px;min-height:44px}
+.voz{width:100%;border-collapse:collapse}
+.voz td,.voz th{border-bottom:1px solid rgba(31,33,32,.15);padding:16px 12px;text-align:left;vertical-align:top;font-size:17px}
+.voz th{font:600 12px/1 var(--f-txt);letter-spacing:.12em;text-transform:uppercase;color:var(--grafito)}
+.voz td:last-child{color:var(--grafito);text-decoration:line-through;text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
+.apps figure{margin:0}
+.apps figcaption{font-weight:600;font-size:14px;margin-top:10px}
+.post{aspect-ratio:4/5;background:var(--rojo);position:relative;overflow:hidden;padding:9%;display:flex;flex-direction:column;container-type:inline-size}
+.post h4{font:900 11cqw/.9 var(--f-tit);letter-spacing:-.03em;color:var(--tinta)}
+.post .en{color:#fff;font-size:6cqw;margin-top:5%}
+.post img{position:absolute;right:7%;bottom:7%;width:18%}
+.post .kw{margin-top:auto;font:700 4.4cqw/1.2 var(--f-txt);background:var(--tinta);color:#fff;align-self:flex-start;padding:3% 4% 6%;clip-path:polygon(0 0,100% 0,100% 72%,88% 100%,88% 72%,0 72%)}
+.hist{aspect-ratio:9/16;background:var(--tinta);position:relative;overflow:hidden;container-type:inline-size}
+.hist img.f{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+.hist .b{position:absolute;left:8%;right:14%;top:16%;background:#fff;padding:7% 7% 14%;font:italic 700 8cqw/1.1 var(--f-tit);clip-path:polygon(0 0,100% 0,100% 82%,84% 100%,84% 82%,0 82%)}
+.hist .s{position:absolute;left:8%;bottom:14%;width:22%}
+.tarj{aspect-ratio:85/55;background:#fff;box-shadow:0 18px 40px rgba(31,33,32,.18);position:relative;padding:8%;container-type:inline-size;display:flex;flex-direction:column;justify-content:space-between}
+.tarj img{width:46%}
+.tarj p{margin:0;font:600 4.2cqw/1.4 var(--f-txt)}
+.tarj p b{font:800 6cqw/1.1 var(--f-tit);display:block}
+.tarj::after{content:"";position:absolute;right:0;top:0;bottom:0;width:9%;background:var(--rojo)}
+.fach{aspect-ratio:4/3;background:#cfcac2;position:relative;overflow:hidden;container-type:inline-size}
+.fach .muro{position:absolute;inset:0;background:repeating-linear-gradient(0deg,#d8d3cb 0 18px,#cfcac2 18px 20px)}
+.fach .aviso{position:absolute;left:10%;right:10%;top:16%;background:#fff;padding:5% 6%;box-shadow:0 10px 0 rgba(0,0,0,.12)}
+.fach .aviso img{width:70%}
+.fach .puerta{position:absolute;left:38%;width:24%;bottom:0;height:34%;background:var(--tinta)}
+@media (max-width:1100px){body{grid-template-columns:1fr}.indice{position:relative;height:auto;flex-direction:row;flex-wrap:wrap;gap:6px 16px}.indice img{width:110px;margin:0 100% 10px 0}.indice small{display:none}.port{grid-template-columns:1fr;padding-block:80px}.lect,.tipo,.reglas{grid-template-columns:1fr}.vers,.mal,.recs{grid-template-columns:1fr 1fr}.sw,.mov,.apps{grid-template-columns:1fr 1fr}.fotos{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.vers,.mal,.recs,.sw,.mov,.apps{grid-template-columns:1fr}}
+/* demos de movimiento */
+.d-pop{width:120px;height:80px;background:var(--rojo);clip-path:polygon(0 0,100% 0,100% 72%,80% 100%,80% 72%,0 72%);transform-origin:80% 100%}
+.d-pop.on{animation:dpop .7s var(--muelle) both}
+@keyframes dpop{from{transform:scale(0)}to{transform:scale(1)}}
+.d-pal{font:italic 700 24px/1.2 var(--f-tit);padding:0 16px;text-align:center}
+.d-pal span{display:inline-block;opacity:0}
+.d-pal.on span{animation:dpal .45s var(--ease) both;animation-delay:calc(var(--i)*90ms)}
+@keyframes dpal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.d-bar{position:absolute;inset:0;background:var(--tinta);clip-path:polygon(0 0,0 0,0 100%,0 100%)}
+.d-bar.on{animation:dbar 1s var(--ease) both}
+@keyframes dbar{to{clip-path:polygon(0 0,140% 0,100% 100%,-40% 100%)}}
+.d-zoom{width:60px;transform-origin:64.5% 50%}
+.d-zoom.on{animation:dzoom 1.6s cubic-bezier(.7,0,.3,1) both}
+@keyframes dzoom{0%{transform:scale(1)}100%{transform:scale(30)}}
+</style>
+</head>
+<body>
+<nav class="indice" aria-label="Índice" id="indice">
+  <img src="../assets/logo/logo-blanco.svg" alt="Centro de Formación Tutor">
+  <a href="#idea"><b>01</b>La idea</a><a href="#plataforma"><b>02</b>Plataforma</a><a href="#logo"><b>03</b>El logo</a><a href="#color"><b>04</b>Color</a><a href="#tipografia"><b>05</b>Tipografía</a><a href="#recursos"><b>06</b>Recursos</a><a href="#fotografia"><b>07</b>Fotografía</a><a href="#movimiento"><b>08</b>Movimiento</a><a href="#voz"><b>09</b>Voz y tono</a><a href="#aplicaciones"><b>10</b>Aplicaciones</a>
+  <small>Manual de identidad visual · v1 · noviembre de 2026<br>BLACKMOUTH</small>
+</nav>
+<main>
+<section class="port cap">
+  <div><p class="etq">Manual de identidad visual · v1</p><h1>Toma la palabra.</h1><p class="en" style="margin-top:.4em">Take the floor.</p>
+  <p class="lead" style="margin-top:28px">Cómo se ve, se mueve y habla el Centro de Formación Tutor. Todo sale de su logo: un bocadillo de diálogo con alguien que toma la palabra adentro.</p></div>
+  <img class="port__sim" src="../assets/logo/simbolo-blanco.svg" alt="Símbolo de Tutor">
+</section>
+
+<section class="cap" id="idea"><span class="cap__n">01 · La idea</span>
+  <h2>El logo ya traía la idea.</h2>
+  <p class="lead">No había manual ni referencias: había un logo con tres decisiones claras. El sistema no inventa, rescata. Toca cada parte.</p>
+  <div class="lect">
+    <div class="lect__logo" id="lect"><div class="lienzo">
+      <img data-k="boc" src="../assets/logo/simbolo-color.svg" alt="" style="left:0;top:0;width:39.68%;height:100%">
+      <img data-k="fig" src="../assets/logo/figura-tinta.svg" alt="" style="left:0;top:0;width:39.68%;height:100%">
+      <img data-k="nom" src="../assets/logo/nombre.svg" alt="Centro de Formación Tutor" style="left:44.77%;top:5.7%;width:55.23%;height:51%">
+    </div></div>
+    <ol>
+      <li><button data-p="boc"><b>1</b><span><strong>Un bocadillo de diálogo</strong>Rectángulo con la cola abajo a la derecha, a 50°. Tutor es una academia para hablar.</span></button></li>
+      <li><button data-p="fig"><b>2</b><span><strong>Alguien en un atril</strong>Cabeza circular, cuerpo vertical y un libro en la mano, hecho de espacio negativo: una persona que toma la palabra frente a otros.</span></button></li>
+      <li><button data-p="nom"><b>3</b><span><strong>Una Clarendon pesada</strong>Letra de oficio, seria y cálida a la vez, en tinta casi negra. Institución, no aplicación.</span></button></li>
+    </ol>
+  </div>
+  <h3>De ahí sale el lema</h3>
+  <p class="t4">Toma la palabra. <span class="en rojo">Take the floor.</span></p>
+  <p class="lead" style="margin-top:18px">Es el concepto, el nombre del método (seis pasos, uno de ellos es pasar al frente) y el cierre de cada pieza.</p>
+</section>
+
+<section class="cap" id="plataforma"><span class="cap__n">02 · Plataforma de marca</span>
+  <h2>Lo que no cambia.</h2>
+  <div class="plat">
+    <div class="tarjeta rev"><span class="etq">Para quién</span><p>Adolescentes de bachillerato y sus padres, adultos que trabajan y empresas del Valle del Cauca.</p></div>
+    <div class="tarjeta rev"><span class="etq">El problema</span><p>«Llevo años estudiando inglés y me bloqueo cuando tengo que hablar.»</p></div>
+    <div class="tarjeta rev"><span class="etq">La promesa</span><p>Cada clase termina contigo hablando.</p></div>
+    <div class="tarjeta rev"><span class="etq">Directa</span><p>Titulares cortos en Clarendon pesada · un solo botón por vista · la prueba de nivel a la mano.</p></div>
+    <div class="tarjeta rev"><span class="etq">Cálida</span><p>Personas reales hablando y riendo · tuteo · el inglés se oye al tocarlo.</p></div>
+    <div class="tarjeta rev"><span class="etq">Exigente</span><p>Escalera A1–C1 con lo que se logra · corrección clara de tus errores · horas de referencia honestas.</p></div>
+    <div class="tarjeta ancha rev"><span class="etq" style="color:var(--rojo)">Nunca diría</span><p class="t3" style="max-width:none">«Inglés en 3 meses» · «aprende sin gramática» · «nivel nativo» · «te damos un título».</p></div>
+  </div>
+</section>
+
+<section class="cap" id="logo"><span class="cap__n">03 · El logo</span>
+  <h2>Versiones, construcción y cuidados.</h2>
+  <p class="lead">Redibujado en vector desde el original, sin cambiar forma ni color. El rojo del logo es <b>#FF0000</b> y no se altera.</p>
+  <h3>Versiones</h3>
+  <div class="vers">
+    <figure style="background:#fff;border:1px solid #ddd"><img src="../assets/logo/logo-color.svg" alt=""><figcaption>Principal</figcaption></figure>
+    <figure style="background:var(--tinta);color:#fff"><img src="../assets/logo/logo-negativo.svg" alt=""><figcaption>Sobre tinta</figcaption></figure>
+    <figure style="background:var(--rojo)"><img src="../assets/logo/logo-blanco.svg" alt=""><figcaption>Sobre rojo</figcaption></figure>
+    <figure style="background:var(--hueso)"><img src="../assets/logo/logo-negro.svg" alt=""><figcaption>Una tinta</figcaption></figure>
+    <figure style="background:#fff;border:1px solid #ddd"><img src="../assets/logo/simbolo-color.svg" alt=""><figcaption>Símbolo</figcaption></figure>
+    <figure style="background:var(--tinta);color:#fff"><img src="../assets/logo/simbolo-relleno.svg" alt=""><figcaption>Símbolo sobre tinta</figcaption></figure>
+  </div>
+  <h3>Construcción y área de protección</h3>
+  <div class="grid-2" style="align-items:start">
+    <div class="constr">
+      <svg viewBox="-260 -260 1540 2060" aria-label="Construcción del símbolo">
+        <defs><pattern id="g" width="102.1" height="102.1" patternUnits="userSpaceOnUse"><path d="M102.1 0H0V102.1" fill="none" stroke="#e3dfd8" stroke-width="2"/></pattern></defs>
+        <rect x="-260" y="-260" width="1540" height="2060" fill="url(#g)"/>
+        <rect x="-170" y="-170" width="1361" height="1884" fill="none" stroke="#FF0000" stroke-width="5" stroke-dasharray="20 14"/>
+        <image href="../assets/logo/simbolo-color.svg" x="0" y="0" width="1021" height="1544"/>
+        <circle cx="757" cy="167" r="85" fill="none" stroke="#1F2120" stroke-width="5"/>
+        <line x1="1021" y1="1007" x2="573" y2="1544" stroke="#1F2120" stroke-width="5"/>
+        <path d="M1021 1007 A140 140 0 0 1 931 1114" fill="none" stroke="#1F2120" stroke-width="5"/>
+        <text x="920" y="980" font-family="Instrument Sans" font-weight="700" font-size="56" fill="#1F2120">50°</text>
+        <text x="-150" y="-190" font-family="Instrument Sans" font-weight="700" font-size="52" fill="#D10000">x = diámetro de la cabeza</text>
+      </svg>
+    </div>
+    <div>
+      <p><b>La unidad x es el diámetro de la cabeza</b> de la figura. Alrededor del logo queda libre, como mínimo, 1 x por cada lado: nada entra ahí.</p>
+      <p><b>La cola baja a 50°.</b> Ese ángulo es el de todas las diagonales del sistema: cortes de sección, barridos, flechas de botón.</p>
+      <p><b>Tamaño mínimo:</b> logo completo 120 px de ancho en pantalla (25 mm impreso); solo el símbolo, 16 px (6 mm). Por debajo de eso, usar el símbolo sin el nombre.</p>
+      <div class="desc">
+        <a class="chip" href="../assets/logo/logo-color.svg" download>logo-color.svg</a><a class="chip" href="../assets/logo/logo-negativo.svg" download>logo-negativo.svg</a><a class="chip" href="../assets/logo/logo-blanco.svg" download>logo-blanco.svg</a><a class="chip" href="../assets/logo/logo-negro.svg" download>logo-negro.svg</a><a class="chip" href="../assets/logo/simbolo-color.svg" download>simbolo-color.svg</a><a class="chip" href="../assets/logo/figura-tinta.svg" download>figura-tinta.svg</a>
+      </div>
+    </div>
+  </div>
+  <h3>Lo que no se hace</h3>
+  <div class="mal">
+    <figure><img src="../assets/logo/logo-color.svg" alt="" style="filter:hue-rotate(200deg)"><figcaption>Cambiarle el color</figcaption></figure>
+    <figure><img src="../assets/logo/logo-color.svg" alt="" style="transform:rotate(-12deg)"><figcaption>Rotarlo</figcaption></figure>
+    <figure><img src="../assets/logo/logo-color.svg" alt="" style="transform:scaleX(1.5)"><figcaption>Deformarlo</figcaption></figure>
+    <figure><img src="../assets/logo/logo-color.svg" alt="" style="filter:drop-shadow(8px 8px 6px rgba(0,0,0,.6))"><figcaption>Sombras y efectos</figcaption></figure>
+    <figure style="background:url(../assets/img/celebracion.webp) center/cover"><img src="../assets/logo/logo-color.svg" alt=""><figcaption>Sobre foto sin plano</figcaption></figure>
+    <figure><img src="../assets/logo/simbolo-color.svg" alt="" style="width:22%;transform:scaleX(-1)"><figcaption>Voltear la cola</figcaption></figure>
+  </div>
+</section>
+
+<section class="cap" id="color"><span class="cap__n">04 · Color</span>
+  <h2>Rojo, tinta y papel.</h2>
+  <p class="lead">Una paleta corta, como el logo. El rojo va en planos grandes; la tinta, en el texto; el papel deja respirar. Toca un color para copiarlo.</p>
+  <div class="sw" id="sw" style="margin-top:34px"></div>
+  <h3>Proporción</h3>
+  <div class="prop"><div style="flex:58;background:#fff;border:1px solid #ddd">Papel / hueso 58 %</div><div style="flex:24;background:var(--rojo)">Rojo 24 %</div><div style="flex:14;background:var(--tinta);color:#fff">Tinta 14 %</div><div style="flex:4;background:var(--grafito)"></div></div>
+  <h3>Pares permitidos (contraste medido, WCAG)</h3>
+  <table class="voz" id="pares"><thead><tr><th>Texto / fondo</th><th>Contraste</th><th>Uso</th></tr></thead><tbody></tbody></table>
+  <h3>La escalera de niveles</h3>
+  <p>Del rosado al vino: el rojo se intensifica a medida que subes. Solo para niveles A1–C1.</p>
+  <div class="niv" id="niv"></div>
+</section>
+
+<section class="cap" id="tipografia"><span class="cap__n">05 · Tipografía</span>
+  <h2>Dos familias, cada una con su trabajo.</h2>
+  <div class="tipo" style="margin-top:30px">
+    <div class="tarjeta"><span class="etq rojo">Titulares · Besley</span><p class="aa">Aa</p><p style="font:900 28px/1.2 var(--f-tit);margin-top:16px">Black 900 · <span style="font-weight:800">ExtraBold 800</span> · <span style="font-weight:700">Bold 700</span></p><p class="en" style="font-size:28px">Italic: el inglés siempre en cursiva.</p><p style="font-size:15px;color:var(--grafito)">Clarendon de caja alta, la pariente libre más cercana a la letra del logo. Google Fonts, licencia OFL.</p></div>
+    <div class="tarjeta"><span class="etq rojo">Texto e interfaz · Instrument Sans</span><p class="aa s">Aa</p><p style="font:700 22px/1.3 var(--f-txt);margin-top:16px">Bold 700 · <span style="font-weight:600">Semibold 600</span> · <span style="font-weight:400">Regular 400</span></p><p style="font-size:18px">Párrafos, datos, botones y etiquetas EN VERSALITAS con tracking.</p><p style="font-size:15px;color:var(--grafito)">Grotesca contemporánea, clara en pantalla chica. Google Fonts, licencia OFL. Prueba: ñ Ñ á é í ó ú ü ¿ ¡ « »</p></div>
+  </div>
+  <h3>Escala 1,333</h3>
+  <div class="escala">
+    <p><small>Display</small><span style="font:900 var(--s6)/.9 var(--f-tit);letter-spacing:-.035em">Toma</span></p>
+    <p><small>H1</small><span style="font:900 var(--s5)/1 var(--f-tit)">la palabra.</span></p>
+    <p><small>H2</small><span style="font:800 var(--s4)/1 var(--f-tit)">Seis pasos, 120 minutos.</span></p>
+    <p><small>Inglés</small><span class="en rojo" style="font-size:var(--s3)">May I have the floor?</span></p>
+    <p><small>Texto</small><span style="font-size:18px">Cada clase termina contigo al frente, hablando.</span></p>
+    <p><small>Etiqueta</small><span class="etq">Niveles del Marco Común Europeo</span></p>
+  </div>
+  <h3>Tres reglas</h3>
+  <ul class="lead" style="padding-left:22px;display:grid;gap:10px">
+    <li><b>Español en redonda, inglés en cursiva.</b> Así se reconoce de un vistazo qué se dice en inglés.</li>
+    <li><b>La jerarquía va por tamaño:</b> un titular en Black, la bajada en texto, y nunca una palabra sola en un renglón.</li>
+    <li><b>Dos familias y ya.</b> Nada de terceras letras «de acento».</li>
+  </ul>
+</section>
+
+<section class="cap" id="recursos"><span class="cap__n">06 · Recursos gráficos</span>
+  <h2>Todo sale del bocadillo.</h2>
+  <div class="recs" style="margin-top:30px">
+    <div class="tarjeta"><div class="demo"><div class="foto-boc bocadillo" style="--c:30px;width:70%;aspect-ratio:1.3"><img src="../assets/img/pareja.webp" alt=""></div></div><b>El bocadillo como marco</b><p>Fotos, citas y tarjetas van dentro de la silueta del logo, con la cola abajo a la derecha.</p></div>
+    <div class="tarjeta"><div class="demo" style="background:var(--rojo)"><div style="position:absolute;inset:0;background:var(--tinta);clip-path:polygon(62% 0,100% 0,100% 100%,20% 100%)"></div></div><b>La diagonal de 50°</b><p>Cortes de sección, barridos y transiciones van a 50°, nunca en vertical recto.</p></div>
+    <div class="tarjeta"><div class="demo"><span class="burbuja-m" style="font:italic 700 20px/1 var(--f-tit);background:var(--tinta);color:#fff;padding:12px 16px 26px;clip-path:polygon(0 0,100% 0,100% 72%,88% 100%,88% 72%,0 72%)">Can I say something?</span></div><b>Burbujas de frases</b><p>El inglés vive en burbujas que se pueden tocar y escuchar. Tinta, hueso o rojo.</p></div>
+    <div class="tarjeta"><div class="demo"><div style="display:flex;align-items:flex-end;gap:5px;height:70%;width:80%"><span style="flex:1;height:40%;background:#FFD6D0"></span><span style="flex:1;height:55%;background:#FF8F80"></span><span style="flex:1;height:70%;background:#FF4A36"></span><span style="flex:1;height:85%;background:#FF0000"></span><span style="flex:1;height:100%;background:#8E0007"></span></div></div><b>La escalera</b><p>Los niveles como escalones que crecen y se oscurecen. La figura se para en el tuyo.</p></div>
+    <div class="tarjeta"><div class="demo"><img src="../assets/logo/figura-tinta.svg" alt="" style="height:80%"></div><b>La figura</b><p>La persona del atril, sola, marca dónde estás: en la escalera, en un mapa, junto a un dato.</p></div>
+    <div class="tarjeta"><div class="demo"><a class="btn" href="#recursos">Haz la prueba de nivel →</a></div><b>El botón</b><p>El botón principal también es un bocadillo. Uno solo relleno por vista.</p></div>
+  </div>
+</section>
+
+<section class="cap" id="fotografia"><span class="cap__n">07 · Fotografía</span>
+  <h2>Gente hablando, a mitad de frase.</h2>
+  <div class="fotos" style="margin-top:30px">
+    <img src="../assets/img/hero.webp" alt=""><img src="../assets/img/adolescentes.webp" alt=""><img src="../assets/img/adultos.webp" alt=""><img src="../assets/img/docente.webp" alt=""><img src="../assets/img/empresas.webp" alt="">
+  </div>
+  <div class="reglas">
+    <div><p class="etq rojo">Sí</p><ul><li>Luz natural de ventana, paredes blancas, piso claro.</li><li>Un solo acento de rojo puro en la escena (un panel, una silla, un cuaderno).</li><li>Personas de Cali, diversas, a mitad de una conversación.</li><li>Quien habla mira o gesticula hacia el texto de la pieza.</li></ul></div>
+    <div><p class="etq rojo">No</p><ul><li>Banderas, Big Ben, birretes, tazas con la Union Jack.</li><li>Personas posando a cámara con el pulgar arriba.</li><li>Texto, letreros o pantallas legibles dentro de la foto.</li><li>Filtros cálidos o fríos: el color es limpio y neutro.</li></ul></div>
+  </div>
+</section>
+
+<section class="cap" id="movimiento"><span class="cap__n">08 · Movimiento</span>
+  <h2>Así se mueve Tutor.</h2>
+  <p class="lead">Rápido para entrar, suave para asentarse. Con «reducir movimiento» activado, todo aparece sin desplazarse.</p>
+  <div class="mov" style="margin-top:30px">
+    <div class="tarjeta"><div class="esc"><div class="d-pop" data-d></div></div><b>Aparece desde la cola</b><p>El bocadillo crece desde la punta, con resorte (520 ms).</p><button class="rep">Repetir</button></div>
+    <div class="tarjeta"><div class="esc"><p class="d-pal" data-d><span style="--i:0">May</span> <span style="--i:1">I</span> <span style="--i:2">have</span> <span style="--i:3">the</span> <span style="--i:4">floor?</span></p></div><b>Palabra por palabra</b><p>El inglés entra como dicho en voz alta.</p><button class="rep">Repetir</button></div>
+    <div class="tarjeta"><div class="esc"><div class="d-bar" data-d></div></div><b>Barrido a 50°</b><p>Las transiciones cruzan en la diagonal de la cola.</p><button class="rep">Repetir</button></div>
+    <div class="tarjeta"><div class="esc" style="background:#fff"><img class="d-zoom" data-d src="../assets/logo/simbolo-color.svg" alt=""></div><b>A través de la figura</b><p>Se entra a la escena por la silueta de la persona.</p><button class="rep">Repetir</button></div>
+  </div>
+</section>
+
+<section class="cap" id="voz"><span class="cap__n">09 · Voz y tono</span>
+  <h2>Directa, cálida, exigente.</h2>
+  <table class="voz" style="margin-top:20px"><thead><tr><th>Situación</th><th>Así sí</th><th>Así no</th></tr></thead><tbody>
+    <tr><td>Titular</td><td>Toma la palabra.</td><td>¡Aprende inglés fácil y rápido!</td></tr>
+    <tr><td>Promesa</td><td>Cada clase termina contigo al frente, hablando.</td><td>Habla inglés en 3 meses garantizado.</td></tr>
+    <tr><td>Gramática</td><td>La vemos a partir de lo que tú dijiste.</td><td>Olvídate de la gramática.</td></tr>
+    <tr><td>Certificados</td><td>Te preparamos para el examen de tu nivel.</td><td>Te certificamos B2 internacional.</td></tr>
+    <tr><td>Llamado en Instagram</td><td>Comenta NIVEL y te mando la prueba.</td><td>Síguenos para más · link en la bio.</td></tr>
+  </tbody></table>
+  <p class="lead" style="margin-top:28px">Tuteamos a todos. Frases cortas. El inglés en cursiva y, cuando se pueda, con su sonido.</p>
+</section>
+
+<section class="cap" id="aplicaciones" style="border:0"><span class="cap__n">10 · Aplicaciones</span>
+  <h2>El sistema puesto a trabajar.</h2>
+  <div class="apps" style="margin-top:30px">
+    <figure><div class="post"><h4>¿Cuánto hablaste en tu última clase de inglés?</h4><p class="en">Your turn.</p><span class="kw">Comenta NIVEL y te mando la prueba</span><img src="../assets/logo/simbolo-blanco.svg" alt=""></div><figcaption>Post de Instagram 4:5</figcaption></figure>
+    <figure><div class="hist"><img class="f" src="../assets/img/hero.webp" alt=""><div class="b">May I have the floor?</div><img class="s" src="../assets/logo/simbolo-color.svg" alt=""></div><figcaption>Historia 9:16</figcaption></figure>
+    <figure><div class="tarj"><img src="../assets/logo/logo-color.svg" alt=""><p><b>Nombre Apellido</b>Coordinación académica<br>300 000 0000 · correo por confirmar</p></div><figcaption>Tarjeta de presentación 85 × 55 mm</figcaption></figure>
+    <figure><div class="fach"><div class="muro"></div><div class="aviso"><img src="../assets/logo/logo-color.svg" alt=""></div><div class="puerta"></div></div><figcaption>Aviso de la sede</figcaption></figure>
+  </div>
+</section>
+</main>
+<script>
+(() => {
+  // lectura del logo
+  const lect = document.getElementById("lect");
+  document.querySelectorAll(".lect button").forEach(b => { b.onmouseenter = b.onfocus = b.onclick = () => lect.dataset.p = b.dataset.p; b.onmouseleave = () => delete lect.dataset.p; });
+  // colores
+  const C = [["Rojo Tutor","#FF0000","RGB 255 0 0 · CMYK 0 100 100 0 · Pantone 485 C aprox.","#1F2120"],["Tinta","#1F2120","RGB 31 33 32 · CMYK 0 0 0 95","#fff"],["Papel","#FFFFFF","RGB 255 255 255","#1F2120"],["Hueso","#F4F1EC","RGB 244 241 236","#1F2120"],["Rojo texto","#D10000","Solo para texto rojo sobre claro","#fff"],["Grafito","#5B5D5C","Texto secundario","#fff"],["Vino","#8E0007","Nivel C1 y sombras del rojo","#fff"]];
+  const sw = document.getElementById("sw");
+  sw.innerHTML = C.map(([n, h, d, t]) => `<button style="background:${h};color:${t};${h === "#FFFFFF" ? "outline:1px solid #ddd;" : ""}" data-h="${h}"><b>${n}</b><span>${h}<br>${d}</span></button>`).join("");
+  sw.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; navigator.clipboard && navigator.clipboard.writeText(b.dataset.h); const s = b.querySelector("span"), o = s.innerHTML; s.innerHTML = '<span class="copiado">Copiado ' + b.dataset.h + "</span>"; setTimeout(() => s.innerHTML = o, 1400); });
+  const P = [["Tinta / papel","16,2 : 1","Todo texto"],["Tinta / hueso","14,4 : 1","Todo texto"],["Rojo texto / papel","5,7 : 1","Texto y enlaces"],["Grafito / papel","6,6 : 1","Texto secundario"],["Papel / tinta","16,2 : 1","Todo texto"],["Rojo / papel","4,0 : 1","Solo titulares ≥ 24 px negrita y formas"],["Tinta / rojo","4,05 : 1","Solo titulares ≥ 24 px negrita"],["Papel / rojo","4,0 : 1","Solo titulares ≥ 24 px negrita"],["Papel / vino","9,8 : 1","Todo texto"]];
+  document.querySelector("#pares tbody").innerHTML = P.map(p => `<tr><td>${p[0]}</td><td><b>${p[1]}</b></td><td style="text-decoration:none;color:inherit">${p[2]}</td></tr>`).join("");
+  document.getElementById("niv").innerHTML = [["A1","#FFD6D0","#1F2120"],["A2","#FF8F80","#1F2120"],["B1","#FF4A36","#1F2120"],["B2","#FF0000","#1F2120"],["C1","#8E0007","#fff"]].map(([n, c, t], i) => `<div style="height:${40 + i * 15}%;background:${c};color:${t}">${n}<br><small style="font:500 12px var(--f-txt)">${c}</small></div>`).join("");
+  // demos de movimiento
+  const jugar = (el) => { el.classList.remove("on"); void el.offsetWidth; el.classList.add("on"); };
+  document.querySelectorAll(".mov .tarjeta").forEach(t => { const d = t.querySelector("[data-d]"); t.querySelector(".rep").onclick = () => jugar(d); });
+  new IntersectionObserver((es, ob) => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll("[data-d]").forEach(jugar); ob.unobserve(e.target); } }), { threshold: .4 }).observe(document.getElementById("movimiento"));
+  // índice activo y apariciones
+  const as = [...document.querySelectorAll("#indice a")];
+  const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) as.forEach(a => a.classList.toggle("act", a.hash === "#" + e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
+  document.querySelectorAll(".cap[id]").forEach(s => io2.observe(s));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visto"); io.unobserve(e.target); } }));
+  document.querySelectorAll(".rev").forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

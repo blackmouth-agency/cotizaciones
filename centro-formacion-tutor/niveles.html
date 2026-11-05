@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Niveles A1 a C1 · Centro de Formación Tutor</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Qué puedes hacer en inglés al terminar cada nivel del Marco Común Europeo, de A1 a C1, las horas de referencia y el examen internacional que encaja.">
+<meta property="og:title" content="Niveles A1 a C1 · Centro de Formación Tutor">
+<meta property="og:description" content="Qué puedes hacer en inglés al terminar cada nivel del Marco Común Europeo, de A1 a C1, las horas de referencia y el examen internacional que encaja.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/niveles.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF0000">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tutor.css?v=1">
+<link rel="stylesheet" href="assets/css/interna.css?v=1">
+</head>
+<body data-pagina="niveles">
+<main>
+<section class="portada-int">
+  <img class="boc-deco" src="assets/logo/simbolo-color.svg" alt="">
+  <div class="envoltura">
+    <span class="etq rev">Niveles del Marco Común Europeo</span>
+    <h1 class="t6 rev">Cinco escalones. Un solo idioma.</h1>
+    <p class="lead rev">Cada nivel se define por lo que puedes hacer en inglés al terminarlo. Baja y mira en qué escalón estás y a cuál quieres llegar.</p>
+    <div class="fila rev" style="margin-top:30px" id="saltos"></div>
+  </div>
+</section>
+
+<div id="niveles"></div>
+
+<section class="sec sec--hueso">
+  <div class="envoltura">
+    <div class="cabecera-sec"><div><span class="etq">En resumen</span><h2 class="t5 rev">Horas y exámenes<br>de referencia.</h2></div>
+      <p class="lead rev">Las horas son guiadas y acumuladas desde cero, según Cambridge English. Son una referencia: cada persona avanza a su ritmo.</p></div>
+    <div class="tabla-env rev"><table class="tabla"><thead><tr><th>Nivel</th><th>Al terminar puedes…</th><th>Horas de referencia</th><th>Examen que encaja</th></tr></thead><tbody id="tabla"></tbody></table></div>
+    <div class="aviso rev" style="margin-top:44px">
+      <p class="etq rojo" style="margin-bottom:10px">Sobre el Saber 11</p>
+      <p style="margin:0">La prueba de inglés del Saber 11 clasifica en Pre A1, A1, A2 y B1, y mide lectura y uso del idioma. Por eso un B1 del ICFES no equivale a un B1 completo: en Tutor trabajamos también la escucha y la conversación.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--rojo">
+  <div class="envoltura grid-2">
+    <h2 class="t5">¿En qué escalón estás?</h2>
+    <div><p class="lead">Veinte preguntas y un reto de voz opcional. Diez minutos.</p><a class="btn" href="prueba.html" style="margin-top:20px">Haz la prueba de nivel <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+</main>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/comun.js?v=1"></script>
+<script>
+(() => {
+  const T = TUTOR, oir = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="margin-top:6px;flex:none"><path d="M4 9v6h4l5 4V5L8 9H4zM16.5 8.5a5 5 0 0 1 0 7"/></svg>';
+  document.getElementById("saltos").innerHTML = T.NIVELES.map(n => `<a class="chip" href="#${n.id}" style="background:${n.color};color:${n.texto};border-color:${n.color};font-size:16px;padding:12px 16px">${n.id}</a>`).join("");
+  document.getElementById("niveles").innerHTML = T.NIVELES.map((n, i) => `<section class="nv" id="${n.id}" style="--c:${n.color};--t:${n.texto}">
+    <img class="nv__fig" src="assets/logo/${n.texto === "#FFFFFF" ? "figura-blanca" : "figura-tinta"}.svg" alt="">
+    <div class="envoltura nv__in">
+      <div class="rev"><div class="nv__id">${n.id}</div><h2>${n.nombre}</h2><button class="oir" type="button" data-en="${n.frase}">${oir}“${n.frase}”</button></div>
+      <div class="rev"><p class="etq" style="margin-bottom:16px">Al terminar ${n.id} puedes…</p><ul>${n.puede.map(p => `<li>${p}</li>`).join("")}</ul>
+        <div class="nv__datos"><div><b>${n.horas} h</b><small>Horas guiadas acumuladas de referencia (Cambridge English).</small></div><div><b style="font-size:var(--s2);line-height:1.2">${n.examen}</b><small>Examen internacional que encaja.</small></div></div></div>
+    </div></section>`).join("");
+  document.getElementById("tabla").innerHTML = T.NIVELES.map(n => `<tr><td><span style="display:inline-block;width:14px;height:14px;background:${n.color};margin-right:10px;vertical-align:middle"></span>${n.id}</td><td>${n.puede[0]} ${n.puede[1]}</td><td><b>${n.horas} h</b></td><td>${n.examen}</td></tr>`).join("");
+  document.addEventListener("click", e => { const b = e.target.closest(".oir"); if (b) T.hablar(b.dataset.en); });
+  T.observar();
+})();
+</script>
+</body>
+</html>

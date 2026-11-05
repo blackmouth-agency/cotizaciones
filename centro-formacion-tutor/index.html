@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centro de Formación Tutor · Inglés presencial de A1 a C1</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Inglés presencial para adolescentes, adultos y empresas, de A1 a C1. Método Toma la Palabra: cada clase termina contigo al frente, hablando.">
+<meta property="og:title" content="Centro de Formación Tutor · Inglés presencial de A1 a C1">
+<meta property="og:description" content="Inglés presencial para adolescentes, adultos y empresas, de A1 a C1. Método Toma la Palabra: cada clase termina contigo al frente, hablando.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF0000">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tutor.css?v=1">
+<link rel="stylesheet" href="assets/css/inicio.css?v=1">
+</head>
+<body data-pagina="inicio">
+
+<main>
+<!-- 1 · HERO: la palabra, las burbujas y el zoom a través de la figura -->
+<section class="hero" id="hero" aria-label="Toma la palabra">
+  <div class="hero__escena">
+    <div class="hero__texto">
+      <p class="etq hero__etq"><span class="punto"></span> Inglés presencial · A1 → C1</p>
+      <h1 class="t6 hero__tit"><span class="ln">Toma</span> <span class="ln">la palabra.</span></h1>
+      <p class="hero__en en">Take the floor.</p>
+      <p class="lead">Inglés para adolescentes, adultos y empresas, donde <strong>cada clase termina contigo al frente, hablando.</strong></p>
+      <div class="fila">
+        <a class="btn" href="prueba.html">Haz la prueba de nivel <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        <a class="enlace" href="#metodo">Cómo es una clase</a>
+      </div>
+      <p class="hero__pista etq">Toca una frase para oírla · arrástrala</p>
+    </div>
+    <div class="hero__juego" id="juego" aria-label="Frases en inglés: tócalas para escucharlas"></div>
+    <div class="zoom" id="zoom" aria-hidden="true">
+      <div class="zoom__ventana"><img class="zoom__foto" id="zoomFoto" src="assets/img/hero.webp" alt=""></div>
+      <img class="zoom__simbolo" src="assets/logo/simbolo-color.svg" alt="">
+    </div>
+    <div class="hero__despues" id="despues">
+      <p class="t5"><span>Aquí nadie</span> <span>se queda callado.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · LA CUENTA -->
+<section class="sec cuenta" id="cuenta">
+  <div class="envoltura grid-2">
+    <div>
+      <p class="etq rojo rev">Haz la cuenta</p>
+      <h2 class="t5 rev">¿Cuánto hablaste en tu última clase de inglés?</h2>
+      <p class="lead rev" style="margin-top:28px">Llevas años estudiando inglés y te bloqueas al hablar. No es falta de talento: es falta de turnos.</p>
+    </div>
+    <div class="calc rev">
+      <div class="calc__res">
+        <span class="calc__num" id="calcNum">3</span>
+        <span class="calc__u">min<br>para ti</span>
+      </div>
+      <p class="calc__txt" id="calcTxt">En 120 minutos de clase con 20 personas, si el profe habla la mitad del tiempo, a cada una le quedan unos 3 minutos para hablar.</p>
+      <label class="calc__ctl">Personas en el salón <output id="oPers">20</output>
+        <input type="range" id="rPers" min="6" max="35" value="20"></label>
+      <label class="calc__ctl">Tiempo que habla el profe <output id="oProfe">50 %</output>
+        <input type="range" id="rProfe" min="20" max="90" step="5" value="50"></label>
+      <p class="calc__nota">Una cuenta simple: el tiempo que no habla el profe, repartido entre todos.</p>
+    </div>
+  </div>
+  <div class="envoltura giro rev">
+    <p class="t3">En Tutor la clase está hecha al revés: <span class="rojo">tú hablas en parejas, en grupo y al frente,</span> y el profe escucha, anota y te corrige.</p>
+  </div>
+</section>
+
+<!-- 3 · EL MÉTODO: reloj de 120 minutos -->
+<section class="sec sec--tinta metodo" id="metodo">
+  <div class="metodo__pin">
+    <div class="envoltura metodo__in">
+      <div class="metodo__txt">
+        <p class="etq" style="color:var(--rojo)">El método Toma la Palabra</p>
+        <h2 class="t5">Seis pasos.<br>120 minutos.<br><span class="en" style="font-weight:600">Your turn.</span></h2>
+        <ol class="pasos" id="pasos"></ol>
+        <a class="enlace" href="metodo.html" style="margin-top:28px">Ver el método completo</a>
+      </div>
+      <div class="reloj-col"><div class="reloj">
+        <svg viewBox="-160 -160 320 320" id="reloj" role="img" aria-label="Reloj de una clase de 120 minutos dividido en seis pasos"></svg>
+        <div class="reloj__centro" id="relojCentro" aria-live="polite"></div>
+      </div>
+      <p class="reloj__hace" id="relojHace"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · NIVELES: la escalera roja -->
+<section class="sec niveles" id="niveles">
+  <div class="envoltura">
+    <div class="cabecera-sec">
+      <div><span class="etq">Niveles del Marco Común Europeo</span><h2 class="t5 rev">De A1 a C1,<br>un escalón a la vez.</h2></div>
+      <p class="lead rev">Subes cuando puedes <em>hacer</em> algo nuevo en inglés, no cuando se acaban las horas. Toca un escalón.</p>
+    </div>
+    <div class="escalera" id="escalera" role="tablist" aria-label="Niveles"></div>
+    <div class="nivel-det" id="nivelDet" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 5 · PROGRAMAS -->
+<section class="sec sec--hueso programas" id="programas">
+  <div class="envoltura">
+    <div class="cabecera-sec">
+      <div><span class="etq">Programas</span><h2 class="t5 rev">Tres públicos.<br>El mismo turno al frente.</h2></div>
+      <a class="enlace rev" href="programas.html">Comparar los programas</a>
+    </div>
+    <div class="progs" id="progs"></div>
+  </div>
+</section>
+
+<!-- 6 · RETO DE VOZ -->
+<section class="sec sec--rojo reto" id="reto">
+  <div class="envoltura reto__in">
+    <div>
+      <p class="etq">Pruébalo ahora</p>
+      <h2 class="t5">Toma la palabra.<br>Aquí mismo.</h2>
+      <p class="lead" style="margin-top:24px">Lee la frase en voz alta. Tu navegador te escucha y te dice qué entendió. <span class="reto__priv">Nada se graba ni se envía a Tutor.</span></p>
+    </div>
+    <div class="reto__caja">
+      <div class="reto__nivel" id="retoNivel" role="group" aria-label="Elige el nivel de la frase"></div>
+      <p class="reto__frase en" id="retoFrase"></p>
+      <div class="reto__ctl">
+        <button class="reto__mic" id="retoMic" aria-label="Hablar"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span>Hablar</span></button>
+        <button class="reto__oir" id="retoOir"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zM16.5 8.5a5 5 0 0 1 0 7"/></svg> Escúchala</button>
+      </div>
+      <p class="reto__res" id="retoRes" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · PRUEBA DE NIVEL -->
+<section class="sec prueba-cta" id="prueba">
+  <div class="envoltura grid-2">
+    <div class="foto-boc bocadillo pc__foto rev"><img src="assets/img/pareja.webp" alt="Dos estudiantes conversando en inglés en clase" loading="lazy"></div>
+    <div>
+      <p class="etq rojo rev">Prueba de nivel gratis</p>
+      <h2 class="t5 rev">¿En qué escalón estás hoy?</h2>
+      <p class="lead rev" style="margin-top:24px">Veinte preguntas, unos diez minutos y un reto de voz opcional. Al final te decimos tu nivel estimado y te armamos el mensaje para agendar tu clase de prueba.</p>
+      <ul class="pc__lista rev"><li>Sin registrarte</li><li>Resultado al instante</li><li>Lo confirmamos en la sede con una conversación corta</li></ul>
+      <a class="btn rev" href="prueba.html">Empezar la prueba <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · LA CLASE DE PRUEBA -->
+<section class="visita" id="visita">
+  <img class="visita__foto" src="assets/img/celebracion.webp" alt="Un grupo aplaude a una compañera que acaba de hablar frente a la clase" loading="lazy">
+  <div class="visita__caja bocadillo">
+    <p class="etq rojo">Ven a la sede</p>
+    <h2 class="t4">Tu primera clase es para ver cómo se siente tomar la palabra.</h2>
+    <p style="margin-top:18px">Escríbenos, te ubicamos en un grupo de tu nivel y vienes a una clase de prueba. <span class="pend" title="Dato por confirmar con el cliente">Sede y horarios por confirmar.</span></p>
+    <a class="enlace wa" id="visitaWa" rel="noopener">Agendar por WhatsApp</a>
+  </div>
+</section>
+
+<!-- 9 · PREGUNTAS -->
+<section class="sec faq-ini">
+  <div class="envoltura grid-2" style="align-items:start">
+    <div><p class="etq rojo">Preguntas</p><h2 class="t5 rev">Lo que siempre preguntan.</h2><a class="enlace rev" href="preguntas.html" style="margin-top:28px">Ver todas las preguntas</a></div>
+    <div class="acord" id="faqIni"></div>
+  </div>
+</section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="assets/js/comun.js?v=1"></script>
+<script src="assets/js/inicio.js?v=1"></script>
+</body>
+</html>

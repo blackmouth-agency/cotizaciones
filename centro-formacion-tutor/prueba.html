@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prueba de nivel de inglés gratis · Centro de Formación Tutor</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Veinte preguntas y un reto de voz opcional para estimar tu nivel de inglés, de A1 a C1. Sin registro y con resultado al instante.">
+<meta property="og:title" content="Prueba de nivel de inglés gratis · Centro de Formación Tutor">
+<meta property="og:description" content="Veinte preguntas y un reto de voz opcional para estimar tu nivel de inglés, de A1 a C1. Sin registro y con resultado al instante.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/og.jpg">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/centro-formacion-tutor/prueba.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF0000">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tutor.css?v=1">
+<link rel="stylesheet" href="assets/css/interna.css?v=1">
+</head>
+<body data-pagina="prueba">
+<main>
+<section class="prueba"><div class="prueba__caja" id="caja" aria-live="polite"></div></section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="assets/js/comun.js?v=1"></script>
+<script>
+(() => {
+const T = TUTOR, caja = document.getElementById("caja");
+const P = [
+  ["A1", "Completa la frase", "___ name is Carlos.", ["My", "I", "Me"], 0],
+  ["A1", "Completa la frase", "She ___ from Colombia.", ["is", "are", "am"], 0],
+  ["A1", "Elige la mejor respuesta", "What time is it?", ["It's half past seven.", "I'm seven.", "Yes, it is."], 0],
+  ["A1", "Completa la frase", "There ___ two books on the table.", ["is", "are", "be"], 1],
+  ["A2", "Completa la frase", "I ___ to Cartagena last year.", ["go", "have go", "went"], 2],
+  ["A2", "Completa la frase", "This coffee is ___ than the other one.", ["cheaper", "more cheap", "cheapest"], 0],
+  ["A2", "Elige la mejor respuesta", "Could you tell me where the bank is?", ["Yes, I could.", "Sure, it's next to the pharmacy.", "The bank is money."], 1],
+  ["A2", "Completa la frase", "We're ___ dinner at eight tonight.", ["have", "had", "having"], 2],
+  ["B1", "Completa la frase", "If it rains tomorrow, we ___ the match.", ["will cancel", "would cancel", "cancelled"], 0],
+  ["B1", "Completa la frase", "I've lived here ___ 2019.", ["for", "since", "from"], 1],
+  ["B1", "Completa la frase", "She asked me where I ___.", ["do live", "am living", "lived"], 2],
+  ["B1", "Completa la frase", "You ___ wear a suit; it's a casual event.", ["don't have to", "mustn't", "can't"], 0],
+  ["B2", "Completa la frase", "By the time we arrived, the film ___.", ["has already started", "had already started", "already starts"], 1],
+  ["B2", "Completa la frase", "I wish I ___ more time to travel.", ["had", "have", "will have"], 0],
+  ["B2", "Completa la frase", "The report ___ by Friday.", ["needs finishing to be", "is needing finish", "needs to be finished"], 2],
+  ["B2", "Completa la frase", "He's used to ___ up early.", ["get", "getting", "got"], 1],
+  ["C1", "Completa la frase", "Hardly ___ the room when the phone rang.", ["had she entered", "she had entered", "did she entered"], 0],
+  ["C1", "Completa la frase", "The proposal was turned ___ because of the budget.", ["off", "out", "down"], 2],
+  ["C1", "Elige la más natural", "You want to explain something again, differently.", ["Let me say it in another way of form.", "Let me put it another way.", "Allow me to tell it other way."], 1],
+  ["C1", "Completa la frase", "Had I known about the traffic, I ___ earlier.", ["would have left", "would leave", "had left"], 0]
+];
+let i = 0, resp = [];
+const animar = () => window.gsap && gsap.from(caja.children, { y: 24, opacity: 0, duration: .55, stagger: .06, ease: "power3.out" });
+function inicio() {
+  caja.innerHTML = `<span class="etq rojo">Prueba de nivel gratis</span>
+  <h1 class="t5" style="margin:18px 0 22px">¿En qué escalón<br>estás hoy?</h1>
+  <p class="lead">Veinte preguntas que van de A1 a C1. Responde sin diccionario: si no sabes, elige la que te suene mejor. Al final hay un reto de voz opcional.</p>
+  <ul style="margin:22px 0 34px;padding-left:20px;font-size:17px;display:grid;gap:6px"><li>Unos 10 minutos.</li><li>Sin registro: nada se guarda en un servidor.</li><li>El resultado es una estimación; en la sede lo confirmamos con una conversación corta.</li></ul>
+  <button class="btn" id="empezar">Empezar ${T.ICO.flecha}</button>`;
+  document.getElementById("empezar").onclick = () => pregunta();
+  animar();
+}
+function pregunta() {
+  const [nv, ins, txt, ops] = P[i];
+  const t = txt.replace("___", '<span class="hueco">&nbsp;</span>');
+  caja.innerHTML = `<div class="progreso" aria-hidden="true">${P.map((_, j) => `<i class="${j < i ? "hecho" : j === i ? "act" : ""}"></i>`).join("")}</div>
+  <div class="preg__meta"><span>Pregunta ${i + 1} de ${P.length}</span><span>Nivel ${nv}</span></div>
+  <p class="preg__ins">${ins}</p><p class="preg__txt" lang="en">${t}</p>
+  <div class="resps" role="group" aria-label="Opciones">${ops.map((o, j) => `<button class="resp" data-j="${j}" lang="en"><kbd>${"ABC"[j]}</kbd>${o}</button>`).join("")}</div>`;
+  caja.querySelectorAll(".resp").forEach(b => b.onclick = () => elegir(+b.dataset.j, b));
+  animar();
+  caja.querySelector(".resp").focus({ preventScroll: true });
+}
+function elegir(j, b) {
+  b.classList.add("elegida"); resp[i] = j;
+  caja.querySelectorAll(".resp").forEach(x => x.disabled = true);
+  const hueco = caja.querySelector(".hueco"); if (hueco) hueco.textContent = P[i][2].includes("___") ? P[i][3][j] : "";
+  setTimeout(() => { i++; i < P.length ? pregunta() : voz(); }, 450);
+}
+addEventListener("keydown", e => { const k = { a: 0, b: 1, c: 2, "1": 0, "2": 1, "3": 2 }[e.key.toLowerCase()]; const bs = caja.querySelectorAll(".resp:not(:disabled)"); if (k !== undefined && bs[k]) bs[k].click(); });
+function calcular() {
+  const ORD = ["A1", "A2", "B1", "B2", "C1"], aciertos = {}; ORD.forEach(n => aciertos[n] = 0);
+  P.forEach((p, j) => { if (resp[j] === p[4]) aciertos[p[0]]++; });
+  let nivel = "A1";
+  for (const n of ORD) { if (aciertos[n] >= 3) nivel = n; else break; }
+  const total = Object.values(aciertos).reduce((a, b) => a + b, 0);
+  return { nivel, total, aciertos };
+}
+function voz() {
+  const r = calcular(), frase = { A1: "Hi! My name is Ana and I live in Cali.", A2: "Could you tell me where the bus station is?", B1: "I'd like to take the floor for a minute.", B2: "That's a fair point, but have you considered the cost?", C1: "Let me put it another way, so it's crystal clear." }[r.nivel];
+  caja.innerHTML = `<div class="progreso" aria-hidden="true">${P.map(() => `<i class="hecho"></i>`).join("")}</div>
+  <span class="etq rojo">Reto de voz · opcional</span><h2 class="t4" style="margin:16px 0 18px">Ahora, toma la palabra.</h2>
+  <p>Lee esta frase en voz alta. Tu navegador te escucha; no se graba ni se envía a Tutor.</p>
+  <p class="preg__txt" lang="en" id="vf" style="margin-top:18px">${frase}</p>
+  <div class="fila"><button class="btn" id="vMic">Hablar</button><button class="enlace" id="vOir" style="background:none;border:0;border-bottom:2px solid">Escucharla primero</button><button class="enlace" id="vSaltar" style="background:none;border:0;border-bottom:2px solid">Saltar y ver mi resultado</button></div>
+  <p id="vRes" style="margin-top:20px;font-weight:600;min-height:1.6em"></p>`;
+  animar();
+  let pctVoz = null;
+  document.getElementById("vOir").onclick = () => T.hablar(frase, .9);
+  document.getElementById("vSaltar").onclick = () => resultado(r, pctVoz);
+  const mic = document.getElementById("vMic"), vr = document.getElementById("vRes");
+  if (!T.Reconocer) { mic.disabled = true; mic.style.opacity = .4; vr.textContent = "Tu navegador no permite el micrófono aquí (prueba en Chrome o Edge). Puedes saltar este paso."; return; }
+  mic.onclick = () => {
+    const rec = new T.Reconocer(); rec.lang = "en-US"; let dicho = "";
+    mic.textContent = "Te oigo…"; rec.onresult = e => dicho = [...e.results].map(x => x[0].transcript).join(" ");
+    rec.onerror = () => vr.textContent = "No te escuchamos bien. Inténtalo otra vez o salta este paso.";
+    rec.onend = () => {
+      mic.textContent = "Otra vez"; if (!dicho) return;
+      const n = s => s.toLowerCase().replace(/[^a-z' ]/g, " ").split(/\s+/).filter(Boolean), bolsa = {};
+      n(dicho).forEach(w => bolsa[w] = (bolsa[w] || 0) + 1);
+      const meta = n(frase), ok = meta.filter(w => bolsa[w] ? bolsa[w]-- : false).length;
+      pctVoz = Math.round(ok / meta.length * 100);
+      vr.innerHTML = `Entendí: «<span class="en">${dicho}</span>» · <b style="color:var(--rojo-t)">${pctVoz} %</b> <button class="enlace" id="vVer" style="background:none;border:0;border-bottom:2px solid;margin-left:12px">Ver mi resultado</button>`;
+      document.getElementById("vVer").onclick = () => resultado(r, pctVoz);
+    };
+    rec.start();
+  };
+}
+function resultado(r, pctVoz) {
+  const n = T.NIVELES.find(x => x.id === r.nivel);
+  try { localStorage.setItem("tutor-resultado", JSON.stringify({ nivel: r.nivel, total: r.total, fecha: new Date().toISOString().slice(0, 10) })); } catch {}
+  const msg = `¡Hola, Tutor! Hice la prueba de nivel en la web: me salió ${r.nivel} (${r.total}/20${pctVoz != null ? `, reto de voz ${pctVoz} %` : ""}). Quiero agendar mi clase de prueba.`;
+  caja.innerHTML = `<div class="resultado"><span class="etq rojo">Tu nivel estimado</span>
+  <div class="resultado__nivel"><span class="resultado__id">${r.nivel}</span><div><h1 class="t4">${n.nombre}</h1><p style="margin:10px 0 0">${r.total} de 20 respuestas correctas${pctVoz != null ? ` · reto de voz: ${pctVoz} %` : ""}</p></div></div>
+  <div class="mini-esc" aria-hidden="true">${T.NIVELES.map((x, k) => `<span class="${x.id === r.nivel ? "tu" : ""}" style="height:${30 + k * 17}%;background:${x.color};color:${x.texto}">${x.id}</span>`).join("")}</div>
+  <p class="etq" style="margin-bottom:12px">Ya puedes…</p><ul style="padding-left:20px;font-size:18px;display:grid;gap:6px;margin:0 0 30px">${n.puede.map(p => `<li>${p}</li>`).join("")}</ul>
+  <p>Es una estimación. En la sede la confirmamos con una conversación de 10 minutos y te ubicamos en el grupo justo.</p>
+  <div class="fila" style="margin-top:26px"><a class="btn" rel="noopener" href="${T.wa(msg)}">Agendar mi clase de prueba ${T.ICO.flecha}</a><a class="enlace" href="niveles.html#${r.nivel}">Ver qué sigue después de ${r.nivel}</a><button class="enlace" id="otra" style="background:none;border:0;border-bottom:2px solid">Repetir la prueba</button></div></div>`;
+  document.getElementById("otra").onclick = () => { i = 0; resp = []; inicio(); };
+  animar();
+  if (window.gsap) gsap.from(".mini-esc span", { scaleY: 0, transformOrigin: "50% 100%", duration: .8, stagger: .08, ease: "back.out(1.5)" });
+}
+inicio();
+})();
+</script>
+</body>
+</html>
