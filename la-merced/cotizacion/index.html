@@ -388,6 +388,20 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
 @media (max-width:860px){.fases.tres{grid-template-columns:1fr}}
 .extra{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 @media (max-width:700px){.extra{grid-template-columns:1fr!important}}
+.plan .antes{display:flex;align-items:center;gap:10px;margin:18px 0 0;font-size:15px;min-height:26px}
+.plan .antes s{opacity:.55;text-decoration-thickness:1.5px}
+.plan .antes .pct{padding:3px 10px;border-radius:999px;background:var(--lima);color:var(--noche);font-weight:800;font-size:12.5px;letter-spacing:.04em}
+.plan.rec .antes .pct{background:var(--verde);color:var(--crema)}
+.plan .antes.fijo{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+.plan .antes+.precio{margin-top:4px}
+.plan .ahorro{margin:8px 0 0;font-size:13.5px;min-height:20px}
+.plan .ahorro b{color:var(--lima)}
+.plan.rec .ahorro b{color:var(--verde)}
+.plan .antes .pct,.plan .ahorro,.plan .usd,.plan .precio{transition:opacity .16s}
+.plan.cambia .antes .pct,.plan.cambia .ahorro,.plan.cambia .usd,.plan.cambia .precio{opacity:0}
+.aviso-dto{margin:-14px 0 26px;font-size:14px;opacity:.75}
+.plan .precio[data-mes]{margin-bottom:0}
+.plan .ahorro{margin-top:12px}
 .extra{grid-template-columns:1fr!important;max-width:620px}
 .nota-plan{margin:16px 0 0;padding-top:12px;border-top:1px solid rgba(183,232,66,.25);font-size:13px;font-style:italic;opacity:.8}
 </style>
@@ -583,21 +597,26 @@ section{position:relative;padding-block:clamp(72px,9vw,120px);overflow:hidden}
 <section id="planes" class="v">
   <div class="rayos" style="width:1100px;height:1100px;left:-420px;top:-420px;opacity:.07"><img src="assets/logo/icono-blanco.svg" alt=""></div>
   <div class="wrap">
-    <div class="cab"><div><p class="k">09 · Inversión</p><h2>Cuatro planes, <em>de cimiento a 360.</em></h2></div>
-      <p class="lead">Valores mensuales en pesos colombianos, sin IVA. La pauta y la impresión van aparte. Dólares a $3.234,48 (7 de octubre de 2026).</p></div>
-    <div class="chips filtros periodo" role="tablist" aria-label="Periodo"><button class="chip" type="button" data-per="1" aria-selected="true">Por mes</button><button class="chip" type="button" data-per="3" aria-selected="false">Primer trimestre</button></div>
+    <div class="cab"><div><p class="k">09 · Inversión</p><h2>Cuatro planes, <em>con descuento de lanzamiento.</em></h2></div>
+      <p class="lead">Valores mensuales en pesos colombianos, sin IVA. Descuento especial para La Merced: 20 % desde el primer mes y 25 % si firmamos contrato a 5 meses. La pauta y la impresión van aparte. Dólares a la TRM del 6 de noviembre de 2026 ($3.228,26).</p></div>
+    <div class="chips filtros periodo" role="tablist" aria-label="Descuento"><button class="chip" type="button" data-dto="20" aria-selected="true">20 % de descuento</button><button class="chip" type="button" data-dto="25" aria-selected="false">25 % · contrato a 5 meses</button></div>
+    <p class="aviso-dto" id="aviso-dto">20 % menos sobre la tarifa mensual, desde el primer mes.</p>
     <div class="planes">
       <article class="plan"><h3>Cimiento</h3><p class="para">Para tener presencia constante y ordenada.</p>
-        <p class="precio" data-mes="3300000">$3.300.000 <small>/ mes</small></p><p class="usd">≈ USD 1.020</p>
+        <p class="antes"><s>$3.300.000</s><span class="pct">−20 %</span></p>
+        <p class="precio" data-mes="3300000" data-dto>$2.640.000 <small>/ mes</small></p><p class="ahorro">Ahorras <b>$660.000</b> al mes</p><p class="usd">≈ USD 818</p>
         <ul><li>Instagram y Facebook</li><li>8 carruseles y 4 reels al mes</li><li>16 historias</li><li>Parrilla mensual y copies</li><li>Producción audiovisual según la estrategia</li><li>Respuesta a mensajes en horario laboral</li><li>Informe mensual</li></ul></article>
       <article class="plan"><h3>Obra</h3><p class="para">Para fortalecer la marca y ampliar su presencia digital.</p>
-        <p class="precio" data-mes="5400000">$5.400.000 <small>/ mes</small></p><p class="usd">≈ USD 1.670</p>
+        <p class="antes"><s>$5.400.000</s><span class="pct">−20 %</span></p>
+        <p class="precio" data-mes="5400000" data-dto>$4.320.000 <small>/ mes</small></p><p class="ahorro">Ahorras <b>$1.080.000</b> al mes</p><p class="usd">≈ USD 1.338</p>
         <ul><li>Instagram, Facebook y TikTok</li><li>10 carruseles y 8 reels</li><li>30 historias</li><li>Gestión de pauta en Meta</li><li>Manual de identidad visual</li><li>Producción audiovisual según la estrategia</li><li>Informe mensual</li></ul></article>
       <article class="plan rec"><span class="tag">Recomendado</span><h3>Casa</h3><p class="para">Para convertir el marketing en oportunidades comerciales.</p>
-        <p class="precio" data-mes="7900000">$7.900.000 <small>/ mes</small></p><p class="usd">≈ USD 2.442</p>
+        <p class="antes"><s>$7.900.000</s><span class="pct">−20 %</span></p>
+        <p class="precio" data-mes="7900000" data-dto>$6.320.000 <small>/ mes</small></p><p class="ahorro">Ahorras <b>$1.580.000</b> al mes</p><p class="usd">≈ USD 1.958</p>
         <ul><li>16 carruseles, 14 reels y 30 historias</li><li>Branding: manual de identidad visual</li><li>Gestión en Meta y Google Ads</li><li>Gestión y configuración de leads</li><li>Difusión por WhatsApp</li><li>Diseño y desarrollo de landing page</li><li>Video estratégico</li><li>Motion graphics y material POP (4 piezas)</li><li>Reunión mensual de resultados</li></ul></article>
       <article class="plan"><h3>Bajo el sol · 360</h3><p class="para">Comunicación, marketing y diseño como un solo equipo.</p>
-        <p class="precio" data-mes="11900000">$11.900.000 <small>/ mes</small></p><p class="usd">≈ USD 3.679</p>
+        <p class="antes fijo">Plan integral</p>
+        <p class="precio" data-mes="11900000">$11.900.000 <small>/ mes</small></p><p class="ahorro">&nbsp;</p><p class="usd">≈ USD 3.686</p>
         <ul><li>20 carruseles, 20 reels y 30 historias</li><li>Instagram, Facebook y TikTok</li><li>Pauta en Meta y Google Ads</li><li>Gestión de leads y CRM</li><li>Producción audiovisual</li><li>Manual de identidad visual</li><li>Seguimiento de obra con drone</li><li>Motion graphics y material POP</li><li>Guiones y capacitación comercial</li><li>Diseño y desarrollo web</li><li>Mantenimiento web</li><li>Reunión mensual de resultados</li></ul><p class="nota-plan">Comunicación y diseño según las necesidades de la estrategia.</p></article>
     </div>
     <div class="extra">
@@ -782,9 +801,16 @@ $('#buscaIco').addEventListener('input', e => { const q = e.target.value.trim().
 $$('.filtros[data-filtra]').forEach(g => g.addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return;
   g.querySelectorAll('[data-f]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
   $$('#' + g.dataset.filtra + '>button').forEach(x => { x.hidden = b.dataset.f !== 'todo' && x.dataset.cat !== b.dataset.f; if (!x.hidden) x.classList.add('in'); }); }));
-// planes por mes o trimestre
-$$('[data-per]').forEach(b => b.addEventListener('click', () => { const k = +b.dataset.per; $$('[data-per]').forEach(x => x.setAttribute('aria-selected', String(x === b)));
-  $$('.precio[data-mes]').forEach(pr => { pr.style.opacity = 0; setTimeout(() => { pr.replaceChildren(document.createTextNode('$' + (+pr.dataset.mes * k).toLocaleString('es-CO') + ' '), el('small', { textContent: k === 1 ? '/ mes' : '/ primeros 3 meses' })); pr.style.opacity = 1; }, 150); }); }));
+// planes: 20 % de entrada o 25 % con contrato a 5 meses
+const COP = n => '$' + Math.round(n).toLocaleString('es-CO'), TASA = 3228.26;
+$$('button[data-dto]').forEach(b => b.addEventListener('click', () => { const d = +b.dataset.dto, k = 1 - d / 100;
+  $$('button[data-dto]').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+  $('#aviso-dto').textContent = d === 25 ? '25 % menos sobre la tarifa mensual al firmar contrato a 5 meses.' : '20 % menos sobre la tarifa mensual, desde el primer mes.';
+  $$('.precio[data-dto]').forEach(pr => { const c = pr.closest('.plan'), base = +pr.dataset.mes, v = base * k; c.classList.add('cambia');
+    setTimeout(() => { pr.replaceChildren(document.createTextNode(COP(v) + ' '), el('small', { textContent: '/ mes' }));
+      c.querySelector('.pct').textContent = '−' + d + ' %';
+      c.querySelector('.ahorro').replaceChildren(document.createTextNode('Ahorras '), el('b', { textContent: COP(base - v) }), document.createTextNode(d === 25 ? ' al mes · ' + COP((base - v) * 5) + ' en 5 meses' : ' al mes'));
+      c.querySelector('.usd').textContent = '≈ USD ' + Math.round(v / TASA).toLocaleString('es-CO'); c.classList.remove('cambia'); }, 160); }); }));
 // leve inclinación en tarjetas con el mouse
 if (!reduce && matchMedia('(hover:hover)').matches) $$('.per, .plan').forEach(c => { c.addEventListener('mousemove', e => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
   c.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px)`; }); c.addEventListener('mouseleave', () => { c.style.transform = ''; }); });
