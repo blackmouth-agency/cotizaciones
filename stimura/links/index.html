@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stimura · Aroma meets concept</title>
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="icono.png">
+<meta name="description" content="Velas, waxmelts y jabones hechos a mano en Cali. Gira en 3D la colección Olfactive Mind y pide por WhatsApp. CC Colónplaza, local 7.">
+<meta name="theme-color" content="#DF2E4B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stimura · Aroma meets concept">
+<meta property="og:description" content="Velas, waxmelts y jabones hechos a mano en Cali. Pide por WhatsApp.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/stimura/links/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,800;0,900;1,800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/logo-blanco.webp">
+<link rel="preload" as="image" href="img/vela-turquesa.webp">
+<style>
+:root{
+  --rosa:#DF2E4B; --rosa-2:#C81F3D; --vino:#7A0F2C; --vino-2:#4E0A1C;
+  --amarillo:#FFDE3B; --crema:#FFF4E8; --tinta:#2B0A14; --blanco:#fff;
+  --r:22px; --sombra:0 14px 34px -14px rgba(78,10,28,.45);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Mulish,system-ui,sans-serif;color:var(--tinta);background:var(--rosa);
+  background-image:radial-gradient(1200px 700px at 15% -10%,#F2546C 0,transparent 60%),radial-gradient(900px 600px at 110% 110%,#B71736 0,transparent 60%);
+  min-height:100vh;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px;border-radius:10px}
+
+.app{position:relative;max-width:480px;margin:0 auto;background:var(--crema);min-height:100vh;overflow:hidden}
+@media (min-width:700px){
+  body{background:var(--amarillo);background-image:radial-gradient(900px 600px at 50% 0,#FFE979 0,transparent 70%)}
+  .app{margin:28px auto 40px;border-radius:34px;box-shadow:0 40px 90px -30px rgba(120,40,0,.55);min-height:auto}
+}
+@media (min-width:1100px){
+  body::before,body::after{content:"";position:fixed;top:14vh;width:24vw;height:24vw;background:center/contain no-repeat;pointer-events:none}
+  body::before{left:4vw;background-image:url(img/letra-olfactive.webp);transform:rotate(-9deg)}
+  body::after{right:4vw;top:auto;bottom:10vh;background-image:url(img/kit-velas.webp);transform:rotate(6deg)}
+}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:var(--rosa);color:#fff;padding:26px 20px 30px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-40% -30% auto;height:120%;background:radial-gradient(closest-side,#F4637A 0,transparent 70%);z-index:-1;opacity:.8}
+.hero .logo{width:min(64%,260px);margin:4px auto 0}
+.escena{position:relative;height:300px;margin:6px auto 0;max-width:360px}
+.escena img{position:absolute;filter:drop-shadow(0 18px 18px rgba(78,10,28,.35));will-change:transform}
+.escena .humo{width:58%;left:21%;top:-4%;filter:none;opacity:.95;animation:humo 6s ease-in-out infinite;transform-origin:50% 100%}
+.escena .vela{width:62%;left:19%;top:26%;animation:flota 6s ease-in-out infinite}
+.escena .jabon{width:34%;right:-4%;top:52%;animation:flota 7s -2s ease-in-out infinite;--rot:12deg}
+.escena .bomba{width:30%;left:-3%;top:44%;animation:flota 6.5s -1s ease-in-out infinite;--rot:-14deg}
+.escena .racimo{width:24%;right:3%;top:10%;animation:flota 8s -3s ease-in-out infinite;--rot:8deg}
+@keyframes flota{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-10px) rotate(calc(var(--rot,0deg) * -.4))}}
+@keyframes humo{0%,100%{transform:translateY(0) scale(1);opacity:.9}50%{transform:translateY(-12px) scale(1.04,1.08);opacity:.6}}
+.hero h1{font-weight:900;font-size:clamp(38px,11vw,50px);line-height:.95;letter-spacing:-.02em;text-align:center;margin-top:4px}
+.hero h1 em{font-style:normal;color:var(--amarillo)}
+.hero .sub{text-align:center;font-size:16px;line-height:1.45;margin:12px auto 0;max-width:30ch;color:#FFE4E9}
+
+.enlaces{display:grid;gap:12px;margin-top:22px}
+.btn{display:flex;align-items:center;gap:14px;min-height:60px;padding:10px 18px 10px 12px;border-radius:999px;font-weight:800;font-size:16px;
+  background:#fff;color:var(--vino);box-shadow:var(--sombra);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.btn:active{transform:scale(.97)}
+@media (hover:hover){.btn:hover{transform:translateY(-2px)}}
+.btn .ico{flex:0 0 40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--crema);overflow:hidden}
+.btn .ico img{width:100%;height:100%;object-fit:cover}
+.btn .ico svg{width:22px;height:22px}
+.btn .txt{flex:1;line-height:1.2}
+.btn .txt small{display:block;font-weight:600;font-size:13px;opacity:.75;margin-top:2px}
+.btn .fl{opacity:.5;font-size:20px}
+.btn.principal{background:var(--amarillo);color:var(--vino-2);font-size:17px;min-height:66px}
+.btn.principal .ico{background:var(--vino);color:var(--amarillo)}
+.redes{display:flex;justify-content:center;gap:14px;margin-top:20px}
+.redes a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.4);transition:background .2s}
+.redes a:active,.redes a:hover{background:rgba(255,255,255,.3)}
+.redes svg{width:22px;height:22px;fill:#fff}
+
+/* ---------- SECCIONES ---------- */
+.sec{padding:44px 20px}
+.eyebrow{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--rosa-2)}
+.h2{font-weight:900;font-size:32px;line-height:1;letter-spacing:-.02em;color:var(--vino)}
+.lead{font-size:16px;line-height:1.5;color:#5a2a37;margin-top:10px}
+
+/* ---------- COLECCIÓN 3D ---------- */
+.coleccion{background:var(--crema);padding-top:40px}
+.coleccion .letra{width:82%;margin:6px auto 0}
+.coleccion .lead{text-align:center;max-width:32ch;margin:10px auto 0}
+.escenario{position:relative;margin:22px -20px 0;height:min(108vw,480px);background:var(--fondo,#FFE7C2);transition:background .6s var(--ease);touch-action:pan-y;overflow:hidden}
+.escenario canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;display:block}
+.escenario canvas:active{cursor:grabbing}
+.escenario .plano{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:62%;max-width:300px;transition:opacity .4s}
+.escenario.con3d .plano{opacity:0;pointer-events:none}
+.escenario:not(.con3d) canvas{visibility:hidden}
+.escenario .plano{border-radius:18px;box-shadow:0 18px 30px -18px rgba(0,0,0,.35)}
+.pista{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);font-weight:800;font-size:13px;color:rgba(43,10,20,.6);display:flex;gap:8px;align-items:center;white-space:nowrap;transition:opacity .5s}
+.pista.oculta{opacity:0}
+.pista svg{width:22px;height:22px;animation:mano 2.4s ease-in-out infinite}
+@keyframes mano{0%,100%{transform:translateX(-8px)}50%{transform:translateX(8px)}}
+
+.barras{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.barra{position:relative;border-radius:16px 16px 12px 12px;padding:10px 4px 8px;min-height:116px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;
+  background:var(--c);color:var(--t,#fff);font-weight:900;font-size:11.5px;line-height:1.05;text-align:center;letter-spacing:.02em;text-transform:uppercase;
+  transform:translateY(10px);transition:transform .35s var(--ease),box-shadow .35s;box-shadow:inset 0 0 0 0 transparent}
+.barra img{width:62%;filter:drop-shadow(0 6px 6px rgba(0,0,0,.18))}
+.barra[aria-pressed="true"]{transform:translateY(0);box-shadow:0 12px 22px -10px rgba(0,0,0,.45),inset 0 0 0 3px rgba(255,255,255,.9)}
+.barra.blanca{border:1.5px solid #ecd9c8}
+
+.ficha{margin-top:18px;background:#fff;border-radius:var(--r);padding:20px;box-shadow:0 10px 30px -18px rgba(78,10,28,.4)}
+.ficha .memoria{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c,#DF2E4B)}
+.ficha h3{font-weight:900;font-size:30px;line-height:1;margin-top:6px;color:var(--vino)}
+.ficha .frase{font-weight:800;font-style:italic;font-size:18px;line-height:1.3;margin-top:10px;color:var(--tinta)}
+.ficha .historia{font-size:15px;line-height:1.55;color:#5a2a37;margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font-size:13px;font-weight:800;padding:7px 12px;border-radius:999px;background:var(--crema);color:var(--vino)}
+.chip b{font-weight:900}
+.caja-nota{margin-top:14px;padding:12px 14px;border-radius:14px;background:var(--crema);font-size:14px;line-height:1.45;color:#5a2a37}
+.caja-nota b{display:block;color:var(--vino);font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:13px}
+.comprar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.precio{font-weight:900;font-size:28px;color:var(--vino);line-height:1}
+.precio small{display:block;font-size:12px;font-weight:700;color:#8a5a66;letter-spacing:.02em;margin-top:4px}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--rosa);color:#fff;font-weight:900;font-size:16px;padding:0 20px;min-height:52px;border-radius:999px;box-shadow:var(--sombra)}
+.btn-wa svg{width:20px;height:20px;fill:#fff}
+.btn-wa:active{transform:scale(.97)}
+.anim-in{animation:entra .45s var(--ease)}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- KIT ---------- */
+.kit{background:var(--amarillo);position:relative;overflow:hidden;text-align:center;padding-bottom:36px}
+.kit .h2{color:var(--vino-2)}
+.kit img{width:100%;margin:16px 0 6px}
+.kit .antes{font-weight:800;color:var(--vino);opacity:.7;text-decoration:line-through;font-size:16px}
+.kit .ahora{font-weight:900;font-size:46px;color:var(--vino-2);line-height:1}
+.kit .lead{color:#4a1a26;max-width:32ch;margin:10px auto 0}
+.kit .btn-wa{margin-top:18px;background:var(--vino)}
+.kit .sello20{position:absolute;right:12px;top:118px;z-index:2;width:84px;height:84px;border-radius:50%;background:var(--rosa);color:#fff;display:grid;place-items:center;font-weight:900;font-size:22px;line-height:.9;transform:rotate(12deg);box-shadow:var(--sombra)}
+.kit .sello20 small{display:block;font-size:11px;letter-spacing:.08em}
+
+/* ---------- OTRAS SENSACIONES ---------- */
+.sensaciones{background:var(--crema)}
+.tabs{display:flex;gap:8px;margin-top:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:10px 16px;border-radius:999px;font-weight:800;font-size:14px;background:#fff;color:var(--vino);border:1.5px solid #f0d6dc;min-height:44px}
+.tab[aria-selected="true"]{background:var(--rosa);border-color:var(--rosa);color:#fff}
+.letra-cat{height:84px;margin:20px auto 6px;object-fit:contain}
+.estante{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:8px -20px 0;padding:6px 20px 16px;scrollbar-width:none}
+.estante::-webkit-scrollbar{display:none}
+.prod{flex:0 0 74%;scroll-snap-align:center;background:#fff;border-radius:var(--r);padding:16px;box-shadow:0 10px 26px -18px rgba(78,10,28,.45);display:flex;flex-direction:column}
+.prod .foto{height:170px;display:grid;place-items:center;background:var(--fc,#FCE3E7);border-radius:16px;overflow:hidden}
+.prod .foto img{max-height:150px;width:auto;filter:drop-shadow(0 10px 10px rgba(0,0,0,.18));transition:transform .5s var(--ease)}
+.prod:hover .foto img{transform:scale(1.05) rotate(-3deg)}
+.prod h4{font-weight:900;font-size:21px;color:var(--vino);margin-top:14px;line-height:1.1}
+.prod .aroma{font-weight:800;font-size:13px;color:var(--rosa-2);margin-top:4px}
+.prod p{font-size:14px;line-height:1.5;color:#5a2a37;margin-top:8px;flex:1}
+.prod .pie{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:10px}
+.prod .pie .precio{font-size:22px}
+.prod .pedir{font-weight:900;font-size:14px;background:var(--rosa);color:#fff;border-radius:999px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;gap:8px}
+.prod .pedir svg{width:16px;height:16px;fill:#fff}
+
+/* ---------- SELLOS ---------- */
+.sellos{background:var(--rosa);color:#fff;text-align:center}
+.sellos .h2{color:#fff}
+.sellos .eyebrow{color:var(--amarillo)}
+.sellos-fila{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.sello{display:flex;flex-direction:column;align-items:center;gap:10px;font-weight:800;font-size:13px;line-height:1.25}
+.sello img{width:100%;max-width:120px;animation:gira 18s linear infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.25))}
+.sello:nth-child(2) img{animation-duration:22s;animation-direction:reverse}
+.sello:nth-child(3) img{animation-duration:26s}
+@keyframes gira{to{transform:rotate(360deg)}}
+.sellos .lead{color:#FFE4E9;margin:22px auto 0;max-width:34ch}
+
+/* ---------- LOCAL ---------- */
+.local{background:var(--crema)}
+.local .foto{margin:18px -20px 0;position:relative}
+.local .foto img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.direccion{background:#fff;border-radius:var(--r);padding:20px;margin:-40px 4px 0;position:relative;box-shadow:0 14px 30px -18px rgba(78,10,28,.45)}
+.direccion h3{font-weight:900;font-size:24px;color:var(--vino);line-height:1.1}
+.direccion p{font-size:15px;line-height:1.5;color:#5a2a37;margin-top:6px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.dos a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:999px;font-weight:900;font-size:15px;background:var(--vino);color:#fff}
+.dos a+a{background:var(--crema);color:var(--vino)}
+.dos svg{width:18px;height:18px}
+.envios{display:grid;gap:12px;margin-top:22px}
+.envio{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:18px;padding:16px}
+.envio .n{flex:0 0 42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--amarillo);font-weight:900;color:var(--vino-2)}
+.envio b{display:block;font-weight:900;color:var(--vino);font-size:16px}
+.envio span{display:block;font-size:14px;line-height:1.5;color:#5a2a37;margin-top:3px}
+
+/* ---------- PIE ---------- */
+.pie-pagina{background:var(--vino-2);color:#FFDCE3;text-align:center;padding:40px 20px 120px}
+.pie-pagina img{width:150px;margin:0 auto}
+.pie-pagina .lema{font-weight:900;font-size:22px;color:#fff;margin-top:14px}
+.pie-pagina p{font-size:13px;margin-top:10px;opacity:.75;line-height:1.5}
+
+/* ---------- BARRA FIJA ---------- */
+.barra-wa{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,140%);z-index:20;width:min(440px,calc(100% - 28px));
+  display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;border-radius:999px;background:var(--amarillo);color:var(--vino-2);font-weight:900;font-size:17px;
+  box-shadow:0 18px 40px -12px rgba(40,0,10,.55);transition:transform .45s var(--ease)}
+.barra-wa svg{width:22px;height:22px;fill:var(--vino-2)}
+.barra-wa.ver{transform:translate(-50%,0)}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.si{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/stimura/links/">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM21.9 7.6a6 6 0 0 0-1.6-4 6 6 0 0 0-4-1.6C14.7 2 9.3 2 7.7 2.1a6 6 0 0 0-4 1.6 6 6 0 0 0-1.6 4C2 9.3 2 14.7 2.1 16.3a6 6 0 0 0 1.6 4 6 6 0 0 0 4 1.6c1.6.1 7 .1 8.6 0a6 6 0 0 0 4-1.6 6 6 0 0 0 1.6-4c.1-1.6.1-7 0-8.7Zm-2 10.6a3.3 3.3 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.7.4s-4.4.1-5.7-.4a3.3 3.3 0 0 1-1.8-1.8c-.5-1.3-.4-4.3-.4-5.7s-.1-4.4.4-5.7A3.3 3.3 0 0 1 6.5 3c1.3-.5 4.3-.4 5.7-.4s4.4-.1 5.7.4a3.3 3.3 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.7s.1 4.4-.4 5.7Z"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path d="M16.6 2h-3.3v13.4a2.9 2.9 0 1 1-2-2.7V9.3a6.2 6.2 0 1 0 5.3 6.1V8.8a8 8 0 0 0 4.4 1.4V6.9a4.7 4.7 0 0 1-4.4-4.9Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+</svg>
+
+<div class="app" id="app">
+
+  <header class="hero">
+    <img class="logo" src="img/logo-blanco.webp" alt="Stimura · Aromaterapia que transforma" width="900" height="219">
+    <div class="escena" id="escena" aria-hidden="true">
+      <img class="humo" src="img/humo.webp" alt="" data-p="6">
+      <img class="racimo" src="img/racimo-rojo.webp" alt="" data-p="-14">
+      <img class="bomba" src="img/bomba-corazon.webp" alt="" data-p="18">
+      <img class="vela" src="img/vela-turquesa.webp" alt="" data-p="-6">
+      <img class="jabon" src="img/jabon-barra.webp" alt="" data-p="14">
+    </div>
+    <h1>Aroma meets <em>concept.</em></h1>
+    <p class="sub">Velas, waxmelts y jabones hechos a mano en Cali.</p>
+
+    <nav class="enlaces" aria-label="Enlaces de Stimura">
+      <a class="btn principal" data-wa="general" href="#" rel="noopener">
+        <span class="ico"><svg><use href="#i-wa"/></svg></span>
+        <span class="txt">Haz tu pedido por WhatsApp<small>Te respondemos y armamos tu orden</small></span>
+        <span class="fl">›</span>
+      </a>
+      <a class="btn" href="#coleccion">
+        <span class="ico" style="background:#FFE7C2"><img src="img/vela-mango.webp" alt=""></span>
+        <span class="txt">Colección Olfactive Mind<small>Gira sus cajas en 3D</small></span>
+        <span class="fl">›</span>
+      </a>
+      <a class="btn" href="https://stimura.co/tienda/" rel="noopener">
+        <span class="ico" style="background:#FCE3E7"><img src="img/caja-kraft.webp" alt=""></span>
+        <span class="txt">Tienda en línea<small>Compra y paga desde la web</small></span>
+        <span class="fl">›</span>
+      </a>
+      <a class="btn" href="https://heyzine.com/flip-book/166b3a97e1.html" rel="noopener">
+        <span class="ico" style="background:#DF2E4B"><img src="img/letra-catalogo.webp" alt="" style="object-fit:contain;padding:4px"></span>
+        <span class="txt">Catálogo completo<small>Velas, waxmelts, jabones y bombas</small></span>
+        <span class="fl">›</span>
+      </a>
+      <a class="btn" href="#local">
+        <span class="ico" style="background:#FFDE3B;color:#7A0F2C"><svg><use href="#i-pin"/></svg></span>
+        <span class="txt">Visítanos en Colónplaza<small>Local 7 · Carrera 1 # 61A-30, Cali</small></span>
+        <span class="fl">›</span>
+      </a>
+    </nav>
+    <div class="redes">
+      <a href="https://www.instagram.com/stimura_aroma/" rel="noopener" aria-label="Instagram de Stimura"><svg><use href="#i-ig"/></svg></a>
+      <a href="https://www.tiktok.com/@stimura" rel="noopener" aria-label="TikTok de Stimura"><svg><use href="#i-tt"/></svg></a>
+      <a data-wa="general" href="#" rel="noopener" aria-label="WhatsApp de Stimura"><svg><use href="#i-wa"/></svg></a>
+    </div>
+  </header>
+
+  <section class="sec coleccion" id="coleccion" aria-labelledby="t-col">
+    <p class="eyebrow" style="text-align:center">Colección N.1</p>
+    <h2 id="t-col"><img class="letra" src="img/letra-olfactive.webp" alt="Olfactive Mind" loading="lazy"></h2>
+    <p class="lead">Cuatro aromas, cuatro experiencias creadas para estimular tus sentidos.</p>
+
+    <div class="escenario" id="escenario">
+      <img class="plano" id="plano" src="img/caja-mango-0.webp" alt="Caja de la vela Mango Season">
+      <div class="pista" id="pista"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 1 1 4 0v5m0-1a2 2 0 1 1 4 0v2m-8-1V9a2 2 0 1 0-4 0v5a7 7 0 0 0 7 7h1a6 6 0 0 0 6-6v-3"/></svg>Arrastra para girar la caja</div>
+    </div>
+
+    <div class="barras" id="barras" role="group" aria-label="Elige una vela"></div>
+
+    <article class="ficha" id="ficha" aria-live="polite"></article>
+  </section>
+
+  <section class="sec kit rv" aria-labelledby="t-kit">
+    <div class="sello20">20%<small>MENOS</small></div>
+    <p class="eyebrow" style="color:var(--vino)">Precio de lanzamiento</p>
+    <h2 class="h2" id="t-kit">Llévate las cuatro</h2>
+    <img src="img/kit-velas.webp" alt="Las cuatro velas de la colección Olfactive Mind" loading="lazy">
+    <p class="antes" id="kit-antes"></p>
+    <p class="ahora" id="kit-ahora"></p>
+    <p class="lead">Mango Season, Milk para Dormir, Baby Sandía y Patitos in the Bath en un solo kit.</p>
+    <a class="btn-wa" data-wa="kit" href="#" rel="noopener"><svg><use href="#i-wa"/></svg>Quiero el kit</a>
+  </section>
+
+  <section class="sec sensaciones" id="sensaciones" aria-labelledby="t-sen">
+    <p class="eyebrow">También encuentra</p>
+    <h2 class="h2" id="t-sen">Otras sensaciones</h2>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <img class="letra-cat" id="letra-cat" alt="" loading="lazy">
+    <div class="estante" id="estante" role="tabpanel"></div>
+  </section>
+
+  <section class="sec sellos rv" aria-labelledby="t-sel">
+    <p class="eyebrow">Lo que hace que esto funcione</p>
+    <h2 class="h2" id="t-sel">Todo empieza en los materiales</h2>
+    <div class="sellos-fila">
+      <div class="sello"><img src="img/sello-soja.webp" alt="" loading="lazy">100 % cera vegetal de soja</div>
+      <div class="sello"><img src="img/sello-mano.webp" alt="" loading="lazy">Hecho a mano con amor</div>
+      <div class="sello"><img src="img/sello-diseno.webp" alt="" loading="lazy">El diseño es clave</div>
+    </div>
+    <p class="lead">Esencias a base de aceite en todos los productos y vasos de vidrio reutilizables en todas las velas.</p>
+  </section>
+
+  <section class="sec local" id="local" aria-labelledby="t-loc">
+    <p class="eyebrow">Encuéntranos</p>
+    <h2 class="h2">Ven a olerlas</h2>
+    <div class="foto"><img src="img/local-colonplaza.webp" alt="Fachada del local de Stimura en el CC Colónplaza" loading="lazy"></div>
+    <div class="direccion">
+      <h3 id="t-loc">CC Colónplaza, local 7</h3>
+      <p>Carrera 1 # 61A-30, Cali</p>
+      <div class="dos">
+        <a href="https://maps.app.goo.gl/28D5TEzi3K7FFMnT9" rel="noopener"><svg><use href="#i-pin"/></svg>Google Maps</a>
+        <a href="https://waze.com/ul?q=Centro%20Comercial%20Colonplaza%20Cali&navigate=yes" rel="noopener">Waze</a>
+      </div>
+    </div>
+    <div class="envios">
+      <div class="envio rv"><span class="n">1</span><div><b>Envíos en Cali</b><span>El costo y el tiempo de entrega dependen de la zona. También puedes recoger tu pedido en el local.</span></div></div>
+      <div class="envio rv"><span class="n">2</span><div><b>Envíos a toda Colombia</b><span>Por transportadora. El costo se calcula al finalizar la compra y el tiempo depende del destino.</span></div></div>
+    </div>
+  </section>
+
+  <footer class="pie-pagina">
+    <img src="img/logo-blanco.webp" alt="Stimura" loading="lazy">
+    <p class="lema">Aroma meets concept.</p>
+    <p>Stimura · marca colombiana nacida en Cali<br>+57 323 578 4349 · @stimura_aroma</p>
+  </footer>
+</div>
+
+<a class="barra-wa" id="barra-wa" data-wa="general" href="#" rel="noopener"><svg><use href="#i-wa"/></svg>Pide por WhatsApp</a>
+
+<script>
+const VER = '13';
+/* ============ DATOS (editar aquí) ============ */
+const CFG = {
+  whatsapp: '573235784349',
+  precioVela: 60000,
+  kit: { ahora: 192000, antes: 240000 },
+  velas: [
+    { id:'mango', nombre:'Mango Season', memoria:'Memoria N.4', barra:'#F28A1E', fondo:'#FFE7C2', texto:'#fff',
+      aroma:'Mango de verano', frase:'Boca y manos pegajosas, porque ya es temporada de mangos.',
+      historia:'Nace de ese verano de pueblo, de los días calurosos y del olor intenso de los mangos maduros.',
+      caja:['Verano en el pueblo','Mangos maduros, sol seco y dulzor cálido en el aire.'],
+      tapa:'#E7CB99', caras:[0,1,2,3], tapaImg:'img/caja-mango-tapa.webp', emoji:'🥭' },
+    { id:'milk', nombre:'Milk para Dormir', memoria:'Memoria N.17', barra:'#FFFFFF', fondo:'#FCE6D6', texto:'#E07A4A',
+      aroma:'Leche tibia con vainilla', frase:'Leche tibia antes de dormir, con un toque dulce.',
+      historia:'Hay un ritual que se repite en muchas partes del mundo: una taza de leche tibia con miel antes de dormir. Una vela que marca el final del día y nos invita a bajar el ritmo.',
+      caja:['Milk ritual','Leche tibia nocturna, un ritual suave que despierta calma y sueño.'],
+      tapa:'#F6D3BC', caras:[0,1,2,3], emoji:'🥛' },
+    { id:'sandia', nombre:'Baby Sandía', memoria:'Memoria N.22', barra:'#EF4B5F', fondo:'#E3F5CF', texto:'#fff',
+      aroma:'Gomitas de sandía', frase:'Dedos azucarados + sabor adictivo.',
+      historia:'Huele a esa dulzura acuosa que flota en el aire después de cortar una sandía madura.',
+      caja:['Little gummy','Dedos azucarados y lengua roja, ese dulzor que se queda pegado.'],
+      tapa:'#AFB777', caras:[0,1,2,3], tapaImg:'img/caja-sandia-tapa.webp', emoji:'🍉' },
+    { id:'patitos', nombre:'Patitos in the Bath', memoria:'Memoria N.8', barra:'#2F9BE0', fondo:'#D6EEFB', texto:'#FFE14A',
+      aroma:'Talco baby y patito de hule', frase:'Una vela que huele a esa ternura que queda flotando después de un baño cálido.',
+      historia:'Inspirada en la ternura y la alegría de los clásicos patitos de baño.',
+      caja:['Soap & Ternura','Memoria jabonosa que huele a frescura, ternura y risa.'],
+      tapa:'#5E9ED3', caras:[0,1,2,3], tapaImg:'img/caja-patitos-tapa.webp', emoji:'🐤' }
+  ],
+  categorias: [
+    { id:'wax', nombre:'Waxmelts', letra:'img/letra-waxmelts.webp', fc:'#EBDDD3', items:[
+      { n:'Tintico', a:'Café caliente', d:'Waxmelt con aroma a tintico en la mañana. 140 g.', p:30000, img:'img/wax-tintico.webp' },
+      { n:'Nubes de vainilla', a:'Vainilla esponjosa', d:'Waxmelt con aroma a nubes de vainilla. 140 g.', p:30000, img:'img/wax-vainilla.webp' },
+      { n:'Brisa marina', a:'Brisa marina', d:'Waxmelt con aroma a lo que desearíamos que oliera una playa de verdad. 140 g.', p:30000, img:'img/wax-brisa.webp' },
+      { n:'Kit waxmelts', a:'Café · vainilla · brisa marina', d:'Los 3 aromas, pebetero de cerámica y dos velas de té.', p:91000, img:'img/pebetero.webp' },
+      { n:'Velas de té', a:'Sin aroma', d:'Paquete de 10 unidades, para tu pebetero.', p:10000, img:'img/velas-te.webp' }
+    ]},
+    { id:'jab', nombre:'Jabones', letra:'img/letra-jabones.webp', fc:'#FCE3E7', items:[
+      { n:'Baño de Afrodita', a:'Rosas y canela', d:'Inspirado en la diosa del amor y la belleza: un ritual para el amor propio y la confianza. Con aminoácidos de leche de cabra y miel.', p:15000, img:'img/afrodita-concha.webp' },
+      { n:'Pétalo', a:'Rosas', d:'Jabón de racimo inspirado en la belleza natural de los racimos: cuidado y frescura para tu rutina.', p:30000, img:'img/racimo-rosavera.webp' },
+      { n:'Candy Pop', a:'Bombón', d:'Jabón de racimo con aroma a bombón.', p:30000, img:'img/racimo-bombon.webp' }
+    ]},
+    { id:'bano', nombre:'Bombas de baño', letra:null, fc:'#FADDE6', items:[
+      { n:'Dulce Cherry', a:'Cereza · orquídea · girasol', d:'Para quienes aman los aromas dulces, intensos y atrevidos. Deja una fragancia deliciosa en la piel.', p:30000, img:'img/caja-bombas.webp' }
+    ]},
+    { id:'masaje', nombre:'Masaje', letra:null, fc:'#F7EADF', items:[
+      { n:'Vela para masaje', a:'Sin fragancia', d:'Cera vegetal de soja, aceite de coco y almendras. 63 g.', p:20000, img:'img/vela-masaje.webp' }
+    ]}
+  ]
+};
+
+/* ============ UTILIDADES ============ */
+const $ = s => document.querySelector(s);
+const pesos = n => '$' + n.toLocaleString('es-CO').replace(/,/g,'.');
+const wa = txt => `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(txt)}`;
+const MSG = {
+  general: 'Hola Stimura 👋 Vengo de su Instagram y quiero hacer un pedido.',
+  kit: `Hola Stimura 👋 Quiero el kit Olfactive Mind de 4 velas (${pesos(CFG.kit.ahora)}).`
+};
+document.querySelectorAll('[data-wa]').forEach(a => a.href = wa(MSG[a.dataset.wa] || MSG.general));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ HERO: parallax con el dedo o el mouse ============ */
+(() => {
+  const esc = $('#escena'); if (reduce) return;
+  const piezas = [...esc.querySelectorAll('img')];
+  let tx = 0, ty = 0, x = 0, y = 0;
+  const mover = (cx, cy) => { const r = esc.getBoundingClientRect(); tx = (cx - r.left) / r.width - .5; ty = (cy - r.top) / r.height - .5; };
+  addEventListener('pointermove', e => mover(e.clientX, e.clientY), { passive:true });
+  addEventListener('deviceorientation', e => { if (e.gamma != null) { tx = Math.max(-.5, Math.min(.5, e.gamma / 60)); ty = Math.max(-.5, Math.min(.5, (e.beta - 45) / 60)); } }, { passive:true });
+  (function loop(){
+    x += (tx - x) * .06; y += (ty - y) * .06;
+    piezas.forEach(p => { const k = +p.dataset.p; p.style.translate = `${x * k}px ${y * k}px`; });
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ============ COLECCIÓN: barras y ficha ============ */
+let actual = 0;
+const barras = $('#barras');
+CFG.velas.forEach((v, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'barra' + (v.barra === '#FFFFFF' ? ' blanca' : '');
+  b.style.setProperty('--c', v.barra); b.style.setProperty('--t', v.texto);
+  b.setAttribute('aria-pressed', i === 0);
+  b.innerHTML = `<img src="img/vela-${v.id}.webp" alt="" loading="lazy">${v.nombre}`;
+  b.onclick = () => elegir(i);
+  barras.appendChild(b);
+});
+function ficha(){
+  const v = CFG.velas[actual];
+  const f = $('#ficha');
+  f.style.setProperty('--c', v.barra === '#FFFFFF' ? '#E07A4A' : v.barra);
+  f.innerHTML = `
+    <p class="memoria">${v.memoria} · Olfactive Mind</p>
+    <h3>${v.nombre}</h3>
+    <p class="frase">«${v.frase}»</p>
+    <p class="historia">${v.historia}</p>
+    <div class="chips"><span class="chip">Aroma: <b>${v.aroma}</b></span><span class="chip">252 g · 8 oz</span><span class="chip">Cera de soja</span></div>
+    ${v.caja ? `<div class="caja-nota"><b>En la caja: ${v.caja[0]}</b>${v.caja[1]}</div>` : ''}
+    <div class="comprar">
+      <p class="precio">${pesos(CFG.precioVela)}<small>Vela + caja ilustrada</small></p>
+      <a class="btn-wa" href="${wa(`Hola Stimura 👋 Quiero la vela ${v.nombre} ${v.emoji} de la colección Olfactive Mind.`)}" rel="noopener"><svg><use href="#i-wa"/></svg>La quiero</a>
+    </div>`;
+  f.classList.remove('anim-in'); void f.offsetWidth; f.classList.add('anim-in');
+}
+function elegir(i){
+  actual = i;
+  [...barras.children].forEach((b, k) => b.setAttribute('aria-pressed', k === i));
+  const v = CFG.velas[i];
+  $('#escenario').style.setProperty('--fondo', v.fondo);
+  ficha(); plano();
+  window.Escena3D && window.Escena3D.mostrar(v);
+}
+function plano(){
+  const v = CFG.velas[actual];
+  const img = $('#plano');
+  img.src = `img/caja-${v.id}-0.webp`;
+  img.alt = 'Caja de la vela ' + v.nombre;
+}
+$('#escenario').style.setProperty('--fondo', CFG.velas[0].fondo);
+ficha();
+
+/* ============ KIT ============ */
+$('#kit-antes').textContent = 'Antes ' + pesos(CFG.kit.antes);
+$('#kit-ahora').textContent = pesos(CFG.kit.ahora);
+
+/* ============ OTRAS SENSACIONES ============ */
+const tabs = $('#tabs'), estante = $('#estante'), letra = $('#letra-cat');
+function categoria(i){
+  const c = CFG.categorias[i];
+  [...tabs.children].forEach((t, k) => t.setAttribute('aria-selected', k === i));
+  if (c.letra) { letra.src = c.letra; letra.alt = c.nombre; letra.style.display = ''; } else letra.style.display = 'none';
+  estante.innerHTML = c.items.map(it => `
+    <article class="prod anim-in" style="--fc:${c.fc}">
+      <div class="foto"><img src="${it.img}" alt="${it.n}" loading="lazy"></div>
+      <h4>${it.n}</h4><p class="aroma">${it.a}</p><p>${it.d}</p>
+      <div class="pie"><span class="precio">${pesos(it.p)}</span>
+        <a class="pedir" href="${wa(`Hola Stimura 👋 Quiero ${it.n} (${it.a}).`)}" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir</a></div>
+    </article>`).join('');
+  estante.scrollTo({ left:0 });
+}
+CFG.categorias.forEach((c, i) => {
+  const t = document.createElement('button');
+  t.type = 'button'; t.className = 'tab'; t.role = 'tab'; t.textContent = c.nombre;
+  t.onclick = () => categoria(i); tabs.appendChild(t);
+});
+categoria(0);
+
+/* ============ APARICIONES Y BARRA FIJA ============ */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('si'); io.unobserve(e.target); } }), { threshold:.15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+const barraWa = $('#barra-wa');
+new IntersectionObserver(([e]) => barraWa.classList.toggle('ver', !e.isIntersecting), { threshold:0 }).observe($('.enlaces'));
+
+/* ============ 3D: se carga solo cuando la colección se acerca ============ */
+const esc3 = $('#escenario');
+new IntersectionObserver(([e], obs) => {
+  if (!e.isIntersecting) return; obs.disconnect();
+  import('./caja3d.js?v=' + VER).then(m => m.iniciar(esc3, CFG, () => ({ v: CFG.velas[actual] }), reduce))
+    .then(api => { if (api) { window.Escena3D = api; esc3.classList.add('con3d'); } })
+    .catch(err => console.warn('3D no disponible, se queda la foto', err));
+}, { rootMargin:'600px 0px' }).observe(esc3);
+esc3.addEventListener('pointerdown', () => { $('#pista').classList.add('oculta'); }, { once:true });
+</script>
+</body>
+</html>
