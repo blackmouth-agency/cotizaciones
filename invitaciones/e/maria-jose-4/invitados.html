@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lista de invitados · fiesta bajo el mar</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--mar:#0b5a6e;--turq:#2ec4c0;--lila:#b79cf0;--lila-o:#7d5bd0;--rosa:#ffd3e2;--perla:#fff8fc;--tinta:#0d3a47}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Fredoka,system-ui,sans-serif;color:var(--tinta);background:linear-gradient(180deg,#0b5a6e,#1ea6b0 40%,#fdeef4 80%) fixed;min-height:100vh;padding:28px 16px 60px}
+.caja{max-width:640px;margin:0 auto}
+h1{font-family:Pacifico,cursive;font-weight:400;color:#fff;font-size:2.1rem;text-align:center;text-shadow:0 3px 0 rgba(125,91,208,.5)}
+.intro{color:#e3fbf8;text-align:center;margin-top:6px;line-height:1.5}
+.tarjeta{background:#fff;border-radius:24px;padding:20px;margin-top:20px;box-shadow:0 18px 40px -18px rgba(4,40,55,.55)}
+label{font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lila-o)}
+textarea,input{width:100%;margin-top:6px;font:inherit;font-size:1rem;color:var(--tinta);padding:12px 14px;border-radius:14px;border:2px solid #e5dcf7;background:#fbf8ff;outline:none}
+textarea{min-height:170px;resize:vertical;line-height:1.5}
+textarea:focus,input:focus{border-color:var(--lila)}
+.ayuda{font-size:.88rem;color:#55707a;margin-top:6px;line-height:1.45}
+.fila{display:grid;grid-template-columns:1fr;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 18px;border-radius:99px;font:inherit;font-weight:600;border:0;cursor:pointer;text-decoration:none}
+.coral{background:linear-gradient(135deg,#ff9bb5,#ff7aa0);color:#fff}
+.lila{background:linear-gradient(135deg,#9d7ff0,#7d5bd0);color:#fff}
+.claro{background:#f2ecff;color:var(--lila-o)}
+.verde{background:#25d366;color:#fff}
+.lista{margin-top:16px;display:grid;gap:10px}
+.inv{border:2px solid #efe7ff;border-radius:18px;padding:12px 14px;display:grid;gap:8px}
+.inv b{font-size:1.05rem}
+.inv .c{font-size:.88rem;color:#55707a}
+.inv code{font-size:.78rem;word-break:break-all;color:#55707a;background:#f7f4ff;padding:6px 8px;border-radius:10px}
+.inv .acc{display:flex;flex-wrap:wrap;gap:8px}
+.inv .acc .btn{min-height:38px;padding:8px 14px;font-size:.9rem}
+.total{margin-top:12px;font-weight:600;color:var(--lila-o)}
+.hoja{margin-top:14px;font-size:.92rem;line-height:1.5;color:#55707a}
+</style>
+</head>
+<body>
+<div class="caja">
+  <h1>Lista de invitados</h1>
+  <p class="intro">Escribe un invitado por línea, con coma y la cantidad de lugares.<br>Cada uno recibe su propio link con su nombre y sus cupos.</p>
+
+  <div class="tarjeta fila">
+    <div>
+      <label for="lista">Invitados</label>
+      <textarea id="lista" placeholder="Familia Gómez, 4&#10;Tía Marcela, 2&#10;Sofía y sus papás, 3"></textarea>
+      <p class="ayuda">Sin número, queda en 2 lugares. Los links se guardan en este navegador.</p>
+    </div>
+    <div>
+      <label for="base">Link de la invitación</label>
+      <input id="base" type="text">
+      <p class="ayuda">Ya viene lleno con el link de esta invitación; solo cámbialo si la publicaron en otra dirección.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn coral" id="generar">✨ Crear los links</button>
+      <button class="btn claro" id="copiarTodo">Copiar todos</button>
+    </div>
+  </div>
+
+  <div class="tarjeta" id="res" hidden>
+    <div class="lista" id="items"></div>
+    <p class="total" id="total"></p>
+    <p class="hoja">Las respuestas llegan a la hoja «Invitaciones 2026», pestaña <b>sirenita-4-anos</b>, y quien confirma también puede avisar por WhatsApp.</p>
+  </div>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const base0 = location.href.replace(/invitados\.html.*$/, '');
+$('#base').value = base0;
+try { $('#lista').value = localStorage.getItem('sirenita-lista') || ''; } catch(e){}
+function filas(){
+  return $('#lista').value.split('\n').map(l => l.trim()).filter(Boolean).map(l => {
+    const m = l.match(/^(.*?)[,;\t]\s*(\d{1,2})\s*$/);
+    return m ? { n: m[1].trim(), c: +m[2] } : { n: l, c: 2 };
+  });
+}
+function link(f){ const b = $('#base').value.trim(); return b + (b.includes('?') ? '&' : '?') + 'i=' + encodeURIComponent(f.n) + '&c=' + f.c; }
+function mensaje(f){ return `¡Hola, ${f.n}! 🧜‍♀️ Te invito a mi fiesta bajo el mar. Abre tu invitación aquí: ${link(f)}`; }
+function generar(){
+  try { localStorage.setItem('sirenita-lista', $('#lista').value); } catch(e){}
+  const fs = filas(); const box = $('#items'); box.innerHTML = '';
+  fs.forEach(f => {
+    const d = document.createElement('div'); d.className = 'inv';
+    d.innerHTML = `<div><b></b> <span class="c"></span></div><code></code><div class="acc"><button class="btn claro">Copiar link</button><a class="btn verde" rel="noopener">Enviar por WhatsApp</a><a class="btn lila" rel="noopener">Ver</a></div>`;
+    d.querySelector('b').textContent = f.n; d.querySelector('.c').textContent = `· ${f.c} ${f.c === 1 ? 'lugar' : 'lugares'}`;
+    d.querySelector('code').textContent = link(f);
+    d.querySelector('button').onclick = e => { navigator.clipboard.writeText(link(f)); e.target.textContent = '¡Copiado!'; setTimeout(() => e.target.textContent = 'Copiar link', 1500); };
+    const a = d.querySelectorAll('a'); a[0].href = 'https://wa.me/?text=' + encodeURIComponent(mensaje(f)); a[1].href = link(f);
+    box.appendChild(d);
+  });
+  $('#total').textContent = `${fs.length} invitaciones · ${fs.reduce((s,f) => s + f.c, 0)} lugares en total`;
+  $('#res').hidden = !fs.length;
+}
+$('#generar').onclick = generar;
+$('#copiarTodo').onclick = () => { const t = filas().map(f => `${f.n}: ${link(f)}`).join('\n'); navigator.clipboard.writeText(t); $('#copiarTodo').textContent = '¡Copiados!'; setTimeout(() => $('#copiarTodo').textContent = 'Copiar todos', 1500); };
+if ($('#lista').value) generar();
+</script>
+</body>
+</html>
