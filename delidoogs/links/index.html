@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delidoogs · Comida real para tu peludo</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="icono.png">
+<meta name="description" content="Dieta BARF 100 % natural para perros y gatos en Cali. Mira el menú, descubre cuál le va a tu peludo y pide por WhatsApp. Sedes Granada y Popular.">
+<meta name="theme-color" content="#FDE803">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Delidoogs">
+<meta property="og:title" content="Delidoogs · Comida real para tu peludo">
+<meta property="og:description" content="Dieta BARF 100 % natural para perros y gatos en Cali. Pide por WhatsApp o ven a Granada o Popular.">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/delidoogs/links/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo de Delidoogs con un perro feliz y el texto Comida real para tu peludo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/logo-placa.webp">
+<link rel="preload" as="image" href="img/logo-perro.webp">
+<style>
+:root{
+  --am:#FDE803; --na:#F4A11A; --cf:#351712; --cf2:#1f0d0a; --bl:#FFFFFF; --cr:#FFF9D6; --rj:#E2262B;
+  --t:'Baloo 2',system-ui,sans-serif; --s:'Montserrat',system-ui,sans-serif;
+  --resorte:cubic-bezier(.34,1.56,.64,1); --suave:cubic-bezier(.22,1,.36,1);
+  --sombra:0 5px 0 var(--cf); --sombra-s:0 3px 0 var(--cf);
+  --borde:3px solid var(--cf);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:var(--na);scroll-behavior:smooth}
+body{font:500 16px/1.45 var(--s);color:var(--cf);-webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100vh;
+  background:linear-gradient(180deg,var(--am) 0 52%,var(--na) 52% 100%) fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.13;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23351712' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M18 30c-4-4-10 0-7 5 2 3 6 2 7 0l14 14c-2 1-3 5 0 7 5 3 9-3 5-7 2 1 6 0 6-3 0-5-6-6-8-3L21 29c2-1 3-4 1-6-3-3-8 0-4 7z'/%3E%3C/g%3E%3Cg fill='%23351712'%3E%3Cellipse cx='86' cy='88' rx='9' ry='7'/%3E%3Ccircle cx='75' cy='76' r='4'/%3E%3Ccircle cx='83' cy='71' r='4'/%3E%3Ccircle cx='92' cy='71' r='4'/%3E%3Ccircle cx='99' cy='77' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:120px 120px}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.app{position:relative;z-index:1;max-width:480px;margin:0 auto;padding-bottom:28px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ------- héroe ------- */
+.heroe{position:relative;padding:calc(18px + env(safe-area-inset-top)) 16px 26px;text-align:center;overflow:visible}
+.estado{display:inline-flex;align-items:center;gap:8px;background:var(--bl);border:var(--borde);border-radius:99px;
+  padding:6px 14px 6px 10px;font:700 13px/1 var(--s);box-shadow:var(--sombra-s);opacity:0;transform:translateY(-14px);
+  animation:cae .6s var(--resorte) 1.9s forwards}
+.estado i{width:10px;height:10px;border-radius:50%;background:#20B455;box-shadow:0 0 0 0 rgba(32,180,85,.6);animation:latido 1.6s infinite}
+.estado.cerrado i{background:var(--rj);animation:none}
+@keyframes latido{70%{box-shadow:0 0 0 9px rgba(32,180,85,0)}100%{box-shadow:0 0 0 0 rgba(32,180,85,0)}}
+@keyframes cae{to{opacity:1;transform:none}}
+
+.logo-wrap{position:relative;width:min(86vw,370px);margin:14px auto 0;aspect-ratio:722/674}
+.logo-wrap>*{position:absolute}
+.lg-placa{left:0;top:0;width:100%;transform:scale(0);animation:pop .7s var(--resorte) .15s forwards;filter:drop-shadow(0 7px 0 rgba(53,23,18,.9))}
+.lg-circ{left:7.9%;top:0;width:85.6%;transform:scale(0) rotate(-40deg);animation:pop2 .8s var(--resorte) .4s forwards}
+.lg-perro-caja{left:19.94%;top:19.14%;width:60.8%;height:52.52%;overflow:hidden;border-radius:0 0 12% 12%}
+.lg-perro{width:100%;transform:translateY(105%);animation:asoma .9s var(--resorte) .85s forwards;transform-origin:50% 90%;cursor:pointer}
+.lg-letras{left:7.48%;top:71.36%;width:85.7%;opacity:0;transform:translateY(-40px) scale(1.4);animation:golpe .55s var(--resorte) 1.3s forwards}
+.lg-lema{left:13.85%;top:90.06%;width:73%;clip-path:inset(0 100% 0 0);animation:escribe .8s steps(22) 1.65s forwards}
+@keyframes pop{to{transform:scale(1)}}
+@keyframes pop2{to{transform:scale(1) rotate(0)}}
+@keyframes asoma{to{transform:translateY(0)}}
+@keyframes golpe{to{opacity:1;transform:none}}
+@keyframes escribe{to{clip-path:inset(0 0 0 0)}}
+.lg-perro.guau{animation:guau .5s var(--resorte)}
+@keyframes guau{0%{transform:scale(1)}25%{transform:scale(1.12,.86) rotate(-4deg)}55%{transform:scale(.94,1.1) rotate(3deg)}100%{transform:none}}
+.burbuja{position:absolute;left:68%;top:4%;background:var(--bl);border:var(--borde);border-radius:18px;padding:2px 12px;
+  font:800 24px/1.2 var(--t);box-shadow:var(--sombra-s);transform:scale(0) rotate(8deg);pointer-events:none;z-index:4}
+.burbuja::after{content:"";position:absolute;left:12px;bottom:-11px;width:16px;height:16px;background:var(--bl);border-right:var(--borde);border-bottom:var(--borde);transform:rotate(35deg) skew(10deg)}
+.burbuja.ver{animation:burbuja 1s var(--resorte) forwards}
+@keyframes burbuja{0%{transform:scale(0) rotate(8deg)}20%{transform:scale(1.1) rotate(8deg)}35%{transform:scale(1) rotate(6deg)}80%{transform:scale(1) rotate(6deg);opacity:1}100%{transform:scale(.8) rotate(6deg);opacity:0}}
+.toca{position:absolute;left:-3%;top:27%;transform:rotate(-8deg);font:700 12px/1 var(--s);background:var(--cf);color:var(--am);
+  padding:6px 10px;border-radius:99px;white-space:nowrap;opacity:0;animation:aparece .5s var(--resorte) 2.6s forwards,flota 2.4s ease-in-out 3.2s infinite;z-index:3}
+.toca b{color:var(--bl)}
+@keyframes flota{0%,100%{transform:rotate(-8deg)}50%{transform:translateY(-5px) rotate(-8deg)}}
+.toca::after{content:"";position:absolute;right:10px;bottom:-6px;width:12px;height:12px;background:var(--cf);transform:rotate(45deg)}
+
+.titular{margin-top:22px;font:800 clamp(40px,12vw,56px)/.9 var(--t);letter-spacing:-.01em;color:var(--cf)}
+.titular span{display:inline-block;opacity:0;transform:translateY(30px) rotate(-4deg);animation:cae .7s var(--resorte) forwards}
+.titular .real{position:relative;color:var(--bl);-webkit-text-stroke:0;padding:0 .12em;margin-top:2px}
+.titular .real::before{content:"";position:absolute;inset:.08em 0 .02em;background:var(--rj);border:var(--borde);border-radius:14px;z-index:-1;transform:rotate(-2.5deg);box-shadow:var(--sombra)}
+.bajada{margin:14px auto 0;max-width:330px;font:600 15px/1.4 var(--s);opacity:0;animation:cae .6s var(--suave) 2.5s forwards}
+.bajada b{background:linear-gradient(transparent 58%,rgba(244,161,26,.75) 58%)}
+
+/* stickers que flotan */
+.flotante{position:absolute;z-index:0;pointer-events:none;width:52px;filter:drop-shadow(0 3px 0 rgba(53,23,18,.85));opacity:0;animation:aparece .6s var(--resorte) forwards}
+.flotante svg{width:100%;height:auto;animation:balanceo 4s ease-in-out infinite}
+@keyframes aparece{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes balanceo{50%{transform:translateY(-8px) rotate(8deg)}}
+
+/* sellos de confianza */
+.sellos{display:flex;justify-content:center;gap:8px;margin:18px 0 0;flex-wrap:wrap}
+.sello{display:flex;align-items:center;gap:6px;background:var(--cf);color:var(--bl);font:700 12px/1.1 var(--s);padding:7px 11px 7px 8px;border-radius:99px;opacity:0;animation:cae .5s var(--resorte) forwards}
+.sello svg{width:18px;height:18px;flex:none}
+
+/* ------- botones ------- */
+.enlaces{display:grid;gap:13px;padding:6px 16px 8px}
+.btn{position:relative;display:flex;align-items:center;gap:13px;width:100%;min-height:72px;padding:10px 16px 10px 10px;background:var(--bl);
+  border:var(--borde);border-radius:20px;box-shadow:var(--sombra);text-align:left;transition:transform .15s var(--suave),box-shadow .15s var(--suave);overflow:hidden}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--cf)}
+.btn-ico{flex:none;width:52px;height:52px;border-radius:15px;display:grid;place-items:center;border:2.5px solid var(--cf);background:var(--am)}
+.btn-ico svg{width:28px;height:28px}
+.btn-txt{flex:1;min-width:0}
+.btn-txt b{display:block;font:800 19px/1.05 var(--t)}
+.btn-txt small{display:block;font:600 12.5px/1.3 var(--s);opacity:.78;margin-top:2px}
+.btn .flecha{flex:none;width:30px;height:30px;border-radius:50%;background:var(--cf);display:grid;place-items:center;transition:transform .3s var(--resorte)}
+.btn .flecha svg{width:14px;height:14px}
+.btn:hover .flecha{transform:translateX(3px) rotate(-12deg)}
+.btn.wa{background:#25D366;min-height:88px}
+.btn.wa .btn-ico{background:var(--bl);width:60px;height:60px}
+.btn.wa b{font-size:22px;white-space:nowrap}
+.btn.wa small{opacity:.9}
+.btn.wa::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.55) 45%,transparent 60%);transform:translateX(-120%);animation:brillo 3.6s ease-in-out 3s infinite;pointer-events:none}
+@keyframes brillo{0%,60%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+.escribiendo{display:inline-flex;gap:3px;margin-left:6px;vertical-align:middle}
+.escribiendo i{width:5px;height:5px;border-radius:50%;background:var(--cf);animation:punto 1.2s infinite}
+.escribiendo i:nth-child(2){animation-delay:.15s}.escribiendo i:nth-child(3){animation-delay:.3s}
+@keyframes punto{0%,60%,100%{transform:none;opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+.par{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.par .btn{flex-direction:column;align-items:flex-start;gap:9px;min-height:118px;padding:12px}
+.par .btn .flecha{position:absolute;right:10px;top:10px;width:26px;height:26px}
+.btn.ig .btn-ico{background:linear-gradient(45deg,#FEDA75,#FA7E1E 30%,#D62976 60%,#962FBF 85%,#4F5BD5)}
+.btn.fb .btn-ico{background:#1877F2}
+.btn.na{background:var(--am)}
+.btn.na .btn-ico{background:var(--bl)}
+
+/* ------- secciones ------- */
+.sec{position:relative;margin:30px 12px 0;padding:24px 16px 22px;border-radius:30px;border:var(--borde);box-shadow:0 7px 0 var(--cf);background:var(--bl)}
+.sec h2{font:800 clamp(30px,9vw,40px)/.95 var(--t);letter-spacing:-.01em}
+.sec .ante{display:inline-block;font:800 12px/1 var(--s);letter-spacing:.14em;text-transform:uppercase;background:var(--cf);color:var(--am);padding:6px 10px;border-radius:99px;margin-bottom:10px}
+.sec p.intro{margin-top:8px;font:600 14.5px/1.45 var(--s)}
+[data-rv]{opacity:0;transform:translateY(34px) scale(.97);transition:opacity .6s var(--suave),transform .7s var(--resorte)}
+[data-rv].in{opacity:1;transform:none}
+
+/* promo */
+.promo{background:var(--rj);color:var(--bl);overflow:hidden}
+.promo h2{color:var(--bl);text-shadow:0 3px 0 var(--cf)}
+.promo .ante{background:var(--am);color:var(--cf)}
+.cuenta{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:16px 0 4px}
+.cuenta div{background:var(--bl);color:var(--cf);border:var(--borde);border-radius:14px;text-align:center;padding:6px 0 5px;box-shadow:var(--sombra-s)}
+.cuenta b{display:block;font:800 30px/1 var(--t);font-variant-numeric:tabular-nums}
+.cuenta small{font:700 10.5px/1 var(--s);text-transform:uppercase;letter-spacing:.06em}
+.cuando{font:700 13.5px/1.3 var(--s);margin-top:10px}
+.calc{margin-top:16px;background:var(--cr);color:var(--cf);border:var(--borde);border-radius:20px;padding:14px 14px 16px}
+.calc label{font:800 15px/1.2 var(--t);display:flex;justify-content:space-between;align-items:baseline}
+.calc output{font:800 26px/1 var(--t);color:var(--rj)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:16px;margin:14px 0 6px;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:14px;border-radius:99px;border:2.5px solid var(--cf);background:linear-gradient(90deg,var(--na) var(--p,40%),var(--bl) var(--p,40%))}
+input[type=range]::-moz-range-track{height:10px;border-radius:99px;border:2.5px solid var(--cf);background:linear-gradient(90deg,var(--na) var(--p,40%),var(--bl) var(--p,40%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;margin-top:-12px;border-radius:50%;background:var(--am);border:3px solid var(--cf);box-shadow:0 3px 0 var(--cf)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--am);border:3px solid var(--cf)}
+.premio{display:flex;align-items:center;gap:12px;margin-top:10px;min-height:96px}
+.premio .p-img{flex:none;width:84px;height:84px;border-radius:18px;border:2.5px solid var(--cf);background:var(--am);display:grid;place-items:center;overflow:hidden;position:relative}
+.premio .p-img img{width:100%;height:100%;object-fit:cover}
+.premio .p-img .pct{font:800 34px/1 var(--t)}
+.premio b{display:block;font:800 21px/1 var(--t)}
+.premio small{display:block;font:600 12.5px/1.35 var(--s);margin-top:3px}
+.premio.cambia .p-img{animation:guau .5s var(--resorte)}
+.nota{font:600 11.5px/1.4 var(--s);opacity:.85;margin-top:10px}
+
+/* menú */
+.menu{background:var(--am)}
+.filtros{display:flex;gap:8px;margin:14px 0 4px}
+.chip{border:2.5px solid var(--cf);border-radius:99px;padding:7px 14px;font:700 13.5px/1 var(--s);background:var(--bl);box-shadow:var(--sombra-s);transition:background .2s,transform .2s var(--resorte)}
+.chip[aria-pressed=true]{background:var(--cf);color:var(--am)}
+.chip:active{transform:translateY(2px);box-shadow:none}
+.tam{display:flex;margin-left:auto;border:2.5px solid var(--cf);border-radius:99px;overflow:hidden;background:var(--bl)}
+.tam button{padding:7px 10px;font:700 12.5px/1 var(--s)}
+.tam button[aria-pressed=true]{background:var(--na)}
+.carril{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 4px 22px;margin:0 -16px;padding-inline:16px;scrollbar-width:none;overscroll-behavior-x:contain}
+.carril::-webkit-scrollbar{display:none}
+.carta{flex:none;width:76%;max-width:300px;scroll-snap-align:center;perspective:1100px;height:450px;transition:opacity .3s,transform .4s var(--resorte)}
+.carta.fuera{display:none}
+.carta-in{position:relative;width:100%;height:100%;transition:transform .7s var(--resorte);transform-style:preserve-3d}
+.carta.vuelta .carta-in{transform:rotateY(180deg)}
+.cara{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:var(--borde);border-radius:24px;box-shadow:var(--sombra);overflow:hidden;background:var(--c,#fff);display:flex;flex-direction:column}
+.cara.atras{transform:rotateY(180deg);background:var(--bl);padding:16px}
+.cara .foto{position:relative;flex:1;min-height:0;background:radial-gradient(circle at 50% 60%,rgba(255,255,255,.75),transparent 62%)}
+.cara .foto img{position:absolute;left:26px;top:44px;width:calc(100% - 52px);height:calc(100% - 54px);max-width:none;object-fit:contain;filter:drop-shadow(0 6px 0 rgba(53,23,18,.35));transform:rotate(var(--r,-3deg));transition:transform .5s var(--resorte)}
+.carta:active .foto img{transform:rotate(0) scale(1.04)}
+.etq{position:absolute;left:12px;top:12px;background:var(--cf);color:var(--bl);font:700 11px/1 var(--s);padding:5px 9px;border-radius:99px;letter-spacing:.04em}
+.cara .pie{background:var(--bl);border-top:var(--borde);padding:11px 13px 12px}
+.cara .pie h3{font:800 25px/1 var(--t)}
+.cara .pie .precio{display:flex;align-items:baseline;gap:6px;margin-top:3px;font:600 12.5px/1 var(--s)}
+.cara .pie .precio b{font:800 22px/1 var(--t);color:var(--rj)}
+.beneficios{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.beneficios span{font:700 11px/1.15 var(--s);background:var(--cr);border:1.5px solid var(--cf);border-radius:8px;padding:4px 6px}
+.girar{position:absolute;right:10px;top:10px;z-index:2;width:38px;height:38px;border-radius:50%;background:var(--am);border:2.5px solid var(--cf);display:grid;place-items:center;box-shadow:0 2px 0 var(--cf)}
+.girar svg{width:18px;height:18px}
+.atras h3{font:800 24px/1 var(--t)}
+.atras h4{font:800 11.5px/1 var(--s);letter-spacing:.12em;text-transform:uppercase;margin:13px 0 7px;opacity:.7}
+.atras h3{padding-right:44px}
+.ingr{list-style:none;display:flex;flex-wrap:wrap;gap:5px}
+.ingr li{display:flex;align-items:center;gap:5px;font:700 12px/1.1 var(--s);padding:4px 8px 4px 5px;border:1.5px solid var(--cf);border-radius:99px;background:var(--cr);opacity:0;transform:translateX(-14px)}
+.sirve{list-style:none;display:grid;gap:5px}
+.sirve li{font:700 13.5px/1.25 var(--s);padding-left:22px;position:relative;opacity:0}
+.sirve li::before{content:"✓";position:absolute;left:0;top:0;width:17px;height:17px;border-radius:50%;background:var(--c);border:1.5px solid var(--cf);font:800 11px/15px var(--s);text-align:center}
+.carta.vuelta .sirve li{animation:cae .45s var(--resorte) forwards}
+.carta.vuelta .ingr li{animation:cae .45s var(--resorte) forwards}
+.ingr li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--c);border:2px solid var(--cf)}
+.atras .pedir{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;border:var(--borde);border-radius:16px;padding:12px;font:800 17px/1 var(--t);box-shadow:var(--sombra-s)}
+.atras .pedir svg{width:22px;height:22px}
+.atras .dosis{margin-top:12px;font:600 13px/1.4 var(--s);background:var(--cr);border-radius:12px;padding:8px 10px;border:1.5px dashed var(--cf)}
+.puntos{display:flex;justify-content:center;gap:6px}
+.puntos i{width:8px;height:8px;border-radius:99px;background:var(--cf);opacity:.25;transition:all .3s var(--resorte)}
+.puntos i.on{opacity:1;width:24px}
+.desliza{display:flex;align-items:center;justify-content:center;gap:6px;font:700 12px/1 var(--s);margin-top:8px;opacity:.75}
+.desliza svg{width:22px;animation:mano 1.6s ease-in-out infinite}
+@keyframes mano{50%{transform:translateX(-10px)}}
+
+/* qué es BARF */
+.barf{background:var(--cf);color:var(--bl);overflow:hidden}
+.barf h2{color:var(--am)}
+.barf .ante{background:var(--am);color:var(--cf)}
+.plato-zona{position:relative;width:100%;aspect-ratio:1;margin:12px auto 0;max-width:360px}
+.plato{position:absolute;inset:13%;border-radius:50%;overflow:hidden;border:4px solid var(--am);box-shadow:0 0 0 6px var(--cf),0 0 0 9px var(--na)}
+.plato img{width:100%;height:100%;object-fit:cover;transform:rotate(var(--giro,0deg)) scale(1.08);transition:transform .2s linear}
+.ingrediente{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(var(--a)) translateY(calc(-1 * var(--rad))) rotate(calc(-1 * var(--a))) scale(0);
+  background:var(--bl);color:var(--cf);border:2.5px solid var(--cf);border-radius:99px;padding:6px 11px;font:800 14px/1 var(--t);white-space:nowrap;box-shadow:0 3px 0 var(--am);transition:transform .7s var(--resorte)}
+.plato-zona.in .ingrediente{transform:translate(-50%,-50%) rotate(var(--a)) translateY(calc(-1 * var(--rad))) rotate(calc(-1 * var(--a))) scale(1)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.vs div{border-radius:18px;padding:12px;font:600 13px/1.35 var(--s)}
+.vs .no{background:rgba(255,255,255,.08);border:2px dashed rgba(255,255,255,.4)}
+.vs .si{background:var(--am);color:var(--cf);border:2.5px solid var(--am)}
+.vs b{display:block;font:800 19px/1.05 var(--t);margin-bottom:6px}
+.vs ul{list-style:none;display:grid;gap:4px}
+.vs .no li::before{content:"✕ ";color:#ff7d7d;font-weight:800}
+.vs .si li::before{content:"✓ ";color:#14843f;font-weight:800}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.duo figure{position:relative;border-radius:18px;overflow:hidden;border:3px solid var(--am)}
+.duo figure:nth-child(1){transform:rotate(-2deg)}.duo figure:nth-child(2){transform:rotate(2deg);margin-top:18px}
+.duo figure.in:nth-child(1){transform:rotate(-2deg)}.duo figure.in:nth-child(2){transform:rotate(2deg)}
+.duo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.duo figcaption{position:absolute;left:8px;bottom:8px;background:var(--am);color:var(--cf);font:800 15px/1 var(--t);padding:5px 9px;border-radius:99px;border:2px solid var(--cf)}
+
+/* asesor */
+.asesor{background:var(--bl)}
+.paso{margin-top:16px}
+.paso>b{display:flex;align-items:center;gap:8px;font:800 17px/1.1 var(--t)}
+.paso>b i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--cf);color:var(--am);font:800 14px/26px var(--t);text-align:center;font-style:normal}
+.opciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+.opciones .chip{font-size:13px}
+.nombre{width:100%;margin-top:9px;border:var(--borde);border-radius:14px;padding:12px 14px;font:700 16px/1 var(--s);color:var(--cf);background:var(--cr);outline:none}
+.nombre:focus{background:var(--bl);box-shadow:0 0 0 4px var(--am)}
+.escena{position:relative;height:250px;margin:16px -16px 0;background:linear-gradient(180deg,var(--am) 0 72%,var(--na) 72%);border-block:var(--borde);overflow:hidden}
+.escena::after{content:"";position:absolute;left:0;right:0;top:72%;height:3px;background:var(--cf)}
+.mascota{position:absolute;left:50%;bottom:20%;height:var(--h,150px);transform:translateX(-50%);transform-origin:50% 100%;transition:height .6s var(--resorte);z-index:1;cursor:pointer}
+.mascota img{height:100%;width:auto;max-width:none;filter:drop-shadow(0 4px 0 rgba(53,23,18,.35))}
+.mascota.salta{animation:salta .55s var(--resorte)}
+@keyframes salta{0%{transform:translateX(-50%) scale(1,1)}30%{transform:translateX(-50%) scale(1.08,.9)}60%{transform:translateX(-50%) translateY(-22px) scale(.96,1.06)}100%{transform:translateX(-50%)}}
+.sombra-m{position:absolute;left:50%;bottom:17%;width:calc(var(--h,150px) * .62);height:18px;border-radius:50%;background:rgba(53,23,18,.25);transform:translateX(-50%);transition:width .6s var(--resorte)}
+.placa-nombre,.regla{z-index:2}
+.placa-nombre{position:absolute;left:12px;top:12px;background:var(--bl);border:2.5px solid var(--cf);border-radius:12px;padding:5px 10px;font:800 18px/1 var(--t);box-shadow:var(--sombra-s);transform:rotate(-4deg);max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.regla{position:absolute;right:12px;top:12px;background:var(--cf);color:var(--am);border-radius:10px;padding:5px 9px;font:700 12px/1 var(--s)}
+.resultado{margin-top:16px;border:var(--borde);border-radius:22px;background:var(--c,var(--am));box-shadow:var(--sombra);overflow:hidden;transform-origin:50% 0}
+.resultado.nuevo{animation:resul .6s var(--resorte)}
+@keyframes resul{from{transform:scale(.9) rotate(-1.5deg);opacity:.3}to{transform:none;opacity:1}}
+.res-cab{display:flex;align-items:center;gap:12px;padding:14px}
+.res-cab img{flex:none;width:86px;height:86px;object-fit:contain;filter:drop-shadow(0 3px 0 rgba(53,23,18,.3))}
+.res-cab small{display:block;font:700 12px/1.2 var(--s)}
+.res-cab b{display:block;font:800 27px/1 var(--t);margin-top:2px}
+.res-cuerpo{background:var(--bl);border-top:var(--borde);padding:12px 14px 14px;font:600 13.5px/1.45 var(--s)}
+.res-cuerpo ul{margin:6px 0 0 18px}
+.res-cuerpo .btn{margin-top:12px;min-height:64px}
+
+/* sedes */
+.sedes{background:var(--na)}
+.sede{margin-top:14px;background:var(--bl);border:var(--borde);border-radius:22px;overflow:hidden;box-shadow:var(--sombra)}
+.sede .foto-s{position:relative;height:190px;overflow:hidden;border-bottom:var(--borde)}
+.sede .foto-s img{width:100%;height:118%;object-fit:cover;object-position:50% 30%;transform:translateY(var(--py,-14px))}
+.sede .foto-s.mapa{background:var(--am);display:grid;place-items:center}
+.calles{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:relative;filter:drop-shadow(0 4px 0 rgba(53,23,18,.4))}
+.sede .info{padding:12px 14px 14px}
+.sede h3{font:800 26px/1 var(--t)}
+.sede p{font:600 13.5px/1.4 var(--s);margin-top:4px}
+.sede .btn{margin-top:11px;min-height:60px}
+.pin{width:64px;animation:rebota 1.8s var(--resorte) infinite}
+@keyframes rebota{0%,100%{transform:translateY(0)}40%{transform:translateY(-14px)}}
+.horario{margin-top:16px;background:var(--bl);border:var(--borde);border-radius:22px;padding:14px;box-shadow:var(--sombra)}
+.horario h3{font:800 22px/1 var(--t);display:flex;align-items:center;gap:8px}
+.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:12px}
+.dias div{text-align:center;border:2px solid var(--cf);border-radius:10px;padding:6px 0;font:800 13px/1 var(--t);background:var(--cr)}
+.dias div small{display:block;font:600 9.5px/1.2 var(--s);margin-top:3px}
+.dias div.hoy{background:var(--am);transform:translateY(-4px);box-shadow:0 4px 0 var(--cf)}
+.horario p{font:700 13.5px/1.4 var(--s);margin-top:10px}
+
+/* pie */
+.pie-pag{margin:34px 12px 0;text-align:center;padding:4px 10px}
+.pie-pag img.mini{width:110px;margin:0 auto;filter:drop-shadow(0 5px 0 rgba(53,23,18,.9));animation:balanceo 5s ease-in-out infinite}
+.pie-pag h2{font:800 34px/.95 var(--t);margin-top:12px}
+.pie-pag p{font:600 14px/1.4 var(--s);margin-top:6px}
+.pie-pag .btn{margin-top:14px}
+.pie-pag .datos{margin-top:18px;font:600 12px/1.5 var(--s);opacity:.85}
+.pie-pag .datos a{text-decoration:underline}
+
+/* huellas al tocar */
+.huella{position:fixed;z-index:50;width:30px;height:30px;pointer-events:none;margin:-15px 0 0 -15px;animation:huella 1.1s var(--suave) forwards}
+@keyframes huella{0%{transform:scale(.2) rotate(var(--r));opacity:0}20%{transform:scale(1) rotate(var(--r));opacity:.9}100%{transform:scale(1) rotate(var(--r)) translateY(-10px);opacity:0}}
+.particula{position:absolute;z-index:5;pointer-events:none;width:26px;left:50%;top:45%}
+.aviso{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,120px);opacity:0;z-index:60;background:var(--cf);color:var(--am);font:700 14px/1 var(--s);padding:12px 18px;border-radius:99px;transition:transform .4s var(--resorte)}
+.aviso.ver{transform:translate(-50%,0);opacity:1}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  [data-rv]{opacity:1;transform:none}
+}
+@media (min-width:600px){
+  .app{padding-top:20px}
+}
+</style>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/delidoogs/links/">
+</head>
+<body>
+<div class="app">
+
+<!-- ===== HÉROE ===== -->
+<header class="heroe">
+  <div class="estado" id="estado" role="status"><i></i><span id="estado-txt">Abierto ahora</span></div>
+
+  <div class="logo-wrap" id="logo">
+    <img class="lg-placa" src="img/logo-placa.webp" alt="" width="722" height="674">
+    <img class="lg-circ" src="img/logo-circulo.webp" alt="" width="618" height="476">
+    <div class="lg-perro-caja"><img class="lg-perro" id="perro" src="img/logo-perro.webp" alt="" width="439" height="354"></div>
+    <img class="lg-letras" src="img/logo-letras.webp" alt="Delidoogs" width="619" height="119">
+    <img class="lg-lema" src="img/logo-lema.webp" alt="Delicias para tu peludo" width="527" height="34">
+    <div class="burbuja" id="burbuja">¡GUAU!</div>
+    <div class="toca" id="toca">Tócame 🐾 <b id="caricias"></b></div>
+  </div>
+
+  <h1 class="titular">
+    <span style="animation-delay:2.05s">Comida</span>
+    <span class="real" style="animation-delay:2.2s">real</span><br>
+    <span style="animation-delay:2.35s;font-size:.62em">para tu peludo</span>
+  </h1>
+  <p class="bajada">Dieta <b>BARF 100&nbsp;% natural</b> para perros y gatos en Cali. Carne, vísceras y vegetales de verdad.</p>
+
+  <div class="sellos">
+    <span class="sello" style="animation-delay:2.7s"><svg viewBox="0 0 24 24" fill="none" stroke="#FDE803" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Registro ICA</span>
+    <span class="sello" style="animation-delay:2.8s"><svg viewBox="0 0 24 24" fill="#FDE803"><ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="6" cy="10" r="2.2"/><circle cx="10" cy="6.5" r="2.2"/><circle cx="14" cy="6.5" r="2.2"/><circle cx="18" cy="10" r="2.2"/></svg>Perros y gatos</span>
+    <span class="sello" style="animation-delay:2.9s"><svg viewBox="0 0 24 24" fill="none" stroke="#FDE803" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2zM13 10h4l4 3v3h-8"/><circle cx="6" cy="17.5" r="2" fill="#351712"/><circle cx="17" cy="17.5" r="2" fill="#351712"/></svg>Domicilios</span>
+  </div>
+</header>
+
+<!-- ===== ENLACES ===== -->
+<nav class="enlaces" aria-label="Enlaces de Delidoogs">
+  <a class="btn wa" data-rv id="btn-wa" href="#" rel="noopener">
+    <span class="btn-ico"><svg viewBox="0 0 32 32"><path fill="#25D366" stroke="#351712" stroke-width="2" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3z"/><path fill="#fff" d="M11.6 9.6c.3-.6.6-.6.9-.6h.8c.2 0 .6 0 .8.6l1.1 2.7c.1.3 0 .6-.1.8l-.7.8c-.2.2-.3.5-.1.8.4.8 1 1.6 1.7 2.3.9.8 1.8 1.3 2.5 1.6.3.1.6.1.8-.1l.9-1.1c.2-.3.5-.3.8-.2l2.6 1.2c.3.2.5.3.5.5 0 .4 0 1.3-.6 2-.6.7-1.9 1.3-3.1 1.1-1.2-.2-3.3-.8-5.5-2.8-2.6-2.4-3.5-4.7-3.8-5.9-.3-1.2.2-2.5.5-3.1z"/></svg></span>
+    <span class="btn-txt"><b>Pide por WhatsApp<span class="escribiendo" aria-hidden="true"><i></i><i></i><i></i></span></b><small>Te asesoramos y te lo llevamos a casa</small></span>
+    <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M3 8h9M8 3.5 12.5 8 8 12.5"/></svg></span>
+  </a>
+
+  <a class="btn na" data-rv href="#menu">
+    <span class="btn-ico"><svg viewBox="0 0 32 32" fill="none" stroke="#351712" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h22a11 8 0 0 1-22 0z" fill="#F4A11A"/><path d="M9 13c1-3 3-4 5-3M15 12c1-3 4-4 6-2M21 13c.5-1.5 2-2 3-1"/><path d="M11 25h10"/></svg></span>
+    <span class="btn-txt"><b>Mira el menú BARF</b><small>Sabores, ingredientes y precios</small></span>
+    <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M8 3v9M3.5 8 8 12.5 12.5 8"/></svg></span>
+  </a>
+
+  <a class="btn" data-rv href="#asesor">
+    <span class="btn-ico"><svg viewBox="0 0 32 32" fill="none" stroke="#351712" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11" fill="#fff"/><path d="M12.5 12.5a3.5 3.5 0 1 1 5 3.2c-1 .5-1.5 1.2-1.5 2.3"/><circle cx="16" cy="22" r=".6" fill="#351712"/></svg></span>
+    <span class="btn-txt"><b>¿Cuál le va a mi peludo?</b><small>Descúbrelo en 3 toques</small></span>
+    <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M8 3v9M3.5 8 8 12.5 12.5 8"/></svg></span>
+  </a>
+
+  <div class="par">
+    <a class="btn ig" data-rv href="https://www.instagram.com/delidoogs/" rel="noopener">
+      <span class="btn-ico"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2.6"><rect x="6" y="6" width="20" height="20" rx="6"/><circle cx="16" cy="16" r="4.6"/><circle cx="21.8" cy="10.2" r="1.2" fill="#fff" stroke="none"/></svg></span>
+      <span class="btn-txt"><b>Instagram</b><small>@delidoogs</small></span>
+      <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></span>
+    </a>
+    <a class="btn fb" data-rv href="https://www.facebook.com/people/DeliDoogs/100087078451133/" rel="noopener">
+      <span class="btn-ico"><svg viewBox="0 0 32 32"><path fill="#fff" d="M18 27V17.5h3.2l.5-3.8H18v-2.4c0-1.1.3-1.8 1.9-1.8h2V6.2c-.3 0-1.5-.2-2.9-.2-2.9 0-4.8 1.8-4.8 5v2.7H11v3.8h3.2V27z"/></svg></span>
+      <span class="btn-txt"><b>Facebook</b><small>DeliDoogs</small></span>
+      <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></span>
+    </a>
+  </div>
+
+  <a class="btn" data-rv href="https://delidoogs.com/" rel="noopener">
+    <span class="btn-ico"><svg viewBox="0 0 32 32" fill="none" stroke="#351712" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h20l-2 13H8z" fill="#fff"/><path d="M11 12a5 5 0 0 1 10 0"/></svg></span>
+    <span class="btn-txt"><b>Tienda en línea</b><small>delidoogs.com</small></span>
+    <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></span>
+  </a>
+
+  <a class="btn" data-rv href="#sedes">
+    <span class="btn-ico"><svg viewBox="0 0 32 32" fill="none" stroke="#351712" stroke-width="2.4" stroke-linejoin="round"><path d="M16 28s9-8.2 9-15a9 9 0 0 0-18 0c0 6.8 9 15 9 15z" fill="#E2262B"/><circle cx="16" cy="13" r="3.4" fill="#fff"/></svg></span>
+    <span class="btn-txt"><b>Visítanos</b><small>Granada y Popular · horarios</small></span>
+    <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M8 3v9M3.5 8 8 12.5 12.5 8"/></svg></span>
+  </a>
+</nav>
+
+<!-- ===== PROMO DOMINGOS ===== -->
+<section class="sec promo" id="promo" aria-labelledby="t-promo" data-rv hidden>
+  <span class="ante">Solo domingos de noviembre</span>
+  <h2 id="t-promo">Domingo de regalo</h2>
+  <div class="cuenta" id="cuenta" aria-live="off">
+    <div><b id="c-d">0</b><small>días</small></div>
+    <div><b id="c-h">0</b><small>horas</small></div>
+    <div><b id="c-m">0</b><small>min</small></div>
+    <div><b id="c-s">0</b><small>seg</small></div>
+  </div>
+  <p class="cuando" id="cuando">Próximo domingo</p>
+  <div class="calc">
+    <label for="monto">¿Cuánto vas a llevar? <output id="monto-out">$37.500</output></label>
+    <input type="range" id="monto" min="7500" max="97500" step="5000" value="37500">
+    <div class="premio" id="premio">
+      <div class="p-img" id="premio-img"><span class="pct">10%</span></div>
+      <div><b id="premio-t">10 % de descuento</b><small id="premio-s">En dietas y accesorios, por compras de menos de $40.000.</small></div>
+    </div>
+  </div>
+  <p class="nota">Válido solo los domingos de noviembre en nuestras tiendas.</p>
+</section>
+
+<!-- ===== MENÚ ===== -->
+<section class="sec menu" id="menu" aria-labelledby="t-menu" data-rv>
+  <span class="ante">El menú</span>
+  <h2 id="t-menu">Elige su sabor</h2>
+  <p class="intro">Toca cada empaque para ver qué lleva por dentro.</p>
+  <div class="filtros">
+    <button class="chip" aria-pressed="true" data-f="todo">Todo</button>
+    <button class="chip" aria-pressed="false" data-f="perro">Perro</button>
+    <button class="chip" aria-pressed="false" data-f="gato">Gato</button>
+  </div>
+  <div class="filtros" style="margin-top:8px">
+    <span style="font:700 12.5px/30px var(--s)">Presentación</span>
+    <div class="tam" role="group" aria-label="Presentación">
+      <button aria-pressed="true" data-t="0">300 g</button>
+      <button aria-pressed="false" data-t="1">500 g</button>
+    </div>
+  </div>
+  <div class="carril" id="carril"></div>
+  <div class="puntos" id="puntos"></div>
+  <p class="desliza"><svg viewBox="0 0 24 24" fill="none" stroke="#351712" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5l4 .6c1.3.2 2.2 1.4 2 2.7l-.8 4.7H9.6L6 13.6c-.6-.7-.4-1.7.4-2.1.6-.3 1.3-.2 1.8.3z"/></svg>Desliza para ver más</p>
+</section>
+
+<!-- ===== QUÉ ES BARF ===== -->
+<section class="sec barf" id="barf" aria-labelledby="t-barf" data-rv>
+  <span class="ante">¿Qué es BARF?</span>
+  <h2 id="t-barf">Lo que comería por naturaleza</h2>
+  <p class="intro">Comida cruda y natural: carne, vísceras y vegetales frescos, listos para servir. Se guarda congelada y dura hasta 3 meses.</p>
+  <div class="plato-zona" id="plato-zona">
+    <div class="plato"><img id="plato-img" src="img/plato.webp" alt="Plato de comida BARF con carne, pollo, zanahoria, cilantro y avena" loading="lazy" width="800" height="800"></div>
+  </div>
+  <div class="vs">
+    <div class="no"><b>Comida procesada</b><ul><li>Bolitas iguales todos los días</li><li>No sabes qué lleva</li></ul></div>
+    <div class="si"><b>Delidoogs</b><ul><li>Ingredientes que reconoces</li><li>Recetas por necesidad</li><li>Registro ICA</li></ul></div>
+  </div>
+  <div class="duo">
+    <figure data-rv><img src="img/perro-comiendo.webp" alt="Beagle comiendo dieta BARF" loading="lazy" width="640" height="800"><figcaption>Para perros</figcaption></figure>
+    <figure data-rv style="transition-delay:.12s"><img src="img/gato-comiendo.webp" alt="Gato comiendo dieta BARF" loading="lazy" width="640" height="800"><figcaption>y para gatos</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===== ASESOR ===== -->
+<section class="sec asesor" id="asesor" aria-labelledby="t-asesor" data-rv>
+  <span class="ante">En 3 toques</span>
+  <h2 id="t-asesor">¿Cuál le va a tu peludo?</h2>
+
+  <div class="paso"><b><i>1</i>¿Cómo se llama?</b>
+    <input class="nombre" id="nombre" type="text" maxlength="18" placeholder="Ej.: Lupe" autocomplete="off" aria-label="Nombre de tu mascota">
+  </div>
+  <div class="paso"><b><i>2</i>¿Quién es?</b>
+    <div class="opciones" id="op-especie">
+      <button class="chip" aria-pressed="false" data-v="pequeno">Perro pequeño</button>
+      <button class="chip" aria-pressed="true" data-v="mediano">Perro mediano</button>
+      <button class="chip" aria-pressed="false" data-v="grande">Perro grande</button>
+      <button class="chip" aria-pressed="false" data-v="gato">Gato</button>
+    </div>
+  </div>
+
+  <div class="escena" id="escena">
+    <div class="placa-nombre" id="placa-nombre">Tu peludo</div>
+    <div class="regla" id="regla">Perro mediano</div>
+    <div class="sombra-m"></div>
+    <div class="mascota" id="mascota"><img id="mascota-img" src="img/perro-mediano.webp" alt="" width="600" height="600"></div>
+  </div>
+
+  <div class="paso" id="paso-3"><b><i>3</i>¿Qué necesita?</b>
+    <div class="opciones" id="op-meta">
+      <button class="chip" aria-pressed="true" data-v="empezar">Empezar en BARF</button>
+      <button class="chip" aria-pressed="false" data-v="activo">Es muy activo</button>
+      <button class="chip" aria-pressed="false" data-v="piel">Piel, pelaje o alergias</button>
+      <button class="chip" aria-pressed="false" data-v="variedad">Variedad y energía</button>
+      <button class="chip" aria-pressed="false" data-v="fuerza">Fuerza y músculo</button>
+    </div>
+  </div>
+
+  <div class="resultado" id="resultado" aria-live="polite"></div>
+</section>
+
+<!-- ===== SEDES ===== -->
+<section class="sec sedes" id="sedes" aria-labelledby="t-sedes" data-rv>
+  <span class="ante">Visítanos</span>
+  <h2 id="t-sedes">Te esperamos con tu peludo</h2>
+  <p class="intro">Ven con tu perro o tu gato: lo conocemos y te recomendamos su dieta.</p>
+
+  <article class="sede">
+    <div class="foto-s" data-px><img src="img/fachada.webp" alt="Fachada amarilla de Delidoogs en Granada" loading="lazy" width="800" height="900"></div>
+    <div class="info">
+      <h3>Delidoogs Granada</h3>
+      <p>Av. 8 Norte # 18-02, local 101.<br>Frente a Farmatodo.</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Delidoogs%20Granada%20Cali" rel="noopener">
+        <span class="btn-ico"><svg viewBox="0 0 32 32" fill="none" stroke="#351712" stroke-width="2.4" stroke-linejoin="round"><path d="M16 28s9-8.2 9-15a9 9 0 0 0-18 0c0 6.8 9 15 9 15z" fill="#E2262B"/><circle cx="16" cy="13" r="3.4" fill="#fff"/></svg></span>
+        <span class="btn-txt"><b>Cómo llegar</b><small>Abrir en Google Maps</small></span>
+        <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></span>
+      </a>
+    </div>
+  </article>
+
+  <article class="sede">
+    <div class="foto-s mapa"><svg class="calles" viewBox="0 0 390 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#351712" stroke-linecap="round"><path d="M-10 60 C80 40 160 80 400 50" stroke-width="16" stroke="#fff"/><path d="M-10 140 C120 150 250 120 400 150" stroke-width="12" stroke="#fff"/><path d="M110 -10 C120 60 100 130 130 200" stroke-width="12" stroke="#fff"/><path d="M290 -10 C270 80 300 130 280 200" stroke-width="16" stroke="#fff"/><path d="M-10 60 C80 40 160 80 400 50 M-10 140 C120 150 250 120 400 150 M110 -10 C120 60 100 130 130 200 M290 -10 C270 80 300 130 280 200" stroke-width="2" stroke-dasharray="7 9" opacity=".35"/></g><g fill="#F4A11A" stroke="#351712" stroke-width="2"><rect x="20" y="78" width="70" height="44" rx="8"/><rect x="150" y="82" width="110" height="34" rx="8"/><rect x="310" y="72" width="70" height="56" rx="8"/><rect x="150" y="160" width="100" height="40" rx="8"/><rect x="150" y="-14" width="100" height="44" rx="8"/></g></svg><svg class="pin" viewBox="0 0 32 32" fill="none" stroke="#351712" stroke-width="2" stroke-linejoin="round"><path d="M16 30s10-9 10-16.5a10 10 0 0 0-20 0C6 21 16 30 16 30z" fill="#E2262B"/><circle cx="16" cy="13.5" r="4" fill="#fff"/></svg></div>
+    <div class="info">
+      <h3>Delidoogs Popular</h3>
+      <p>Búscanos en Google Maps como Delidoogs Popular.</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Delidoogs%20Popular%20Cali" rel="noopener">
+        <span class="btn-ico"><svg viewBox="0 0 32 32" fill="none" stroke="#351712" stroke-width="2.4" stroke-linejoin="round"><path d="M16 28s9-8.2 9-15a9 9 0 0 0-18 0c0 6.8 9 15 9 15z" fill="#E2262B"/><circle cx="16" cy="13" r="3.4" fill="#fff"/></svg></span>
+        <span class="btn-txt"><b>Cómo llegar</b><small>Abrir en Google Maps</small></span>
+        <span class="flecha"><svg viewBox="0 0 16 16" fill="none" stroke="#FDE803" stroke-width="2.6" stroke-linecap="round"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></span>
+      </a>
+    </div>
+  </article>
+
+  <div class="horario">
+    <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#351712" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9" fill="#FDE803"/><path d="M12 7v5l3 2"/></svg>Horario</h3>
+    <div class="dias" id="dias"></div>
+    <p id="horario-txt">Lunes a sábado: 8:00&nbsp;a.&nbsp;m. a 6:00&nbsp;p.&nbsp;m.<br>Domingos: 9:00&nbsp;a.&nbsp;m. a 1:00&nbsp;p.&nbsp;m.</p>
+  </div>
+</section>
+
+<!-- ===== PIE ===== -->
+<footer class="pie-pag" data-rv>
+  <img class="mini" src="img/logo.webp" alt="Delidoogs" width="300" height="280" loading="lazy">
+  <h2>Alimenta su felicidad</h2>
+  <p>¿Conoces a alguien que ame a su peludo?<br>Mándale este link.</p>
+  <button class="btn" id="compartir">
+    <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#351712" stroke-width="2.2"><circle cx="18" cy="5" r="3" fill="#F4A11A"/><circle cx="6" cy="12" r="3" fill="#F4A11A"/><circle cx="18" cy="19" r="3" fill="#F4A11A"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></span>
+    <span class="btn-txt"><b>Comparte este link</b><small>Por WhatsApp o donde quieras</small></span>
+  </button>
+  <div class="datos">
+    <p><b>Delidoogs · Delicias para tu peludo</b><br>Cali, Colombia</p>
+    <a id="wa-pie" href="#" rel="noopener">WhatsApp +57 316 542 4203</a>
+  </div>
+</footer>
+</div>
+
+<div class="aviso" id="aviso" role="status"></div>
+
+<script>
+(()=>{
+const WA='573165424203';
+const wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt=n=>'$'+n.toLocaleString('es-CO');
+
+$('#btn-wa').href=wa('¡Hola, Delidoogs! 🐶 Quiero hacer un pedido.');
+$('#wa-pie').href=wa('¡Hola, Delidoogs! 🐶');
+
+/* ---------- hora de Cali ---------- */
+function ahoraCali(){
+  const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Bogota',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hour12:false,weekday:'short'}).formatToParts(new Date());
+  const g=k=>p.find(x=>x.type===k).value;
+  const dias={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  return {y:+g('year'),mo:+g('month'),d:+g('day'),h:+g('hour')%24,mi:+g('minute'),s:+g('second'),dow:dias[g('weekday')]};
+}
+const HOR={0:[9,13],1:[8,18],2:[8,18],3:[8,18],4:[8,18],5:[8,18],6:[8,18]};
+const hfmt=h=>(h>12?h-12:h)+(h<12?' a. m.':' p. m.');
+function estado(){
+  const c=ahoraCali(), [a,b]=HOR[c.dow], t=c.h+c.mi/60;
+  const el=$('#estado'), tx=$('#estado-txt');
+  if(t>=a&&t<b){el.classList.remove('cerrado');tx.textContent='Abierto ahora · cierra a la'+(b===13?' 1 p. m.':'s '+hfmt(b));}
+  else{
+    el.classList.add('cerrado');
+    let nd=c.dow, hoy=t<a;
+    if(!hoy) nd=(c.dow+1)%7;
+    const n=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'][nd];
+    tx.textContent='Cerrado · abrimos '+(hoy?'hoy':(nd===(c.dow+1)%7?'mañana':n))+' a las '+hfmt(HOR[nd][0]);
+  }
+  const dd=$('#dias'); dd.innerHTML='';
+  ['L','M','M','J','V','S','D'].forEach((l,i)=>{
+    const dow=(i+1)%7, d=document.createElement('div');
+    d.innerHTML=l+'<small>'+HOR[dow][0]+'–'+(HOR[dow][1]-12)+'</small>';
+    if(dow===c.dow) d.className='hoy';
+    dd.appendChild(d);
+  });
+}
+estado(); setInterval(estado,60000);
+
+/* ---------- perro del logo ---------- */
+const perro=$('#perro'), burbuja=$('#burbuja'), logo=$('#logo');
+let ladrido=null, n=0;
+const PAL=['¡GUAU!','¡ÑAM!','¡GUAU GUAU!','¡MÁS!','♥'];
+const PART=['<svg viewBox="0 0 24 24"><path fill="#E2262B" stroke="#351712" stroke-width="1.6" d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>',
+ '<svg viewBox="0 0 24 24"><path fill="#fff" stroke="#351712" stroke-width="1.6" d="M6 4.5a2.5 2.5 0 0 1 4.3 1.7L15.8 12a2.5 2.5 0 1 1 1.7 4.3 2.5 2.5 0 1 1-4.3 1.7L7.7 12.2A2.5 2.5 0 1 1 6 4.5z"/></svg>',
+ '<svg viewBox="0 0 24 24" fill="#F4A11A" stroke="#351712" stroke-width="1.4"><ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="6" cy="10" r="2.2"/><circle cx="10" cy="6.5" r="2.2"/><circle cx="14" cy="6.5" r="2.2"/><circle cx="18" cy="10" r="2.2"/></svg>'];
+function ladra(){
+  n++;
+  perro.classList.remove('guau'); void perro.offsetWidth; perro.classList.add('guau');
+  burbuja.textContent=PAL[(n-1)%PAL.length];
+  burbuja.classList.remove('ver'); void burbuja.offsetWidth; burbuja.classList.add('ver');
+  $('#caricias').textContent='· '+n;
+  try{ if(!ladrido) ladrido=new Audio('media/ladrido.mp3'); ladrido.currentTime=0; ladrido.volume=.7; ladrido.play().catch(()=>{}); }catch(e){}
+  if(navigator.vibrate) navigator.vibrate(30);
+  if(reduce) return;
+  for(let i=0;i<9;i++){
+    const p=document.createElement('div'); p.className='particula'; p.innerHTML=PART[i%3];
+    logo.appendChild(p);
+    const ang=-Math.PI/2+(Math.random()-.5)*2.6, d=90+Math.random()*90;
+    p.animate([{transform:'translate(-50%,-50%) scale(.2)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(ang)*d}px),calc(-50% + ${Math.sin(ang)*d}px)) scale(1) rotate(${(Math.random()-.5)*120}deg)`,opacity:1,offset:.6},{transform:`translate(calc(-50% + ${Math.cos(ang)*d*1.15}px),calc(-50% + ${Math.sin(ang)*d+60}px)) scale(.8)`,opacity:0}],{duration:1100,easing:'cubic-bezier(.22,1,.36,1)'}).onfinish=()=>p.remove();
+  }
+}
+perro.addEventListener('click',ladra);
+perro.setAttribute('role','button'); perro.setAttribute('aria-label','Hazle cariño al perro de Delidoogs'); perro.tabIndex=0;
+perro.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ladra();}});
+
+/* ---------- stickers flotantes del héroe ---------- */
+const STK=[
+ ['<svg viewBox="0 0 40 40"><path d="M8 33 29 12" stroke="#F4A11A" stroke-width="9" stroke-linecap="round"/><path d="M8 33 29 12" stroke="#351712" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".0"/><path d="M27 14c2-6 6-8 9-7-1 3-3 6-9 7zM28 13c-1-5 0-9 3-10 1 3 0 7-3 10z" fill="#3BA55C" stroke="#351712" stroke-width="2"/><path d="M5 36l2-6 20-20 4 4-20 20z" fill="#F4A11A" stroke="#351712" stroke-width="2.5" stroke-linejoin="round"/></svg>',84,120,12],
+ ['<svg viewBox="0 0 40 40"><path d="M20 34s-13-8-13-17a7 7 0 0 1 13-3.5A7 7 0 0 1 33 17c0 9-13 17-13 17z" fill="#E2262B" stroke="#351712" stroke-width="2.5"/></svg>',1,640,8],
+ ['<svg viewBox="0 0 40 40" fill="#F4A11A" stroke="#351712" stroke-width="2.2"><ellipse cx="20" cy="26" rx="8" ry="6.5"/><circle cx="10" cy="17" r="3.6"/><circle cx="16" cy="10.5" r="3.6"/><circle cx="24" cy="10.5" r="3.6"/><circle cx="30" cy="17" r="3.6"/></svg>',99,640,-14]
+];
+const heroe=$('.heroe');
+STK.forEach(([svg,x,y,r],i)=>{const d=document.createElement('div');d.className='flotante';d.innerHTML=svg;d.style.cssText=`left:${x}%;top:${y}px;transform:rotate(${r}deg);animation-delay:${2.2+i*.12}s`;d.firstChild.style.animationDelay=(i*.7)+'s';if(x>50)d.style.marginLeft='-52px';heroe.appendChild(d);});
+
+/* ---------- aparición al hacer scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+$$('[data-rv]').forEach((el,i)=>{ if(el.closest('.enlaces')) el.style.transitionDelay=(Math.min(i,8)*70+(document.readyState==='complete'?0:0))+'ms'; io.observe(el); });
+
+/* ---------- huellas al tocar el fondo ---------- */
+const HUE='<svg viewBox="0 0 24 24" fill="#351712" opacity=".55"><ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="6" cy="10" r="2.2"/><circle cx="10" cy="6.5" r="2.2"/><circle cx="14" cy="6.5" r="2.2"/><circle cx="18" cy="10" r="2.2"/></svg>';
+let ultima=0;
+document.addEventListener('pointerdown',e=>{
+  if(reduce||e.target.closest('a,button,input,.carta,.lg-perro')) return;
+  const t=performance.now(); if(t-ultima<120) return; ultima=t;
+  const h=document.createElement('div'); h.className='huella'; h.innerHTML=HUE;
+  h.style.left=e.clientX+'px'; h.style.top=e.clientY+'px'; h.style.setProperty('--r',(Math.random()*60-30)+'deg');
+  document.body.appendChild(h); setTimeout(()=>h.remove(),1200);
+},{passive:true});
+
+/* ---------- promo de los domingos de noviembre ---------- */
+const DOMINGOS=[1,8,15,22,29]; // noviembre de 2026
+(function promo(){
+  const sec=$('#promo');
+  function sig(){
+    const c=ahoraCali();
+    if(c.y!==2026||c.mo!==11) return null;
+    const ahora=Date.UTC(c.y,c.mo-1,c.d,c.h,c.mi,c.s);
+    for(const d of DOMINGOS){
+      const ini=Date.UTC(2026,10,d,9), fin=Date.UTC(2026,10,d,13), finDia=Date.UTC(2026,10,d,23,59,59);
+      if(ahora<ini) return {d,falta:ini-ahora,hoy:c.d===d};
+      if(ahora<finDia&&c.d===d) return {d,falta:Math.max(0,fin-ahora),hoy:true,abierto:ahora<fin};
+    }
+    return null;
+  }
+  const s0=sig(); if(!s0) return;
+  sec.hidden=false;
+  function tick(){
+    const s=sig(); if(!s){sec.hidden=true;return;}
+    let ms=s.falta; const D=Math.floor(ms/864e5); ms-=D*864e5; const H=Math.floor(ms/36e5); ms-=H*36e5; const M=Math.floor(ms/6e4); const S=Math.floor((ms-M*6e4)/1e3);
+    $('#c-d').textContent=D; $('#c-h').textContent=H; $('#c-m').textContent=M; $('#c-s').textContent=S;
+    $('#cuando').textContent = s.hoy ? (s.abierto?'¡Es hoy! Te quedan estas horas (hasta la 1 p. m.)':(s.falta>0?'¡Es hoy! Abrimos a las 9 a. m.':'Hoy ya cerramos. Te esperamos el próximo domingo.')) : 'Faltan para el domingo '+s.d+' de noviembre, 9 a. m.';
+  }
+  tick(); setInterval(tick,1000);
+  const r=$('#monto'), out=$('#monto-out'), pr=$('#premio');
+  let antes=null;
+  function upd(){
+    const v=+r.value; out.textContent=fmt(v);
+    r.style.setProperty('--p',((v-r.min)/(r.max-r.min)*100)+'%');
+    const gran=v>40000;
+    if(gran!==antes){
+      antes=gran; pr.classList.remove('cambia'); void pr.offsetWidth; pr.classList.add('cambia');
+      if(gran){ $('#premio-img').innerHTML='<img src="img/aceite.webp" alt="">'; $('#premio-t').textContent='¡Aceite de trucha gratis!'; $('#premio-s').textContent='Frasco de 250 ml de regalo por compras de más de $40.000.'; }
+      else{ $('#premio-img').innerHTML='<span class="pct">10%</span>'; $('#premio-t').textContent='10 % de descuento'; $('#premio-s').textContent='En dietas y accesorios, por compras de menos de $40.000.'; }
+    }
+  }
+  r.addEventListener('input',upd); upd();
+})();
+
+/* ---------- menú ---------- */
+const RECETAS=[
+ {id:'sencilla',n:'Sencilla',e:'perro',c:'#FDE803',img:'img/receta-sencilla.webp',p:[3700,6000],tag:'Para empezar',
+  b:['Ideal para iniciar en BARF','Mejora la digestión','Piel y pelaje'],
+  i:['Pechuga de pollo','Patas y pescuezo','Zanahoria','Cilantro','Avena','Aceite de oliva']},
+ {id:'especial',n:'Especial',e:'perro',c:'#F4A11A',img:'img/receta-especial.webp',p:[3900,6200],tag:'Perros activos',
+  b:['Más hierro y minerales','Masa muscular','Vitalidad'],
+  i:['Molleja','Corazón de pollo','Hígado de pollo','Pollo','Zanahoria','Cilantro','Avena','Aceite de oliva']},
+ {id:'mixta',n:'Mixta de res',e:'perro',c:'#E2262B',img:'img/receta-mixta.webp',p:[4100,6800],tag:'Adultos',
+  b:['Proteína variada','Más energía','Para perros adultos'],
+  i:['Carne de res','Pollo','Zanahoria','Cilantro','Avena','Aceite de oliva']},
+ {id:'res',n:'Res y +Res',e:'perro',c:'#C2177A',img:'img/receta-res.webp',p:[4900,8300],tag:'Grandes o muy activos',
+  b:['Alta proteína','Fuerza','Masa muscular'],
+  i:['Carne de res','Zanahoria','Habichuela','Quinua','Aceite de oliva']},
+ {id:'salmon',n:'Salmón',e:'perro',c:'#EE8FA3',img:'img/receta-salmon.webp',p:[4700,7500],tag:'Piel y alergias',
+  b:['Rico en omega 3','Piel, pelaje y articulaciones','Ideal para alergias'],
+  i:['Salmón','Zanahoria','Habichuela','Quinua','Aceite de oliva']},
+ {id:'felina',n:'Felina',e:'gato',c:'#3B8EDB',img:'img/receta-felina.webp',p:[5000,null],tag:'Para gatos',
+  b:['Taurina para corazón y vista','Omega 3 y 6','Les encanta'],
+  i:['Pechuga de pollo','Corazones de pollo','Hígado de pollo','Res','Taurina','Aceite de trucha']},
+ {id:'aceite',n:'Aceite de trucha',e:'ambos',c:'#F4A11A',img:'img/aceite.webp',p:[12900,null],tag:'Perros y gatos',desde:true,
+  b:['Omega 3, 6 y 9','Prensado en frío','Se mezcla con su comida'],
+  i:['100 % aceite de trucha','Prensado en frío','Con EPA y DHA'],dosis:'Dosis: 1 bombeo por cada 3 kg de peso, mezclado con su alimento. Agítalo antes de usar.'}
+];
+let tam=0, filtro='todo';
+const carril=$('#carril'), puntos=$('#puntos');
+const GIRA='<svg viewBox="0 0 24 24" fill="none" stroke="#351712" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4.5h-4.5"/></svg>';
+const WAI='<svg viewBox="0 0 32 32"><path fill="#25D366" stroke="#351712" stroke-width="2" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3z"/><path fill="#fff" d="M11.6 9.6c.3-.6.6-.6.9-.6h.8c.2 0 .6 0 .8.6l1.1 2.7c.1.3 0 .6-.1.8l-.7.8c-.2.2-.3.5-.1.8.4.8 1 1.6 1.7 2.3.9.8 1.8 1.3 2.5 1.6.3.1.6.1.8-.1l.9-1.1c.2-.3.5-.3.8-.2l2.6 1.2c.3.2.5.3.5.5 0 .4 0 1.3-.6 2-.6.7-1.9 1.3-3.1 1.1-1.2-.2-3.3-.8-5.5-2.8-2.6-2.4-3.5-4.7-3.8-5.9-.3-1.2.2-2.5.5-3.1z"/></svg>';
+function precio(r){
+  const v=r.p[tam]??r.p[0];
+  const g=r.id==='aceite'?'':(r.p[tam]==null?' · 300 g':(tam?' · 500 g':' · 300 g'));
+  return (r.desde?'desde ':'')+'<b>'+fmt(v)+'</b>'+g;
+}
+RECETAS.forEach((r,idx)=>{
+  const c=document.createElement('article'); c.className='carta'; c.dataset.e=r.e; c.style.setProperty('--c',r.c);
+  c.innerHTML=
+   '<div class="carta-in">'+
+    '<div class="cara">'+
+     '<div class="foto"><span class="etq"></span><img alt="" loading="lazy"></div>'+
+     '<div class="pie"><h3></h3><div class="precio"></div><div class="beneficios"></div></div>'+
+     '<button class="girar" aria-label="Ver ingredientes">'+GIRA+'</button>'+
+    '</div>'+
+    '<div class="cara atras"><h3></h3><h4>Lo que lleva</h4><ul class="ingr"></ul><h4>Para qué le sirve</h4><ul class="sirve"></ul>'+
+     (r.dosis?'<p class="dosis"></p>':'')+
+     '<a class="pedir" rel="noopener">'+WAI+'Pedir esta</a>'+
+     '<button class="girar" aria-label="Volver">'+GIRA+'</button></div>'+
+   '</div>';
+  c.querySelector('.etq').textContent=r.tag;
+  const im=c.querySelector('.foto img'); im.src=r.img; im.alt='Empaque Delidoogs '+r.n; im.style.setProperty('--r',(idx%2?3:-3)+'deg');
+  c.querySelectorAll('h3').forEach(h=>h.textContent=r.n);
+  c.querySelector('.precio').innerHTML=precio(r);
+  c.querySelector('.beneficios').innerHTML=r.b.map(x=>'<span></span>').join('');
+  c.querySelectorAll('.beneficios span').forEach((s,i)=>s.textContent=r.b[i]);
+  const ul=c.querySelector('.ingr'); r.i.forEach((x,i)=>{const li=document.createElement('li');li.textContent=x;li.style.animationDelay=(.25+i*.06)+'s';ul.appendChild(li);});
+  const sv=c.querySelector('.sirve'); r.b.forEach((x,i)=>{const li=document.createElement('li');li.textContent=x;li.style.animationDelay=(.45+r.i.length*.05+i*.08)+'s';sv.appendChild(li);});
+  if(r.dosis) c.querySelector('.dosis').textContent=r.dosis;
+  c.querySelector('.pedir').href=wa('¡Hola, Delidoogs! Quiero pedir '+(r.id==='aceite'?'el aceite de trucha':'la dieta '+r.n)+'. 🐾');
+  c.addEventListener('click',e=>{ if(e.target.closest('.pedir')) return; c.classList.toggle('vuelta'); });
+  r.el=c; carril.appendChild(c);
+});
+function pintaPuntos(){
+  const vis=RECETAS.filter(r=>!r.el.classList.contains('fuera'));
+  puntos.innerHTML=vis.map(()=>'<i></i>').join('');
+  marca();
+}
+function marca(){
+  const vis=RECETAS.filter(r=>!r.el.classList.contains('fuera'));
+  const cx=carril.scrollLeft+carril.clientWidth/2; let k=0,best=1e9;
+  vis.forEach((r,i)=>{const m=r.el.offsetLeft+r.el.offsetWidth/2;const d=Math.abs(m-cx);if(d<best){best=d;k=i;}});
+  [...puntos.children].forEach((p,i)=>p.classList.toggle('on',i===k));
+}
+carril.addEventListener('scroll',()=>requestAnimationFrame(marca),{passive:true});
+$$('.filtros [data-f]').forEach(b=>b.addEventListener('click',()=>{
+  filtro=b.dataset.f; $$('.filtros [data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  RECETAS.forEach(r=>r.el.classList.toggle('fuera',!(filtro==='todo'||r.e===filtro||r.e==='ambos')));
+  carril.scrollTo({left:0,behavior:reduce?'auto':'smooth'}); pintaPuntos();
+}));
+$$('.tam [data-t]').forEach(b=>b.addEventListener('click',()=>{
+  tam=+b.dataset.t; $$('.tam [data-t]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  RECETAS.forEach(r=>{const p=r.el.querySelector('.precio');p.innerHTML=precio(r);p.animate([{transform:'scale(1.15)'},{transform:'none'}],{duration:350,easing:'cubic-bezier(.34,1.56,.64,1)'});});
+}));
+pintaPuntos();
+
+/* ---------- plato BARF ---------- */
+const ING=['Carne de res','Pollo','Zanahoria','Cilantro','Avena','Vísceras','Quinua','Salmón'];
+const pz=$('#plato-zona');
+ING.forEach((t,i)=>{const s=document.createElement('span');s.className='ingrediente';s.textContent=t;s.style.setProperty('--a',(i*360/ING.length)+'deg');s.style.setProperty('--rad','46%');s.style.transitionDelay=(.15+i*.09)+'s';pz.appendChild(s);});
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){pz.classList.add('in');o.disconnect();}}),{threshold:.35}).observe(pz);
+function radio(){ pz.querySelectorAll('.ingrediente').forEach(s=>s.style.setProperty('--rad',(pz.clientWidth*.41)+'px')); }
+radio(); addEventListener('resize',radio);
+
+/* ---------- parallax suave (plato que gira, fotos) ---------- */
+const plImg=$('#plato-img'), fotos=$$('[data-px] img');
+let pend=false;
+addEventListener('scroll',()=>{ if(pend||reduce) return; pend=true; requestAnimationFrame(()=>{
+  const y=scrollY; plImg.style.setProperty('--giro',(y*.06)+'deg');
+  fotos.forEach(f=>{const r=f.parentElement.getBoundingClientRect(); const v=Math.max(-28,Math.min(0,-(r.top-innerHeight/2)*.06-14)); f.style.setProperty('--py',v+'px');});
+  pend=false; }); },{passive:true});
+
+/* ---------- asesor ---------- */
+const MASC={pequeno:['img/perro-pequeno.webp',112,'Perro pequeño'],mediano:['img/perro-mediano.webp',148,'Perro mediano'],grande:['img/perro-grande.webp',192,'Perro grande'],gato:['img/gato.webp',140,'Gato']};
+let especie='mediano', meta='empezar';
+const nombreIn=$('#nombre');
+const nom=()=>nombreIn.value.trim();
+const por=id=>RECETAS.find(r=>r.id===id);
+function elegir(){
+  if(especie==='gato') return {r:por('felina'),por:'La receta Felina tiene taurina, vísceras de pollo y aceite de trucha: lo que un gato necesita y le encanta.',extra:por('aceite')};
+  const m={empezar:'sencilla',activo:especie==='grande'?'res':'especial',piel:'salmon',variedad:'mixta',fuerza:'res'}[meta];
+  const r=por(m);
+  const pq={sencilla:'Es la más suave para pasarse a BARF: pollo, avena y vegetales que cuidan su digestión.',especial:'Lleva vísceras con más hierro y minerales para su energía y sus músculos.',res:'Es la de más proteína, para perros grandes o muy activos que necesitan fuerza.',salmon:'El salmón trae omega 3 para la piel, el pelaje y las articulaciones; es la ideal para alergias.',mixta:'Combina res y pollo para darle proteína variada y más energía.'}[m];
+  return {r,por:pq,extra:meta==='piel'?null:por('aceite')};
+}
+function pinta(salto){
+  const [src,w,txt]=MASC[especie];
+  const mm=$('#mascota'), img=$('#mascota-img');
+  if(img.getAttribute('src')!==src){ img.src=src; }
+  mm.style.setProperty('--h',w+'px'); $('.sombra-m').style.setProperty('--h',w+'px');
+  $('#regla').textContent=txt;
+  $('#placa-nombre').textContent=nom()||(especie==='gato'?'Tu michi':'Tu peludo');
+  if(salto&&!reduce){mm.classList.remove('salta');void mm.offsetWidth;mm.classList.add('salta');}
+  $('#paso-3').hidden = especie==='gato';
+  const {r,por:pq,extra}=elegir(), res=$('#resultado');
+  res.style.setProperty('--c',r.c);
+  const quien=nom()||(especie==='gato'?'tu gato':'tu perro');
+  res.innerHTML='<div class="res-cab"><img alt=""><div><small></small><b></b></div></div><div class="res-cuerpo"><p></p><p class="extra" style="margin-top:6px"></p><a class="btn wa" rel="noopener"><span class="btn-ico">'+WAI+'</span><span class="btn-txt"><b style="font-size:19px">Pedir asesoría</b><small>Te ayudamos con la cantidad según su peso, edad y actividad</small></span></a></div>';
+  res.querySelector('img').src=r.img;
+  res.querySelector('small').textContent='Para '+quien+', te recomendamos';
+  res.querySelector('b').textContent=(r.id==='felina'?'Receta ':'Dieta ')+r.n;
+  res.querySelector('.res-cuerpo p').textContent=pq;
+  res.querySelector('.extra').textContent=extra?'Y para la piel y el pelaje, súmale aceite de trucha.':'';
+  const desc={pequeno:'un perro pequeño',mediano:'un perro mediano',grande:'un perro grande',gato:'un gato'}[especie];
+  res.querySelector('a').href=wa('¡Hola, Delidoogs! 🐾 Quiero asesoría para '+(nom()?nom()+', ':'')+desc+'. Me interesa la '+(r.id==='felina'?'receta':'dieta')+' '+r.n+'.');
+  res.classList.remove('nuevo'); void res.offsetWidth; res.classList.add('nuevo');
+}
+function grupo(sel,cb){ $$(sel+' .chip').forEach(b=>b.addEventListener('click',()=>{ $$(sel+' .chip').forEach(x=>x.setAttribute('aria-pressed',x===b)); cb(b.dataset.v); })); }
+grupo('#op-especie',v=>{especie=v;pinta(true);});
+grupo('#op-meta',v=>{meta=v;pinta(false);});
+nombreIn.addEventListener('input',()=>{ $('#placa-nombre').textContent=nom()||'Tu peludo'; clearTimeout(nombreIn._t); nombreIn._t=setTimeout(()=>pinta(false),400); });
+$('#mascota').addEventListener('click',()=>{ if(reduce) return; const m=$('#mascota'); m.classList.remove('salta'); void m.offsetWidth; m.classList.add('salta'); });
+Object.values(MASC).forEach(m=>{const i=new Image();i.src=m[0];});
+pinta(false);
+
+/* ---------- compartir ---------- */
+function aviso(t){const a=$('#aviso');a.textContent=t;a.classList.add('ver');clearTimeout(a._t);a._t=setTimeout(()=>a.classList.remove('ver'),2200);}
+$('#compartir').addEventListener('click',async()=>{
+  const d={title:'Delidoogs',text:'Comida real para tu peludo 🐶 Mira el menú BARF de Delidoogs:',url:location.href};
+  if(navigator.share){ try{await navigator.share(d);}catch(e){} }
+  else{ try{await navigator.clipboard.writeText(location.href);aviso('¡Link copiado! 🐾');}catch(e){aviso(location.href);} }
+});
+})();
+</script>
+</body>
+</html>
