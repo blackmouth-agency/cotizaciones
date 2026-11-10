@@ -49,7 +49,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .heroe{position:relative;padding:calc(18px + env(safe-area-inset-top)) 16px 26px;text-align:center;overflow:visible}
 .estado{display:inline-flex;align-items:center;gap:8px;background:var(--bl);border:var(--borde);border-radius:99px;
   padding:6px 14px 6px 10px;font:700 13px/1 var(--s);box-shadow:var(--sombra-s);opacity:0;transform:translateY(-14px);
-  animation:cae .6s var(--resorte) 1.9s forwards}
+  animation:cae .6s var(--resorte) .3s forwards}
 .estado i{width:10px;height:10px;border-radius:50%;background:#20B455;box-shadow:0 0 0 0 rgba(32,180,85,.6);animation:latido 1.6s infinite}
 .estado.cerrado i{background:var(--rj);animation:none}
 @keyframes latido{70%{box-shadow:0 0 0 9px rgba(32,180,85,0)}100%{box-shadow:0 0 0 0 rgba(32,180,85,0)}}
@@ -57,12 +57,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 .logo-wrap{position:relative;width:min(86vw,370px);margin:14px auto 0;aspect-ratio:722/674}
 .logo-wrap>*{position:absolute}
-.lg-placa{left:0;top:0;width:100%;transform:scale(0);animation:pop .7s var(--resorte) .15s forwards;filter:drop-shadow(0 7px 0 rgba(53,23,18,.9))}
-.lg-circ{left:7.9%;top:0;width:85.6%;transform:scale(0) rotate(-40deg);animation:pop2 .8s var(--resorte) .4s forwards}
+.lg-placa{left:0;top:0;width:100%;filter:drop-shadow(0 7px 0 rgba(53,23,18,.9))}
+.lg-circ{left:7.9%;top:0;width:85.6%}
 .lg-perro-caja{left:19.94%;top:19.14%;width:60.8%;height:52.52%;overflow:hidden;border-radius:0 0 12% 12%}
-.lg-perro{width:100%;transform:translateY(105%);animation:asoma .9s var(--resorte) .85s forwards;transform-origin:50% 90%;cursor:pointer}
-.lg-letras{left:7.48%;top:71.36%;width:85.7%;opacity:0;transform:translateY(-40px) scale(1.4);animation:golpe .55s var(--resorte) 1.3s forwards}
-.lg-lema{left:13.85%;top:90.06%;width:73%;clip-path:inset(0 100% 0 0);animation:escribe .8s steps(22) 1.65s forwards}
+.lg-perro{width:100%}
+.lg-letras{left:7.48%;top:71.36%;width:85.7%}
+.lg-lema{left:13.85%;top:90.06%;width:73%}
 @keyframes pop{to{transform:scale(1)}}
 @keyframes pop2{to{transform:scale(1) rotate(0)}}
 @keyframes asoma{to{transform:translateY(0)}}
@@ -85,7 +85,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .titular span{display:inline-block;opacity:0;transform:translateY(30px) rotate(-4deg);animation:cae .7s var(--resorte) forwards}
 .titular .real{position:relative;color:var(--bl);-webkit-text-stroke:0;padding:0 .12em;margin-top:2px}
 .titular .real::before{content:"";position:absolute;inset:.08em 0 .02em;background:var(--rj);border:var(--borde);border-radius:14px;z-index:-1;transform:rotate(-2.5deg);box-shadow:var(--sombra)}
-.bajada{margin:14px auto 0;max-width:330px;font:600 15px/1.4 var(--s);opacity:0;animation:cae .6s var(--suave) 2.5s forwards}
+.bajada{margin:14px auto 0;max-width:330px;font:600 15px/1.4 var(--s);opacity:0;animation:cae .6s var(--suave) .6s forwards}
 .bajada b{background:linear-gradient(transparent 58%,rgba(244,161,26,.75) 58%)}
 
 /* stickers que flotan */
@@ -332,21 +332,19 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
     <div class="lg-perro-caja"><img class="lg-perro" id="perro" src="img/logo-perro.webp" alt="" width="439" height="354"></div>
     <img class="lg-letras" src="img/logo-letras.webp" alt="Delidoogs" width="619" height="119">
     <img class="lg-lema" src="img/logo-lema.webp" alt="Delicias para tu peludo" width="527" height="34">
-    <div class="burbuja" id="burbuja">¡GUAU!</div>
-    <div class="toca" id="toca">Tócame 🐾 <b id="caricias"></b></div>
   </div>
 
   <h1 class="titular">
-    <span style="animation-delay:2.05s">Comida</span>
-    <span class="real" style="animation-delay:2.2s">real</span><br>
-    <span style="animation-delay:2.35s;font-size:.62em">para tu peludo</span>
+    <span style="animation-delay:.15s">Comida</span>
+    <span class="real" style="animation-delay:.3s">real</span><br>
+    <span style="animation-delay:.45s;font-size:.62em">para tu peludo</span>
   </h1>
   <p class="bajada">Dieta <b>BARF 100&nbsp;% natural</b> para perros y gatos en Cali. Carne, vísceras y vegetales de verdad.</p>
 
   <div class="sellos">
-    <span class="sello" style="animation-delay:2.7s"><svg viewBox="0 0 24 24" fill="none" stroke="#FDE803" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Registro ICA</span>
-    <span class="sello" style="animation-delay:2.8s"><svg viewBox="0 0 24 24" fill="#FDE803"><ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="6" cy="10" r="2.2"/><circle cx="10" cy="6.5" r="2.2"/><circle cx="14" cy="6.5" r="2.2"/><circle cx="18" cy="10" r="2.2"/></svg>Perros y gatos</span>
-    <span class="sello" style="animation-delay:2.9s"><svg viewBox="0 0 24 24" fill="none" stroke="#FDE803" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2zM13 10h4l4 3v3h-8"/><circle cx="6" cy="17.5" r="2" fill="#351712"/><circle cx="17" cy="17.5" r="2" fill="#351712"/></svg>Domicilios</span>
+    <span class="sello" style="animation-delay:.75s"><svg viewBox="0 0 24 24" fill="none" stroke="#FDE803" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Registro ICA</span>
+    <span class="sello" style="animation-delay:.85s"><svg viewBox="0 0 24 24" fill="#FDE803"><ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="6" cy="10" r="2.2"/><circle cx="10" cy="6.5" r="2.2"/><circle cx="14" cy="6.5" r="2.2"/><circle cx="18" cy="10" r="2.2"/></svg>Perros y gatos</span>
+    <span class="sello" style="animation-delay:.95s"><svg viewBox="0 0 24 24" fill="none" stroke="#FDE803" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2zM13 10h4l4 3v3h-8"/><circle cx="6" cy="17.5" r="2" fill="#351712"/><circle cx="17" cy="17.5" r="2" fill="#351712"/></svg>Domicilios</span>
   </div>
 </header>
 
@@ -593,33 +591,6 @@ function estado(){
 }
 estado(); setInterval(estado,60000);
 
-/* ---------- perro del logo ---------- */
-const perro=$('#perro'), burbuja=$('#burbuja'), logo=$('#logo');
-let ladrido=null, n=0;
-const PAL=['¡GUAU!','¡ÑAM!','¡GUAU GUAU!','¡MÁS!','♥'];
-const PART=['<svg viewBox="0 0 24 24"><path fill="#E2262B" stroke="#351712" stroke-width="1.6" d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>',
- '<svg viewBox="0 0 24 24"><path fill="#fff" stroke="#351712" stroke-width="1.6" d="M6 4.5a2.5 2.5 0 0 1 4.3 1.7L15.8 12a2.5 2.5 0 1 1 1.7 4.3 2.5 2.5 0 1 1-4.3 1.7L7.7 12.2A2.5 2.5 0 1 1 6 4.5z"/></svg>',
- '<svg viewBox="0 0 24 24" fill="#F4A11A" stroke="#351712" stroke-width="1.4"><ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="6" cy="10" r="2.2"/><circle cx="10" cy="6.5" r="2.2"/><circle cx="14" cy="6.5" r="2.2"/><circle cx="18" cy="10" r="2.2"/></svg>'];
-function ladra(){
-  n++;
-  perro.classList.remove('guau'); void perro.offsetWidth; perro.classList.add('guau');
-  burbuja.textContent=PAL[(n-1)%PAL.length];
-  burbuja.classList.remove('ver'); void burbuja.offsetWidth; burbuja.classList.add('ver');
-  $('#caricias').textContent='· '+n;
-  try{ if(!ladrido) ladrido=new Audio('media/ladrido.mp3'); ladrido.currentTime=0; ladrido.volume=.7; ladrido.play().catch(()=>{}); }catch(e){}
-  if(navigator.vibrate) navigator.vibrate(30);
-  if(reduce) return;
-  for(let i=0;i<9;i++){
-    const p=document.createElement('div'); p.className='particula'; p.innerHTML=PART[i%3];
-    logo.appendChild(p);
-    const ang=-Math.PI/2+(Math.random()-.5)*2.6, d=90+Math.random()*90;
-    p.animate([{transform:'translate(-50%,-50%) scale(.2)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(ang)*d}px),calc(-50% + ${Math.sin(ang)*d}px)) scale(1) rotate(${(Math.random()-.5)*120}deg)`,opacity:1,offset:.6},{transform:`translate(calc(-50% + ${Math.cos(ang)*d*1.15}px),calc(-50% + ${Math.sin(ang)*d+60}px)) scale(.8)`,opacity:0}],{duration:1100,easing:'cubic-bezier(.22,1,.36,1)'}).onfinish=()=>p.remove();
-  }
-}
-perro.addEventListener('click',ladra);
-perro.setAttribute('role','button'); perro.setAttribute('aria-label','Hazle cariño al perro de Delidoogs'); perro.tabIndex=0;
-perro.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ladra();}});
-
 /* ---------- stickers flotantes del héroe ---------- */
 const STK=[
  ['<svg viewBox="0 0 40 40"><path d="M8 33 29 12" stroke="#F4A11A" stroke-width="9" stroke-linecap="round"/><path d="M8 33 29 12" stroke="#351712" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".0"/><path d="M27 14c2-6 6-8 9-7-1 3-3 6-9 7zM28 13c-1-5 0-9 3-10 1 3 0 7-3 10z" fill="#3BA55C" stroke="#351712" stroke-width="2"/><path d="M5 36l2-6 20-20 4 4-20 20z" fill="#F4A11A" stroke="#351712" stroke-width="2.5" stroke-linejoin="round"/></svg>',84,120,12],
@@ -627,7 +598,7 @@ const STK=[
  ['<svg viewBox="0 0 40 40" fill="#F4A11A" stroke="#351712" stroke-width="2.2"><ellipse cx="20" cy="26" rx="8" ry="6.5"/><circle cx="10" cy="17" r="3.6"/><circle cx="16" cy="10.5" r="3.6"/><circle cx="24" cy="10.5" r="3.6"/><circle cx="30" cy="17" r="3.6"/></svg>',99,640,-14]
 ];
 const heroe=$('.heroe');
-STK.forEach(([svg,x,y,r],i)=>{const d=document.createElement('div');d.className='flotante';d.innerHTML=svg;d.style.cssText=`left:${x}%;top:${y}px;transform:rotate(${r}deg);animation-delay:${2.2+i*.12}s`;d.firstChild.style.animationDelay=(i*.7)+'s';if(x>50)d.style.marginLeft='-52px';heroe.appendChild(d);});
+STK.forEach(([svg,x,y,r],i)=>{const d=document.createElement('div');d.className='flotante';d.innerHTML=svg;d.style.cssText=`left:${x}%;top:${y}px;transform:rotate(${r}deg);animation-delay:${.6+i*.12}s`;d.firstChild.style.animationDelay=(i*.7)+'s';if(x>50)d.style.marginLeft='-52px';heroe.appendChild(d);});
 
 /* ---------- aparición al hacer scroll ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
@@ -637,7 +608,7 @@ $$('[data-rv]').forEach((el,i)=>{ if(el.closest('.enlaces')) el.style.transition
 const HUE='<svg viewBox="0 0 24 24" fill="#351712" opacity=".55"><ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="6" cy="10" r="2.2"/><circle cx="10" cy="6.5" r="2.2"/><circle cx="14" cy="6.5" r="2.2"/><circle cx="18" cy="10" r="2.2"/></svg>';
 let ultima=0;
 document.addEventListener('pointerdown',e=>{
-  if(reduce||e.target.closest('a,button,input,.carta,.lg-perro')) return;
+  if(reduce||e.target.closest('a,button,input,.carta')) return;
   const t=performance.now(); if(t-ultima<120) return; ultima=t;
   const h=document.createElement('div'); h.className='huella'; h.innerHTML=HUE;
   h.style.left=e.clientX+'px'; h.style.top=e.clientY+'px'; h.style.setProperty('--r',(Math.random()*60-30)+'deg');
