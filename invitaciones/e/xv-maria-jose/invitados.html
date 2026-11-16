@@ -89,7 +89,7 @@ function generar(){
     const a = d.querySelectorAll('a'); a[0].href = 'https://wa.me/?text=' + encodeURIComponent(mensaje(f)); a[1].href = link(f);
     box.appendChild(d);
   });
-  $('#total').textContent = `${fs.length} invitaciones · ${fs.reduce((s,f) => s + f.c, 0)} lugares en total`;
+  const lug = fs.reduce((s,f) => s + f.c, 0); $('#total').textContent = `${fs.length} ${fs.length === 1 ? 'invitación' : 'invitaciones'} · ${lug} ${lug === 1 ? 'lugar' : 'lugares'} en total`;
   $('#res').hidden = !fs.length;
 }
 $('#generar').onclick = generar;
