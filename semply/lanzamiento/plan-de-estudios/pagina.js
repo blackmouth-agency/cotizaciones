@@ -168,7 +168,7 @@
         setTimeout(function () { hero.style.background = ''; }, 820);
       }
       prev = n;
-      if (history.replaceState) history.replaceState(null, '', '#m' + n);
+      if (history.replaceState && !o.sinHash) history.replaceState(null, '', '#m' + n);
     }
     if (o.ir) window.scrollTo({ top: topStage(), behavior: reduce ? 'auto' : 'smooth' });
     paralaje();
@@ -223,7 +223,7 @@
 
   /* ---------- enlaces internos ---------- */
   document.addEventListener('click', function (e) {
-    var a = e.target.closest('a[href^="#"]'); if (!a) return;
+    var a = e.target.closest('a[href^="#"]'); if (!a || e.defaultPrevented) return;
     var h = a.getAttribute('href'), mm = /^#m(\d+)$/.exec(h);
     if (mm) { e.preventDefault(); elegir(+mm[1], { ir: true, ev: e }); return; }
     var t = h.length > 1 && document.querySelector(h); if (!t) return;
@@ -275,11 +275,15 @@
   /* ---------- arranque ---------- */
   pintarBursts(document);
   var h0 = /^#m(\d+)$/.exec(location.hash), n0 = h0 && porN(+h0[1]) ? +h0[1] : 1;
-  prev = n0; elegir(n0, { anim: false });
-  if (!h0) { if (history.replaceState) history.replaceState(null, '', location.pathname + location.search); }
+  // otra sección con ancla (p. ej. #aliado desde Nosotros): se conserva y se baja a ella al cargar
+  var seccion0 = !h0 && location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+  prev = n0; elegir(n0, { anim: false, sinHash: !!seccion0 });
+  if (!h0 && !seccion0) { if (history.replaceState) history.replaceState(null, '', location.pathname + location.search); }
   observar($$('.rv'));
   alBajar();
   // llegada con #m8 desde la landing: se baja al módulo cuando ya cargaron fuentes e imágenes
   function irAlModulo() { window.scrollTo({ top: topStage(), behavior: 'instant' }); }
-  if (h0) { if (document.readyState === 'complete') setTimeout(irAlModulo, 60); else addEventListener('load', function () { setTimeout(irAlModulo, 60); }); }
+  function irASeccion() { window.scrollTo({ top: seccion0.getBoundingClientRect().top + scrollY - 64, behavior: 'instant' }); }
+  var ir0 = h0 ? irAlModulo : seccion0 ? irASeccion : null;
+  if (ir0) { if (document.readyState === 'complete') setTimeout(ir0, 60); else addEventListener('load', function () { setTimeout(ir0, 60); }); }
 })();
