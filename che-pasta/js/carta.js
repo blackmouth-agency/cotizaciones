@@ -13,7 +13,8 @@
   function rellenos(v) { return { k: "relleno", t: "Escoge el relleno", v: v }; }
   var ACOMP = [{ k: "pasta", t: "Acompáñalo con", v: PASTA3.v }, { k: "salsa", t: "En salsa", v: [["alfredo", "Alfredo"], ["napolitana", "Napolitana"]] }];
   // fotos reales del menú del restaurante (Menüpp)
-  var REAL = []; // las fotos del Menüpp se retiraron (18-nov): no todas se ven apetitosas
+  // fotos reales del Menüpp solo en platos fuertes, entradas y postres (18-nov)
+  var REAL = "ossobuco porchetta lomo-viche pollo-ron pollo-limon pollo-crispy pollo-cacciatora pollo-pizzaiola salmon antipasto fritto carpaccio coctel caprese burrata bruschetta verdura carpaccio-salmon raviolichoc torta tiramisu pannacotta affogato".split(" ");
   function real(it) { return REAL.indexOf(it.id) > -1 ? "img/real/" + it.id + ".webp" : ""; }
   function ruta(k) { return k === "mariscoNap" ? "marisco" : k === "casa" ? "napolitana" : k; }
   function lista(t, k, arr) { return { k: k || "op", t: t, v: arr.map(function (x) { return [x, x]; }) }; }
@@ -57,8 +58,8 @@
       { id: "risotto-funghi", n: "Risotto funghi", d: "Con portobello y porcini.", l: ["Portobello", "Porcini"] },
       { id: "risotto-ossobuco", n: "Risotto zafferano e ossobuco", d: "Risotto al azafrán con ossobuco, como se sirve en Milán.", o: "milan" }
     ] },
-    { k: "fuertes", t: "Platos fuertes", ico: "img/f-ossobuco.webp", sub: "Carnes, pollo y pescado, con pasta fresca en salsa Alfredo o napolitana.", banner: "img/f-ossobuco.webp", items: [
-      { id: "ossobuco", n: "Ossobuco", d: "Ternera al vino tinto, con pasta.", x: "Jarrete de ternera con su hueso, guisado al vino tinto.", o: "milan", f: "img/f-ossobuco.webp", op: ACOMP },
+    { k: "fuertes", t: "Platos fuertes", ico: "img/real/ossobuco.webp", sub: "Carnes, pollo y pescado, con pasta fresca en salsa Alfredo o napolitana.", fotos: true, items: [
+      { id: "ossobuco", n: "Ossobuco", d: "Ternera al vino tinto, con pasta.", x: "Jarrete de ternera con su hueso, guisado al vino tinto.", o: "milan", op: ACOMP },
       { id: "lomo-viche", n: "Lomo viche", d: "Con pasta y ensalada.", tags: ["Recomendado"], op: ACOMP },
       { id: "filet", n: "Filet mignon", d: "Con pasta en Alfredo o napolitana.", op: ACOMP },
       { id: "porchetta", n: "Porchetta", d: "Pernil de cerdo al horno, con pasta.", op: ACOMP },
@@ -69,7 +70,7 @@
       { id: "pollo-cacciatora", n: "Pollo alla cacciatora", d: "Pierna pernil de pollo, con pasta.", op: ACOMP },
       { id: "salmon", n: "Salmón a la plancha", d: "Con ensalada y pasta.", op: ACOMP }
     ] },
-    { k: "entradas", t: "Entradas", ico: "img/plato2/raviolis_tomatefresco.webp", sub: "Para abrir la mesa y compartir.", items: [
+    { k: "entradas", t: "Entradas", ico: "img/real/antipasto.webp", sub: "Para abrir la mesa y compartir.", fotos: true, items: [
       { id: "antipasto", n: "Antipasto italiano", d: "Prosciutto crudo, mortadela, salame, verdura asada y mozzarella de búfala.", tags: ["Para compartir"] },
       { id: "fritto", n: "Fritto misto di mare", d: "Camarones y anillos de calamar fritos, como en la costa italiana." },
       { id: "burrata", n: "Burrata", d: "Sobre tomate y berenjena asados, con un toque de pesto genovés." },
@@ -81,12 +82,12 @@
       { id: "bruschetta", n: "Bruschetta", d: "Pan de la casa, tomate fresco, aceitunas, mozzarella y pesto." },
       { id: "verdura", n: "Verdura asada", d: "Berenjena, pimentón, mozzarella, calabacín y aceitunas." }
     ] },
-    { k: "postres", t: "Postres", ico: "img/postre/tiramisu.webp", sub: "Para cerrar como se debe.", fotos: true, items: [
-      { id: "tiramisu", n: "Tiramisú", d: "Café, mascarpone, bizcochos y cacao.", o: "treviso", f: "img/postre/tiramisu.webp", tags: ["Clásico"] },
-      { id: "pannacotta", n: "Panna cotta", d: "Crema cocida y cuajada, con frutos rojos.", o: "piamonte", f: "img/postre/pannacotta.webp" },
-      { id: "raviolichoc", n: "Raviolis de chocolate", d: "Nuestros raviolis en versión dulce, con helado.", f: "img/postre/raviolichoc.webp", tags: ["De la casa"] },
-      { id: "torta", n: "Torta de chocolate", d: "Con helado.", f: "img/postre/torta.webp" },
-      { id: "affogato", n: "Affogato all'amaretto", d: "Helado «ahogado» en café, con amaretto.", f: "img/postre/affogato.webp" }
+    { k: "postres", t: "Postres", ico: "img/real/tiramisu.webp", sub: "Para cerrar como se debe.", fotos: true, items: [
+      { id: "tiramisu", n: "Tiramisú", d: "Café, mascarpone, bizcochos y cacao.", o: "treviso", tags: ["Clásico"] },
+      { id: "pannacotta", n: "Panna cotta", d: "Crema cocida y cuajada, con frutos rojos.", o: "piamonte" },
+      { id: "raviolichoc", n: "Raviolis de chocolate", d: "Nuestros raviolis en versión dulce, con helado.", tags: ["De la casa"] },
+      { id: "torta", n: "Torta de chocolate", d: "Con helado." },
+      { id: "affogato", n: "Affogato all'amaretto", d: "Helado «ahogado» en café, con amaretto." }
     ] },
     { k: "bebidas", t: "Bebidas", ico: "img/bebida/soda.webp", sub: "Sodas italianas, limonadas, jugos naturales y más.", fotos: true, items: [
       { id: "soda", n: "Soda italiana", d: "Burbujas con sabor a fruta. También con licor.", f: "img/bebida/soda.webp", op: [lista("Escoge el sabor", "sabor", ["Cherry", "Curazao", "Manzana verde", "Maracuyá", "Frutos rojos", "Fresa"]), lista("¿Con licor?", "licor", ["Sin licor", "Con licor"])] },
