@@ -138,16 +138,20 @@ section.sec{padding:110px 0 40px;position:relative;scroll-margin-top:-40px}
 .hl{color:#fff;background:linear-gradient(transparent 62%,rgba(88,24,248,.55) 0)}
 
 /* ============ carpetas de vidrio ============ */
-.folder{position:relative;padding-top:18px;transition:transform .5s cubic-bezier(.2,.9,.2,1)}
-.folder .tab{position:absolute;top:0;left:0;width:46%;height:26px;border-radius:14px 14px 0 0;background:linear-gradient(180deg,rgba(185,166,255,.35),rgba(185,166,255,.12));border:1px solid var(--stroke2);border-bottom:0}
-.folder .paper{position:absolute;left:14px;right:14px;top:22px;height:60%;border-radius:12px;background:linear-gradient(180deg,#fff,#dcd6ff);transition:transform .5s cubic-bezier(.2,.9,.2,1);box-shadow:0 -4px 20px rgba(0,0,0,.25)}
-.folder .paper span{display:block;font:700 11px/1.3 Poppins;color:var(--navy);padding:10px 12px;letter-spacing:.06em;text-transform:uppercase}
+.folder{position:relative;padding-top:calc(18px + var(--lift,0px));transition:padding-top .65s cubic-bezier(.2,.9,.2,1),transform .5s cubic-bezier(.2,.9,.2,1)}
+.folder .tab{position:absolute;top:var(--lift,0px);left:0;width:46%;height:26px;border-radius:14px 14px 0 0;background:linear-gradient(180deg,rgba(185,166,255,.35),rgba(185,166,255,.12));border:1px solid var(--stroke2);border-bottom:0;transition:top .65s cubic-bezier(.2,.9,.2,1)}
+.folder .paper{position:absolute;left:14px;right:14px;top:22px;height:var(--ph,58%);overflow:hidden;border-radius:12px;background:linear-gradient(180deg,#fff,#e4dfff);box-shadow:0 -4px 20px rgba(0,0,0,.25);transform-origin:50% 100%;
+  transition:top .65s cubic-bezier(.2,.9,.2,1),height .65s cubic-bezier(.2,.9,.2,1),transform .65s cubic-bezier(.2,.9,.2,1)}
+.folder .paper>span:first-child{display:block;font:700 11px/1.3 Poppins;color:var(--violet);padding:10px 14px 4px;letter-spacing:.12em;text-transform:uppercase}
+.folder .paper .txt{display:block;padding:2px 14px 40px;font:500 14px/1.5 Inter;color:var(--navy);opacity:0;transform:translateY(8px);transition:opacity .4s .25s,transform .5s .25s}
+.folder.open .paper .txt{opacity:1;transform:none}
 .folder .front{position:relative;z-index:2;border-radius:0 var(--r) var(--r) var(--r);padding:22px;min-height:236px;
   background:linear-gradient(160deg,#2b2190,#0b1660 70%);border:1px solid var(--stroke2);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 40px rgba(0,0,0,.35);transition:transform .5s cubic-bezier(.2,.9,.2,1)}
-.folder:hover,.folder:focus-within,.folder.open{transform:translateY(-6px)}
-.folder:hover .paper,.folder.open .paper{transform:translateY(-34px) rotate(-2deg)}
-.folder:hover .front,.folder.open .front{transform:perspective(800px) rotateX(-8deg);transform-origin:bottom}
+.folder:not(.open):hover{transform:translateY(-6px)}
+.folder:not(.open):hover .paper{transform:translateY(-34px) rotate(-2deg)}
+.folder:not(.open):hover .front{transform:perspective(800px) rotateX(-8deg);transform-origin:bottom}
+.folder.open .paper{top:4px;transform:rotate(-1.2deg)}
 @media(max-width:640px){.folder .front{min-height:0}}
 .folder .big{font:800 clamp(34px,4vw,46px)/1 Poppins;letter-spacing:-.02em;background:linear-gradient(180deg,#fff,#c9c0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .folder h3{font:700 17px/1.3 Poppins;margin:10px 0 6px}
@@ -423,30 +427,26 @@ details ul{margin:12px 0 0 18px;display:grid;gap:6px;font-size:13.5px;color:var(
   <div class="wrap">
     <p class="eyebrow" data-reveal>01 · <b>Resumen en 30 segundos</b></p>
     <h2 class="title" data-reveal>Cuatro cosas que hay que saber <em>antes de todo lo demás.</em></h2>
-    <p class="lead" data-reveal>Cada carpeta resume un hallazgo. Ábrela con «Ver más» si quieres el detalle.</p>
+    <p class="lead" data-reveal>Cada carpeta resume un hallazgo. Toca «Ver más» y sale la hoja con el detalle.</p>
     <div class="grid g4">
       <article class="folder" data-reveal>
-        <span class="tab"></span><span class="paper"><span>Alcance</span></span>
+        <span class="tab"></span><span class="paper"><span>Alcance</span><span class="txt">El 90 % de las impresiones vino de TikTok, y los 6 videos de TikTok están marcados como anuncio. Sin pauta, el alcance cae a unos cientos de vistas por video.</span></span>
         <div class="front"><div class="big"><span data-count="110" data-dec="0">0</span> mil</div><h3>impresiones en octubre</h3><p><strong>Casi todo fue pauta en TikTok.</strong></p>
-          <div class="expand"><div><p style="margin-top:8px">El 90 % de las impresiones vino de TikTok, y los 6 videos de TikTok están marcados como anuncio. Sin pauta, el alcance cae a unos cientos de vistas por video.</p></div></div>
           <button class="vm" aria-expanded="false">Ver más</button></div>
       </article>
       <article class="folder" data-reveal>
-        <span class="tab"></span><span class="paper"><span>Instagram</span></span>
+        <span class="tab"></span><span class="paper"><span>Instagram</span><span class="txt">De 488 (31 de octubre) a 510 (18 de noviembre). Los reels propios sacan entre 56 y 383 vistas.</span></span>
         <div class="front"><div class="big">+<span data-count="22">0</span></div><h3>seguidores en Instagram</h3><p><strong>Crece, pero despacio.</strong></p>
-          <div class="expand"><div><p style="margin-top:8px">De 488 (31 de octubre) a 510 (18 de noviembre). Los reels propios sacan entre 56 y 383 vistas.</p></div></div>
           <button class="vm" aria-expanded="false">Ver más</button></div>
       </article>
       <article class="folder" data-reveal>
-        <span class="tab"></span><span class="paper"><span>Lo que funciona</span></span>
+        <span class="tab"></span><span class="paper"><span>Lo que funciona</span><span class="txt">Un reto de picante con La Furia, Alitas Infernales, Animal X y El Man de los Picantes. Las alianzas multiplican el alcance hasta 6 veces.</span></span>
         <div class="front"><div class="big"><span data-count="2214">0</span></div><h3>vistas: el mejor reel</h3><p><strong>Fue una colaboración.</strong></p>
-          <div class="expand"><div><p style="margin-top:8px">Un reto de picante con La Furia, Alitas Infernales, Animal X y El Man de los Picantes. Las alianzas multiplican el alcance hasta 6 veces.</p></div></div>
           <button class="vm" aria-expanded="false">Ver más</button></div>
       </article>
       <article class="folder" data-reveal>
-        <span class="tab"></span><span class="paper"><span>Oportunidad</span></span>
+        <span class="tab"></span><span class="paper"><span>Oportunidad</span><span class="txt">Ninguna marca promete «la salsa mexicana más picante», y al buscar «salsa mexicana Bogotá» no aparece ninguna marca artesanal.</span></span>
         <div class="front"><div class="big"><span data-count="1">0</span></div><h3>lugar libre en el mercado</h3><p><strong>El picante mexicano extremo.</strong></p>
-          <div class="expand"><div><p style="margin-top:8px">Ninguna marca promete «la salsa mexicana más picante», y al buscar «salsa mexicana Bogotá» no aparece ninguna marca artesanal.</p></div></div>
           <button class="vm" aria-expanded="false">Ver más</button></div>
       </article>
     </div>
@@ -958,10 +958,15 @@ $('#copy').addEventListener('click',async e=>{ const t=$('#msgtxt').textContent;
 /* ver más / ver menos */
 $$('.vm').forEach(b=>{ b.dataset.label=b.textContent;
   b.addEventListener('click',e=>{ e.stopPropagation();
+    const f=b.closest('.folder');
+    if(f){ const paper=f.querySelector('.paper'), open=!f.classList.contains('open');
+      if(open){ const h=paper.scrollHeight; f.style.setProperty('--ph',h+'px'); f.style.setProperty('--lift',Math.max(0,h-30)+'px'); }
+      else { f.style.removeProperty('--ph'); f.style.removeProperty('--lift'); }
+      f.classList.toggle('open',open); b.setAttribute('aria-expanded',open); b.textContent=open?'Ver menos':b.dataset.label; return; }
     const n=b.nextElementSibling, p=b.previousElementSibling;
     const ex=(n&&n.classList.contains('expand'))?n:(p&&p.classList.contains('expand'))?p:null; if(!ex) return;
     const open=!ex.classList.contains('open'); ex.classList.toggle('open',open); b.setAttribute('aria-expanded',open);
-    b.textContent=open?'Ver menos':b.dataset.label; const f=b.closest('.folder'); if(f) f.classList.toggle('open',open);
+    b.textContent=open?'Ver menos':b.dataset.label;
   });
 });
 })();
