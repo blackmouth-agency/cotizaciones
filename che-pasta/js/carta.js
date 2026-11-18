@@ -13,7 +13,7 @@
   function rellenos(v) { return { k: "relleno", t: "Escoge el relleno", v: v }; }
   var ACOMP = [{ k: "pasta", t: "Acompáñalo con", v: PASTA3.v }, { k: "salsa", t: "En salsa", v: [["alfredo", "Alfredo"], ["napolitana", "Napolitana"]] }];
   // fotos reales del menú del restaurante (Menüpp)
-  var REAL = "antipasto fritto carpaccio coctel caprese burrata bruschetta verdura carpaccio-salmon rav-carne rav-quesos rav-cordero rav-portobello rav-mar lasana canelloni risotto-funghi risotto-negro risotto-ossobuco gn-pesto gn-napolitana gn-ragu ossobuco porchetta lomo-viche pollo-ron pollo-limon pollo-crispy pollo-cacciatora pollo-pizzaiola salmon raviolichoc torta tiramisu pannacotta affogato".split(" ");
+  var REAL = []; // las fotos del Menüpp se retiraron (18-nov): no todas se ven apetitosas
   function real(it) { return REAL.indexOf(it.id) > -1 ? "img/real/" + it.id + ".webp" : ""; }
   function ruta(k) { return k === "mariscoNap" ? "marisco" : k === "casa" ? "napolitana" : k; }
   function lista(t, k, arr) { return { k: k || "op", t: t, v: arr.map(function (x) { return [x, x]; }) }; }
@@ -50,15 +50,15 @@
       { id: "gn-napolitana", n: "Gnocchi en napolitana", d: "Gnocchi de papa en salsa de tomate.", l: ["Papa", "Harina", "Napolitana"], o: "verona", f: "img/plato2/gnocchi_napolitana.webp", arma: { pasta: "gnocchi", salsa: "napolitana" } },
       { id: "gn-ragu", n: "Gnocchi al ragú", d: "Gnocchi de papa con ragú de carne.", l: ["Papa", "Harina", "Ragú"], o: "verona", f: "img/plato2/gnocchi_ragu.webp", arma: { pasta: "gnocchi", salsa: "ragu" } }
     ] },
-    { k: "horno", t: "Lasaña y risotto", ico: "img/real/lasana.webp", sub: "Del horno y de la olla.", fotos: true, items: [
-      { id: "lasana", n: "Lasaña", d: "Gratinada al horno, mixta o de carne.", o: "bolonia", op: [lista("¿Cuál quieres?", "tipo", ["Mixta", "De carne"])] },
+    { k: "horno", t: "Lasaña y risotto", ico: "img/f-lasana.webp", sub: "Del horno y de la olla.", banner: "img/f-lasana.webp", items: [
+      { id: "lasana", n: "Lasaña", d: "Gratinada al horno, mixta o de carne.", o: "bolonia", f: "img/f-lasana.webp", op: [lista("¿Cuál quieres?", "tipo", ["Mixta", "De carne"])] },
       { id: "canelloni", n: "Canelloni de pollo", d: "Tubos de pasta rellenos de pollo." },
-      { id: "risotto-negro", n: "Risotto negro y marisco", d: "Arroz cremoso en tinta de calamar con frutos del mar.", o: "venecia" },
+      { id: "risotto-negro", n: "Risotto negro y marisco", d: "Arroz cremoso en tinta de calamar con frutos del mar.", o: "venecia", f: "img/f-risotto.webp" },
       { id: "risotto-funghi", n: "Risotto funghi", d: "Con portobello y porcini.", l: ["Portobello", "Porcini"] },
       { id: "risotto-ossobuco", n: "Risotto zafferano e ossobuco", d: "Risotto al azafrán con ossobuco, como se sirve en Milán.", o: "milan" }
     ] },
-    { k: "fuertes", t: "Platos fuertes", ico: "img/real/ossobuco.webp", sub: "Carnes, pollo y pescado, con pasta fresca en salsa Alfredo o napolitana.", fotos: true, items: [
-      { id: "ossobuco", n: "Ossobuco", d: "Ternera al vino tinto, con pasta.", x: "Jarrete de ternera con su hueso, guisado al vino tinto.", o: "milan", op: ACOMP },
+    { k: "fuertes", t: "Platos fuertes", ico: "img/f-ossobuco.webp", sub: "Carnes, pollo y pescado, con pasta fresca en salsa Alfredo o napolitana.", banner: "img/f-ossobuco.webp", items: [
+      { id: "ossobuco", n: "Ossobuco", d: "Ternera al vino tinto, con pasta.", x: "Jarrete de ternera con su hueso, guisado al vino tinto.", o: "milan", f: "img/f-ossobuco.webp", op: ACOMP },
       { id: "lomo-viche", n: "Lomo viche", d: "Con pasta y ensalada.", tags: ["Recomendado"], op: ACOMP },
       { id: "filet", n: "Filet mignon", d: "Con pasta en Alfredo o napolitana.", op: ACOMP },
       { id: "porchetta", n: "Porchetta", d: "Pernil de cerdo al horno, con pasta.", op: ACOMP },
@@ -69,7 +69,7 @@
       { id: "pollo-cacciatora", n: "Pollo alla cacciatora", d: "Pierna pernil de pollo, con pasta.", op: ACOMP },
       { id: "salmon", n: "Salmón a la plancha", d: "Con ensalada y pasta.", op: ACOMP }
     ] },
-    { k: "entradas", t: "Entradas", ico: "img/real/antipasto.webp", sub: "Para abrir la mesa y compartir.", fotos: true, items: [
+    { k: "entradas", t: "Entradas", ico: "img/plato2/raviolis_tomatefresco.webp", sub: "Para abrir la mesa y compartir.", items: [
       { id: "antipasto", n: "Antipasto italiano", d: "Prosciutto crudo, mortadela, salame, verdura asada y mozzarella de búfala.", tags: ["Para compartir"] },
       { id: "fritto", n: "Fritto misto di mare", d: "Camarones y anillos de calamar fritos, como en la costa italiana." },
       { id: "burrata", n: "Burrata", d: "Sobre tomate y berenjena asados, con un toque de pesto genovés." },
@@ -158,10 +158,12 @@
     }
     var filas = c.fotos ? sinF : c.items;
     if (filas.length) {
-      html += '<div class="pizarra' + (c.fotos ? " pizarra-chica" : "") + '"><ul class="filas">';
+      var ban = !c.fotos && c.banner;
+      html += '<div class="pizarra' + (c.fotos ? " pizarra-chica" : "") + (ban ? " con-banner" : "") + '">' + (ban ? '<figure class="pizarra-foto"><img src="' + c.banner + '" alt="' + c.t + '" loading="lazy" width="640" height="800"></figure>' : "") + '<ul class="filas">';
       filas.forEach(function (it) {
         var tags = (it.tags || []).map(function (t) { return '<span class="tag">' + t + '</span>'; }).join("");
         html += '<li class="fila" data-id="' + it.id + '"><button type="button" class="fila-abre" data-abre="' + it.id + '">' +
+          (it.f ? '<img class="fila-mini" src="' + chica(it.f) + '" alt="" loading="lazy" width="56" height="56">' : "") +
           '<span class="fila-txt"><span class="fila-n">' + it.n + tags + (it.o ? '<span class="fila-origen">' + PIN + LUGAR[it.o] + '</span>' : "") + '</span><small>' + it.d + '</small></span></button>' +
           '<button type="button" class="plato-add" data-add="' + it.id + '" aria-label="Agregar ' + it.n + ' al pedido">' + MAS + '</button></li>';
       });
