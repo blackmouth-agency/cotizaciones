@@ -559,13 +559,13 @@ details ul{margin:12px 0 0 18px;display:grid;gap:6px;font-size:13.5px;color:var(
 <section class="sec" id="publico">
   <div class="wrap">
     <p class="eyebrow" data-reveal>04 · <b>Lo que dice la gente</b></p>
-    <h2 class="title" data-reveal>Los anuncios despiertan ganas de comprar. <em>Falta decir el precio.</em></h2>
-    <p class="lead" data-reveal>Comentarios reales en los videos de TikTok de octubre.</p>
+    <h2 class="title" data-reveal>Los anuncios despiertan ganas de comprar. <em>Falta decir el precio, de una.</em></h2>
+    <p class="lead" data-reveal>Comentarios reales en los videos de TikTok de octubre, con las respuestas de la marca.</p>
     <div class="chat" data-reveal>
       <div class="head"><div class="av">M</div><div><strong>molcajete.artesanal</strong><small>Comentarios · TikTok</small></div></div>
       <div class="msgs" id="msgs"></div>
     </div>
-    <p class="verdict" data-reveal><span data-count="10">0</span> de 14 comentarios preguntan precio o dónde comprar. <em>La marca respondió 2.</em></p>
+    <p class="verdict" data-reveal><span data-count="11">11</span> de 14 comentarios preguntan precio o cómo comprar. La marca respondió casi todos, <em>pero 4 veces esquivó el precio y lo mandó al WhatsApp.</em></p>
   </div>
 </section>
 
@@ -801,6 +801,7 @@ function frame(now){
 requestAnimationFrame(frame);
 
 /* --- revelado + contadores --- */
+$$('[data-count]').forEach(c=>{c.textContent=fmt(parseFloat(c.dataset.count),+(c.dataset.dec||0));});
 function countUp(el){
   const to=parseFloat(el.dataset.count), dec=+(el.dataset.dec||0), dur=1500, st=performance.now();
   if(reduce){el.textContent=fmt(to,dec);return;}
@@ -852,13 +853,13 @@ function fillCmp(){ setTimeout(()=>$$('#cmp i').forEach(i=>i.style.width=i.datas
 
 /* --- chat de comentarios --- */
 const msgs=[
- ['precio?','hace 5 sem'],
- ['precio de las tres salsas por favor gracias 🙏','hace 5 sem'],
- ['por favor precios y a dónde se pueden conseguir? en qué ciudad?','hace 5 sem'],
- ['y a dónde más las puede uno encontrar? en los grandes supermercados de cadena como Éxito, Jumbo, Carrefour…','hace 5 sem'],
- ['por qué no dan precios en el video? Lo mandan al WhatsApp 🙄','hace 4 sem'],
- ['qué le cuesta poner el precio aunque sea en los comentarios para no tener que escribir al WhatsApp','hace 5 sem'],
- ['Estamos en Bogotá con envíos a todo el país','respuesta de la marca',true]
+ ['precio?','22 oct'],
+ ['¿Cuál salsa es de su interés? Para darles el precio','respuesta de la marca · 22 oct',true],
+ ['precio de las tres salsas por favor gracias 🙏','27 oct'],
+ ['La trilogía tiene un precio de 70.00','respuesta de la marca · 28 oct',true],
+ ['por qué no dan precios en el video? Lo mandan al WhatsApp 🙄','23 oct'],
+ ['Lo envía al WhatsApp para poder darle una atención personalizada','respuesta de la marca · 23 oct',true],
+ ['Hola. precios y donde están ubicados?','15 oct · sin respuesta directa']
 ];
 let chatStarted=false; const box=$('#msgs');
 new IntersectionObserver(es=>{ if(es[0].isIntersecting&&!chatStarted){ chatStarted=true; playChat(); } },{threshold:.35}).observe($('.chat'));
