@@ -12,6 +12,9 @@
   function salsas(ks) { return { k: "salsa", t: "Escoge la salsa", v: ks.map(function (k) { return [k, SAL[k]]; }) }; }
   function rellenos(v) { return { k: "relleno", t: "Escoge el relleno", v: v }; }
   var ACOMP = [{ k: "pasta", t: "Acompáñalo con", v: PASTA3.v }, { k: "salsa", t: "En salsa", v: [["alfredo", "Alfredo"], ["napolitana", "Napolitana"]] }];
+  // fotos reales del menú del restaurante (Menüpp)
+  var REAL = "antipasto fritto carpaccio coctel caprese burrata bruschetta verdura carpaccio-salmon rav-carne rav-quesos rav-cordero rav-portobello rav-mar lasana canelloni risotto-funghi risotto-negro risotto-ossobuco gn-pesto gn-napolitana gn-ragu ossobuco porchetta lomo-viche pollo-ron pollo-limon pollo-crispy pollo-cacciatora pollo-pizzaiola salmon raviolichoc torta tiramisu pannacotta affogato".split(" ");
+  function real(it) { return REAL.indexOf(it.id) > -1 ? "img/real/" + it.id + ".webp" : ""; }
   function ruta(k) { return k === "mariscoNap" ? "marisco" : k === "casa" ? "napolitana" : k; }
   function lista(t, k, arr) { return { k: k || "op", t: t, v: arr.map(function (x) { return [x, x]; }) }; }
 
@@ -47,15 +50,15 @@
       { id: "gn-napolitana", n: "Gnocchi en napolitana", d: "Gnocchi de papa en salsa de tomate.", l: ["Papa", "Harina", "Napolitana"], o: "verona", f: "img/plato2/gnocchi_napolitana.webp", arma: { pasta: "gnocchi", salsa: "napolitana" } },
       { id: "gn-ragu", n: "Gnocchi al ragú", d: "Gnocchi de papa con ragú de carne.", l: ["Papa", "Harina", "Ragú"], o: "verona", f: "img/plato2/gnocchi_ragu.webp", arma: { pasta: "gnocchi", salsa: "ragu" } }
     ] },
-    { k: "horno", t: "Lasaña y risotto", ico: "img/f-lasana.webp", sub: "Del horno y de la olla.", banner: "img/f-lasana.webp", items: [
-      { id: "lasana", n: "Lasaña", d: "Gratinada al horno, mixta o de carne.", o: "bolonia", f: "img/f-lasana.webp", op: [lista("¿Cuál quieres?", "tipo", ["Mixta", "De carne"])] },
+    { k: "horno", t: "Lasaña y risotto", ico: "img/real/lasana.webp", sub: "Del horno y de la olla.", fotos: true, items: [
+      { id: "lasana", n: "Lasaña", d: "Gratinada al horno, mixta o de carne.", o: "bolonia", op: [lista("¿Cuál quieres?", "tipo", ["Mixta", "De carne"])] },
       { id: "canelloni", n: "Canelloni de pollo", d: "Tubos de pasta rellenos de pollo." },
-      { id: "risotto-negro", n: "Risotto negro y marisco", d: "Arroz cremoso en tinta de calamar con frutos del mar.", o: "venecia", f: "img/f-risotto.webp" },
+      { id: "risotto-negro", n: "Risotto negro y marisco", d: "Arroz cremoso en tinta de calamar con frutos del mar.", o: "venecia" },
       { id: "risotto-funghi", n: "Risotto funghi", d: "Con portobello y porcini.", l: ["Portobello", "Porcini"] },
       { id: "risotto-ossobuco", n: "Risotto zafferano e ossobuco", d: "Risotto al azafrán con ossobuco, como se sirve en Milán.", o: "milan" }
     ] },
-    { k: "fuertes", t: "Platos fuertes", ico: "img/f-ossobuco.webp", sub: "Carnes, pollo y pescado, con pasta fresca en salsa Alfredo o napolitana.", banner: "img/f-ossobuco.webp", items: [
-      { id: "ossobuco", n: "Ossobuco", d: "Ternera al vino tinto, con pasta.", x: "Jarrete de ternera con su hueso, guisado al vino tinto.", o: "milan", f: "img/f-ossobuco.webp", op: ACOMP },
+    { k: "fuertes", t: "Platos fuertes", ico: "img/real/ossobuco.webp", sub: "Carnes, pollo y pescado, con pasta fresca en salsa Alfredo o napolitana.", fotos: true, items: [
+      { id: "ossobuco", n: "Ossobuco", d: "Ternera al vino tinto, con pasta.", x: "Jarrete de ternera con su hueso, guisado al vino tinto.", o: "milan", op: ACOMP },
       { id: "lomo-viche", n: "Lomo viche", d: "Con pasta y ensalada.", tags: ["Recomendado"], op: ACOMP },
       { id: "filet", n: "Filet mignon", d: "Con pasta en Alfredo o napolitana.", op: ACOMP },
       { id: "porchetta", n: "Porchetta", d: "Pernil de cerdo al horno, con pasta.", op: ACOMP },
@@ -66,7 +69,7 @@
       { id: "pollo-cacciatora", n: "Pollo alla cacciatora", d: "Pierna pernil de pollo, con pasta.", op: ACOMP },
       { id: "salmon", n: "Salmón a la plancha", d: "Con ensalada y pasta.", op: ACOMP }
     ] },
-    { k: "entradas", t: "Entradas", ico: "img/plato2/raviolis_tomatefresco.webp", sub: "Para abrir la mesa y compartir.", items: [
+    { k: "entradas", t: "Entradas", ico: "img/real/antipasto.webp", sub: "Para abrir la mesa y compartir.", fotos: true, items: [
       { id: "antipasto", n: "Antipasto italiano", d: "Prosciutto crudo, mortadela, salame, verdura asada y mozzarella de búfala.", tags: ["Para compartir"] },
       { id: "fritto", n: "Fritto misto di mare", d: "Camarones y anillos de calamar fritos, como en la costa italiana." },
       { id: "burrata", n: "Burrata", d: "Sobre tomate y berenjena asados, con un toque de pesto genovés." },
@@ -125,7 +128,7 @@
   }
   function agregar(it, sel, cant, desde) {
     var d = detalle(it, sel);
-    window.PEDIDO.agregar({ id: "carta|" + it.id + "|" + d, n: it.n, d: d, f: chica(foto(it, sel)), t: "carta", c: cant || 1 }, desde);
+    window.PEDIDO.agregar({ id: "carta|" + it.id + "|" + d, n: it.n, d: d, f: chica(foto(it, sel)) || real(it), t: "carta", c: cant || 1 }, desde);
   }
   var PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="currentColor"/><circle cx="12" cy="10" r="2.6" fill="#fff"/></svg>';
   var MAS = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>';
@@ -136,24 +139,29 @@
     var b = document.createElement("a"); b.href = "#" + c.k; b.innerHTML = '<img src="' + chica(c.ico) + '" alt="" width="28" height="28">' + c.t; nav.appendChild(b);
     var s = document.createElement("section"); s.className = "cat cat-" + (c.fotos ? "fotos" : "pizarra"); s.id = c.k;
     var html = '<header class="cat-cab"><span class="cat-n">' + ("0" + (ci + 1)).slice(-2) + '</span><div><h2>' + c.t + '</h2><p>' + c.sub + '</p></div></header>';
-    if (c.fotos) {
+    var conF = c.items.filter(function (it) { return it.ft || it.f || real(it); }), sinF = c.items.filter(function (it) { return conF.indexOf(it) < 0; });
+    if (c.fotos && conF.length) {
       html += '<div class="platos">';
-      c.items.forEach(function (it, i) {
-        var sel = selDefecto(it), src = foto(it, sel), lugar = it.o ? '<span class="plato-origen">' + PIN + LUGAR[it.o] + '</span>' : "";
+      conF.forEach(function (it, i) {
+        var sel = selDefecto(it), cen = foto(it, sel), rl = real(it), lugar = it.o ? '<span class="plato-origen">' + PIN + LUGAR[it.o] + '</span>' : "";
         var tags = (it.tags || []).slice(0, 1).map(function (t) { return '<span class="tag">' + t + '</span>'; }).join("");
+        var vaso = /img\/bebida\//.test(cen);
+        var img = cen ? '<div class="plato-img' + (vaso ? " vaso" : "") + '"><img class="pi-cen" src="' + chica(cen) + '" alt="' + it.n + '" loading="lazy" width="420" height="420">' +
+            (rl ? '<span class="pi-real"><img src="' + rl + '" alt="Foto real: ' + it.n + '" loading="lazy" width="640" height="640"><b>Foto real</b></span>' : "") + '</div>'
+          : '<div class="plato-img cubre"><img src="' + rl + '" alt="' + it.n + ', foto real del plato" loading="lazy" width="640" height="640"><span class="pi-etq">Foto real</span></div>';
         html += '<article class="plato" data-id="' + it.id + '" style="--i:' + (i % 8) + '">' +
-          '<button type="button" class="plato-abre" data-abre="' + it.id + '"><span class="sr">Ver ' + it.n + '</span></button>' +
-          '<div class="plato-img"><img src="' + chica(src) + '" alt="' + it.n + '" loading="lazy" width="420" height="420"></div>' + lugar +
+          '<button type="button" class="plato-abre" data-abre="' + it.id + '"><span class="sr">Ver ' + it.n + '</span></button>' + img + lugar +
           '<div class="plato-txt">' + tags + '<h3>' + it.n + '</h3><p>' + it.d + '</p></div>' +
           '<button type="button" class="plato-add" data-add="' + it.id + '" aria-label="Agregar ' + it.n + ' al pedido">' + MAS + '</button></article>';
       });
       html += '</div>';
-    } else {
-      html += '<div class="pizarra' + (c.banner ? " con-banner" : "") + '">' + (c.banner ? '<figure class="pizarra-foto"><img src="' + c.banner + '" alt="' + c.t + '" loading="lazy" width="640" height="800"></figure>' : "") + '<ul class="filas">';
-      c.items.forEach(function (it) {
+    }
+    var filas = c.fotos ? sinF : c.items;
+    if (filas.length) {
+      html += '<div class="pizarra' + (c.fotos ? " pizarra-chica" : "") + '"><ul class="filas">';
+      filas.forEach(function (it) {
         var tags = (it.tags || []).map(function (t) { return '<span class="tag">' + t + '</span>'; }).join("");
         html += '<li class="fila" data-id="' + it.id + '"><button type="button" class="fila-abre" data-abre="' + it.id + '">' +
-          (it.f ? '<img class="fila-mini" src="' + chica(it.f) + '" alt="" loading="lazy" width="56" height="56">' : "") +
           '<span class="fila-txt"><span class="fila-n">' + it.n + tags + (it.o ? '<span class="fila-origen">' + PIN + LUGAR[it.o] + '</span>' : "") + '</span><small>' + it.d + '</small></span></button>' +
           '<button type="button" class="plato-add" data-add="' + it.id + '" aria-label="Agregar ' + it.n + ' al pedido">' + MAS + '</button></li>';
       });
@@ -201,9 +209,14 @@
     if (!it) return;
     actual = it; sel = selDefecto(it); cant = 1;
     if (fi.hidden) ultimoFoco = document.activeElement;
-    var src = foto(it, sel), conFoto = !!src;
-    caja.classList.toggle("sin-foto", !conFoto);
-    $(".ficha-foto img", fi).src = src || ""; $(".ficha-foto img", fi).alt = it.n;
+    var src = foto(it, sel), rl = real(it), panel = $(".ficha-foto", fi);
+    caja.classList.toggle("sin-foto", !src && !rl);
+    panel.classList.toggle("solo-real", !src && !!rl); panel.classList.remove("ver-real");
+    panel.classList.toggle("vaso", /img\/bebida\//.test(src));
+    var pimg = $(".ficha-plato img", fi); if (src) { pimg.src = src; pimg.alt = it.n; }
+    var cub = $(".ficha-cubre", fi); if (rl) { cub.src = rl; cub.alt = it.n + ", foto real del plato"; } else cub.removeAttribute("src");
+    var br = $(".ficha-real", fi); br.hidden = !(src && rl);
+    if (src && rl) { $("img", br).src = rl; $("span", br).textContent = "Ver foto real del plato"; }
     $(".ficha-cat", fi).textContent = it.cat.t;
     $(".ficha-tags", fi).innerHTML = (it.tags || []).map(function (t) { return '<span class="tag">' + t + '</span>'; }).join("") + (it.o ? '<span class="tag tag-origen">' + PIN + 'Nace en ' + LUGAR[it.o] + '</span>' : "");
     $("#ficha-tit").textContent = it.n;
@@ -239,7 +252,8 @@
   $(".ficha-ops", fi).addEventListener("click", function (e) {
     var b = e.target.closest("button[data-k]"); if (!b) return;
     sel[b.dataset.k] = b.dataset.v; pintaOps();
-    var src = foto(actual, sel), img = $(".ficha-foto img", fi);
+    var src = foto(actual, sel), img = $(".ficha-plato img", fi);
+    if ($(".ficha-foto", fi).classList.contains("ver-real")) verReal(false);
     if (src && img.getAttribute("src") !== src) {
       if (window.CP.reduce) { img.src = src; return; }
       img.animate([{ transform: "rotate(0) scale(1)", opacity: 1 }, { transform: "rotate(-40deg) scale(.86)", opacity: 0 }], { duration: 220, easing: "ease-in" }).onfinish = function () {
@@ -248,7 +262,14 @@
     }
   });
   $(".ficha-cant", fi).addEventListener("click", function (e) { var b = e.target.closest("button[data-d]"); if (!b) return; cant = Math.max(1, Math.min(20, cant + +b.dataset.d)); pintaCant(); });
-  $(".ficha-agregar", fi).addEventListener("click", function (e) { agregar(actual, sel, cant, $(".ficha-foto img", fi).src ? $(".ficha-foto img", fi) : e.currentTarget); setTimeout(cerrar, 250); });
+  $(".ficha-agregar", fi).addEventListener("click", function (e) { agregar(actual, sel, cant, e.currentTarget); setTimeout(cerrar, 250); });
+  function verReal(si) {
+    var panel = $(".ficha-foto", fi), br = $(".ficha-real", fi);
+    panel.classList.toggle("ver-real", si);
+    $("img", br).src = si ? foto(actual, sel) : real(actual);
+    $("span", br).textContent = si ? "Ver presentación" : "Ver foto real del plato";
+  }
+  $(".ficha-real", fi).onclick = function () { verReal(!$(".ficha-foto", fi).classList.contains("ver-real")); };
   function vecino(d) { var l = actual.cat.items, i = l.indexOf(actual) + d; if (i >= 0 && i < l.length) abrir(l[i]); }
   $(".ficha-prev", fi).onclick = function () { vecino(-1); }; $(".ficha-sig", fi).onclick = function () { vecino(1); };
   fi.addEventListener("click", function (e) { if (e.target.closest("[data-fcierra]")) cerrar(); });

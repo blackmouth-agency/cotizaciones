@@ -1,3 +1,6 @@
+img{height:auto}
+.cortina img{height:auto}
+:root{--piedra:#26201d url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 .95  0 0 0 0 .9  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 /* ====== v2: héroe por capas, pedido compartido, carta con fichas, pasta para casa ====== */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 body.cargada .cortina{transition-duration:.55s}
@@ -287,16 +290,16 @@ body.menu-abierto{overflow-x:clip!important;overflow-y:visible!important}
 .reloj-txt span{font:600 14px var(--f);color:#E9CFC5;margin-top:4px}
 .reloj-btns{display:flex;gap:10px}
 .reloj-nota{font-size:13px;color:#CDBFAE;max-width:340px;margin:0}
-.olla{position:relative;width:150px;height:70px;margin-bottom:-6px}
+.olla-casa{position:relative;width:150px;height:70px;margin-bottom:-6px}
 .olla-cuerpo{position:absolute;inset:18px 0 0;background:linear-gradient(180deg,#7d8a92,#4c565c);border-radius:6px 6px 22px 22px;box-shadow:inset 0 -8px 16px rgba(0,0,0,.3)}
 .olla-cuerpo::before,.olla-cuerpo::after{content:"";position:absolute;top:8px;width:18px;height:8px;border-radius:4px;background:#4c565c}
 .olla-cuerpo::before{left:-14px}.olla-cuerpo::after{right:-14px}
 .olla-agua{position:absolute;left:8px;right:8px;top:4px;height:22px;z-index:1}
 .olla-agua i{position:absolute;bottom:0;width:10px;height:10px;border-radius:50%;border:2px solid rgba(220,240,255,.85);opacity:0;left:calc(var(--x,10) * 1%)}
 .olla-agua i:nth-child(1){--x:10}.olla-agua i:nth-child(2){--x:28;animation-delay:.3s!important}.olla-agua i:nth-child(3){--x:46;animation-delay:.6s!important}.olla-agua i:nth-child(4){--x:62;animation-delay:.15s!important}.olla-agua i:nth-child(5){--x:78;animation-delay:.45s!important}.olla-agua i:nth-child(6){--x:88;animation-delay:.75s!important}
-.olla.hierve .olla-agua i{animation:burbuja 1s ease-in infinite}
+.olla-casa.hierve .olla-agua i{animation:burbuja 1s ease-in infinite}
 @keyframes burbuja{0%{transform:translateY(10px) scale(.4);opacity:0}30%{opacity:1}100%{transform:translateY(-34px) scale(1.1);opacity:0}}
-.olla.lista .olla-cuerpo{background:linear-gradient(180deg,#4fb57a,#2e7a50)}
+.olla-casa.lista .olla-cuerpo{background:linear-gradient(180deg,#4fb57a,#2e7a50)}
 .casa-faq{max-width:820px;margin:0 auto;padding:clamp(60px,8vw,100px) clamp(16px,6vw,40px) 0}
 .casa-faq h2{font:400 clamp(36px,4vw,54px)/1 var(--cond);text-transform:uppercase;margin-bottom:16px}
 .casa-faq details{background:#fff;border-radius:16px;padding:4px 20px;margin-bottom:10px;box-shadow:0 3px 10px rgba(60,20,0,.05)}
@@ -322,3 +325,42 @@ body.menu-abierto{overflow-x:clip!important;overflow-y:visible!important}
   .pedido-aviso.on{transform:translate(-50%,0)}
 }
 @media (max-width:900px){.h3d-pista{top:84px;bottom:auto;left:auto;right:16px}}
+
+/* ---------- carta v3: piedra limpia y fotos reales ---------- */
+.plato-img,.ficha-foto{background:radial-gradient(ellipse at 50% 40%,rgba(255,236,210,.10),transparent 65%),var(--piedra)}
+.plato-img{position:relative}
+.plato-img.vaso img.pi-cen{width:62%;height:86%;aspect-ratio:auto;object-fit:contain;object-position:50% 100%;margin-top:6%}
+.plato-img.cubre{display:block}
+.plato-img.cubre img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;filter:none}
+.plato:hover .plato-img.cubre img{transform:scale(1.06)}
+.pi-etq{position:absolute;right:10px;bottom:10px;font:800 10px var(--f);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(28,11,13,.7);padding:5px 9px;border-radius:999px}
+.pi-real{position:absolute;right:10px;bottom:10px;width:64px;height:64px;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.45);transform:rotate(4deg);transition:transform .5s var(--ease),width .5s var(--ease),height .5s var(--ease)}
+.pi-real img{width:100%;height:100%;object-fit:cover;filter:none;aspect-ratio:auto}
+.plato:hover .pi-real img{transform:none}
+.pi-real b{position:absolute;left:0;right:0;bottom:0;font:800 8.5px/1 var(--f);letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(28,11,13,.75);text-align:center;padding:3px 0}
+@media (hover:hover){.plato:hover .pi-real{width:calc(100% - 20px);height:calc(100% - 20px);transform:none;border-radius:16px}}
+.plato-txt{position:relative}
+.plato-txt p{padding-right:46px}
+.plato .plato-add{top:auto;bottom:14px}
+.pizarra-chica{margin-top:16px;padding:clamp(12px,2vw,22px) clamp(18px,3vw,32px)}
+/* ficha */
+.ficha-foto{overflow:hidden}
+.ficha-cubre{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease;pointer-events:none}
+.ficha-foto.ver-real .ficha-cubre,.ficha-foto.solo-real .ficha-cubre{opacity:1}
+.ficha-foto.solo-real .ficha-plato{display:none}
+.ficha-etq{position:absolute;top:16px;left:16px;z-index:2;font:800 11px var(--f);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(28,11,13,.7);padding:6px 11px;border-radius:999px;opacity:0;transition:opacity .3s}
+.ficha-foto.ver-real .ficha-etq,.ficha-foto.solo-real .ficha-etq{opacity:1}
+.ficha-real{position:absolute;left:16px;bottom:16px;z-index:3;display:flex;align-items:center;gap:10px;border:0;background:#fff;border-radius:16px;padding:6px 14px 6px 6px;font:700 13px var(--f);color:var(--vino);box-shadow:0 8px 20px rgba(0,0,0,.35);transform:rotate(-2deg);transition:transform .3s var(--ease)}
+.ficha-real:hover{transform:rotate(0) scale(1.04)}
+.ficha-real img{width:58px;height:58px;border-radius:11px;object-fit:cover}
+.ficha-foto.ver-real .ficha-real img{object-fit:contain;background:var(--piedra)}
+.ficha-foto.vaso .ficha-plato img{animation:none;width:70%;height:90%;margin:auto}
+.ficha-pasar{z-index:3;justify-content:flex-end;padding-right:16px;left:auto}
+.ficha-foto.ver-real .ficha-plato img{animation-play-state:paused}
+@media (max-width:900px){
+  .ficha-real{left:10px;bottom:10px;padding:4px 10px 4px 4px;font-size:12px}
+  .ficha-real img{width:44px;height:44px}
+  .plato .plato-add{top:auto;bottom:10px;right:8px}
+  .plato-txt p{padding-right:40px}
+  .pi-real{width:48px;height:48px;right:8px;bottom:8px}
+}
