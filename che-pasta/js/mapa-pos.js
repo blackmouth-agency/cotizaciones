@@ -1,0 +1,1 @@
+window.MAPA_POS = { genova: [35.3, 31.3], piamonte: [31.5, 25], milan: [36, 21], verona: [44.5, 21], treviso: [51.5, 18.5], venecia: [51.5, 22.5], bolonia: [45, 29], florencia: [45.5, 36], amatrice: [53.7, 42.5], roma: [48.1, 48.7], trevi: [48.9, 50.4], napoles: [56.6, 57.9], amalfi: [58.1, 61] };
