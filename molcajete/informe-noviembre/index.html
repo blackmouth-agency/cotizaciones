@@ -231,7 +231,9 @@ section.sec{padding:110px 0 40px;position:relative;scroll-margin-top:-40px}
 /* ============ warp carousel ============ */
 .warp{position:relative;height:520px;perspective:1300px;touch-action:pan-y;user-select:none;cursor:grab}
 .warp:active{cursor:grabbing}
-.warp .stage3d{position:absolute;inset:0;transform-style:preserve-3d}
+.warp .stage3d{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none}
+.wcard{pointer-events:auto}
+.wcard:not(.front) a{pointer-events:none}
 .wcard{position:absolute;left:50%;top:10px;width:300px;margin-left:-150px;height:470px;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px;
   background:linear-gradient(165deg,#2c2192,#0a1452 58%);border:1px solid var(--stroke2);box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.2);
   will-change:transform,opacity;backface-visibility:hidden}
@@ -887,9 +889,9 @@ dots.innerHTML=comp.map(()=>'<i></i>').join('');
 const cards=$$('.wcard',stage); let pos=0, target=0, drag=null;
 function layout(){ const sp=innerWidth<600?215:310; cards.forEach((c,i)=>{ const o=i-pos, a=Math.abs(o);
   c.style.transform=`translateX(${o*sp}px) translateZ(${-a*280}px) rotateY(${o*-24}deg) skewY(${o*1.2}deg) scale(${1-Math.min(a,3)*.07})`;
-  c.style.opacity=a>3.2?0:1-a*.22; c.style.zIndex=100-Math.round(a*10); c.style.pointerEvents=a<.5?'auto':'none'; });
+  c.style.opacity=a>3.2?0:1-a*.22; c.style.zIndex=100-Math.round(a*10); c.style.pointerEvents=a>3.2?'none':'auto'; c.classList.toggle('front',a<.5); });
   $$('i',dots).forEach((d,i)=>d.classList.toggle('on',i===Math.round(((pos%comp.length)+comp.length)%comp.length))); }
-(function anim(){ pos+=(target-pos)*.12; layout(); requestAnimationFrame(anim); })();
+(function anim(){ pos+=(target-pos)*.12; if(Math.abs(target-pos)<.002) pos=target; layout(); requestAnimationFrame(anim); })();
 const clamp=v=>Math.max(0,Math.min(comp.length-1,v));
 $('#wprev').onclick=()=>target=clamp(Math.round(target)-1); $('#wnext').onclick=()=>target=clamp(Math.round(target)+1);
 const wp=$('#warp');
