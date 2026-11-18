@@ -170,8 +170,9 @@ body.menu-abierto{overflow-x:clip!important;overflow-y:visible!important}
 .ficha-caja.cambia .ficha-info>*{animation:sube .5s var(--ease) both}
 .ficha-x{position:absolute;top:14px;right:14px;z-index:5}
 .ficha-foto{position:relative;background:#C99A66 url(../img/fondo/mesa.webp) center/cover;display:grid;place-items:center;min-height:420px}
-.ficha-plato{width:82%;aspect-ratio:1;display:grid;place-items:center}
-.ficha-plato img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(14px 26px 24px rgba(40,15,0,.45));animation:gira 60s linear infinite}
+.ficha-plato{width:82%;aspect-ratio:1;filter:drop-shadow(14px 26px 24px rgba(0,0,0,.45))}
+.ficha-giro{position:relative;width:100%;height:100%;animation:gira 60s linear infinite}
+.ficha-giro img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 @keyframes gira{to{transform:rotate(360deg)}}
 .ficha-pasar{position:absolute;left:0;right:0;bottom:16px;display:flex;align-items:center;justify-content:center;gap:12px;font:700 13px var(--f);color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .ficha-pasar button{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--vino);font:700 24px/1 var(--f);box-shadow:0 3px 10px rgba(0,0,0,.2)}
@@ -354,9 +355,10 @@ body.menu-abierto{overflow-x:clip!important;overflow-y:visible!important}
 .ficha-real:hover{transform:rotate(0) scale(1.04)}
 .ficha-real img{width:58px;height:58px;border-radius:11px;object-fit:cover}
 .ficha-foto.ver-real .ficha-real img{object-fit:contain;background:var(--piedra)}
-.ficha-foto.vaso .ficha-plato img{animation:none;width:70%;height:90%;margin:auto}
+.ficha-foto.vaso .ficha-giro{animation:none}
+.ficha-foto.vaso .ficha-giro img{inset:5% 15%;width:70%;height:90%}
 .ficha-pasar{z-index:3;justify-content:flex-end;padding-right:16px;left:auto}
-.ficha-foto.ver-real .ficha-plato img{animation-play-state:paused}
+.ficha-foto.ver-real .ficha-giro{animation-play-state:paused}
 @media (max-width:900px){
   .ficha-real{left:10px;bottom:10px;padding:4px 10px 4px 4px;font-size:12px}
   .ficha-real img{width:44px;height:44px}

@@ -256,9 +256,15 @@
     if ($(".ficha-foto", fi).classList.contains("ver-real")) verReal(false);
     if (src && img.getAttribute("src") !== src) {
       if (window.CP.reduce) { img.src = src; return; }
-      img.animate([{ transform: "rotate(0) scale(1)", opacity: 1 }, { transform: "rotate(-40deg) scale(.86)", opacity: 0 }], { duration: 220, easing: "ease-in" }).onfinish = function () {
-        img.src = src; img.animate([{ transform: "rotate(40deg) scale(.86)", opacity: 0 }, { transform: "rotate(0) scale(1)", opacity: 1 }], { duration: 420, easing: "cubic-bezier(.2,.8,.2,1)" });
+      // el plato nunca cambia de sentido: el viejo sigue girando y se desvanece mientras el nuevo llega girando
+      $$(".ficha-giro .saliente", fi).forEach(function (x) { x.parentNode.removeChild(x); });
+      var viejo = img.cloneNode(); viejo.className = "saliente"; img.parentNode.appendChild(viejo);
+      img.src = src;
+      var ok = function () {
+        viejo.animate([{ transform: "rotate(0) scale(1)", opacity: 1 }, { transform: "rotate(50deg) scale(.92)", opacity: 0 }], { duration: 520, easing: "ease-in", fill: "forwards" }).onfinish = function () { if (viejo.parentNode) viejo.parentNode.removeChild(viejo); };
+        img.animate([{ transform: "rotate(-50deg) scale(.92)", opacity: 0 }, { transform: "rotate(0) scale(1)", opacity: 1 }], { duration: 620, easing: "cubic-bezier(.2,.8,.2,1)" });
       };
+      if (img.complete) ok(); else img.addEventListener("load", ok, { once: true });
     }
   });
   $(".ficha-cant", fi).addEventListener("click", function (e) { var b = e.target.closest("button[data-d]"); if (!b) return; cant = Math.max(1, Math.min(20, cant + +b.dataset.d)); pintaCant(); });
