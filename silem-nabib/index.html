@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Silem Nabib · Ingeniero de sistemas</title>
+<link rel="icon" href="/logo.ico" sizes="any">
+<meta name="description" content="Silem Nabib, ingeniero de sistemas en Cali. Backend con Java, Spring Boot y PostgreSQL. Sus proyectos reales, funcionando dentro de su computador en pixel art.">
+<meta property="og:title" content="Silem Nabib · Ingeniero de sistemas">
+<meta property="og:description" content="Entra por la ventana: sus proyectos funcionan dentro de SilemOS.">
+<meta name="theme-color" content="#0b0a16">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/silem-nabib/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/silem-nabib/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cotizaciones.blackmouth.agency/silem-nabib/">
+<meta property="og:image" content="https://cotizaciones.blackmouth.agency/silem-nabib/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Silkscreen:wght@400;700&family=Instrument+Sans:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=23">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+</head>
+<body class="mode-human">
+
+<header class="nav" id="nav">
+  <a class="brand" href="#inicio"><img src="img/star.png" alt="" class="px"><span>SILEM NABIB</span></a>
+  <nav class="links" id="links" aria-label="Secciones">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#lo-que-hago">Lo que hago</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="nav-r">
+    <div class="mode" role="group" aria-label="Cómo quieres leer">
+      <button type="button" data-mode="human" aria-pressed="true">HUMANO</button>
+      <button type="button" data-mode="eng" aria-pressed="false">INGENIERO</button>
+    </div>
+    <button type="button" class="pxbtn sq" id="soundBtn" aria-pressed="false" aria-label="Activar sonido">♪</button>
+    <a class="pxbtn gold cv" href="files/Silem-Nabib-CV.pdf" download><span>↓</span>CV</a>
+    <button type="button" class="pxbtn sq burger" id="burger" aria-label="Menú" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- ============ PORTADA ============ -->
+<section class="hero" id="inicio">
+  <div class="stage" id="stage">
+    <div class="ly sky" data-d="6"></div>
+    <canvas class="ly stars" id="stars" data-d="6"></canvas>
+    <div class="ly clouds" data-d="10"><i></i><i></i><i></i><i></i></div>
+    <div class="ly bigname" data-d="12" id="bigname" aria-hidden="true"><span>SILEM</span></div>
+    <div class="ly street" data-d="16" id="street">
+      <div class="row" id="row">
+        <div class="side l"></div>
+        <div class="tile" id="tile">
+          <div class="peek"><img src="img/peek.png" alt="" class="px"><img src="img/cats.png" alt="Los gatos de Silem" class="px wcats" id="wcats"></div>
+          <img src="img/row.png" alt="Edificio en Cali con una ventana encendida" class="px rowimg">
+          <button type="button" class="win-hit" id="winHit" aria-label="Entrar por la ventana"></button>
+          <i class="spark" style="left:47%;top:22%"></i><i class="spark" style="left:53%;top:23%"></i><i class="spark" style="left:44%;top:40%"></i>
+        </div>
+        <div class="side r"></div>
+      </div>
+    </div>
+    <div class="ly fg" data-d="34">
+      <button type="button" class="lamp" id="lamp" aria-label="Prender o apagar el farol"><img src="img/lamp.png" alt="" class="px"><i class="halo"></i><i class="moth"></i><i class="moth b"></i></button>
+      <img src="img/palm.png" alt="" class="px palm">
+    </div>
+    <div class="hero-copy" id="heroCopy">
+      <h1 class="sr">Silem Nabib, ingeniero de sistemas</h1>
+      <p class="kick"><img src="img/star.png" alt="" class="px">Ingeniero de sistemas · Backend</p>
+      <p class="hero-lead"><span class="h">Construyo la parte de las apps que <em>no se ve</em>: la que guarda los datos, aplica las reglas y responde rápido.</span><span class="e">Backend con <em>Java, Spring Boot y PostgreSQL</em>. También Next.js, NestJS, Python y nube.</span></p>
+    </div>
+    <p class="vname" id="vname" aria-hidden="true">✦ SILEM NABIB · PORTAFOLIO 2026</p>
+    <div class="hero-meta" id="heroMeta">
+      <dl>
+        <div><dt>Ubicación</dt><dd>Cali, Colombia</dd></div>
+        <div><dt>Hoy</dt><dd>Banco de Occidente · Methodus</dd></div>
+        <div><dt>Enfoque</dt><dd>Backend · full stack</dd></div>
+      </dl>
+      <div class="hero-cta">
+        <a class="pxbtn gold" href="#proyectos"><span>▶</span>Ver proyectos</a>
+        <a class="pxbtn" href="#contacto"><span>✉</span>Contactar</a>
+      </div>
+      <p class="hint" id="hint"><span>▼</span> Baja y entra por la ventana</p>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="tk a" id="tkA"></div><div class="tk b" id="tkB"></div></div>
+
+<!-- ============ SOBRE MÍ ============ -->
+<section class="about" id="sobre-mi">
+  <figure class="room" id="room">
+    <div class="room-tilt" id="roomTilt">
+      <img src="img/room.png" alt="Cuarto de Silem en pixel art: escritorio con dos monitores, servidor, biblioteca y ventana a Cali" class="px room-img">
+      <img src="img/cats.png" alt="" class="px room-cats" id="roomCats">
+      <i class="glow mon"></i><i class="glow lmp"></i><i class="led a"></i><i class="led b"></i><i class="led c"></i>
+      <div id="hotspots"></div>
+    </div>
+  </figure>
+  <div class="about-copy">
+    <p class="tag">01 · SOBRE MÍ</p>
+    <h2 class="h2">Hola, soy <em>Silem</em></h2>
+    <p class="lead"><span class="h">Estudio el último semestre de Ingeniería de Sistemas en ICESI. Hoy trabajo en el Banco de Occidente, ayudando a decidir qué pide cada área a tecnología, y en Methodus, una plataforma para preparar el ICFES. Me gusta el backend: que los datos no se pierdan y que las reglas se cumplan.</span><span class="e">Ingeniería de Sistemas, ICESI (10.º semestre, grado 2027). Profesional en entrenamiento en la Gerencia de Tecnología y Soluciones del Banco de Occidente y full stack en Methodus (Spring Boot, Flyway, Next.js). Antes: Pistis (NestJS, Flutter, GCP) y monitoría y asistencia docente en ICESI.</span></p>
+    <ul class="facts">
+      <li><b>Cali</b>Colombia</li><li><b>ICESI</b>10.º semestre</li><li><b>Inglés</b>B2</li><li><b>25</b>repos públicos</li>
+    </ul>
+    <p class="note">Toca las cosas del cuarto: cada una cuenta algo.</p>
+    <div class="row-btns"><a class="pxbtn gold" href="#proyectos"><span>▶</span>Entrar a mi computador</a><a class="pxbtn" href="files/Silem-Nabib-CV.pdf" download><span>↓</span>Hoja de vida</a></div>
+  </div>
+</section>
+
+<!-- ============ LO QUE HAGO ============ -->
+<section class="skills" id="lo-que-hago">
+  <div class="sec-head">
+    <p class="tag">02 · LO QUE HAGO</p>
+    <h2 class="h2">Lo que gana <em>tu equipo</em></h2>
+    <p class="sub">Cinco cosas que sabe hacer, cada una con la prueba al lado. Toca una para ver el proyecto donde lo hizo.</p>
+  </div>
+  <div class="bento" id="bento"></div>
+  <ol class="caps" id="caps"></ol>
+</section>
+
+<!-- ============ PROYECTOS: SilemOS ============ -->
+<section class="projects" id="proyectos">
+  <div class="sec-head">
+    <p class="tag">03 · PROYECTOS</p>
+    <h2 class="h2">Mi computador, <em>abierto</em></h2>
+    <p class="sub">Esto es SilemOS. Haz doble clic en un ícono: cada proyecto se abre funcionando. Las ventanas se arrastran, se agrandan y se cierran. También hay una terminal y un juego.</p>
+  </div>
+  <div class="monitor">
+    <div class="os" id="os">
+      <div class="desk" id="desk">
+        <div class="icons" id="icons"></div>
+        <div class="wins" id="wins"></div>
+      </div>
+      <div class="taskbar">
+        <button type="button" class="start" id="startBtn"><img src="img/star.png" alt="" class="px">Inicio</button>
+        <div class="tasks" id="tasks"></div>
+        <span class="clock" id="clock">00:00</span>
+      </div>
+      <div class="startmenu" id="startMenu" hidden></div>
+    </div>
+    <div class="monitor-chin"><span>SilemOS</span><i class="pled"></i></div>
+  </div>
+  <div class="sec-head small"><p class="tag">03.B · CASOS</p><h3 class="h2 smh">Los mismos proyectos, <em>en limpio</em></h3><p class="sub">Para quien tiene prisa: qué es, qué hizo él, con qué y cuánto.</p></div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<!-- ============ EXPERIENCIA: el mundo pequeño ============ -->
+<section class="exp" id="experiencia">
+  <div class="sec-head">
+    <p class="tag">04 · EXPERIENCIA</p>
+    <h2 class="h2">Un mundo <em>pequeño</em></h2>
+    <p class="sub">Los lugares donde he trabajado, en un planeta propio. Arrástralo para girarlo y toca un edificio.</p>
+  </div>
+  <div class="planet-wrap">
+    <div class="planet-stage">
+      <canvas id="planet" aria-label="Planeta en pixel art con los lugares de trabajo de Silem"></canvas>
+      <p class="planet-hint">⟲ arrastra para girar</p>
+    </div>
+    <aside class="job" id="job" aria-live="polite"></aside>
+  </div>
+  <ol class="timeline" id="timeline"></ol>
+</section>
+
+<!-- ============ CONTACTO: la azotea ============ -->
+<section class="contact" id="contacto">
+  <div class="roof-stage" id="roofStage">
+    <div class="ly sky2" data-d="6"></div>
+    <button type="button" class="ly ast" data-d="14" id="ast" aria-label="Asteroide B-612"><img src="img/asteroid.png" alt="" class="px"></button>
+    <i class="shoot"></i>
+    <div class="ly roofl" data-d="26"><img src="img/rooftop.png" alt="" class="px roof-img"><button type="button" class="rcats" id="rcats" aria-label="Los gatos"><img src="img/cats.png" alt="" class="px"></button><button type="button" class="radio" id="radio" aria-label="Prender la radio"></button></div>
+  </div>
+  <div class="contact-card">
+    <p class="tag">05 · CONTACTO</p>
+    <h2 class="h2">¿Hablamos?</h2>
+    <p class="sub"><span class="h">Si llegaste hasta aquí, ya sabes lo que hago. El resto se conversa.</span><span class="e">Disponible para conversar sobre backend y full stack.</span></p>
+    <div class="contact-btns">
+      <div class="mailrow"><a class="pxbtn gold" href="mailto:silemnabib@gmail.com"><span>✉</span>silemnabib@gmail.com</a><button type="button" class="pxbtn sq" id="copyMail" aria-label="Copiar el correo" data-tip="Copiar el correo">⧉</button></div>
+      <a class="pxbtn" href="https://www.linkedin.com/in/silem-nabib/" rel="noopener"><span>in</span>LinkedIn</a>
+      <a class="pxbtn" href="https://github.com/SilemNabib" rel="noopener"><span>&lt;/&gt;</span>GitHub</a>
+      <a class="pxbtn" href="files/Silem-Nabib-CV.pdf" download><span>↓</span>Hoja de vida</a>
+    </div>
+  </div>
+  <footer class="foot"><span>Silem Nabib · Portafolio 2026</span><span>Gatos en pixel art: Silem Nabib · Hecho en Cali · <a href="https://blackmouth.agency" rel="noopener">BLACKMOUTH</a></span></footer>
+</section>
+
+<div class="ctip" id="ctip" aria-hidden="true"></div>
+<div id="fx" aria-hidden="true"></div>
+<script type="module" src="js/main.js?v=23"></script>
+</body>
+</html>

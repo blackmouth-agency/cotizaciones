@@ -1,0 +1,99 @@
+<section data-screen-label="26 Conclusiones">
+  <div class="title-row">
+    <div>
+      <div class="eyebrow">06 &middot; Conclusiones y trabajo futuro</div>
+      <h1 class="slide-title">Conclusiones</h1>
+      <p class="slide-subtitle">Los cinco objetivos espec&iacute;ficos fueron cumplidos. Tres lecciones del proceso explican la mayor parte del desempe&ntilde;o alcanzado.</p>
+    </div>
+  </div>
+
+  <div class="slide-body" style="display: flex; flex-direction: column;">
+
+    <!-- Fila de OE cumplidos -->
+    <div class="checklist">
+      <div class="check">
+        <div class="icon">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,10 8,14 16,6" />
+          </svg>
+        </div>
+        <span class="oe">OE1</span>
+        <h4>Datos</h4>
+      </div>
+      <div class="check">
+        <div class="icon">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,10 8,14 16,6" />
+          </svg>
+        </div>
+        <span class="oe">OE2</span>
+        <h4>Modelo</h4>
+      </div>
+      <div class="check">
+        <div class="icon">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,10 8,14 16,6" />
+          </svg>
+        </div>
+        <span class="oe">OE3</span>
+        <h4>Evaluaci&oacute;n</h4>
+      </div>
+      <div class="check">
+        <div class="icon">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,10 8,14 16,6" />
+          </svg>
+        </div>
+        <span class="oe">OE4</span>
+        <h4>API</h4>
+      </div>
+      <div class="check">
+        <div class="icon">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,10 8,14 16,6" />
+          </svg>
+        </div>
+        <span class="oe">OE5</span>
+        <h4>Arquitectura</h4>
+      </div>
+    </div>
+
+    <!-- Tres decisiones de mayor impacto -->
+    <div class="col-3" style="align-items: stretch; flex: 1; min-height: 0;">
+
+      <div class="block" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px;">
+        <div>
+          <span class="label-tag">Lección 1</span>
+          <h3 style="line-height: 1.2;">El objetivo importa m&aacute;s que el algoritmo</h3>
+          <p>Redefinir correctamente qu&eacute; predecir elev&oacute; el AUC de 0,62 a 0,86 sin cambiar el modelo.</p>
+        </div>
+        <p style="padding: 10px 12px; background: var(--icesi-purple-tint); border-radius: 8px; color: var(--icesi-purple-deep); font-weight: 600; margin: 0;">La definici&oacute;n del problema tiene mayor impacto que la elecci&oacute;n del algoritmo.</p>
+      </div>
+
+      <div class="block" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px;">
+        <div>
+          <span class="label-tag">Lección 2</span>
+          <h3 style="line-height: 1.2;">El contexto cl&iacute;nico define la optimizaci&oacute;n</h3>
+          <p>Los errores no son sim&eacute;tricos: se us&oacute; F2 y un umbral permisivo, pues un falso negativo cuesta m&aacute;s que un falso positivo.</p>
+        </div>
+        <p style="padding: 10px 12px; background: var(--icesi-purple-tint); border-radius: 8px; color: var(--icesi-purple-deep); font-weight: 600; margin: 0;">La m&eacute;trica de optimizaci&oacute;n es una decisi&oacute;n cl&iacute;nica, no solo t&eacute;cnica.</p>
+      </div>
+
+      <div class="block" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px;">
+        <div>
+          <span class="label-tag">Lección 3</span>
+          <h3 style="line-height: 1.2;">La calibraci&oacute;n es siempre obligatoria</h3>
+          <p>Sin calibraci&oacute;n el umbral no tiene significado probabil&iacute;stico real &#8212; se operan scores, no probabilidades.</p>
+        </div>
+        <p style="padding: 10px 12px; background: var(--icesi-purple-tint); border-radius: 8px; color: var(--icesi-purple-deep); font-weight: 600; margin: 0;">Brier 0.097 &#8212; el umbral tiene significado probabil&iacute;stico real.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="slide-foot">
+    <div class="brand-mark"></div>
+    <div>26 / 29</div>
+  </div>
+</section>

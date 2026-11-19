@@ -1,0 +1,72 @@
+[
+ {
+  "file": "assets/universidad-autonoma-de-occidente-cali-colombia-campus.jpg",
+  "media": "image",
+  "ref": "openverse:cc258740-5c4f-4c24-bab2-90b42ed6a96b",
+  "title": "Universidad Autónoma de Occidente, Cali, Colombia (campus)",
+  "creator": "Jyon",
+  "creatorUrl": "https://commons.wikimedia.org/wiki/User:Jyon",
+  "date": null,
+  "license": "CC BY-SA 3.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/w/index.php?curid=23885498",
+  "via": "Wikimedia Commons",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Universidad_Aut%C3%B3noma_de_Occidente%2C_Cali%2C_Colombia_%28campus%29.JPG/1920px-Universidad_Aut%C3%B3noma_de_Occidente%2C_Cali%2C_Colombia_%28campus%29.JPG",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 668498,
+  "credit": "\"Universidad Autónoma de Occidente, Cali, Colombia (campus)\" by Jyon, CC BY-SA 3.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-11-04T19:23:25.647Z"
+ },
+ {
+  "file": "assets/universidad-autonoma-de-occidente-cali.jpg",
+  "media": "image",
+  "ref": "openverse:00bedbb1-3ed6-4021-8786-8339b7832838",
+  "title": "Universidad Autonoma de Occidente Cali",
+  "creator": "Jyon",
+  "creatorUrl": "https://commons.wikimedia.org/wiki/User:Jyon",
+  "date": null,
+  "license": "CC BY 3.0",
+  "licenseCode": "by",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/w/index.php?curid=12123707",
+  "via": "Wikimedia Commons",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Universidad_Autonoma_de_Occidente_Cali.jpg/1920px-Universidad_Autonoma_de_Occidente_Cali.jpg",
+  "width": 1920,
+  "height": 1440,
+  "bytes": 919253,
+  "credit": "\"Universidad Autonoma de Occidente Cali\" by Jyon, CC BY 3.0, via Wikimedia Commons",
+  "notes": [],
+  "saved": "2026-11-04T19:23:29.177Z"
+ },
+ {
+  "file": "assets/universidad-autonoma-de-occidente.jpg",
+  "media": "image",
+  "ref": "commons:48863868",
+  "title": "Universidad Autónoma de Occidente",
+  "creator": "Jisuca",
+  "creatorUrl": null,
+  "date": "2016-05-13",
+  "license": "CC BY-SA 4.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/wiki/File:Universidad_Aut%C3%B3noma_de_Occidente.jpg",
+  "via": "Wikimedia Commons",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Universidad_Aut%C3%B3noma_de_Occidente.jpg/1920px-Universidad_Aut%C3%B3noma_de_Occidente.jpg",
+  "width": 1920,
+  "height": 732,
+  "bytes": 468494,
+  "credit": "\"Universidad Autónoma de Occidente\" by Jisuca, CC BY-SA 4.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-11-04T19:23:29.499Z"
+ }
+]

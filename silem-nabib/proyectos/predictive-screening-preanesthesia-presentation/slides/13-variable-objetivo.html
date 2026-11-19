@@ -1,0 +1,126 @@
+<section data-screen-label="15 Variable objetivo">
+    <div class="title-row">
+      <div>
+        <div class="eyebrow">04 · Construcción de la solución</div>
+        <h1 class="slide-title">Variable objetivo — la decisión más importante</h1>
+        <p class="slide-subtitle">El target se construyó desde hechos posoperatorios concretos, no estimaciones.</p>
+      </div>
+    </div>
+
+    <div class="slide-body">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; min-height: 0; overflow: hidden;">
+
+        <!-- Columna izquierda: proceso de construcción -->
+        <div style="display: flex; flex-direction: column; gap: 10px; min-height: 0;">
+
+          <!-- Supuesto fundamental -->
+          <div style="padding: 14px 16px; border-radius: 10px; background: var(--icesi-purple-tint); border-left: 3px solid var(--icesi-purple); display: flex; gap: 10px; align-items: flex-start;">
+            <svg viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="var(--icesi-purple-deep)" stroke-width="2.2" style="flex-shrink:0; margin-top:2px"><path d="M16 6 C20 6 22 9 22 12 C22 14 20 15 19 16 C18 17 18 18 18 20"/><circle cx="16" cy="25" r="1.5" fill="var(--icesi-purple-deep)"/></svg>
+            <div style="color: var(--icesi-purple-deep); font-size: var(--t-label); line-height: 1.5;">No existe registro directo de quién <em>necesitaba</em> valoración formal. Los eventos posoperatorios adversos son el proxy retrospectivo — quien los presentó, probablemente la necesitaba.</div>
+          </div>
+
+          <!-- Paso 1 -->
+          <div style="display: flex; gap: 14px; padding: 14px 16px; border-radius: 10px; background: #fff; border: 1px solid var(--line); flex: 1; align-items: flex-start;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0; flex-shrink: 0;">
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--font-mono); font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+              <div style="width: 2px; flex: 1; background: var(--line); margin-top: 4px;"></div>
+            </div>
+            <div style="padding-bottom: 4px;">
+              <div style="font-weight: 700; color: var(--ink); font-size: var(--t-body); margin-bottom: 4px;">Extracción desde HCE posoperatoria</div>
+              <div style="color: var(--ink-soft); font-size: var(--t-label); line-height: 1.5;">Campos estructurados: destino, intubación, líquidos, complicaciones, seguimiento. Texto libre normalizado.</div>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div style="display: flex; gap: 14px; padding: 14px 16px; border-radius: 10px; background: #fff; border: 1px solid var(--line); flex: 1; align-items: flex-start;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0; flex-shrink: 0;">
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--font-mono); font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+              <div style="width: 2px; flex: 1; background: var(--line); margin-top: 4px;"></div>
+            </div>
+            <div style="padding-bottom: 4px;">
+              <div style="font-weight: 700; color: var(--ink); font-size: var(--t-body); margin-bottom: 4px;">Codificación con criterios clínicos objetivos</div>
+              <div style="color: var(--ink-soft); font-size: var(--t-label); line-height: 1.5;">Umbrales explícitos: escalas validadas, volúmenes, códigos CIE-10. Sin criterio subjetivo ni imputación.</div>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div style="display: flex; gap: 14px; padding: 14px 16px; border-radius: 10px; background: #fff; border: 1px solid var(--line); flex: 1; align-items: flex-start;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--font-mono); font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div>
+              <div style="font-weight: 700; color: var(--ink); font-size: var(--t-body); margin-bottom: 4px;">Separación: complicaciones vs. decisiones clínicas</div>
+              <div style="color: var(--ink-soft); font-size: var(--t-label); line-height: 1.5;">Técnica combinada, inducción mixta, duración extensa — excluidas. Son elecciones del anestesiólogo, no eventos adversos.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Columna derecha: chips de flags + stat -->
+        <div style="display: flex; flex-direction: column; gap: 12px; min-height: 0;">
+
+          <span style="font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-size: var(--t-label);">Eventos posoperatorios adoptados</span>
+
+          <!-- Grid 2×4 de chips -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1;">
+
+            <div style="background: var(--success-soft); border: 1px solid rgba(0,176,116,0.25); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;"></div>
+              <span style="font-weight: 700; color: var(--ink); font-size: var(--t-body); line-height: 1.2;">Cancelación médica</span>
+            </div>
+
+            <div style="background: var(--success-soft); border: 1px solid rgba(0,176,116,0.25); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;"></div>
+              <span style="font-weight: 700; color: var(--ink); font-size: var(--t-body); line-height: 1.2;">Vía aérea difícil</span>
+            </div>
+
+            <div style="background: var(--success-soft); border: 1px solid rgba(0,176,116,0.25); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;"></div>
+              <span style="font-weight: 700; color: var(--ink); font-size: var(--t-body); line-height: 1.2;">Manejo de líquidos</span>
+            </div>
+
+            <div style="background: var(--success-soft); border: 1px solid rgba(0,176,116,0.25); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;"></div>
+              <span style="font-weight: 700; color: var(--ink); font-size: var(--t-body); line-height: 1.2;">Desenlace adverso</span>
+            </div>
+
+            <div style="background: var(--success-soft); border: 1px solid rgba(0,176,116,0.25); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;"></div>
+              <span style="font-weight: 700; color: var(--ink); font-size: var(--t-body); line-height: 1.2;">Complicaciones CIE-10</span>
+            </div>
+
+            <div style="background: var(--success-soft); border: 1px solid rgba(0,176,116,0.25); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;"></div>
+              <span style="font-weight: 700; color: var(--ink); font-size: var(--t-body); line-height: 1.2;">Hospitalización no anticipada</span>
+            </div>
+
+            <div style="background: var(--success-soft); border: 1px solid rgba(0,176,116,0.25); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; grid-column: 1 / -1;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;"></div>
+              <span style="font-weight: 700; color: var(--ink); font-size: var(--t-body); line-height: 1.2;">Urgencias en 30 días</span>
+            </div>
+
+          </div>
+
+          <!-- Stat 49 → 7 -->
+          <div style="background: var(--ink); border-radius: 12px; padding: 16px 22px; display: flex; align-items: center; gap: 0;">
+            <div style="text-align: center; flex: 1;">
+              <div style="font-family: var(--font-mono); font-size: 44px; font-weight: 800; color: rgba(255,255,255,0.35); line-height: 1;">49</div>
+              <div style="font-size: var(--t-label); color: rgba(255,255,255,0.5); margin-top: 2px;">eventos evaluados</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 18px;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div style="text-align: center; flex: 1;">
+              <div style="font-family: var(--font-mono); font-size: 44px; font-weight: 800; color: #a4c465; line-height: 1;">7</div>
+              <div style="font-size: var(--t-label); color: rgba(255,255,255,0.6); margin-top: 2px;">adoptados como candidatos</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <div class="brand-mark"></div>
+      <div>12 / 29</div>
+    </div>
+  </section>

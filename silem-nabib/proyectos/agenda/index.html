@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agenda de citas · por dentro</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Tokens tomados de docs/DESIGN.md del repositorio */
+:root{--fondo:#F5F6F2;--sup:#FFFFFF;--tinta:#15171A;--suave:#3A3F45;--mut:#5B6068;--borde:#E3E5E0;--acento:#2B3FD6;--lima:#D9F36B}
+*{box-sizing:border-box}body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.5 Figtree,system-ui,sans-serif}
+.top{background:var(--tinta);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.top h1{margin:0;font:700 26px Bricolage Grotesque,sans-serif}.top h1 span{color:var(--lima)}
+.top a{margin-left:auto;background:var(--lima);color:var(--tinta);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px}
+.wrap{padding:20px 28px;display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.card{background:var(--sup);border:1px solid var(--borde);border-radius:14px;padding:18px}
+h2{margin:0 0 10px;font:700 18px Bricolage Grotesque,sans-serif}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+ul{margin:0;padding-left:18px}li{margin:4px 0}
+.mig{font:13px ui-monospace,Menlo,monospace;display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.mig span{padding:4px 8px;background:var(--fondo);border-radius:6px}
+.stats{display:flex;gap:10px;flex-wrap:wrap}.stats div{flex:1;min-width:110px;background:var(--tinta);color:#fff;border-radius:12px;padding:12px}
+.stats b{display:block;font:700 26px Bricolage Grotesque,sans-serif;color:var(--lima)}
+.sw{display:flex;gap:6px;flex-wrap:wrap}.sw i{width:44px;height:44px;border-radius:10px;border:1px solid var(--borde)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.cal i{aspect-ratio:1;border-radius:6px;background:var(--fondo);display:grid;place-items:center;font-style:normal;font-size:12px;color:var(--mut)}
+.cal i.b{background:var(--acento);color:#fff}.cal i.l{background:var(--lima)}
+@media(max-width:760px){.wrap{grid-template-columns:1fr;padding:14px}.mig{grid-template-columns:1fr}}
+</style></head><body>
+<div class="top"><h1>Agenda <span>de citas</span></h1><span>SaaS para negocios con citas · Next.js en Cloudflare</span><a href="https://agenda-citas.silemnabib.workers.dev" target="_blank" rel="noopener">Abrir la app en vivo ↗</a></div>
+<div class="wrap">
+ <div class="card"><p class="lbl">Por qué esta vista</p><h2>La app real no se deja meter en otra página</h2><p>Su configuración bloquea los marcos externos (<code>frame-ancestors 'none'</code>): nadie puede incrustarla para engañar a sus usuarios. Por eso aquí se muestra por dentro, con datos de su repositorio.</p>
+  <div class="stats"><div><b>35</b>reglas de negocio</div><div><b>17</b>migraciones</div><div><b>133</b>archivos de prueba</div></div></div>
+ <div class="card"><p class="lbl">Sistema de diseño</p><h2>Colores del documento DESIGN.md</h2><div class="sw"><i style="background:#F5F6F2"></i><i style="background:#15171A"></i><i style="background:#3A3F45"></i><i style="background:#2B3FD6"></i><i style="background:#D9F36B"></i><i style="background:#E2F4DF"></i><i style="background:#FFF4E0"></i><i style="background:#FDECEA"></i></div>
+  <br><div class="cal" aria-hidden="true"><i>L</i><i>M</i><i>M</i><i>J</i><i>V</i><i>S</i><i>D</i><i>3</i><i class="b">4</i><i>5</i><i class="l">6</i><i class="b">7</i><i>8</i><i>9</i><i class="b">10</i><i>11</i><i class="l">12</i><i>13</i><i class="b">14</i><i>15</i><i>16</i></div></div>
+ <div class="card"><p class="lbl">Lo que ve el cliente</p><h2>Reserva pública</h2><ul><li>Servicios activos con nombre, descripción y duración.</li><li>Días sin cupo deshabilitados; horas siempre en hora de Colombia.</li><li>Formulario con teléfono +57 y aceptación de la política de datos vigente.</li><li>Correo de confirmación con link para cancelar o reprogramar dentro del plazo.</li></ul>
+  <br><p class="lbl">Lo que ve el negocio</p><h2>Panel</h2><ul><li>Calendario por día, semana y mes.</li><li>Citas manuales (por ejemplo, las que llegan por WhatsApp) solo en horas libres.</li><li>Bloqueos, asistencia, clientes con historial y nota interna.</li></ul></div>
+ <div class="card"><p class="lbl">Base de datos</p><h2>Migraciones con Drizzle</h2><div class="mig"><span>0000_dominios</span><span>0001_enums_y_planes</span><span>0002_negocio</span><span>0003_configuracion_politica_miembros</span><span>0004_sedes_y_recursos</span><span>0005_servicios</span><span>0006_horario_y_bloqueos</span><span>0007_clientes</span><span>0008_citas_y_eventos</span><span>0009_notificaciones_y_calendario</span><span>0010_indices_manuales</span><span>0011_auditoria</span><span>0012_auditoria_triggers</span><span>0013_marca_y_categoria</span><span>0014_contactos_sede</span><span>0015_contactos_desde_telefono</span><span>0016_codigo_reserva</span></div></div>
+</div></body></html>

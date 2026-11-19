@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Market Basket Analytics</title>
+<style>
+:root{--bg:#0f1720;--card:#16212d;--ink:#e8eef5;--mut:#93a4b8;--a:#4cc3a6;--b:#5b8def;--c:#f2b84b;--d:#e86f8c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,Segoe UI,sans-serif}
+header{padding:28px 32px 12px}h1{margin:0;font-size:30px}header p{margin:6px 0 0;color:var(--mut)}
+nav{display:flex;gap:8px;padding:0 32px 16px;flex-wrap:wrap}nav button{background:var(--card);color:var(--ink);border:1px solid #243243;border-radius:8px;padding:8px 12px;cursor:pointer;font:inherit}
+nav button.on{background:var(--a);color:#06231c;border-color:var(--a)}
+main{padding:0 32px 32px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.k{background:var(--card);border-radius:12px;padding:14px}.k b{display:block;font-size:24px;color:var(--a)}.k span{color:var(--mut);font-size:13px}
+.panel{display:none}.panel.on{display:block}.card{background:var(--card);border-radius:12px;padding:16px;margin-bottom:12px}
+.card img{width:100%;border-radius:8px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid #243243;text-align:left}th{color:var(--mut);font-weight:500}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.seg div{background:var(--card);border-radius:12px;padding:14px;border-top:4px solid var(--c)}
+.seg b{font-size:22px;display:block}.seg small{color:var(--mut)}
+@media(max-width:700px){.kpis,.seg{grid-template-columns:1fr 1fr}header,nav,main{padding-left:16px;padding-right:16px}}
+</style></head><body>
+<header><h1>Market Basket Analytics</h1><p>Silem Nabib y Rafaela Ruiz · Supermercado colombiano, 4 tiendas, enero–junio 2013. Resultados tomados del informe técnico del repositorio.</p></header>
+<nav><button class="on" data-p="0">Resumen</button><button data-p="1">Segmentos</button><button data-p="2">Productos</button><button data-p="3">Arquitectura</button></nav>
+<main>
+<section class="panel on">
+ <div class="kpis"><div class="k"><b>1.108.951</b><span>transacciones</span></div><div class="k"><b>10,6 M</b><span>ítems vendidos</span></div><div class="k"><b>131.186</b><span>clientes únicos</span></div><div class="k"><b>449</b><span>productos · 39 categorías</span></div></div>
+ <div class="card"><table><tr><th>Tienda</th><th>Ítems</th><th>Participación</th><th>Clientes</th></tr>
+ <tr><td>103</td><td>4.234.384</td><td>40,0 %</td><td>52.728</td></tr><tr><td>102</td><td>2.562.322</td><td>24,2 %</td><td>33.147</td></tr>
+ <tr><td>107</td><td>2.410.961</td><td>22,8 %</td><td>30.942</td></tr><tr><td>110</td><td>1.384.088</td><td>13,1 %</td><td>14.369</td></tr></table></div>
+ <div class="card"><b>Hallazgo:</b> el negocio está anclado en productos frescos; las reglas de asociación entre ellos superan un lift de 16×, útil para el diseño de la tienda y las promociones cruzadas.</div>
+</section>
+<section class="panel">
+ <div class="seg">
+  <div style="border-color:var(--mut)"><b>50,6 %</b>Ocasionales<br><small>66.396 clientes · 2,2 visitas</small></div>
+  <div style="border-color:var(--b)"><b>29,2 %</b>Regulares<br><small>38.360 · 7,9 visitas</small></div>
+  <div style="border-color:var(--a)"><b>15,8 %</b>Frecuentes<br><small>20.664 · 19,7 visitas</small></div>
+  <div style="border-color:var(--c)"><b>4,4 %</b>VIP<br><small>5.766 · 42,7 visitas</small></div>
+ </div><br>
+ <div class="card"><b>K-Means con K = 4</b>, elegido por la curva del codo (inercia 99.163).<br><br><img src="elbow.png" alt="Curva del codo"></div>
+</section>
+<section class="panel"><div class="card"><img src="top10products.png" alt="Top 10 productos por volumen"></div></section>
+<section class="panel"><div class="card"><img src="market-diagrama.png" alt="Arquitectura en Google Cloud"></div>
+ <div class="card">ETL en Python y Pandas → Parquet en Cloud Storage → API en FastAPI y tablero en Streamlit, empaquetados en Docker y desplegados en Google Cloud Run.</div></section>
+</main>
+<script>const b=[...document.querySelectorAll('nav button')],p=[...document.querySelectorAll('.panel')];b.forEach((x,i)=>x.onclick=()=>{b.forEach(y=>y.classList.toggle('on',y===x));p.forEach((y,j)=>y.classList.toggle('on',j===i))})</script>
+</body></html>

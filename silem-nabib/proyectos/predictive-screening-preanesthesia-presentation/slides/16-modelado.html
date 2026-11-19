@@ -1,0 +1,82 @@
+<section data-screen-label="18 Modelado">
+    <div class="title-row">
+      <div>
+        <div class="eyebrow">04 · Construcción de la solución</div>
+        <h1 class="slide-title">Modelado — 9 algoritmos comparados</h1>
+        <p class="slide-subtitle">Lineales, bagging, boosting, red neuronal y ensambles, evaluados bajo el mismo protocolo de validación.</p>
+      </div>
+    </div>
+
+    <div class="slide-body">
+
+      <!-- Fila superior: decisiones técnicas -->
+      <div class="col-2" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="block">
+          <span class="label-tag">Partición de datos</span>
+          <h3>Split 80 / 20</h3>
+          <p>Estratificado por clase. <strong>19 423 train</strong> · <strong>4 856 test</strong>. El test no participa en ningún ajuste.</p>
+        </div>
+        <div class="block">
+          <span class="label-tag">Desbalance de clases</span>
+          <h3>19 % positivos</h3>
+          <p>Manejado con pesos internos por familia de algoritmo — sin riesgo de contaminar la validación.</p>
+        </div>
+        <div class="block">
+          <span class="label-tag">Calibración de probabilidades</span>
+          <h3>Por familia de algoritmo</h3>
+          <p><strong>Isotónica</strong> → modelos basados en árboles.</p>
+          <p><strong>Sigmoidal</strong> → modelos con salida naturalmente suave.</p>
+        </div>
+      </div>
+
+      <!-- Grid de algoritmos con ganador destacado -->
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;">
+
+        <div style="border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; background: var(--bg);">
+          <div style="font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Lineal</div>
+          <div style="font-weight: 600; color: var(--ink-soft);">Regresión Logística</div>
+        </div>
+
+        <div style="border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; background: var(--bg);">
+          <div style="font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Bagging</div>
+          <div style="font-weight: 600; color: var(--ink-soft); line-height: 1.6;">Random Forest<br>Extra Trees</div>
+        </div>
+
+        <!-- XGBoost destacado como ganador -->
+        <div style="border: 2px solid var(--line); border-radius: 14px; padding: 18px 16px; background: var(--bg); position: relative;">
+          <div style="font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Boosting</div>
+          <div style="font-weight: 700; color: var(--ink-soft); line-height: 1.6;"><strong>XGBoost</strong><br><span style="font-weight: 500; color: var(--ink-soft);">LightGBM<br>HistGradientBoosting</span></div>
+        </div>
+
+        <div style="border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; background: var(--bg);">
+          <div style="font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Red neuronal</div>
+          <div style="font-weight: 600; color: var(--ink-soft);">MLP<br><span style="font-weight: 400;">128-64 · ReLU · early stop</span></div>
+        </div>
+
+        <div style="border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; background: var(--bg);">
+          <div style="font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Ensamble</div>
+          <div style="font-weight: 600; color: var(--ink-soft); line-height: 1.6;">Voting · soft<br>Stacking · LR meta</div>
+        </div>
+
+      </div>
+
+      <!-- Threshold: prominente -->
+      <div style="background: var(--ink); border-radius: 14px; padding: 22px 32px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 32px;">
+        <div>
+          <div style="font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #a4c465; margin-bottom: 6px;">Threshold · optimizado por F2</div>
+          <div style="font-size: 48px; font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1;">0.13 – 0.38</div>
+          <div style="color: rgba(255,255,255,0.6); margin-top: 4px;">según algoritmo · no el 0.5 convencional</div>
+        </div>
+        <div style="height: 1px; background: rgba(255,255,255,0.12);"></div>
+        <div style="max-width: 320px;">
+          <p style="color: rgba(255,255,255,0.85); line-height: 1.5; margin: 0;">Optimizado sobre train con CV interna. Da más peso a los <strong style="color:#fff;">falsos negativos</strong> — más estricto sobre a quién NO marcar como positivo.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="slide-foot">
+      <div class="brand-mark"></div>
+      <div>15 / 29</div>
+    </div>
+  </section>

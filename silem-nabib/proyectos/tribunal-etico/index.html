@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tribunal Departamental Ético de Enfermería · Región Suroccidental</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy-900: #020866;
+    --navy-800: #0a1280;
+    --navy-700: #1a2098;
+    --navy-600: #2c34b3;
+    --navy-100: #e8eaf8;
+    --navy-050: #f3f4fb;
+    --sky: #6cb4e4;
+    --sky-soft: #d8ecfa;
+    --ink: #0e1230;
+    --slate-700: #2a2e4a;
+    --slate-500: #5b6086;
+    --slate-400: #8389a8;
+    --slate-300: #b9bcd1;
+    --slate-200: #d7d9e6;
+    --slate-100: #ecedf3;
+    --bg: #ffffff;
+    --bg-soft: #f6f7fb;
+    --bg-tint: #f1f3f9;
+    --line: #e3e5ee;
+    --accent: var(--navy-900);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body { overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .display { font-family: 'Montserrat', sans-serif; letter-spacing: -0.018em; }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--slate-400); }
+
+  /* Reusable: striped image placeholder */
+  .ph-stripe {
+    background-color: var(--navy-050);
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(2, 8, 102, 0.06) 0 8px,
+      transparent 8px 18px
+    );
+    color: var(--navy-900);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--slate-200);
+    position: relative;
+    overflow: hidden;
+  }
+  .ph-stripe::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(108,180,228,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .ph-label {
+    position: relative; z-index: 1;
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid var(--slate-200);
+    color: var(--navy-900);
+    border-radius: 2px;
+  }
+
+  /* Generic buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 180ms ease;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--navy-900); color: #fff;
+  }
+  .btn-primary:hover { background: var(--navy-800); transform: translateY(-1px); box-shadow: 0 8px 24px -8px rgba(2,8,102,0.4); }
+  .btn-outline {
+    border-color: #fff; color: #fff;
+  }
+  .btn-outline:hover { background: #fff; color: var(--navy-900); }
+  .btn-ghost {
+    border-color: var(--slate-200); color: var(--navy-900); background: #fff;
+  }
+  .btn-ghost:hover { border-color: var(--navy-900); }
+
+  /* Page transitions */
+  .page-enter {
+    animation: pageIn 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes pageIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Section base */
+  .section {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 96px 56px;
+  }
+  .section-narrow {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 80px 56px;
+  }
+  @media (max-width: 900px) {
+    .section, .section-narrow { padding: 56px 24px; }
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--navy-900);
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: ""; width: 22px; height: 1.5px; background: var(--navy-900);
+  }
+
+  h1.display-xl {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 5.2vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 24px;
+  }
+  h2.display-lg {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+  }
+  h3.display-md {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  p.lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--slate-700);
+    max-width: 64ch;
+  }
+  p.body {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--slate-700);
+    margin: 0 0 12px;
+  }
+
+  /* Decorative navy ribbon (from brand pdf) */
+  .ribbon-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* Make sure Tweaks panel doesn't clash z-index wise */
+  .tweaks-overlay { z-index: 9999; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="shared.jsx"></script>
+  <script type="text/babel" src="pages-home.jsx"></script>
+  <script type="text/babel" src="pages-queja.jsx"></script>
+  <script type="text/babel" src="pages-formacion.jsx"></script>
+  <script type="text/babel" src="pages-eventos.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
