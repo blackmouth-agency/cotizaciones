@@ -103,10 +103,14 @@ export function iniciar(cont, CFG, estado, reduce) {
   let visible = true;
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) pedir(); }).observe(cont);
 
-  let pendiente = false, tPrev = performance.now();
+  let pendiente = false, tPrev = performance.now(), tDibujo = 0;
   function pedir() { if (!pendiente) { pendiente = true; requestAnimationFrame(cuadro); } }
   function cuadro(t) {
     pendiente = false;
+    // girando sola basta con 30 cuadros por segundo (no se nota y gasta la mitad); al arrastrarla, 60
+    const ocioso = !arrastrando && Math.abs(vel) <= .0005 && entrando >= 1;
+    if (ocioso && t - tDibujo < 31) { if (visible) pedir(); return; }
+    tDibujo = t;
     const dt = Math.min(.05, (t - tPrev) / 1000); tPrev = t;
     let sigue = false;
     if (!arrastrando) {

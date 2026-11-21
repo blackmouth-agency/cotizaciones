@@ -1307,6 +1307,22 @@ body{background:#fff}
 .escenario.toca3d .pista svg{stroke:#fff}
 .escenario.cargando .plano{animation:k-late 1s ease-in-out infinite}
 
+
+
+.lienzo .brillo img{animation:none}
+.lienzo .flota.brillo img{animation:k-flota 6s ease-in-out infinite}
+.lienzo .capa img.destello{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;
+  filter:brightness(1.22) drop-shadow(0 0 1.1cqw rgba(255,240,220,.85));opacity:0;will-change:opacity;animation:k-destello-op 5s ease-in-out infinite}
+.lienzo .flota.brillo img.destello{animation:k-flota 6s ease-in-out infinite,k-destello-op 5s ease-in-out infinite}
+@keyframes k-destello-op{0%,60%,100%{opacity:0}78%{opacity:.6}}
+
+.pausa,.pausa *{animation-play-state:paused!important}
+
+.k-pildora .envoltura{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.97)}
+@media (prefers-reduced-motion:reduce){.lienzo .capa img.destello{animation:none}}
+
+.diapo[inert] *,.diapo[inert] *::before,.diapo[inert] *::after{animation-play-state:paused!important}
+
 .c-olfactive-fondo-0{left:0.0%;top:0.0%;width:100.0%;height:100.0%}
 .c-olfactive-logo{left:30.139%;top:11.583%;width:33.229%;height:33.833%}
 .c-olfactive-fondo-1{left:3.125%;top:22.75%;width:20.486%;height:77.25%}

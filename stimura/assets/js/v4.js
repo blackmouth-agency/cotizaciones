@@ -4,6 +4,14 @@ import { $, $$, reduceMovimiento } from './util.js';
 
 const fino = matchMedia('(pointer: fine)').matches;
 
+// ---------- fluidez: las animaciones continuas de una sección se pausan mientras no está en pantalla
+{
+  const SECCIONES = '.portada-k,.portada-hc,.lanz-k,.mente-sec,.lista-mente,.historia-om,.panel3d,.foto-sellos,.wax-escena,.beneficios-wax,'
+    + '.kit-wax,.racimo-banner,.afro-venus,.afro-esp,.afro-ritual,.nos-aromas,.nos-sientas,.nos-vamos,.experiencia,.coleccion,.cab-cat,.aroma-intenso';
+  const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('pausa', !e.isIntersecting)), { rootMargin: '120px 0px' });
+  $$(SECCIONES).forEach((s) => io.observe(s));
+}
+
 // ---------- portadas por capas: las capas siguen el puntero (cada una a su profundidad)
 $$('[data-lienzo]').forEach((l) => {
   if (reduceMovimiento || !fino) return;

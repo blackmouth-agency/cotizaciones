@@ -69,21 +69,40 @@ export function iniciar(cont, reduce) {
       cont.addEventListener('pointerup', soltar);
       cont.addEventListener('pointercancel', soltar);
 
+      // Fluidez: girando solo dibuja a 30 cuadros/s (al arrastrarlo, 60); fuera de pantalla no dibuja nada;
+      // si el equipo no da abasto, baja la resolución del lienzo una sola vez (calidad casi igual, mucho menos trabajo).
+      let tPrev = performance.now(), tDibujo = 0, enCola = false;
+      const lentos = [];
+      let pr = Math.min(devicePixelRatio, 2);
+      const pedir = () => { if (!enCola && vivo && visible) { enCola = true; requestAnimationFrame(cuadro); } };
       function cuadro(t) {
-        if (!vivo) return;
-        requestAnimationFrame(cuadro);
-        if (!visible) return;
+        enCola = false;
+        if (!vivo || !visible) return;
+        pedir();
+        const ocioso = !arrastrando && Math.abs(velY) < 0.001;
+        if (ocioso && t - tDibujo < 31) return;
+        const dt = Math.min(0.05, (t - tPrev) / 1000); tPrev = t;
+        if (tDibujo && dt > 0) {
+          lentos.push(t - tDibujo);
+          if (lentos.length > 40) lentos.shift();
+          if (lentos.length === 40 && pr > 1 && lentos.slice().sort((a, b) => a - b)[20] > 48) {
+            pr = 1; renderer.setPixelRatio(pr); medir(); lentos.length = 0;
+          }
+        }
+        tDibujo = t;
         const s = (t - t0) / 1000;
         if (!arrastrando) {
-          velY *= 0.94;
-          rotY += velY + (reduce ? 0 : 0.0035);
+          velY *= Math.pow(0.94, dt * 60);
+          rotY += velY + (reduce ? 0 : 0.21 * dt);
         }
         pivote.rotation.y = rotY;
         pivote.rotation.x = rotX;
         pivote.position.y = reduce ? 0 : Math.sin(s * 1.3) * 0.05;
         renderer.render(escena, camara);
       }
-      requestAnimationFrame(cuadro);
+      new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) { tPrev = performance.now(); pedir(); } }).observe(cont);
+      cont.addEventListener('pointerdown', pedir);
+      pedir();
       cont.classList.add('listo');
       ok({ parar: () => { vivo = false; } });
     }, undefined, mal);
