@@ -1230,6 +1230,30 @@ body{background:#fff}
   .lienzo .capa{translate:none!important}
 }
 
+
+.portada-k .aromas-k{position:relative;aspect-ratio:1440/600;max-width:1440px;margin-inline:auto;border-radius:clamp(14px,2vw,28px);overflow:hidden;display:flex;align-items:center;container-type:inline-size;isolation:isolate}
+.aromas-k .hc-grid{width:86%;margin-inline:auto;grid-template-columns:1fr 1.05fr;gap:3cqw}
+.aromas-k .eyebrow{font-size:max(10px,1cqw)}
+.aromas-k .hc-titulo{font-size:4.6cqw;margin-top:.8cqw}
+.aromas-k .hc-texto>p{font-size:max(12px,1.45cqw);margin-top:1.2cqw}
+.aromas-k .aroma-recuerdo{font-size:max(12px,1.5cqw)!important}
+.aromas-k .hc-texto .acciones{margin-top:1.8cqw;gap:1cqw}
+.aromas-k .hc-texto .acciones .boton{min-height:3.4cqw;padding:0 1.8cqw;font-size:max(11px,1.1cqw)}
+.aromas-k .aroma-escena{aspect-ratio:auto;height:34cqw}
+.aromas-k .aroma-vela{width:7.4cqw}
+.aromas-k .aroma-vela[aria-pressed="true"]{transform:translateY(-1.4cqw) scale(1.1)}
+.aromas-k .pista-juego{bottom:1.6cqw;font-size:max(10px,.95cqw)}
+@media (max-width:700px){
+  .aromas-k .hc-grid{grid-template-columns:.9fr 1.1fr;width:92%}
+  .aromas-k .eyebrow,.aromas-k .hc-texto .acciones,.aromas-k .pista-juego{display:none}
+  .aromas-k .hc-titulo{font-size:5.6cqw}
+  .aromas-k .aroma-escena{order:0;width:auto;margin:0}
+  .aromas-k .hc-grid>.hc-texto{order:0;text-align:left}
+  .aromas-k .aroma-objetos{inset:0 0 46%}
+  .aromas-k .aroma-objeto{width:48%}
+  .aromas-k .aroma-estante{padding-bottom:8px}
+}
+
 .c-olfactive-fondo-0{left:0.0%;top:0.0%;width:100.0%;height:100.0%}
 .c-olfactive-logo{left:30.139%;top:11.583%;width:33.229%;height:33.833%}
 .c-olfactive-fondo-1{left:3.125%;top:22.75%;width:20.486%;height:77.25%}
