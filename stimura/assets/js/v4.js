@@ -28,7 +28,29 @@ document.addEventListener('click', (e) => {
 
 // ---------- modelos 3D de Karol: el visor solo se descarga si la página tiene alguno
 if ($('[data-modelo]')) {
-  import('./modelo3d.js').then((m) => m.conectarModelos(reduceMovimiento)).catch(() => {});
+  if (fino) {
+    import('./modelo3d.js').then((m) => m.conectarModelos(reduceMovimiento)).catch(() => {});
+  } else {
+    // en celular el modelo (~3 MB más three.js) solo se descarga si la persona lo pide
+    $$('[data-modelo]').forEach((el) => {
+      el.classList.add('toca3d');
+      const pista = $('.pista3d', el);
+      const decir = (t) => { if (pista && pista.lastChild) pista.lastChild.textContent = t; };
+      decir('Toca para verlo en 3D');
+      el.addEventListener('click', () => {
+        el.classList.add('cargando');
+        decir('Cargando…');
+        import('./modelo3d.js').then((m) => m.iniciar(el, reduceMovimiento))
+          .then(() => { el.classList.replace('toca3d', 'activo3d'); el.classList.toggle('cargando', false); decir('Arrástralo'); })
+          .catch(() => { el.classList.add('sin3d'); decir('No se pudo cargar'); });
+      }, { once: true });
+    });
+  }
+}
+
+// ---------- pistas pensadas para mouse, dichas para el dedo
+if (!fino) {
+  $$('.pista-juego').forEach((p) => { if (p.lastChild && /Pasa por/.test(p.lastChild.textContent)) p.lastChild.textContent = 'Toca cada vela'; });
 }
 
 // ---------- carriles horizontales («Otras sensaciones») con flechas

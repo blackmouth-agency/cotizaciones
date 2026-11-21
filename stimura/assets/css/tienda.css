@@ -1267,6 +1267,46 @@ body{background:#fff}
   .k-pildora .menu a{display:inline-flex;align-items:center;line-height:21px}
 }
 
+
+.leyenda-m{display:none}
+.objeto3d.toca3d{cursor:pointer}
+.objeto3d.toca3d .pista3d{opacity:1;background:var(--k-rosa);color:#fff;bottom:4%}
+.objeto3d.toca3d .pista3d svg{stroke:#fff}
+.objeto3d.cargando .respaldo{animation:k-late 1s ease-in-out infinite}
+
+.producto>*{min-width:0}
+.producto .miniaturas{overflow-x:auto;scrollbar-width:none}
+@media (max-width:700px){
+  .leyenda-m{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 4px 0}
+  .leyenda-m b{font-size:15px;font-weight:800;color:var(--k-rosa);line-height:1.15}
+  .leyenda-m .boton{min-height:40px;padding:0 16px;font-size:14px;flex:0 0 auto}
+  .mente-sec .carrusel{clip-path:inset(-40px 0 -10px 0)}
+  .encuentra-k .mapa{aspect-ratio:16/11}
+  .encuentra-k img{aspect-ratio:16/11}
+  
+  .experiencia .tres{gap:14px}
+  .experiencia .exp{min-height:250px;padding-top:20px}
+  .experiencia .exp h3{font-size:30px}
+  .experiencia .exp img{width:46%;margin-bottom:-4px}
+  .experiencia .exp.velas img{width:64%}
+  .experiencia .exp.wax img{width:44%}
+  .seccion{padding:44px 0}
+  .lanz-k{padding:18px}
+  .cartel-k{display:none}
+  .sellos-fila{gap:14px}
+}
+
+@media (hover:none){
+  .exp:hover img,.exp-k:hover,.exp-k:hover img,.tarjeta-k:hover .foto img,.sello-k:hover,.afro-ing li:hover img,
+  .aroma-intenso:hover img,.mente:hover .vela-caja,.mente .placa:hover,.cuatro .b:hover img,.boton:hover,.cta-lienzo:hover{transform:none}
+  .mente:hover .vela-cerca img{transform:scale(1.55)}
+  .mente .placa:hover{box-shadow:none}
+}
+.escenario.toca3d{cursor:pointer}
+.escenario.toca3d .pista{background:var(--k-rosa);color:#fff;border-radius:999px;padding:6px 14px}
+.escenario.toca3d .pista svg{stroke:#fff}
+.escenario.cargando .plano{animation:k-late 1s ease-in-out infinite}
+
 .c-olfactive-fondo-0{left:0.0%;top:0.0%;width:100.0%;height:100.0%}
 .c-olfactive-logo{left:30.139%;top:11.583%;width:33.229%;height:33.833%}
 .c-olfactive-fondo-1{left:3.125%;top:22.75%;width:20.486%;height:77.25%}

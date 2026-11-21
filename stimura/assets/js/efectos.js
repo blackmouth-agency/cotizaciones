@@ -40,7 +40,8 @@ if (finos && !reduceMovimiento) {
 }
 
 // ---------- bodegones que siguen el mouse: [data-bodegon] con hijos data-p (px de recorrido)
-if (!reduceMovimiento) {
+// solo con mouse: en celular no hay puntero que seguir y el ciclo solo gastaba batería
+if (finos && !reduceMovimiento) {
   $$('[data-bodegon]').forEach((esc) => {
     const piezas = $$('[data-p]', esc);
     let tx = 0, ty = 0, x = 0, y = 0, vivo = false;
