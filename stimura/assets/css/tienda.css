@@ -945,7 +945,7 @@ body{background:#fff}
 
 
 .mente{position:relative;padding-top:34px}
-.mente .nuevo,.tarjeta-k .nuevo{position:absolute;top:0;left:22px;z-index:3;background:var(--k-rosa);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:9px 18px 14px;border-radius:12px 12px 0 0}
+.mente .nuevo,.tarjeta-k .nuevo{position:absolute;top:0;left:22px;z-index:0;background:var(--k-rosa);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:9px 18px 14px;border-radius:12px 12px 0 0}
 .mente .placa{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .8fr 1.35fr .9fr;align-items:center;min-height:clamp(230px,26vw,330px);border-radius:24px;background:var(--k-panel,#DFF3FF);overflow:hidden}
 .mente.k-patitos-in-the-bath .placa{background:#D7EEFF}.mente.k-mango-season .placa{background:#FFF2C8}
 .mente.k-milk-para-dormir .placa{background:#FFE4E1}.mente.k-baby-sandia .placa{background:#FFD3E1}
@@ -1005,7 +1005,7 @@ body{background:#fff}
 
 
 .tarjeta-k{position:relative;padding-top:34px;display:flex;flex-direction:column}
-.tarjeta-k .foto{display:block;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:var(--k-baldosa,#FBE9D8)}
+.tarjeta-k .foto{position:relative;z-index:1;display:block;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:var(--k-baldosa,#FBE9D8)}
 .tarjeta-k .foto img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .tarjeta-k.k-petalo .foto img,.tarjeta-k.k-candy-pop .foto img{object-fit:contain;padding:8%}
 .tarjeta-k:hover .foto img{transform:scale(1.06)}
