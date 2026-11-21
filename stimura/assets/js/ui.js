@@ -5,6 +5,7 @@ import { $, $$, esc, pesos, urlWhatsApp, aviso } from './util.js';
 import { TIENDA } from './datos.js';
 import './carrusel.js';
 import './efectos.js';
+import './v4.js';
 
 const porId = new Map(PRODUCTOS.map((p) => [p.id, p]));
 

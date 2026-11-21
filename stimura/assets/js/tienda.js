@@ -4,7 +4,7 @@ import { $, $$ } from './util.js';
 // filtros por categoría (solo en /tienda/); la URL guarda el filtro (/stimura/tienda/?c=waxmelts)
 const filtros = $('#filtros');
 if (filtros) {
-  const tarjetas = $$('.tarjeta[data-categoria]');
+  const tarjetas = $$('.tarjeta[data-categoria], .tarjeta-k[data-categoria]');
   const aplicar = (cat) => {
     $$('.filtro', filtros).forEach((f) => f.setAttribute('aria-pressed', String(f.dataset.c === cat)));
     tarjetas.forEach((t) => { t.hidden = cat !== 'todo' && t.dataset.categoria !== cat; });
