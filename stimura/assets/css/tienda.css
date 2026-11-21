@@ -684,7 +684,7 @@ body.cajon-abierto .wa-flotante{opacity:0;pointer-events:none}
 
 
 .exp.velas img{width:116%;max-width:460px;margin-bottom:-4px;margin-top:auto}
-.exp.wax img{width:88%;max-width:340px}
+.exp.wax img{width:88%;max-width:340px;margin-bottom:-6px}
 @media (max-width:860px){.exp.velas img{width:92%}.exp.wax img{width:68%}}
 
 
