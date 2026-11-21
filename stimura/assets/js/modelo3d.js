@@ -69,8 +69,8 @@ export function iniciar(cont, reduce) {
       cont.addEventListener('pointerup', soltar);
       cont.addEventListener('pointercancel', soltar);
 
-      // Fluidez: girando solo dibuja a 30 cuadros/s (al arrastrarlo, 60); fuera de pantalla no dibuja nada;
-      // si el equipo no da abasto, baja la resolución del lienzo una sola vez (calidad casi igual, mucho menos trabajo).
+      // Fluidez: dibuja a la frecuencia completa de la pantalla (con 30 cps el giro se veía a saltos, David 21-nov);
+      // fuera de pantalla no dibuja nada; si el equipo no sostiene ~40 cps, baja la resolución del lienzo una sola vez.
       let tPrev = performance.now(), tDibujo = 0, enCola = false;
       const lentos = [];
       let pr = Math.min(devicePixelRatio, 2);
@@ -79,13 +79,11 @@ export function iniciar(cont, reduce) {
         enCola = false;
         if (!vivo || !visible) return;
         pedir();
-        const ocioso = !arrastrando && Math.abs(velY) < 0.001;
-        if (ocioso && t - tDibujo < 31) return;
         const dt = Math.min(0.05, (t - tPrev) / 1000); tPrev = t;
         if (tDibujo && dt > 0) {
           lentos.push(t - tDibujo);
-          if (lentos.length > 40) lentos.shift();
-          if (lentos.length === 40 && pr > 1 && lentos.slice().sort((a, b) => a - b)[20] > 48) {
+          if (lentos.length > 60) lentos.shift();
+          if (lentos.length === 60 && pr > 1 && lentos.slice().sort((a, b) => a - b)[30] > 25) {
             pr = 1; renderer.setPixelRatio(pr); medir(); lentos.length = 0;
           }
         }
