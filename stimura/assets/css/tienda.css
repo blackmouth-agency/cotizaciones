@@ -1323,6 +1323,13 @@ body{background:#fff}
 
 .diapo[inert] *,.diapo[inert] *::before,.diapo[inert] *::after{animation-play-state:paused!important}
 
+
+.cabecera:has(.menu.abierto){z-index:75}
+@media (max-width:860px){
+  .k-pildora .menu{background:#fff;box-shadow:-24px 0 60px -24px rgba(78,10,28,.45)}
+  .k-pildora .submenu{background:var(--k-rosa-claro);box-shadow:none}
+}
+
 .c-olfactive-fondo-0{left:0.0%;top:0.0%;width:100.0%;height:100.0%}
 .c-olfactive-logo{left:30.139%;top:11.583%;width:33.229%;height:33.833%}
 .c-olfactive-fondo-1{left:3.125%;top:22.75%;width:20.486%;height:77.25%}
