@@ -26,7 +26,14 @@
 
   /* ---------- datos reales de la institución ---------- */
   S.CONTACTO = { tel: '318 888 8328', wa: '573188888328', correo: 'semply.edu@gmail.com', dir: 'Carrera 5 No. 12-43, barrio Bolívar', ciudad: 'Yumbo, Valle del Cauca', instagram: 'https://www.instagram.com/semplyedu/' };
-  S.PROGRAMA = { nombre: 'Técnico Laboral en Marketing Digital e Inteligencia Artificial', cert: 'Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial', horas: 1200, registro: 'Resolución 1200.3.2-0496 del 27 de abril de 2026', licencia: 'Resolución 0495 del 27 de abril de 2026', metodologia: '100 % virtual: clases grabadas a tu ritmo y sesiones en vivo con tu docente' };
+  S.PROGRAMA = { nombre: 'Técnico Laboral en Marketing Digital e Inteligencia Artificial', cert: 'Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial', certLargo: 'Certificado de Aptitud Ocupacional de Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial', horas: 1200, registro: 'Resolución 1200.3.2-0496 del 27 de abril de 2026', vigencia: '27 de abril de 2031', licencia: 'Resolución 0495 del 27 de abril de 2026', metodologia: '100 % virtual: clases grabadas a tu ritmo y sesiones en vivo con tu docente', metodologiaRes: 'presencial y a distancia con estrategia de educación virtual' };
+  // datos legales (Ley 1064 de 2006, Decreto 1075 de 2015, Ley 1581 de 2012). nit: escribirlo cuando Semply lo envíe; mientras esté vacío no se muestra
+  S.LEGAL = { razon: 'Semply SAS', nit: '', vigila: 'Secretaría de Educación de Yumbo', politica: 'legal.html#datos' };
+  S.LEGAL.aclaracion = 'Este es un programa de Educación para el Trabajo y el Desarrollo Humano (Ley 1064 de 2006 y Decreto 1075 de 2015). Al terminarlo se otorga un Certificado de Aptitud Ocupacional de Técnico Laboral por Competencias. <b>No es un programa de educación superior ni conduce a título profesional, tecnológico o técnico profesional.</b> No garantizamos empleo ni ingresos.';
+  // envío de formularios: pegar aquí la URL del webhook de entrada del CRM (GoHighLevel → Automatización → «Inbound Webhook»). Vacío = solo WhatsApp
+  S.ENVIO = { webhook: '' };
+  // medición: ID de Google Analytics 4 (G-XXXX) y del píxel de Meta. Vacíos = no se carga nada. Se activan solo si la persona acepta las cookies
+  S.MEDICION = { ga4: '', pixel: '' };
   // los 12 módulos del programa (estructura curricular). El temario completo de cada uno vive en plan-de-estudios/ (datos en plan.js).
   S.MODULOS = [
     { n: 'Fundamentos de Marketing', s: 1, d: 'Mercado, cliente, propuesta de valor y las bases para decidir con criterio.', img: 'prog-seo' },
@@ -52,6 +59,45 @@
     // Sebastián Ortiz, de BLACKMOUTH (la agencia aliada); agregado por pedido de David el 26-oct-2026
     { n: 'Sebastián Ortiz', c: 'Director de Estrategia y Marketing · BLACKMOUTH', img: 'assets/img/equipo-ortiz.webp', col: '#FFFFFF', claro: true }
   ];
+  /* ---------- alianza con ADH Coaching y segundo programa (brief del 25-nov-2026) ---------- */
+  S.ADH = { n: 'ADH Coaching', largo: 'Academia de Desarrollo Humano y Coaching Ontológico', azul: '#285B8B', marino: '#1F273C', celeste: '#31A3CA', logo: 'assets/img/aliados/adh.webp', logoBlanco: 'assets/img/aliado/adh-blanco.png' };
+  S.PROGRAMAS = [
+    { k: 'marketing', nombre: 'Técnico Laboral en Marketing Digital e Inteligencia Artificial', corto: 'Marketing Digital e IA', de: 'Semply',
+      d: 'Aprende a vender por internet con criterio: estrategia, contenido, pauta, posicionamiento, comercio electrónico e inteligencia artificial aplicada, en doce módulos prácticos sobre un negocio real.',
+      datos: [['1.200', 'horas'], ['12', 'módulos'], ['2', 'semestres'], ['100 %', 'virtual']], registro: 'Res. 1200.3.2-0496 de 2026', precio: 'Desde $300.000 por módulo', url: 'oferta-academica.html#marketing' },
+    { k: 'coaching', nombre: 'Técnico Laboral en Coaching Ontológico', corto: 'Coaching Ontológico', de: 'ADH Coaching',
+      d: 'Fórmate como Coach Ontológico Profesional: aprende a observar cómo el lenguaje, las emociones y el cuerpo crean resultados, y a acompañar procesos de cambio en personas, equipos y organizaciones.',
+      datos: [['3', 'enfoques: ontológico, constructivista y sistémico'], ['10', 'unidades'], ['ADH', 'Coaching']], registro: null, valor: 8200000, url: 'oferta-academica.html#coaching' }
+  ];
+  // precios del Técnico Laboral en Marketing Digital e IA. Supuestos por confirmar: descuentos no acumulables (se toma el mayor), sobre el valor académico; matrícula completa y una sola vez.
+  S.PRECIOS = {
+    unico: 3200000, semestre: 1750000, matricula: 200000,
+    modulo: function (n) { return n <= 3 ? 300000 : n <= 6 ? 400000 : 350000; },
+    preventa: { pct: 50, cupos: 30, hasta: '2026-12-16T00:00:00-05:00', texto: 'hasta el 15 de diciembre' },
+    adh: { pct: 20 }
+  };
+  S.preventa = function () { return Date.now() < Date.parse(S.PRECIOS.preventa.hasta); };
+  S.diasPreventa = function () { return Math.max(0, Math.ceil((Date.parse(S.PRECIOS.preventa.hasta) - Date.now()) / 864e5)); };
+  S.pesos = function (n) { return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
+  S.ALIADOS = [
+    { n: 'ADH Coaching', img: 'assets/img/aliados/adh.webp', d: 'Alianza académica. Con ellos llega el programa de Coaching Ontológico.', url: 'plan-de-estudios/#aliado' },
+    { n: 'Florida Global University', img: 'assets/img/aliados/fgu.svg', d: 'Avala la certificación en Coaching Ontológico de ADH Coaching.' },
+    { n: 'CEL Center of Education and Leadership', img: 'assets/img/aliados/cel.webp', d: 'Certifica el programa de Coaching Ontológico de ADH Coaching.' }
+  ];
+  // docentes: los de coaching son el equipo de ADH Coaching (pénsum 2027); los de marketing llegan con sus fotos
+  S.DOCENTES = {
+    marketing: [],
+    coaching: [
+      ['ruben', 'Rubén Carrano', 'Director y CEO de ADH Coaching', 'Senior Coach Ontológico Profesional · FICOP #2850 · Máster en neurociencias'],
+      ['yuveli', 'Yuveli Jiménez', 'Directora de admisiones', 'Coach Ontológico Profesional · Técnica en mercadeo y ventas'],
+      ['lucy', 'Lucy Correa', 'Entrenadora', 'Coach Ontológico Profesional · FICOP #8694 · Coach ejecutiva y organizacional'],
+      ['alejandro', 'Alejandro López', 'Entrenador', 'Coach Ontológico Profesional · FICOP #8710 · Psicólogo'],
+      ['marysel', 'Marysel Arango', 'Entrenadora', 'Coach Ontológico Profesional · Ingeniera industrial · Consultora organizacional'],
+      ['janneth', 'Janneth Patiño', 'Entrenadora', 'Coach Ontológico Profesional · Profesional en mercadeo y publicidad'],
+      ['william', 'William Sánchez', 'Entrenador', 'Coach Ontológico Profesional · Empresario y conferencista'],
+      ['sonia', 'Sonia García', 'Entrenadora', 'Coach Ontológico Profesional · Especialista en gerencia educativa']
+    ]
+  };
   S.waLink = function (msg) { return 'https://wa.me/' + S.CONTACTO.wa + '?text=' + encodeURIComponent(msg || 'Hola, quiero información sobre Semply.'); };
   S.tarjetaEquipo = function (p, i) {
     var ini = p.n.split(' ').map(function (x) { return x[0]; }).join('');
@@ -78,10 +124,14 @@
   S.pie = function () {
     var p = S.$('.js-pie'); if (!p) return;
     var C = S.CONTACTO;
-    p.innerHTML = '<div class="wrap pie-grid"><div class="pie-marca"><img src="assets/img/logo-blanco-rojo.png" alt="Semply" width="130" height="34"><p>Institución de Educación para el Trabajo y el Desarrollo Humano. Marketing digital e inteligencia artificial, sin complicarlo.</p></div>' +
-      '<div><h4>Semply</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="oferta-academica.html">Oferta académica</a></li><li><a href="plan-de-estudios/">Plan de estudios</a></li><li><a href="como-funciona.html">Cómo funciona</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li><li><a href="inscripcion.html">Inscríbete</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>' +
+    p.innerHTML = '<div class="wrap pie-grid"><div class="pie-marca"><img src="assets/img/logo-blanco-rojo.png" alt="Semply" width="130" height="34"><p>Institución de Educación para el Trabajo y el Desarrollo Humano. Marketing digital e inteligencia artificial, sin complicarlo.</p><a class="pie-alianza" href="oferta-academica.html#coaching"><small>En alianza académica con</small><img src="' + S.ADH.logoBlanco + '" alt="ADH Coaching" width="92" height="60" loading="lazy"></a></div>' +
+      '<div><h4>Semply</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="oferta-academica.html">Oferta académica</a></li><li><a href="oferta-academica.html#inversion">Precios y simulador</a></li><li><a href="plan-de-estudios/">Plan de estudios</a></li><li><a href="como-funciona.html">Cómo funciona</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li><li><a href="inscripcion.html">Inscríbete</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>' +
       '<div><h4>Contacto</h4><ul><li><a href="tel:+57' + C.tel.replace(/ /g, '') + '">' + S.ico(S.I.tel) + C.tel + '</a></li><li><a href="mailto:' + C.correo + '">' + S.ico(S.I.correo) + C.correo + '</a></li><li><a href="' + S.waLink() + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'Escríbenos por WhatsApp</a></li><li><a href="' + C.instagram + '" target="_blank" rel="noopener">' + S.ico('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/>') + '@semplyedu en Instagram</a></li></ul></div></div>' +
-      '<div class="wrap pie-legal"><span>© 2026 Semply SAS. Licencia de funcionamiento: ' + S.PROGRAMA.licencia + '. Programa ' + S.PROGRAMA.nombre + ' registrado por la Secretaría de Educación de Yumbo, ' + S.PROGRAMA.registro + '.</span><span>Sitio en construcción · por BLACKMOUTH</span></div>';
+      '<div class="wrap pie-legal"><p class="pie-ley">' + S.textoLegal() + '</p><nav class="pie-pol" aria-label="Políticas"><a href="legal.html#datos">Política de datos</a><a href="legal.html#cookies">Cookies</a><a href="legal.html#terminos">Términos</a><a href="legal.html#pqrs">PQRS</a><button type="button" class="js-cookies-cfg">Configurar cookies</button></nav><span>Sitio en construcción · por BLACKMOUTH</span></div>';
+  };
+  S.textoLegal = function () {
+    var P = S.PROGRAMA, L = S.LEGAL, C = S.CONTACTO;
+    return '© 2026 ' + L.razon + (L.nit ? ', NIT ' + L.nit : '') + '. Institución de Educación para el Trabajo y el Desarrollo Humano con licencia de funcionamiento otorgada por la Secretaría de Educación de Yumbo, ' + P.licencia + '. Programa «' + P.nombre + '», registrado por la Secretaría de Educación de Yumbo, ' + P.registro + ', vigente hasta el ' + P.vigencia + '. Metodología: ' + P.metodologiaRes + '. Duración: 1.200 horas (2 semestres). Otorga <b>Certificado de Aptitud Ocupacional de Técnico Laboral por Competencias</b>. <b>No conduce a título profesional.</b> Inspección y vigilancia: ' + L.vigila + '. Sede: ' + C.dir + ', ' + C.ciudad + ' · ' + C.tel + ' · ' + C.correo + '.';
   };
 
   /* ---------- enlaces de WhatsApp ---------- */
@@ -126,14 +176,21 @@
       tx.textContent = lbl || ''; tx.classList.toggle('on', !!lbl); tx.style.left = x + 'px'; tx.style.top = y + 'px';
     });
     document.addEventListener('pointerleave', function () { m.classList.remove('on'); pt.classList.remove('on'); });
-    (function loop() {
+    var corre = false, ult = '';
+    function loop() {
       var tx2 = x, ty2 = y, tw = 34, th = 34;
       if (obj) { var r = obj.getBoundingClientRect(); tx2 = r.left + r.width / 2; ty2 = r.top + r.height / 2; tw = r.width + 16; th = r.height + 16; }
       cx += (tx2 - cx) * 0.22; cy += (ty2 - cy) * 0.22; cw += (tw - cw) * 0.2; ch += (th - ch) * 0.2;
-      m.style.transform = 'translate(' + (cx - cw / 2) + 'px,' + (cy - ch / 2) + 'px)'; m.style.width = cw + 'px'; m.style.height = ch + 'px';
-      m.classList.toggle('encuadra', !!obj);
+      var k = Math.round(cx - cw / 2) + ',' + Math.round(cy - ch / 2) + ',' + Math.round(cw) + ',' + Math.round(ch) + (obj ? 1 : 0);
+      if (k !== ult) { ult = k; m.style.transform = 'translate(' + (cx - cw / 2).toFixed(1) + 'px,' + (cy - ch / 2).toFixed(1) + 'px)'; m.style.width = cw.toFixed(1) + 'px'; m.style.height = ch.toFixed(1) + 'px'; m.classList.toggle('encuadra', !!obj); }
+      var quieto = Math.abs(tx2 - cx) < 0.3 && Math.abs(ty2 - cy) < 0.3 && Math.abs(tw - cw) < 0.3 && Math.abs(th - ch) < 0.3;
+      if (quieto && !obj) { corre = false; return; }
       requestAnimationFrame(loop);
-    })();
+    }
+    function arrancar() { if (!corre) { corre = true; requestAnimationFrame(loop); } }
+    document.addEventListener('pointermove', arrancar, { passive: true });
+    window.addEventListener('scroll', function () { if (obj) arrancar(); }, { passive: true });
+    arrancar();
   };
 
   /* ---------- formulario de inscripción o contacto (modo demostración) ---------- */
@@ -152,19 +209,23 @@
   // [tema, pregunta, respuesta, marca opcional: 'inicio' sale en la portada, 'insc' en inscripciones]
   S.FAQ_TEMAS = [['programa', 'El programa'], ['inscripcion', 'Inscripción y pagos'], ['modalidad', 'Modalidad y horarios'], ['certificado', 'Certificado y evaluación'], ['plataforma', 'Plataforma y clases']];
   S.FAQ = [
-    ['programa', '¿Qué estudio en Semply?', 'El Técnico Laboral por Competencias en Marketing Digital e Inteligencia Artificial: 1.200 horas repartidas en doce módulos de 100 horas y dos semestres. Es nuestra oferta académica principal, y de él nacen los cursos y rutas cortas que vienen.', 'inicio'],
+    ['programa', '¿Qué estudio en Semply?', 'Dos programas técnicos laborales. El de Marketing Digital e Inteligencia Artificial: 1.200 horas repartidas en doce módulos de 100 horas y dos semestres, 100 % virtual. Y, en alianza académica con ADH Coaching, el de Coaching Ontológico, para formarte como Coach Ontológico Profesional.', 'inicio'],
+    ['programa', '¿Qué es la alianza con ADH Coaching?', 'ADH Coaching, Academia de Desarrollo Humano y Coaching Ontológico, es nuestro aliado académico. Con la alianza, Semply suma a su oferta el Técnico Laboral en Coaching Ontológico, con el equipo de entrenadores de ADH, y los estudiantes y exestudiantes de ADH tienen 20 % de descuento en el programa de Marketing Digital e IA.', 'inicio'],
     ['programa', '¿Qué módulos tiene?', 'Semestre 1: ' + S.MODULOS.filter(function (m) { return m.s === 1; }).map(function (m) { return m.n; }).join(', ') + '. Semestre 2: ' + S.MODULOS.filter(function (m) { return m.s === 2; }).map(function (m) { return m.n; }).join(', ') + '. El temario completo de cada uno, unidad por unidad, está en el <a href="plan-de-estudios/">plan de estudios</a>.'],
     ['programa', '¿Necesito saber de marketing o de programación?', 'No. El primer semestre arranca con Fundamentos de Marketing y Herramientas Digitales, y no se necesita programar: basta con manejo básico de computador y navegador.', 'inicio'],
     ['programa', '¿Las clases son pura teoría?', 'No. De las 100 horas de cada módulo, 15 son clases grabadas, 20 son sesiones en vivo con el docente, 50 son práctica con un entregable que se revisa y 15 son evaluación y retroalimentación. Trabajas sobre un negocio real: el tuyo, el de un cliente o uno que te asigna Semply.'],
-    ['programa', '¿Para quién es el programa?', 'Para quien termina el colegio y quiere un título técnico con salida laboral, para quien ya trabaja y quiere crecer o cambiar de área, y para quien tiene un negocio y quiere venderlo mejor en internet.'],
+    ['programa', '¿Para quién es el programa?', 'Para quien termina el colegio y quiere un certificado de técnico laboral con salida laboral, para quien ya trabaja y quiere crecer o cambiar de área, y para quien tiene un negocio y quiere venderlo mejor en internet.'],
     ['inscripcion', '¿Cómo me inscribo?', 'Llena el formulario de inscripción o escríbenos al WhatsApp ' + S.CONTACTO.tel + '. El equipo de admisiones te contacta para contarte el paso a paso de la matrícula.', 'inicio'],
-    ['inscripcion', '¿Cuánto cuesta y cómo se paga?', 'El equipo de admisiones te cuenta el valor, lo que incluye y las formas de pago cuando te contacte.', 'insc'],
+    ['inscripcion', '¿Cuánto cuesta y cómo se paga?', 'El Técnico Laboral en Marketing Digital e IA cuesta ' + S.pesos(S.PRECIOS.unico) + ' en pago único o ' + S.pesos(S.PRECIOS.semestre) + ' por semestre. También puedes pagar módulo por módulo: del 1 al 3, ' + S.pesos(300000) + ' cada uno; del 4 al 6, ' + S.pesos(400000) + '; y del 7 al 12, ' + S.pesos(350000) + '. La matrícula vale ' + S.pesos(S.PRECIOS.matricula) + '. Calcula tu caso en el <a class="enl" href="oferta-academica.html#inversion">simulador de costos</a>.', 'insc'],
+    ['inscripcion', '¿Hay descuentos?', 'Sí. En preventa, los primeros 30 inscritos tienen 50 % de descuento hasta el 15 de diciembre. Si eres estudiante o exestudiante de ADH Coaching tienes 20 % de descuento. Los descuentos no se suman: se aplica el mayor.', 'inicio'],
     ['inscripcion', '¿Cuándo empiezan las clases?', 'Admisiones te confirma la fecha de inicio del próximo grupo.'],
     ['inscripcion', '¿Qué documentos necesito?', 'Admisiones te envía la lista de documentos para la matrícula cuando te contacte.'],
     ['modalidad', '¿Las clases son virtuales?', 'Sí. El programa es 100 % virtual: ves las clases grabadas a tu ritmo, te conectas a las sesiones en vivo con tu docente y entregas tus trabajos en la plataforma. Estudias desde donde estés.', 'inicio'],
     ['modalidad', '¿En qué horario son las clases?', 'Las clases grabadas las ves cuando quieras. Las sesiones en vivo tienen un horario fijo por grupo que admisiones te confirma al inscribirte, y quedan grabadas por si no puedes conectarte.', 'inicio'],
-    ['certificado', '¿Qué certificado recibo?', 'Al aprobar el programa recibes el certificado de ' + S.PROGRAMA.cert + '.', 'inicio'],
-    ['certificado', '¿El programa está avalado?', 'Sí. Semply es una institución de Educación para el Trabajo y el Desarrollo Humano con licencia de funcionamiento (' + S.PROGRAMA.licencia + '), y el programa está registrado ante la Secretaría de Educación de Yumbo (' + S.PROGRAMA.registro + ').', 'inicio'],
+    ['certificado', '¿Qué certificado recibo?', 'Al aprobar el programa recibes el ' + S.PROGRAMA.certLargo + '. ' + S.LEGAL.aclaracion, 'inicio'],
+    ['certificado', '¿Es un título profesional?', 'No. ' + S.LEGAL.aclaracion],
+    ['certificado', '¿Hasta cuándo está vigente el registro del programa?', 'El registro del programa (' + S.PROGRAMA.registro + ') está vigente hasta el ' + S.PROGRAMA.vigencia + '. Lo vigila la ' + S.LEGAL.vigila + '.'],
+    ['certificado', '¿El programa está avalado?', 'Sí. Semply es una institución de Educación para el Trabajo y el Desarrollo Humano con licencia de funcionamiento (' + S.PROGRAMA.licencia + '), y el programa está registrado ante la Secretaría de Educación de Yumbo (' + S.PROGRAMA.registro + ', vigente hasta el ' + S.PROGRAMA.vigencia + '). Es un programa de Educación para el Trabajo y el Desarrollo Humano: no conduce a título profesional.', 'inicio'],
     ['certificado', '¿Cómo se aprueba cada módulo?', 'Con nota mínima de 3,5 sobre 5,0, el 80 % de los entregables radicados, el 70 % de las sesiones en vivo y la sustentación del proyecto integrador. La nota sale sobre todo de lo que produces: talleres y entregables (40 %) y proyecto integrador (40 %).'],
     ['plataforma', '¿Qué necesito para estudiar a distancia?', 'Un computador o celular con buena conexión. La mayoría de las herramientas tienen plan gratuito, y las que requieren pago se indican desde el inicio.'],
     ['plataforma', '¿Las sesiones en vivo quedan grabadas?', 'Sí. Se graban para quien no pudo asistir y para repasar.'],
@@ -220,7 +281,7 @@
     });
     if (piezas.length && !S.reducir) {
       var pend = false;
-      var mover = function () { pend = false; var vh = innerHeight; piezas.forEach(function (d) { var r = d.parentNode.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return; var c = (r.top + r.height / 2 - vh / 2), f = parseFloat(d.style.getPropertyValue('--f')); d.style.transform = 'translateY(' + (-c * f).toFixed(1) + 'px) rotate(calc(var(--r) + ' + (c * f * 0.25).toFixed(1) + 'deg))'; }); };
+      var mover = function () { pend = false; var vh = innerHeight; var med = piezas.map(function (d) { return d.parentNode.getBoundingClientRect(); }); piezas.forEach(function (d, i) { var r = med[i]; if (r.bottom < 0 || r.top > vh) return; var c = (r.top + r.height / 2 - vh / 2), f = d._f || (d._f = parseFloat(d.style.getPropertyValue('--f'))); d.style.transform = 'translateY(' + (-c * f).toFixed(1) + 'px) rotate(calc(var(--r) + ' + (c * f * 0.25).toFixed(1) + 'deg))'; }); };
       window.addEventListener('scroll', function () { if (!pend) { pend = true; requestAnimationFrame(mover); } }, { passive: true }); mover();
     }
     // sellos: tocar el fondo del encabezado deja piezas de la marca
@@ -243,5 +304,104 @@
     S.contar(); S.tilt();
   };
 
-  S.iniciarComun = function (umbral) { S.cabecera(umbral == null ? 40 : umbral); S.pie(); S.whatsapp(); S.mira(); S.revelar(); S.decorar(); };
+  /* ---------- página actual: en plataformas que pegan el HTML como bloque (GoHighLevel) el <body> pierde sus atributos ---------- */
+  S.pagina = function () {
+    var el = document.body.dataset.pagina ? document.body : S.$('[data-pagina]');
+    var p = el ? el.dataset.pagina : '';
+    if (p && p !== 'inicio') document.body.classList.add('interna');
+    return p;
+  };
+
+  /* ---------- enlaces limpios: en semply.edu.co las páginas viven sin «.html» (/inscripcion, /plan-de-estudios) ---------- */
+  S.LIMPIO = /(^|\.)semply\.edu\.co$/.test(location.hostname);
+  S.ruta = function (h) {
+    if (!S.LIMPIO || !h || /^(https?:|mailto:|tel:|#|\/\/)/.test(h)) return h;
+    var m = /^(?:\.\.\/)*([\w-]+)(?:\.html)?\/?(\?[^#]*)?(#.*)?$/.exec(h); if (!m) return h;
+    return (m[1] === 'index' ? '/' : '/' + m[1]) + (m[2] || '') + (m[3] || '');
+  };
+  S.limpiarEnlaces = function (raiz) {
+    if (!S.LIMPIO) return;
+    S.$$('a[href]', raiz).forEach(function (a) { var h = a.getAttribute('href'), n = S.ruta(h); if (n !== h) a.setAttribute('href', n); });
+  };
+  // lo que se pinta después (tarjetas, cajón del menú) se limpia al tocarlo
+  if (S.LIMPIO) ['pointerdown', 'focusin', 'click'].forEach(function (t) { document.addEventListener(t, function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) S.limpiarEnlaces(a.parentNode); }, true); });
+
+  /* ---------- de dónde llegó la persona (anuncio, Instagram, Google): se guarda solo durante la visita ---------- */
+  S.origen = function () {
+    try {
+      var o = JSON.parse(sessionStorage.getItem('smpl.origen') || 'null');
+      if (!o) {
+        var q = new URLSearchParams(location.search); o = { llegada: location.pathname, referente: document.referrer || '' };
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'].forEach(function (k) { if (q.get(k)) o[k] = q.get(k); });
+        sessionStorage.setItem('smpl.origen', JSON.stringify(o));
+      }
+      return o;
+    } catch (e) { return {}; }
+  };
+
+  /* ---------- medición (GA4 + píxel de Meta), solo con consentimiento ---------- */
+  window.dataLayer = window.dataLayer || [];
+  S.consentimiento = function () { try { return localStorage.getItem('smpl.cookies'); } catch (e) { return null; } };
+  S.cargarMedicion = function () {
+    var M = S.MEDICION; if (S._medicion || S.consentimiento() !== 'si') return; S._medicion = true;
+    if (M.ga4) {
+      var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + M.ga4; document.head.appendChild(g);
+      window.gtag = function () { window.dataLayer.push(arguments); }; window.gtag('js', new Date()); window.gtag('config', M.ga4);
+    }
+    if (M.pixel) {
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', M.pixel); window.fbq('track', 'PageView');
+    }
+  };
+  // eventos: inscripcion (resultado clave), whatsapp (clave), inscribete_clic, formulario_inicio, ruta_inicio, ruta_resultado, video_play, video_progreso, perfil, instagram
+  var META = { inscripcion: 'Lead', whatsapp: 'Contact' };
+  S.medir = function (ev, datos) {
+    datos = datos || {};
+    window.dataLayer.push(Object.assign({ event: ev }, datos));
+    if (window.gtag && S._medicion) window.gtag('event', ev, datos);
+    if (window.fbq && S._medicion) { if (META[ev]) window.fbq('track', META[ev], datos); else window.fbq('trackCustom', ev, datos); }
+  };
+  S.avisoCookies = function (forzar) {
+    var M = S.MEDICION; if (!M.ga4 && !M.pixel) return;
+    if (!forzar && S.consentimiento()) { S.cargarMedicion(); return; }
+    var v = S.$('.cookies'); if (v) v.remove();
+    v = document.createElement('div'); v.className = 'cookies'; v.setAttribute('role', 'dialog'); v.setAttribute('aria-label', 'Aviso de cookies');
+    v.innerHTML = '<p>Usamos cookies para medir las visitas y saber qué publicidad funciona. Solo se activan si las aceptas. <a href="' + S.ruta('legal.html#cookies') + '">Más información</a></p><div><button class="btn btn-s btn-o js-ck" data-v="no">Rechazar</button><button class="btn btn-s js-ck" data-v="si">Aceptar</button></div>';
+    v.addEventListener('click', function (e) { var b = e.target.closest('.js-ck'); if (!b) return; try { localStorage.setItem('smpl.cookies', b.dataset.v); } catch (er) {} v.remove(); S.cargarMedicion(); });
+    document.body.appendChild(v);
+  };
+  // clics que se cuentan en todo el sitio
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (/wa\.me\//.test(h)) S.medir('whatsapp', { lugar: S.pagina() || 'inicio' });
+    else if (/instagram\.com/.test(h)) S.medir('instagram');
+    else if (/inscripcion/.test(h)) S.medir('inscribete_clic', { lugar: S.pagina() || 'inicio' });
+  });
+  document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('.js-cookies-cfg')) S.avisoCookies(true); });
+
+  /* ---------- envío de formularios: webhook del CRM si está configurado ---------- */
+  S.enviar = function (tipo, datos) {
+    var cuerpo = Object.assign({ tipo: tipo, fecha: new Date().toISOString(), pagina: location.href }, datos, { origen: S.origen() });
+    if (!S.ENVIO.webhook) return Promise.resolve(false);
+    return fetch(S.ENVIO.webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(cuerpo) })
+      .then(function (r) { return r.ok; }, function () { return false; });
+  };
+
+  /* ---------- casilla de autorización de datos (sin marcar, obligatoria) y casilla opcional de publicidad ---------- */
+  S.casillaDatos = function (pre) {
+    var L = S.LEGAL;
+    return '<label class="check full autoriza"><input type="checkbox" id="' + pre + '-aut" required><span>Autorizo de forma previa, expresa e informada a ' + L.razon + (L.nit ? ', NIT ' + L.nit : '') + ', como responsable, para tratar mis datos con el fin de gestionar mi proceso de admisión y contactarme por teléfono, correo y WhatsApp. Sé que los datos se almacenan en proveedores ubicados en EE. UU. Puedo conocer, actualizar, rectificar y suprimir mis datos, y revocar esta autorización, escribiendo a ' + S.CONTACTO.correo + '. Leí la <a class="enl" href="' + S.ruta(L.politica) + '" target="_blank" rel="noopener">Política de Tratamiento de Datos</a>. Si soy menor de edad, esta autorización la da mi representante legal.</span></label>' +
+      '<label class="check full"><input type="checkbox" id="' + pre + '-pub"><span>También quiero recibir información académica y comercial de Semply (opcional).</span></label>';
+  };
+
+  /* ---------- botón flotante de WhatsApp (celular y tableta) ---------- */
+  S.waFlotante = function () {
+    if (S.$('.wa-flota')) return;
+    var a = document.createElement('a'); a.className = 'wa-flota'; a.href = S.waLink(); a.target = '_blank'; a.rel = 'noopener'; a.setAttribute('aria-label', 'Escríbenos por WhatsApp');
+    a.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>';
+    document.body.appendChild(a);
+  };
+
+  S.iniciarComun = function (umbral) { S.origen(); S.cabecera(umbral == null ? 40 : umbral); S.pie(); S.whatsapp(); S.waFlotante(); S.mira(); S.revelar(); S.decorar(); S.limpiarEnlaces(); S.avisoCookies(); };
 })();

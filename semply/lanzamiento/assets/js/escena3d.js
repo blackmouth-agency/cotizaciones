@@ -14,7 +14,7 @@ let renderer;
 try {
   renderer = new THREE.WebGLRenderer({ canvas: lienzo, antialias: true, alpha: true, powerPreference: 'high-performance' });
 } catch (e) { estado.listo = true; window.dispatchEvent(new Event('escena-lista')); throw e; }
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, movil ? 1.5 : 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.LinearToneMapping;
 renderer.toneMappingExposure = 1.0;
@@ -41,6 +41,8 @@ function geometriaL() {
 const geo = geometriaL();
 const mat = (hex, rough) => new THREE.MeshPhysicalMaterial({ color: new THREE.Color(hex), roughness: rough, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.2, envMapIntensity: 0.55 });
 const MATS = [mat('#F10E3B', 0.32), mat('#FFC225', 0.34), mat('#4a4647', 0.4), mat('#f4efe8', 0.36)];
+// alianza con ADH Coaching (25-nov-2026): algunas piezas llevan el azul de ADH
+const MAT_ADH = mat('#285B8B', 0.3);
 
 /* rejilla del patrón */
 const COLS = movil ? 3 : 8, FILAS = movil ? 7 : 4, CELDA = 3.35;
@@ -50,7 +52,7 @@ const piezas = [];
 const rnd = (a, b) => a + Math.random() * (b - a);
 for (let i = 0; i < N; i++) {
   const c = i % COLS, f = Math.floor(i / COLS);
-  const m = new THREE.Mesh(geo, MATS[(c + f * 3) % 4]);
+  const m = new THREE.Mesh(geo, i % 7 === 3 ? MAT_ADH : MATS[(c + f * 3) % 4]);
   const rejPos = new THREE.Vector3((c - (COLS - 1) / 2) * CELDA, ((FILAS - 1) / 2 - f) * CELDA, 0);
   const rejQ = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, ((c + f * 2) % 4) * Math.PI / 2));
   piezas.push({ m, rejPos, rejQ, base: new THREE.Vector3(), rot0: new THREE.Euler(rnd(0, 6.28), rnd(0, 6.28), rnd(0, 6.28)), giro: new THREE.Vector3(rnd(-.4, .4), rnd(-.4, .4), rnd(-.3, .3)), fase: rnd(0, 6.28), empuje: new THREE.Vector3(), extra: new THREE.Vector3() });
@@ -140,7 +142,10 @@ function bucle(t) {
 }
 new IntersectionObserver((es) => { visible = es[0].isIntersecting; }, { rootMargin: '100px' }).observe(seccion);
 
-dibujar(0.016);
-estado.listo = true;
-window.dispatchEvent(new Event('escena-lista'));
-if (!reducir) requestAnimationFrame(bucle);
+// los materiales se compilan en paralelo antes del primer cuadro (optimización 25-nov-2026)
+(renderer.compileAsync ? renderer.compileAsync(escena, camara) : Promise.resolve()).catch(() => {}).then(() => {
+  dibujar(0.016);
+  estado.listo = true;
+  window.dispatchEvent(new Event('escena-lista'));
+  if (!reducir) requestAnimationFrame(bucle);
+});

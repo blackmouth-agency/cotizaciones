@@ -10,9 +10,9 @@
     window.addEventListener('escena-lista', function () { listo3d = true; });
     window.addEventListener('load', function () { listoVentana = true; });
     function cerrar() { if (fin) return; fin = true; clearInterval(iv); el.textContent = 100; b.style.width = '100%'; setTimeout(function () { carga.classList.add('fuera'); document.documentElement.classList.add('cargado'); }, 180); }
-    function paso() { var t = Date.now() - t0, tope = (listo3d && listoVentana && t > 1100) || t > 4000 ? 100 : 90; n += (tope - n) * 0.12 + 0.6; if (n > tope) n = tope; el.textContent = Math.floor(n); b.style.width = n + '%'; if (n >= 99.5) cerrar(); }
+    function paso() { var t = Date.now() - t0, tope = (listo3d && listoVentana) || t > 650 ? 100 : 90; n += (tope - n) * 0.3 + 1.5; if (n > tope) n = tope; el.textContent = Math.floor(n); b.style.width = n + '%'; if (n >= 99.5) cerrar(); }
     if (reducir) { carga.classList.add('fuera'); document.documentElement.classList.add('cargado'); return; }
-    var iv = setInterval(paso, 30); setTimeout(cerrar, 6000);
+    var iv = setInterval(paso, 30); setTimeout(cerrar, 850);
   })();
 
   /* ---------- scroll suave ---------- */
@@ -71,8 +71,30 @@
   $('.js-semestres').addEventListener('keydown', function (e) { var li = e.target.closest('[data-href]'); if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); location.href = li.dataset.href; } });
 
   /* ---------- videos ---------- */
-  function autoplay(v) { new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }); }, { threshold: 0.15 }).observe(v); }
-  autoplay($('.marco video'));
+  (function () {
+    var marco = $('.marco'), v = marco && $('video', marco), bt = marco && $('.js-play', marco); if (!v || !bt) return;
+    bt.addEventListener('click', function () { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); marco.classList.add('reproduce'); S.medir('video_play', { video: 'set de grabación' }); });
+    v.addEventListener('click', function () { if (v.paused) bt.click(); else { v.pause(); marco.classList.remove('reproduce'); } });
+    new IntersectionObserver(function (es) { if (!es[0].isIntersecting && !v.paused) { v.pause(); marco.classList.remove('reproduce'); } }, { threshold: 0 }).observe(v);
+  })();
+
+  /* ---------- carga bajo demanda (25-nov-2026): el visor de la cámara y la escena 3D de la alianza llegan cuando se acercan ---------- */
+  // se cargan en un momento ocioso después de la carga (para no trabar el scroll), o antes si la persona ya se acerca
+  function cuandoCerca(el, margen, fn) {
+    if (!el) return;
+    var hecho = false, io = null;
+    function ya() { if (hecho) return; hecho = true; if (io) io.disconnect(); fn(); }
+    if ('IntersectionObserver' in window) { io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) ya(); }, { rootMargin: margen }); io.observe(el); }
+    function ocioso() { (window.requestIdleCallback || function (f) { setTimeout(f, 1200); })(ya, { timeout: 4000 }); }
+    if (document.readyState === 'complete') setTimeout(ocioso, 1500); else window.addEventListener('load', function () { setTimeout(ocioso, 1500); });
+  }
+  (function () { var mv = $('model-viewer'); if (!mv) return; mv.addEventListener('load', function () { mv.parentNode.classList.add('cam-ok'); }); mv.addEventListener('error', function () { mv.style.visibility = 'hidden'; }); })();
+  cuandoCerca($('model-viewer'), '900px 0px', function () {
+    var sc = document.createElement('script'); sc.type = 'module'; sc.src = 'https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js'; document.head.appendChild(sc);
+  });
+  cuandoCerca($('.js-alianza3d'), '700px 0px', function () {
+    var sc = document.createElement('script'); sc.type = 'module'; sc.src = 'assets/js/alianza3d.js?v=6'; document.head.appendChild(sc);
+  });
   $('.js-clase').addEventListener('click', function () {
     var m = document.createElement('div'); m.className = 'modal';
     m.innerHTML = '<div class="modal-caja" role="dialog" aria-modal="true" aria-label="Clase de muestra"><button class="modal-x" aria-label="Cerrar">' + S.ico(S.I.x) + '</button><video controls autoplay playsinline poster="assets/media/leccion-poster.webp"><source src="assets/media/leccion-anatomia-prompt.mp4" type="video/mp4"><track kind="captions" srclang="es" label="Español" src="assets/media/leccion-anatomia-prompt.vtt" default></video></div>';
@@ -80,6 +102,9 @@
     function k(e) { if (e.key === 'Escape') cerrar(); }
     m.addEventListener('click', function (e) { if (e.target === m || e.target.closest('.modal-x')) cerrar(); });
     document.addEventListener('keydown', k); document.body.appendChild(m); if (lenis) lenis.stop();
+    var vid = $('video', m), hitos = [25, 50, 75, 100], ya = {};
+    S.medir('video_play', { video: 'clase de muestra' });
+    vid.addEventListener('timeupdate', function () { if (!vid.duration) return; var pc = vid.currentTime / vid.duration * 100; hitos.forEach(function (h) { if (pc >= h - 1 && !ya[h]) { ya[h] = true; S.medir('video_progreso', { video: 'clase de muestra', porcentaje: h }); } }); });
     $('.modal-x', m).focus();
   });
   $('.js-burst-cam').innerHTML = S.burst('3D<small>gírala</small>', '#F10E3B', '#fff', 96);
@@ -98,7 +123,7 @@
   /* ---------- para qué te sirve: estudiante, trabajador, emprendedor ---------- */
   (function () {
     var PF = {
-      est: { t: 'Un título técnico y una salida laboral.', p: 'Si terminaste el colegio, en dos semestres sales como Técnico Laboral en algo que todas las empresas necesitan: vender por internet.', b: ['Certificado de Técnico Laboral por Competencias.', 'Un portafolio con proyectos reales para mostrar en entrevistas.', 'Base para trabajar en redes, contenido o marketing, o para seguir estudiando.'], m: ['Fundamentos de Marketing', 'Gestión de Redes Sociales', 'Creación de Contenidos Digitales'], img: 'reels' },
+      est: { t: 'Un certificado técnico y una salida laboral.', p: 'Si terminaste el colegio, en dos semestres sales como Técnico Laboral en algo que todas las empresas necesitan: vender por internet.', b: ['Certificado de Técnico Laboral por Competencias.', 'Un portafolio con proyectos reales para mostrar en entrevistas.', 'Base para trabajar en redes, contenido o marketing, o para seguir estudiando.'], m: ['Fundamentos de Marketing', 'Gestión de Redes Sociales', 'Creación de Contenidos Digitales'], img: 'reels' },
       tra: { t: 'Crece en tu trabajo o cambia de área.', p: 'Si ya trabajas, aprendes a usar la IA y las herramientas digitales que hoy piden en ventas, servicio al cliente, comunicaciones o administración.', b: ['Estudias a tu ritmo y desde donde estés, sin dejar tu empleo.', 'Aplicas en tu trabajo lo que ves en clase desde la primera unidad.', 'Un certificado técnico que suma en tu hoja de vida.'], m: ['Inteligencia Artificial Aplicada al Marketing', 'Analítica de Marketing Digital', 'Herramientas Digitales'], img: 'prompts' },
       emp: { t: 'Vende más sin depender de nadie.', p: 'Si tienes un negocio, el proyecto con el que practicas es el tuyo: lo que aprendes en clase lo aplicas esa misma semana.', b: ['Redes, contenido y pauta hechos por ti, con criterio.', 'Tu negocio visible en Google y en el mapa.', 'Automatizaciones con IA para responder y vender más rápido.'], m: ['Publicidad Digital', 'SEO y Posicionamiento Web', 'Comercio Electrónico'], img: 'producto' }
     };
@@ -111,7 +136,7 @@
         '<p class="perfil-l">Módulos que más vas a usar</p><div class="perfil-mods">' + f.m.map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div>' +
         '<a class="btn" href="inscripcion.html" data-mira>Inscríbete ' + S.ico(S.I.flecha, 'ico-f') + '</a></div></div>';
     }
-    tabs.forEach(function (bt) { bt.addEventListener('click', function () { pinta(bt.dataset.k); }); });
+    tabs.forEach(function (bt) { bt.addEventListener('click', function () { pinta(bt.dataset.k); S.medir('perfil', { perfil: { est: 'estudiante', tra: 'trabajador', emp: 'negocio' }[bt.dataset.k] }); }); });
     pinta('est');
   })();
 
@@ -120,7 +145,7 @@
     var elegidos = ['Inteligencia Artificial Aplicada al Marketing', 'Creación de Contenidos Digitales', 'Publicidad Digital', 'SEO y Posicionamiento Web', 'Gestión de Redes Sociales', 'Comercio Electrónico'];
     var C = elegidos.map(function (n) { return S.MODULOS.filter(function (m) { return m.n === n; })[0]; });
     var cont = $('.js-rascas'), hechas = 0;
-    cont.innerHTML = C.map(function (c, i) { return '<article class="rasca rv" style="--d:' + (i % 3 * 0.06) + 's"><div class="rasca-img"><img src="assets/img/cursos/' + c.img + '-sm.webp" alt="" loading="lazy"><canvas data-mira data-mira-t="Rasca" aria-label="Rasca para descubrir el módulo"></canvas>' + S.burst('¡Ahí<small>está!</small>', '#F10E3B', '#fff', 84) + '</div><div class="rasca-c"><b>' + c.n + '</b><small>Módulo · 100 horas · Semestre ' + c.s + '</small></div></article>'; }).join('');
+    cont.innerHTML = C.map(function (c, i) { return '<article class="rasca rv" style="--d:' + (i % 3 * 0.06) + 's"><div class="rasca-img"><img src="assets/img/cursos/' + c.img + '-sm.webp" alt="" loading="lazy"><canvas data-mira data-mira-t="Rasca" aria-label="Rasca o toca para descubrir el módulo"></canvas>' + S.burst('¡Ahí<small>está!</small>', '#F10E3B', '#fff', 84) + '</div><div class="rasca-c"><b>' + c.n + '</b><small>Módulo · 100 horas · Semestre ' + c.s + '</small></div></article>'; }).join('');
     var patron = new Image();
     patron.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'><path d='M6 6h12v24h24v12H6z' fill='#F10E3B'/><path d='M90 6v36H78V18H54V6z' fill='#FFC225'/><path d='M6 90V54h12v24h24v12z' fill='#FFC225'/><path d='M90 90H54V78h24V54h12z' fill='#ffffff'/></svg>");
     $$('.rasca', cont).forEach(function (card) {
@@ -142,8 +167,10 @@
         for (var i = 3; i < d.length; i += 4 * 24) { tot++; if (d[i] < 40) vac++; }
         if (!lista && vac / tot > 0.5) { lista = true; card.classList.add('descubierta'); hechas++; $('.js-desc').innerHTML = 'Descubiertos: <b>' + hechas + '</b> de 6'; if (hechas === 6) { S.confeti(); S.aviso('<b>¡Los descubriste todos!</b><small>Y faltan seis más en el programa.</small>', '★'); } }
       }
-      cv.addEventListener('pointerdown', function (e) { abajo = true; ult = null; cv.setPointerCapture(e.pointerId); raya(pos(e)); });
-      cv.addEventListener('pointermove', function (e) { if (abajo || (!tactil && e.buttons === 0 && e.pointerType === 'mouse')) raya(pos(e)); });
+      function descubrir() { if (lista) return; var k = 0; (function barre() { ctx.globalCompositeOperation = 'destination-out'; ctx.fillRect(0, 0, w * (k + 1) / 10, h); if (++k < 10) requestAnimationFrame(barre); else medir(); })(); }
+      cv.addEventListener('click', function (e) { if (e.pointerType !== 'mouse' && (tactil || e.pointerType === 'touch' || e.pointerType === 'pen')) descubrir(); });
+      cv.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') return; abajo = true; ult = null; cv.setPointerCapture(e.pointerId); raya(pos(e)); });
+      cv.addEventListener('pointermove', function (e) { if (e.pointerType !== 'mouse') return; if (abajo || (!tactil && e.buttons === 0)) raya(pos(e)); });
       cv.addEventListener('pointerup', function () { abajo = false; ult = null; medir(); });
       cv.addEventListener('pointerleave', function () { ult = null; });
       patron.addEventListener('load', prep); prep(); if (document.fonts) document.fonts.ready.then(prep);
@@ -173,13 +200,14 @@
     function resultado() {
       var tema = ['ia', 'seo', 'con', 'pau'].sort(function (a, b) { return (pts[b] || 0) - (pts[a] || 0); })[0], r = R[tema];
       var mods = r.m.map(function (n) { return S.MODULOS.filter(function (m) { return m.n === n; })[0]; });
-      S.guardar('ruta', { tema: tema, nombre: r.t });
+      S.medir('ruta_resultado', { ruta: r.t });
       caja.innerHTML = '<div class="quiz-anim"><div class="quiz-barra">' + Q.map(function () { return '<i class="ok"></i>'; }).join('') + '</div><span class="ceja">Tu perfil: ' + r.t + '</span><h3>Estos módulos van a ser tus favoritos</h3><ul class="res-mods">' +
         mods.map(function (m) { return '<li><img src="assets/img/cursos/' + m.img + '-sm.webp" alt=""><div><b>' + m.n + '</b><small>Semestre ' + m.s + ' · 100 horas · <a href="' + m.plan + '">Ver temario</a></small></div></li>'; }).join('') +
         '</ul><p class="tambien">Todos hacen parte del Técnico Laboral en Marketing Digital e IA, de 1.200 horas.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="inscripcion.html?interes=' + tema + '" data-mira>Inscribirme</a><a class="btn btn-o btn-s" href="plan-de-estudios/#m' + mods[0].num + '" data-mira>Ver en el plan de estudios</a><button class="btn btn-o btn-s js-otra">Repetir</button></div></div>';
     }
     caja.addEventListener('click', function (e) {
       var o = e.target.closest('.op');
+      if (o && i === 0) S.medir('ruta_inicio');
       if (o) { o.classList.add('sel'); var s = Q[i][1][+o.dataset.j][1]; Object.keys(s).forEach(function (k) { pts[k] = (pts[k] || 0) + s[k]; }); setTimeout(function () { i++; pinta(); }, 260); }
       if (e.target.closest('.js-otra')) { i = 0; pts = {}; pinta(); }
     });
@@ -202,7 +230,7 @@
   $$('.js-kinetic > span').forEach(function (l) {
     l.innerHTML = l.textContent.split(' ').map(function (w) { return '<span class="w">' + w.split('').map(function (c) { return '<span class="c">' + c + '</span>'; }).join('') + '</span>'; }).join(' ');
   });
-  if (!reducir) gsap.from('.js-kinetic .c', { yPercent: 110, opacity: 0, rotate: 8, stagger: 0.025, duration: 0.8, ease: 'back.out(1.6)', scrollTrigger: { trigger: '.js-kinetic', start: 'top 80%' } });
+  if (!reducir) gsap.fromTo('.js-kinetic .c', { yPercent: 110, opacity: 0, rotate: 8 }, { yPercent: 0, opacity: 1, rotate: 0, stagger: 0.025, duration: 0.8, ease: 'back.out(1.6)', clearProps: 'transform,opacity', scrollTrigger: { trigger: '.js-kinetic', start: 'top 80%', once: true } });
 
   S.revelar();
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });

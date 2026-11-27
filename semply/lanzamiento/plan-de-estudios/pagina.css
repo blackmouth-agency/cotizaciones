@@ -518,3 +518,11 @@ section{padding-block:clamp(64px,10vw,120px);position:relative;overflow:hidden}
 .proyecto{grid-template-columns:clamp(96px,12vw,140px) minmax(0,1fr);gap:clamp(22px,3.5vw,44px)}
 @media (max-width:620px){.proyecto{grid-template-columns:minmax(0,1fr)}}
 svg polygon{transform-box:fill-box}
+
+/* revisión 27-nov-2026: media hora de práctica + media de evaluación; pie legal; aclaración del certificado */
+.hours div.half2{background:linear-gradient(90deg,var(--yellow) 50%,var(--eval) 50%)}
+.foot-pol{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px}
+.foot-pol a,.foot-pol button{color:#fff;font-size:13px;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:4px 0;cursor:pointer;font-family:inherit}
+.foot-pol a:hover,.foot-pol button:hover{color:var(--yellow)}
+.foot p b{color:#fff}
+.rule-ancha{grid-column:1/-1}

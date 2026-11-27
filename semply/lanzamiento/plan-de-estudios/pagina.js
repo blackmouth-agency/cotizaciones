@@ -35,7 +35,7 @@
         return '<button class="stop" data-n="' + m.n + '" style="--i:' + i + ';' + vars(m.n) + '"><span class="num"><svg viewBox="-50 -50 100 100"><polygon points="' + burst(12 + (m.n % 3) * 3, 50, 40) + '"/></svg><b>' + dos(m.n) + '</b></span><h4>' + esc(m.corto) + '</h4><p>' + esc(m.lema) + '</p><span class="go">Ver módulo' + FLECHA + '</span></button>';
       }).join('') + '</div></div>';
   }).join('') +
-    '<a class="ruta-fin" href="#titulo">' + sello('1.200<small>horas</small>', 20) + '<div><b>Técnico Laboral en Marketing Digital e IA</b><small>Al aprobar los 12 módulos recibes tu título. Cada módulo además te certifica por competencias.</small></div></a>';
+    '<a class="ruta-fin" href="#titulo">' + sello('1.200<small>horas</small>', 20) + '<div><b>Técnico Laboral en Marketing Digital e IA</b><small>Al aprobar los 12 módulos recibes el certificado de Técnico Laboral por Competencias. Cada módulo además te certifica por competencias.</small></div></a>';
   $$('.stop', ruta).forEach(function (b) { b.addEventListener('click', function (e) { elegir(+b.dataset.n, { ir: true, ev: e }); }); });
 
   /* ---------- tipos de hora y reparto ---------- */
@@ -61,7 +61,7 @@
 
   /* ---------- una unidad típica ---------- */
   var hours = $('#hours');
-  ['rec', 'half', 'live', 'live', 'prac', 'prac', 'prac', 'prac', 'prac', 'eval'].forEach(function (k) { var d = document.createElement('div'); if (k === 'half') { d.className = 'half'; d.dataset.k = 'rec prac'; } else { d.className = 't-' + k; d.dataset.k = k; } hours.appendChild(d); });
+  ['rec', 'half', 'live', 'live', 'prac', 'prac', 'prac', 'prac', 'half2', 'eval'].forEach(function (k) { var d = document.createElement('div'); if (k === 'half') { d.className = 'half'; d.dataset.k = 'rec prac'; } else if (k === 'half2') { d.className = 'half2'; d.dataset.k = 'prac eval'; } else { d.className = 't-' + k; d.dataset.k = k; } hours.appendChild(d); });
   $$('#wkeys button').forEach(function (b) {
     function on() { var cur = b.dataset.k; hours.classList.add('dim'); $$('div', hours).forEach(function (d) { d.classList.toggle('lit', d.dataset.k.split(' ').indexOf(cur) > -1); }); $$('#wkeys button').forEach(function (x) { x.classList.toggle('on', x === b); }); }
     b.addEventListener('mouseenter', on); b.addEventListener('focus', on); b.addEventListener('click', on);
@@ -192,7 +192,10 @@
   $('#r-registro').textContent = P.registro ? 'Registrado ante la Secretaría de Educación de Yumbo: ' + P.registro + '.' : '';
   $('#r-licencia').textContent = P.licencia ? 'Semply es una institución de Educación para el Trabajo y el Desarrollo Humano. Licencia de funcionamiento: ' + P.licencia + '.' : '';
   $('#r-modalidad').textContent = P.metodologia ? P.metodologia + '. Las sesiones en vivo quedan grabadas.' : '';
-  $('#legal').textContent = '© 2026 Semply SAS · ' + (P.nombre || '') + ' · ' + (P.registro || '');
+  $('#legal').innerHTML = S.textoLegal ? S.textoLegal() : '© 2026 Semply SAS · ' + (P.nombre || '') + ' · ' + (P.registro || '');
+  if (S.LEGAL && $('#r-aclara')) $('#r-aclara').innerHTML = S.LEGAL.aclaracion;
+  if (P.vigencia) $('#r-registro').textContent += ' Vigente hasta el ' + P.vigencia + '.';
+  if (S.origen) { S.origen(); S.waFlotante(); S.avisoCookies(); }
   if (S.whatsapp) S.whatsapp();
 
   /* ---------- aparición, contadores y pesos ---------- */

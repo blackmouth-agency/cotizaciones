@@ -190,3 +190,4 @@
 .btn.al-solid:hover{background:#fff;border-color:#fff}
 .btn.al-ghost{border-color:rgba(255,255,255,.7);color:#fff}
 .btn.al-ghost:hover{background:#fff;color:var(--ink)}
+.al-cta .al-valor{color:#fff;font-size:18px;margin-top:10px}.al-cta .al-valor b{font-family:var(--f-tit,Fredoka),sans-serif;font-size:28px;color:var(--yellow);margin-left:6px}

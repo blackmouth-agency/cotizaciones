@@ -1,10 +1,10 @@
 /* Semply · páginas internas: nosotros, oferta académica, cómo funciona, preguntas, inscripciones y contacto */
 (function () {
-  var S = window.SMP, $ = S.$, $$ = S.$$, pag = document.body.dataset.pagina, C = S.CONTACTO;
+  var S = window.SMP, $ = S.$, $$ = S.$$, pag = S.pagina(), C = S.CONTACTO;
   var hero = $('.p-hero');
   S.iniciarComun(function () { return hero ? hero.offsetHeight - 90 : 40; });
   var b = $('.js-burst-p');
-  if (b) b.outerHTML = { nosotros: S.burst('100%<small>virtual</small>', '#FFC225', '#373435', 130), oferta: S.burst('1.200<small>horas</small>', '#FFC225', '#373435', 140), funciona: S.burst('5<small>pasos</small>', '#F10E3B', '#fff', 130), preguntas: S.burst('¿?', '#FFC225', '#373435', 120), inscripcion: S.burst('¡Abiertas!', '#F10E3B', '#fff', 130), contacto: S.burst('Hola<small>¿qué tal?</small>', '#FFC225', '#373435', 120) }[pag] || '';
+  if (b) b.outerHTML = { nosotros: S.burst('100%<small>virtual</small>', '#FFC225', '#373435', 130), oferta: S.burst('1.200<small>horas</small>', '#FFC225', '#373435', 140), funciona: S.burst('5<small>pasos</small>', '#F10E3B', '#fff', 130), preguntas: S.burst('¿?', '#FFC225', '#373435', 120), inscripcion: S.burst('¡Abiertas!', '#F10E3B', '#fff', 130), contacto: S.burst('Hola<small>¿qué tal?</small>', '#FFC225', '#373435', 120), gracias: S.burst('¡Listo!', '#FFC225', '#373435', 130), noexiste: S.burst('404', '#FFC225', '#373435', 130) }[pag] || '';
   var TIPOS = [['Grabadas', '#F10E3B'], ['En vivo', '#FFC225'], ['Práctica', '#373435'], ['Evaluación', '#9b9591']];
   // barra apilada de horas: [grabadas, en vivo, práctica, evaluación]
   function barra(h, con) {
@@ -35,19 +35,32 @@
       if (S.reducir) { el.classList.add('ver'); return; }
       new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { el.classList.add('ver'); o.disconnect(); } }); }, { threshold: 0.3 }).observe(el);
     });
-    // historia: el paso que está en el centro de la pantalla se enciende y mueve el contador
-    var pasos = $$('.js-hist .hist-paso'), num = $('.js-hist-n'), barra = $('.js-hist-barra');
-    function encender(k) {
-      pasos.forEach(function (p, j) { p.classList.toggle('on', j <= k); });
-      num.textContent = String(k + 1).padStart(2, '0'); barra.style.transform = 'scaleX(' + ((k + 1) / pasos.length) + ')';
+    // historia (corregida el 25-nov-2026): un riel se llena con el scroll y enciende los pasos uno por uno;
+    // el contador y la barra siguen el avance real y en celular se quedan fijos arriba (.hist-medidor sticky)
+    var riel = $('.js-hist'), pasos = $$('.js-hist .hist-paso'), num = $('.js-hist-n'), barra = $('.js-hist-barra'), ultK = -2;
+    function pintarHist(k, prog) {
+      riel.style.setProperty('--p', prog.toFixed(4));
+      barra.style.transform = 'scaleX(' + Math.max(0.04, prog).toFixed(4) + ')';
+      if (k === ultK) return; ultK = k;
+      pasos.forEach(function (p, j) { p.classList.toggle('on', j <= k); p.classList.toggle('actual', j === k); });
+      num.textContent = String(Math.max(k, 0) + 1).padStart(2, '0');
+      num.classList.remove('cambia'); void num.offsetWidth; num.classList.add('cambia');
     }
-    if (S.reducir) encender(pasos.length - 1);
+    if (S.reducir) pintarHist(pasos.length - 1, 1);
     else {
-      // el último paso cuyo borde superior ya pasó la mitad de la pantalla (al final de la sección quedan todos encendidos)
-      var pend = false, ult = -1;
-      var medir = function () { pend = false; var k = 0, mitad = innerHeight * 0.55; pasos.forEach(function (p, j) { if (p.getBoundingClientRect().top < mitad) k = j; }); if (k !== ult) { ult = k; encender(k); } };
-      addEventListener('scroll', function () { if (!pend) { pend = true; requestAnimationFrame(medir); } }, { passive: true });
-      medir();
+      var pendH = false;
+      var medirH = function () {
+        pendH = false;
+        var linea = innerHeight * (S.movil ? 0.62 : 0.55), k = -1;
+        var top0 = riel.getBoundingClientRect().top + 8;
+        var puntos = pasos.map(function (p) { return p.getBoundingClientRect().top + 14; });
+        puntos.forEach(function (y, j) { if (y < linea) k = j; });
+        var prog = Math.min(1, Math.max(0, (linea - top0) / (puntos[puntos.length - 1] - top0)));
+        pintarHist(k, prog);
+      };
+      addEventListener('scroll', function () { if (!pendH) { pendH = true; requestAnimationFrame(medirH); } }, { passive: true });
+      addEventListener('resize', medirH);
+      medirH();
     }
     var simple = $('.js-simple');
     simple.addEventListener('click', function () { simple.classList.remove('wig'); void simple.offsetWidth; simple.classList.add('wig'); S.confeti(); setTimeout(function () { simple.classList.remove('wig'); }, 500); });
@@ -98,7 +111,7 @@
       ['Te contacta admisiones', 'El equipo de admisiones resuelve tus dudas: valor, formas de pago, fecha de inicio del próximo grupo, horarios y documentos.', S.waLink('Hola, quiero hablar con admisiones de Semply.'), 'Hablar con admisiones'],
       ['Haces tu matrícula', 'Formalizas tu cupo en el próximo grupo y recibes tu acceso a la plataforma.', '', ''],
       ['Estudias dos semestres', 'Seis módulos por semestre, de 100 horas cada uno. La mitad del tiempo es práctica sobre un negocio real, con un entregable por unidad.', 'oferta-academica.html', 'Ver los 12 módulos'],
-      ['Sustentas y te certificas', 'Presentas tu proyecto integrador ante el equipo docente y recibes el certificado de Técnico Laboral por Competencias en Marketing Digital e IA.', '#evaluacion', 'Cómo se aprueba']
+      ['Sustentas y te certificas', 'Presentas tu proyecto integrador ante el panel de mentores y recibes el certificado de Técnico Laboral por Competencias en Marketing Digital e IA.', '#evaluacion', 'Cómo se aprueba']
     ];
     var rec = $('.js-recorrido'), pi = 0;
     function pintaRec() {
@@ -168,34 +181,44 @@
 
   /* ---------- inscripciones ---------- */
   if (pag === 'inscripcion') {
-    var interes = new URLSearchParams(location.search).get('interes');
+    var qs = new URLSearchParams(location.search), interes = qs.get('interes'), progQ = qs.get('programa') === 'coaching' ? 'coaching' : 'marketing', adhQ = qs.get('adh') === '1', simQ = qs.get('sim') || '';
     var temas = { ia: 'inteligencia artificial', seo: 'SEO y posicionamiento', con: 'contenido y redes', pau: 'pauta y ventas' };
     var caja = $('.js-form-caja');
     function formulario() {
-      caja.innerHTML = S.burst('Cupos<small>abiertos</small>', '#FFC225', '#373435', 110) + '<h3>Formulario de inscripción</h3><p style="color:var(--tx2)">Técnico Laboral en Marketing Digital e Inteligencia Artificial.</p>' +
+      caja.innerHTML = (S.preventa() ? S.burst('−50%<small>preventa</small>', '#FFC225', '#373435', 110) : S.burst('Cupos<small>abiertos</small>', '#FFC225', '#373435', 110)) + '<h3>Formulario de inscripción</h3><p style="color:var(--tx2)">Elige tu programa y te contactamos.</p>' +
         '<form class="js-insc" novalidate><div class="campos">' +
+        '<div class="fld full"><label for="i-p">Programa</label><select id="i-p" class="inp"><option value="marketing"' + (progQ === 'marketing' ? ' selected' : '') + '>' + S.PROGRAMAS[0].nombre + '</option><option value="coaching"' + (progQ === 'coaching' ? ' selected' : '') + '>' + S.PROGRAMAS[1].nombre + ' (con ADH Coaching)</option></select></div>' +
         '<div class="fld full"><label for="i-n">Nombre completo</label><input id="i-n" class="inp" autocomplete="name" required><span class="err">Escribe tu nombre.</span></div>' +
         '<div class="fld"><label for="i-t">Celular o WhatsApp</label><input id="i-t" type="tel" class="inp" inputmode="numeric" autocomplete="tel" placeholder="300 123 4567" required><span class="err">Escribe un número de 10 dígitos.</span></div>' +
         '<div class="fld"><label for="i-c">Correo</label><input id="i-c" type="email" class="inp" autocomplete="email" required><span class="err">Revisa el correo.</span></div>' +
         '<div class="fld"><label for="i-ci">Ciudad</label><input id="i-ci" class="inp" autocomplete="address-level2" list="ciudades" placeholder="Tu ciudad"><datalist id="ciudades"><option>Yumbo</option><option>Cali</option><option>Palmira</option><option>Jamundí</option><option>Buga</option><option>Tuluá</option></datalist></div>' +
         '<div class="fld"><label for="i-co">¿Cómo nos conociste?</label><select id="i-co" class="inp"><option>Redes sociales</option><option>Un amigo o familiar</option><option>Google</option><option>Otro</option></select></div>' +
-        '<div class="fld full"><label for="i-m">¿Algo que quieras contarnos? (opcional)</label><textarea id="i-m" class="inp">' + (interes && temas[interes] ? 'Me interesa sobre todo ' + temas[interes] + '.' : '') + '</textarea></div>' +
-        '<label class="check full"><input type="checkbox" required><span>Autorizo a Semply a contactarme y a tratar mis datos según la Ley 1581 de 2012.</span></label>' +
+        '<div class="fld"><label for="i-ne">Último nivel de estudios</label><select id="i-ne" class="inp"><option>Bachiller</option><option>Técnico o tecnólogo</option><option>Profesional</option><option>Estoy terminando el colegio</option><option>Otro</option></select></div>' +
+        '<div class="fld"><label for="i-ed">Edad</label><select id="i-ed" class="inp"><option>18 a 24 años</option><option>25 a 34 años</option><option>35 a 44 años</option><option>45 años o más</option><option>Menor de 18 años</option></select></div>' +
+        '<div class="fld"><label for="i-ho">Horario para las clases en vivo</label><select id="i-ho" class="inp"><option>Mañana</option><option>Tarde</option><option>Noche</option><option>Fin de semana</option></select></div>' +
+        '<div class="fld"><label for="i-cu">¿Cuándo quieres empezar?</label><select id="i-cu" class="inp"><option>En el próximo grupo</option><option>En los próximos 3 meses</option><option>Todavía lo estoy pensando</option></select></div>' +
+        '<label class="check full"><input type="checkbox" id="i-adh"' + (adhQ ? ' checked' : '') + '><span>Soy estudiante o exestudiante de ADH Coaching (20 % de descuento en Marketing Digital e IA).</span></label>' +
+        '<div class="fld full"><label for="i-m">¿Algo que quieras contarnos? (opcional)</label><textarea id="i-m" class="inp">' + S.esc(simQ ? 'Mi simulación: ' + simQ + '.' : interes && temas[interes] ? 'Me interesa sobre todo ' + temas[interes] + '.' : '') + '</textarea></div>' +
+        S.casillaDatos('i') +
         '<button class="btn full" data-mira>Enviar inscripción ' + S.ico(S.I.flecha, 'ico-f') + '</button></div></form>';
     }
     formulario();
     caja.addEventListener('submit', function (e) {
       e.preventDefault(); var f = e.target; if (!S.validar(f)) return;
-      var d = { nombre: $('#i-n').value.trim(), tel: $('#i-t').value.trim(), correo: $('#i-c').value.trim(), ciudad: $('#i-ci').value.trim(), como: $('#i-co').value, nota: $('#i-m').value.trim() };
+      var d = { programa: $('#i-p').value, adh: $('#i-adh').checked, nombre: $('#i-n').value.trim(), tel: $('#i-t').value.trim(), correo: $('#i-c').value.trim(), ciudad: $('#i-ci').value.trim(), como: $('#i-co').value, estudios: $('#i-ne').value, edad: $('#i-ed').value, horario: $('#i-ho').value, inicio: $('#i-cu').value, nota: $('#i-m').value.trim(), autoriza_datos: true, autoriza_publicidad: $('#i-pub').checked };
       var btn = $('button.btn', f); btn.classList.add('cargando');
-      setTimeout(function () {
-        S.guardar('inscripcion', d);
-        var msg = 'Hola, quiero inscribirme al Técnico Laboral en Marketing Digital e IA.\nNombre: ' + d.nombre + '\nCelular: ' + d.tel + '\nCorreo: ' + d.correo + '\nCiudad: ' + d.ciudad + (d.nota ? '\nNota: ' + d.nota : '');
-        caja.innerHTML = '<div class="exito">' + S.burst('¡Listo!', '#F10E3B', '#fff', 120, 'rel') + '<h3>Gracias, ' + S.esc(d.nombre.split(' ')[0]) + '.</h3><p style="color:var(--tx2);max-width:420px">Recibimos tu inscripción al Técnico Laboral, 100 % virtual. Para que admisiones te atienda más rápido, envíanos también tus datos por WhatsApp.</p>' +
+      S.enviar('inscripcion', d).then(function (llego) {
+        var nomP = d.programa === 'coaching' ? S.PROGRAMAS[1].nombre : 'Técnico Laboral en Marketing Digital e IA';
+        var msg = 'Hola, quiero inscribirme al ' + nomP + '.' + (d.adh ? '\nSoy estudiante o exestudiante de ADH Coaching.' : '') + '\nNombre: ' + d.nombre + '\nCelular: ' + d.tel + '\nCorreo: ' + d.correo + '\nCiudad: ' + d.ciudad + '\nEdad: ' + d.edad + '\nHorario que prefiero: ' + d.horario + (d.nota ? '\nNota: ' + d.nota : '');
+        // la página de gracias cuenta la inscripción; lo que necesita viaja solo durante esta visita (sessionStorage, se borra al leerlo)
+        try { sessionStorage.setItem('smpl.gracias', JSON.stringify({ nombre: d.nombre.split(' ')[0], programa: nomP, msg: msg, llego: llego })); location.href = S.ruta('gracias.html'); return; } catch (er) {}
+        S.medir('inscripcion', { programa: d.programa });
+        caja.innerHTML = '<div class="exito">' + S.burst('¡Listo!', '#F10E3B', '#fff', 120, 'rel') + '<h3>Gracias, ' + S.esc(d.nombre.split(' ')[0]) + '.</h3><p style="color:var(--tx2);max-width:420px">Recibimos tu inscripción al ' + S.esc(nomP) + '. Para que admisiones te atienda más rápido, envíanos también tus datos por WhatsApp.</p>' +
           '<div class="compartir"><a class="btn" href="' + S.waLink(msg) + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'Enviar por WhatsApp</a><button class="btn btn-o btn-s js-otra">Inscribir a otra persona</button></div></div>';
         S.confeti();
-      }, 900);
+      });
     });
+    caja.addEventListener('focusin', function () { if (!caja._ini) { caja._ini = true; S.medir('formulario_inicio', { formulario: 'inscripcion' }); } });
     caja.addEventListener('click', function (e) { if (e.target.closest('.js-otra')) formulario(); });
     S.contactos($('.js-contactos'));
     S.acordeon($('.js-faq'), S.FAQ.filter(function (f) { return f[0] === 'inscripcion' || f[3] === 'insc'; }).map(function (f) { return [f[1], f[2]]; }));
@@ -211,15 +234,43 @@
         '<div class="fld"><label for="c-t">Celular</label><input id="c-t" type="tel" class="inp" inputmode="numeric" autocomplete="tel" required><span class="err">Escribe un número de 10 dígitos.</span></div>' +
         '<div class="fld"><label for="c-c">Correo (opcional)</label><input id="c-c" type="email" class="inp" autocomplete="email"></div>' +
         '<div class="fld full"><label for="c-m">Mensaje</label><textarea id="c-m" class="inp" required></textarea><span class="err">Cuéntanos en qué te ayudamos.</span></div>' +
-        '<label class="check full"><input type="checkbox" required><span>Autorizo el tratamiento de mis datos según la Ley 1581 de 2012.</span></label>' +
+        S.casillaDatos('c') +
         '<button class="btn full" data-mira>Enviar mensaje</button></div></form>';
     }
     form2();
     caja2.addEventListener('submit', function (e) {
       e.preventDefault(); var f = e.target; if (!S.validar(f)) return;
       var n = $('#c-n').value.trim(), msg = 'Hola, soy ' + n + ' (' + $('#c-t').value.trim() + '). ' + $('#c-m').value.trim();
+      S.enviar('contacto', { nombre: n, tel: $('#c-t').value.trim(), correo: $('#c-c').value.trim(), mensaje: $('#c-m').value.trim(), autoriza_datos: true, autoriza_publicidad: $('#c-pub').checked });
+      S.medir('contacto');
       caja2.innerHTML = '<div class="exito">' + S.burst('¡Gracias!', '#FFC225', '#373435', 110, 'rel') + '<h3>Mensaje listo, ' + S.esc(n.split(' ')[0]) + '.</h3><p style="color:var(--tx2)">Para que llegue de una vez, envíalo por WhatsApp o por correo.</p><div class="compartir"><a class="btn" href="' + S.waLink(msg) + '" target="_blank" rel="noopener">' + S.ico(S.I.chat) + 'WhatsApp</a><a class="btn btn-o" href="mailto:' + C.correo + '?subject=' + encodeURIComponent('Contacto desde la web') + '&body=' + encodeURIComponent(msg) + '">' + S.ico(S.I.correo) + 'Correo</a></div><button class="js-otra" style="font-size:13.5px;color:var(--tx2);text-decoration:underline">Escribir otro mensaje</button></div>';
     });
     caja2.addEventListener('click', function (e) { if (e.target.closest('.js-otra')) form2(); });
+  }
+
+  /* ---------- gracias: aquí se cuenta cada inscripción ---------- */
+  if (pag === 'gracias') {
+    var g = null; try { g = JSON.parse(sessionStorage.getItem('smpl.gracias') || 'null'); sessionStorage.removeItem('smpl.gracias'); } catch (e) {}
+    if (g) {
+      S.medir('inscripcion', { programa: g.programa });
+      $('.js-gr-t').innerHTML = '¡Gracias, ' + S.esc(g.nombre) + '! <span>Ya casi.</span>';
+      $('.js-gr-p').textContent = 'Recibimos tu inscripción al ' + g.programa + '. El equipo de admisiones te va a contactar para contarte el paso a paso de la matrícula.';
+      var wa = $('.js-gr-wa'); wa.classList.remove('js-wa'); wa.href = S.waLink(g.msg);
+      if (!g.llego) { $('.js-gr-h').textContent = 'Último paso: envíanos tus datos'; $('.js-gr-n').textContent = 'Toca el botón y se abre WhatsApp con tu inscripción escrita. Solo tienes que enviarla.'; }
+      S.confeti();
+    }
+  }
+
+  /* ---------- políticas ---------- */
+  if (pag === 'legal') {
+    $$('.js-razon').forEach(function (e) { e.textContent = S.LEGAL.razon + (S.LEGAL.nit ? ', NIT ' + S.LEGAL.nit : ''); });
+    $$('.js-dir').forEach(function (e) { e.textContent = C.dir + ', ' + C.ciudad; });
+    $$('.js-tel').forEach(function (e) { e.textContent = C.tel; });
+    $$('.js-correo').forEach(function (e) { e.innerHTML = '<a class="enl" href="mailto:' + C.correo + '">' + C.correo + '</a>'; });
+    $$('.js-vigila').forEach(function (e) { e.textContent = S.LEGAL.vigila; });
+    $('.js-aclara').innerHTML = S.LEGAL.aclaracion;
+    $('.js-registro').textContent = 'Licencia de funcionamiento: ' + S.PROGRAMA.licencia + '. Programa «' + S.PROGRAMA.nombre + '», registrado por la ' + S.LEGAL.vigila + ', ' + S.PROGRAMA.registro + ', vigente hasta el ' + S.PROGRAMA.vigencia + '. Metodología: ' + S.PROGRAMA.metodologiaRes + '.';
+    $$('.js-mail').forEach(function (e) { e.href = 'mailto:' + C.correo + '?subject=' + encodeURIComponent('PQRS Semply'); });
+    S.whatsapp();
   }
 })();
